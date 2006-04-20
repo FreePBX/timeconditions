@@ -67,10 +67,93 @@ function timeconditions_del($id){
 	$results = sql("DELETE FROM timeconditions WHERE timeconditions_id = \"$id\"","query");
 }
 
+function get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish) {
+
+        //----- Time Hour Interval proccess ----
+        if ($minute_start == '-') {
+            $time_minute_start = 0;
+         } else {
+            $time_minute_start = $minute_start;
+         }
+         if ($minute_finish == '-') {
+            $time_minute_finish = 0;
+         } else {
+             $time_minute_finish = $minute_finish;
+         }
+         if ($hour_start == '-') {
+             $time_hour_start = '*';
+          } else {
+             $time_hour_start = $hour_start . ':' . $time_minute_start;
+          }
+          if ($hour_finish == '-') {
+             $time_hour_finish = '*';
+          } else {
+             $time_hour_finish = $hour_finish . ':' . $time_minute_finish;
+          }
+          if ($time_hour_start == $time_hour_finish) {
+              $time_hour = $time_hour_start;
+          } else {
+              $time_hour = $time_hour_start . '-' . $time_hour_finish;
+          }
+          //----- Time Week Day Interval proccess -----
+          if ($wday_start == '-') {
+              $time_wday_start = '*';
+           } else {
+              $time_wday_start = $wday_start;
+           }
+           if ($wday_finish == '-') {
+              $time_wday_finish = '*';
+           } else {
+              $time_wday_finish = $wday_finish;
+           }
+           if ($time_wday_start == $time_wday_finish) {
+               $time_wday = $time_wday_start;
+            } else {
+               $time_wday = $time_wday_start . '-' . $time_wday_finish;
+            }
+            //----- Time Month Day Interval proccess -----
+            if ($mday_start == '-') {
+               $time_mday_start = '*';
+            } else {
+                $time_mday_start = $mday_start;
+            }
+            if ($mday_finish == '-') {
+                $time_mday_finish = '*';
+            } else {
+                $time_mday_finish = $mday_finish;
+            }
+            if ($time_mday_start == $time_mday_finish) {
+                $time_mday = $time_mday_start;
+            } else {
+                $time_mday = $time_mday_start . '-' . $time_mday_finish;
+            }
+            //----- Time Month Interval proccess -----
+            if ($month_start == '-') {
+                $time_month_start = '*';
+            } else {
+                $time_month_start = $month_start;
+            }
+            if ($month_finish == '-') {
+                $time_month_finish = '*';
+            } else {
+                $time_month_finish = $month_finish;
+            }
+            if ($time_month_start == $time_month_finish) {
+                $time_month = $time_month_start;
+            } else {
+                $time_month = $time_month_start . '-' . $time_month_finish;
+            }
+	    $time = $time_hour . '|' . $time_wday . '|' . $time_mday . '|' . $time_month;
+	    return $time;
+}
+
 function timeconditions_add($post){
 	if(!timeconditions_chk($post))
 		return false;
 	extract($post);
+
+        $time = get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
+
 	if(empty($displayname)) $displayname = "unnamed";
 	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname) values (\"$displayname\",\"$time\",\"${$goto0.'0'}\",\"${$goto1.'1'}\",\"$deptname\")");
 }
@@ -79,6 +162,9 @@ function timeconditions_edit($id,$post){
 	if(!timeconditions_chk($post))
 		return false;
 	extract($post);
+
+        $time = get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
+	
 	if(empty($displayname)) $displayname = "unnamed";
 	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"${$goto0.'0'}\", falsegoto = \"${$goto1.'1'}\", deptname = \"$deptname\" WHERE timeconditions_id = \"$id\"");
 }

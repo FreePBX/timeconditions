@@ -138,10 +138,340 @@ if ($action == 'delete') {
 	</tr>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("Time to match:")?><span><?php echo _("time range|days of week|days of month|months<br><br>you can use an * as a wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>")?></span></a></td>
-		<td><input type="text" name="time" value="<?php echo (isset($thisItem['time']) ? $thisItem['time'] : ''); ?>"></td>
+               <?php
+                   // ----- Load Time Pattern Variables -----
+                   list($time_hour, $time_wday, $time_mday, $time_month) = explode( '|', $thisItem['time'] );
+               ?>
+               <tr>
+                   <td><?php echo _("Time to start:")?></td>
+                   <td>
+                       <?php
+                           // Hour could be *, hh:mm, hh:mm-hhmm
+                           if ( $time_hour != '*' ) {
+                               list($hour_start_string, $hour_finish_string) = explode('-', $time_hour);
+                               list($hour_start, $minute_start) = explode( ':', $hour_start_string);
+                               list($hour_finish, $minute_finish) = explode( ':', $hour_finish_string);
+                               if ( !$hour_finish ) $hour_finish = $hour_start;
+                               if ( !$minute_finish ) $minute_finish = $minute_start;
+                           } else {
+                               $hour_start = $hour_finish = '-';
+                               $minute_start = $minute_finish = '-';
+                           }
+                       ?>
+                        <select name="hour_start"/>
+                        <?php
+                           $default = '';
+                            if ( $hour_start == '-' ) $default = ' selected';
+                            echo "<option value=\"-\" $default>-";
+                            for ($i = 0 ; $i < 24 ; $i++) {
+                               $default = "";
+                               if ( $i == $hour_start ) $default = ' selected';
+                                echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+                            }
+                        ?>
+                        </select>
+                       <nbsp>:<nbsp>
+                        <select name="minute_start"/>
+                        <?php
+                           $default = '';
+                            if ( $minute_start == '-' ) $default = ' selected';
+                            echo "<option value=\"-\" $default>-";
+                            for ($i = 0 ; $i < 60 ; $i++) {
+                                $default = "";
+                                if ( $i == $minute_start ) $default = ' selected';
+                                echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+                            }
+                        ?>
+                        </select>
+                    </td>
+               </tr>
+               <tr>
+                   <td><?php echo _("Time to finish:")?></td>
+                   <td>
+                        <select name="hour_finish"/>
+                        <?php
+                           $default = '';
+                            if ( $hour_finish == '-' ) $default = ' selected';
+                            echo "<option value=\"-\" $default>-";
+                            for ($i = 0 ; $i < 24 ; $i++) {
+                                $default = "";
+                                if ( $i == $hour_finish) $default = ' selected';
+                                echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+                            }
+                        ?>
+                        </select>
+                       <nbsp>:<nbsp>
+                        <select name="minute_finish"/>
+                        <?php
+                            $default = '';
+                            if ( $minute_finish == '-' ) $default = ' selected';
+                            echo "<option value=\"-\" $default>-";
+                            for ($i = 0 ; $i < 60 ; $i++) {
+                               $default = '';
+                                if ( $i == $minute_finish ) $default = ' selected';
+                                echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+                            }
+                        ?>
+                        </select>
+                    </td>
+               </tr>
+                <tr>
+                   <?php 
+                         // WDay could be *, day, day1-day2
+                         if ( $time_wday != '*' ) {
+                             list($wday_start, $wday_finish) = explode('-', $time_wday);
+                             if ( !$wday_finish) $wday_finish = $wday_start;
+                         } else {
+                             $wday_start = $wday_finish = '-';
+                         }
+                    ?>
+                   <td><?php echo _("Week Day Start:")?></td>
+                   <td>
+                       <select name="wday_start"/>
+                           <?php 
+                               if ( $wday_start == '-' ) { $default = ' selected'; }
+                               else {$default = '';}
+                               echo "<option value=\"-\" $default>-";
+ 
+                               if ( $wday_start == 'mon' ) { $default = ' selected'; }
+                                else {$default = '';}
+                               echo "<option value=\"mon\" $default>" . _("Monday");
+
+                                if ( $wday_start == 'tue' ) { $default = ' selected'; }
+                               else {$default = '';}
+                                echo "<option value=\"tue\" $default>" . _("Tuesday");
+
+                                if ( $wday_start == 'wed' ) { $default = ' selected'; }
+                               else {$default = '';}
+                                echo "<option value=\"wed\" $default>" . _("Wednesday");
+
+                                if ( $wday_start == 'thu' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"thu\" $default>" . _("Thursday");
+
+                                if ( $wday_start == 'fri' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"fri\" $default>" . _("Friday");
+
+                                if ( $wday_start == 'sat' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"sat\" $default>" . _("Saturday");
+
+                               if ( $wday_start == 'sun' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"sun\" $default>" . _("Sunday");
+                       ?>
+           </td>
+               </tr>
+               <tr>
+                   <td><?php echo _("Week Day finish:")?></td>
+                   <td>
+                       <select name="wday_finish"/>
+                       <?php 
+                               if ( $wday_finish == '-' ) { $default = ' selected'; }
+                               else {$default = '';}
+                               echo "<option value=\"-\" $default>-";
+ 
+                               if ( $wday_finish == 'mon' ) { $default = ' selected'; }
+                                else {$default = '';}
+                               echo "<option value=\"mon\" $default>" . _("Monday");
+
+                                if ( $wday_finish == 'tue' ) { $default = ' selected'; }
+                               else {$default = '';}
+                                echo "<option value=\"tue\" $default>" . _("Tuesday");
+
+                                if ( $wday_finish == 'wed' ) { $default = ' selected'; }
+                               else {$default = '';}
+                                echo "<option value=\"wed\" $default>" . _("Wednesday");
+
+                                if ( $wday_finish == 'thu' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"thu\" $default>" . _("Thursday");
+
+                                if ( $wday_finish == 'fri' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"fri\" $default>" . _("Friday");
+
+                                if ( $wday_finish == 'sat' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"sat\" $default>" . _("Saturday");
+
+                               if ( $wday_finish == 'sun' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"sun\" $default>" . _("Sunday");
+                       ?>
+                   </td>
+                </tr>
+                <tr>
+                   <td><?php echo _("Month Day start:")?></td>
+                    <?php
+                         // MDay could be *, day, day1-day2
+                         if ( $time_mday != '*' ) {
+                             list($mday_start, $mday_finish) = explode('-', $time_mday);
+                             if ( !$mday_finish) $mday_finish = $mday_start;
+                         } else {
+                             $mday_start = $mday_finish = '-';
+                         }
+                   ?>
+                  <td>
+                        <select name="mday_start"/>
+                         <?php
+                            $default = '';
+                            if ( $mday_start == '-' ) $default = ' selected';
+                            echo "<option value=\"-\" $default>-";
+                            for ($i = 1 ; $i < 32 ; $i++) {
+                                $default = '';
+                                if ( $i == $mday_start ) $default = ' selected';
+                                echo "<option value=\"$i\" $default> $i";
+                            }
+                        ?>
+                        </select>
+                    </td>
+               <tr>
+                   <td><?php echo _("Month Day finish:")?></td>
+                  <td>
+                        <select name="mday_finish"/>
+                        <?php
+                            $default = '';
+                            if ( $mday_finish == '-' ) $default = ' selected';
+                            echo "<option value=\"-\" $default>-";
+                            for ($i = 1 ; $i < 32 ; $i++) {
+                                $default = '';
+                                if ( $i == $mday_finish ) $default = ' selected';
+                                echo "<option value=\"$i\" $default> $i";
+                            }
+                        ?>
+                        </select>
+                    </td>
+               </tr>
+                <tr>
+                   <td><?php echo _("Month start:")?></td>
+                     <?php
+                         // Month could be *, month, month1-month2
+                         if ( $time_month != '*' ) {
+                             list($month_start, $month_finish) = explode('-', $time_month);
+                             if ( !$month_finish) $month_finish = $month_start;
+                         } else {
+                             $month_start = $month_finish = '-';
+                         }
+                   ?>
+                  <td>
+                        <select name="month_start"/>
+                            <?php   
+                                if ( $month_start == '-' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"-\" $default>-";
+                                if ( $month_start == 'jan' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"jan\" $default>" . _("January");
+                               
+                                if ( $month_start == 'feb' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"feb\" $default>" . _("February");
+
+                                if ( $month_start == 'mar' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"mar\" $default>" . _("March");
+                               
+                                if ( $month_start == 'apr' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"apr\" $default>" . _("April");
+ 
+                               if ( $month_start == 'may' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"may\" $default>" . _("May");
+                               
+                                if ( $month_start == 'jun' ) { $default = ' selected'; }
+                               else {$default = '';}
+                                echo "<option value=\"jun\" $default>" . _("June");
+
+                                if ( $month_start == 'jul' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"jul\" $default>" . _("July");
+                               
+                                if ( $month_start == 'aug' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"aug\" $default>" . _("August");
+ 
+                               if ( $month_start == 'sep' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"sep\" $default>" . _("September");
+                               
+                                if ( $month_start == 'oct' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"oct\" $default>" . _("October");
+                                if ( $month_start == 'nov' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"nov\" $default>" . _("November");
+                               
+                                if ( $month_start == 'dec' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"dec\" $default>" . _("December");
+                         ?>
+                       </select>
+                     </td>
+        </tr>
+                <tr>
+                    <td><?php echo _("Month finish:")?></td>
+                    <td>
+                        <select name="month_finish"/>
+                        <?php   
+                                if ( $month_finish == '-' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"-\" $default>-";
+                                if ( $month_finish == 'jan' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"jan\" $default>" . _("January");
+                               
+                                if ( $month_finish == 'feb' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"feb\" $default>" . _("February");
+
+                                if ( $month_finish == 'mar' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"mar\" $default>" . _("March");
+                               
+                                if ( $month_finish == 'apr' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"apr\" $default>" . _("April");
+ 
+                               if ( $month_finish == 'may' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"may\" $default>" . _("May");
+                               
+                                if ( $month_finish == 'jun' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"jun\" $default>" . _("June");
+
+                                if ( $month_finish == 'jul' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"jul\" $default>" . _("July");
+                               
+                                if ( $month_finish == 'aug' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"aug\" $default>" . _("August");
+ 
+                               if ( $month_finish == 'sep' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"sep\" $default>" . _("September");
+                               
+                               if ( $month_finish == 'oct' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"oct\" $default>" . _("October");
+
+                                if ( $month_finish == 'nov' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"nov\" $default>" . _("November");
+                               
+                                if ( $month_finish == 'dec' ) { $default = ' selected'; }
+                                else {$default = '';}
+                                echo "<option value=\"dec\" $default>" . _("December");
+                         ?>
+                         </select>
+                     </td>
+                </tr>
 	</tr>
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time matches")?>:<hr></h5></td></tr>
-
 <?php 
 //draw goto selects
 if (isset($thisItem)) {
