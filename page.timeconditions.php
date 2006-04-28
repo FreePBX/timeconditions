@@ -52,7 +52,7 @@ if (isset($timeconditions)) {
 ?>
 </div>
 
-<div style="float: right; padding: 5; background: #e0e0ff; border: #2E78A7 solid 1px;">
+<div style="float: right; padding: 5px; background: #e0e0ff; border: #2E78A7 solid 1px;">
 	<?php echo _("Server time:")?> <span id="idTime">00:00:00</span>
 </div>
 
@@ -504,16 +504,28 @@ theForm.displayname.focus();
 
 function edit_onsubmit() {
 	var msgInvalidTimeCondName = "<?php echo _('Please enter a valid Time Conditions Name'); ?>";
-	var msgInvalidTimeMatch = "<?php echo _('Please enter the Time to Match'); ?>";
+	var msgInvalidTimeMatch = "<?php echo _('Please enter the Time to Match, or set all to - to match all times.'); ?>";
+	var msgInvalidDay = "<?php echo _('Please select BOTH or NO days, not just one.'); ?>";
+	var msgInvalidMday = "<?php echo _('Please select BOTH or NO days of the month, not just one.'); ?>";
+	var msgInvalidMth = "<?php echo _('Please select BOTH or NO months, not just one.'); ?>";
 
-	setDestinations(edit,2);
 	
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value))
 		return warnInvalid(theForm.displayname, msgInvalidTimeCondName);
 	
-	if (isEmpty(theForm.time.value) || isWhitespace(theForm.time.value))
-		return warnInvalid(theForm.time, msgInvalidTimeMatch);
+	// Check to see that they're either all '-' or all numbers.
+	if ((theForm.hour_start.value == "-" || theForm.hour_finish.value == "-"  || theForm.minute_start.value == "-" || theForm.minute_finish.value == "-") && (theForm.hour_start.value != "-" || theForm.hour_finish.value != "-"  || theForm.minute_start.value != "-" || theForm.minute_finish.value != "-")) 
+		return warnInvalid(theForm.displayname, msgInvalidTimeMatch);
+
+	if ((theForm.wday_start.value == "-" || theForm.wday_finish.value == "-") && (theForm.wday_start.value != "-" ||theForm.wday_finish.value != "-" ))
+		return warnInvalid(theForm.displayname, msgInvalidDay);
+
+	if ((theForm.mday_start.value == "-" || theForm.mday_finish.value == "-") && (theForm.mday_start.value != "-" || theForm.mday_finish.value != "-" ))
+		return warnInvalid(theForm.displayname, msgInvalidMday);
+
+	if ((theForm.month_start.value == "-" || theForm.month_finish.value == "-") && (theForm.month_start.value != "-" || theForm.month_finish.value != "-" ))
+		return warnInvalid(theForm.displayname, msgInvalidMth);
 		
 	if (!validateDestinations(edit,2,true))
 		return false;
