@@ -1,13 +1,13 @@
 <module>
 	<rawname>timeconditions</rawname>
 	<name>Time Conditions</name>
-	<version>1.0</version>
+	<version>2.0</version>
 	<type>setup</type>
 	<category>Basic</category>
 	<menuitems>
 		<timeconditions>Time Conditions</timeconditions>
 	</menuitems>
-	<location>release/timeconditions-1.0.tgz</location>
+	<location>release/timeconditions-2.0.tgz</location>
 	<info>http://freepbx.org/wiki/TimeConditions</info>
-	<md5sum>b1fec4dd52a7ecd405caf7ee902a7280</md5sum>
+	<md5sum>3c687427b4717ce9db9d98eddb4a1ee7</md5sum>
 </module>
