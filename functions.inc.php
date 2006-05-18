@@ -73,22 +73,22 @@ function get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wd
         if ($minute_start == '-') {
             $time_minute_start = 0;
          } else {
-            $time_minute_start = $minute_start;
+            $time_minute_start = sprintf("%02d",$minute_start);
          }
          if ($minute_finish == '-') {
             $time_minute_finish = 0;
          } else {
-             $time_minute_finish = $minute_finish;
+             $time_minute_finish = sprintf("%02d",$minute_finish);
          }
          if ($hour_start == '-') {
              $time_hour_start = '*';
           } else {
-             $time_hour_start = $hour_start . ':' . $time_minute_start;
+             $time_hour_start = sprintf("%02d",$hour_start) . ':' . $time_minute_start;
           }
           if ($hour_finish == '-') {
              $time_hour_finish = '*';
           } else {
-             $time_hour_finish = $hour_finish . ':' . $time_minute_finish;
+             $time_hour_finish = sprintf("%02d",$hour_finish) . ':' . $time_minute_finish;
           }
           if ($time_hour_start == $time_hour_finish) {
               $time_hour = $time_hour_start;
