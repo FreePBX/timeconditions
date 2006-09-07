@@ -67,7 +67,7 @@ function timeconditions_del($id){
 	$results = sql("DELETE FROM timeconditions WHERE timeconditions_id = \"$id\"","query");
 }
 
-function get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish) {
+function timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish) {
 
         //----- Time Hour Interval proccess ----
         if ($minute_start == '-') {
@@ -152,7 +152,7 @@ function timeconditions_add($post){
 		return false;
 	extract($post);
 
-        $time = get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
+        $time = timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
 
 	if(empty($displayname)) $displayname = "unnamed";
 	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname) values (\"$displayname\",\"$time\",\"${$goto0.'0'}\",\"${$goto1.'1'}\",\"$deptname\")");
@@ -163,7 +163,7 @@ function timeconditions_edit($id,$post){
 		return false;
 	extract($post);
 
-        $time = get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
+        $time = timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
 	
 	if(empty($displayname)) $displayname = "unnamed";
 	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"${$goto0.'0'}\", falsegoto = \"${$goto1.'1'}\", deptname = \"$deptname\" WHERE timeconditions_id = \"$id\"");
