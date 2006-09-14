@@ -14,7 +14,8 @@
 
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 //the item we are currently displaying
-isset($_REQUEST['itemid'])?$itemid=$_REQUEST['itemid']:$itemid='';
+isset($_REQUEST['itemid'])?$itemid=mysql_real_escape_string($_REQUEST['itemid']):$itemid='';
+
 $dispnum = "timeconditions"; //used for switch on config.php
 
 //if submitting form, update database
