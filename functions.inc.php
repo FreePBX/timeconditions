@@ -71,12 +71,12 @@ function timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $min
 
         //----- Time Hour Interval proccess ----
         if ($minute_start == '-') {
-            $time_minute_start = "00";
+            $time_minute_start = "*";
          } else {
             $time_minute_start = sprintf("%02d",$minute_start);
          }
          if ($minute_finish == '-') {
-            $time_minute_finish = "00";
+            $time_minute_finish = "*";
          } else {
              $time_minute_finish = sprintf("%02d",$minute_finish);
          }

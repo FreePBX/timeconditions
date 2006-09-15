@@ -148,25 +148,25 @@ if ($action == 'delete') {
                    <td>
                        <?php
                            // Hour could be *, hh:mm, hh:mm-hhmm
-                           if ( $time_hour != '*' ) {
+                           if ( $time_hour === '*' ) {
+                               $hour_start = $hour_finish = '-';
+                               $minute_start = $minute_finish = '-';
+			   } else {
                                list($hour_start_string, $hour_finish_string) = explode('-', $time_hour);
                                list($hour_start, $minute_start) = explode( ':', $hour_start_string);
                                list($hour_finish, $minute_finish) = explode( ':', $hour_finish_string);
                                if ( !$hour_finish ) $hour_finish = $hour_start;
                                if ( !$minute_finish ) $minute_finish = $minute_start;
-                           } else {
-                               $hour_start = $hour_finish = '-';
-                               $minute_start = $minute_finish = '-';
                            }
                        ?>
                         <select name="hour_start"/>
                         <?php
                            $default = '';
-                            if ( $hour_start == '-' ) $default = ' selected';
+                            if ( $hour_start === '-' ) $default = ' selected';
                             echo "<option value=\"-\" $default>-";
                             for ($i = 0 ; $i < 24 ; $i++) {
                                $default = "";
-                               if ( $i == $hour_start ) $default = ' selected';
+                               if ( $i === $hour_start ) $default = ' selected';
                                 echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
                             }
                         ?>
@@ -175,11 +175,11 @@ if ($action == 'delete') {
                         <select name="minute_start"/>
                         <?php
                            $default = '';
-                            if ( $minute_start == '-' ) $default = ' selected';
+                            if ( $minute_start === '-' ) $default = ' selected';
                             echo "<option value=\"-\" $default>-";
                             for ($i = 0 ; $i < 60 ; $i++) {
                                 $default = "";
-                                if ( $i == $minute_start ) $default = ' selected';
+                                if ( $i === $minute_start ) $default = ' selected';
                                 echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
                             }
                         ?>
@@ -192,11 +192,11 @@ if ($action == 'delete') {
                         <select name="hour_finish"/>
                         <?php
                            $default = '';
-                            if ( $hour_finish == '-' ) $default = ' selected';
+                            if ( $hour_finish === '-' ) $default = ' selected';
                             echo "<option value=\"-\" $default>-";
                             for ($i = 0 ; $i < 24 ; $i++) {
                                 $default = "";
-                                if ( $i == $hour_finish) $default = ' selected';
+                                if ( $i === $hour_finish) $default = ' selected';
                                 echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
                             }
                         ?>
@@ -205,11 +205,11 @@ if ($action == 'delete') {
                         <select name="minute_finish"/>
                         <?php
                             $default = '';
-                            if ( $minute_finish == '-' ) $default = ' selected';
+                            if ( $minute_finish === '-' ) $default = ' selected';
                             echo "<option value=\"-\" $default>-";
                             for ($i = 0 ; $i < 60 ; $i++) {
                                $default = '';
-                                if ( $i == $minute_finish ) $default = ' selected';
+                                if ( $i === $minute_finish ) $default = ' selected';
                                 echo "<option value=\"$i\" $default> ".sprintf("%02d", $i);
                             }
                         ?>
