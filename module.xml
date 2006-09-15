@@ -1,13 +1,13 @@
 <module>
 	<rawname>timeconditions</rawname>
 	<name>Time Conditions</name>
-	<version>2.2</version>
+	<version>2.2.1</version>
 	<type>setup</type>
 	<category>Basic</category>
 	<menuitems>
 		<timeconditions>Time Conditions</timeconditions>
 	</menuitems>
-	<location>release/2.2/timeconditions-2.2.tgz</location>
+	<location>release/2.2/timeconditions-2.2.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-TimeCond</info>
-	<md5sum>8bbe29f5efb720949903ce9815870417</md5sum>
+	<md5sum>510212385877d36ccc51a2318476934f</md5sum>
 </module>
