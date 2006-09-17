@@ -141,7 +141,12 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Time to match:")?><span><?php echo _("time range|days of week|days of month|months<br><br>you can use an * as a wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>")?></span></a></td>
                <?php
                    // ----- Load Time Pattern Variables -----
-                   list($time_hour, $time_wday, $time_mday, $time_month) = explode( '|', $thisItem['time'] );
+		if (isset($thisItem)) {
+			list($time_hour, $time_wday, $time_mday, $time_month) = explode( '|', $thisItem['time'] );
+		} else {
+			list($time_hour, $time_wday, $time_mday, $time_month) = Array(null,null,null,null);
+		}
+			
                ?>
                <tr>
                    <td><?php echo _("Time to start:")?></td>
