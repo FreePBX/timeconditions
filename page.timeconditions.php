@@ -144,7 +144,7 @@ if ($action == 'delete') {
 		if (isset($thisItem)) {
 			list($time_hour, $time_wday, $time_mday, $time_month) = explode( '|', $thisItem['time'] );
 		} else {
-			list($time_hour, $time_wday, $time_mday, $time_month) = Array(null,null,null,null);
+			list($time_hour, $time_wday, $time_mday, $time_month) = Array('*','-','-','-');
 		}
 			
                ?>
