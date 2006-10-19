@@ -8,7 +8,6 @@
 		Creates a condition where calls will to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<menuitems>
-	<menuitems>
 		<timeconditions>Time Conditions</timeconditions>
 	</menuitems>
 	<location>release/2.2/timeconditions-2.2.3.tgz</location>
