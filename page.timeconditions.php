@@ -42,7 +42,7 @@ $timeconditions = timeconditions_list();
 </div> <!-- end content div so we can display rnav properly-->
 
 <!-- right side menu -->
-<div class="rnav">
+<div class="rnav"><ul>
     <li><a id="<?php echo ($itemid=='' ? 'current':'') ?>" href="config.php?display=<?php echo urlencode($dispnum)?>"><?php echo _("Add Time Condition")?></a></li>
 <?php
 if (isset($timeconditions)) {
@@ -51,9 +51,9 @@ if (isset($timeconditions)) {
 	}
 }
 ?>
-</div>
+</ul></div>
 
-<div style="float: right; padding: 5px; background: #e0e0ff; border: #2E78A7 solid 1px;">
+<div class="rnav" style="margin:15px 10px; padding: 5px; background: #e0e0ff; border: #2E78A7 solid 1px;">
 	<?php echo _("Server time:")?> <span id="idTime">00:00:00</span>
 </div>
 
