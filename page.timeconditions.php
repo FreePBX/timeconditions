@@ -23,14 +23,17 @@ switch ($action) {
 	case "add":
 		timeconditions_add($_POST);
 		needreload();
+		redirect_standard('itemid');
 	break;
 	case "delete":
 		timeconditions_del($itemid);
 		needreload();
+		redirect_standard('itemid');
 	break;
 	case "edit":  //just delete and re-add
 		timeconditions_edit($itemid,$_POST);
 		needreload();
+		redirect_standard('itemid');
 	break;
 }
 
