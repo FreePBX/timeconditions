@@ -1,0 +1,181 @@
+# Hebrew version for Time Conditions FreePBX Module.
+# Copyright (C) 2006
+# This file is distributed under the same license as the PACKAGE package.
+# Shimi <shimi@shimi.net>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-17 17:20+0300\n"
+"PO-Revision-Date: 2006-10-17 17:30+0300\n"
+"Last-Translator: Shimi <shimi@shimi.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.timeconditions.php:46 page.timeconditions.php:121
+#: page.timeconditions.php:130
+msgid "Add Time Condition"
+msgstr "הוספת תנאי זמן"
+
+#: page.timeconditions.php:57
+msgid "Server time:"
+msgstr "שעה בשרת:"
+
+#: page.timeconditions.php:111
+msgid "Time Condition"
+msgstr "תנאי זמן"
+
+#: page.timeconditions.php:111
+msgid "deleted"
+msgstr "נמחק"
+
+#: page.timeconditions.php:121
+msgid "Time Condition:"
+msgstr "תנאי זמן:"
+
+#: page.timeconditions.php:123
+msgid "Delete Time Condition"
+msgstr "מחק תנאי זמן"
+
+#: page.timeconditions.php:130
+msgid "Edit Time Condition"
+msgstr "ערוך תנאי זמן"
+
+#: page.timeconditions.php:137
+msgid "Time Condition name:"
+msgstr "שם תנאי הזמן:"
+
+#: page.timeconditions.php:137
+msgid "Give this Time Condition a brief name to help you identify it."
+msgstr "תן לתנאי זמן זה שם קצר שיעזור לך לזהות אותו."
+
+#: page.timeconditions.php:141
+msgid "Time to match:"
+msgstr "זמן שיש להתאים:"
+
+#: page.timeconditions.php:141
+msgid ""
+"time range|days of week|days of month|months<br><br>you can use an * as a "
+"wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
+msgstr ""
+"time range|days of week|days of month|months<br><br>אתה יכול להשתמש ב * כדי להגיד בכל "
+"זמן.<br><br>דוגמא: <b>9:00-17:00|mon-fri|*|*</b>"
+
+#: page.timeconditions.php:152
+msgid "Time to start:"
+msgstr "זמן להתחיל:"
+
+#: page.timeconditions.php:195
+msgid "Time to finish:"
+msgstr "זמן לסיים:"
+
+#: page.timeconditions.php:234
+msgid "Week Day Start:"
+msgstr "יום התחלה בשבוע:"
+
+#: page.timeconditions.php:244 page.timeconditions.php:283
+msgid "Monday"
+msgstr "שני"
+
+#: page.timeconditions.php:248 page.timeconditions.php:287
+msgid "Tuesday"
+msgstr "שלישי"
+
+#: page.timeconditions.php:252 page.timeconditions.php:291
+msgid "Wednesday"
+msgstr "רביעי"
+
+#: page.timeconditions.php:256 page.timeconditions.php:295
+msgid "Thursday"
+msgstr "חמישי"
+
+#: page.timeconditions.php:260 page.timeconditions.php:299
+msgid "Friday"
+msgstr "שישי"
+
+#: page.timeconditions.php:264 page.timeconditions.php:303
+msgid "Saturday"
+msgstr "שבת"
+
+#: page.timeconditions.php:268 page.timeconditions.php:307
+msgid "Sunday"
+msgstr "ראשון"
+
+#: page.timeconditions.php:273
+msgid "Week Day finish:"
+msgstr "יום בשבוע לסיים:"
+
+#: page.timeconditions.php:312
+msgid "Month Day start:"
+msgstr "יום בחודש להתחיל:"
+
+#: page.timeconditions.php:337
+msgid "Month Day finish:"
+msgstr "יום בחודש לסיים:"
+
+#: page.timeconditions.php:354
+msgid "Month start:"
+msgstr "חודש להתחיל:"
+
+#: page.timeconditions.php:372 page.timeconditions.php:430
+msgid "January"
+msgstr "ינואר"
+
+#: page.timeconditions.php:376 page.timeconditions.php:434
+msgid "February"
+msgstr "פברואר"
+
+#: page.timeconditions.php:380 page.timeconditions.php:438
+msgid "March"
+msgstr "מרץ"
+
+#: page.timeconditions.php:384 page.timeconditions.php:442
+msgid "April"
+msgstr "אפריל"
+
+#: page.timeconditions.php:388 page.timeconditions.php:446
+msgid "May"
+msgstr "מאי"
+
+#: page.timeconditions.php:392 page.timeconditions.php:450
+msgid "June"
+msgstr "יוני"
+
+#: page.timeconditions.php:396 page.timeconditions.php:454
+msgid "July"
+msgstr "יולי"
+
+#: page.timeconditions.php:400 page.timeconditions.php:458
+msgid "August"
+msgstr "אוגוסט"
+
+#: page.timeconditions.php:404 page.timeconditions.php:462
+msgid "September"
+msgstr "ספטמבר"
+
+#: page.timeconditions.php:408 page.timeconditions.php:466
+msgid "October"
+msgstr "אוקטובר"
+
+#: page.timeconditions.php:411 page.timeconditions.php:470
+msgid "November"
+msgstr "נובמבר"
+
+#: page.timeconditions.php:415 page.timeconditions.php:474
+msgid "December"
+msgstr "דצמבר"
+
+#: page.timeconditions.php:421
+msgid "Month finish:"
+msgstr "חודש סיום:"
+
+#: page.timeconditions.php:480
+msgid "Destination if time matches"
+msgstr "יעד אם הזמן מתאים"
+
+#: page.timeconditions.php:490
+msgid "Destination if time does not match"
+msgstr "יעד אם הזמן אינו מתאים"
