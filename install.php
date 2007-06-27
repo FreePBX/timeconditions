@@ -3,6 +3,21 @@
 global $db;
 global $amp_conf;
 
+$autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
+
+$sql = "CREATE TABLE IF NOT EXISTS timeconditions (
+	timeconditions_id INTEGER NOT NULL PRIMARY KEY $autoincrement,
+	displayname VARCHAR( 50 ) ,
+	time VARCHAR( 100 ) ,
+	truegoto VARCHAR( 50 ) ,
+	falsegoto VARCHAR( 50 ),
+	deptname VARCHAR( 50 )
+)";
+
+$check = $db->query($sql);
+if(DB::IsError($check)) {
+		die("Can not create `timeconditions` table: " .  $check->getMessage() .  "\n");
+}
 
 $results = array();
 $sql = "SELECT timeconditions_id, truegoto, falsegoto FROM timeconditions";

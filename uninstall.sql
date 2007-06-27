@@ -1,1 +1,1 @@
-DROP TABLE timeconditions;
+DROP TABLE IF EXISTS `timeconditions`;
