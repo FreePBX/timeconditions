@@ -17,7 +17,7 @@
 	<menuitems>
 		<timeconditions>Time Conditions</timeconditions>
 	</menuitems>
-	<location>release/2.3/timeconditions-2.4.2.tgz</location>
+	<location>release/2.3/timeconditions-2.4.3.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-TimeCond</info>
-	<md5sum>3cf7f5ef28371b87e983d56138391368</md5sum>
+	<md5sum>6f9c4e81c33290d3655ce2aa935b2aa5</md5sum>
 </module>
