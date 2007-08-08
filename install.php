@@ -16,7 +16,7 @@ $sql = "CREATE TABLE IF NOT EXISTS timeconditions (
 
 $check = $db->query($sql);
 if(DB::IsError($check)) {
-		die("Can not create `timeconditions` table: " .  $check->getMessage() .  "\n");
+		die_freepbx("Can not create `timeconditions` table: " .  $check->getMessage() .  "\n");
 }
 
 $results = array();
@@ -34,7 +34,7 @@ if (!DB::IsError($results)) { // error - table must not be there
 			$sql = "UPDATE timeconditions SET truegoto = '$new_true_dest', falsegoto = '$new_false_dest' WHERE timeconditions_id = $timeconditions_id  AND truegoto = '$old_true_dest' AND falsegoto ='$old_false_dest'";
 			$results = $db->query($sql);
 			if(DB::IsError($results)) {
-				die($results->getMessage());
+				die_freepbx($results->getMessage());
 			}
 		}
 	}
