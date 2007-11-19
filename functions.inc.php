@@ -38,6 +38,45 @@ function timeconditions_get_config($engine) {
 	}
 }
 
+function timeconditions_check_destinations($dest=true) {
+	global $active_modules;
+
+	$destlist = array();
+	if (is_array($dest) && empty($dest)) {
+		return $destlist;
+	}
+	$sql = "SELECT timeconditions_id, displayname, truegoto, falsegoto FROM timeconditions ";
+	if ($dest !== true) {
+		$sql .= "WHERE (truegoto in ('".implode("','",$dest)."') ) OR (falsegoto in ('".implode("','",$dest)."') )";
+	}
+	$results = sql($sql,"getAll",DB_FETCHMODE_ASSOC);
+
+	$type = isset($active_modules['timeconditions']['type'])?$active_modules['timeconditions']['type']:'setup';
+
+	foreach ($results as $result) {
+		$thisdest    = $result['truegoto'];
+		$thisid      = $result['timeconditions_id'];
+		$description = 'Timecondition: '.$result['displayname'];
+		$thisurl     = 'config.php?display=timeconditions&itemid='.urlencode($thisid);
+		if ($dest === true || $dest = $thisdest) {
+			$destlist[] = array(
+				'dest' => $thisdest,
+				'description' => $description,
+				'edit_url' => $thisurl,
+			);
+		}
+		$thisdest = $result['falsegoto'];
+		if ($dest === true || $dest = $thisdest) {
+			$destlist[] = array(
+				'dest' => $thisdest,
+				'description' => $description,
+				'edit_url' => $thisurl,
+			);
+		}
+	}
+	return $destlist;
+}
+
 //get the existing meetme extensions
 function timeconditions_list() {
 	$results = sql("SELECT * FROM timeconditions","getAll",DB_FETCHMODE_ASSOC);
