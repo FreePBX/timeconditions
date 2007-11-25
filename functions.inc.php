@@ -16,6 +16,30 @@ function timeconditions_destinations() {
 	}
 }
 
+function timeconditions_getdest($exten) {
+	return array('timeconditions,'.$exten.',1');
+}
+
+function timeconditions_getdestinfo($dest) {
+	global $active_modules;
+
+	if (substr(trim($dest),0,15) == 'timeconditions,') {
+		$exten = explode(',',$dest);
+		$exten = $exten[1];
+		$thisexten = timeconditions_get($exten);
+		if (empty($thisexten)) {
+			return array();
+		} else {
+			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
+			return array('description' => 'Time Conditon : '.$thisexten['displayname'],
+			             'edit_url' => 'config.php?display=timeconditions&itemid='.urlencode($exten),
+								  );
+		}
+	} else {
+		return false;
+	}
+}
+
 
 /* 	Generates dialplan for conferences
 	We call this with retrieve_conf

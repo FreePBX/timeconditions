@@ -123,8 +123,16 @@ if ($action == 'delete') {
 
 	<h2><?php echo ($itemid ? _("Time Condition:")." ". $itemid : _("Add Time Condition")); ?></h2>
 <?php		if ($itemid){ ?>
-	<p><a href="<?php echo $delURL ?>"><?php echo _("Delete Time Condition")?> <?php echo $itemid; ?></a></p>
-<?php		} ?>
+	<a href="<?php echo $delURL ?>"><?php echo _("Delete Time Condition")?> <?php echo $itemid; ?></a>
+<?php
+					$usage_list = framework_display_destination_usage(timeconditions_getdest($itemid));
+					if (!empty($usage_list)) {
+?>
+						<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
+<?php
+					}
+			} 
+?>
 	<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
 	<input type="hidden" name="action" value="<?php echo ($itemid ? 'edit' : 'add') ?>">
