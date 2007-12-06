@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-12 15:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Francesco Romano\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.timeconditions.php:49 page.timeconditions.php:124
+#: page.timeconditions.php:133
+msgid "Add Time Condition"
+msgstr "Aggiungi Condizione Temporale"
+
+#: page.timeconditions.php:60
+msgid "Server time:"
+msgstr "Ora Server:"
+
+#: page.timeconditions.php:114
+msgid "Time Condition"
+msgstr "Condizione Temporale"
+
+#: page.timeconditions.php:114
+msgid "deleted"
+msgstr "eliminata"
+
+#: page.timeconditions.php:124
+msgid "Time Condition:"
+msgstr "Condizione Temporale:"
+
+#: page.timeconditions.php:126
+msgid "Delete Time Condition"
+msgstr "Elimina Condizione Temporale"
+
+#: page.timeconditions.php:133
+msgid "Edit Time Condition"
+msgstr "Modifica Condizione Temporale"
+
+#: page.timeconditions.php:140
+msgid "Time Condition name:"
+msgstr "Nome Condizione Temporale:"
+
+#: page.timeconditions.php:140
+msgid "Give this Time Condition a brief name to help you identify it."
+msgstr "Assegnare un nome breve per una facile identificazione."
+
+#: page.timeconditions.php:144
+msgid "Time to match:"
+msgstr "Corrispondenza:"
+
+#: page.timeconditions.php:144
+msgid ""
+"time range|days of week|days of month|months<br><br>you can use an * as a "
+"wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
+msgstr "Intervallo ora|giorni della settimana|giorni del mese|mesi<br><br>si può utilizzare * come carattere jolly.<br><br>es: <b>9:00-17:00|mon-fri|*|*</b><br><br>(mon,tue,wed,thu,fri,sat,sun=<br>lun,mar,mer,gio,ven,sab,dom)"
+
+#: page.timeconditions.php:155
+msgid "Time to start:"
+msgstr "Ora iniziale:"
+
+#: page.timeconditions.php:198
+msgid "Time to finish:"
+msgstr "Ora finale:"
+
+#: page.timeconditions.php:237
+msgid "Week Day Start:"
+msgstr "Giorno della settimana iniziale:"
+
+#: page.timeconditions.php:247 page.timeconditions.php:286
+msgid "Monday"
+msgstr "Lunedì"
+
+#: page.timeconditions.php:251 page.timeconditions.php:290
+msgid "Tuesday"
+msgstr "Martedì"
+
+#: page.timeconditions.php:255 page.timeconditions.php:294
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#: page.timeconditions.php:259 page.timeconditions.php:298
+msgid "Thursday"
+msgstr "Giovedì"
+
+#: page.timeconditions.php:263 page.timeconditions.php:302
+msgid "Friday"
+msgstr "Venerdì"
+
+#: page.timeconditions.php:267 page.timeconditions.php:306
+msgid "Saturday"
+msgstr "Sabato"
+
+#: page.timeconditions.php:271 page.timeconditions.php:310
+msgid "Sunday"
+msgstr "Domenica"
+
+#: page.timeconditions.php:276
+msgid "Week Day finish:"
+msgstr "Giorno della settimana finale:"
+
+#: page.timeconditions.php:315
+msgid "Month Day start:"
+msgstr "Giorno del mese iniziale:"
+
+#: page.timeconditions.php:340
+msgid "Month Day finish:"
+msgstr "Giorno del mese finale:"
+
+#: page.timeconditions.php:357
+msgid "Month start:"
+msgstr "Mese iniziale:"
+
+#: page.timeconditions.php:375 page.timeconditions.php:433
+msgid "January"
+msgstr "Gennaio"
+
+#: page.timeconditions.php:379 page.timeconditions.php:437
+msgid "February"
+msgstr "Febbraio"
+
+#: page.timeconditions.php:383 page.timeconditions.php:441
+msgid "March"
+msgstr "Marzo"
+
+#: page.timeconditions.php:387 page.timeconditions.php:445
+msgid "April"
+msgstr "Aprile"
+
+#: page.timeconditions.php:391 page.timeconditions.php:449
+msgid "May"
+msgstr "Maggio"
+
+#: page.timeconditions.php:395 page.timeconditions.php:453
+msgid "June"
+msgstr "Giugno"
+
+#: page.timeconditions.php:399 page.timeconditions.php:457
+msgid "July"
+msgstr "Luglio"
+
+#: page.timeconditions.php:403 page.timeconditions.php:461
+msgid "August"
+msgstr "Agosto"
+
+#: page.timeconditions.php:407 page.timeconditions.php:465
+msgid "September"
+msgstr "Settembre"
+
+#: page.timeconditions.php:411 page.timeconditions.php:469
+msgid "October"
+msgstr "Ottobre"
+
+#: page.timeconditions.php:414 page.timeconditions.php:473
+msgid "November"
+msgstr "Novembre"
+
+#: page.timeconditions.php:418 page.timeconditions.php:477
+msgid "December"
+msgstr "Dicembre"
+
+#: page.timeconditions.php:424
+msgid "Month finish:"
+msgstr "Mese finale:"
+
+#: page.timeconditions.php:483
+msgid "Destination if time matches"
+msgstr "Destinazione se la condizione esiste"
+
+#: page.timeconditions.php:493
+msgid "Destination if time does not match"
+msgstr "Destinazione se la condizione non esiste"
+
+msgid "Voicemail"
+msgstr "Casella Vocale"
+
+msgid "Extensions"
+msgstr "Interni"
+
+msgid "Day Night Mode"
+msgstr "Controllo Giorno Notte"
+
+msgid "Terminate Call"
+msgstr "Termina Chiamata"
+
+msgid "Core"
+msgstr "Sistema"
+
+msgid "Conferences"
+msgstr "Conferenze"
+
+msgid "Phonebook Directory"
+msgstr "Rubrica"
+
+msgid "Queues"
+msgstr "Code"
+
+msgid "Ring Groups"
+msgstr "Gruppi di chiamata"
+
+msgid "Speed dial functions"
+msgstr "Selezione breve"
+
+msgid "Time Conditions"
+msgstr "Condizioni Temporali"
+
+msgid "Custom Contexts"
+msgstr "Contesti Personalizzati"
+
+msgid "Extended Routing"
+msgstr "Rotte specifiche"
+
+msgid "Custom App<span><br>ADVANCED USERS ONLY<br><br>Uses Goto() to send caller to "
+"a custom context.<br><br>The context name should start with \"custom-\", and be in "
+"the format custom-context,extension,priority. Example "
+"entry:<br><br><b>custom-myapp,s,1</b><br><br>The <b>[custom-myapp]</b> context would "
+"need to be created and included in extensions_custom.conf</span>"
+msgstr "Applicazione Personalizzata<span>SOLO UTENTI AVANZATI<br>Utilizzare Goto() "
+"per inviare la chiamata verso un contesto personalizzato.<br><br>Il nome del "
+"contesto deve iniziare per \"custom-\" e deve essere nel formato "
+"custom-contesto,extension,priorità. Esempio: "
+"<br><br><b>custom-app,s,1</b><br><br><b>Il contesto [custom-app] </b> deve poi "
+"essere creato e incluso nel file extensions_custom.conf</span"
+
+msgid "Submit Changes"
+msgstr "Invia"
