@@ -3,7 +3,7 @@
 // returns a associative arrays with keys 'destination' and 'description'
 function timeconditions_destinations() {
 	//get the list of meetmes
-	$results = timeconditions_list();
+	$results = timeconditions_list(true);
 
 	// return an associative array with destination and description
 	if (isset($results)) {
@@ -49,7 +49,7 @@ function timeconditions_get_config($engine) {
 	global $conferences_conf;
 	switch($engine) {
 		case "asterisk":
-			$timelist = timeconditions_list();
+			$timelist = timeconditions_list(true);
 			if(is_array($timelist)) {
 				foreach($timelist as $item) {
 					$thisitem = timeconditions_get(ltrim($item['timeconditions_id']));
@@ -102,12 +102,12 @@ function timeconditions_check_destinations($dest=true) {
 }
 
 //get the existing meetme extensions
-function timeconditions_list() {
+function timeconditions_list($getall=false) {
 	$results = sql("SELECT * FROM timeconditions","getAll",DB_FETCHMODE_ASSOC);
 	if(is_array($results)){
 		foreach($results as $result){
 			// check to see if we have a dept match for the current AMP User.
-			if (checkDept($result['deptname'])){
+			if ($getall || checkDept($result['deptname'])){
 				// return this item's dialplan destination, and the description
 				$allowed[] = $result;
 			}
