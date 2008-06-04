@@ -175,7 +175,7 @@ if ($action == 'delete') {
                                if ( !$minute_finish ) $minute_finish = $minute_start;
                            }
                        ?>
-                        <select name="hour_start"/>
+                        <select name="hour_start">
                         <?php
                            $default = '';
                             if ( $hour_start === '-' ) $default = ' selected';
@@ -188,7 +188,7 @@ if ($action == 'delete') {
                         ?>
                         </select>
                        <nbsp>:<nbsp>
-                        <select name="minute_start"/>
+                        <select name="minute_start">
                         <?php
                            $default = '';
                             if ( $minute_start === '-' ) $default = ' selected';
@@ -205,7 +205,7 @@ if ($action == 'delete') {
                <tr>
                    <td><?php echo _("Time to finish:")?></td>
                    <td>
-                        <select name="hour_finish"/>
+                        <select name="hour_finish">
                         <?php
                            $default = '';
                             if ( $hour_finish === '-' ) $default = ' selected';
@@ -218,7 +218,7 @@ if ($action == 'delete') {
                         ?>
                         </select>
                        <nbsp>:<nbsp>
-                        <select name="minute_finish"/>
+                        <select name="minute_finish">
                         <?php
                             $default = '';
                             if ( $minute_finish === '-' ) $default = ' selected';
@@ -244,7 +244,7 @@ if ($action == 'delete') {
                     ?>
                    <td><?php echo _("Week Day Start:")?></td>
                    <td>
-                       <select name="wday_start"/>
+                       <select name="wday_start">
                            <?php 
                                if ( $wday_start == '-' ) { $default = ' selected'; }
                                else {$default = '';}
@@ -283,7 +283,7 @@ if ($action == 'delete') {
                <tr>
                    <td><?php echo _("Week Day finish:")?></td>
                    <td>
-                       <select name="wday_finish"/>
+                       <select name="wday_finish">
                        <?php 
                                if ( $wday_finish == '-' ) { $default = ' selected'; }
                                else {$default = '';}
@@ -331,7 +331,7 @@ if ($action == 'delete') {
                          }
                    ?>
                   <td>
-                        <select name="mday_start"/>
+                        <select name="mday_start">
                          <?php
                             $default = '';
                             if ( $mday_start == '-' ) $default = ' selected';
@@ -347,7 +347,7 @@ if ($action == 'delete') {
                <tr>
                    <td><?php echo _("Month Day finish:")?></td>
                   <td>
-                        <select name="mday_finish"/>
+                        <select name="mday_finish">
                         <?php
                             $default = '';
                             if ( $mday_finish == '-' ) $default = ' selected';
@@ -373,7 +373,7 @@ if ($action == 'delete') {
                          }
                    ?>
                   <td>
-                        <select name="month_start"/>
+                        <select name="month_start">
                             <?php   
                                 if ( $month_start == '-' ) { $default = ' selected'; }
                                 else {$default = '';}
@@ -431,7 +431,7 @@ if ($action == 'delete') {
                 <tr>
                     <td><?php echo _("Month finish:")?></td>
                     <td>
-                        <select name="month_finish"/>
+                        <select name="month_finish">
                         <?php   
                                 if ( $month_finish == '-' ) { $default = ' selected'; }
                                 else {$default = '';}
