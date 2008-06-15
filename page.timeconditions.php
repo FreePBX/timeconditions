@@ -187,7 +187,7 @@ if ($action == 'delete') {
                             }
                         ?>
                         </select>
-                       <nbsp>:<nbsp>
+                       :
                         <select name="minute_start">
                         <?php
                            $default = '';
@@ -217,7 +217,7 @@ if ($action == 'delete') {
                             }
                         ?>
                         </select>
-                       <nbsp>:<nbsp>
+                       :
                         <select name="minute_finish">
                         <?php
                             $default = '';
