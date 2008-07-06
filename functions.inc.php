@@ -52,7 +52,6 @@ function timeconditions_get_config($engine) {
 			$timelist = timeconditions_list(true);
 			if(is_array($timelist)) {
 				foreach($timelist as $item) {
-					$thisitem = timeconditions_get(ltrim($item['timeconditions_id']));
 					// add dialplan
 					$times = timeconditions_timegroups_get_times($item['time']);
 					if (is_array($times)) {
