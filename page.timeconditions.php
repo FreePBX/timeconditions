@@ -146,7 +146,7 @@ if ($action == 'delete') {
 
 	<tr>
 		<td><a href="#" class="info"><?php echo _("Time Condition name:")?><span><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span></a></td>
-		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>"></td>
+		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("Time to match:")?><span><?php echo _("time range|days of week|days of month|months<br><br>you can use an * as a wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>")?></span></a></td>
@@ -175,7 +175,7 @@ if ($action == 'delete') {
                                if ( !$minute_finish ) $minute_finish = $minute_start;
                            }
                        ?>
-                        <select name="hour_start">
+                        <select name="hour_start" tabindex="<?php echo ++$tabindex;?>">
                         <?php
                            $default = '';
                             if ( $hour_start === '-' ) $default = ' selected';
@@ -188,7 +188,7 @@ if ($action == 'delete') {
                         ?>
                         </select>
                        :
-                        <select name="minute_start">
+                        <select name="minute_start" tabindex="<?php echo ++$tabindex;?>">
                         <?php
                            $default = '';
                             if ( $minute_start === '-' ) $default = ' selected';
@@ -205,7 +205,7 @@ if ($action == 'delete') {
                <tr>
                    <td><?php echo _("Time to finish:")?></td>
                    <td>
-                        <select name="hour_finish">
+                        <select name="hour_finish" tabindex="<?php echo ++$tabindex;?>">
                         <?php
                            $default = '';
                             if ( $hour_finish === '-' ) $default = ' selected';
@@ -218,7 +218,7 @@ if ($action == 'delete') {
                         ?>
                         </select>
                        :
-                        <select name="minute_finish">
+                        <select name="minute_finish" tabindex="<?php echo ++$tabindex;?>">
                         <?php
                             $default = '';
                             if ( $minute_finish === '-' ) $default = ' selected';
@@ -244,7 +244,7 @@ if ($action == 'delete') {
                     ?>
                    <td><?php echo _("Week Day Start:")?></td>
                    <td>
-                       <select name="wday_start">
+                       <select name="wday_start" tabindex="<?php echo ++$tabindex;?>">
                            <?php 
                                if ( $wday_start == '-' ) { $default = ' selected'; }
                                else {$default = '';}
@@ -283,7 +283,7 @@ if ($action == 'delete') {
                <tr>
                    <td><?php echo _("Week Day finish:")?></td>
                    <td>
-                       <select name="wday_finish">
+                       <select name="wday_finish" tabindex="<?php echo ++$tabindex;?>">
                        <?php 
                                if ( $wday_finish == '-' ) { $default = ' selected'; }
                                else {$default = '';}
@@ -331,7 +331,7 @@ if ($action == 'delete') {
                          }
                    ?>
                   <td>
-                        <select name="mday_start">
+                        <select name="mday_start" tabindex="<?php echo ++$tabindex;?>">
                          <?php
                             $default = '';
                             if ( $mday_start == '-' ) $default = ' selected';
@@ -347,7 +347,7 @@ if ($action == 'delete') {
                <tr>
                    <td><?php echo _("Month Day finish:")?></td>
                   <td>
-                        <select name="mday_finish">
+                        <select name="mday_finish" tabindex="<?php echo ++$tabindex;?>">
                         <?php
                             $default = '';
                             if ( $mday_finish == '-' ) $default = ' selected';
@@ -373,7 +373,7 @@ if ($action == 'delete') {
                          }
                    ?>
                   <td>
-                        <select name="month_start">
+                        <select name="month_start" tabindex="<?php echo ++$tabindex;?>">
                             <?php   
                                 if ( $month_start == '-' ) { $default = ' selected'; }
                                 else {$default = '';}
@@ -431,7 +431,7 @@ if ($action == 'delete') {
                 <tr>
                     <td><?php echo _("Month finish:")?></td>
                     <td>
-                        <select name="month_finish">
+                        <select name="month_finish" tabindex="<?php echo ++$tabindex;?>">
                         <?php   
                                 if ( $month_finish == '-' ) { $default = ' selected'; }
                                 else {$default = '';}
@@ -510,7 +510,7 @@ if (isset($thisItem)) {
 ?>
 
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>"></h6></td>		
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit Changes")?>" tabindex="<?php echo ++$tabindex;?>"></h6></td>		
 	</tr>
 	</table>
 <script language="javascript">
