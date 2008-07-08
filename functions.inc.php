@@ -339,7 +339,9 @@ function timeconditions_timegroups_configpageload() {
 		$description = $savedtimegroup[1];
 		$currentcomponent->addguielem('_top', new gui_hidden('extdisplay', $extdisplay));
 		$currentcomponent->addguielem('_top', new gui_pageheading('title', _("Edit Time Group").": $description", false), 0);
-		$currentcomponent->addguielem('_top', new gui_link('del', _("Delete Time Group")." $timegroup", $delURL, true, false), 0);
+		$tlabel = sprintf(_("Delete Time Group %s"),$extdisplay);
+		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
+		$currentcomponent->addguielem('_top', new gui_link('del', $label, $delURL, true, false), 0);
 		$currentcomponent->addguielem('Time Group', new gui_textbox('description', $description, 'Description', 'This will display as the name of this Time Group.', '', '', false), 3);
 		$timelist = timeconditions_timegroups_get_times($extdisplay);
 		foreach ($timelist as $val) {

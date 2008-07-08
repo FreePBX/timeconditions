@@ -62,25 +62,24 @@ if (isset($timeconditions)) {
 if ($action == 'delete') {
 	echo '<br><h3>'._("Time Condition").' '.$itemid.' '._("deleted").'!</h3>';
 } else {
-	if ($itemid){ 
-		//get details for this time condition
-		$thisItem = timeconditions_get($itemid);
-	}
-
-	$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
 ?>
-
 	<h2><?php echo ($itemid ? _("Time Condition:")." ". $itemid : _("Add Time Condition")); ?></h2>
-<?php		if ($itemid){ ?>
-	<a href="<?php echo $delURL ?>"><?php echo _("Delete Time Condition")?> <?php echo $itemid; ?></a>
-<?php
-					$usage_list = framework_display_destination_usage(timeconditions_getdest($itemid));
-					if (!empty($usage_list)) {
+<?php		
+	if ($itemid){ 
+		$thisItem = timeconditions_get($itemid);
+		$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
+		$tlabel = sprintf(_("Delete Time Condition: %s"),trim($thisItem['displayname']) == '' ? $itemid : $thisItem['displayname']." ($itemid) ");
+		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
-						<br /><a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
+		<a href="<?php echo $delURL ?>"><?php echo $label; ?></a><br />
 <?php
-					}
-				} 
+		$usage_list = framework_display_destination_usage(timeconditions_getdest($itemid));
+		if (!empty($usage_list)) {
+?>
+			<a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
+<?php
+		}
+	} 
 ?>
 	<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
