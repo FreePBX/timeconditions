@@ -255,7 +255,37 @@ function timeconditions_chk($post){
 	return true;
 }
 
+function timeconditions_timegroups_usage($group_id) {
 
+	$results = sql("SELECT timeconditions_id, displayname FROM timeconditions WHERE time = '$group_id'","getAll",DB_FETCHMODE_ASSOC);
+	if (empty($results)) {
+		return array();
+	} else {
+		foreach ($results as $result) {
+			$usage_arr[] = array(
+				"url_query" => "display=timeconditions&itemid=".$result['timeconditions_id'],
+				"description" => $result['displayname'],
+			)
+		}
+		return $usage_arr;
+	}
+}
+
+function timeconditions_timegroups_list_usage($timegroup_id) {
+	global $active_modules;
+	$full_usage_arr = array();
+
+	foreach(array_keys($active_modules) as $mod) {
+		$function = $mod."_timegroups_usage";
+		if (function_exists($function)) {
+			$timegroup_usage = $function($timegroup_id);
+			if (!empty($timegroup_usage)) {
+				$full_usage_arr = array_merge($full_usage_arr, $timegroup_usage);
+			}
+		}
+	}
+	return $full_usage_arr;
+}
 
 /*
 The following functions are available to other modules.
@@ -342,6 +372,16 @@ function timeconditions_timegroups_configpageload() {
 		$tlabel = sprintf(_("Delete Time Group %s"),$extdisplay);
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 		$currentcomponent->addguielem('_top', new gui_link('del', $label, $delURL, true, false), 0);
+
+		$usage_list = timeconditions_timegroups_list_usage($extdisplay);
+		$count = 0;
+		foreach ($usage_list as $link) {
+			$label = '<span><img width="16" height="16" border="0" title="'.$link['description'].'" alt="" src="images/time_link.png"/>&nbsp;'.$link['description'].'</span>';
+			$timegroup_link = $_SERVER['PHP_SELF'].'?'.$link['url_query'];
+			$currentcomponent->addguielem('Used By', new gui_link('link'.$count++, $label, $timegroup_link, true, false), 4);
+		}
+
+
 		$currentcomponent->addguielem('Time Group', new gui_textbox('description', $description, 'Description', 'This will display as the name of this Time Group.', '', '', false), 3);
 		$timelist = timeconditions_timegroups_get_times($extdisplay);
 		foreach ($timelist as $val) {

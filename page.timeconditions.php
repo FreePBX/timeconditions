@@ -101,6 +101,17 @@ if ($action == 'delete') {
 		<td><?php echo timeconditions_timegroups_drawgroupselect('time', (isset($thisItem['time']) ? $thisItem['time'] : ''), true, ''); ?></td>
 	</tr>
 <?php
+	if (isset($thisItem['time']) && $thisItem['time'] != '') {
+
+		$grpURL = $_SERVER['PHP_SELF'].'?display=timegroups&extdisplay='.$thisItem['time'];
+		$tlabel = _("Goto Current Time Group");
+		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/time_edit.png"/>&nbsp;'.$tlabel.'</span>';
+?>
+		<tr>
+			<td> <a href="<?php echo $grpURL ?>"><?php echo "&nbsp;".$label; ?></a></td>
+		<tr>
+<?php
+	}
 	// implementation of module hook
 	// object was initialized in config.php
 	echo $module_hook->hookHtml;
