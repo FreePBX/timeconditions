@@ -265,11 +265,12 @@ function timeconditions_timegroups_usage($group_id) {
 			$usage_arr[] = array(
 				"url_query" => "display=timeconditions&itemid=".$result['timeconditions_id'],
 				"description" => $result['displayname'],
-			)
+			);
 		}
 		return $usage_arr;
 	}
 }
+
 
 function timeconditions_timegroups_list_usage($timegroup_id) {
 	global $active_modules;
