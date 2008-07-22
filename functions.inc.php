@@ -317,6 +317,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time)
 //lists any time groups defined by the user
 function timeconditions_timegroups_list_groups() {
 	global $db;
+	$tmparray = array();
 
 	$sql = "select id, description from timegroups_groups order by description";
 	$results = $db->getAll($sql);
