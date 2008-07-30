@@ -23,7 +23,7 @@ $sql = "
 CREATE TABLE IF NOT EXISTS timeconditions (
 	timeconditions_id INTEGER NOT NULL PRIMARY KEY $autoincrement,
 	displayname VARCHAR( 50 ) ,
-	time VARCHAR( 100 ) ,
+	time INT ( 11 ) ,
 	truegoto VARCHAR( 50 ) ,
 	falsegoto VARCHAR( 50 ),
 	deptname VARCHAR( 50 )
