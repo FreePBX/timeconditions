@@ -30,6 +30,6 @@
 		<timeconditions>Time Conditions</timeconditions>
 		<timegroups>Time Groups</timegroups>
 	</menuitems>
-	<location>release/2.5/timeconditions-2.5.0.2.tgz</location>
-	<md5sum>78c7f362ab54fd8616d60feb69eee01e</md5sum>
+	<location>release/2.5/timeconditions-2.5.0.3.tgz</location>
+	<md5sum>04de24dc331eae59cde07967bab5f273</md5sum>
 </module>
