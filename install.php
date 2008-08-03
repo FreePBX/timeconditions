@@ -17,41 +17,77 @@ if (! function_exists("outn")) {
 	}
 }
 
-$autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
-
-$sql = "
-CREATE TABLE IF NOT EXISTS timeconditions (
-	timeconditions_id INTEGER NOT NULL PRIMARY KEY $autoincrement,
-	displayname VARCHAR( 50 ) ,
-	time INT ( 11 ) ,
-	truegoto VARCHAR( 50 ) ,
-	falsegoto VARCHAR( 50 ),
-	deptname VARCHAR( 50 )
-)";
+if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
+	$sql = "
+	CREATE TABLE IF NOT EXISTS timeconditions (
+		`timeconditions_id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+		`displayname` VARCHAR( 50 ) ,
+		`time` INT( 11 ) ,
+		`truegoto` VARCHAR( 50 ) ,
+		`falsegoto` VARCHAR( 50 ),
+		`deptname` VARCHAR( 50 )
+	)
+	";
+}
+else  {
+	$sql = "
+	CREATE TABLE IF NOT EXISTS timeconditions (
+		`timeconditions_id` INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		`displayname` VARCHAR( 50 ) ,
+		`time` INT( 11 ) ,
+		`truegoto` VARCHAR( 50 ) ,
+		`falsegoto` VARCHAR( 50 ),
+		`deptname` VARCHAR( 50 )
+	)
+	";
+}
 $check = $db->query($sql);
 if(DB::IsError($check)) {
 		die_freepbx("Can not create `timeconditions` table: " .  $check->getMessage() .  "\n");
 }
+if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 
-$sql = "
-CREATE TABLE IF NOT EXISTS `timegroups_groups` (
-  `id` int(11) NOT NULL PRIMARY KEY $autoincrement,
-  `description` varchar(50) NOT NULL default '',
-  UNIQUE KEY `display` (`description`)
-) $autoincrement = 1 
-";
+	$sql = "
+	CREATE TABLE IF NOT EXISTS `timegroups_groups` (
+		`id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+		`description` varchar(50) NOT NULL default '',
+		UNIQUE (`description`)
+	)	
+	";
+}
+else  {
+	$sql = "
+	CREATE TABLE IF NOT EXISTS `timegroups_groups` (
+  		`id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  		`description` varchar(50) NOT NULL default '',
+ 		 UNIQUE KEY `display` (`description`)
+	) AUTO_INCREMENT = 1 
+	";
+}
 $check = $db->query($sql);
 if(DB::IsError($check)) {
 	die_freepbx("Can not create `timeconditions` table: " .  $check->getMessage() .  "\n");
 }
 
-$sql = "
-CREATE TABLE IF NOT EXISTS `timegroups_details` (
-  `id` int(11) NOT NULL PRIMARY KEY $autoincrement,
-  `timegroupid` int(11) NOT NULL default '0',
-  `time` varchar(100) NOT NULL default ''
-) $autoincrement = 1 
-";
+if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
+
+	$sql = "
+	CREATE TABLE IF NOT EXISTS `timegroups_details` (
+		`id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+		`timegroupid` int(11) NOT NULL default '0',
+		`time` varchar(100) NOT NULL default ''
+	) 
+	";
+}
+else  {
+	$sql = "
+	CREATE TABLE IF NOT EXISTS `timegroups_details` (
+		`id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		`timegroupid` int(11) NOT NULL default '0',
+		`time` varchar(100) NOT NULL default ''
+	)
+	";
+}
 $check = $db->query($sql);
 if(DB::IsError($check)) {
 	die_freepbx("Can not create `timeconditions` table: " .  $check->getMessage() .  "\n");
@@ -88,12 +124,15 @@ timeconditions_updatedb();
 /* Alter the time field to int now that it refernces the id field in groups
  */
 outn(_("converting timeconditions time field to int.."));
-$sql = "ALTER TABLE `timeconditions` CHANGE `time` `time` INT (11)";
-$results = $db->query($sql);
-if(DB::IsError($results)) {
-	out(_("ERROR: failed to convert field ").$results->getMessage());
-} else {
-	out(_("OK"));
+// sqlite3 support as of 2.5 has correct table structure built into the CREATE
+if($amp_conf["AMPDBENGINE"] != "sqlite3")  {
+	$sql = "ALTER TABLE `timeconditions` CHANGE `time` `time` INT (11)";
+	$results = $db->query($sql);
+	if(DB::IsError($results)) {
+		out(_("ERROR: failed to convert field ").$results->getMessage());
+	} else {
+		out(_("OK"));
+	}
 }
 
 // bring db up to date on install/upgrade
