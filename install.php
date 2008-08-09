@@ -117,7 +117,7 @@ if (!DB::IsError($results)) { // error - table must not be there
 }
 
 /* Upgrade to 2.5
- * Migrate time condtions to new time condtions groups
+ * Migrate time conditions to new time condtions groups
  */
 timeconditions_updatedb();
 

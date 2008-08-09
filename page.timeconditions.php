@@ -149,7 +149,7 @@ theForm.displayname.focus();
 
 function edit_onsubmit() {
 	var msgInvalidTimeCondName = "<?php echo _('Please enter a valid Time Conditions Name'); ?>";
-	var msgInvalidTimeGroup = "<?php echo _('You have not selected a time group to associate with this timecondtion. It will got to the un-matching destination until you update it with a valid grop'); ?>";
+	var msgInvalidTimeGroup = "<?php echo _('You have not selected a time group to associate with this timecondition. It will got to the un-matching destination until you update it with a valid grop'); ?>";
 	
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value))
