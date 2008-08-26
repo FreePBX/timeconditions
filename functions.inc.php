@@ -364,7 +364,7 @@ function timeconditions_timegroups_configpageload() {
 	$info = '';
 	if (!$extdisplay) {
 		$currentcomponent->addguielem('_top', new gui_pageheading('title', _("Add Time Group"), false), 0);
-		$currentcomponent->addguielem('Time Group', new gui_textbox('description', '', 'Description', 'This will display as the name of this Time Group.', '!isAlphanumeric() || isWhitespace()', $descerr, false), 3);
+		$currentcomponent->addguielem('Time Group', new gui_textbox('description', '', _("Description"), 'This will display as the name of this Time Group.', '!isAlphanumeric() || isWhitespace()', $descerr, false), 3);
 	} else {
 		$savedtimegroup= timeconditions_timegroups_get_group($extdisplay);
 		$timegroup = $savedtimegroup[0];
@@ -380,11 +380,11 @@ function timeconditions_timegroups_configpageload() {
 		foreach ($usage_list as $link) {
 			$label = '<span><img width="16" height="16" border="0" title="'.$link['description'].'" alt="" src="images/time_link.png"/>&nbsp;'.$link['description'].'</span>';
 			$timegroup_link = $_SERVER['PHP_SELF'].'?'.$link['url_query'];
-			$currentcomponent->addguielem('Used By', new gui_link('link'.$count++, $label, $timegroup_link, true, false), 4);
+			$currentcomponent->addguielem(_("Used By"), new gui_link('link'.$count++, $label, $timegroup_link, true, false), 4);
 		}
 
 
-		$currentcomponent->addguielem('Time Group', new gui_textbox('description', $description, 'Description', 'This will display as the name of this Time Group.', '', '', false), 3);
+		$currentcomponent->addguielem(_("Time Group"), new gui_textbox('description', $description, 'Description', 'This will display as the name of this Time Group.', '', '', false), 3);
 		$timelist = timeconditions_timegroups_get_times($extdisplay);
 		foreach ($timelist as $val) {
 			$timehtml = timeconditions_timegroups_drawtimeselects('times['.$val[0].']',$val[1]);
@@ -394,7 +394,7 @@ function timeconditions_timegroups_configpageload() {
 	}
 	$timehtml = timeconditions_timegroups_drawtimeselects('times[new]',null);
 	$timehtml = '<tr><td colspan="2"><table>'.$timehtml.'</table></td></tr>';
-	$currentcomponent->addguielem('New Time', new guielement('dest0', $timehtml, ''),6);
+	$currentcomponent->addguielem(_("New Time"), new guielement('dest0', $timehtml, ''),6);
 	$currentcomponent->addguielem('_top', new gui_hidden('action', ($extdisplay ? 'edit' : 'add')));
 }
 
