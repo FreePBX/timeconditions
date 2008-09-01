@@ -405,7 +405,6 @@ function timeconditions_timegroups_configprocess() {
 	$description= isset($_REQUEST['description'])?$_REQUEST['description']:null;
 	$times = isset($_REQUEST['times'])?$_REQUEST['times']:null;
 
-	//addslashes	
 	switch ($action) {
 		case 'add':
 			timeconditions_timegroups_add_group($description,$times);
