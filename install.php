@@ -123,9 +123,9 @@ timeconditions_updatedb();
 
 /* Alter the time field to int now that it refernces the id field in groups
  */
-outn(_("converting timeconditions time field to int.."));
 // sqlite3 support as of 2.5 has correct table structure built into the CREATE
 if($amp_conf["AMPDBENGINE"] != "sqlite3")  {
+	outn(_("converting timeconditions time field to int.."));
 	$sql = "ALTER TABLE `timeconditions` CHANGE `time` `time` INT (11)";
 	$results = $db->query($sql);
 	if(DB::IsError($results)) {
