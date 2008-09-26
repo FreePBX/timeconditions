@@ -355,7 +355,7 @@ function timeconditions_timegroups_configpageload() {
 	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
 	$action= isset($_REQUEST['action'])?$_REQUEST['action']:null;
 	if ($action == 'del') {
-		$currentcomponent->addguielem('_top', new gui_pageheading('title', _("Time Group").": $extdisplay"." deleted!", false), 0);
+		$currentcomponent->addguielem('_top', new gui_pageheading('title', _("Time Group").": $extdisplay"._(" deleted!"), false), 0);
 		unset($extdisplay);
 	}
 //need to get page name/type dynamically

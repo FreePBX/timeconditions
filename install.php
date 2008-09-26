@@ -158,7 +158,7 @@ function timeconditions_updatedb() {
 					$newtimes = timeconditions_timegroups_get_times($newid);
 					out(sprintf(_("Upgraded %s and created group %s"), $upgrade['displayname'], 'migrated-'.$upgrade['displayname']));
 					if (!is_array($newtimes)) {
-						out(sprintf(_("%sWARNING:%s Not time defined for this condtion, please review"),"<font color='red'>","</font>"));
+						out(sprintf(_("%sWARNING:%s No time defined for this condtion, please review"),"<font color='red'>","</font>"));
 					}
 					unset($times);
 				}
