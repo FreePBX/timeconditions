@@ -15,7 +15,7 @@ function timeconditions_getdestinfo($dest) {
 			return array();
 		} else {
 			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
-			return array('description' => 'Time Conditon : '.$thisexten['displayname'],
+			return array('description' => sprintf(_("Time Condition: %s"),$thisexten['displayname']),
 			             'edit_url' => 'config.php?display=timeconditions&itemid='.urlencode($exten),
 			            );
 		}
@@ -84,7 +84,7 @@ function timeconditions_check_destinations($dest=true) {
 	foreach ($results as $result) {
 		$thisdest    = $result['truegoto'];
 		$thisid      = $result['timeconditions_id'];
-		$description = 'Timecondition: '.$result['displayname'];
+		$description = sprintf(_("Time Condition: %s"),$result['displayname']);
 		$thisurl     = 'config.php?display=timeconditions&itemid='.urlencode($thisid);
 		if ($dest === true || $dest = $thisdest) {
 			$destlist[] = array(
@@ -351,7 +351,7 @@ global $currentcomponent;
 function timeconditions_timegroups_configpageload() {
 	global $currentcomponent;
 
-	$descerr = 'Description must be alpha-numeric, and may not be left blank';
+	$descerr = _("Description must be alpha-numeric, and may not be left blank");
 	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
 	$action= isset($_REQUEST['action'])?$_REQUEST['action']:null;
 	if ($action == 'del') {
@@ -364,7 +364,7 @@ function timeconditions_timegroups_configpageload() {
 	$info = '';
 	if (!$extdisplay) {
 		$currentcomponent->addguielem('_top', new gui_pageheading('title', _("Add Time Group"), false), 0);
-		$currentcomponent->addguielem('Time Group', new gui_textbox('description', '', _("Description"), 'This will display as the name of this Time Group.', '!isAlphanumeric() || isWhitespace()', $descerr, false), 3);
+		$currentcomponent->addguielem(_("Time Group"), new gui_textbox('description', '', _("Description"), _("This will display as the name of this Time Group."), '!isAlphanumeric() || isWhitespace()', $descerr, false), 3);
 	} else {
 		$savedtimegroup= timeconditions_timegroups_get_group($extdisplay);
 		$timegroup = $savedtimegroup[0];
@@ -384,7 +384,7 @@ function timeconditions_timegroups_configpageload() {
 		}
 
 
-		$currentcomponent->addguielem(_("Time Group"), new gui_textbox('description', $description, 'Description', 'This will display as the name of this Time Group.', '', '', false), 3);
+		$currentcomponent->addguielem(_("Time Group"), new gui_textbox('description', $description, _("Description"), _("This will display as the name of this Time Group."), '', '', false), 3);
 		$timelist = timeconditions_timegroups_get_times($extdisplay);
 		foreach ($timelist as $val) {
 			$timehtml = timeconditions_timegroups_drawtimeselects('times['.$val[0].']',$val[1]);

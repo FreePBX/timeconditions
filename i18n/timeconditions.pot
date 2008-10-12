@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-26 21:35+0200\n"
+"POT-Creation-Date: 2008-10-06 12:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: functions.inc.php:18 functions.inc.php:87
+#, php-format
+msgid "Time Condition: %s"
+msgstr ""
+
 #: functions.inc.php:354
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr ""
 
-#: functions.inc.php:358 functions.inc.php:387 page.timegroups.php:21
+#: functions.inc.php:358 functions.inc.php:367 functions.inc.php:387
+#: page.timegroups.php:21
 msgid "Time Group"
 msgstr ""
 
@@ -32,8 +38,12 @@ msgstr ""
 msgid "Add Time Group"
 msgstr ""
 
-#: functions.inc.php:367
+#: functions.inc.php:367 functions.inc.php:387
 msgid "Description"
+msgstr ""
+
+#: functions.inc.php:367 functions.inc.php:387
+msgid "This will display as the name of this Time Group."
 msgstr ""
 
 #: functions.inc.php:373
@@ -280,6 +290,9 @@ msgstr ""
 
 #: module.xml
 msgid "Time Conditions"
+msgstr ""
+
+msgid "Time Groups"
 msgstr ""
 
 #: dirty fix for menus
