@@ -17,6 +17,53 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-5\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: functions.inc.php:358 functions.inc.php:387 page.timegroups.php:21
+msgid "Time Group"
+msgstr "Временная группа"
+
+#: page.timeconditions.php:100
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+"Выбрать группу из списка временных групп. В указаный временной интервал звонки будут "
+"направляться по указанному направлению. Если не выбрано никакой группы, звонки будут "
+"всегда направляться по назначению не попадающему в Правило по времени."
+
+#: functions.inc.php:366
+msgid "Add Time Group"
+msgstr "Добавить временную группу"
+
+#: functions.inc.php:367
+msgid "Description"
+msgstr "Описание"
+
+#: functions.inc.php:367 functions.inc.php:387
+msgid "This will display as the name of this Time Group."
+msgstr "Отображение названия этой временной группы"
+
+#: functions.inc.php:373
+msgid "Edit Time Group"
+msgstr "Изменить временную группу"
+
+#: functions.inc.php:374
+#, c-format
+msgid "Delete Time Group %s"
+msgstr "Удалить временную группу %s"
+
+#: functions.inc.php:383
+msgid "Used By"
+msgstr "Используется"
+
+#: functions.inc.php:397
+msgid "New Time"
+msgstr "Новое время"
+
+#: functions.inc.php:540
+msgid "--Select a Group--"
+msgstr "--Выбрать группу--"
+
 #: page.timeconditions.php:49 page.timeconditions.php:124
 #: page.timeconditions.php:133
 msgid "Add Time Condition"
@@ -182,7 +229,7 @@ msgstr "Назначение, если попадает в Правило по времени"
 
 #: page.timeconditions.php:493
 msgid "Destination if time does not match"
-msgstr "Назначени, если не попадает в Правило по времени"
+msgstr "Назначение, если не попадает в Правило по времени"
 
 msgid "Voicemail"
 msgstr "Голосовая почта"
