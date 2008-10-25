@@ -1,9 +1,48 @@
 <?php /* $Id: install.php $ */
 
-require_once dirname(__FILE__)."/functions.inc.php";
+if (!function_exists("timeconditions_timegroups_add_group_timestrings")) {
+	function timeconditions_timegroups_add_group_timestrings($description,$timestrings) {
+		global $db;
 
-global $db;
-global $amp_conf;
+		$sql = "insert timegroups_groups(description) VALUES ('$description')";
+		$db->query($sql);
+		$timegroup=mysql_insert_id();
+		timeconditions_timegroups_edit_timestrings($timegroup,$timestrings);
+		return $timegroup;
+	}
+}
+
+if (!function_exists("timeconditions_timegroups_get_times")) {
+	function timeconditions_timegroups_get_times($timegroup) {
+		global $db;
+
+		$sql = "select id, time from timegroups_details where timegroupid = $timegroup";
+		$results = $db->getAll($sql);
+		if(DB::IsError($results)) {
+			$results = null;
+		}
+		foreach ($results as $val) {
+			$tmparray[] = array($val[0], $val[1]);
+		}
+		return $tmparray;
+	}
+}
+
+if (!function_exists("timeconditions_timegroups_edit_timestrings")) {
+	function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
+		global $db;
+
+		$sql = "delete from timegroups_details where timegroupid = $timegroup";
+		$db->query($sql);
+		foreach ($timestrings as $key=>$val) {
+			$time = $val;
+			if (isset($time) && $time != '' && $time <> '*|*|*|*') {
+				$sql = "insert timegroups_details (timegroupid, time) values ($timegroup, '$time')";
+				$db->query($sql);
+			}
+		}
+	}
+}
 
 if (! function_exists("out")) {
 	function out($text) {
