@@ -5,212 +5,213 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.5\n"
+"Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-06 12:39+0200\n"
-"PO-Revision-Date: 2008-11-06 14:55+0100\n"
-"Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
-"Language-Team: Italian\n"
+"PO-Revision-Date: 2008-11-03 01:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: Chavdar Iliev <chavdar_75@yahoo.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: functions.inc.php:18
 #: functions.inc.php:87
 #, php-format
 msgid "Time Condition: %s"
-msgstr "Condizione Temporale: %s"
+msgstr "Времево Условие: %s"
 
 #: functions.inc.php:354
 msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "La Descrizione deve essere alfa-numerica, e non può essere lasciata vuota"
+msgstr "Описанието трябва да буквено-цифрено, и не трябва да е празно"
 
 #: functions.inc.php:358
 #: functions.inc.php:367
 #: functions.inc.php:387
 #: page.timegroups.php:21
 msgid "Time Group"
-msgstr "Gruppo Temporale"
+msgstr "Времева Група"
 
 #: functions.inc.php:358
 msgid " deleted!"
-msgstr " eliminato!"
+msgstr "изтрита!"
 
 #: functions.inc.php:366
 msgid "Add Time Group"
-msgstr "Aggiungi Gruppo Temporale"
+msgstr "Добави Времева Група"
 
 #: functions.inc.php:367
 #: functions.inc.php:387
 msgid "Description"
-msgstr "Descrizione"
+msgstr "Описание"
 
 #: functions.inc.php:367
 #: functions.inc.php:387
 msgid "This will display as the name of this Time Group."
-msgstr "Questo sarà il nome del Gruppo Temporale"
+msgstr "Това ще се изпише за име  на тази Времева Група."
 
 #: functions.inc.php:373
 msgid "Edit Time Group"
-msgstr "Modifica Gruppo Temporale"
+msgstr "Редактирай Времева Група"
 
 #: functions.inc.php:374
 #, php-format
 msgid "Delete Time Group %s"
-msgstr "Elimina Gruppo Temporale %s"
+msgstr "Изтрий Времева Група %s"
 
 #: functions.inc.php:383
 msgid "Used By"
-msgstr "Usato da"
+msgstr "Използвана от"
 
 #: functions.inc.php:397
 msgid "New Time"
-msgstr "Nuova Data/Ora"
+msgstr "Ново Време"
 
 #: functions.inc.php:540
 msgid "--Select a Group--"
-msgstr "--Selezionare un Gruppo--"
+msgstr "--Изберете група--"
 
 #: functions.inc.php:546
 msgid "text"
-msgstr "testo"
+msgstr "текст"
 
 #: functions.inc.php:566
 msgid "Time to start:"
-msgstr "Ora iniziale:"
+msgstr "Време (час/минути) за начало:"
 
 #: functions.inc.php:621
 msgid "Time to finish:"
-msgstr "Ora finale:"
+msgstr "Време (час/минути) за край:"
 
 #: functions.inc.php:671
 msgid "Week Day Start:"
-msgstr "Giorno della settimana iniziale:"
+msgstr "Ден от седмицата за начало:"
 
 #: functions.inc.php:686
 #: functions.inc.php:749
 msgid "Monday"
-msgstr "Lunedì"
+msgstr "Понеделник"
 
 #: functions.inc.php:693
 #: functions.inc.php:756
 msgid "Tuesday"
-msgstr "Martedì"
+msgstr "Вторник"
 
 #: functions.inc.php:700
 #: functions.inc.php:763
 msgid "Wednesday"
-msgstr "Mercoledì"
+msgstr "Сряда"
 
 #: functions.inc.php:707
 #: functions.inc.php:770
 msgid "Thursday"
-msgstr "Giovedì"
+msgstr "Четвъртък"
 
 #: functions.inc.php:714
 #: functions.inc.php:777
 msgid "Friday"
-msgstr "Venerdì"
+msgstr "Петък"
 
 #: functions.inc.php:721
 #: functions.inc.php:784
 msgid "Saturday"
-msgstr "Sabato"
+msgstr "Събота"
 
 #: functions.inc.php:728
 #: functions.inc.php:791
 msgid "Sunday"
-msgstr "Domenica"
+msgstr "Неделя"
 
 #: functions.inc.php:733
 msgid "Week Day finish:"
-msgstr "Giorno della settimana finale:"
+msgstr "Ден от седмицата за край:"
 
 #: functions.inc.php:796
 msgid "Month Day start:"
-msgstr "Giorno del mese iniziale:"
+msgstr "Ден от месеца за начало:"
 
 #: functions.inc.php:831
 msgid "Month Day finish:"
-msgstr "Giorno del mese finale:"
+msgstr "Ден от месеца за край:"
 
 #: functions.inc.php:850
 msgid "Month start:"
-msgstr "Mese iniziale:"
+msgstr "Месец за начало:"
 
 #: functions.inc.php:882
 #: functions.inc.php:981
 msgid "January"
-msgstr "Gennaio"
+msgstr "Януари"
 
 #: functions.inc.php:889
 #: functions.inc.php:988
 msgid "February"
-msgstr "Febbraio"
+msgstr "Февруари"
 
 #: functions.inc.php:896
 #: functions.inc.php:995
 msgid "March"
-msgstr "Marzo"
+msgstr "Март"
 
 #: functions.inc.php:903
 #: functions.inc.php:1002
 msgid "April"
-msgstr "Aprile"
+msgstr "Април"
 
 #: functions.inc.php:910
 #: functions.inc.php:1009
 msgid "May"
-msgstr "Maggio"
+msgstr "Май"
 
 #: functions.inc.php:917
 #: functions.inc.php:1016
 msgid "June"
-msgstr "Giugno"
+msgstr "Юни"
 
 #: functions.inc.php:924
 #: functions.inc.php:1023
 msgid "July"
-msgstr "Luglio"
+msgstr "Юли"
 
 #: functions.inc.php:931
 #: functions.inc.php:1030
 msgid "August"
-msgstr "Agosto"
+msgstr "Август"
 
 #: functions.inc.php:938
 #: functions.inc.php:1037
 msgid "September"
-msgstr "Settembre"
+msgstr "Септември"
 
 #: functions.inc.php:945
 #: functions.inc.php:1044
 msgid "October"
-msgstr "Ottobre"
+msgstr "Октомври"
 
 #: functions.inc.php:952
 #: functions.inc.php:1051
 msgid "November"
-msgstr "Novembre"
+msgstr "Ноември"
 
 #: functions.inc.php:959
 #: functions.inc.php:1058
 msgid "December"
-msgstr "Dicembre"
+msgstr "Декември"
 
 #: functions.inc.php:965
 msgid "Month finish:"
-msgstr "Mese finale:"
+msgstr "Месец за край:"
 
 #: install.php:128
 msgid "converting timeconditions time field to int.."
-msgstr "conversione campo data timeconditions verso int.."
+msgstr "конвертиране на полето времеви условия.."
 
 #: install.php:132
 msgid "ERROR: failed to convert field "
-msgstr "ERRORE: conversione campo fallita"
+msgstr "ГРЕШКА: неуспех при конвертиране на полето"
 
 #: install.php:134
 msgid "OK"
@@ -218,163 +219,108 @@ msgstr "OK"
 
 #: install.php:148
 msgid "Checking for old timeconditions to upgrade.."
-msgstr "Sto controllando per le vecchie condizioni temporali da aggiornare.."
+msgstr "Проверка за стари времеви условия за обновяване.."
 
 #: install.php:153
 msgid "starting migration"
-msgstr "inizio migrazione"
+msgstr "стартиране на преместване"
 
 #: install.php:159
 #, php-format
 msgid "Upgraded %s and created group %s"
-msgstr "Aggiornato %s e creato gruppo %s"
+msgstr "Обновени %s и създадени групи %s"
 
 #: install.php:161
 #, php-format
 msgid "%sWARNING:%s No time defined for this condtion, please review"
-msgstr "%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, ricontrollare"
+msgstr "%sВНИМАНИЕ:%s Не е дефинирано време за това условие, моля преразгледайте го"
 
 #: install.php:166
 msgid "no upgrade needed"
-msgstr "nessun upgrade necessario"
+msgstr "не е необходим обновяване"
 
 #: page.timeconditions.php:50
 #: page.timeconditions.php:66
 #: page.timeconditions.php:89
 msgid "Add Time Condition"
-msgstr "Aggiungi Condizione Temporale"
+msgstr "Добави Времево Условие"
 
 #: page.timeconditions.php:63
 msgid "Time Condition"
-msgstr "Condizione Temporale"
+msgstr "Времево Условие"
 
 #: page.timeconditions.php:63
 msgid "deleted"
-msgstr "eliminata"
+msgstr "изтрито"
 
 #: page.timeconditions.php:66
 msgid "Time Condition:"
-msgstr "Condizione Temporale:"
+msgstr "Времево Условие:"
 
 #: page.timeconditions.php:71
 #, php-format
 msgid "Delete Time Condition: %s"
-msgstr "Elimina Condizione Temporale: %s"
+msgstr "Изтрий Времево Условие: %s"
 
 #: page.timeconditions.php:89
 msgid "Edit Time Condition"
-msgstr "Modifica Condizione Temporale"
+msgstr "Редактирай Времево Условие"
 
 #: page.timeconditions.php:96
 msgid "Time Condition name:"
-msgstr "Nome Condizione Temporale:"
+msgstr "Име на Времево Условие:"
 
 #: page.timeconditions.php:96
 msgid "Give this Time Condition a brief name to help you identify it."
-msgstr "Assegnare un nome breve per una facile identificazione."
+msgstr "Дайте на това Времево Условие име за да ви помогне с идентифицирането му."
 
 #: page.timeconditions.php:100
 msgid "Time Group:"
-msgstr "Gruppo Temporale:"
+msgstr "Времева Група:"
 
 #: page.timeconditions.php:100
 msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
-msgstr "Selezionare un Gruppo Temporale creato sotto i Gruppi Temporali. La data/ora corrispondente sarà inviata alla destinazione corrispondente. Se non si seleziona un gruppo, la chiamata sarà inviata sempre alla destinazione non corrispondente."
+msgstr "Изберете Времева Група съдадена в  'Времеви Групи'. При съвпадане на времето ще се изпраща към избраното направление. Ако не е избрана група, обажданията ще се прехвърлят към несъвпадащи направления."
 
 #: page.timeconditions.php:107
 msgid "Goto Current Time Group"
-msgstr "Vai al Gruppo Temporale"
+msgstr "Отиди на Текущата Времева Група"
 
 #: page.timeconditions.php:119
 msgid "Destination if time matches"
-msgstr "Destinazione se la condizione esiste"
+msgstr "Направление ако времето съвпада"
 
 #: page.timeconditions.php:129
 msgid "Destination if time does not match"
-msgstr "Destinazione se la condizione non esiste"
+msgstr "Направление ако времето не съвпада"
 
 #: page.timeconditions.php:141
 msgid "Submit Changes"
-msgstr "Conferma Cambiamenti"
+msgstr "Приеми Промените"
 
 #: page.timeconditions.php:151
 msgid "Please enter a valid Time Conditions Name"
-msgstr "Prego immettere un nome valido per questa Condizione Temporale"
+msgstr "Моля въведете правилно Име на Времево Условие"
 
 #: page.timeconditions.php:152
 msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
-msgstr "Non hai selezionato un gruppo temporale da associare a questa condizione. Andrà alla destinazione non corrispondente fino a quando non si aggiorna con un gruppo valido"
+msgstr "Не сте избрали времева група за асоцииране с това времево условие. Ще се прехвърли към несъвпадащи направления докато не го обновите с коректна група."
 
 #: page.timegroups.php:26
 msgid "Server time:"
-msgstr "Ora server:"
+msgstr "Сървърно Време:"
 
 #: module.xml
 msgid "Time Conditions"
-msgstr "Condizioni Temporali"
+msgstr "Времеви Условия"
 
 msgid "Time Groups"
-msgstr "Gruppi Temporali"
+msgstr "Времеви Групи"
 
 #: dirty fix for menus
 msgid "Add"
-msgstr "Aggiungi"
+msgstr "Добави"
 
 msgid "Submit"
-msgstr "Conferma"
-
-#~ msgid "Time to match:"
-#~ msgstr "Corrispondenza:"
-#~ msgid ""
-#~ "time range|days of week|days of month|months<br><br>you can use an * as a "
-#~ "wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
-#~ msgstr ""
-#~ "Intervallo ora|giorni della settimana|giorni del mese|mesi<br><br>si può "
-#~ "utilizzare * come carattere jolly.<br><br>es: <b>9:00-17:00|mon-fri|*|*</"
-#~ "b><br><br>(mon,tue,wed,thu,fri,sat,sun=<br>lun,mar,mer,gio,ven,sab,dom)"
-#~ msgid "Voicemail"
-#~ msgstr "Caselle Vocali"
-#~ msgid "Extensions"
-#~ msgstr "Interni"
-#~ msgid "Day Night Mode"
-#~ msgstr "Servizio Giorno/Notte"
-#~ msgid "Terminate Call"
-#~ msgstr "Termina Chiamata"
-#~ msgid "Core"
-#~ msgstr "Sistema"
-#~ msgid "Conferences"
-#~ msgstr "Conferenze"
-#~ msgid "Phonebook Directory"
-#~ msgstr "Elenco Telefonico"
-#~ msgid "Queues"
-#~ msgstr "Code"
-#~ msgid "Speed dial functions"
-#~ msgstr "Selezione breve"
-#~ msgid "Custom Contexts"
-#~ msgstr "Contesti Personalizzati"
-#~ msgid "Extended Routing"
-#~ msgstr "Rotte specifiche"
-#~ msgid ""
-#~ "Custom App<span><br>ADVANCED USERS ONLY<br><br>Uses Goto() to send caller "
-#~ "to a custom context.<br><br>The context name should start with \"custom-"
-#~ "\", and be in the format custom-context,extension,priority. Example entry:"
-#~ "<br><br><b>custom-myapp,s,1</b><br><br>The <b>[custom-myapp]</b> context "
-#~ "would need to be created and included in extensions_custom.conf</span>"
-#~ msgstr ""
-#~ "Applicazione Personalizzata<span>SOLO UTENTI AVANZATI<br>Utilizzare Goto"
-#~ "() per inviare la chiamata verso un contesto personalizzato.<br><br>Il "
-#~ "nome del contesto deve iniziare per \"custom-\" e deve essere nel formato "
-#~ "custom-contesto,extension,priorità. Esempio: <br><br><b>custom-app,s,1</"
-#~ "b><br><br><b>Il contesto [custom-app] </b> deve poi essere creato e "
-#~ "incluso nel file extensions_custom.conf</span"
-#~ msgid "Misc Destinations"
-#~ msgstr "Destinazioni Varie"
-#~ msgid "Custom Applications"
-#~ msgstr "Applicazioni Personalizzate"
-#~ msgid "VoiceMail Blasting"
-#~ msgstr "Gruppi di Caselle Vocali"
-#~ msgid "Languages"
-#~ msgstr "Lingue"
-#~ msgid "Announcements"
-#~ msgstr "Annunci"
+msgstr "Приеми"
 
