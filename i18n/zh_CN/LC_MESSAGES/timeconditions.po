@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-06 12:39+0200\n"
+"PO-Revision-Date: 2009-01-31 14:46+0800\n"
+"Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
+"Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: functions.inc.php:18
+#: functions.inc.php:87
+#, php-format
+msgid "Time Condition: %s"
+msgstr "时间条件设置：%s"
+
+#: functions.inc.php:354
+msgid "Description must be alpha-numeric, and may not be left blank"
+msgstr "在描述信息中只能输入数字和英文字母，并且描述不能为空。"
+
+#: functions.inc.php:358
+#: functions.inc.php:367
+#: functions.inc.php:387
+#: page.timegroups.php:21
+msgid "Time Group"
+msgstr "时间小组"
+
+#: functions.inc.php:358
+msgid " deleted!"
+msgstr " 已删除！"
+
+#: functions.inc.php:366
+msgid "Add Time Group"
+msgstr "添加时间条件小组"
+
+#: functions.inc.php:367
+#: functions.inc.php:387
+msgid "Description"
+msgstr "描述"
+
+#: functions.inc.php:367
+#: functions.inc.php:387
+msgid "This will display as the name of this Time Group."
+msgstr "这将作为时间小组的名字显示。"
+
+#: functions.inc.php:373
+msgid "Edit Time Group"
+msgstr "编辑时间小组"
+
+#: functions.inc.php:374
+#, php-format
+msgid "Delete Time Group %s"
+msgstr "删除时间小组%s"
+
+#: functions.inc.php:383
+msgid "Used By"
+msgstr "被谁使用"
+
+#: functions.inc.php:397
+msgid "New Time"
+msgstr "添加时间"
+
+#: functions.inc.php:540
+msgid "--Select a Group--"
+msgstr "--选择一个小组--"
+
+#: functions.inc.php:546
+msgid "text"
+msgstr "文字"
+
+#: functions.inc.php:566
+msgid "Time to start:"
+msgstr "开始时间："
+
+#: functions.inc.php:621
+msgid "Time to finish:"
+msgstr "终止时间："
+
+#: functions.inc.php:671
+msgid "Week Day Start:"
+msgstr "从星期几开始："
+
+#: functions.inc.php:686
+#: functions.inc.php:749
+msgid "Monday"
+msgstr "周一"
+
+#: functions.inc.php:693
+#: functions.inc.php:756
+msgid "Tuesday"
+msgstr "周二"
+
+#: functions.inc.php:700
+#: functions.inc.php:763
+msgid "Wednesday"
+msgstr "周三"
+
+#: functions.inc.php:707
+#: functions.inc.php:770
+msgid "Thursday"
+msgstr "周四"
+
+#: functions.inc.php:714
+#: functions.inc.php:777
+msgid "Friday"
+msgstr "周五"
+
+#: functions.inc.php:721
+#: functions.inc.php:784
+msgid "Saturday"
+msgstr "周六"
+
+#: functions.inc.php:728
+#: functions.inc.php:791
+msgid "Sunday"
+msgstr "周日"
+
+#: functions.inc.php:733
+msgid "Week Day finish:"
+msgstr "在星期几终止："
+
+#: functions.inc.php:796
+msgid "Month Day start:"
+msgstr "在一个月的第几天开始："
+
+#: functions.inc.php:831
+msgid "Month Day finish:"
+msgstr "在一个月的第几天终止："
+
+#: functions.inc.php:850
+msgid "Month start:"
+msgstr "开始月份："
+
+#: functions.inc.php:882
+#: functions.inc.php:981
+msgid "January"
+msgstr "一月"
+
+#: functions.inc.php:889
+#: functions.inc.php:988
+msgid "February"
+msgstr "二月"
+
+#: functions.inc.php:896
+#: functions.inc.php:995
+msgid "March"
+msgstr "三月"
+
+#: functions.inc.php:903
+#: functions.inc.php:1002
+msgid "April"
+msgstr "四月"
+
+#: functions.inc.php:910
+#: functions.inc.php:1009
+msgid "May"
+msgstr "五月"
+
+#: functions.inc.php:917
+#: functions.inc.php:1016
+msgid "June"
+msgstr "六月"
+
+#: functions.inc.php:924
+#: functions.inc.php:1023
+msgid "July"
+msgstr "七月"
+
+#: functions.inc.php:931
+#: functions.inc.php:1030
+msgid "August"
+msgstr "八月"
+
+#: functions.inc.php:938
+#: functions.inc.php:1037
+msgid "September"
+msgstr "九月"
+
+#: functions.inc.php:945
+#: functions.inc.php:1044
+msgid "October"
+msgstr "十月"
+
+#: functions.inc.php:952
+#: functions.inc.php:1051
+msgid "November"
+msgstr "十一月"
+
+#: functions.inc.php:959
+#: functions.inc.php:1058
+msgid "December"
+msgstr "十二月"
+
+#: functions.inc.php:965
+msgid "Month finish:"
+msgstr "终止月份："
+
+#: install.php:128
+msgid "converting timeconditions time field to int.."
+msgstr "正在将时间条件控制的time字段转换成int（整数）。。。"
+
+#: install.php:132
+msgid "ERROR: failed to convert field "
+msgstr "错误：无法转换字段"
+
+#: install.php:134
+msgid "OK"
+msgstr "完成"
+
+#: install.php:148
+msgid "Checking for old timeconditions to upgrade.."
+msgstr "检查是否有老的时间条件设置需要升级。。。"
+
+#: install.php:153
+msgid "starting migration"
+msgstr "开始迁移"
+
+#: install.php:159
+#, php-format
+msgid "Upgraded %s and created group %s"
+msgstr "升级了%s并且创建了小组%s"
+
+#: install.php:161
+#, php-format
+msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgstr "%s警告：%s没有为此条件设置时间，请检查"
+
+#: install.php:166
+msgid "no upgrade needed"
+msgstr "无须升级"
+
+#: page.timeconditions.php:50
+#: page.timeconditions.php:66
+#: page.timeconditions.php:89
+msgid "Add Time Condition"
+msgstr "添加时间条件控制"
+
+#: page.timeconditions.php:63
+msgid "Time Condition"
+msgstr "时间条件"
+
+#: page.timeconditions.php:63
+msgid "deleted"
+msgstr "已删除"
+
+#: page.timeconditions.php:66
+msgid "Time Condition:"
+msgstr "时间条件："
+
+#: page.timeconditions.php:71
+#, php-format
+msgid "Delete Time Condition: %s"
+msgstr "删除时间条件设置：%s"
+
+#: page.timeconditions.php:89
+msgid "Edit Time Condition"
+msgstr "编辑时间条件"
+
+#: page.timeconditions.php:96
+msgid "Time Condition name:"
+msgstr "时间条件命名："
+
+#: page.timeconditions.php:96
+msgid "Give this Time Condition a brief name to help you identify it."
+msgstr "为时间条件控制取一个简短的名字以帮助识别它。"
+
+#: page.timeconditions.php:100
+msgid "Time Group:"
+msgstr "时间小组："
+
+#: page.timeconditions.php:100
+msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
+msgstr "选则你创建过的一个时间小组。呼叫在匹配的时间将发送到匹配的目的地。如果没有选择小组，呼叫总是被发送到处理未匹配情况的目的地。"
+
+#: page.timeconditions.php:107
+msgid "Goto Current Time Group"
+msgstr "转到当前的时间小组"
+
+#: page.timeconditions.php:119
+msgid "Destination if time matches"
+msgstr "时间匹配时的目的地"
+
+#: page.timeconditions.php:129
+msgid "Destination if time does not match"
+msgstr "时间不匹配时的目的地"
+
+#: page.timeconditions.php:141
+msgid "Submit Changes"
+msgstr "提交更改"
+
+#: page.timeconditions.php:151
+msgid "Please enter a valid Time Conditions Name"
+msgstr "请输入有效的时间条件名"
+
+#: page.timeconditions.php:152
+msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
+msgstr "你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目的地，直到你为它更新一个可用的小组"
+
+#: page.timegroups.php:26
+msgid "Server time:"
+msgstr "服务器时间："
+
+#: module.xml
+msgid "Time Conditions"
+msgstr "时间条件设置"
+
+msgid "Time Groups"
+msgstr "时间小组"
+
+#: dirty fix for menus
+msgid "Add"
+msgstr "添加"
+
+msgid "Submit"
+msgstr "提交"
+
+#~ msgid "Time to match:"
+#~ msgstr "要匹配的时间："
+#~ msgid ""
+#~ "time range|days of week|days of month|months<br><br>you can use an * as a "
+#~ "wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
+#~ msgstr ""
+#~ "时间范围|一周中的某天|一月中的某天|月份<br /><br />你可以使用*作为通配符。"
+#~ "<br /><br />例如：<b>9:00-17:00|mon-fri|*|*</b>"
+#~ msgid "Please enter the Time to Match, or set all to - to match all times."
+#~ msgstr "请输入要匹配的时间，或者设定为所有时间，这样用来匹配所有的时间段。"
+#~ msgid "Please select BOTH or NO days, not just one."
+#~ msgstr "请选择两天或不选择，不能只选择一天"
+#~ msgid "Please select BOTH or NO days of the month, not just one."
+#~ msgstr "请在一个月的天数中选择两天或不选择，不能只选择一天"
+#~ msgid "Please select BOTH or NO months, not just one."
+#~ msgstr "请选择两个月份，或不选择，不能只选择一个。"
+
