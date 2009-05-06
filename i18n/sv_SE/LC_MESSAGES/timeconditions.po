@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-06 12:39+0200\n"
-"PO-Revision-Date: 2008-10-12 15:35+0100\n"
+"PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: functions.inc.php:87
 #, php-format
 msgid "Time Condition: %s"
-msgstr "Tidkondition: %s"
+msgstr "Tidsvillkor: %s"
 
 #: functions.inc.php:354
 msgid "Description must be alpha-numeric, and may not be left blank"
@@ -242,11 +242,11 @@ msgstr "ingen uppgradering behövs"
 #: page.timeconditions.php:66
 #: page.timeconditions.php:89
 msgid "Add Time Condition"
-msgstr "Lägg till tidskondition"
+msgstr "Lägg till tidsvillkor"
 
 #: page.timeconditions.php:63
 msgid "Time Condition"
-msgstr "Tidskondition"
+msgstr "Tidsvillkor"
 
 #: page.timeconditions.php:63
 msgid "deleted"
@@ -254,24 +254,24 @@ msgstr "raderad"
 
 #: page.timeconditions.php:66
 msgid "Time Condition:"
-msgstr "Tidskondition:"
+msgstr "Tidsvillkor:"
 
 #: page.timeconditions.php:71
 #, php-format
 msgid "Delete Time Condition: %s"
-msgstr "Ta bort tidskondition: %s"
+msgstr "Ta bort tidsvillkor: %s"
 
 #: page.timeconditions.php:89
 msgid "Edit Time Condition"
-msgstr "Redigera tidskondition"
+msgstr "Redigera tidsvillkor"
 
 #: page.timeconditions.php:96
 msgid "Time Condition name:"
-msgstr "Namn för tidskondition:"
+msgstr "Namn för tidsvillkor:"
 
 #: page.timeconditions.php:96
 msgid "Give this Time Condition a brief name to help you identify it."
-msgstr "Ge denna tidskondition ett kortfattat namn som hjälper dig att identifiera den."
+msgstr "Ge denna tidsvillkor ett kortfattat namn som hjälper dig att identifiera den."
 
 #: page.timeconditions.php:100
 msgid "Time Group:"
@@ -299,11 +299,11 @@ msgstr "Spara ändringar"
 
 #: page.timeconditions.php:151
 msgid "Please enter a valid Time Conditions Name"
-msgstr "Skriv in ett giltigt namn för tidvalet"
+msgstr "Skriv in ett giltigt namn för tidvillkoret"
 
 #: page.timeconditions.php:152
 msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
-msgstr "Du har inte valt en tidgrupp för denna tidkondition. Detta innebär att Destination om tiden inte matchar alltid kommer att vara aktiv."
+msgstr "Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att Destination, om tiden inte matchar, alltid kommer att vara aktiv."
 
 #: page.timegroups.php:26
 msgid "Server time:"
@@ -311,7 +311,7 @@ msgstr "Servertid:"
 
 #: module.xml
 msgid "Time Conditions"
-msgstr "Tidskonditioner"
+msgstr "Tidsvillkor"
 
 msgid "Time Groups"
 msgstr "Tidgrupper"
