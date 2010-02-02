@@ -231,7 +231,7 @@ msgstr "Uppgraderade %s och skapade grupp %s"
 
 #: install.php:161
 #, php-format
-msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr "%sVARNING:%s Ingen tid definierad för denna kondition, kontrollera detta"
 
 #: install.php:166

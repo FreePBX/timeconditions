@@ -231,7 +231,7 @@ msgstr "Aggiornato %s e creato gruppo %s"
 
 #: install.php:161
 #, php-format
-msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr "%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, ricontrollare"
 
 #: install.php:166

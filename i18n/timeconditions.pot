@@ -206,7 +206,7 @@ msgstr ""
 
 #: install.php:161
 #, php-format
-msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
 #: install.php:166

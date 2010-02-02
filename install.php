@@ -156,7 +156,7 @@ if (!DB::IsError($results)) { // error - table must not be there
 }
 
 /* Upgrade to 2.5
- * Migrate time conditions to new time condtions groups
+ * Migrate time conditions to new time conditions groups
  */
 timeconditions_updatedb();
 
@@ -197,7 +197,7 @@ function timeconditions_updatedb() {
 					$newtimes = timeconditions_timegroups_get_times($newid);
 					out(sprintf(_("Upgraded %s and created group %s"), $upgrade['displayname'], 'migrated-'.$upgrade['displayname']));
 					if (!is_array($newtimes)) {
-						out(sprintf(_("%sWARNING:%s No time defined for this condtion, please review"),"<font color='red'>","</font>"));
+						out(sprintf(_("%sWARNING:%s No time defined for this condition, please review"),"<font color='red'>","</font>"));
 					}
 					unset($times);
 				}

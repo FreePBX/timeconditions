@@ -232,7 +232,7 @@ msgstr "升级了%s并且创建了小组%s"
 
 #: install.php:161
 #, php-format
-msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr "%s警告：%s没有为此条件设置时间，请检查"
 
 #: install.php:166

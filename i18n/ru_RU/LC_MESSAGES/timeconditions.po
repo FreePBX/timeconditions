@@ -209,7 +209,7 @@ msgstr "Обновлено %s и создана группа %s"
 
 #: install.php:161
 #, php-format
-msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr "%sВНИМАНИЕ:%s Не указано время для этого правила, просмотрите его ещё раз"
 
 #: install.php:166

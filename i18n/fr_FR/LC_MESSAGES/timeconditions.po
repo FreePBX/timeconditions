@@ -220,7 +220,7 @@ msgstr "%s upgradé et groupe %s créé"
 
 #: install.php:161
 #, php-format
-msgid "%sWARNING:%s No time defined for this condtion, please review"
+msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%SATTENTION !%s Aucun horaire défini pour cette condition, corrigez le "
 "problème"
