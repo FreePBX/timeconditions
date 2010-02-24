@@ -284,7 +284,7 @@ msgid "Destination if time does not match"
 msgstr ""
 
 #: timeconditions/page.timeconditions.php:141
-msgid "Submit Changes"
+msgid "Submit"
 msgstr ""
 
 #: timeconditions/page.timeconditions.php:151
