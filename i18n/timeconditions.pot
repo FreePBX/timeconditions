@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 13:45+0100\n"
+"POT-Creation-Date: 2010-02-27 17:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,289 +28,217 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: timeconditions/functions.inc.php:18 timeconditions/functions.inc.php:87
 #, php-format
 msgid "Time Condition: %s"
 msgstr ""
 
-#: timeconditions/functions.inc.php:354
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr ""
 
-#: timeconditions/functions.inc.php:358 timeconditions/functions.inc.php:367
-#: timeconditions/functions.inc.php:387 timeconditions/page.timegroups.php:21
 msgid "Time Group"
 msgstr ""
 
-#: timeconditions/functions.inc.php:358
 msgid " deleted!"
 msgstr ""
 
-#: timeconditions/functions.inc.php:366
 msgid "Add Time Group"
 msgstr ""
 
-#: timeconditions/functions.inc.php:367 timeconditions/functions.inc.php:387
 msgid "Description"
 msgstr ""
 
-#: timeconditions/functions.inc.php:367 timeconditions/functions.inc.php:387
 msgid "This will display as the name of this Time Group."
 msgstr ""
 
-#: timeconditions/functions.inc.php:373
 msgid "Edit Time Group"
 msgstr ""
 
-#: timeconditions/functions.inc.php:374
 #, php-format
 msgid "Delete Time Group %s"
 msgstr ""
 
-#: timeconditions/functions.inc.php:383
 msgid "Used By"
 msgstr ""
 
-#: timeconditions/functions.inc.php:397
 msgid "New Time"
 msgstr ""
 
-#: timeconditions/functions.inc.php:540
 msgid "--Select a Group--"
 msgstr ""
 
-#: timeconditions/functions.inc.php:546
 msgid "text"
 msgstr ""
 
-#: timeconditions/functions.inc.php:566
 msgid "Time to start:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:621
 msgid "Time to finish:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:671
 msgid "Week Day Start:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:686 timeconditions/functions.inc.php:749
 msgid "Monday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:693 timeconditions/functions.inc.php:756
 msgid "Tuesday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:700 timeconditions/functions.inc.php:763
 msgid "Wednesday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:707 timeconditions/functions.inc.php:770
 msgid "Thursday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:714 timeconditions/functions.inc.php:777
 msgid "Friday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:721 timeconditions/functions.inc.php:784
 msgid "Saturday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:728 timeconditions/functions.inc.php:791
 msgid "Sunday"
 msgstr ""
 
-#: timeconditions/functions.inc.php:733
 msgid "Week Day finish:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:796
 msgid "Month Day start:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:831
 msgid "Month Day finish:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:850
 msgid "Month start:"
 msgstr ""
 
-#: timeconditions/functions.inc.php:882 timeconditions/functions.inc.php:981
 msgid "January"
 msgstr ""
 
-#: timeconditions/functions.inc.php:889 timeconditions/functions.inc.php:988
 msgid "February"
 msgstr ""
 
-#: timeconditions/functions.inc.php:896 timeconditions/functions.inc.php:995
 msgid "March"
 msgstr ""
 
-#: timeconditions/functions.inc.php:903 timeconditions/functions.inc.php:1002
 msgid "April"
 msgstr ""
 
-#: timeconditions/functions.inc.php:910 timeconditions/functions.inc.php:1009
 msgid "May"
 msgstr ""
 
-#: timeconditions/functions.inc.php:917 timeconditions/functions.inc.php:1016
 msgid "June"
 msgstr ""
 
-#: timeconditions/functions.inc.php:924 timeconditions/functions.inc.php:1023
 msgid "July"
 msgstr ""
 
-#: timeconditions/functions.inc.php:931 timeconditions/functions.inc.php:1030
 msgid "August"
 msgstr ""
 
-#: timeconditions/functions.inc.php:938 timeconditions/functions.inc.php:1037
 msgid "September"
 msgstr ""
 
-#: timeconditions/functions.inc.php:945 timeconditions/functions.inc.php:1044
 msgid "October"
 msgstr ""
 
-#: timeconditions/functions.inc.php:952 timeconditions/functions.inc.php:1051
 msgid "November"
 msgstr ""
 
-#: timeconditions/functions.inc.php:959 timeconditions/functions.inc.php:1058
 msgid "December"
 msgstr ""
 
-#: timeconditions/functions.inc.php:965
 msgid "Month finish:"
 msgstr ""
 
-#: timeconditions/install.php:167
 msgid "converting timeconditions time field to int.."
 msgstr ""
 
-#: timeconditions/install.php:171
 msgid "ERROR: failed to convert field "
 msgstr ""
 
-#: timeconditions/install.php:173
 msgid "OK"
 msgstr ""
 
-#: timeconditions/install.php:187
 msgid "Checking for old timeconditions to upgrade.."
 msgstr ""
 
-#: timeconditions/install.php:192
 msgid "starting migration"
 msgstr ""
 
-#: timeconditions/install.php:198
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr ""
 
-#: timeconditions/install.php:200
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
-#: timeconditions/install.php:205
 msgid "no upgrade needed"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:50
-#: timeconditions/page.timeconditions.php:66
-#: timeconditions/page.timeconditions.php:89
 msgid "Add Time Condition"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:63
 msgid "Time Condition"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:63
 msgid "deleted"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:66
 msgid "Time Condition:"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:71
 #, php-format
 msgid "Delete Time Condition: %s"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:89
 msgid "Edit Time Condition"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:96
 msgid "Time Condition name:"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:96
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:100
 msgid "Time Group:"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:100
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
 "match destination."
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:107
 msgid "Goto Current Time Group"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:119
 msgid "Destination if time matches"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:129
 msgid "Destination if time does not match"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:141
 msgid "Submit"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:151
 msgid "Please enter a valid Time Conditions Name"
 msgstr ""
 
-#: timeconditions/page.timeconditions.php:152
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
 msgstr ""
 
-#: timeconditions/page.timegroups.php:26
 msgid "Server time:"
 msgstr ""
 
-#: timeconditions/timeconditions.i18n.php:5
-#: timeconditions/timeconditions.i18n.php:11
 msgid "Time Conditions"
 msgstr ""
 
-#: timeconditions/timeconditions.i18n.php:7
 msgid "Inbound Call Control"
 msgstr ""
 
-#: timeconditions/timeconditions.i18n.php:9
 msgid ""
 "Creates a condition where calls will go to one of two destinations (eg, an "
 "extension, IVR, ring group..) based on the time and/or date. This can be "
@@ -318,6 +246,5 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: timeconditions/timeconditions.i18n.php:13
 msgid "Time Groups"
 msgstr ""
