@@ -529,7 +529,7 @@ function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
 	needreload();
 }
 
-function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = '', $canbeempty = true, $onchange = '') {
+function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = '', $canbeempty = true, $onchange = '', $default_option = '') {
 	global $tabindex;
 	$output = '';
 	$onchange = ($onchange != '') ? " onchange=\"$onchange\"" : '';
@@ -537,7 +537,7 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 	$output .= "\n\t\t\t<select name=\"$elemname\" tabindex=\"".++$tabindex."\" id=\"$elemname\"$onchange>\n";
 	// include blank option if required
 	if ($canbeempty) {
-		$output .= '<option value="">'._("--Select a Group--").'</option>';			
+		$output .= '<option value="">'.($default_option == '' ? _("--Select a Group--") : $default_option).'</option>';			
 	}
 	// build the options
 	$valarray = timeconditions_timegroups_list_groups();
