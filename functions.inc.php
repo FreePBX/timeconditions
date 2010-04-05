@@ -53,6 +53,7 @@ function timeconditions_get_config($engine) {
 			if(is_array($timelist)) {
 				foreach($timelist as $item) {
 					// add dialplan
+          // note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
 					$times = timeconditions_timegroups_get_times($item['time']);
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -420,16 +421,23 @@ function timeconditions_timegroups_configprocess() {
 }
 
 //these are the users time selections for the current timegroup
-function timeconditions_timegroups_get_times($timegroup) {
+function timeconditions_timegroups_get_times($timegroup, $convert=false) {
 	global $db;
+	global $version;
 
+  if ($convert && (!isset($version) || $version == '')) {
+    $engineinfo = engine_getinfo();
+    $version =  $engineinfo['version'];
+    $ast_ge_16 = version_compare($version,'1.6','ge');
+  }
 	$sql = "select id, time from timegroups_details where timegroupid = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
 		$results = null;
 	}
 	foreach ($results as $val) {
-		$tmparray[] = array($val[0], $val[1]);
+    $times = ($convert && $ast_ge_16) ? strtr($val[1],'|',',') : $val[1];
+    $tmparray[] = array($val[0], $times);
 	}
 	return $tmparray;
 }
