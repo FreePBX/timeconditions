@@ -428,6 +428,8 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false) {
   if ($convert && (!isset($version) || $version == '')) {
     $engineinfo = engine_getinfo();
     $version =  $engineinfo['version'];
+  }
+  if ($convert) {
     $ast_ge_16 = version_compare($version,'1.6','ge');
   }
 	$sql = "select id, time from timegroups_details where timegroupid = $timegroup";
