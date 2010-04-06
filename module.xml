@@ -41,6 +41,6 @@
 		<timeconditions>Time Conditions</timeconditions>
 		<timegroups>Time Groups</timegroups>
 	</menuitems>
-	<location>release/2.8/timeconditions-2.8.0.0.tgz</location>
-	<md5sum>f218b6ff8c8d6b88c4f8548b7bfe9de9</md5sum>
+	<location>release/2.8/timeconditions-2.8.0.1.tgz</location>
+	<md5sum>bdede6553340c736fc3b2a7c580cba36</md5sum>
 </module>
