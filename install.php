@@ -177,33 +177,27 @@ if($amp_conf["AMPDBENGINE"] != "sqlite3")  {
 // bring db up to date on install/upgrade
 //
 function timeconditions_updatedb() {
-	$modinfo = module_getinfo('timeconditions');
-	if (is_array($modinfo)) {
-		$ver = $modinfo['timeconditions']['dbversion'];
-
-		// If previous version was older than 2.5 then migrate the timeconditions to groups
-		//
-		if (version_compare_freepbx($ver,'2.5','lt')) { 
-			outn(_("Checking for old timeconditions to upgrade.."));
-			$upgradelist = timeconditions_list_forupgrade();
-			if (isset($upgradelist)) { 
-				// we have old conditions to upgrade
-				//
-				out(_("starting migration"));
-				foreach($upgradelist as $upgrade) {
-					$times[] = $upgrade['time'];
-					$newid = timeconditions_timegroups_add_group_timestrings('migrated-'.$upgrade['displayname'],$times);
-					timeconditions_set_timegroupid($upgrade['timeconditions_id'],$newid);
-					$newtimes = timeconditions_timegroups_get_times($newid);
-					out(sprintf(_("Upgraded %s and created group %s"), $upgrade['displayname'], 'migrated-'.$upgrade['displayname']));
-					if (!is_array($newtimes)) {
-						out(sprintf(_("%sWARNING:%s No time defined for this condition, please review"),"<font color='red'>","</font>"));
-					}
-					unset($times);
+	$ver = modules_getversion('timeconditions');
+	if ($ver !== null && version_compare_freepbx($ver,'2.5','lt')) { 
+		outn(_("Checking for old timeconditions to upgrade.."));
+		$upgradelist = timeconditions_list_forupgrade();
+		if (isset($upgradelist)) { 
+			// we have old conditions to upgrade
+			//
+			out(_("starting migration"));
+			foreach($upgradelist as $upgrade) {
+				$times[] = $upgrade['time'];
+				$newid = timeconditions_timegroups_add_group_timestrings('migrated-'.$upgrade['displayname'],$times);
+				timeconditions_set_timegroupid($upgrade['timeconditions_id'],$newid);
+				$newtimes = timeconditions_timegroups_get_times($newid);
+				out(sprintf(_("Upgraded %s and created group %s"), $upgrade['displayname'], 'migrated-'.$upgrade['displayname']));
+				if (!is_array($newtimes)) {
+					out(sprintf(_("%sWARNING:%s No time defined for this condition, please review"),"<font color='red'>","</font>"));
 				}
-			} else {
-				out(_("no upgrade needed"));
+				unset($times);
 			}
+		} else {
+			out(_("no upgrade needed"));
 		}
 	}
 }
