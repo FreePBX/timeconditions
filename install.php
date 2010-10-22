@@ -1,19 +1,16 @@
 <?php /* $Id: install.php $ */
 
-if (!function_exists("timeconditions_timegroups_add_group_timestrings")) {
-	function timeconditions_timegroups_add_group_timestrings($description,$timestrings) {
+	function _timeconditions_timegroups_add_group_timestrings($description,$timestrings) {
 		global $db;
 
 		$sql = "insert timegroups_groups(description) VALUES ('$description')";
 		$db->query($sql);
 		$timegroup=mysql_insert_id();
-		timeconditions_timegroups_edit_timestrings($timegroup,$timestrings);
+		_timeconditions_timegroups_edit_timestrings($timegroup,$timestrings);
 		return $timegroup;
 	}
-}
 
-if (!function_exists("timeconditions_timegroups_get_times")) {
-	function timeconditions_timegroups_get_times($timegroup) {
+	function _timeconditions_timegroups_get_times($timegroup) {
 		global $db;
 
 		$sql = "select id, time from timegroups_details where timegroupid = $timegroup";
@@ -26,10 +23,8 @@ if (!function_exists("timeconditions_timegroups_get_times")) {
 		}
 		return $tmparray;
 	}
-}
 
-if (!function_exists("timeconditions_timegroups_edit_timestrings")) {
-	function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
+	function _timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
 		global $db;
 
 		$sql = "delete from timegroups_details where timegroupid = $timegroup";
@@ -42,7 +37,6 @@ if (!function_exists("timeconditions_timegroups_edit_timestrings")) {
 			}
 		}
 	}
-}
 
 if (! function_exists("out")) {
 	function out($text) {
@@ -187,9 +181,9 @@ function timeconditions_updatedb() {
 			out(_("starting migration"));
 			foreach($upgradelist as $upgrade) {
 				$times[] = $upgrade['time'];
-				$newid = timeconditions_timegroups_add_group_timestrings('migrated-'.$upgrade['displayname'],$times);
+				$newid = _timeconditions_timegroups_add_group_timestrings('migrated-'.$upgrade['displayname'],$times);
 				timeconditions_set_timegroupid($upgrade['timeconditions_id'],$newid);
-				$newtimes = timeconditions_timegroups_get_times($newid);
+				$newtimes = _timeconditions_timegroups_get_times($newid);
 				out(sprintf(_("Upgraded %s and created group %s"), $upgrade['displayname'], 'migrated-'.$upgrade['displayname']));
 				if (!is_array($newtimes)) {
 					out(sprintf(_("%sWARNING:%s No time defined for this condition, please review"),"<font color='red'>","</font>"));
