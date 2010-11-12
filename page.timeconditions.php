@@ -16,6 +16,8 @@ isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 //the item we are currently displaying
 isset($_REQUEST['itemid'])?$itemid=$db->escapeSimple($_REQUEST['itemid']):$itemid='';
 
+$generate_hint = isset($_POST['generate_hint'])?$_POST['generate_hint']:'0';
+
 $dispnum = "timeconditions"; //used for switch on config.php
 $tabindex = 0;
 
@@ -79,6 +81,7 @@ if ($action == 'delete') {
 			<a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
 		}
+    $generate_hint = $thisItem['generate_hint'] == '1' ? '1' : '0';
 	} 
 ?>
 	<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
@@ -96,6 +99,14 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Time Condition name:")?><span><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span></a></td>
 		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
+<?php if ($amp_conf['USEDEVSTATE']) { ?>
+	<tr>
+  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo _("If set an Asterisk hint will be created for the override feature code associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated")?></span></a></td>
+		<td>
+			<input name="generate_hint" type="checkbox" value="1" <?php echo ($generate_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
+		</td>
+	</tr>
+<?php } ?>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("Time Group:")?><span><?php echo _("Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination.")?></span></a></td>
 		<td><?php echo timeconditions_timegroups_drawgroupselect('time', (isset($thisItem['time']) ? $thisItem['time'] : ''), true, ''); ?></td>

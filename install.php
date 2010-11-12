@@ -58,7 +58,8 @@ if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 		`time` INT( 11 ) ,
 		`truegoto` VARCHAR( 50 ) ,
 		`falsegoto` VARCHAR( 50 ),
-		`deptname` VARCHAR( 50 )
+		`deptname` VARCHAR( 50 ),
+    `generate_hint` TINYINT( 1 ) DEFAULT 0
 	)
 	";
 }
@@ -70,7 +71,8 @@ else  {
 		`time` INT( 11 ) ,
 		`truegoto` VARCHAR( 50 ) ,
 		`falsegoto` VARCHAR( 50 ),
-		`deptname` VARCHAR( 50 )
+		`deptname` VARCHAR( 50 ),
+    `generate_hint` TINYINT( 1 ) DEFAULT 0
 	)
 	";
 }
@@ -166,6 +168,21 @@ if($amp_conf["AMPDBENGINE"] != "sqlite3")  {
 	} else {
 		out(_("OK"));
 	}
+}
+
+outn(_("checking for generate_hint field.."));
+$sql = "SELECT `generate_hint` FROM timeconditions";
+$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+if(DB::IsError($check)) {
+	// add new field
+	$sql = "ALTER TABLE timeconditions ADD `generate_hint` TINYINT( 1 ) DEFAULT 0";
+	$result = $db->query($sql);
+	if(DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	out(_("OK"));
+} else {
+	out(_("already exists"));
 }
 
 // bring db up to date on install/upgrade
