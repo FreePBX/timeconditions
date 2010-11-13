@@ -83,7 +83,7 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/$time_id)",''));
           $skip_dest = 'falsegoto';
           if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
-					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
+					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
             $skip_dest = '';
           }
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
@@ -94,7 +94,7 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/$time_id)",''));
           $skip_dest = 'truegoto';
           if ($amp_conf['USEDEVSTATE'] && $generage_hint) {
-					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
+					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
             $skip_dest = '';
           }
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
@@ -153,7 +153,7 @@ function timeconditions_get_config($engine) {
           }
           $ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE}" = "true"]?false:true)}'));
           if ($amp_conf['USEDEVSTATE']) {
-            $ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?NOT_INUSE:INUSE)}'));
+            $ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?INUSE:NOT_INUSE)}'));
           }
           if ($amp_conf['FCBEEPONLY']) {
             $ext->add($m_context, 's', '', new ext_playback('beep'));
