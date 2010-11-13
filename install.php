@@ -185,6 +185,26 @@ if(DB::IsError($check)) {
 	out(_("already exists"));
 }
 
+  // Generate feature codes for all configured time conditions in case this is being transitioned
+  //
+outn(_("generating feature codes if needed.."));
+$results = sql("SELECT timeconditions_id, displayname FROM timeconditions","getAll",DB_FETCHMODE_ASSOC);
+if (is_array($results)) foreach ($results as $item) {
+  $id = $item['timeconditions_id'];
+  $displayname = $item['displayname'];
+  $fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
+  if ($displayname) {
+    $fcc->setDescription("$id: $displayname");
+  } else {
+    $fcc->setDescription($id._(": Time Condition Override"));
+  }
+  $fcc->setDefault('*27'.$id,false);
+  $fcc->update();
+  unset($fcc);	
+}
+out(_("OK"));
+
+
 // bring db up to date on install/upgrade
 //
 function timeconditions_updatedb() {

@@ -360,9 +360,9 @@ function timeconditions_create_fc($id, $displayname='') {
 	if ($displayname) {
 		$fcc->setDescription("$id: $displayname");
 	} else {
-		$fcc->setDescription("$id: Time Condition Override");
+    $fcc->setDescription($id._(": Time Condition Override"));
 	}
-	$fcc->setDefault('*27'.$id);
+	$fcc->setDefault('*27'.$id,false);
 	$fcc->update();
 	unset($fcc);	
 }
@@ -401,8 +401,6 @@ function timeconditions_edit($id,$post){
 		$displayname = "unnamed";
 	}
 	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\"  WHERE timeconditions_id = \"$id\"");
-
-  timeconditions_create_fc($id, $displayname);
 }
 
 function timeconditions_timegroups_usage($group_id) {
