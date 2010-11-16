@@ -101,7 +101,7 @@ if ($action == 'delete') {
 	</tr>
 <?php if ($amp_conf['USEDEVSTATE']) { ?>
 	<tr>
-  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo _("If set an Asterisk hint will be created for the override feature code associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated")?></span></a></td>
+  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo _("If set an Asterisk hint will be created for the override feature code associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. The Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions.")?></span></a></td>
 		<td>
 			<input name="generate_hint" type="checkbox" value="1" <?php echo ($generate_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
 		</td>
