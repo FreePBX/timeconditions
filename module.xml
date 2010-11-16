@@ -1,7 +1,7 @@
 <module>
 	<rawname>timeconditions</rawname>
 	<name>Time Conditions</name>
-	<version>2.9.0.0</version>
+	<version>2.9.0.1</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<type>setup</type>
@@ -10,6 +10,7 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
+		*2.9.0.1* #4636 typo broke hints
 		*2.9.0.0* #4636 Add Auto-resetting manual override
 		*2.8.0.3* #4584
 		*2.8.0.2* #4309, #4310
@@ -44,6 +45,6 @@
 		<timeconditions>Time Conditions</timeconditions>
 		<timegroups>Time Groups</timegroups>
 	</menuitems>
-	<location>release/2.9/timeconditions-2.9.0.0.tgz</location>
-	<md5sum>a848991931e4d3284be6a085696d13bc</md5sum>
+	<location>release/2.9/timeconditions-2.9.0.1.tgz</location>
+	<md5sum>7de385b705a85f4a1dcf1c94ac0f975d</md5sum>
 </module>
