@@ -373,7 +373,7 @@ function timeconditions_add($post){
 
   $displayname = $db->escapeSimple($post['displayname']);
   $time = $db->escapeSimple($post['time']);
-  $falsegoto = $db->escapeSimple($post[$post['goto1'].'0']);
+  $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
@@ -392,7 +392,7 @@ function timeconditions_edit($id,$post){
   $id = $db->escapeSimple($id);
   $displayname = $db->escapeSimple($post['displayname']);
   $time = $db->escapeSimple($post['time']);
-  $falsegoto = $db->escapeSimple($post[$post['goto1'].'0']);
+  $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
