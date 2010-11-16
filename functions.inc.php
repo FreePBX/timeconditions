@@ -93,7 +93,7 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.')}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/$time_id)",''));
           $skip_dest = 'truegoto';
-          if ($amp_conf['USEDEVSTATE'] && $generage_hint) {
+          if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
 					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
             $skip_dest = '';
           }
@@ -106,7 +106,7 @@ function timeconditions_get_config($engine) {
           unset($fcc);
           if ($c != '') {
             $got_code = true;
-            if ($amp_conf['USEDEVSTATE'] && $generage_hint) {
+            if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
               $ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
             }
             $ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
