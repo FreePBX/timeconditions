@@ -11,7 +11,6 @@
 //MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //GNU General Public License for more details.
 
-
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 //the item we are currently displaying
 isset($_REQUEST['itemid'])?$itemid=$db->escapeSimple($_REQUEST['itemid']):$itemid='';
@@ -82,7 +81,10 @@ if ($action == 'delete') {
 <?php
 		}
     $generate_hint = $thisItem['generate_hint'] == '1' ? '1' : '0';
-	} 
+    $tccode = $thisItem['tccode'] === false ? '' :  $thisItem['tccode'];
+	} else {
+    $tccode = '';
+  }
 ?>
 	<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
@@ -101,9 +103,52 @@ if ($action == 'delete') {
 	</tr>
 <?php if ($amp_conf['USEDEVSTATE']) { ?>
 	<tr>
-  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo _("If set an Asterisk hint will be created for the override feature code associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. The Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions.")?></span></a></td>
+  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo sprintf(_("If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."),$tccode)?></span></a></td>
 		<td>
 			<input name="generate_hint" type="checkbox" value="1" <?php echo ($generate_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
+		</td>
+	</tr>
+<?php } ?>
+
+<?php 
+  if ($itemid && $thisItem['tcstate'] !== false) {
+    $tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
+    switch ($tcstate) {
+      case 'auto':
+        $state_msg = _('No Override');
+      break;
+      case 'true':
+        $state_msg = _('Temporary Override matching state');
+      break;
+      case 'true_sticky':
+        $state_msg = _('Permanent Override matching state');
+      break;
+      case 'false':
+        $state_msg = _('Temporary Override unmatching state');
+      break;
+      case 'false_sticky':
+        $state_msg = _('Permanent Override unmatching state');
+      break;
+      default:
+        $state_msg = _('Unknown State');
+      break;
+    }
+?>
+  <tr>
+		<td><a href="#" class="info"><?php echo _("Current Override:")?><span><?php echo _("Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule.")?></span></a></td>
+    <td><?php echo $state_msg; ?></td>
+	</tr>
+  <tr>
+		<td><a href="#" class="info"><?php echo _("Change Override:")?><span><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatcally reset once the current time span has elapsed. If set to Permanent it will stay overriden until manually reset. All overrides can be removed wih the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applicaions such as an XML based phone options."),$tccode)?></span></a></td>
+    <td>
+      <select name="tcstate_new" tabindex="<?php echo ++$tabindex;?>">
+        <option value="unchanged" SELECTED><?php echo _("Unchanged");?></option>
+        <option value="auto" ><?php echo _("Reset Override");?></option>
+        <option value="true" ><?php echo _("Temporary matched");?></option>
+        <option value="true_sticky" ><?php echo _("Permanently matched");?></option>
+        <option value="false" ><?php echo _("Temporary unmatched");?></option>
+        <option value="false_sticky" ><?php echo _("Permanently unmatched");?></option>
+			</select>
 		</td>
 	</tr>
 <?php } ?>
