@@ -79,7 +79,7 @@ function timeconditions_get_config($engine) {
 							$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
 						}
 					}
-					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):4}" = "true"]','truegoto'));
+					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
           $skip_dest = 'falsegoto';
           if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
@@ -91,7 +91,7 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
           $ext->add($context, $time_id, '', new ext_return(''));
 
-					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):5}" = "false"]','falsegoto'));
+					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
           $skip_dest = 'truegoto';
           if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
@@ -153,7 +153,7 @@ function timeconditions_get_config($engine) {
             $ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','settc'));
             $ext->add($m_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing 0'));
           }
-          $ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE:4}" = "true"]?false:true)}'));
+          $ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE:0:4}" = "true"]?false:true)}'));
           if ($amp_conf['USEDEVSTATE']) {
             $ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?INUSE:NOT_INUSE)}'));
             $ext->add($m_context, 's', '', new ext_execif('$["${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" = "INUSE"]', 'Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=NOT_INUSE'));
