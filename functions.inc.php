@@ -382,6 +382,7 @@ function timeconditions_create_fc($id, $displayname='') {
     $fcc->setDescription($id._(": Time Condition Override"));
 	}
 	$fcc->setDefault('*27'.$id,false);
+  $fcc->setProvideDest();
 	$fcc->update();
 	unset($fcc);	
 }
