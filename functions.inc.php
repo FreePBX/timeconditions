@@ -231,6 +231,15 @@ function timeconditions_check_destinations($dest=true) {
 	return $destlist;
 }
 
+function timeconditions_change_destination($old_dest, $new_dest) {
+	$sql = 'UPDATE timeconditions SET truegoto = "' . $new_dest . '" WHERE truegoto = "' . $old_dest . '"';
+	sql($sql, "query");
+	
+	$sql = 'UPDATE timeconditions SET falsegoto = "' . $new_dest . '" WHERE falsegoto = "' . $old_dest . '"';
+	sql($sql, "query");
+}
+
+
 //get the existing meetme extensions
 function timeconditions_list($getall=false) {
 	$results = sql("SELECT * FROM timeconditions","getAll",DB_FETCHMODE_ASSOC);
@@ -1404,5 +1413,4 @@ function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_
 }
 
 //---------------------------end stolen from timeconditions-------------------------------------
-
 ?>
