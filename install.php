@@ -250,6 +250,9 @@ function timeconditions_list_forupgrade() {
 function timeconditions_set_timegroupid($id, $timegroup) {
 	sql("UPDATE timeconditions SET time = $timegroup WHERE timeconditions_id = $id;");
 }
+
+$freepbx_conf =& freepbx_conf::create();
+
   // TCINTERVAL
   //
   $set['value'] = '60';
