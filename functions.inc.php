@@ -50,10 +50,7 @@ function timeconditions_get_config($engine) {
 
 	switch($engine) {
 		case "asterisk":
-			if ($amp_conf['USEDEVSTATE']) {
-        global $version;
-	      $DEVSTATE = version_compare($version, "1.6", "ge") ? "DEVICE_STATE" : "DEVSTATE";
-			}
+	    $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
 			$timelist = timeconditions_list(true);
 			if(is_array($timelist)) {
         $context = 'timeconditions';
@@ -436,13 +433,7 @@ function timeconditions_edit($id,$post){
   if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
     $tcstate_new = $post['tcstate_new'];
 
-		if ($amp_conf['USEDEVSTATE']) {
-			$engine_info = engine_getinfo();
-			$version = $engine_info['version'];
-			$DEVSTATE = version_compare($version, "1.6", "ge") ? "DEVICE_STATE" : "DEVSTATE";
-		} else {
-			$DEVSTATE = false;
-		}
+	  $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
     if ($astman != null) {
       switch ($tcstate_new) {
         case 'auto':
