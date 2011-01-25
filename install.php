@@ -38,18 +38,6 @@
 		}
 	}
 
-if (! function_exists("out")) {
-	function out($text) {
-		echo $text."<br />";
-	}
-}
-
-if (! function_exists("outn")) {
-	function outn($text) {
-		echo $text;
-	}
-}
-
 if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 	$sql = "
 	CREATE TABLE IF NOT EXISTS timeconditions (
