@@ -608,6 +608,7 @@ function timeconditions_timegroups_configpageload() {
 		foreach ($timelist as $val) {
 			$timehtml = timeconditions_timegroups_drawtimeselects('times['.$val[0].']',$val[1]);
 			$timehtml = '<tr><td colspan="2"><table>'.$timehtml.'</table></td></tr>';
+      $timehtml .= '<tr><td colspan="2"><input type="button" class="remove_section" value="'._("Remove Section and Submit Current Settings").'"/></td></tr>';
 			$currentcomponent->addguielem($val[1], new guielement('dest0', $timehtml, ''),5);
 		}
 	}

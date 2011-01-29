@@ -72,6 +72,13 @@ function updateTime()
 }
 
 updateTime();
+$(document).ready(function(){
+	$(".remove_section").click(function(){
+    if (confirm('<?php echo _("This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?") ?>')) {
+      $(this).parent().parent().prev().remove();
+      $(this).closest('form').submit();
+    }
+  });
+});
 </script>
-
 
