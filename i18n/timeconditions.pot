@@ -14,22 +14,25 @@
 #    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
 #
 # FreePBX language template for timeconditions
-# Copyright (C) 2008, 2009, 2010 Bandwith.com
+# Copyright (C) 2008, 2009, 2010, 2011 Bandwith.com
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-27 17:34+0100\n"
+"POT-Creation-Date: 2011-03-10 22:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #, php-format
 msgid "Time Condition: %s"
+msgstr ""
+
+msgid ": Time Condition Override"
 msgstr ""
 
 msgid "Description must be alpha-numeric, and may not be left blank"
@@ -58,6 +61,9 @@ msgid "Delete Time Group %s"
 msgstr ""
 
 msgid "Used By"
+msgstr ""
+
+msgid "Remove Section and Submit Current Settings"
 msgstr ""
 
 msgid "New Time"
@@ -159,6 +165,15 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
+msgid "checking for generate_hint field.."
+msgstr ""
+
+msgid "already exists"
+msgstr ""
+
+msgid "generating feature codes if needed.."
+msgstr ""
+
 msgid "Checking for old timeconditions to upgrade.."
 msgstr ""
 
@@ -201,6 +216,82 @@ msgstr ""
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 
+msgid "Generate BLF Hint"
+msgstr ""
+
+#, php-format
+msgid ""
+"If set an Asterisk hint will be created for the override feature code %s "
+"associated with this Time Condition that can be used to light BLF buttons on "
+"a phone programmed to enable/disable this Time Condition. If not using a BLF "
+"it is better to leave this un-checked as additional system resources are "
+"required to keep the hint updated. This Feature Code can be found and "
+"enabled/disabled on the Feature Codes tab under Time Conditions."
+msgstr ""
+
+msgid "No Override"
+msgstr ""
+
+msgid "Temporary Override matching state"
+msgstr ""
+
+msgid "Permanent Override matching state"
+msgstr ""
+
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+msgid "Unknown State"
+msgstr ""
+
+msgid "Current Override:"
+msgstr ""
+
+msgid ""
+"Indicates the current state of this Time Condition. If it is in a Temporary "
+"Override state, it will automatically resume at the next time transition "
+"based on the associated Time Group. If in a Permanent Override state, it "
+"will stay in that state until changed here or through other means such as "
+"external XML applications on your phone. If No Override then it functions "
+"normally based on the time schedule."
+msgstr ""
+
+msgid "Change Override:"
+msgstr ""
+
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+
+msgid "Unchanged"
+msgstr ""
+
+msgid "Reset Override"
+msgstr ""
+
+msgid "Temporary matched"
+msgstr ""
+
+msgid "Permanently matched"
+msgstr ""
+
+msgid "Temporary unmatched"
+msgstr ""
+
+msgid "Permanently unmatched"
+msgstr ""
+
 msgid "Time Group:"
 msgstr ""
 
@@ -233,6 +324,11 @@ msgstr ""
 msgid "Server time:"
 msgstr ""
 
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+
 msgid "Time Conditions"
 msgstr ""
 
@@ -247,4 +343,32 @@ msgid ""
 msgstr ""
 
 msgid "Time Groups"
+msgstr ""
+
+msgid "Enable Maintenance Polling"
+msgstr ""
+
+msgid "Time Condition Module"
+msgstr ""
+
+msgid ""
+"If set to false, this will override the execution of the Time Conditons "
+"maintenace task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+
+msgid "Maintenance Polling Interval"
+msgstr ""
+
+msgid ""
+"The polling interval in seconds used by the Time Conditions manintenace "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual overide "
+"during such a period is properly reset when the new period starts."
 msgstr ""
