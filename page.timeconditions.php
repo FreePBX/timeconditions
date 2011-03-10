@@ -139,7 +139,7 @@ if ($action == 'delete') {
     <td><?php echo $state_msg; ?></td>
 	</tr>
   <tr>
-		<td><a href="#" class="info"><?php echo _("Change Override:")?><span><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatcally reset once the current time span has elapsed. If set to Permanent it will stay overriden until manually reset. All overrides can be removed wih the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applicaions such as an XML based phone options."),$tccode)?></span></a></td>
+		<td><a href="#" class="info"><?php echo _("Change Override:")?><span><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."),$tccode)?></span></a></td>
     <td>
       <select name="tcstate_new" tabindex="<?php echo ++$tabindex;?>">
         <option value="unchanged" SELECTED><?php echo _("Unchanged");?></option>
