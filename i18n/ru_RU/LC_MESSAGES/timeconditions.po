@@ -3,389 +3,371 @@
 # This file is distributed under the same license as the freePBX package.
 # Alexander Kozyrev <ceo@postmet.com>, Sergey Nikolayev <sergey@postmet.com>, 2006-2008.
 #
-# ∏·ﬂﬁ€Ï◊ﬁ“–‚Ï iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
+# –ò—Å–ø–æ–ª—å–∑–æ–≤–∞—Ç—å iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
 # fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-06 12:39+0200\n"
+"POT-Creation-Date: 2011-03-30 11:07+0100\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-5\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: functions.inc.php:18 functions.inc.php:87
 #, php-format
 msgid "Time Condition: %s"
-msgstr "ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ: %s"
+msgstr "–ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏: %s"
 
-#: functions.inc.php:354
-msgid "Description must be alpha-numeric, and may not be left blank"
+msgid ": Time Condition Override"
 msgstr ""
-"æﬂÿ·–›ÿ’ ‘ﬁ€÷›ﬁ —Î‚Ï Êÿ‰‡ﬁ-—„⁄“’››ﬁ’, ÿ ›’ "
-"‹ﬁ÷’‚ —Î‚Ï ﬂ„·‚Î‹"
 
-#: functions.inc.php:358 functions.inc.php:367 functions.inc.php:387
-#: page.timegroups.php:21
+msgid "Description must be alpha-numeric, and may not be left blank"
+msgstr "–û–ø–∏—Å–∞–Ω–∏–µ –¥–æ–ª–∂–Ω–æ –±—ã—Ç—å —Ü–∏—Ñ—Ä–æ-–±—É–∫–≤–µ–Ω–Ω–æ–µ, –∏ –Ω–µ –º–æ–∂–µ—Ç –±—ã—Ç—å –ø—É—Å—Ç—ã–º"
+
 msgid "Time Group"
-msgstr "≤‡’‹’››–Ô ”‡„ﬂﬂ–"
+msgstr "–í—Ä–µ–º–µ–Ω–Ω–∞—è –≥—Ä—É–ø–ø–∞"
 
-#: functions.inc.php:358
 msgid " deleted!"
-msgstr "„‘–€’›ﬁ!"
+msgstr "—É–¥–∞–ª–µ–Ω–æ!"
 
-#: functions.inc.php:366
 msgid "Add Time Group"
-msgstr "¥ﬁ—–“ÿ‚Ï “‡’‹’››„Ó ”‡„ﬂﬂ„"
+msgstr "–î–æ–±–∞–≤–∏—Ç—å –≤—Ä–µ–º–µ–Ω–Ω—É—é –≥—Ä—É–ø–ø—É"
 
-#: functions.inc.php:367 functions.inc.php:387
 msgid "Description"
-msgstr "æﬂÿ·–›ÿ’"
+msgstr "–û–ø–∏—Å–∞–Ω–∏–µ"
 
-#: functions.inc.php:367 functions.inc.php:387
 msgid "This will display as the name of this Time Group."
-msgstr "æ‚ﬁ—‡–÷’›ÿ’ ›–◊“–›ÿÔ Ì‚ﬁŸ “‡’‹’››ﬁŸ ”‡„ﬂﬂÎ"
+msgstr "–û—Ç–æ–±—Ä–∞–∂–µ–Ω–∏–µ –Ω–∞–∑–≤–∞–Ω–∏—è —ç—Ç–æ–π –≤—Ä–µ–º–µ–Ω–Ω–æ–π –≥—Ä—É–ø–ø—ã"
 
-#: functions.inc.php:373
 msgid "Edit Time Group"
-msgstr "∏◊‹’›ÿ‚Ï “‡’‹’››„Ó ”‡„ﬂﬂ„"
+msgstr "–ò–∑–º–µ–Ω–∏—Ç—å –≤—Ä–µ–º–µ–Ω–Ω—É—é –≥—Ä—É–ø–ø—É"
 
-#: functions.inc.php:374
 #, php-format
 msgid "Delete Time Group %s"
-msgstr "√‘–€ÿ‚Ï “‡’‹’››„Ó ”‡„ﬂﬂ„ %s"
+msgstr "–£–¥–∞–ª–∏—Ç—å –≤—Ä–µ–º–µ–Ω–Ω—É—é –≥—Ä—É–ø–ø—É %s"
 
-#: functions.inc.php:383
 msgid "Used By"
-msgstr "∏·ﬂﬁ€Ï◊„’‚·Ô"
+msgstr "–ò—Å–ø–æ–ª—å–∑—É–µ—Ç—Å—è"
 
-#: functions.inc.php:397
+msgid "Remove Section and Submit Current Settings"
+msgstr ""
+
 msgid "New Time"
-msgstr "Ωﬁ“ﬁ’ “‡’‹Ô"
+msgstr "–ù–æ–≤–æ–µ –≤—Ä–µ–º—è"
 
-#: functions.inc.php:540
 msgid "--Select a Group--"
-msgstr "--≤Î—‡–‚Ï ”‡„ﬂﬂ„--"
+msgstr "--–í—ã–±—Ä–∞—Ç—å –≥—Ä—É–ø–ø—É--"
 
-#: functions.inc.php:546
 msgid "text"
-msgstr "‚’⁄·‚"
+msgstr "—Ç–µ–∫—Å—Ç"
 
-#: functions.inc.php:566
 msgid "Time to start:"
-msgstr "≤‡’‹Ô ›–Á–€–:"
+msgstr "–í—Ä–µ–º—è –Ω–∞—á–∞–ª–∞:"
 
-#: functions.inc.php:621
 msgid "Time to finish:"
-msgstr "≤‡’‹Ô ﬁ⁄ﬁ›Á–›ÿÔ:"
+msgstr "–í—Ä–µ–º—è –æ–∫–æ–Ω—á–∞–Ω–∏—è:"
 
-#: functions.inc.php:671
-msgid "Week Day Start:"
-msgstr "¥’›Ï ›’‘’€ÿ, ›–Á–€ﬁ:"
+msgid "Week Day start:"
+msgstr "–î–µ–Ω—å –Ω–µ–¥–µ–ª–∏, –Ω–∞—á–∞–ª–æ:"
 
-#: functions.inc.php:686 functions.inc.php:749
 msgid "Monday"
-msgstr "øﬁ›’‘’€Ï›ÿ⁄"
+msgstr "–ü–æ–Ω–µ–¥–µ–ª—å–Ω–∏–∫"
 
-#: functions.inc.php:693 functions.inc.php:756
 msgid "Tuesday"
-msgstr "≤‚ﬁ‡›ÿ⁄"
+msgstr "–í—Ç–æ—Ä–Ω–∏–∫"
 
-#: functions.inc.php:700 functions.inc.php:763
 msgid "Wednesday"
-msgstr "¡‡’‘–"
+msgstr "–°—Ä–µ–¥–∞"
 
-#: functions.inc.php:707 functions.inc.php:770
 msgid "Thursday"
-msgstr "«’‚“’‡”"
+msgstr "–ß–µ—Ç–≤–µ—Ä–≥"
 
-#: functions.inc.php:714 functions.inc.php:777
 msgid "Friday"
-msgstr "øÔ‚›ÿÊ–"
+msgstr "–ü—è—Ç–Ω–∏—Ü–∞"
 
-#: functions.inc.php:721 functions.inc.php:784
 msgid "Saturday"
-msgstr "¡„——ﬁ‚–"
+msgstr "–°—É–±–±–æ—Ç–∞"
 
-#: functions.inc.php:728 functions.inc.php:791
 msgid "Sunday"
-msgstr "≤ﬁ·⁄‡’·’›Ï’"
+msgstr "–í–æ—Å–∫—Ä–µ—Å–µ–Ω—å–µ"
 
-#: functions.inc.php:733
 msgid "Week Day finish:"
-msgstr "¥’›Ï ›’‘’€ÿ, ﬁ⁄ﬁ›Á–›ÿ’:"
+msgstr "–î–µ–Ω—å –Ω–µ–¥–µ–ª–∏, –æ–∫–æ–Ω—á–∞–Ω–∏–µ:"
 
-#: functions.inc.php:796
 msgid "Month Day start:"
-msgstr "¥’›Ï ‹’·ÔÊ–, ›–Á–€ﬁ:"
+msgstr "–î–µ–Ω—å –º–µ—Å—è—Ü–∞, –Ω–∞—á–∞–ª–æ:"
 
-#: functions.inc.php:831
 msgid "Month Day finish:"
-msgstr "¥’›Ï ‹’·ÔÊ–, ﬁ⁄ﬁ›Á–›ÿ’:"
+msgstr "–î–µ–Ω—å –º–µ—Å—è—Ü–∞, –æ–∫–æ–Ω—á–∞–Ω–∏–µ:"
 
-#: functions.inc.php:850
 msgid "Month start:"
-msgstr "º’·ÔÊ, ›–Á–€ﬁ:"
+msgstr "–ú–µ—Å—è—Ü, –Ω–∞—á–∞–ª–æ:"
 
-#: functions.inc.php:882 functions.inc.php:981
 msgid "January"
-msgstr "œ›“–‡Ï"
+msgstr "–Ø–Ω–≤–∞—Ä—å"
 
-#: functions.inc.php:889 functions.inc.php:988
 msgid "February"
-msgstr "ƒ’“‡–€Ï"
+msgstr "–§–µ–≤—Ä–∞–ª—å"
 
-#: functions.inc.php:896 functions.inc.php:995
 msgid "March"
-msgstr "º–‡‚"
+msgstr "–ú–∞—Ä—Ç"
 
-#: functions.inc.php:903 functions.inc.php:1002
 msgid "April"
-msgstr "∞ﬂ‡’€Ï"
+msgstr "–ê–ø—Ä–µ–ª—å"
 
-#: functions.inc.php:910 functions.inc.php:1009
 msgid "May"
-msgstr "º–Ÿ"
+msgstr "–ú–∞–π"
 
-#: functions.inc.php:917 functions.inc.php:1016
 msgid "June"
-msgstr "∏Ó›Ï"
+msgstr "–ò—é–Ω—å"
 
-#: functions.inc.php:924 functions.inc.php:1023
 msgid "July"
-msgstr "∏Ó€Ï"
+msgstr "–ò—é–ª—å"
 
-#: functions.inc.php:931 functions.inc.php:1030
 msgid "August"
-msgstr "∞“”„·‚"
+msgstr "–ê–≤–≥—É—Å—Ç"
 
-#: functions.inc.php:938 functions.inc.php:1037
 msgid "September"
-msgstr "¡’›‚Ô—‡Ï"
+msgstr "–°–µ–Ω—Ç—è–±—Ä—å"
 
-#: functions.inc.php:945 functions.inc.php:1044
 msgid "October"
-msgstr "æ⁄‚Ô—‡Ï"
+msgstr "–û–∫—Ç—è–±—Ä—å"
 
-#: functions.inc.php:952 functions.inc.php:1051
 msgid "November"
-msgstr "ΩﬁÔ—‡Ï"
+msgstr "–ù–æ—è–±—Ä—å"
 
-#: functions.inc.php:959 functions.inc.php:1058
 msgid "December"
-msgstr "¥’⁄–—‡Ï"
+msgstr "–î–µ–∫–∞–±—Ä—å"
 
-#: functions.inc.php:965
 msgid "Month finish:"
-msgstr "º’·ÔÊ, ﬁ⁄ﬁ›Á–›ÿ’:"
+msgstr "–ú–µ—Å—è—Ü, –æ–∫–æ–Ω—á–∞–Ω–∏–µ:"
 
-#: install.php:128
 msgid "converting timeconditions time field to int.."
-msgstr "ﬂﬁ€’ ‘€Ô ﬂ‡–“ÿ€– ﬂﬁ “‡’‹’›ÿ ⁄ﬁ›“’‡‚ÿ‡„’‚·Ô “ .."
+msgstr "–ø–æ–ª–µ –¥–ª—è –ø—Ä–∞–≤–∏–ª–∞ –ø–æ –≤—Ä–µ–º–µ–Ω–∏ –∫–æ–Ω–≤–µ—Ä—Ç–∏—Ä—É–µ—Ç—Å—è –≤ .."
 
-#: install.php:132
 msgid "ERROR: failed to convert field "
-msgstr "æ»∏±∫∞: ›’ „‘–€ﬁ·Ï ·⁄ﬁ›“’‡‚ÿ‡ﬁ“–‚Ï ﬂﬁ€’ "
+msgstr "–û–®–ò–ë–ö–ê: –Ω–µ —É–¥–∞–ª–æ—Å—å —Å–∫–æ–Ω–≤–µ—Ä—Ç–∏—Ä–æ–≤–∞—Ç—å –ø–æ–ª–µ "
 
-#: install.php:134
 msgid "OK"
-msgstr "æ∫"
+msgstr "–û–ö"
 
-#: install.php:148
+msgid "checking for generate_hint field.."
+msgstr ""
+
+msgid "already exists"
+msgstr ""
+
+msgid "generating feature codes if needed.."
+msgstr ""
+
 msgid "Checking for old timeconditions to upgrade.."
-msgstr "ø‡ﬁ“’‡Ô’‹ ·‚–‡Î’ ﬂ‡–“ÿ€– ﬂﬁ “‡’‹’›ÿ ‘€Ô ﬁ—›ﬁ“€’›ÿÔ.."
+msgstr "–ü—Ä–æ–≤–µ—Ä—è–µ–º —Å—Ç–∞—Ä—ã–µ –ø—Ä–∞–≤–∏–ª–∞ –ø–æ –≤—Ä–µ–º–µ–Ω–∏ –¥–ª—è –æ–±–Ω–æ–≤–ª–µ–Ω–∏—è.."
 
-#: install.php:153
 msgid "starting migration"
-msgstr "›–Áÿ›–’‹ ‹”‡–ÊÿÓ"
+msgstr "–Ω–∞—á–∏–Ω–∞–µ–º –º–≥—Ä–∞—Ü–∏—é"
 
-#: install.php:159
 #, php-format
 msgid "Upgraded %s and created group %s"
-msgstr "æ—›ﬁ“€’›ﬁ %s ÿ ·ﬁ◊‘–›– ”‡„ﬂﬂ– %s"
+msgstr "–û–±–Ω–æ–≤–ª–µ–Ω–æ %s –∏ —Å–æ–∑–¥–∞–Ω–∞ –≥—Ä—É–ø–ø–∞ %s"
 
-#: install.php:161
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
-msgstr "%s≤Ω∏º∞Ω∏µ:%s Ω’ „⁄–◊–›ﬁ “‡’‹Ô ‘€Ô Ì‚ﬁ”ﬁ ﬂ‡–“ÿ€–, ﬂ‡ﬁ·‹ﬁ‚‡ÿ‚’ ’”ﬁ ’ÈÒ ‡–◊"
+msgstr ""
+"%s–í–ù–ò–ú–ê–ù–ò–ï:%s –ù–µ —É–∫–∞–∑–∞–Ω–æ –≤—Ä–µ–º—è –¥–ª—è —ç—Ç–æ–≥–æ –ø—Ä–∞–≤–∏–ª–∞, –ø—Ä–æ—Å–º–æ—Ç—Ä–∏—Ç–µ –µ–≥–æ –µ—â—ë —Ä–∞–∑"
 
-#: install.php:166
 msgid "no upgrade needed"
-msgstr "ﬁ—›ﬁ“€’›ÿÔ ›’ ‚‡’—„’‚·Ô"
+msgstr "–æ–±–Ω–æ–≤–ª–µ–Ω–∏—è –Ω–µ —Ç—Ä–µ–±—É–µ—Ç—Å—è"
 
-#: page.timeconditions.php:50 page.timeconditions.php:66
-#: page.timeconditions.php:89
 msgid "Add Time Condition"
-msgstr "¥ﬁ—–“ÿ‚Ï “‡’‹’››ﬁ’ ﬂ‡–“ÿ€ﬁ"
+msgstr "–î–æ–±–∞–≤–∏—Ç—å –≤—Ä–µ–º–µ–Ω–Ω–æ–µ –ø—Ä–∞–≤–∏–ª–æ"
 
-#: page.timeconditions.php:63
 msgid "Time Condition"
-msgstr "ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ"
+msgstr "–ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
 
-#: page.timeconditions.php:63
 msgid "deleted"
-msgstr "„‘–€’›ﬁ"
+msgstr "—É–¥–∞–ª–µ–Ω–æ"
 
-#: page.timeconditions.php:66
 msgid "Time Condition:"
-msgstr "ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ:"
+msgstr "–ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏:"
 
-#: page.timeconditions.php:71
 #, php-format
 msgid "Delete Time Condition: %s"
-msgstr "√‘–€ÿ‚Ï ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ"
+msgstr "–£–¥–∞–ª–∏—Ç—å –ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
 
-#: page.timeconditions.php:89
 msgid "Edit Time Condition"
-msgstr "¿’‘–⁄‚ÿ‡ﬁ“–‚Ï ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ"
+msgstr "–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞—Ç—å –ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
 
-#: page.timeconditions.php:96
 msgid "Time Condition name:"
-msgstr "Ω–◊“–›ÿ’ ø‡–“ÿ€– ﬂﬁ “‡’‹’›ÿ:"
+msgstr "–ù–∞–∑–≤–∞–Ω–∏–µ –ü—Ä–∞–≤–∏–ª–∞ –ø–æ –≤—Ä–µ–º–µ–Ω–∏:"
 
-#: page.timeconditions.php:96
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
-"≈ﬁ‡ﬁËﬁ —Î ﬂ‡ÿ·“ﬁÿ‚Ï ⁄–⁄ﬁ’-‚ﬁ ﬁﬂÿ·–›ÿ’ ‘€Ô "
-"ø‡–“ÿ€– ﬂﬁ “‡’‹’›ÿ, Ì‚ﬁ ﬂﬁ‹ﬁ÷’‚ “ ‘–€Ï›’ŸË’‹."
+"–•–æ—Ä–æ—à–æ –±—ã –ø—Ä–∏—Å–≤–æ–∏—Ç—å –∫–∞–∫–æ–µ-—Ç–æ –æ–ø–∏—Å–∞–Ω–∏–µ –¥–ª—è –ü—Ä–∞–≤–∏–ª–∞ –ø–æ –≤—Ä–µ–º–µ–Ω–∏, —ç—Ç–æ –ø–æ–º–æ–∂–µ—Ç –≤ "
+"–¥–∞–ª—å–Ω–µ–π—à–µ–º."
 
-#: page.timeconditions.php:100
+msgid "Generate BLF Hint"
+msgstr ""
+
+#, php-format
+msgid ""
+"If set an Asterisk hint will be created for the override feature code %s "
+"associated with this Time Condition that can be used to light BLF buttons on "
+"a phone programmed to enable/disable this Time Condition. If not using a BLF "
+"it is better to leave this un-checked as additional system resources are "
+"required to keep the hint updated. This Feature Code can be found and "
+"enabled/disabled on the Feature Codes tab under Time Conditions."
+msgstr ""
+
+msgid "No Override"
+msgstr ""
+
+msgid "Temporary Override matching state"
+msgstr ""
+
+msgid "Permanent Override matching state"
+msgstr ""
+
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+msgid "Unknown State"
+msgstr ""
+
+msgid "Current Override:"
+msgstr ""
+
+msgid ""
+"Indicates the current state of this Time Condition. If it is in a Temporary "
+"Override state, it will automatically resume at the next time transition "
+"based on the associated Time Group. If in a Permanent Override state, it "
+"will stay in that state until changed here or through other means such as "
+"external XML applications on your phone. If No Override then it functions "
+"normally based on the time schedule."
+msgstr ""
+
+msgid "Change Override:"
+msgstr ""
+
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+
+msgid "Unchanged"
+msgstr ""
+
+msgid "Reset Override"
+msgstr ""
+
+msgid "Temporary matched"
+msgstr ""
+
+msgid "Permanently matched"
+msgstr ""
+
+msgid "Temporary unmatched"
+msgstr ""
+
+msgid "Permanently unmatched"
+msgstr ""
+
 msgid "Time Group:"
-msgstr "≤‡’‹’››–Ô ”‡„ﬂﬂ–:"
+msgstr "–í—Ä–µ–º–µ–Ω–Ω–∞—è –≥—Ä—É–ø–ø–∞:"
 
-#: page.timeconditions.php:100
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
 "match destination."
 msgstr ""
-"≤Î—‡–‚Ï ”‡„ﬂﬂ„ ÿ◊ ·ﬂÿ·⁄– “‡’‹’››ÎÂ ”‡„ﬂﬂ. ≤ „⁄–◊–›ÎŸ “‡’‹’››ﬁŸ ÿ›‚’‡“–€ ◊“ﬁ›⁄ÿ "
-"—„‘„‚ ›–ﬂ‡–“€Ô‚Ï·Ô ﬂﬁ „⁄–◊–››ﬁ‹„ ›–ﬂ‡–“€’›ÿÓ. "
-"µ·€ÿ ›’ “Î—‡–›ﬁ ›ÿ⁄–⁄ﬁŸ ”‡„ﬂﬂÎ, ◊“ﬁ›⁄ÿ —„‘„‚ "
-"“·’”‘– ›–ﬂ‡–“€Ô‚Ï·Ô ﬂﬁ ›–◊›–Á’›ÿÓ ›’ "
-"ﬂﬁﬂ–‘–ÓÈ’‹„ “ ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ."
+"–í—ã–±—Ä–∞—Ç—å –≥—Ä—É–ø–ø—É –∏–∑ —Å–ø–∏—Å–∫–∞ –≤—Ä–µ–º–µ–Ω–Ω—ã—Ö –≥—Ä—É–ø–ø. –í —É–∫–∞–∑–∞–Ω—ã–π –≤—Ä–µ–º–µ–Ω–Ω–æ–π –∏–Ω—Ç–µ—Ä–≤–∞–ª "
+"–∑–≤–æ–Ω–∫–∏ –±—É–¥—É—Ç –Ω–∞–ø—Ä–∞–≤–ª—è—Ç—å—Å—è –ø–æ —É–∫–∞–∑–∞–Ω–Ω–æ–º—É –Ω–∞–ø—Ä–∞–≤–ª–µ–Ω–∏—é. –ï—Å–ª–∏ –Ω–µ –≤—ã–±—Ä–∞–Ω–æ –Ω–∏–∫–∞–∫–æ–π "
+"–≥—Ä—É–ø–ø—ã, –∑–≤–æ–Ω–∫–∏ –±—É–¥—É—Ç –≤—Å–µ–≥–¥–∞ –Ω–∞–ø—Ä–∞–≤–ª—è—Ç—å—Å—è –ø–æ –Ω–∞–∑–Ω–∞—á–µ–Ω–∏—é –Ω–µ –ø–æ–ø–∞–¥–∞—é—â–µ–º—É –≤ "
+"–ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏."
 
-#: page.timeconditions.php:107
 msgid "Goto Current Time Group"
-msgstr "ø’‡’ﬂ‡–“ÿÏ “ ‚’⁄„È„Ó “‡’‹’››„Ó ”‡„ﬂﬂ„"
+msgstr "–ü–µ—Ä–µ–ø—Ä–∞–≤–∏—å –≤ —Ç–µ–∫—É—â—É—é –≤—Ä–µ–º–µ–Ω–Ω—É—é –≥—Ä—É–ø–ø—É"
 
-#: page.timeconditions.php:119
 msgid "Destination if time matches"
-msgstr ""
-"Ω–◊›–Á’›ÿ’, ’·€ÿ ﬂﬁﬂ–‘–’‚ “ ø‡–“ÿ€ﬁ ﬂﬁ "
-"“‡’‹’›ÿ"
+msgstr "–ù–∞–∑–Ω–∞—á–µ–Ω–∏–µ, –µ—Å–ª–∏ –ø–æ–ø–∞–¥–∞–µ—Ç –≤ –ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
 
-#: page.timeconditions.php:129
 msgid "Destination if time does not match"
-msgstr ""
-"Ω–◊›–Á’›ÿ’, ’·€ÿ ›’ ﬂﬁﬂ–‘–’‚ “ ø‡–“ÿ€ﬁ ﬂﬁ "
-"“‡’‹’›ÿ"
+msgstr "–ù–∞–∑–Ω–∞—á–µ–Ω–∏–µ, –µ—Å–ª–∏ –Ω–µ –ø–æ–ø–∞–¥–∞–µ—Ç –≤ –ü—Ä–∞–≤–∏–ª–æ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
 
-#: page.timeconditions.php:141
-msgid "Submit Changes"
-msgstr "ø‡ÿ‹’›ÿ‚Ï ÿ◊‹’›’›ÿÔ"
+msgid "Submit"
+msgstr "–ü—Ä–∏–º–µ–Ω–∏—Ç—å"
 
-#: page.timeconditions.php:151
 msgid "Please enter a valid Time Conditions Name"
-msgstr "≤Î—‡–‚Ï ‡–◊‡’ËÒ››ﬁ’ ›–◊“–›ÿ’ ‘€Ô ø‡–“ÿ€– ﬂﬁ “‡’‹’›ÿ"
+msgstr "–í—ã–±—Ä–∞—Ç—å —Ä–∞–∑—Ä–µ—à—ë–Ω–Ω–æ–µ –Ω–∞–∑–≤–∞–Ω–∏–µ –¥–ª—è –ü—Ä–∞–≤–∏–ª–∞ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
 
-#: page.timeconditions.php:152
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
 msgstr ""
-"Ω’ “Î—‡–›– ›ÿ ﬁ‘›– “‡’‹’››–Ô ”‡„ﬂﬂ– ‘€Ô –··ﬁÊÿ–Êÿÿ · Ì‚ÿ‹ ﬂ‡–“ÿ€ﬁ‹ ﬂﬁ “‡’‹’›ÿ. "
-"≤Âﬁ‘ÔÈÿŸ ◊“ﬁ›ﬁ⁄ —„‘’‚ ›–ﬂ‡–“€’› “ ›’‡–·ﬂﬁ◊›–››ﬁ’ ›–◊›–Á’›ÿ’ ﬂﬁ⁄– ›’ —„‘’‚ “Î—‡–›– ⁄–⁄–Ô-€ÿ—ﬁ ”‡„ﬂﬂ–" 
+"–ù–µ –≤—ã–±—Ä–∞–Ω–∞ –Ω–∏ –æ–¥–Ω–∞ –≤—Ä–µ–º–µ–Ω–Ω–∞—è –≥—Ä—É–ø–ø–∞ –¥–ª—è –∞—Å—Å–æ—Ü–∏–∞—Ü–∏–∏ —Å —ç—Ç–∏–º –ø—Ä–∞–≤–∏–ª–æ–º –ø–æ "
+"–≤—Ä–µ–º–µ–Ω–∏. –í—Ö–æ–¥—è—â–∏–π –∑–≤–æ–Ω–æ–∫ –±—É–¥–µ—Ç –Ω–∞–ø—Ä–∞–≤–ª–µ–Ω –≤ –Ω–µ—Ä–∞—Å–ø–æ–∑–Ω–∞–Ω–Ω–æ–µ –Ω–∞–∑–Ω–∞—á–µ–Ω–∏–µ –ø–æ–∫–∞ –Ω–µ "
+"–±—É–¥–µ—Ç –≤—ã–±—Ä–∞–Ω–∞ –∫–∞–∫–∞—è-–ª–∏–±–æ –≥—Ä—É–ø–ø–∞"
 
-#: page.timegroups.php:26
 msgid "Server time:"
-msgstr "¬ﬁÁ›ﬁ’ “‡’‹Ô (·’‡“’‡–):"
+msgstr "–¢–æ—á–Ω–æ–µ –≤—Ä–µ–º—è (—Å–µ—Ä–≤–µ—Ä–∞):"
 
-#: module.xml
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+
 msgid "Time Conditions"
-msgstr "ø‡–“ÿ€– ﬂﬁ “‡’‹’›ÿ"
+msgstr "–ü—Ä–∞–≤–∏–ª–∞ –ø–æ –≤—Ä–µ–º–µ–Ω–∏"
+
+msgid "Inbound Call Control"
+msgstr ""
+
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
 
 msgid "Time Groups"
-msgstr "≤‡’‹’››–Ô ”‡„ﬂﬂ–"
+msgstr "–í—Ä–µ–º–µ–Ω–Ω–∞—è –≥—Ä—É–ø–ø–∞"
 
-#: dirty fix for menus
-msgid "Add"
-msgstr "¥ﬁ—–“ÿ‚Ï"
+msgid "Enable Maintenance Polling"
+msgstr ""
 
-msgid "Submit"
-msgstr "ø‡ÿ‹’›ÿ‚Ï"
+msgid "Time Condition Module"
+msgstr ""
 
-#~ msgid "Delete Time Condition"
-#~ msgstr "√‘–€ÿ‚Ï ø‡–“ÿ€ﬁ ﬂﬁ “‡’‹’›ÿ"
+msgid ""
+"If set to false, this will override the execution of the Time Conditons "
+"maintenace task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
 
-#~ msgid "Time to match:"
-#~ msgstr "≤‡’‹’››ﬁŸ ÿ›‚’‡“–€:"
+msgid "Maintenance Polling Interval"
+msgstr ""
 
-#~ msgid ""
-#~ "time range|days of week|days of month|months<br><br>you can use an * as a "
-#~ "wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
-#~ msgstr ""
-#~ "“‡’‹’››ﬁŸ ÿ›‚’‡“–€ Á–·Î|‘›ÿ ÿ€ÿ ›’‘’€Ô|‘›ÿ "
-#~ "“ ‹’·ÔÊ’|‹’·ÔÊ–Â<br><br>‹ﬁ÷›ﬁ ÿ·ﬂﬁ€Ï◊ﬁ“–‚Ï * ⁄–⁄ ﬁ—ÈÿŸ Ë–—€ﬁ›."
-#~ "<br><br>Ω–ﬂ‡ÿ‹’‡: <b>9:00-17:00|mon-fri|*|*</b>"
-
-#~ msgid "Voicemail"
-#~ msgstr "≥ﬁ€ﬁ·ﬁ“–Ô ﬂﬁÁ‚–"
-
-#~ msgid "Extensions"
-#~ msgstr "≤›„‚‡’››ÿŸ ›ﬁ‹’‡"
-
-#~ msgid "Day Night Mode"
-#~ msgstr "¥›’“›ﬁŸ/ΩﬁÁ›ﬁŸ ‡’÷ÿ‹"
-
-#~ msgid "Terminate Call"
-#~ msgstr "¬’‡‹ÿ›ÿ‡ﬁ“–‚Ï ◊“ﬁ›ﬁ⁄"
-
-#~ msgid "Misc Destinations"
-#~ msgstr "¿–◊€ÿÁ›Î’ ›–ﬂ‡–“€’›ÿÔ"
-
-#~ msgid "IVR"
-#~ msgstr "∏›‚’‡–⁄‚ÿ“›ﬁ’ ‹’›Ó"
-
-#~ msgid "Languages"
-#~ msgstr "œ◊Î⁄ÿ"
-
-#~ msgid "Conferences"
-#~ msgstr "∫ﬁ›‰’‡’›ÊÿÔ"
-
-#~ msgid "Phonebook Directory"
-#~ msgstr "¬’€’‰ﬁ››–Ô ⁄›ÿ”–"
-
-#~ msgid "Queues"
-#~ msgstr "æÁ’‡’‘ÿ"
-
-#~ msgid "Ring Groups"
-#~ msgstr "≥‡„ﬂﬂ– “Î◊ﬁ“–"
-
-#~ msgid "Speed dial functions"
-#~ msgstr "ƒ„›⁄Êÿÿ —Î·‚‡ﬁ”ﬁ ›–—ﬁ‡–"
-
-#~ msgid "Custom Applications"
-#~ msgstr "¡ﬂ’Êÿ–€Ï›ﬁ’ ﬂ‡ÿ€ﬁ÷’›ÿ’"
-
-#~ msgid "Extended Routing"
-#~ msgstr "¿–·Ëÿ‡’››–Ô ‹–‡Ë‡„‚ÿ◊–ÊÿÔ"
-
-#~ msgid ""
-#~ "Custom App<span><br>ADVANCED USERS ONLY<br><br>Uses Goto() to send caller "
-#~ "to a custom context.<br><br>The context name should start with \"custom-"
-#~ "\", and be in the format custom-context,extension,priority. Example entry:"
-#~ "<br><br><b>custom-myapp,s,1</b><br><br>The <b>[custom-myapp]</b> context "
-#~ "would need to be created and included in extensions_custom.conf</span>"
-#~ msgstr ""
-#~ "æ·ﬁ—Î’ ﬂ‡ÿ€ﬁ÷’›ÿÔ<span><br>¬æªÃ∫æ æøÀ¬ΩÀº "
-#~ "øæªÃ∑æ≤∞¬µªœº<br>∏·ﬂﬁ€Ï◊„Ÿ‚’ ﬁﬂ’‡–›‘ Goto() ‘€Ô "
-#~ "ﬂ’‡’›–ﬂ‡–“€’›ÿÔ “ custom ⁄ﬁ›‚’⁄·‚."
-#~ "<br><br>Ω–◊“–›ÿ’ ⁄ﬁ›‚’⁄·‚– ‘ﬁ€÷›ﬁ ›–Áÿ›–‚Ï·Ô · "
-#~ "\"custom-\" ÿ —Î‚Ï “ ‰ﬁ‡‹–‚’ custom-context,extension,"
-#~ "ﬂ‡ÿﬁ‡ÿ‚’‚. Ω–ﬂ‡ÿ‹’‡:<br><b>custom-app,s,1</b><br>∫ﬁ›‚’⁄·‚ "
-#~ "<b>[custom-app]</b> ‘ﬁ€÷’› —Î‚Ï ·ﬁ◊‘–› “ extensions_custom."
-#~ "conf</span"
+msgid ""
+"The polling interval in seconds used by the Time Conditions manintenace "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual overide "
+"during such a period is properly reset when the new period starts."
+msgstr ""

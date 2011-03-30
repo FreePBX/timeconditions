@@ -7,320 +7,365 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-06 12:39+0200\n"
+"POT-Creation-Date: 2011-03-30 11:07+0100\n"
 "PO-Revision-Date: 2008-11-03 01:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: Chavdar Iliev <chavdar_75@yahoo.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: functions.inc.php:18
-#: functions.inc.php:87
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Времево Условие: %s"
 
-#: functions.inc.php:354
+msgid ": Time Condition Override"
+msgstr ""
+
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr "Описанието трябва да буквено-цифрено, и не трябва да е празно"
 
-#: functions.inc.php:358
-#: functions.inc.php:367
-#: functions.inc.php:387
-#: page.timegroups.php:21
 msgid "Time Group"
 msgstr "Времева Група"
 
-#: functions.inc.php:358
 msgid " deleted!"
 msgstr "изтрита!"
 
-#: functions.inc.php:366
 msgid "Add Time Group"
 msgstr "Добави Времева Група"
 
-#: functions.inc.php:367
-#: functions.inc.php:387
 msgid "Description"
 msgstr "Описание"
 
-#: functions.inc.php:367
-#: functions.inc.php:387
 msgid "This will display as the name of this Time Group."
 msgstr "Това ще се изпише за име  на тази Времева Група."
 
-#: functions.inc.php:373
 msgid "Edit Time Group"
 msgstr "Редактирай Времева Група"
 
-#: functions.inc.php:374
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "Изтрий Времева Група %s"
 
-#: functions.inc.php:383
 msgid "Used By"
 msgstr "Използвана от"
 
-#: functions.inc.php:397
+msgid "Remove Section and Submit Current Settings"
+msgstr ""
+
 msgid "New Time"
 msgstr "Ново Време"
 
-#: functions.inc.php:540
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: functions.inc.php:546
 msgid "text"
 msgstr "текст"
 
-#: functions.inc.php:566
 msgid "Time to start:"
 msgstr "Време (час/минути) за начало:"
 
-#: functions.inc.php:621
 msgid "Time to finish:"
 msgstr "Време (час/минути) за край:"
 
-#: functions.inc.php:671
-msgid "Week Day Start:"
+msgid "Week Day start:"
 msgstr "Ден от седмицата за начало:"
 
-#: functions.inc.php:686
-#: functions.inc.php:749
 msgid "Monday"
 msgstr "Понеделник"
 
-#: functions.inc.php:693
-#: functions.inc.php:756
 msgid "Tuesday"
 msgstr "Вторник"
 
-#: functions.inc.php:700
-#: functions.inc.php:763
 msgid "Wednesday"
 msgstr "Сряда"
 
-#: functions.inc.php:707
-#: functions.inc.php:770
 msgid "Thursday"
 msgstr "Четвъртък"
 
-#: functions.inc.php:714
-#: functions.inc.php:777
 msgid "Friday"
 msgstr "Петък"
 
-#: functions.inc.php:721
-#: functions.inc.php:784
 msgid "Saturday"
 msgstr "Събота"
 
-#: functions.inc.php:728
-#: functions.inc.php:791
 msgid "Sunday"
 msgstr "Неделя"
 
-#: functions.inc.php:733
 msgid "Week Day finish:"
 msgstr "Ден от седмицата за край:"
 
-#: functions.inc.php:796
 msgid "Month Day start:"
 msgstr "Ден от месеца за начало:"
 
-#: functions.inc.php:831
 msgid "Month Day finish:"
 msgstr "Ден от месеца за край:"
 
-#: functions.inc.php:850
 msgid "Month start:"
 msgstr "Месец за начало:"
 
-#: functions.inc.php:882
-#: functions.inc.php:981
 msgid "January"
 msgstr "Януари"
 
-#: functions.inc.php:889
-#: functions.inc.php:988
 msgid "February"
 msgstr "Февруари"
 
-#: functions.inc.php:896
-#: functions.inc.php:995
 msgid "March"
 msgstr "Март"
 
-#: functions.inc.php:903
-#: functions.inc.php:1002
 msgid "April"
 msgstr "Април"
 
-#: functions.inc.php:910
-#: functions.inc.php:1009
 msgid "May"
 msgstr "Май"
 
-#: functions.inc.php:917
-#: functions.inc.php:1016
 msgid "June"
 msgstr "Юни"
 
-#: functions.inc.php:924
-#: functions.inc.php:1023
 msgid "July"
 msgstr "Юли"
 
-#: functions.inc.php:931
-#: functions.inc.php:1030
 msgid "August"
 msgstr "Август"
 
-#: functions.inc.php:938
-#: functions.inc.php:1037
 msgid "September"
 msgstr "Септември"
 
-#: functions.inc.php:945
-#: functions.inc.php:1044
 msgid "October"
 msgstr "Октомври"
 
-#: functions.inc.php:952
-#: functions.inc.php:1051
 msgid "November"
 msgstr "Ноември"
 
-#: functions.inc.php:959
-#: functions.inc.php:1058
 msgid "December"
 msgstr "Декември"
 
-#: functions.inc.php:965
 msgid "Month finish:"
 msgstr "Месец за край:"
 
-#: install.php:128
 msgid "converting timeconditions time field to int.."
 msgstr "конвертиране на полето времеви условия.."
 
-#: install.php:132
 msgid "ERROR: failed to convert field "
 msgstr "ГРЕШКА: неуспех при конвертиране на полето"
 
-#: install.php:134
 msgid "OK"
 msgstr "OK"
 
-#: install.php:148
+msgid "checking for generate_hint field.."
+msgstr ""
+
+msgid "already exists"
+msgstr ""
+
+msgid "generating feature codes if needed.."
+msgstr ""
+
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Проверка за стари времеви условия за обновяване.."
 
-#: install.php:153
 msgid "starting migration"
 msgstr "стартиране на преместване"
 
-#: install.php:159
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr "Обновени %s и създадени групи %s"
 
-#: install.php:161
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
-msgstr "%sВНИМАНИЕ:%s Не е дефинирано време за това условие, моля преразгледайте го"
+msgstr ""
+"%sВНИМАНИЕ:%s Не е дефинирано време за това условие, моля преразгледайте го"
 
-#: install.php:166
 msgid "no upgrade needed"
 msgstr "не е необходим обновяване"
 
-#: page.timeconditions.php:50
-#: page.timeconditions.php:66
-#: page.timeconditions.php:89
 msgid "Add Time Condition"
 msgstr "Добави Времево Условие"
 
-#: page.timeconditions.php:63
 msgid "Time Condition"
 msgstr "Времево Условие"
 
-#: page.timeconditions.php:63
 msgid "deleted"
 msgstr "изтрито"
 
-#: page.timeconditions.php:66
 msgid "Time Condition:"
 msgstr "Времево Условие:"
 
-#: page.timeconditions.php:71
 #, php-format
 msgid "Delete Time Condition: %s"
 msgstr "Изтрий Времево Условие: %s"
 
-#: page.timeconditions.php:89
 msgid "Edit Time Condition"
 msgstr "Редактирай Времево Условие"
 
-#: page.timeconditions.php:96
 msgid "Time Condition name:"
 msgstr "Име на Времево Условие:"
 
-#: page.timeconditions.php:96
 msgid "Give this Time Condition a brief name to help you identify it."
-msgstr "Дайте на това Времево Условие име за да ви помогне с идентифицирането му."
+msgstr ""
+"Дайте на това Времево Условие име за да ви помогне с идентифицирането му."
 
-#: page.timeconditions.php:100
+msgid "Generate BLF Hint"
+msgstr ""
+
+#, php-format
+msgid ""
+"If set an Asterisk hint will be created for the override feature code %s "
+"associated with this Time Condition that can be used to light BLF buttons on "
+"a phone programmed to enable/disable this Time Condition. If not using a BLF "
+"it is better to leave this un-checked as additional system resources are "
+"required to keep the hint updated. This Feature Code can be found and "
+"enabled/disabled on the Feature Codes tab under Time Conditions."
+msgstr ""
+
+msgid "No Override"
+msgstr ""
+
+msgid "Temporary Override matching state"
+msgstr ""
+
+msgid "Permanent Override matching state"
+msgstr ""
+
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+msgid "Unknown State"
+msgstr ""
+
+msgid "Current Override:"
+msgstr ""
+
+msgid ""
+"Indicates the current state of this Time Condition. If it is in a Temporary "
+"Override state, it will automatically resume at the next time transition "
+"based on the associated Time Group. If in a Permanent Override state, it "
+"will stay in that state until changed here or through other means such as "
+"external XML applications on your phone. If No Override then it functions "
+"normally based on the time schedule."
+msgstr ""
+
+msgid "Change Override:"
+msgstr ""
+
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+
+msgid "Unchanged"
+msgstr ""
+
+msgid "Reset Override"
+msgstr ""
+
+msgid "Temporary matched"
+msgstr ""
+
+msgid "Permanently matched"
+msgstr ""
+
+msgid "Temporary unmatched"
+msgstr ""
+
+msgid "Permanently unmatched"
+msgstr ""
+
 msgid "Time Group:"
 msgstr "Времева Група:"
 
-#: page.timeconditions.php:100
-msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
-msgstr "Изберете Времева Група съдадена в  'Времеви Групи'. При съвпадане на времето ще се изпраща към избраното направление. Ако не е избрана група, обажданията ще се прехвърлят към несъвпадащи направления."
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+"Изберете Времева Група съдадена в  'Времеви Групи'. При съвпадане на времето "
+"ще се изпраща към избраното направление. Ако не е избрана група, обажданията "
+"ще се прехвърлят към несъвпадащи направления."
 
-#: page.timeconditions.php:107
 msgid "Goto Current Time Group"
 msgstr "Отиди на Текущата Времева Група"
 
-#: page.timeconditions.php:119
 msgid "Destination if time matches"
 msgstr "Направление ако времето съвпада"
 
-#: page.timeconditions.php:129
 msgid "Destination if time does not match"
 msgstr "Направление ако времето не съвпада"
-
-#: page.timeconditions.php:141
-msgid "Submit Changes"
-msgstr "Приеми Промените"
-
-#: page.timeconditions.php:151
-msgid "Please enter a valid Time Conditions Name"
-msgstr "Моля въведете правилно Име на Времево Условие"
-
-#: page.timeconditions.php:152
-msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
-msgstr "Не сте избрали времева група за асоцииране с това времево условие. Ще се прехвърли към несъвпадащи направления докато не го обновите с коректна група."
-
-#: page.timegroups.php:26
-msgid "Server time:"
-msgstr "Сървърно Време:"
-
-#: module.xml
-msgid "Time Conditions"
-msgstr "Времеви Условия"
-
-msgid "Time Groups"
-msgstr "Времеви Групи"
-
-#: dirty fix for menus
-msgid "Add"
-msgstr "Добави"
 
 msgid "Submit"
 msgstr "Приеми"
 
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Моля въведете правилно Име на Времево Условие"
+
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Не сте избрали времева група за асоцииране с това времево условие. Ще се "
+"прехвърли към несъвпадащи направления докато не го обновите с коректна група."
+
+msgid "Server time:"
+msgstr "Сървърно Време:"
+
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+
+msgid "Time Conditions"
+msgstr "Времеви Условия"
+
+msgid "Inbound Call Control"
+msgstr ""
+
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+
+msgid "Time Groups"
+msgstr "Времеви Групи"
+
+msgid "Enable Maintenance Polling"
+msgstr ""
+
+msgid "Time Condition Module"
+msgstr ""
+
+msgid ""
+"If set to false, this will override the execution of the Time Conditons "
+"maintenace task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+
+msgid "Maintenance Polling Interval"
+msgstr ""
+
+msgid ""
+"The polling interval in seconds used by the Time Conditions manintenace "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual overide "
+"during such a period is properly reset when the new period starts."
+msgstr ""

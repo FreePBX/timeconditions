@@ -8,174 +8,354 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-17 17:20+0300\n"
+"POT-Creation-Date: 2011-03-30 11:07+0100\n"
 "PO-Revision-Date: 2006-10-17 17:30+0300\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: page.timeconditions.php:46 page.timeconditions.php:121
-#: page.timeconditions.php:130
-msgid "Add Time Condition"
-msgstr "הוספת תנאי זמן"
-
-#: page.timeconditions.php:57
-msgid "Server time:"
-msgstr "שעה בשרת:"
-
-#: page.timeconditions.php:111
-msgid "Time Condition"
-msgstr "תנאי זמן"
-
-#: page.timeconditions.php:111
-msgid "deleted"
-msgstr "נמחק"
-
-#: page.timeconditions.php:121
-msgid "Time Condition:"
-msgstr "תנאי זמן:"
-
-#: page.timeconditions.php:123
-msgid "Delete Time Condition"
-msgstr "מחק תנאי זמן"
-
-#: page.timeconditions.php:130
-msgid "Edit Time Condition"
-msgstr "ערוך תנאי זמן"
-
-#: page.timeconditions.php:137
-msgid "Time Condition name:"
-msgstr "שם תנאי הזמן:"
-
-#: page.timeconditions.php:137
-msgid "Give this Time Condition a brief name to help you identify it."
-msgstr "תן לתנאי זמן זה שם קצר שיעזור לך לזהות אותו."
-
-#: page.timeconditions.php:141
-msgid "Time to match:"
-msgstr "זמן שיש להתאים:"
-
-#: page.timeconditions.php:141
-msgid ""
-"time range|days of week|days of month|months<br><br>you can use an * as a "
-"wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
+#, php-format
+msgid "Time Condition: %s"
 msgstr ""
-"time range|days of week|days of month|months<br><br>אתה יכול להשתמש ב * כדי להגיד בכל "
-"זמן.<br><br>דוגמא: <b>9:00-17:00|mon-fri|*|*</b>"
 
-#: page.timeconditions.php:152
+msgid ": Time Condition Override"
+msgstr ""
+
+msgid "Description must be alpha-numeric, and may not be left blank"
+msgstr ""
+
+msgid "Time Group"
+msgstr ""
+
+msgid " deleted!"
+msgstr ""
+
+msgid "Add Time Group"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "This will display as the name of this Time Group."
+msgstr ""
+
+msgid "Edit Time Group"
+msgstr ""
+
+#, php-format
+msgid "Delete Time Group %s"
+msgstr ""
+
+msgid "Used By"
+msgstr ""
+
+msgid "Remove Section and Submit Current Settings"
+msgstr ""
+
+msgid "New Time"
+msgstr ""
+
+msgid "--Select a Group--"
+msgstr ""
+
+msgid "text"
+msgstr ""
+
 msgid "Time to start:"
 msgstr "זמן להתחיל:"
 
-#: page.timeconditions.php:195
 msgid "Time to finish:"
 msgstr "זמן לסיים:"
 
-#: page.timeconditions.php:234
-msgid "Week Day Start:"
+msgid "Week Day start:"
 msgstr "יום התחלה בשבוע:"
 
-#: page.timeconditions.php:244 page.timeconditions.php:283
 msgid "Monday"
 msgstr "שני"
 
-#: page.timeconditions.php:248 page.timeconditions.php:287
 msgid "Tuesday"
 msgstr "שלישי"
 
-#: page.timeconditions.php:252 page.timeconditions.php:291
 msgid "Wednesday"
 msgstr "רביעי"
 
-#: page.timeconditions.php:256 page.timeconditions.php:295
 msgid "Thursday"
 msgstr "חמישי"
 
-#: page.timeconditions.php:260 page.timeconditions.php:299
 msgid "Friday"
 msgstr "שישי"
 
-#: page.timeconditions.php:264 page.timeconditions.php:303
 msgid "Saturday"
 msgstr "שבת"
 
-#: page.timeconditions.php:268 page.timeconditions.php:307
 msgid "Sunday"
 msgstr "ראשון"
 
-#: page.timeconditions.php:273
 msgid "Week Day finish:"
 msgstr "יום בשבוע לסיים:"
 
-#: page.timeconditions.php:312
 msgid "Month Day start:"
 msgstr "יום בחודש להתחיל:"
 
-#: page.timeconditions.php:337
 msgid "Month Day finish:"
 msgstr "יום בחודש לסיים:"
 
-#: page.timeconditions.php:354
 msgid "Month start:"
 msgstr "חודש להתחיל:"
 
-#: page.timeconditions.php:372 page.timeconditions.php:430
 msgid "January"
 msgstr "ינואר"
 
-#: page.timeconditions.php:376 page.timeconditions.php:434
 msgid "February"
 msgstr "פברואר"
 
-#: page.timeconditions.php:380 page.timeconditions.php:438
 msgid "March"
 msgstr "מרץ"
 
-#: page.timeconditions.php:384 page.timeconditions.php:442
 msgid "April"
 msgstr "אפריל"
 
-#: page.timeconditions.php:388 page.timeconditions.php:446
 msgid "May"
 msgstr "מאי"
 
-#: page.timeconditions.php:392 page.timeconditions.php:450
 msgid "June"
 msgstr "יוני"
 
-#: page.timeconditions.php:396 page.timeconditions.php:454
 msgid "July"
 msgstr "יולי"
 
-#: page.timeconditions.php:400 page.timeconditions.php:458
 msgid "August"
 msgstr "אוגוסט"
 
-#: page.timeconditions.php:404 page.timeconditions.php:462
 msgid "September"
 msgstr "ספטמבר"
 
-#: page.timeconditions.php:408 page.timeconditions.php:466
 msgid "October"
 msgstr "אוקטובר"
 
-#: page.timeconditions.php:411 page.timeconditions.php:470
 msgid "November"
 msgstr "נובמבר"
 
-#: page.timeconditions.php:415 page.timeconditions.php:474
 msgid "December"
 msgstr "דצמבר"
 
-#: page.timeconditions.php:421
 msgid "Month finish:"
 msgstr "חודש סיום:"
 
-#: page.timeconditions.php:480
+msgid "converting timeconditions time field to int.."
+msgstr ""
+
+msgid "ERROR: failed to convert field "
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "checking for generate_hint field.."
+msgstr ""
+
+msgid "already exists"
+msgstr ""
+
+msgid "generating feature codes if needed.."
+msgstr ""
+
+msgid "Checking for old timeconditions to upgrade.."
+msgstr ""
+
+msgid "starting migration"
+msgstr ""
+
+#, php-format
+msgid "Upgraded %s and created group %s"
+msgstr ""
+
+#, php-format
+msgid "%sWARNING:%s No time defined for this condition, please review"
+msgstr ""
+
+msgid "no upgrade needed"
+msgstr ""
+
+msgid "Add Time Condition"
+msgstr "הוספת תנאי זמן"
+
+msgid "Time Condition"
+msgstr "תנאי זמן"
+
+msgid "deleted"
+msgstr "נמחק"
+
+msgid "Time Condition:"
+msgstr "תנאי זמן:"
+
+#, php-format
+msgid "Delete Time Condition: %s"
+msgstr ""
+
+msgid "Edit Time Condition"
+msgstr "ערוך תנאי זמן"
+
+msgid "Time Condition name:"
+msgstr "שם תנאי הזמן:"
+
+msgid "Give this Time Condition a brief name to help you identify it."
+msgstr "תן לתנאי זמן זה שם קצר שיעזור לך לזהות אותו."
+
+msgid "Generate BLF Hint"
+msgstr ""
+
+#, php-format
+msgid ""
+"If set an Asterisk hint will be created for the override feature code %s "
+"associated with this Time Condition that can be used to light BLF buttons on "
+"a phone programmed to enable/disable this Time Condition. If not using a BLF "
+"it is better to leave this un-checked as additional system resources are "
+"required to keep the hint updated. This Feature Code can be found and "
+"enabled/disabled on the Feature Codes tab under Time Conditions."
+msgstr ""
+
+msgid "No Override"
+msgstr ""
+
+msgid "Temporary Override matching state"
+msgstr ""
+
+msgid "Permanent Override matching state"
+msgstr ""
+
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+msgid "Unknown State"
+msgstr ""
+
+msgid "Current Override:"
+msgstr ""
+
+msgid ""
+"Indicates the current state of this Time Condition. If it is in a Temporary "
+"Override state, it will automatically resume at the next time transition "
+"based on the associated Time Group. If in a Permanent Override state, it "
+"will stay in that state until changed here or through other means such as "
+"external XML applications on your phone. If No Override then it functions "
+"normally based on the time schedule."
+msgstr ""
+
+msgid "Change Override:"
+msgstr ""
+
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+
+msgid "Unchanged"
+msgstr ""
+
+msgid "Reset Override"
+msgstr ""
+
+msgid "Temporary matched"
+msgstr ""
+
+msgid "Permanently matched"
+msgstr ""
+
+msgid "Temporary unmatched"
+msgstr ""
+
+msgid "Permanently unmatched"
+msgstr ""
+
+msgid "Time Group:"
+msgstr ""
+
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+
+msgid "Goto Current Time Group"
+msgstr ""
+
 msgid "Destination if time matches"
 msgstr "יעד אם הזמן מתאים"
 
-#: page.timeconditions.php:490
 msgid "Destination if time does not match"
 msgstr "יעד אם הזמן אינו מתאים"
+
+msgid "Submit"
+msgstr ""
+
+msgid "Please enter a valid Time Conditions Name"
+msgstr ""
+
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+
+msgid "Server time:"
+msgstr "שעה בשרת:"
+
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+
+msgid "Time Conditions"
+msgstr ""
+
+msgid "Inbound Call Control"
+msgstr ""
+
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+
+msgid "Time Groups"
+msgstr ""
+
+msgid "Enable Maintenance Polling"
+msgstr ""
+
+msgid "Time Condition Module"
+msgstr ""
+
+msgid ""
+"If set to false, this will override the execution of the Time Conditons "
+"maintenace task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+
+msgid "Maintenance Polling Interval"
+msgstr ""
+
+msgid ""
+"The polling interval in seconds used by the Time Conditions manintenace "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual overide "
+"during such a period is properly reset when the new period starts."
+msgstr ""

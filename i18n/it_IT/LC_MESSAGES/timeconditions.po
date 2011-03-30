@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-06 12:39+0200\n"
+"POT-Creation-Date: 2011-03-30 11:07+0100\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -17,364 +17,357 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
-#: functions.inc.php:18
-#: functions.inc.php:87
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Condizione Temporale: %s"
 
-#: functions.inc.php:354
-msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "La Descrizione deve essere alfa-numerica, e non può essere lasciata vuota"
+msgid ": Time Condition Override"
+msgstr ""
 
-#: functions.inc.php:358
-#: functions.inc.php:367
-#: functions.inc.php:387
-#: page.timegroups.php:21
+msgid "Description must be alpha-numeric, and may not be left blank"
+msgstr ""
+"La Descrizione deve essere alfa-numerica, e non può essere lasciata vuota"
+
 msgid "Time Group"
 msgstr "Gruppo Temporale"
 
-#: functions.inc.php:358
 msgid " deleted!"
 msgstr " eliminato!"
 
-#: functions.inc.php:366
 msgid "Add Time Group"
 msgstr "Aggiungi Gruppo Temporale"
 
-#: functions.inc.php:367
-#: functions.inc.php:387
 msgid "Description"
 msgstr "Descrizione"
 
-#: functions.inc.php:367
-#: functions.inc.php:387
 msgid "This will display as the name of this Time Group."
 msgstr "Questo sarà il nome del Gruppo Temporale"
 
-#: functions.inc.php:373
 msgid "Edit Time Group"
 msgstr "Modifica Gruppo Temporale"
 
-#: functions.inc.php:374
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "Elimina Gruppo Temporale %s"
 
-#: functions.inc.php:383
 msgid "Used By"
 msgstr "Usato da"
 
-#: functions.inc.php:397
+msgid "Remove Section and Submit Current Settings"
+msgstr ""
+
 msgid "New Time"
 msgstr "Nuova Data/Ora"
 
-#: functions.inc.php:540
 msgid "--Select a Group--"
 msgstr "--Selezionare un Gruppo--"
 
-#: functions.inc.php:546
 msgid "text"
 msgstr "testo"
 
-#: functions.inc.php:566
 msgid "Time to start:"
 msgstr "Ora iniziale:"
 
-#: functions.inc.php:621
 msgid "Time to finish:"
 msgstr "Ora finale:"
 
-#: functions.inc.php:671
-msgid "Week Day Start:"
+msgid "Week Day start:"
 msgstr "Giorno della settimana iniziale:"
 
-#: functions.inc.php:686
-#: functions.inc.php:749
 msgid "Monday"
 msgstr "Lunedì"
 
-#: functions.inc.php:693
-#: functions.inc.php:756
 msgid "Tuesday"
 msgstr "Martedì"
 
-#: functions.inc.php:700
-#: functions.inc.php:763
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: functions.inc.php:707
-#: functions.inc.php:770
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: functions.inc.php:714
-#: functions.inc.php:777
 msgid "Friday"
 msgstr "Venerdì"
 
-#: functions.inc.php:721
-#: functions.inc.php:784
 msgid "Saturday"
 msgstr "Sabato"
 
-#: functions.inc.php:728
-#: functions.inc.php:791
 msgid "Sunday"
 msgstr "Domenica"
 
-#: functions.inc.php:733
 msgid "Week Day finish:"
 msgstr "Giorno della settimana finale:"
 
-#: functions.inc.php:796
 msgid "Month Day start:"
 msgstr "Giorno del mese iniziale:"
 
-#: functions.inc.php:831
 msgid "Month Day finish:"
 msgstr "Giorno del mese finale:"
 
-#: functions.inc.php:850
 msgid "Month start:"
 msgstr "Mese iniziale:"
 
-#: functions.inc.php:882
-#: functions.inc.php:981
 msgid "January"
 msgstr "Gennaio"
 
-#: functions.inc.php:889
-#: functions.inc.php:988
 msgid "February"
 msgstr "Febbraio"
 
-#: functions.inc.php:896
-#: functions.inc.php:995
 msgid "March"
 msgstr "Marzo"
 
-#: functions.inc.php:903
-#: functions.inc.php:1002
 msgid "April"
 msgstr "Aprile"
 
-#: functions.inc.php:910
-#: functions.inc.php:1009
 msgid "May"
 msgstr "Maggio"
 
-#: functions.inc.php:917
-#: functions.inc.php:1016
 msgid "June"
 msgstr "Giugno"
 
-#: functions.inc.php:924
-#: functions.inc.php:1023
 msgid "July"
 msgstr "Luglio"
 
-#: functions.inc.php:931
-#: functions.inc.php:1030
 msgid "August"
 msgstr "Agosto"
 
-#: functions.inc.php:938
-#: functions.inc.php:1037
 msgid "September"
 msgstr "Settembre"
 
-#: functions.inc.php:945
-#: functions.inc.php:1044
 msgid "October"
 msgstr "Ottobre"
 
-#: functions.inc.php:952
-#: functions.inc.php:1051
 msgid "November"
 msgstr "Novembre"
 
-#: functions.inc.php:959
-#: functions.inc.php:1058
 msgid "December"
 msgstr "Dicembre"
 
-#: functions.inc.php:965
 msgid "Month finish:"
 msgstr "Mese finale:"
 
-#: install.php:128
 msgid "converting timeconditions time field to int.."
 msgstr "conversione campo data timeconditions verso int.."
 
-#: install.php:132
 msgid "ERROR: failed to convert field "
 msgstr "ERRORE: conversione campo fallita"
 
-#: install.php:134
 msgid "OK"
 msgstr "OK"
 
-#: install.php:148
+msgid "checking for generate_hint field.."
+msgstr ""
+
+msgid "already exists"
+msgstr ""
+
+msgid "generating feature codes if needed.."
+msgstr ""
+
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Sto controllando per le vecchie condizioni temporali da aggiornare.."
 
-#: install.php:153
 msgid "starting migration"
 msgstr "inizio migrazione"
 
-#: install.php:159
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr "Aggiornato %s e creato gruppo %s"
 
-#: install.php:161
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
-msgstr "%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, ricontrollare"
+msgstr ""
+"%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, "
+"ricontrollare"
 
-#: install.php:166
 msgid "no upgrade needed"
 msgstr "nessun upgrade necessario"
 
-#: page.timeconditions.php:50
-#: page.timeconditions.php:66
-#: page.timeconditions.php:89
 msgid "Add Time Condition"
 msgstr "Aggiungi Condizione Temporale"
 
-#: page.timeconditions.php:63
 msgid "Time Condition"
 msgstr "Condizione Temporale"
 
-#: page.timeconditions.php:63
 msgid "deleted"
 msgstr "eliminata"
 
-#: page.timeconditions.php:66
 msgid "Time Condition:"
 msgstr "Condizione Temporale:"
 
-#: page.timeconditions.php:71
 #, php-format
 msgid "Delete Time Condition: %s"
 msgstr "Elimina Condizione Temporale: %s"
 
-#: page.timeconditions.php:89
 msgid "Edit Time Condition"
 msgstr "Modifica Condizione Temporale"
 
-#: page.timeconditions.php:96
 msgid "Time Condition name:"
 msgstr "Nome Condizione Temporale:"
 
-#: page.timeconditions.php:96
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "Assegnare un nome breve per una facile identificazione."
 
-#: page.timeconditions.php:100
+msgid "Generate BLF Hint"
+msgstr ""
+
+#, php-format
+msgid ""
+"If set an Asterisk hint will be created for the override feature code %s "
+"associated with this Time Condition that can be used to light BLF buttons on "
+"a phone programmed to enable/disable this Time Condition. If not using a BLF "
+"it is better to leave this un-checked as additional system resources are "
+"required to keep the hint updated. This Feature Code can be found and "
+"enabled/disabled on the Feature Codes tab under Time Conditions."
+msgstr ""
+
+msgid "No Override"
+msgstr ""
+
+msgid "Temporary Override matching state"
+msgstr ""
+
+msgid "Permanent Override matching state"
+msgstr ""
+
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+msgid "Unknown State"
+msgstr ""
+
+msgid "Current Override:"
+msgstr ""
+
+msgid ""
+"Indicates the current state of this Time Condition. If it is in a Temporary "
+"Override state, it will automatically resume at the next time transition "
+"based on the associated Time Group. If in a Permanent Override state, it "
+"will stay in that state until changed here or through other means such as "
+"external XML applications on your phone. If No Override then it functions "
+"normally based on the time schedule."
+msgstr ""
+
+msgid "Change Override:"
+msgstr ""
+
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+
+msgid "Unchanged"
+msgstr ""
+
+msgid "Reset Override"
+msgstr ""
+
+msgid "Temporary matched"
+msgstr ""
+
+msgid "Permanently matched"
+msgstr ""
+
+msgid "Temporary unmatched"
+msgstr ""
+
+msgid "Permanently unmatched"
+msgstr ""
+
 msgid "Time Group:"
 msgstr "Gruppo Temporale:"
 
-#: page.timeconditions.php:100
-msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
-msgstr "Selezionare un Gruppo Temporale creato sotto i Gruppi Temporali. La data/ora corrispondente sarà inviata alla destinazione corrispondente. Se non si seleziona un gruppo, la chiamata sarà inviata sempre alla destinazione non corrispondente."
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+"Selezionare un Gruppo Temporale creato sotto i Gruppi Temporali. La data/ora "
+"corrispondente sarà inviata alla destinazione corrispondente. Se non si "
+"seleziona un gruppo, la chiamata sarà inviata sempre alla destinazione non "
+"corrispondente."
 
-#: page.timeconditions.php:107
 msgid "Goto Current Time Group"
 msgstr "Vai al Gruppo Temporale"
 
-#: page.timeconditions.php:119
 msgid "Destination if time matches"
 msgstr "Destinazione se la condizione esiste"
 
-#: page.timeconditions.php:129
 msgid "Destination if time does not match"
 msgstr "Destinazione se la condizione non esiste"
-
-#: page.timeconditions.php:141
-msgid "Submit Changes"
-msgstr "Conferma Cambiamenti"
-
-#: page.timeconditions.php:151
-msgid "Please enter a valid Time Conditions Name"
-msgstr "Prego immettere un nome valido per questa Condizione Temporale"
-
-#: page.timeconditions.php:152
-msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
-msgstr "Non hai selezionato un gruppo temporale da associare a questa condizione. Andrà alla destinazione non corrispondente fino a quando non si aggiorna con un gruppo valido"
-
-#: page.timegroups.php:26
-msgid "Server time:"
-msgstr "Ora server:"
-
-#: module.xml
-msgid "Time Conditions"
-msgstr "Condizioni Temporali"
-
-msgid "Time Groups"
-msgstr "Gruppi Temporali"
-
-#: dirty fix for menus
-msgid "Add"
-msgstr "Aggiungi"
 
 msgid "Submit"
 msgstr "Conferma"
 
-#~ msgid "Time to match:"
-#~ msgstr "Corrispondenza:"
-#~ msgid ""
-#~ "time range|days of week|days of month|months<br><br>you can use an * as a "
-#~ "wildcard.<br><br>ex: <b>9:00-17:00|mon-fri|*|*</b>"
-#~ msgstr ""
-#~ "Intervallo ora|giorni della settimana|giorni del mese|mesi<br><br>si può "
-#~ "utilizzare * come carattere jolly.<br><br>es: <b>9:00-17:00|mon-fri|*|*</"
-#~ "b><br><br>(mon,tue,wed,thu,fri,sat,sun=<br>lun,mar,mer,gio,ven,sab,dom)"
-#~ msgid "Voicemail"
-#~ msgstr "Caselle Vocali"
-#~ msgid "Extensions"
-#~ msgstr "Interni"
-#~ msgid "Day Night Mode"
-#~ msgstr "Servizio Giorno/Notte"
-#~ msgid "Terminate Call"
-#~ msgstr "Termina Chiamata"
-#~ msgid "Core"
-#~ msgstr "Sistema"
-#~ msgid "Conferences"
-#~ msgstr "Conferenze"
-#~ msgid "Phonebook Directory"
-#~ msgstr "Elenco Telefonico"
-#~ msgid "Queues"
-#~ msgstr "Code"
-#~ msgid "Speed dial functions"
-#~ msgstr "Selezione breve"
-#~ msgid "Custom Contexts"
-#~ msgstr "Contesti Personalizzati"
-#~ msgid "Extended Routing"
-#~ msgstr "Rotte specifiche"
-#~ msgid ""
-#~ "Custom App<span><br>ADVANCED USERS ONLY<br><br>Uses Goto() to send caller "
-#~ "to a custom context.<br><br>The context name should start with \"custom-"
-#~ "\", and be in the format custom-context,extension,priority. Example entry:"
-#~ "<br><br><b>custom-myapp,s,1</b><br><br>The <b>[custom-myapp]</b> context "
-#~ "would need to be created and included in extensions_custom.conf</span>"
-#~ msgstr ""
-#~ "Applicazione Personalizzata<span>SOLO UTENTI AVANZATI<br>Utilizzare Goto"
-#~ "() per inviare la chiamata verso un contesto personalizzato.<br><br>Il "
-#~ "nome del contesto deve iniziare per \"custom-\" e deve essere nel formato "
-#~ "custom-contesto,extension,priorità. Esempio: <br><br><b>custom-app,s,1</"
-#~ "b><br><br><b>Il contesto [custom-app] </b> deve poi essere creato e "
-#~ "incluso nel file extensions_custom.conf</span"
-#~ msgid "Misc Destinations"
-#~ msgstr "Destinazioni Varie"
-#~ msgid "Custom Applications"
-#~ msgstr "Applicazioni Personalizzate"
-#~ msgid "VoiceMail Blasting"
-#~ msgstr "Gruppi di Caselle Vocali"
-#~ msgid "Languages"
-#~ msgstr "Lingue"
-#~ msgid "Announcements"
-#~ msgstr "Annunci"
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Prego immettere un nome valido per questa Condizione Temporale"
 
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Non hai selezionato un gruppo temporale da associare a questa condizione. "
+"Andrà alla destinazione non corrispondente fino a quando non si aggiorna con "
+"un gruppo valido"
+
+msgid "Server time:"
+msgstr "Ora server:"
+
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+
+msgid "Time Conditions"
+msgstr "Condizioni Temporali"
+
+msgid "Inbound Call Control"
+msgstr ""
+
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+
+msgid "Time Groups"
+msgstr "Gruppi Temporali"
+
+msgid "Enable Maintenance Polling"
+msgstr ""
+
+msgid "Time Condition Module"
+msgstr ""
+
+msgid ""
+"If set to false, this will override the execution of the Time Conditons "
+"maintenace task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+
+msgid "Maintenance Polling Interval"
+msgstr ""
+
+msgid ""
+"The polling interval in seconds used by the Time Conditions manintenace "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual overide "
+"during such a period is properly reset when the new period starts."
+msgstr ""

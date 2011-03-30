@@ -899,7 +899,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	} else {
 		$wday_start = $wday_finish = '-';
 	}
-	$html = $html.'<td>'._("Week Day Start:").'</td>';
+	$html = $html.'<td>'._("Week Day start:").'</td>';
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[wday_start]">';
 	if ( $wday_start == '-' ) { 
