@@ -16,6 +16,7 @@ isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 isset($_REQUEST['itemid'])?$itemid=$db->escapeSimple($_REQUEST['itemid']):$itemid='';
 
 $generate_hint = isset($_POST['generate_hint'])?$_POST['generate_hint']:'0';
+$override_fc = isset($_POST['override_fc'])?$_POST['override_fc']:'0';
 
 $dispnum = "timeconditions"; //used for switch on config.php
 $tabindex = 0;
@@ -23,9 +24,9 @@ $tabindex = 0;
 //if submitting form, update database
 switch ($action) {
 	case "add":
-		timeconditions_add($_POST);
+		$_REQUEST['itemid'] = timeconditions_add($_POST);
 		needreload();
-		redirect_standard();
+		redirect_standard('itemid');
 	break;
 	case "delete":
 		timeconditions_del($itemid);
@@ -81,6 +82,7 @@ if ($action == 'delete') {
 	} else {
     $tccode = '';
   }
+  $tcval = $thisItem['tcval'];
 ?>
 	<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
@@ -99,13 +101,18 @@ if ($action == 'delete') {
 	</tr>
 <?php if ($amp_conf['USEDEVSTATE']) { ?>
 	<tr>
-  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo sprintf(_("If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."),$tccode)?></span></a></td>
+  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo sprintf(_("If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."),$tcval)?></span></a></td>
 		<td>
 			<input name="generate_hint" type="checkbox" value="1" <?php echo ($generate_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
 		</td>
 	</tr>
 <?php } ?>
-
+  <tr>
+    <td><a href="#" class="info"><?php echo _("Enable Override Code")?><span><?php echo sprintf(_("Check to enable the override feature code %s that allows manual changes to the timecondition."),$tcval)?></span></a></td>
+    <td>
+      <input name="override_fc" type="checkbox" value="1" <?php echo ($tccode != '' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/><?php if ($tcval) { echo "<small>($tcval)</small>"; } ?>
+    </td>
+  </tr>
 <?php 
   if ($itemid && $thisItem['tcstate'] !== false) {
     $tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
@@ -135,7 +142,7 @@ if ($action == 'delete') {
     <td><?php echo $state_msg; ?></td>
 	</tr>
   <tr>
-		<td><a href="#" class="info"><?php echo _("Change Override:")?><span><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."),$tccode)?></span></a></td>
+		<td><a href="#" class="info"><?php echo _("Change Override:")?><span><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."),$tcval)?></span></a></td>
     <td>
       <select name="tcstate_new" tabindex="<?php echo ++$tabindex;?>">
         <option value="unchanged" SELECTED><?php echo _("Unchanged");?></option>

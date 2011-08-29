@@ -265,6 +265,7 @@ function timeconditions_get($id){
 
   $fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
   $c = $fcc->getCodeActive();
+  $results['tcval'] = $fcc->getCode();
   unset($fcc);
   if ($c == '') {
     $results['tcstate'] = false;
@@ -382,17 +383,30 @@ function timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $min
 
   /*
   */
-function timeconditions_create_fc($id, $displayname='') {
+function timeconditions_create_fc($id, $displayname='',$state=false) {
+  global $astman;
+  global $amp_conf;
+  $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
+
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	if ($displayname) {
 		$fcc->setDescription("$id: $displayname");
 	} else {
     $fcc->setDescription($id._(": Time Condition Override"));
 	}
-	$fcc->setDefault('*27'.$id,false);
+	$fcc->setDefault('*27'.$id,$state);
   $fcc->setProvideDest();
 	$fcc->update();
 	unset($fcc);	
+
+  $astman->database_put("TC",$id,'');
+  // We do not try to figure out the blf value here, as soon as the call script is called or a call flows through the time
+  // condition it will get properly intiialized
+  //
+  if ($DEVSTATE) {
+    $astman->send_request('Command',array('Command'=>"core set global ".$DEVSTATE."(Custom:TC".$id.") NOT_INUSE"));
+    $astman->send_request('Command',array('Command'=>"core set global ".$DEVSTATE."(Custom:TCSTICKY".$id.") NOT_INUSE"));
+  }
 }
 
 function timeconditions_add($post){
@@ -405,13 +419,15 @@ function timeconditions_add($post){
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
+  $override_fc = $post['override_fc'] == '1' ? '1' : '0';
 
 	if($displayname == '') {
 	 	$displayname = "unnamed";
 	}
 	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint) values (\"$displayname\",\"$time\",\"$truegoto\",\"$falsegoto\",\"$deptname\",\"$generate_hint\")");
   $id = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
-  timeconditions_create_fc($id, $displayname);
+  timeconditions_create_fc($id, $displayname, $override_fc);
+  return $id;
 }
 
 function timeconditions_edit($id,$post){
@@ -426,6 +442,7 @@ function timeconditions_edit($id,$post){
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
+  $override_fc = $post['override_fc'] == '1' ? '1' : '0';
 
 	if(empty($displayname)) { 
 		$displayname = "unnamed";
@@ -474,6 +491,11 @@ function timeconditions_edit($id,$post){
       die_freepbx("No manager connection, can't update Time Condition State");
     }
   }
+
+	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
+	$fcc->setEnabled($override_fc);
+	$fcc->update();
+	unset($fcc);	
 }
 
 function timeconditions_timegroups_usage($group_id) {
