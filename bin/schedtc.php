@@ -56,7 +56,7 @@ if ($next_time < ($now + 30)) {
 // the next call file. You can't just use the same name over, even changing the modificaiton time since
 // as soon as the call file is processed it is deleted
 //
-$sched_script = "Channel: Local/s@tc-maint\nCallerID: \"$next_index\" <$next_index>\nApplication: Noop\nData: Time Conditions Override Maintenance Script\n";
+$sched_script = "Channel: Local/s@tc-maint\nCallerID: \"$next_index\" <$next_index>\nApplication: NoCDR\n";
 
 $fh = fopen("$tmp/$call_file","w");
 if ($fh === false) {

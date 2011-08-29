@@ -61,6 +61,7 @@ function timeconditions_get_config($engine) {
 
         if ($amp_conf['TCMAINT']) {
           $maint_context = 'tc-maint';
+          $ext->add($maint_context, 's', '', new ext_nocdr(''));
           $ext->add($maint_context, 's', '', new ext_set("TCMAINT",'RETURN'));
         }
 
@@ -135,6 +136,7 @@ function timeconditions_get_config($engine) {
           if ($need_maint) {
             $ext->add($maint_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing ${CALLERID(number)}'));
           }
+          $ext->add($maint_context, 's', '', new ext_answer());
           $ext->add($maint_context, 's', '', new ext_hangup());
         }
 
