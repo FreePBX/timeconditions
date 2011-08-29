@@ -5,8 +5,7 @@
 	<version>2.9.0.6</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
-	<type>setup</type>
-	<category>Inbound Call Control</category>
+	<category>Call Flow</category>
 	<description>
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
@@ -18,31 +17,6 @@
 		*2.9.0.2* #4636 sticky override added
 		*2.9.0.1* #4636 typo broke hints, broken destination
 		*2.9.0.0* #4636 Add Auto-resetting manual override
-		*2.8.0.3* #4584
-		*2.8.0.2* #4309, #4310
-		*2.8.0.1* #4184
-		*2.8.0.0* #4128 add option to timeconditions_timegroups_drawgroupselect()
-		*2.7.0.0* spelling, localizations, format tweaks
-		*2.6.0.0* localizations, misc
-		*2.5.0.8* #3325 timecondition install script fails going from 2.4 to 2.5
-		*2.5.0.7* localization string enclosures
-		*2.5.0.6* #3222 salite3
-		*2.5.0.5* #3138 Sqlite3 fix, localization fixes
-		*2.5.0.4* #2987, #3012 sqlite3 install script, spelling
-		*2.5.0.3* update initial table creatino for new installs
-		*2.5.0.2* #2936 remove warning when not timegroups present
-		*2.5.0.1* tweaks to timegroups, added delete and add icons
-		*2.5.0* #774, #1695: Merged timegroups and timecondition changes from contributed_modules originally submitted by naftali5
-		*2.4.4.3* #2604, #2765, #2843 fix mal-formed html tags, Russian Translation
-		*2.4.4.2* generate all timeconditions when using database mode authorization and deptarments
-		*2.4.4.1* added depends on 2.4.0
-		*2.4.4* Extension/dest registry, it translation
-		*2.4.3.1* bump for rc1
-		*2.4.3* Added SQLite3 support, fixed ticket http://freepbx.org/trac/ticket/1774
-		*2.4.2* merge findmefollow/core extension destinations if any
-		*2.4.1* Add he_IL translation
-		*2.4* Upgrading module version to assist with trixbox upgrades, that have 2.3.1 already, so this needs to be higher. No other changes.	
-		*2.3* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
 	</changelog>
 	<depends>
 		<version>2.5.0alpha1</version>
