@@ -241,7 +241,7 @@ function timeconditions_change_destination($old_dest, $new_dest) {
 
 //get the existing meetme extensions
 function timeconditions_list($getall=false) {
-	$results = sql("SELECT * FROM timeconditions","getAll",DB_FETCHMODE_ASSOC);
+	$results = sql("SELECT * FROM timeconditions ORDER BY displayname ASC","getAll",DB_FETCHMODE_ASSOC);
 	if(is_array($results)){
 		foreach($results as $result){
 			// check to see if we have a dept match for the current AMP User.
