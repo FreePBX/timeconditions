@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-30 11:07+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2009-01-23 00:28+0100\n"
 "Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
@@ -218,6 +218,15 @@ msgid ""
 "enabled/disabled on the Feature Codes tab under Time Conditions."
 msgstr ""
 
+msgid "Enable Override Code"
+msgstr ""
+
+#, php-format
+msgid ""
+"Check to enable the override feature code %s that allows manual changes to "
+"the timecondition."
+msgstr ""
+
 msgid "No Override"
 msgstr ""
 
@@ -327,7 +336,7 @@ msgstr ""
 msgid "Time Conditions"
 msgstr "Condiciones horarias"
 
-msgid "Inbound Call Control"
+msgid "Applications"
 msgstr ""
 
 msgid ""

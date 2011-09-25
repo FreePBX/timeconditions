@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-30 11:07+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2009-04-20 14:07+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -234,6 +234,15 @@ msgid ""
 "enabled/disabled on the Feature Codes tab under Time Conditions."
 msgstr ""
 
+msgid "Enable Override Code"
+msgstr ""
+
+#, php-format
+msgid ""
+"Check to enable the override feature code %s that allows manual changes to "
+"the timecondition."
+msgstr ""
+
 msgid "No Override"
 msgstr ""
 
@@ -344,7 +353,7 @@ msgstr ""
 msgid "Time Conditions"
 msgstr "Conditions Horaires"
 
-msgid "Inbound Call Control"
+msgid "Applications"
 msgstr ""
 
 msgid ""
