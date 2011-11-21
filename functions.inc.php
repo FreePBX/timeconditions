@@ -665,9 +665,9 @@ function timeconditions_timegroups_configprocess() {
 
 //these are the users time selections for the current timegroup
 function timeconditions_timegroups_get_times($timegroup, $convert=false) {
-	global $db;
-	global $version;
-
+	global $db, $version;
+	$tmparray = array();
+	
   if ($convert && (!isset($version) || $version == '')) {
     $engineinfo = engine_getinfo();
     $version =  $engineinfo['version'];
