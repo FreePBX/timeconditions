@@ -1,4 +1,5 @@
 <?php /* $Id: install.php $ */
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 	function _timeconditions_timegroups_add_group_timestrings($description,$timestrings) {
 		global $db;

@@ -1,4 +1,5 @@
 <?php /* $Id */
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 function timeconditions_getdest($exten) {
 	return array('timeconditions,'.$exten.',1');
