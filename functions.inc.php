@@ -404,8 +404,8 @@ function timeconditions_create_fc($id, $displayname='',$state=false) {
   // condition it will get properly intiialized
   //
   if ($DEVSTATE) {
-    $astman->send_request('Command',array('Command'=>"core set global ".$DEVSTATE."(Custom:TC".$id.") NOT_INUSE"));
-    $astman->send_request('Command',array('Command'=>"core set global ".$DEVSTATE."(Custom:TCSTICKY".$id.") NOT_INUSE"));
+    $astman->set_global($DEVSTATE."(Custom:TC".$id.")", 'NOT_INUSE');
+    $astman->set_global($DEVSTATE."(Custom:TCSTICKY".$id.")", 'NOT_INUSE');
   }
 }
 
@@ -483,8 +483,8 @@ function timeconditions_edit($id,$post){
       if ($tcstate_new !== false) {
         $astman->database_put("TC",$id,$tcstate_new);
         if ($DEVSTATE) {
-          $astman->send_request('Command',array('Command'=>"core set global ".$DEVSTATE."(Custom:TC".$id.") $blf"));
-          $astman->send_request('Command',array('Command'=>"core set global ".$DEVSTATE."(Custom:TCSTICKY".$id.") $sticky"));
+          $astman->set_global($DEVSTATE."(Custom:TC".$id.")", $blf);
+          $astman->set_global($DEVSTATE."(Custom:TCSTICKY".$id.")", $sticky);
         }
       }
     } else {
