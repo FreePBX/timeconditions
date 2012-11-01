@@ -35,6 +35,6 @@
 			<display>timeconditions</display>
 		</timeconditions>
  	</popovers>
-	<location>release/2.10/timeconditions-2.10.0.2.tgz</location>
-	<md5sum>697b078100bb63cfd14541d94ba1df44</md5sum>
+	<location>release/2.11/timeconditions-2.11.0.0.tgz</location>
+	<md5sum>a55918a211d8f860287e23777dec51a9</md5sum>
 </module>
