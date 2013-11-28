@@ -29,4 +29,4 @@
 	</menuitems>
 	<location>release/2.10/timeconditions-2.10.0.0.tgz</location>
 	<md5sum>c7dc16a979cb29303b1b53bf3b11bc1a</md5sum>
-</module>
+<supported><version>2.10</version></supported></module>
