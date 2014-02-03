@@ -1,15 +1,15 @@
 <module>
-	<rawname>timeconditions</rawname>
-	<repo>standard</repo>
-	<name>Time Conditions</name>
-	<version>2.11.0.1</version>
-	<publisher>FreePBX</publisher>
-	<license>GPLv2+</license>
-	<category>Applications</category>
-	<description>
+  <rawname>timeconditions</rawname>
+  <repo>standard</repo>
+  <name>Time Conditions</name>
+  <version>2.11.0.1</version>
+  <publisher>FreePBX</publisher>
+  <license>GPLv2+</license>
+  <category>Applications</category>
+  <description>
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
-	<changelog>
+  <changelog>
 		*2.11.0.1* syntax error
 		*2.11.0.0* #6051
 		*2.10.0.2* #5476, #5478 
@@ -24,18 +24,21 @@
 		*2.9.0.1* #4636 typo broke hints, broken destination
 		*2.9.0.0* #4636 Add Auto-resetting manual override
 	</changelog>
-	<depends>
-		<version>2.5.0alpha1</version>
-	</depends>
-	<menuitems>
-		<timeconditions>Time Conditions</timeconditions>
-		<timegroups>Time Groups</timegroups>
-	</menuitems>
-	<popovers>
-		<timeconditions>
-			<display>timeconditions</display>
-		</timeconditions>
- 	</popovers>
-	<location>release/2.11/timeconditions-2.11.0.1.tgz</location>
-	<md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
+  <depends>
+    <version>2.5.0alpha1</version>
+  </depends>
+  <menuitems>
+    <timeconditions>Time Conditions</timeconditions>
+    <timegroups>Time Groups</timegroups>
+  </menuitems>
+  <popovers>
+    <timeconditions>
+      <display>timeconditions</display>
+    </timeconditions>
+  </popovers>
+  <location>release/2.11/timeconditions-2.11.0.1.tgz</location>
+  <md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
+  <supported>
+    <version>2.10</version>
+  </supported>
 </module>
