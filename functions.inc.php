@@ -495,6 +495,11 @@ function timeconditions_edit($id,$post){
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	$fcc->setEnabled($override_fc);
+	if ($displayname) {
+		$fcc->setDescription("$id: $displayname");
+	} else {
+		$fcc->setDescription($id._(": Time Condition Override"));
+	}
 	$fcc->update();
 	unset($fcc);	
 }
