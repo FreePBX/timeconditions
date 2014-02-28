@@ -1,16 +1,14 @@
 # Russian freePBX ver. translation
 # Copyright (c) 2006-2008 PostMet Corporation
 # This file is distributed under the same license as the freePBX package.
-# Alexander Kozyrev <ceo@postmet.com>, Sergey Nikolayev <sergey@postmet.com>, 2006-2008.
+# Alexander Kozyrev <ceo@postmet.com>, Alexander Anikin <may@postmet.com>, 2006-2013.
 #
-# Использовать iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
-# fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
-"PO-Revision-Date: 2008-01-16 16:38+0100\n"
+"POT-Creation-Date: 2012-10-30 00:04+0400\n"
+"PO-Revision-Date: 2013-08-26 10:00+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +20,7 @@ msgid "Time Condition: %s"
 msgstr "Правило по времени: %s"
 
 msgid ": Time Condition Override"
-msgstr ""
+msgstr "Перезаписать Правила по времени"
 
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr "Описание должно быть цифро-буквенное, и не может быть пустым"
@@ -53,16 +51,13 @@ msgid "Used By"
 msgstr "Используется"
 
 msgid "Remove Section and Submit Current Settings"
-msgstr ""
+msgstr "Удалить секцию и подтвердить текущие настройки"
 
 msgid "New Time"
 msgstr "Новое время"
 
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
-
-msgid "text"
-msgstr "текст"
 
 msgid "Time to start:"
 msgstr "Время начала:"
@@ -155,19 +150,19 @@ msgid "OK"
 msgstr "ОК"
 
 msgid "checking for generate_hint field.."
-msgstr ""
+msgstr "проверяем поле generate_hint.."
 
 msgid "already exists"
-msgstr ""
+msgstr "уже существует"
 
 msgid "generating feature codes if needed.."
-msgstr ""
+msgstr "генерируем сервисные коды при необходимости.."
 
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Проверяем старые правила по времени для обновления.."
 
 msgid "starting migration"
-msgstr "начинаем мграцию"
+msgstr "начинаем миграцию"
 
 #, php-format
 msgid "Upgraded %s and created group %s"
@@ -209,7 +204,7 @@ msgstr ""
 "дальнейшем."
 
 msgid "Generate BLF Hint"
-msgstr ""
+msgstr "Генерация BLF хинтов"
 
 #, php-format
 msgid ""
@@ -220,36 +215,45 @@ msgid ""
 "required to keep the hint updated. This Feature Code can be found and "
 "enabled/disabled on the Feature Codes tab under Time Conditions."
 msgstr ""
+"Если установлено, будет сгененрирован хинт, который перепишет сервисный код %s "
+"ассоциированный с этим Правилом по времени, который можно использовать подсвечивая "
+"BLF кнопку телефона, запрограммированную для включения/выключения этого Правила по "
+"времени. Если BLF не используются, то лучше оставить эту опцию неотмеченной, чтобы "
+"иметь возможность передавать хинты другим системным ресурсам, если потребуется. "
+"Этот сервисный код можно найти, а также включить/выключиьт его на вкладке Сервисные "
+"коды в разделе Правила по времени." 
 
 msgid "Enable Override Code"
-msgstr ""
+msgstr "Включить код перезаписи"
 
 #, php-format
 msgid ""
 "Check to enable the override feature code %s that allows manual changes to "
 "the timecondition."
 msgstr ""
+"Отметить для включения кода перезаписи %s который позволит вручную менять правила "
+"по времени."
 
 msgid "No Override"
-msgstr ""
+msgstr "Не перезаписывать"
 
 msgid "Temporary Override matching state"
-msgstr ""
+msgstr "Временно перезаписывать при совпадении"
 
 msgid "Permanent Override matching state"
-msgstr ""
+msgstr "Постоянно перезаписывать при совпадении"
 
 msgid "Temporary Override unmatching state"
-msgstr ""
+msgstr "Временно перезаписывать при несовпадении"
 
 msgid "Permanent Override unmatching state"
-msgstr ""
+msgstr "Временно "
 
 msgid "Unknown State"
-msgstr ""
+msgstr "Неизвестное состояние"
 
 msgid "Current Override:"
-msgstr ""
+msgstr "Текущие параметры:"
 
 msgid ""
 "Indicates the current state of this Time Condition. If it is in a Temporary "
@@ -259,9 +263,15 @@ msgid ""
 "external XML applications on your phone. If No Override then it functions "
 "normally based on the time schedule."
 msgstr ""
+"Отображает текущие параметры данного Правила по времени. Если это временное "
+"состояние, то оно автоматически вернётся в первоначальное при следующей подвижке "
+"по времени, ассоциированной с Временной группой. Если это постоянное состояние, "
+"то оно остаётся таким пока не будут сделаны изменения здесь или другие внешние "
+"приложения, такие как XML-скрипт на телефоне. Если стоит 'Не перезаписывать', то "
+"функционал базируется на стандартном временном расписании."
 
 msgid "Change Override:"
-msgstr ""
+msgstr "Изменённые параметры:"
 
 #, php-format
 msgid ""
@@ -274,24 +284,31 @@ msgid ""
 "Permanent Override which must be done here or with other applications such "
 "as an XML based phone options."
 msgstr ""
+"Правило по времени может быть установлено на срабатывание назначения по совпадению "
+"или несовпадению, в обоих случаях перенаправление сработает в указанный промежуток "
+"времени. Если установлено в положение Постоянное совпадение, то это будет работать "
+"до тех пор, пока не будет включен другой режим ручным способом. Все установки могут "
+"быть отменены опцией Сброс перезаписи. Временные перезаписи могут быть переключены "
+" при помощи сервисного кода %s, который также удалит и Постоянную перезапись, если "
+"она установлена, но не затронет внешние приложения, типа XML-скрипт с телефона."  
 
 msgid "Unchanged"
-msgstr ""
+msgstr "Неизменёный"
 
 msgid "Reset Override"
-msgstr ""
+msgstr "Сброс перезаписи"
 
 msgid "Temporary matched"
-msgstr ""
+msgstr "Временное совпадение"
 
 msgid "Permanently matched"
-msgstr ""
+msgstr "Постоянное совпадение"
 
 msgid "Temporary unmatched"
-msgstr ""
+msgstr "Временное несовпадение"
 
 msgid "Permanently unmatched"
-msgstr ""
+msgstr "Временное несовпадение"
 
 msgid "Time Group:"
 msgstr "Временная группа:"
@@ -307,13 +324,13 @@ msgstr ""
 "Правило по времени."
 
 msgid "Goto Current Time Group"
-msgstr "Переправиь в текущую временную группу"
+msgstr "Переправить в текущую временную группу"
 
 msgid "Destination if time matches"
-msgstr "Назначение, если попадает в Правило по времени"
+msgstr "Назначение, если попадает во временную группу"
 
 msgid "Destination if time does not match"
-msgstr "Назначение, если не попадает в Правило по времени"
+msgstr "Назначение, если не попадает во временную группу"
 
 msgid "Submit"
 msgstr "Применить"
@@ -336,12 +353,14 @@ msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
+"Эта сккция будет удалена из текущей временной группы и всех других установок, "
+"включая изменения, которые сейчас будут обновлены. ОК для продолжения?"
 
 msgid "Time Conditions"
 msgstr "Правила по времени"
 
 msgid "Applications"
-msgstr ""
+msgstr "Приложения"
 
 msgid ""
 "Creates a condition where calls will go to one of two destinations (eg, an "
@@ -349,15 +368,19 @@ msgid ""
 "used for example to ring a receptionist during the day, or go directly to an "
 "IVR at night."
 msgstr ""
+"Создаёт условия, при котором вызов будет распределяться на одно и более "
+"назначение (например внутренний номер, Интеркативное меню, ринг-группа..) "
+"основываяь на текущем времени/дате. Это можно использовать например направляя "
+"входящие вызовы секретарю в рабочее время, и на Интерактивное меню - в ночное."
 
 msgid "Time Groups"
 msgstr "Временная группа"
 
 msgid "Enable Maintenance Polling"
-msgstr ""
+msgstr "Задействовать опрос по обслуживанию"
 
 msgid "Time Condition Module"
-msgstr ""
+msgstr "Модуль правил по времени"
 
 msgid ""
 "If set to false, this will override the execution of the Time Conditons "
@@ -367,9 +390,15 @@ msgid ""
 "temporarily if debugging a system to avoid the periodic dialplan running "
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
+"Если установлено в false, то прерывается исполнение задач Правил по времени, "
+"вызываемых call-файлами. Если все сервисные коды для правил по времени выключены, "
+"задачи по обслуживанию никак не смогут выполняться. Установка этой опции в "
+"false совершенно нетипична. Вы конечно можете установить её временно, чтобы "
+"предотвращать периодическое исполнение в диал плане задач по обслуживанию, что "
+"может мешать пониманию в CLI."   
 
 msgid "Maintenance Polling Interval"
-msgstr ""
+msgstr "Интервал опроса по обслуживанию"
 
 msgid ""
 "The polling interval in seconds used by the Time Conditions manintenace "
@@ -380,3 +409,12 @@ msgid ""
 "configured span between two time condition states, so that a manual overide "
 "during such a period is properly reset when the new period starts."
 msgstr ""
+"Интервал в секундах, используемый в задачах по обслуживанию в Правилах по времени, "
+"в течение которого Астериском исполняются call-файлы для обновления статуса "
+"Правил по времени, а так же поддерживает актуальный статус хинтов для устройств, "
+"которые используют BLF. Более короткий интервал даёт более точное отображение "
+"статуса кнопок с BLF, Интервал должен быть меньше, чем наименьший временной зазор "
+"между двумя состояниями, тогда ручное изменение состояния в таком периоде "
+"благополучно сбросится в начале следующего периода." 
+#~ msgid "text"
+#~ msgstr "текст"
