@@ -5,6 +5,86 @@ function timeconditions_getdest($exten) {
 	return array('timeconditions,'.$exten.',1');
 }
 
+function timeconditions_settimeorder($time_id, $seq) {
+	global $db;
+
+	$sql = "SELECT `timeconditions_id` FROM `timeconditions` ORDER BY `priority`";
+	$sequence = $db->getCol($sql);
+	if(DB::IsError($sequence)) {
+		die_freepbx($sequence->getDebugInfo());
+	}
+
+	if ($seq != 'new') {
+		$key = array_search($time_id,$sequence);
+		if ($key === false) {
+			return(false);
+		}
+	}
+	switch ("$seq") {
+		case 'up':
+			if (!isset($sequence[$key-1])) break;
+			$previous = $sequence[$key-1];
+			$sequence[$key-1] = $time_id;
+			$sequence[$key] = $previous;
+			break;
+		case 'down':
+			if (!isset($sequence[$key+1])) break;
+			$previous = $sequence[$key+1];
+			$sequence[$key+1] = $time_id;
+			$sequence[$key] = $previous;
+			break;
+		case 'top':
+			unset($sequence[$key]);
+			array_unshift($sequence,$time_id);
+			break;
+		case 'bottom':
+			unset($sequence[$key]);
+		case 'new':
+			// fallthrough, no break
+			$sequence[]=$time_id;
+			break;
+		case '0':
+			unset($sequence[$key]);
+			array_unshift($sequence,$time_id);
+			break;
+		default:
+			if (!ctype_digit($seq)) {
+				return false;
+			}
+			if ($seq >= count($sequence)-1) {
+				unset($sequence[$key]);
+				$sequence[] = $time_id;
+				break;
+			}
+			if ($sequence[$seq] == $time_id) {
+				break;
+			}
+			$sequence[$key] = "bookmark";
+			$remainder = array_slice($sequence,$seq);
+			array_unshift($remainder,$time_id);
+			$sequence = array_merge(array_slice($sequence,0,$seq), $remainder);
+			unset($sequence[array_search("bookmark",$sequence)]);
+			break;
+	}
+	$insert_array = array();
+	$seq = 0;
+	$final_seq = false;
+	foreach($sequence as $tid) {
+		$insert_array[] = array($seq, $tid);
+		if ($tid === $time_id) {
+			$final_seq = $seq;
+		}
+		$seq++;
+	}
+
+	$compiled = $db->prepare('UPDATE `timeconditions` SET `priority` = ? WHERE `timeconditions_id` = ?');
+	$result = $db->executeMultiple($compiled,$insert_array);
+	if(DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo()."<br><br>".'error reordering outbound_route_sequence');
+	}
+	return $final_seq;
+}
+
 function timeconditions_getdestinfo($dest) {
 	global $active_modules;
 
@@ -51,27 +131,27 @@ function timeconditions_get_config($engine) {
 
 	switch($engine) {
 		case "asterisk":
-	    $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
+			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
 			$timelist = timeconditions_list(true);
 			if(is_array($timelist)) {
-        $context = 'timeconditions';
-        $fc_context = 'timeconditions-toggles';
-        $got_code_autoreset = false;
-        $need_maint = false;
-        $interval = isset($amp_conf['TCINTERVAL']) && ctype_digit($amp_conf['TCINTERVAL']) ? $amp_conf['TCINTERVAL'] : '60';
+				$context = 'timeconditions';
+				$fc_context = 'timeconditions-toggles';
+				$got_code_autoreset = false;
+				$need_maint = false;
+				$interval = isset($amp_conf['TCINTERVAL']) && ctype_digit($amp_conf['TCINTERVAL']) ? $amp_conf['TCINTERVAL'] : '60';
 
-        if ($amp_conf['TCMAINT']) {
-          $maint_context = 'tc-maint';
-          $ext->add($maint_context, 's', '', new ext_nocdr(''));
-          $ext->add($maint_context, 's', '', new ext_set("TCMAINT",'RETURN'));
-        }
+				if ($amp_conf['TCMAINT']) {
+					$maint_context = 'tc-maint';
+					$ext->add($maint_context, 's', '', new ext_nocdr(''));
+					$ext->add($maint_context, 's', '', new ext_set("TCMAINT",'RETURN'));
+				}
 
 				foreach($timelist as $item) {
 					// add dialplan
-          // note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
+					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
 					$times = timeconditions_timegroups_get_times($item['time']);
-          $time_id = $item['timeconditions_id'];
-          $generate_hint = $item['generate_hint'] == '1' ? true : false;
+					$time_id = $item['timeconditions_id'];
+					$generate_hint = $item['generate_hint'] == '1' ? true : false;
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -80,113 +160,111 @@ function timeconditions_get_config($engine) {
 					}
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
-          $skip_dest = 'falsegoto';
-          if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
-					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
-					  $ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
-            $skip_dest = '';
-          }
+					$skip_dest = 'falsegoto';
+					if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
+						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
+						$skip_dest = '';
+					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
-          $ext->add($context, $time_id, '', new ext_return(''));
+					$ext->add($context, $time_id, '', new ext_return(''));
 
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
-          $skip_dest = 'truegoto';
-          if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
-					  $ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
-					  $ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
-            $skip_dest = '';
-          }
+					$skip_dest = 'truegoto';
+					if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
+						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
+						$skip_dest = '';
+					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
-          $ext->add($context, $time_id, '', new ext_return(''));
+					$ext->add($context, $time_id, '', new ext_return(''));
 
-          $fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
-          $c = $fcc->getCodeActive();
-          unset($fcc);
-          if ($c != '') {
-            $got_code_autoreset = true;
-            if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
-              $ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
-            }
-            $ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
-            $ext->add($fc_context, $c, '', new ext_hangup());
+					$fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
+					$c = $fcc->getCodeActive();
+					unset($fcc);
+					if ($c != '') {
+						$got_code_autoreset = true;
+						if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+							$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
+						}
+						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
+						$ext->add($fc_context, $c, '', new ext_hangup());
 
-            // If using hints then we want to keep the current, if not, then we only need to update if it is
-            // currently overridden
-            //
-            // If there are no times then this is purely manual and does not need to be updated
-            //
-            if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
-              $need_maint = true;
-              if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
-                $ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
-              } else {
-                $ext->add($maint_context, 's', '', new ext_gosubif('$["${DB(TC/'.$time_id.')}" != ""]',"$context,$time_id,1"));
-              }
-            }
+						// If using hints then we want to keep the current, if not, then we only need to update if it is
+						// currently overridden
+						//
+						// If there are no times then this is purely manual and does not need to be updated
+						//
+						if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
+							$need_maint = true;
+							if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+								$ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
+							} else {
+								$ext->add($maint_context, 's', '', new ext_gosubif('$["${DB(TC/'.$time_id.')}" != ""]',"$context,$time_id,1"));
+							}
+						}
 
-          }
+					}
 				}
 
-        if ($amp_conf['TCMAINT']) {
+				if ($amp_conf['TCMAINT']) {
 
-          // If we didn't have any maintenance to do, then don't reschedule the call file
-          //
-          if ($need_maint) {
-            $ext->add($maint_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing ${CALLERID(number)}'));
-          }
-          $ext->add($maint_context, 's', '', new ext_answer());
-          $ext->add($maint_context, 's', '', new ext_hangup());
-        }
+					// If we didn't have any maintenance to do, then don't reschedule the call file
+					//
+					if ($need_maint) {
+						$ext->add($maint_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing ${CALLERID(number)}'));
+					}
+					$ext->add($maint_context, 's', '', new ext_answer());
+					$ext->add($maint_context, 's', '', new ext_hangup());
+				}
 
-        if ($got_code_autoreset) {
-          $ext->add($fc_context, 'h', '', new ext_hangup());
+				if ($got_code_autoreset) {
+					$ext->add($fc_context, 'h', '', new ext_hangup());
 
-		      $ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
-          $m_context = 'macro-toggle-tc';
+					$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
+					$m_context = 'macro-toggle-tc';
 					$ext->add($m_context, 's', '', new ext_set("TCMAINT",'RETURN'));
 					$ext->add($m_context, 's', '', new ext_set("TCSTATE",'${DB(TC/${ARG1})}'));
-          $ext->add($m_context, 's', '', new ext_gosubif('$["${TCSTATE}" = ""]',$context.',${ARG1},1'));
-          if ($amp_conf['TCMAINT']) {
-            $ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','settc'));
-            $ext->add($m_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing 0'));
-          }
-          $ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE:0:4}" = "true"]?false:true)}'));
-          if ($amp_conf['USEDEVSTATE']) {
-            $ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?INUSE:NOT_INUSE)}'));
-            $ext->add($m_context, 's', '', new ext_execif('$["${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" = "INUSE"]', 'Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=NOT_INUSE'));
-          }
-          if ($amp_conf['FCBEEPONLY']) {
-            $ext->add($m_context, 's', '', new ext_playback('beep'));
-          } else {
-            $ext->add($m_context, 's', '', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
-          }
-        }
-        if ($need_maint) {
+					$ext->add($m_context, 's', '', new ext_gosubif('$["${TCSTATE}" = ""]',$context.',${ARG1},1'));
+					if ($amp_conf['TCMAINT']) {
+						$ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','settc'));
+						$ext->add($m_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing 0'));
+					}
+					$ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE:0:4}" = "true"]?false:true)}'));
+					if ($amp_conf['USEDEVSTATE']) {
+						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?INUSE:NOT_INUSE)}'));
+						$ext->add($m_context, 's', '', new ext_execif('$["${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" = "INUSE"]', 'Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=NOT_INUSE'));
+					}
+					if ($amp_conf['FCBEEPONLY']) {
+						$ext->add($m_context, 's', '', new ext_playback('beep'));
+					} else {
+						$ext->add($m_context, 's', '', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+					}
+				}
+				if ($need_maint) {
+					/* Now we have to make sure there is an active call file and if not kick one off.
+					Enabling the feature code will also do this, but this makes sure that if you
+					are using hints, that the hints are kept up. (Thus if not using hints, this is not
+					run until a feature code requires it).
 
-          /* Now we have to make sure there is an active call file and if not kick one off.
-            Enabling the feature code will also do this, but this makes sure that if you
-            are using hints, that the hints are kept up. (Thus if not using hints, this is not
-            run until a feature code requires it).
-
-            If need_maint is false, then we don't have any updating to do so don't start
-          */
-          if ($amp_conf['USEDEVSTATE'] && $amp_conf['TCMAINT']) {
-            $cf_0 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call';
-            $cf_1 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call';
-            if (!file_exists($cf_0) && !file_exists($cf_1)) {
-              // Note we don't use interval here because we are starting it for the first time so want it to update everything
-              //
-              exec($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php 60 0",$output,$ret_code);
-              if ($ret_code != 0) {
-                error(_("Unable to initiate Time Conditions call file with schedtc.php: $ret_code"));
-              }
-            }
-          }
-        }
-
+					If need_maint is false, then we don't have any updating to do so don't start
+					*/
+					if ($amp_conf['USEDEVSTATE'] && $amp_conf['TCMAINT']) {
+						$cf_0 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call';
+						$cf_1 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call';
+						if (!file_exists($cf_0) && !file_exists($cf_1)) {
+							// Note we don't use interval here because we are starting it for the first time so want it to update everything
+							//
+							exec($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php 60 0",$output,$ret_code);
+							if ($ret_code != 0) {
+								error(_("Unable to initiate Time Conditions call file with schedtc.php: $ret_code"));
+							}
+						}
+					}
+				}
 			}
 		break;
 	}
@@ -240,9 +318,8 @@ function timeconditions_change_destination($old_dest, $new_dest) {
 }
 
 
-//get the existing meetme extensions
 function timeconditions_list($getall=false) {
-	$results = sql("SELECT * FROM timeconditions ORDER BY displayname ASC","getAll",DB_FETCHMODE_ASSOC);
+	$results = sql("SELECT * FROM timeconditions ORDER BY priority ASC","getAll",DB_FETCHMODE_ASSOC);
 	if(is_array($results)){
 		foreach($results as $result){
 			// check to see if we have a dept match for the current AMP User.
@@ -568,7 +645,7 @@ function timeconditions_timegroups_list_groups() {
 	global $db;
 	$tmparray = array();
 
-	$sql = "select id, description from timegroups_groups order by description";
+	$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
 		$results = null;
@@ -681,7 +758,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false) {
   if ($convert) {
     $ast_ge_16 = version_compare($version,'1.6','ge');
   }
-	$sql = "select id, time from timegroups_details where timegroupid = $timegroup";
+	$sql = "SELECT id, time FROM timegroups_details WHERE timegroupid = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
 		$results = null;
@@ -697,7 +774,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false) {
 function timeconditions_timegroups_get_group($timegroup) {
 	global $db;
 
-	$sql = "select id, description from timegroups_groups where id = $timegroup";
+	$sql = "SELECT id, description FROM timegroups_groups WHERE id = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
  		$results = null;
@@ -715,7 +792,7 @@ function timeconditions_timegroups_add_group($description,$times=null) {
 	global $db;
 	global $amp_conf;
 
-	$sql = "insert timegroups_groups(description) VALUES ('$description')";
+	$sql = "INSERT timegroups_groups(description) VALUES ('$description')";
 	$db->query($sql);
   $timegroup = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
 	if (isset($times)) {
@@ -752,7 +829,7 @@ function timeconditions_timegroups_del_group($timegroup) {
 function timeconditions_timegroups_edit_group($timegroup,$description) {
 	global $db;
 
-	$sql = "update timegroups_groups set description = '$description' where id = $timegroup";
+	$sql = "UPDATE timegroups_groups SET description = '$description' WHERE id = $timegroup";
 	$db->query($sql);
 	needreload();
 }
@@ -767,7 +844,7 @@ function timeconditions_timegroups_edit_times($timegroup,$times) {
 		extract($val);
 		$time = timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
 		if (isset($time) && $time != '' && $time <> '*|*|*|*') {
-			$sql = "insert timegroups_details (timegroupid, time) values ($timegroup, '$time')";
+			$sql = "INSERT timegroups_details (timegroupid, time) VALUES ($timegroup, '$time')";
 			$db->query($sql);
 		}
 	}
@@ -778,12 +855,12 @@ function timeconditions_timegroups_edit_times($timegroup,$times) {
 function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
 	global $db;
 
-	$sql = "delete from timegroups_details where timegroupid = $timegroup";
+	$sql = "DELETE FROM timegroups_details WHERE timegroupid = $timegroup";
 	$db->query($sql);
 	foreach ($timestrings as $key=>$val) {
 		$time = $val;
 		if (isset($time) && $time != '' && $time <> '*|*|*|*') {
-			$sql = "insert timegroups_details (timegroupid, time) values ($timegroup, '$time')";
+			$sql = "INSERT timegroups_details (timegroupid, time) VALUES ($timegroup, '$time')";
 			$db->query($sql);
 		}
 	}

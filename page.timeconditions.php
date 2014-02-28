@@ -24,6 +24,19 @@ $tabindex = 0;
 
 //if submitting form, update database
 switch ($action) {
+	case 'ajaxtimepos':		
+		$repotrunkdirection = isset($_REQUEST['repotimedirection'])?$_REQUEST['repotimedirection']:'';
+		$repotrunkkey = isset($_REQUEST['repotimekey'])?$_REQUEST['repotimekey']:'';
+
+		timeconditions_settimeorder($repotrunkkey, $repotrunkdirection);
+    	needreload();
+    
+    	header("Content-type: application/json"); 
+		$json_array = array("status" => true);
+    	echo json_encode($json_array);
+		exit;
+
+	break;
 	case "add":
 		$_REQUEST['itemid'] = timeconditions_add($_POST);
 		needreload();
@@ -46,12 +59,38 @@ switch ($action) {
 $timeconditions = timeconditions_list();
 ?>
 
-<div class="rnav"><ul>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#timelist").sortable({ 
+    items: 'li:gt(0)',
+    cursor: 'move',
+    helper: 'clone',
+    update: function(event, ui){
+      var repotimekey=+ui.item.attr('id').replace('timelist','');
+      var repotimedirection=ui.item.index();repotimedirection--;
+      $.ajax({
+        type: 'POST',
+        url: location.href,
+        data: "action=ajaxtimepos&quietmode=1&skip_astman=1&restrictmods=timeconditions&repotimekey="+repotimekey+"&repotimedirection="+repotimedirection,
+        dataType: 'json',
+        success: function(data) {
+  			toggle_reload_button('show');
+        },
+        error: function(data) {
+          alert("<?php echo _("An unknown error occurred repositioning time conditions, refresh your browser to see the current correct time condition positions") ?>");
+return false;
+        }
+      });
+  }
+  }).disableSelection();
+});
+</script>
+<div class="rnav"><ul id="timelist">
     <li><a id="<?php echo ($itemid=='' ? 'current':'') ?>" href="config.php?display=<?php echo urlencode($dispnum)?>"><?php echo _("Add Time Condition")?></a></li>
 <?php
 if (isset($timeconditions)) {
 	foreach ($timeconditions as $timecond) {
-		echo "<li><a id=\"".($itemid==$timecond['timeconditions_id'] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&itemid=".urlencode($timecond['timeconditions_id'])."\">{$timecond['displayname']}</a></li>";
+		echo "<li id=\"timelist".$timecond['timeconditions_id']."\"><a id=\"".($itemid==$timecond['timeconditions_id'] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&itemid=".urlencode($timecond['timeconditions_id'])."\"><img src=\"images/arrow_up_down.png\" height=\"16\" width=\"16\" border=\"0\" alt=\"move\" style=\"float:none; margin-left:-6px; margin-bottom:-3px;cursor:move\" /> {$timecond['displayname']}</a></li>";
 	}
 }
 ?>
