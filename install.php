@@ -6,7 +6,11 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 		$sql = "insert timegroups_groups(description) VALUES ('$description')";
 		$db->query($sql);
-		$timegroup=mysql_insert_id();
+		if(method_exists($db,'insert_id')) {
+			$timegroup = $db->insert_id();
+		} else {
+			$timegroup = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
+		}
 		_timeconditions_timegroups_edit_timestrings($timegroup,$timestrings);
 		return $timegroup;
 	}
