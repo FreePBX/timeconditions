@@ -16,9 +16,6 @@ isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 //the item we are currently displaying
 isset($_REQUEST['itemid'])?$itemid=$db->escapeSimple($_REQUEST['itemid']):$itemid='';
 
-$generate_hint = isset($_POST['generate_hint'])?$_POST['generate_hint']:'0';
-$override_fc = isset($_POST['override_fc'])?$_POST['override_fc']:'0';
-
 $dispnum = "timeconditions"; //used for switch on config.php
 $tabindex = 0;
 
@@ -104,9 +101,13 @@ if ($action == 'delete') {
 	<h2><?php echo ($itemid ? _("Time Condition:")." ". $itemid : _("Add Time Condition")); ?></h2>
 <?php		
 	if ($itemid){ 
+		$fcc = new featurecode('timeconditions', 'toggle-mode-'.$itemid);
+		$code = $fcc->getCodeActive();
+		unset($fcc);
+
 		$thisItem = timeconditions_get($itemid);
 		$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
-		$tlabel = sprintf(_("Delete Time Condition: %s"),trim($thisItem['displayname']) == '' ? $itemid : $thisItem['displayname']." ($itemid) ");
+		$tlabel = sprintf(_("Delete Time Condition: %s"),trim($thisItem['displayname']) == '' ? $code : $thisItem['displayname']." ($code) ");
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
 		<a href="<?php echo $delURL ?>"><?php echo $label; ?></a><br />
@@ -117,7 +118,6 @@ if ($action == 'delete') {
 			<a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
 		}
-    $generate_hint = $thisItem['generate_hint'] == '1' ? '1' : '0';
     $tccode = $thisItem['tccode'] === false ? '' :  $thisItem['tccode'];
 	} else {
     $tccode = '';
@@ -139,20 +139,6 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Time Condition name:")?><span><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span></a></td>
 		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
-<?php if ($amp_conf['USEDEVSTATE']) { ?>
-	<tr>
-  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo sprintf(_("If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."),$tcval)?></span></a></td>
-		<td>
-			<input name="generate_hint" type="checkbox" value="1" <?php echo ($generate_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
-		</td>
-	</tr>
-<?php } ?>
-  <tr>
-    <td><a href="#" class="info"><?php echo _("Enable Override Code")?><span><?php echo sprintf(_("Check to enable the override feature code %s that allows manual changes to the timecondition."),$tcval)?></span></a></td>
-    <td>
-      <input name="override_fc" type="checkbox" value="1" <?php echo ($tccode != '' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/><?php if ($tcval) { echo "<small>($tcval)</small>"; } ?>
-    </td>
-  </tr>
 <?php 
   if ($itemid && $thisItem['tcstate'] !== false) {
     $tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];

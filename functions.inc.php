@@ -151,7 +151,6 @@ function timeconditions_get_config($engine) {
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
 					$times = timeconditions_timegroups_get_times($item['time']);
 					$time_id = $item['timeconditions_id'];
-					$generate_hint = $item['generate_hint'] == '1' ? true : false;
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -161,9 +160,9 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'falsegoto';
-					if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+					if ($amp_conf['USEDEVSTATE']) {
 						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
-						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
+						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
 						$skip_dest = '';
 					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
@@ -173,9 +172,9 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'truegoto';
-					if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+					if ($amp_conf['USEDEVSTATE']) {
 						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
-						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
+						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
 						$skip_dest = '';
 					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
@@ -187,7 +186,7 @@ function timeconditions_get_config($engine) {
 					unset($fcc);
 					if ($c != '') {
 						$got_code_autoreset = true;
-						if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+						if ($amp_conf['USEDEVSTATE']) {
 							$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
 						}
 						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
@@ -200,13 +199,68 @@ function timeconditions_get_config($engine) {
 						//
 						if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
 							$need_maint = true;
-							if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+							if ($amp_conf['USEDEVSTATE']) {
 								$ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
 							} else {
 								$ext->add($maint_context, 's', '', new ext_gosubif('$["${DB(TC/'.$time_id.')}" != ""]',"$context,$time_id,1"));
 							}
 						}
 
+					}
+				}
+
+				$fcc = new featurecode('timeconditions', 'toggle-mode-all');
+				$c = $fcc->getCodeActive();
+				unset($fcc);
+				if ($c) {
+					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
+
+					$userFCs = array();
+					if ($bmo && $bmo->Cos && $bmo->Cos->isLicensed()) {
+						$cos = $bmo->Cos;
+					} else if (function_exists('cos_islicenced') && cos_islicenced()) {
+						$cos = Cos::create();
+					}
+
+					if ($cos) {
+						$allCos = $cos->getAllCos();
+						foreach ($allCos as $cos_name) {
+							$all = $cos->getAll($cos_name);
+
+							foreach ($all['members'] as $key => $val) {
+								$userFCs[$key] = array_merge(($userFCs[$key] ? $userFCs[$key] : array()), $all['fcallow']);
+							}
+						}
+					}
+
+					$users = core_users_list();
+					foreach ($users as $user) {
+						$exten = $user[0];
+
+						$indexes = '';
+						$hint = '';
+						foreach ($timelist as $item) {
+							$time_id = $item['timeconditions_id'];
+
+							if (count($userFCs) > 1 && (!isset($userFCs[$exten]) || !isset($userFCs[$exten]['toggle-mode-' . $time_id]))) {
+								continue;
+							}
+							$indexes.= '&' . $time_id;
+							$hint.= '&Custom:TC' . $time_id;
+						}
+						$indexes = ltrim($indexes, '&');
+						$hint = ltrim($hint, '&');
+
+						if ($amp_conf['USEDEVSTATE']) {
+							$ext->addHint($fc_context, $c . '*' . $exten, $hint);
+						}
+
+						if (strlen($indexes) == 0) {
+							$ext->add($fc_context, $c . '*' . $exten, '', new ext_hangup(''));
+							continue;
+						}
+
+						$ext->add($fc_context, $c . '*' . $exten, '', new ext_macro('toggle-tc', $indexes));
 					}
 				}
 
@@ -226,22 +280,45 @@ function timeconditions_get_config($engine) {
 
 					$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
 					$m_context = 'macro-toggle-tc';
-					$ext->add($m_context, 's', '', new ext_set("TCMAINT",'RETURN'));
-					$ext->add($m_context, 's', '', new ext_set("TCSTATE",'${DB(TC/${ARG1})}'));
-					$ext->add($m_context, 's', '', new ext_gosubif('$["${TCSTATE}" = ""]',$context.',${ARG1},1'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('INDEXES', '${ARG1}'));
+					$ext->add($m_context, 's', '', new ext_setvar('TCMAINT','RETURN'));
+					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
+					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
+					$ext->add($m_context, 's', 'begin1', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('MODE', '${DB(TC/${INDEX})}'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$["${MODE:0:5}" != "false"]', 'end1'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'true'));
+
+					$ext->add($m_context, 's', 'end1', new ext_setvar('ITER', '$[${ITER} + 1]'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin1'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
+					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
+					$ext->add($m_context, 's', 'begin2', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
+
+					$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${TCSTATE}" == "true"]?true:false)}'));
+					if ($amp_conf['USEDEVSTATE']) {
+						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${INDEX})', '${IF($["${TCSTATE}" = "true"]?NOT_INUSE:INUSE)}'));
+						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TCSTICKY${INDEX})', 'NOT_INUSE'));
+					}
+
+					$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
+
 					if ($amp_conf['TCMAINT']) {
-						$ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','settc'));
+						$ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','playback'));
 						$ext->add($m_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing 0'));
 					}
-					$ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE:0:4}" = "true"]?false:true)}'));
-					if ($amp_conf['USEDEVSTATE']) {
-						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?INUSE:NOT_INUSE)}'));
-						$ext->add($m_context, 's', '', new ext_execif('$["${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" = "INUSE"]', 'Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=NOT_INUSE'));
-					}
+
 					if ($amp_conf['FCBEEPONLY']) {
-						$ext->add($m_context, 's', '', new ext_playback('beep'));
+						$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
 					} else {
-						$ext->add($m_context, 's', '', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+						$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 					}
 				}
 				if ($need_maint) {
@@ -351,7 +428,7 @@ function timeconditions_get($id){
   } else {
     $results['tccode'] = $c;
 		if ($astman != null) {
-			$results['tcstate'] = $astman->database_get("TC",$id);
+			$results['tcstate'] = timeconditions_get_state($id);
 		} else {
 			die_freepbx("No manager connection, can't get Time Condition State");
 		}
@@ -459,32 +536,74 @@ function timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $min
 	return $time;
 }
 
+function timeconditions_get_state($id) {
+	global $astman;
+
+	return $astman->database_get("TC", $id);
+}
+
+function timeconditions_set_state($id, $state) {
+	global $astman;
+	global $amp_conf;
+
+	if ($astman != null) {
+		switch ($state) {
+		case 'auto':
+		case '':
+			$state = '';
+			$blf = 'NOT_INUSE';
+			$sticky = 'NOT_INUSE';
+			break;
+		case 'true':
+			$blf = 'NOT_INUSE';
+			$sticky = 'NOT_INUSE';
+			break;
+		case 'true_sticky':
+			$blf = 'NOT_INUSE';
+			$sticky = 'INUSE';
+			break;
+		case 'false':
+			$blf = 'INUSE';
+			$sticky = 'NOT_INUSE';
+			break;
+		case 'false_sticky':
+			$blf = 'INUSE';
+			$sticky = 'INUSE';
+			break;
+		default:
+			$state = false;
+			break;
+		}
+
+		if ($state !== false) {
+			$astman->database_put("TC", $id, $state);
+
+			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
+			if ($DEVSTATE) {
+				$astman->set_global($DEVSTATE . "(Custom:TC" . $id . ")", $blf);
+				$astman->set_global($DEVSTATE . "(Custom:TCSTICKY" . $id . ")", $sticky);
+			}
+		}
+	} else {
+		die_freepbx("No manager connection, can't update Time Condition State");
+	}
+}
+
   /*
   */
-function timeconditions_create_fc($id, $displayname='',$state=false) {
-  global $astman;
-  global $amp_conf;
-  $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
-
+function timeconditions_create_fc($id, $displayname='') {
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	if ($displayname) {
 		$fcc->setDescription("$id: $displayname");
 	} else {
-    $fcc->setDescription($id._(": Time Condition Override"));
+		$fcc->setDescription($id._(": Time Condition Override"));
 	}
-	$fcc->setDefault('*27'.$id,$state);
-  $fcc->setProvideDest();
+	$fcc->setDefault('*27'.$id);
+	$fcc->setProvideDest();
 	$fcc->update();
 	unset($fcc);	
 
-  $astman->database_put("TC",$id,'');
-  // We do not try to figure out the blf value here, as soon as the call script is called or a call flows through the time
-  // condition it will get properly intiialized
-  //
-  if ($DEVSTATE) {
-    $astman->set_global($DEVSTATE."(Custom:TC".$id.")", 'NOT_INUSE');
-    $astman->set_global($DEVSTATE."(Custom:TCSTICKY".$id.")", 'NOT_INUSE');
-  }
+	timeconditions_set_state($id, '');
 }
 
 function timeconditions_add($post){
@@ -496,8 +615,7 @@ function timeconditions_add($post){
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
-  $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
-  $override_fc = $post['override_fc'] == '1' ? '1' : '0';
+  $generate_hint = '1';
 
 	if($displayname == '') {
 	 	$displayname = "unnamed";
@@ -508,14 +626,12 @@ function timeconditions_add($post){
 	} else {
 		$id = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
 	}
-  timeconditions_create_fc($id, $displayname, $override_fc);
+  timeconditions_create_fc($id, $displayname);
   return $id;
 }
 
 function timeconditions_edit($id,$post){
   global $db;
-  global $astman;
-  global $amp_conf;
 
   $id = $db->escapeSimple($id);
   $displayname = $db->escapeSimple($post['displayname']);
@@ -523,59 +639,18 @@ function timeconditions_edit($id,$post){
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
-  $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
-  $override_fc = $post['override_fc'] == '1' ? '1' : '0';
+  $generate_hint = '1';
 
 	if(empty($displayname)) { 
 		$displayname = "unnamed";
 	}
 	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\"  WHERE timeconditions_id = \"$id\"");
 
-  if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
-    $tcstate_new = $post['tcstate_new'];
-
-	  $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
-    if ($astman != null) {
-      switch ($tcstate_new) {
-        case 'auto':
-          $tcstate_new = "";
-          $blf = 'NOT_INUSE';
-          $sticky = 'NOT_INUSE';
-        break;
-        case 'true':
-          $blf = 'NOT_INUSE';
-          $sticky = 'NOT_INUSE';
-        break;
-        case 'true_sticky':
-          $blf = 'NOT_INUSE';
-          $sticky = 'INUSE';
-        break;
-        case 'false':
-          $blf = 'INUSE';
-          $sticky = 'NOT_INUSE';
-        break;
-        case 'false_sticky':
-          $blf = 'INUSE';
-          $sticky = 'INUSE';
-        break;
-        default:
-          $tcstate_new = false;
-        break;
-      }
-      if ($tcstate_new !== false) {
-        $astman->database_put("TC",$id,$tcstate_new);
-        if ($DEVSTATE) {
-          $astman->set_global($DEVSTATE."(Custom:TC".$id.")", $blf);
-          $astman->set_global($DEVSTATE."(Custom:TCSTICKY".$id.")", $sticky);
-        }
-      }
-    } else {
-      die_freepbx("No manager connection, can't update Time Condition State");
-    }
-  }
+	if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
+		timeconditions_set_state($id, $post['tcstate_new']);
+	}
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
-	$fcc->setEnabled($override_fc);
 	if ($displayname) {
 		$fcc->setDescription("$id: $displayname");
 	} else {
