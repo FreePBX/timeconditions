@@ -305,18 +305,18 @@ function timeconditions_check_destinations($dest=true) {
 		$thisid      = $result['timeconditions_id'];
 		$description = sprintf(_("Time Condition: %s"),$result['displayname']);
 		$thisurl     = 'config.php?display=timeconditions&itemid='.urlencode($thisid);
-		if ($dest === true || $dest == $thisdest) {
+		if ($dest === true || $dest[0] == $thisdest) {
 			$destlist[] = array(
 				'dest' => $thisdest,
-				'description' => $description,
+				'description' => $description . '('._('true goto').')',
 				'edit_url' => $thisurl,
 			);
 		}
 		$thisdest = $result['falsegoto'];
-		if ($dest === true || $dest == $thisdest) {
+		if ($dest === true || $dest[0] == $thisdest) {
 			$destlist[] = array(
 				'dest' => $thisdest,
-				'description' => $description,
+				'description' => $description . '('._('false goto').')',
 				'edit_url' => $thisurl,
 			);
 		}
