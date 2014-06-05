@@ -7,86 +7,6 @@ function timeconditions_getdest($exten) {
 	return array('timeconditions,'.$exten.',1');
 }
 
-function timeconditions_settimeorder($time_id, $seq) {
-	global $db;
-
-	$sql = "SELECT `timeconditions_id` FROM `timeconditions` ORDER BY `priority`";
-	$sequence = $db->getCol($sql);
-	if(DB::IsError($sequence)) {
-		die_freepbx($sequence->getDebugInfo());
-	}
-
-	if ($seq != 'new') {
-		$key = array_search($time_id,$sequence);
-		if ($key === false) {
-			return(false);
-		}
-	}
-	switch ("$seq") {
-		case 'up':
-			if (!isset($sequence[$key-1])) break;
-			$previous = $sequence[$key-1];
-			$sequence[$key-1] = $time_id;
-			$sequence[$key] = $previous;
-			break;
-		case 'down':
-			if (!isset($sequence[$key+1])) break;
-			$previous = $sequence[$key+1];
-			$sequence[$key+1] = $time_id;
-			$sequence[$key] = $previous;
-			break;
-		case 'top':
-			unset($sequence[$key]);
-			array_unshift($sequence,$time_id);
-			break;
-		case 'bottom':
-			unset($sequence[$key]);
-		case 'new':
-			// fallthrough, no break
-			$sequence[]=$time_id;
-			break;
-		case '0':
-			unset($sequence[$key]);
-			array_unshift($sequence,$time_id);
-			break;
-		default:
-			if (!ctype_digit($seq)) {
-				return false;
-			}
-			if ($seq >= count($sequence)-1) {
-				unset($sequence[$key]);
-				$sequence[] = $time_id;
-				break;
-			}
-			if ($sequence[$seq] == $time_id) {
-				break;
-			}
-			$sequence[$key] = "bookmark";
-			$remainder = array_slice($sequence,$seq);
-			array_unshift($remainder,$time_id);
-			$sequence = array_merge(array_slice($sequence,0,$seq), $remainder);
-			unset($sequence[array_search("bookmark",$sequence)]);
-			break;
-	}
-	$insert_array = array();
-	$seq = 0;
-	$final_seq = false;
-	foreach($sequence as $tid) {
-		$insert_array[] = array($seq, $tid);
-		if ($tid === $time_id) {
-			$final_seq = $seq;
-		}
-		$seq++;
-	}
-
-	$compiled = $db->prepare('UPDATE `timeconditions` SET `priority` = ? WHERE `timeconditions_id` = ?');
-	$result = $db->executeMultiple($compiled,$insert_array);
-	if(DB::IsError($result)) {
-		die_freepbx($result->getDebugInfo()."<br><br>".'error reordering outbound_route_sequence');
-	}
-	return $final_seq;
-}
-
 function timeconditions_getdestinfo($dest) {
 	global $active_modules;
 
@@ -391,7 +311,7 @@ function timeconditions_check_destinations($dest=true) {
 function timeconditions_change_destination($old_dest, $new_dest) {
 	$sql = 'UPDATE timeconditions SET truegoto = "' . $new_dest . '" WHERE truegoto = "' . $old_dest . '"';
 	sql($sql, "query");
-	
+
 	$sql = 'UPDATE timeconditions SET falsegoto = "' . $new_dest . '" WHERE falsegoto = "' . $old_dest . '"';
 	sql($sql, "query");
 }
@@ -410,7 +330,7 @@ function timeconditions_list($getall=false) {
 	}
 	if (isset($allowed)) {
 		return $allowed;
-	} else { 
+	} else {
 		return null;
 	}
 }
@@ -444,7 +364,7 @@ function timeconditions_del($id){
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	$fcc->delete();
-	unset($fcc);	
+	unset($fcc);
   if ($astman != null) {
     $astman->database_del("TC",$id);
   }
@@ -603,7 +523,7 @@ function timeconditions_create_fc($id, $displayname='') {
 	$fcc->setDefault('*27'.$id);
 	$fcc->setProvideDest();
 	$fcc->update();
-	unset($fcc);	
+	unset($fcc);
 
 	timeconditions_set_state($id, '');
 }
@@ -643,7 +563,7 @@ function timeconditions_edit($id,$post){
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = '1';
 
-	if(empty($displayname)) { 
+	if(empty($displayname)) {
 		$displayname = "unnamed";
 	}
 	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\"  WHERE timeconditions_id = \"$id\"");
@@ -659,7 +579,7 @@ function timeconditions_edit($id,$post){
 		$fcc->setDescription($id._(": Time Condition Override"));
 	}
 	$fcc->update();
-	unset($fcc);	
+	unset($fcc);
 }
 
 function timeconditions_timegroups_usage($group_id) {
@@ -700,8 +620,8 @@ The following functions are available to other modules.
 
 function timeconditions_timegroups_add_group($description,$times=null) return the inserted id
 	expects an array of times, each an associative array
-	Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => - 
-	[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => - 
+	Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => -
+	[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => -
 	[mday_finish] => - [month_start] => - [month_finish] => - ) )
 
 function timeconditions_timegroups_add_group_timestrings($description,$times=null) return the inserted id
@@ -714,7 +634,7 @@ function timeconditions_timegroups_list_groups()
 function timeconditions_timegroups_get_times($timegroup)
 	returns an array of id and time string of the users time selections for the selected timegroup
 
-function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish) 
+function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish)
 	should never be needed by another module, as this module should be the only place creating the time string, as it returns the string to other modules.
 
 function timeconditions_timegroups_drawtimeselects($name, $time)
@@ -741,7 +661,7 @@ function timeconditions_timegroups_list_groups() {
 
 //timegroups page helper
 //we are using gui styles so there is very little on the page
-//the timegroups page is used to create time string 
+//the timegroups page is used to create time string
 //to be used by other modules for gotoif or includes or IFTIME func
 function timeconditions_timegroups_configpageinit($dispnum) {
 global $currentcomponent;
@@ -749,7 +669,7 @@ global $currentcomponent;
 	switch ($dispnum) {
 		case 'timegroups':
 			$currentcomponent->addguifunc('timeconditions_timegroups_configpageload');
-			$currentcomponent->addprocessfunc('timeconditions_timegroups_configprocess', 5);  
+			$currentcomponent->addprocessfunc('timeconditions_timegroups_configprocess', 5);
 		break;
 	}
 }
@@ -831,7 +751,7 @@ function timeconditions_timegroups_configprocess() {
 function timeconditions_timegroups_get_times($timegroup, $convert=false) {
 	global $db, $version;
 	$tmparray = array();
-	
+
   if ($convert && (!isset($version) || $version == '')) {
     $engineinfo = engine_getinfo();
     $version =  $engineinfo['version'];
@@ -866,8 +786,8 @@ function timeconditions_timegroups_get_group($timegroup) {
 
 //add a new timegroup for timegroups page
 //expects an array of times, each an associative array
-//Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => - 
-//[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => - 
+//Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => -
+//[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => -
 //[mday_finish] => - [month_start] => - [month_finish] => - ) )
 function timeconditions_timegroups_add_group($description,$times=null) {
 	global $db;
@@ -940,7 +860,7 @@ function timeconditions_timegroups_edit_times($timegroup,$times) {
 	needreload();
 }
 
-//update the timegroup_detail under a single timegroup 
+//update the timegroup_detail under a single timegroup
 function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
 	global $db;
 
@@ -960,11 +880,11 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 	global $tabindex;
 	$output = '';
 	$onchange = ($onchange != '') ? " onchange=\"$onchange\"" : '';
-	
+
 	$output .= "\n\t\t\t<select name=\"$elemname\" tabindex=\"".++$tabindex."\" id=\"$elemname\"$onchange>\n";
 	// include blank option if required
 	if ($canbeempty) {
-		$output .= '<option value="">'.($default_option == '' ? _("--Select a Group--") : $default_option).'</option>';			
+		$output .= '<option value="">'.($default_option == '' ? _("--Select a Group--") : $default_option).'</option>';
 	}
 	// build the options
 	$valarray = timeconditions_timegroups_list_groups();
@@ -972,7 +892,7 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 		$itemvalue = (isset($item['value']) ? $item['value'] : '');
 		$itemtext = (isset($item['text']) ? _($item['text']) : '');
 		$itemselected = ($currentvalue == $itemvalue) ? ' selected' : '';
-		
+
 		$output .= "\t\t\t\t<option value=\"$itemvalue\"$itemselected>$itemtext</option>\n";
 	}
 	$output .= "\t\t\t</select>\n\t\t";
@@ -1098,57 +1018,57 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>'._("Week Day start:").'</td>';
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[wday_start]">';
-	if ( $wday_start == '-' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
- 
-	if ( $wday_start == 'mon' ) { 
-		$default = ' selected'; 
+
+	if ( $wday_start == 'mon' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mon\" $default>" . _("Monday");
 
-	if ( $wday_start == 'tue' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'tue' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"tue\" $default>" . _("Tuesday");
 
-	if ( $wday_start == 'wed' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'wed' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"wed\" $default>" . _("Wednesday");
 
-	if ( $wday_start == 'thu' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'thu' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"thu\" $default>" . _("Thursday");
 
-	if ( $wday_start == 'fri' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'fri' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"fri\" $default>" . _("Friday");
 
-	if ( $wday_start == 'sat' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'sat' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sat\" $default>" . _("Saturday");
 
-	if ( $wday_start == 'sun' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'sun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
@@ -1161,57 +1081,57 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[wday_finish]">';
 
-	if ( $wday_finish == '-' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
- 
-	if ( $wday_finish == 'mon' ) { 
-		$default = ' selected'; 
+
+	if ( $wday_finish == 'mon' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mon\" $default>" . _("Monday");
 
-	if ( $wday_finish == 'tue' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'tue' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"tue\" $default>" . _("Tuesday");
 
-	if ( $wday_finish == 'wed' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'wed' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"wed\" $default>" . _("Wednesday");
 
-	if ( $wday_finish == 'thu' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'thu' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"thu\" $default>" . _("Thursday");
 
-	if ( $wday_finish == 'fri' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'fri' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"fri\" $default>" . _("Friday");
 
-	if ( $wday_finish == 'sat' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'sat' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sat\" $default>" . _("Saturday");
 
-	if ( $wday_finish == 'sun' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'sun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
@@ -1231,7 +1151,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 		if ($mday_finish === '*') {
 			$mday_finish = $mday_start;
 		}
-		if ( !$mday_finish) { 
+		if ( !$mday_finish) {
 			$mday_finish = $mday_start;
 		}
 	} else {
@@ -1294,92 +1214,92 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[month_start]">';
 
-	if ( $month_start == '-' ) { 
-		$default = ' selected'; 
+	if ( $month_start == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
 
-	if ( $month_start == 'jan' ) { 
-		$default = ' selected'; 
+	if ( $month_start == 'jan' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jan\" $default>" . _("January");
-	                               
-	if ( $month_start == 'feb' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'feb' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"feb\" $default>" . _("February");
-	
-	if ( $month_start == 'mar' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'mar' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mar\" $default>" . _("March");
-	                               
-	if ( $month_start == 'apr' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'apr' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"apr\" $default>" . _("April");
-	 
-	if ( $month_start == 'may' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'may' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"may\" $default>" . _("May");
-                               
-	if ( $month_start == 'jun' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'jun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jun\" $default>" . _("June");
 
-	if ( $month_start == 'jul' ) { 
-		$default = ' selected'; 
+	if ( $month_start == 'jul' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jul\" $default>" . _("July");
-	                               
-	if ( $month_start == 'aug' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'aug' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"aug\" $default>" . _("August");
-	 
-	if ( $month_start == 'sep' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'sep' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sep\" $default>" . _("September");
-                               
-	if ( $month_start == 'oct' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'oct' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"oct\" $default>" . _("October");
 
-	if ( $month_start == 'nov' ) { 
-		$default = ' selected'; 
+	if ( $month_start == 'nov' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"nov\" $default>" . _("November");
-	                               
-	if ( $month_start == 'dec' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'dec' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
@@ -1393,92 +1313,92 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[month_finish]">';
 
-	if ( $month_finish == '-' ) { 
-		$default = ' selected'; 
+	if ( $month_finish == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
 
-	if ( $month_finish == 'jan' ) { 
-		$default = ' selected'; 
+	if ( $month_finish == 'jan' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jan\" $default>" . _("January");
-	                               
-	if ( $month_finish == 'feb' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'feb' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"feb\" $default>" . _("February");
-	
-	if ( $month_finish == 'mar' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'mar' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mar\" $default>" . _("March");
-	                               
-	if ( $month_finish == 'apr' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'apr' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"apr\" $default>" . _("April");
-	 
-	if ( $month_finish == 'may' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'may' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"may\" $default>" . _("May");
-	                               
-	if ( $month_finish == 'jun' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'jun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jun\" $default>" . _("June");
-	
-	if ( $month_finish == 'jul' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'jul' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jul\" $default>" . _("July");
-	                               
-	if ( $month_finish == 'aug' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'aug' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"aug\" $default>" . _("August");
-	 
-	if ( $month_finish == 'sep' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'sep' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sep\" $default>" . _("September");
-	                               
-	if ( $month_finish == 'oct' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'oct' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"oct\" $default>" . _("October");
-	
-	if ( $month_finish == 'nov' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'nov' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"nov\" $default>" . _("November");
-	                               
-	if ( $month_finish == 'dec' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'dec' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}

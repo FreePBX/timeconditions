@@ -10,19 +10,6 @@ $tabindex = 0;
 
 //if submitting form, update database
 switch ($action) {
-	case 'ajaxtimepos':		
-		$repotrunkdirection = isset($_REQUEST['repotimedirection'])?$_REQUEST['repotimedirection']:'';
-		$repotrunkkey = isset($_REQUEST['repotimekey'])?$_REQUEST['repotimekey']:'';
-
-		timeconditions_settimeorder($repotrunkkey, $repotrunkdirection);
-    	needreload();
-    
-    	header("Content-type: application/json"); 
-		$json_array = array("status" => true);
-    	echo json_encode($json_array);
-		exit;
-
-	break;
 	case "add":
 		$_REQUEST['itemid'] = timeconditions_add($_POST);
 		needreload();
@@ -45,38 +32,12 @@ switch ($action) {
 $timeconditions = timeconditions_list();
 ?>
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#timelist").sortable({ 
-    items: 'li:gt(0)',
-    cursor: 'move',
-    helper: 'clone',
-    update: function(event, ui){
-      var repotimekey=+ui.item.attr('id').replace('timelist','');
-      var repotimedirection=ui.item.index();repotimedirection--;
-      $.ajax({
-        type: 'POST',
-        url: location.href,
-        data: "action=ajaxtimepos&quietmode=1&skip_astman=1&restrictmods=timeconditions&repotimekey="+repotimekey+"&repotimedirection="+repotimedirection,
-        dataType: 'json',
-        success: function(data) {
-  			toggle_reload_button('show');
-        },
-        error: function(data) {
-          alert("<?php echo _("An unknown error occurred repositioning time conditions, refresh your browser to see the current correct time condition positions") ?>");
-return false;
-        }
-      });
-  }
-  }).disableSelection();
-});
-</script>
 <div class="rnav"><ul id="timelist">
     <li><a id="<?php echo ($itemid=='' ? 'current':'') ?>" href="config.php?display=<?php echo urlencode($dispnum)?>"><?php echo _("Add Time Condition")?></a></li>
 <?php
 if (isset($timeconditions)) {
 	foreach ($timeconditions as $timecond) {
-		echo "<li id=\"timelist".$timecond['timeconditions_id']."\"><a id=\"".($itemid==$timecond['timeconditions_id'] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&itemid=".urlencode($timecond['timeconditions_id'])."\"><img src=\"images/arrow_up_down.png\" height=\"16\" width=\"16\" border=\"0\" alt=\"move\" style=\"float:none; margin-left:-6px; margin-bottom:-3px;cursor:move\" /> {$timecond['displayname']}</a></li>";
+		echo "<li id=\"timelist".$timecond['timeconditions_id']."\"><a id=\"".($itemid==$timecond['timeconditions_id'] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&itemid=".urlencode($timecond['timeconditions_id'])."\">{$timecond['displayname']}</a></li>";
 	}
 }
 ?>
@@ -88,8 +49,8 @@ if ($action == 'delete') {
 } else {
 ?>
 	<h2><?php echo ($itemid ? _("Time Condition:")." ". $itemid : _("Add Time Condition")); ?></h2>
-<?php		
-	if ($itemid){ 
+<?php
+	if ($itemid){
 		$fcc = new featurecode('timeconditions', 'toggle-mode-'.$itemid);
 		$code = $fcc->getCodeActive();
 		unset($fcc);
@@ -128,7 +89,7 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Time Condition name:")?><span><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span></a></td>
 		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
-<?php 
+<?php
   if ($itemid && $thisItem['tcstate'] !== false) {
     $tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
     switch ($tcstate) {
@@ -191,28 +152,28 @@ if ($action == 'delete') {
 	echo $module_hook->hookHtml;
 ?>
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time matches")?>:<hr></h5></td></tr>
-<?php 
+<?php
 //draw goto selects
 if (isset($thisItem)) {
 	echo drawselects($thisItem['truegoto'],0);
-} else { 
+} else {
 	echo drawselects(null, 0);
 }
 ?>
 
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time does not match")?>:<hr></h5></td></tr>
 
-<?php 
+<?php
 //draw goto selects
 if (isset($thisItem)) {
 	echo drawselects($thisItem['falsegoto'],1);
-} else { 
+} else {
 	echo drawselects(null, 1);
 }
 ?>
 
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit")?>" tabindex="<?php echo ++$tabindex;?>"></h6></td>		
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit")?>" tabindex="<?php echo ++$tabindex;?>"></h6></td>
 	</tr>
 	</table>
 <script language="javascript">
@@ -224,16 +185,16 @@ theForm.displayname.focus();
 function edit_onsubmit() {
 	var msgInvalidTimeCondName = "<?php echo _('Please enter a valid Time Conditions Name'); ?>";
 	var msgInvalidTimeGroup = "<?php echo _('You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group'); ?>";
-	
+
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value))
 		return warnInvalid(theForm.displayname, msgInvalidTimeCondName);
 	if (isEmpty(theForm.time.value))
 		return confirm(msgInvalidTimeGroup)
-	
+
 	if (!validateDestinations(edit,2,true))
 		return false;
-	
+
 	return true;
 }
 
@@ -243,6 +204,6 @@ function edit_onsubmit() {
 
 
 	</form>
-<?php		
+<?php
 } //end if action == delete
 ?>

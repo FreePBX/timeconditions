@@ -14,10 +14,10 @@
   		*2.11.0.6* Update license
 		*2.11.0.5* Add toggle all feature code
 		*2.11.0.4* Database Abstraction Layer Changes
-	  	*2.11.0.2* FREEPBX-5982 Update Feature Code Admin Descriptions when Time Conditions Changes
+		*2.11.0.2* FREEPBX-5982 Update Feature Code Admin Descriptions when Time Conditions Changes
 		*2.11.0.1* syntax error
 		*2.11.0.0* #6051
-		*2.10.0.2* #5476, #5478 
+		*2.10.0.2* #5476, #5478
 		*2.10.0.1* misc bugs
 		*2.10.0.0* new version changes
 		*2.9.0.7* #5175, #5176
