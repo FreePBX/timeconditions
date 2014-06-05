@@ -73,6 +73,11 @@ function timeconditions_get_config($engine) {
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
 					$times = timeconditions_timegroups_get_times($item['time']);
 					$time_id = $item['timeconditions_id'];
+					$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
+					$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
+
+					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
+					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -82,11 +87,13 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'falsegoto';
-					if ($amp_conf['USEDEVSTATE']) {
-						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
-						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
-						$skip_dest = '';
-					}
+					//Formerly part of USEDEVSTATE
+					//Modifications by namezero111111 follow (FREEPBX-6415)
+					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"NOT_INUSE":"INUSE"));
+					//End USEDEVSTATE case
+					//end modifications by namezero111111
+					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
+					$skip_dest = '';
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
 					$ext->add($context, $time_id, '', new ext_return(''));
@@ -94,11 +101,13 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'truegoto';
-					if ($amp_conf['USEDEVSTATE']) {
-						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
-						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
-						$skip_dest = '';
-					}
+					//Formerly part of USEDEVSTATE
+					//Modifications by namezero111111 follow (FREEPBX-6415)
+					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"INUSE":"NOT_INUSE"));
+					//End USEDEVSTATE case
+					//end modifications by namezero111111
+					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
+					$skip_dest = '';
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
 					$ext->add($context, $time_id, '', new ext_return(''));
@@ -108,10 +117,13 @@ function timeconditions_get_config($engine) {
 					unset($fcc);
 					if ($c != '') {
 						$got_code_autoreset = true;
-						if ($amp_conf['USEDEVSTATE']) {
-							$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
-						}
-						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
+						//Formerly part of USEDEVSTATE
+						$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
+						//End USEDEVSTATE
+						//Modifications by namezero111111 follow (FREEPBX-6415)
+						$fcccode_macro_call = (strlen($fcc_password)>0) ? (','.$fcc_password) : '';
+						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id.$fcccode_macro_call));
+						//end modifications by namezero111111
 						$ext->add($fc_context, $c, '', new ext_hangup());
 
 						// If using hints then we want to keep the current, if not, then we only need to update if it is
@@ -121,11 +133,7 @@ function timeconditions_get_config($engine) {
 						//
 						if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
 							$need_maint = true;
-							if ($amp_conf['USEDEVSTATE']) {
-								$ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
-							} else {
-								$ext->add($maint_context, 's', '', new ext_gosubif('$["${DB(TC/'.$time_id.')}" != ""]',"$context,$time_id,1"));
-							}
+							$ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
 						}
 
 					}
@@ -173,9 +181,7 @@ function timeconditions_get_config($engine) {
 						$indexes = ltrim($indexes, '&');
 						$hint = ltrim($hint, '&');
 
-						if ($amp_conf['USEDEVSTATE']) {
-							$ext->addHint($fc_context, $c . '*' . $exten, $hint);
-						}
+						$ext->addHint($fc_context, $c . '*' . $exten, $hint);
 
 						if (strlen($indexes) == 0) {
 							$ext->add($fc_context, $c . '*' . $exten, '', new ext_hangup(''));
@@ -202,10 +208,20 @@ function timeconditions_get_config($engine) {
 
 					$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
 					$m_context = 'macro-toggle-tc';
+					//Modifications by namezero111111 follow (FREEPBX-6415)
+					if('' != $fcc_password) {
+						$ext->add($m_context, 's', '', new ext_authenticate('${ARG2}'));
+					}
+					//end
 
 					$ext->add($m_context, 's', '', new ext_setvar('INDEXES', '${ARG1}'));
 					$ext->add($m_context, 's', '', new ext_setvar('TCMAINT','RETURN'));
 					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
+
+					//Modifications by namezero111111 follow (FREEPBX-6415)
+					$ext->add($m_context, 's', '', new ext_set("TCINUSE",'${DB(TC/${ARG1}/INUSESTATE)}'));
+					$ext->add($m_context, 's', '', new ext_set("TCNOTINUSE",'${DB(TC/${ARG1}/NOT_INUSESTATE)}'));
+					//end
 
 					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
 					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
@@ -224,10 +240,10 @@ function timeconditions_get_config($engine) {
 					$ext->add($m_context, 's', 'begin2', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
 
 					$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${TCSTATE}" == "true"]?true:false)}'));
-					if ($amp_conf['USEDEVSTATE']) {
-						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${INDEX})', '${IF($["${TCSTATE}" = "true"]?NOT_INUSE:INUSE)}'));
-						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TCSTICKY${INDEX})', 'NOT_INUSE'));
-					}
+					//Modifications by namezero111111 follow (FREEPBX-6415)
+					$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${INDEX})', '${IF($["${TCSTATE}" = "true"]?${TCNOTINUSE}:${TCINUSE})}'));
+					//end
+					$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TCSTICKY${INDEX})', 'NOT_INUSE'));
 
 					$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
 					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
@@ -251,7 +267,7 @@ function timeconditions_get_config($engine) {
 
 					If need_maint is false, then we don't have any updating to do so don't start
 					*/
-					if ($amp_conf['USEDEVSTATE'] && $amp_conf['TCMAINT']) {
+					if ($amp_conf['TCMAINT']) {
 						$cf_0 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call';
 						$cf_1 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call';
 						if (!file_exists($cf_0) && !file_exists($cf_1)) {
@@ -464,7 +480,7 @@ function timeconditions_get_state($id) {
 	return $astman->database_get("TC", $id);
 }
 
-function timeconditions_set_state($id, $state) {
+function timeconditions_set_state($id, $state,$invert=false) {
 	global $astman;
 	global $amp_conf;
 
@@ -473,8 +489,8 @@ function timeconditions_set_state($id, $state) {
 		case 'auto':
 		case '':
 			$state = '';
-			$blf = 'NOT_INUSE';
-			$sticky = 'NOT_INUSE';
+			$blf = ($invert)?'INUSE':'NOT_INUSE';
+			$sticky = ($invert)?'INUSE':'NOT_INUSE';
 			break;
 		case 'true':
 			$blf = 'NOT_INUSE';
@@ -536,13 +552,15 @@ function timeconditions_add($post){
   $time = $db->escapeSimple($post['time']);
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
+  $invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
+  $fcc_password = $db->escapeSimple($post['fcc_password']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = '1';
 
 	if($displayname == '') {
 	 	$displayname = "unnamed";
 	}
-	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint) values (\"$displayname\",\"$time\",\"$truegoto\",\"$falsegoto\",\"$deptname\",\"$generate_hint\")");
+	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint) values (\"$displayname\",\"$time\",\"$truegoto\",\"$falsegoto\",\"$deptname\",\"$generate_hint\",\"$fcc_password\",\"$invert_hint\")");
 	if(method_exists($db,'insert_id')) {
 		$id = $db->insert_id();
 	} else {
@@ -560,16 +578,21 @@ function timeconditions_edit($id,$post){
   $time = $db->escapeSimple($post['time']);
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
+  $invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
+  $fcc_password = $db->escapeSimple($post['fcc_password']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = '1';
 
+	$old = timeconditions_get($id);
 	if(empty($displayname)) {
 		$displayname = "unnamed";
 	}
-	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\"  WHERE timeconditions_id = \"$id\"");
+	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\", invert_hint = \"$invert_hint\", fcc_password = \"$fcc_password\" WHERE timeconditions_id = \"$id\"");
 
+	//If invert was switched we need to update the asterisk DB
+	$post['tcstate_new'] = (($old['invert_hint'] != $invert_hint) && $post['tcstate_new'] == 'unchanged') ? timeconditions_get_state($id) : $post['tcstate_new'];
 	if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
-		timeconditions_set_state($id, $post['tcstate_new']);
+		timeconditions_set_state($id, $post['tcstate_new'],!empty($invert_hint));
 	}
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);

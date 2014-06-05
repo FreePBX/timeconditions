@@ -52,8 +52,10 @@ if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 		`truegoto` VARCHAR( 50 ) ,
 		`falsegoto` VARCHAR( 50 ),
 		`deptname` VARCHAR( 50 ),
-    `generate_hint` TINYINT( 1 ) DEFAULT 0,
-	`priority` VARCHAR( 50 )
+		`generate_hint` TINYINT( 1 ) DEFAULT 0,
+		`invert_hint` TINYINT( 1 ) DEFAULT 0,
+		`fcc_password` VARCHAR( 20 ) DEFAULT '',
+		`priority` VARCHAR( 50 )
 	)
 	";
 }
@@ -66,8 +68,10 @@ else  {
 		`truegoto` VARCHAR( 50 ) ,
 		`falsegoto` VARCHAR( 50 ),
 		`deptname` VARCHAR( 50 ),
-    `generate_hint` TINYINT( 1 ) DEFAULT 0,
-	`priority` VARCHAR( 50 )
+		`generate_hint` TINYINT( 1 ) DEFAULT 0,
+		`invert_hint` TINYINT( 1 ) DEFAULT 0,
+		`fcc_password` VARCHAR( 20 ) DEFAULT '',
+		`priority` VARCHAR( 50 )
 	)
 	";
 }
@@ -82,7 +86,7 @@ if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 		`id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 		`description` varchar(50) NOT NULL default '',
 		UNIQUE (`description`)
-	)	
+	)
 	";
 }
 else  {
@@ -91,7 +95,7 @@ else  {
   		`id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   		`description` varchar(50) NOT NULL default '',
  		 UNIQUE KEY `display` (`description`)
-	) AUTO_INCREMENT = 1 
+	) AUTO_INCREMENT = 1
 	";
 }
 $check = $db->query($sql);
@@ -106,7 +110,7 @@ if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 		`id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 		`timegroupid` int(11) NOT NULL default '0',
 		`time` varchar(100) NOT NULL default ''
-	) 
+	)
 	";
 }
 else  {
@@ -195,14 +199,14 @@ if (is_array($results)) foreach ($results as $item) {
   }
   $fcc->setDefault('*27'.$id);
   $fcc->update();
-  unset($fcc);	
+  unset($fcc);
 }
 
 $fcc = new featurecode('timeconditions', 'toggle-mode-all');
 $fcc->setDescription("All: Time Condition Override");
 $fcc->setDefault('*27');
 $fcc->update();
-unset($fcc);	
+unset($fcc);
 out(_("OK"));
 
 
@@ -210,10 +214,10 @@ out(_("OK"));
 //
 function timeconditions_updatedb() {
 	$ver = modules_getversion('timeconditions');
-	if ($ver !== null && version_compare_freepbx($ver,'2.5','lt')) { 
+	if ($ver !== null && version_compare_freepbx($ver,'2.5','lt')) {
 		outn(_("Checking for old timeconditions to upgrade.."));
 		$upgradelist = timeconditions_list_forupgrade();
-		if (isset($upgradelist)) { 
+		if (isset($upgradelist)) {
 			// we have old conditions to upgrade
 			//
 			out(_("starting migration"));
@@ -243,7 +247,7 @@ function timeconditions_list_forupgrade() {
 	}
 	if (isset($list)) {
 		return $list;
-	} else { 
+	} else {
 		return null;
 	}
 }
@@ -289,6 +293,18 @@ $freepbx_conf->commit_conf_settings();
 
 if (!$db->getAll('SHOW COLUMNS FROM timeconditions WHERE FIELD = "priority"')) {
 	out("Adding Time Conditions Priority");
-    $sql = "ALTER TABLE `timeconditions` ADD COlUMN `priority` VARCHAR( 50 ) NOT NULL DEFAULT '0'";
-    $result = $db->query($sql);
+	$sql = "ALTER TABLE `timeconditions` ADD COlUMN `priority` VARCHAR( 50 ) NOT NULL DEFAULT '0'";
+	$result = $db->query($sql);
+}
+
+if (!$db->getAll('SHOW COLUMNS FROM timeconditions WHERE FIELD = "invert_hint"')) {
+	out("Adding Time Conditions Invert Hint Ability");
+	$sql = "ALTER TABLE `timeconditions` ADD COlUMN `invert_hint` TINYINT( 1 ) DEFAULT '0' AFTER `generate_hint`";
+	$result = $db->query($sql);
+}
+
+if (!$db->getAll('SHOW COLUMNS FROM timeconditions WHERE FIELD = "fcc_password"')) {
+	out("Adding Time Conditions Password Ability");
+	$sql = "ALTER TABLE `timeconditions` ADD COlUMN `fcc_password` VARCHAR( 20 ) DEFAULT '' AFTER `invert_hint`";
+	$result = $db->query($sql);
 }

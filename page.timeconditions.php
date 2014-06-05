@@ -5,6 +5,9 @@ isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 //the item we are currently displaying
 isset($_REQUEST['itemid'])?$itemid=$db->escapeSimple($_REQUEST['itemid']):$itemid='';
 
+$invert_hint = isset($_POST['invert_hint'])?$_POST['invert_hint']:'0';
+$fcc_password = isset($_POST['fcc_password'])?$_POST['fcc_password']:'';
+
 $dispnum = "timeconditions"; //used for switch on config.php
 $tabindex = 0;
 
@@ -68,6 +71,8 @@ if ($action == 'delete') {
 			<a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
 		}
+	$invert_hint = $thisItem['invert_hint'] == '1' ? '1' : '0';
+	$fcc_password = $thisItem['fcc_password'];
     $tccode = $thisItem['tccode'] === false ? '' :  $thisItem['tccode'];
 	} else {
     $tccode = '';
@@ -88,6 +93,18 @@ if ($action == 'delete') {
 	<tr>
 		<td><a href="#" class="info"><?php echo _("Time Condition name:")?><span><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span></a></td>
 		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
+	</tr>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Override Code Pin")?><span><?php echo sprintf(_("If set dialing the feature code will require a pin to change the override state"),$tcval)?></span></a></td>
+		<td>
+			<input name="fcc_password" type="number" value="<?php echo $fcc_password; ?>"  tabindex="<?php echo ++$tabindex;?>"/>
+		</td>
+	</tr>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Invert BLF Hint")?><span><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span></a></td>
+		<td>
+			<input name="invert_hint" type="checkbox" value="1" <?php echo ($invert_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
+		</td>
 	</tr>
 <?php
   if ($itemid && $thisItem['tcstate'] !== false) {
@@ -113,9 +130,9 @@ if ($action == 'delete') {
       break;
     }
 ?>
-  <tr>
+	<tr>
 		<td><a href="#" class="info"><?php echo _("Current Override:")?><span><?php echo _("Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule.")?></span></a></td>
-    <td><?php echo $state_msg; ?></td>
+		<td><?php echo $state_msg; ?></td>
 	</tr>
   <tr>
 		<td><a href="#" class="info"><?php echo _("Change Override:")?><span><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."),$tcval)?></span></a></td>
@@ -176,33 +193,6 @@ if (isset($thisItem)) {
 		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit")?>" tabindex="<?php echo ++$tabindex;?>"></h6></td>
 	</tr>
 	</table>
-<script language="javascript">
-<!--
-
-var theForm = document.edit;
-theForm.displayname.focus();
-
-function edit_onsubmit() {
-	var msgInvalidTimeCondName = "<?php echo _('Please enter a valid Time Conditions Name'); ?>";
-	var msgInvalidTimeGroup = "<?php echo _('You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group'); ?>";
-
-	defaultEmptyOK = false;
-	if (!isAlphanumeric(theForm.displayname.value))
-		return warnInvalid(theForm.displayname, msgInvalidTimeCondName);
-	if (isEmpty(theForm.time.value))
-		return confirm(msgInvalidTimeGroup)
-
-	if (!validateDestinations(edit,2,true))
-		return false;
-
-	return true;
-}
-
-
-//-->
-</script>
-
-
 	</form>
 <?php
 } //end if action == delete
