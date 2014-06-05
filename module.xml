@@ -2,7 +2,7 @@
   <rawname>timeconditions</rawname>
   <repo>standard</repo>
   <name>Time Conditions</name>
-  <version>2.11.0.6</version>
+  <version>2.11.0.7</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,7 +10,7 @@
   <description>
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
-  <changelog>
+  <changelog>	*2.11.0.7* Cleanup things that dont make sense
   		*2.11.0.6* Update license
 		*2.11.0.5* Add toggle all feature code
 		*2.11.0.4* Database Abstraction Layer Changes
