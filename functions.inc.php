@@ -111,6 +111,7 @@ function timeconditions_get_config($engine) {
 						if ($amp_conf['USEDEVSTATE']) {
 							$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
 						}
+						$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
 						$ext->add($fc_context, $c, '', new ext_hangup());
 
