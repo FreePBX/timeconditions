@@ -122,6 +122,7 @@ function timeconditions_get_config($engine) {
 						//End USEDEVSTATE
 						//Modifications by namezero111111 follow (FREEPBX-6415)
 						$fcccode_macro_call = (strlen($fcc_password)>0) ? (','.$fcc_password) : '';
+						$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id.$fcccode_macro_call));
 						//end modifications by namezero111111
 						$ext->add($fc_context, $c, '', new ext_hangup());
