@@ -710,7 +710,7 @@ function timeconditions_timegroups_configpageload() {
 	}
 //need to get page name/type dynamically
 	$query = ($_SERVER['QUERY_STRING'])?$_SERVER['QUERY_STRING']:'type=setup&display=timegroups&extdisplay='.$extdisplay;
-	$delURL = $_SERVER['PHP_SELF'].'?'.$query.'&action=del';
+	$delURL = '?'.$query.'&action=del';
 	$info = '';
 	if (!$extdisplay) {
 		$currentcomponent->addguielem('_top', new gui_pageheading('title', _("Add Time Group"), false), 0);
@@ -729,7 +729,7 @@ function timeconditions_timegroups_configpageload() {
 		$count = 0;
 		foreach ($usage_list as $link) {
 			$label = '<span><img width="16" height="16" border="0" title="'.$link['description'].'" alt="" src="images/time_link.png"/>&nbsp;'.$link['description'].'</span>';
-			$timegroup_link = $_SERVER['PHP_SELF'].'?'.$link['url_query'];
+			$timegroup_link = '?'.$link['url_query'];
 			$currentcomponent->addguielem(_("Used By"), new gui_link('link'.$count++, $label, $timegroup_link, true, false), 4);
 		}
 

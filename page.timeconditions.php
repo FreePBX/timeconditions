@@ -59,7 +59,7 @@ if ($action == 'delete') {
 		unset($fcc);
 
 		$thisItem = timeconditions_get($itemid);
-		$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
+		$delURL = '?'.$_SERVER['QUERY_STRING'].'&action=delete';
 		$tlabel = sprintf(_("Delete Time Condition: %s"),trim($thisItem['displayname']) == '' ? $code : $thisItem['displayname']." ($code) ");
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
@@ -79,7 +79,7 @@ if ($action == 'delete') {
   }
   $tcval = $thisItem['tcval'];
 ?>
-	<form autocomplete="off" name="edit" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return edit_onsubmit();">
+	<form autocomplete="off" name="edit" action="" method="post" onsubmit="return edit_onsubmit();">
 	<input type="hidden" name="display" value="<?php echo $dispnum?>">
 	<input type="hidden" name="action" value="<?php echo ($itemid ? 'edit' : 'add') ?>">
 	<input type="hidden" name="deptname" value="<?php echo $_SESSION["AMP_user"]->_deptname ?>">
@@ -155,7 +155,7 @@ if ($action == 'delete') {
 <?php
 	if (isset($thisItem['time']) && $thisItem['time'] != '') {
 
-		$grpURL = $_SERVER['PHP_SELF'].'?display=timegroups&extdisplay='.$thisItem['time'];
+		$grpURL = '?display=timegroups&extdisplay='.$thisItem['time'];
 		$tlabel = _("Goto Current Time Group");
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/time_edit.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
