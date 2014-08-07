@@ -1,42 +1,15 @@
 <?php /* $Id */
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-//Copyright (C) 2004 Coalescent Systems Inc. (info@coalescentsystems.ca)
-//
-//This program is free software; you can redistribute it and/or
-//modify it under the terms of the GNU General Public License
-//as published by the Free Software Foundation; either version 2
-//of the License, or (at your option) any later version.
-//
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
 
 isset($_REQUEST['action'])?$action = $_REQUEST['action']:$action='';
 //the item we are currently displaying
 isset($_REQUEST['itemid'])?$itemid=$db->escapeSimple($_REQUEST['itemid']):$itemid='';
-
-$generate_hint = isset($_POST['generate_hint'])?$_POST['generate_hint']:'0';
-$override_fc = isset($_POST['override_fc'])?$_POST['override_fc']:'0';
 
 $dispnum = "timeconditions"; //used for switch on config.php
 $tabindex = 0;
 
 //if submitting form, update database
 switch ($action) {
-	case 'ajaxtimepos':		
-		$repotrunkdirection = isset($_REQUEST['repotimedirection'])?$_REQUEST['repotimedirection']:'';
-		$repotrunkkey = isset($_REQUEST['repotimekey'])?$_REQUEST['repotimekey']:'';
-
-		timeconditions_settimeorder($repotrunkkey, $repotrunkdirection);
-    	needreload();
-    
-    	header("Content-type: application/json"); 
-		$json_array = array("status" => true);
-    	echo json_encode($json_array);
-		exit;
-
-	break;
 	case "add":
 		$_REQUEST['itemid'] = timeconditions_add($_POST);
 		needreload();
@@ -59,38 +32,12 @@ switch ($action) {
 $timeconditions = timeconditions_list();
 ?>
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#timelist").sortable({ 
-    items: 'li:gt(0)',
-    cursor: 'move',
-    helper: 'clone',
-    update: function(event, ui){
-      var repotimekey=+ui.item.attr('id').replace('timelist','');
-      var repotimedirection=ui.item.index();repotimedirection--;
-      $.ajax({
-        type: 'POST',
-        url: location.href,
-        data: "action=ajaxtimepos&quietmode=1&skip_astman=1&restrictmods=timeconditions&repotimekey="+repotimekey+"&repotimedirection="+repotimedirection,
-        dataType: 'json',
-        success: function(data) {
-  			toggle_reload_button('show');
-        },
-        error: function(data) {
-          alert("<?php echo _("An unknown error occurred repositioning time conditions, refresh your browser to see the current correct time condition positions") ?>");
-return false;
-        }
-      });
-  }
-  }).disableSelection();
-});
-</script>
 <div class="rnav"><ul id="timelist">
     <li><a id="<?php echo ($itemid=='' ? 'current':'') ?>" href="config.php?display=<?php echo urlencode($dispnum)?>"><?php echo _("Add Time Condition")?></a></li>
 <?php
 if (isset($timeconditions)) {
 	foreach ($timeconditions as $timecond) {
-		echo "<li id=\"timelist".$timecond['timeconditions_id']."\"><a id=\"".($itemid==$timecond['timeconditions_id'] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&itemid=".urlencode($timecond['timeconditions_id'])."\"><img src=\"images/arrow_up_down.png\" height=\"16\" width=\"16\" border=\"0\" alt=\"move\" style=\"float:none; margin-left:-6px; margin-bottom:-3px;cursor:move\" /> {$timecond['displayname']}</a></li>";
+		echo "<li id=\"timelist".$timecond['timeconditions_id']."\"><a id=\"".($itemid==$timecond['timeconditions_id'] ? 'current':'')."\" href=\"config.php?display=".urlencode($dispnum)."&itemid=".urlencode($timecond['timeconditions_id'])."\">{$timecond['displayname']}</a></li>";
 	}
 }
 ?>
@@ -102,11 +49,15 @@ if ($action == 'delete') {
 } else {
 ?>
 	<h2><?php echo ($itemid ? _("Time Condition:")." ". $itemid : _("Add Time Condition")); ?></h2>
-<?php		
-	if ($itemid){ 
+<?php
+	if ($itemid){
+		$fcc = new featurecode('timeconditions', 'toggle-mode-'.$itemid);
+		$code = $fcc->getCodeActive();
+		unset($fcc);
+
 		$thisItem = timeconditions_get($itemid);
 		$delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&action=delete';
-		$tlabel = sprintf(_("Delete Time Condition: %s"),trim($thisItem['displayname']) == '' ? $itemid : $thisItem['displayname']." ($itemid) ");
+		$tlabel = sprintf(_("Delete Time Condition: %s"),trim($thisItem['displayname']) == '' ? $code : $thisItem['displayname']." ($code) ");
 		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/core_delete.png"/>&nbsp;'.$tlabel.'</span>';
 ?>
 		<a href="<?php echo $delURL ?>"><?php echo $label; ?></a><br />
@@ -117,7 +68,6 @@ if ($action == 'delete') {
 			<a href="#" class="info"><?php echo $usage_list['text']?>:<span><?php echo $usage_list['tooltip']?></span></a>
 <?php
 		}
-    $generate_hint = $thisItem['generate_hint'] == '1' ? '1' : '0';
     $tccode = $thisItem['tccode'] === false ? '' :  $thisItem['tccode'];
 	} else {
     $tccode = '';
@@ -139,21 +89,7 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Time Condition name:")?><span><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span></a></td>
 		<td><input type="text" name="displayname" value="<?php echo (isset($thisItem['displayname']) ? $thisItem['displayname'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
-<?php if ($amp_conf['USEDEVSTATE']) { ?>
-	<tr>
-  <td><a href="#" class="info"><?php echo _("Generate BLF Hint")?><span><?php echo sprintf(_("If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."),$tcval)?></span></a></td>
-		<td>
-			<input name="generate_hint" type="checkbox" value="1" <?php echo ($generate_hint == '1' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/>
-		</td>
-	</tr>
-<?php } ?>
-  <tr>
-    <td><a href="#" class="info"><?php echo _("Enable Override Code")?><span><?php echo sprintf(_("Check to enable the override feature code %s that allows manual changes to the timecondition."),$tcval)?></span></a></td>
-    <td>
-      <input name="override_fc" type="checkbox" value="1" <?php echo ($tccode != '' ? 'checked' : ''); ?>  tabindex="<?php echo ++$tabindex;?>"/><?php if ($tcval) { echo "<small>($tcval)</small>"; } ?>
-    </td>
-  </tr>
-<?php 
+<?php
   if ($itemid && $thisItem['tcstate'] !== false) {
     $tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
     switch ($tcstate) {
@@ -216,28 +152,28 @@ if ($action == 'delete') {
 	echo $module_hook->hookHtml;
 ?>
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time matches")?>:<hr></h5></td></tr>
-<?php 
+<?php
 //draw goto selects
 if (isset($thisItem)) {
 	echo drawselects($thisItem['truegoto'],0);
-} else { 
+} else {
 	echo drawselects(null, 0);
 }
 ?>
 
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time does not match")?>:<hr></h5></td></tr>
 
-<?php 
+<?php
 //draw goto selects
 if (isset($thisItem)) {
 	echo drawselects($thisItem['falsegoto'],1);
-} else { 
+} else {
 	echo drawselects(null, 1);
 }
 ?>
 
 	<tr>
-		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit")?>" tabindex="<?php echo ++$tabindex;?>"></h6></td>		
+		<td colspan="2"><br><h6><input name="Submit" type="submit" value="<?php echo _("Submit")?>" tabindex="<?php echo ++$tabindex;?>"></h6></td>
 	</tr>
 	</table>
 <script language="javascript">
@@ -249,16 +185,16 @@ theForm.displayname.focus();
 function edit_onsubmit() {
 	var msgInvalidTimeCondName = "<?php echo _('Please enter a valid Time Conditions Name'); ?>";
 	var msgInvalidTimeGroup = "<?php echo _('You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group'); ?>";
-	
+
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value))
 		return warnInvalid(theForm.displayname, msgInvalidTimeCondName);
 	if (isEmpty(theForm.time.value))
 		return confirm(msgInvalidTimeGroup)
-	
+
 	if (!validateDestinations(edit,2,true))
 		return false;
-	
+
 	return true;
 }
 
@@ -268,6 +204,6 @@ function edit_onsubmit() {
 
 
 	</form>
-<?php		
+<?php
 } //end if action == delete
 ?>

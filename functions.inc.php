@@ -1,88 +1,10 @@
 <?php /* $Id */
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//
 function timeconditions_getdest($exten) {
 	return array('timeconditions,'.$exten.',1');
-}
-
-function timeconditions_settimeorder($time_id, $seq) {
-	global $db;
-
-	$sql = "SELECT `timeconditions_id` FROM `timeconditions` ORDER BY `priority`";
-	$sequence = $db->getCol($sql);
-	if(DB::IsError($sequence)) {
-		die_freepbx($sequence->getDebugInfo());
-	}
-
-	if ($seq != 'new') {
-		$key = array_search($time_id,$sequence);
-		if ($key === false) {
-			return(false);
-		}
-	}
-	switch ("$seq") {
-		case 'up':
-			if (!isset($sequence[$key-1])) break;
-			$previous = $sequence[$key-1];
-			$sequence[$key-1] = $time_id;
-			$sequence[$key] = $previous;
-			break;
-		case 'down':
-			if (!isset($sequence[$key+1])) break;
-			$previous = $sequence[$key+1];
-			$sequence[$key+1] = $time_id;
-			$sequence[$key] = $previous;
-			break;
-		case 'top':
-			unset($sequence[$key]);
-			array_unshift($sequence,$time_id);
-			break;
-		case 'bottom':
-			unset($sequence[$key]);
-		case 'new':
-			// fallthrough, no break
-			$sequence[]=$time_id;
-			break;
-		case '0':
-			unset($sequence[$key]);
-			array_unshift($sequence,$time_id);
-			break;
-		default:
-			if (!ctype_digit($seq)) {
-				return false;
-			}
-			if ($seq >= count($sequence)-1) {
-				unset($sequence[$key]);
-				$sequence[] = $time_id;
-				break;
-			}
-			if ($sequence[$seq] == $time_id) {
-				break;
-			}
-			$sequence[$key] = "bookmark";
-			$remainder = array_slice($sequence,$seq);
-			array_unshift($remainder,$time_id);
-			$sequence = array_merge(array_slice($sequence,0,$seq), $remainder);
-			unset($sequence[array_search("bookmark",$sequence)]);
-			break;
-	}
-	$insert_array = array();
-	$seq = 0;
-	$final_seq = false;
-	foreach($sequence as $tid) {
-		$insert_array[] = array($seq, $tid);
-		if ($tid === $time_id) {
-			$final_seq = $seq;
-		}
-		$seq++;
-	}
-
-	$compiled = $db->prepare('UPDATE `timeconditions` SET `priority` = ? WHERE `timeconditions_id` = ?');
-	$result = $db->executeMultiple($compiled,$insert_array);
-	if(DB::IsError($result)) {
-		die_freepbx($result->getDebugInfo()."<br><br>".'error reordering outbound_route_sequence');
-	}
-	return $final_seq;
 }
 
 function timeconditions_getdestinfo($dest) {
@@ -151,7 +73,6 @@ function timeconditions_get_config($engine) {
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
 					$times = timeconditions_timegroups_get_times($item['time']);
 					$time_id = $item['timeconditions_id'];
-					$generate_hint = $item['generate_hint'] == '1' ? true : false;
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -161,9 +82,9 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'falsegoto';
-					if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+					if ($amp_conf['USEDEVSTATE']) {
 						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'INUSE'));
-						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
+						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
 						$skip_dest = '';
 					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
@@ -173,9 +94,9 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'truegoto';
-					if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+					if ($amp_conf['USEDEVSTATE']) {
 						$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",'NOT_INUSE'));
-						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky" & "${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" != "INUSE"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
+						$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=INUSE'));
 						$skip_dest = '';
 					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
@@ -187,9 +108,10 @@ function timeconditions_get_config($engine) {
 					unset($fcc);
 					if ($c != '') {
 						$got_code_autoreset = true;
-						if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+						if ($amp_conf['USEDEVSTATE']) {
 							$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
 						}
+						$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id));
 						$ext->add($fc_context, $c, '', new ext_hangup());
 
@@ -200,13 +122,68 @@ function timeconditions_get_config($engine) {
 						//
 						if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
 							$need_maint = true;
-							if ($amp_conf['USEDEVSTATE'] && $generate_hint) {
+							if ($amp_conf['USEDEVSTATE']) {
 								$ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
 							} else {
 								$ext->add($maint_context, 's', '', new ext_gosubif('$["${DB(TC/'.$time_id.')}" != ""]',"$context,$time_id,1"));
 							}
 						}
 
+					}
+				}
+
+				$fcc = new featurecode('timeconditions', 'toggle-mode-all');
+				$c = $fcc->getCodeActive();
+				unset($fcc);
+				if ($c) {
+					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
+
+					$userFCs = array();
+					if ($bmo && $bmo->Cos && $bmo->Cos->isLicensed()) {
+						$cos = $bmo->Cos;
+					} else if (function_exists('cos_islicenced') && cos_islicenced()) {
+						$cos = Cos::create();
+					}
+
+					if ($cos) {
+						$allCos = $cos->getAllCos();
+						foreach ($allCos as $cos_name) {
+							$all = $cos->getAll($cos_name);
+
+							foreach ($all['members'] as $key => $val) {
+								$userFCs[$key] = array_merge(($userFCs[$key] ? $userFCs[$key] : array()), $all['fcallow']);
+							}
+						}
+					}
+
+					$users = core_users_list();
+					foreach ($users as $user) {
+						$exten = $user[0];
+
+						$indexes = '';
+						$hint = '';
+						foreach ($timelist as $item) {
+							$time_id = $item['timeconditions_id'];
+
+							if (count($userFCs) > 1 && (!isset($userFCs[$exten]) || !isset($userFCs[$exten]['toggle-mode-' . $time_id]))) {
+								continue;
+							}
+							$indexes.= '&' . $time_id;
+							$hint.= '&Custom:TC' . $time_id;
+						}
+						$indexes = ltrim($indexes, '&');
+						$hint = ltrim($hint, '&');
+
+						if ($amp_conf['USEDEVSTATE']) {
+							$ext->addHint($fc_context, $c . '*' . $exten, $hint);
+						}
+
+						if (strlen($indexes) == 0) {
+							$ext->add($fc_context, $c . '*' . $exten, '', new ext_hangup(''));
+							continue;
+						}
+
+						$ext->add($fc_context, $c . '*' . $exten, '', new ext_macro('toggle-tc', $indexes));
 					}
 				}
 
@@ -226,22 +203,45 @@ function timeconditions_get_config($engine) {
 
 					$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
 					$m_context = 'macro-toggle-tc';
-					$ext->add($m_context, 's', '', new ext_set("TCMAINT",'RETURN'));
-					$ext->add($m_context, 's', '', new ext_set("TCSTATE",'${DB(TC/${ARG1})}'));
-					$ext->add($m_context, 's', '', new ext_gosubif('$["${TCSTATE}" = ""]',$context.',${ARG1},1'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('INDEXES', '${ARG1}'));
+					$ext->add($m_context, 's', '', new ext_setvar('TCMAINT','RETURN'));
+					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
+					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
+					$ext->add($m_context, 's', 'begin1', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('MODE', '${DB(TC/${INDEX})}'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$["${MODE:0:5}" != "false"]', 'end1'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'true'));
+
+					$ext->add($m_context, 's', 'end1', new ext_setvar('ITER', '$[${ITER} + 1]'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin1'));
+
+					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
+					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
+					$ext->add($m_context, 's', 'begin2', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
+
+					$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${TCSTATE}" == "true"]?true:false)}'));
+					if ($amp_conf['USEDEVSTATE']) {
+						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${INDEX})', '${IF($["${TCSTATE}" = "true"]?NOT_INUSE:INUSE)}'));
+						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TCSTICKY${INDEX})', 'NOT_INUSE'));
+					}
+
+					$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
+
 					if ($amp_conf['TCMAINT']) {
-						$ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','settc'));
+						$ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','playback'));
 						$ext->add($m_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing 0'));
 					}
-					$ext->add($m_context, 's', 'settc', new ext_set('DB(TC/${ARG1})', '${IF($["${TCSTATE:0:4}" = "true"]?false:true)}'));
-					if ($amp_conf['USEDEVSTATE']) {
-						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${ARG1})', '${IF($["${TCSTATE}" = "true"]?INUSE:NOT_INUSE)}'));
-						$ext->add($m_context, 's', '', new ext_execif('$["${'.$DEVSTATE.'(Custom:TCSTICKY${ARG1})}" = "INUSE"]', 'Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})=NOT_INUSE'));
-					}
+
 					if ($amp_conf['FCBEEPONLY']) {
-						$ext->add($m_context, 's', '', new ext_playback('beep'));
+						$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
 					} else {
-						$ext->add($m_context, 's', '', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+						$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 					}
 				}
 				if ($need_maint) {
@@ -290,18 +290,18 @@ function timeconditions_check_destinations($dest=true) {
 		$thisid      = $result['timeconditions_id'];
 		$description = sprintf(_("Time Condition: %s"),$result['displayname']);
 		$thisurl     = 'config.php?display=timeconditions&itemid='.urlencode($thisid);
-		if ($dest === true || $dest == $thisdest) {
+		if ($dest === true || $dest[0] == $thisdest) {
 			$destlist[] = array(
 				'dest' => $thisdest,
-				'description' => $description,
+				'description' => $description . '('._('true goto').')',
 				'edit_url' => $thisurl,
 			);
 		}
 		$thisdest = $result['falsegoto'];
-		if ($dest === true || $dest == $thisdest) {
+		if ($dest === true || $dest[0] == $thisdest) {
 			$destlist[] = array(
 				'dest' => $thisdest,
-				'description' => $description,
+				'description' => $description . '('._('false goto').')',
 				'edit_url' => $thisurl,
 			);
 		}
@@ -312,7 +312,7 @@ function timeconditions_check_destinations($dest=true) {
 function timeconditions_change_destination($old_dest, $new_dest) {
 	$sql = 'UPDATE timeconditions SET truegoto = "' . $new_dest . '" WHERE truegoto = "' . $old_dest . '"';
 	sql($sql, "query");
-	
+
 	$sql = 'UPDATE timeconditions SET falsegoto = "' . $new_dest . '" WHERE falsegoto = "' . $old_dest . '"';
 	sql($sql, "query");
 }
@@ -331,7 +331,7 @@ function timeconditions_list($getall=false) {
 	}
 	if (isset($allowed)) {
 		return $allowed;
-	} else { 
+	} else {
 		return null;
 	}
 }
@@ -351,7 +351,7 @@ function timeconditions_get($id){
   } else {
     $results['tccode'] = $c;
 		if ($astman != null) {
-			$results['tcstate'] = $astman->database_get("TC",$id);
+			$results['tcstate'] = timeconditions_get_state($id);
 		} else {
 			die_freepbx("No manager connection, can't get Time Condition State");
 		}
@@ -365,7 +365,7 @@ function timeconditions_del($id){
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	$fcc->delete();
-	unset($fcc);	
+	unset($fcc);
   if ($astman != null) {
     $astman->database_del("TC",$id);
   }
@@ -459,32 +459,74 @@ function timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $min
 	return $time;
 }
 
+function timeconditions_get_state($id) {
+	global $astman;
+
+	return $astman->database_get("TC", $id);
+}
+
+function timeconditions_set_state($id, $state) {
+	global $astman;
+	global $amp_conf;
+
+	if ($astman != null) {
+		switch ($state) {
+		case 'auto':
+		case '':
+			$state = '';
+			$blf = 'NOT_INUSE';
+			$sticky = 'NOT_INUSE';
+			break;
+		case 'true':
+			$blf = 'NOT_INUSE';
+			$sticky = 'NOT_INUSE';
+			break;
+		case 'true_sticky':
+			$blf = 'NOT_INUSE';
+			$sticky = 'INUSE';
+			break;
+		case 'false':
+			$blf = 'INUSE';
+			$sticky = 'NOT_INUSE';
+			break;
+		case 'false_sticky':
+			$blf = 'INUSE';
+			$sticky = 'INUSE';
+			break;
+		default:
+			$state = false;
+			break;
+		}
+
+		if ($state !== false) {
+			$astman->database_put("TC", $id, $state);
+
+			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
+			if ($DEVSTATE) {
+				$astman->set_global($DEVSTATE . "(Custom:TC" . $id . ")", $blf);
+				$astman->set_global($DEVSTATE . "(Custom:TCSTICKY" . $id . ")", $sticky);
+			}
+		}
+	} else {
+		die_freepbx("No manager connection, can't update Time Condition State");
+	}
+}
+
   /*
   */
-function timeconditions_create_fc($id, $displayname='',$state=false) {
-  global $astman;
-  global $amp_conf;
-  $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
-
+function timeconditions_create_fc($id, $displayname='') {
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	if ($displayname) {
 		$fcc->setDescription("$id: $displayname");
 	} else {
-    $fcc->setDescription($id._(": Time Condition Override"));
+		$fcc->setDescription($id._(": Time Condition Override"));
 	}
-	$fcc->setDefault('*27'.$id,$state);
-  $fcc->setProvideDest();
+	$fcc->setDefault('*27'.$id);
+	$fcc->setProvideDest();
 	$fcc->update();
-	unset($fcc);	
+	unset($fcc);
 
-  $astman->database_put("TC",$id,'');
-  // We do not try to figure out the blf value here, as soon as the call script is called or a call flows through the time
-  // condition it will get properly intiialized
-  //
-  if ($DEVSTATE) {
-    $astman->set_global($DEVSTATE."(Custom:TC".$id.")", 'NOT_INUSE');
-    $astman->set_global($DEVSTATE."(Custom:TCSTICKY".$id.")", 'NOT_INUSE');
-  }
+	timeconditions_set_state($id, '');
 }
 
 function timeconditions_add($post){
@@ -496,8 +538,7 @@ function timeconditions_add($post){
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
-  $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
-  $override_fc = $post['override_fc'] == '1' ? '1' : '0';
+  $generate_hint = '1';
 
 	if($displayname == '') {
 	 	$displayname = "unnamed";
@@ -508,14 +549,12 @@ function timeconditions_add($post){
 	} else {
 		$id = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
 	}
-  timeconditions_create_fc($id, $displayname, $override_fc);
+  timeconditions_create_fc($id, $displayname);
   return $id;
 }
 
 function timeconditions_edit($id,$post){
   global $db;
-  global $astman;
-  global $amp_conf;
 
   $id = $db->escapeSimple($id);
   $displayname = $db->escapeSimple($post['displayname']);
@@ -523,66 +562,25 @@ function timeconditions_edit($id,$post){
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $deptname = $db->escapeSimple($post['deptname']);
-  $generate_hint = $post['generate_hint'] == '1' ? '1' : '0';
-  $override_fc = $post['override_fc'] == '1' ? '1' : '0';
+  $generate_hint = '1';
 
-	if(empty($displayname)) { 
+	if(empty($displayname)) {
 		$displayname = "unnamed";
 	}
 	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\"  WHERE timeconditions_id = \"$id\"");
 
-  if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
-    $tcstate_new = $post['tcstate_new'];
-
-	  $DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
-    if ($astman != null) {
-      switch ($tcstate_new) {
-        case 'auto':
-          $tcstate_new = "";
-          $blf = 'NOT_INUSE';
-          $sticky = 'NOT_INUSE';
-        break;
-        case 'true':
-          $blf = 'NOT_INUSE';
-          $sticky = 'NOT_INUSE';
-        break;
-        case 'true_sticky':
-          $blf = 'NOT_INUSE';
-          $sticky = 'INUSE';
-        break;
-        case 'false':
-          $blf = 'INUSE';
-          $sticky = 'NOT_INUSE';
-        break;
-        case 'false_sticky':
-          $blf = 'INUSE';
-          $sticky = 'INUSE';
-        break;
-        default:
-          $tcstate_new = false;
-        break;
-      }
-      if ($tcstate_new !== false) {
-        $astman->database_put("TC",$id,$tcstate_new);
-        if ($DEVSTATE) {
-          $astman->set_global($DEVSTATE."(Custom:TC".$id.")", $blf);
-          $astman->set_global($DEVSTATE."(Custom:TCSTICKY".$id.")", $sticky);
-        }
-      }
-    } else {
-      die_freepbx("No manager connection, can't update Time Condition State");
-    }
-  }
+	if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
+		timeconditions_set_state($id, $post['tcstate_new']);
+	}
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
-	$fcc->setEnabled($override_fc);
 	if ($displayname) {
 		$fcc->setDescription("$id: $displayname");
 	} else {
 		$fcc->setDescription($id._(": Time Condition Override"));
 	}
 	$fcc->update();
-	unset($fcc);	
+	unset($fcc);
 }
 
 function timeconditions_timegroups_usage($group_id) {
@@ -623,8 +621,8 @@ The following functions are available to other modules.
 
 function timeconditions_timegroups_add_group($description,$times=null) return the inserted id
 	expects an array of times, each an associative array
-	Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => - 
-	[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => - 
+	Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => -
+	[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => -
 	[mday_finish] => - [month_start] => - [month_finish] => - ) )
 
 function timeconditions_timegroups_add_group_timestrings($description,$times=null) return the inserted id
@@ -637,7 +635,7 @@ function timeconditions_timegroups_list_groups()
 function timeconditions_timegroups_get_times($timegroup)
 	returns an array of id and time string of the users time selections for the selected timegroup
 
-function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish) 
+function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish)
 	should never be needed by another module, as this module should be the only place creating the time string, as it returns the string to other modules.
 
 function timeconditions_timegroups_drawtimeselects($name, $time)
@@ -664,7 +662,7 @@ function timeconditions_timegroups_list_groups() {
 
 //timegroups page helper
 //we are using gui styles so there is very little on the page
-//the timegroups page is used to create time string 
+//the timegroups page is used to create time string
 //to be used by other modules for gotoif or includes or IFTIME func
 function timeconditions_timegroups_configpageinit($dispnum) {
 global $currentcomponent;
@@ -672,7 +670,7 @@ global $currentcomponent;
 	switch ($dispnum) {
 		case 'timegroups':
 			$currentcomponent->addguifunc('timeconditions_timegroups_configpageload');
-			$currentcomponent->addprocessfunc('timeconditions_timegroups_configprocess', 5);  
+			$currentcomponent->addprocessfunc('timeconditions_timegroups_configprocess', 5);
 		break;
 	}
 }
@@ -754,7 +752,7 @@ function timeconditions_timegroups_configprocess() {
 function timeconditions_timegroups_get_times($timegroup, $convert=false) {
 	global $db, $version;
 	$tmparray = array();
-	
+
   if ($convert && (!isset($version) || $version == '')) {
     $engineinfo = engine_getinfo();
     $version =  $engineinfo['version'];
@@ -789,8 +787,8 @@ function timeconditions_timegroups_get_group($timegroup) {
 
 //add a new timegroup for timegroups page
 //expects an array of times, each an associative array
-//Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => - 
-//[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => - 
+//Array ( [0] => Array ( [hour_start] => - [minute_start] => - [hour_finish] => -
+//[minute_finish] => - [wday_start] => - [wday_finish] => - [mday_start] => -
 //[mday_finish] => - [month_start] => - [month_finish] => - ) )
 function timeconditions_timegroups_add_group($description,$times=null) {
 	global $db;
@@ -863,7 +861,7 @@ function timeconditions_timegroups_edit_times($timegroup,$times) {
 	needreload();
 }
 
-//update the timegroup_detail under a single timegroup 
+//update the timegroup_detail under a single timegroup
 function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
 	global $db;
 
@@ -883,11 +881,11 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 	global $tabindex;
 	$output = '';
 	$onchange = ($onchange != '') ? " onchange=\"$onchange\"" : '';
-	
+
 	$output .= "\n\t\t\t<select name=\"$elemname\" tabindex=\"".++$tabindex."\" id=\"$elemname\"$onchange>\n";
 	// include blank option if required
 	if ($canbeempty) {
-		$output .= '<option value="">'.($default_option == '' ? _("--Select a Group--") : $default_option).'</option>';			
+		$output .= '<option value="">'.($default_option == '' ? _("--Select a Group--") : $default_option).'</option>';
 	}
 	// build the options
 	$valarray = timeconditions_timegroups_list_groups();
@@ -895,7 +893,7 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 		$itemvalue = (isset($item['value']) ? $item['value'] : '');
 		$itemtext = (isset($item['text']) ? _($item['text']) : '');
 		$itemselected = ($currentvalue == $itemvalue) ? ' selected' : '';
-		
+
 		$output .= "\t\t\t\t<option value=\"$itemvalue\"$itemselected>$itemtext</option>\n";
 	}
 	$output .= "\t\t\t</select>\n\t\t";
@@ -1021,57 +1019,57 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>'._("Week Day start:").'</td>';
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[wday_start]">';
-	if ( $wday_start == '-' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
- 
-	if ( $wday_start == 'mon' ) { 
-		$default = ' selected'; 
+
+	if ( $wday_start == 'mon' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mon\" $default>" . _("Monday");
 
-	if ( $wday_start == 'tue' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'tue' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"tue\" $default>" . _("Tuesday");
 
-	if ( $wday_start == 'wed' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'wed' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"wed\" $default>" . _("Wednesday");
 
-	if ( $wday_start == 'thu' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'thu' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"thu\" $default>" . _("Thursday");
 
-	if ( $wday_start == 'fri' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'fri' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"fri\" $default>" . _("Friday");
 
-	if ( $wday_start == 'sat' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'sat' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sat\" $default>" . _("Saturday");
 
-	if ( $wday_start == 'sun' ) { 
-		$default = ' selected'; 
+	if ( $wday_start == 'sun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
@@ -1084,57 +1082,57 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[wday_finish]">';
 
-	if ( $wday_finish == '-' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
- 
-	if ( $wday_finish == 'mon' ) { 
-		$default = ' selected'; 
+
+	if ( $wday_finish == 'mon' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mon\" $default>" . _("Monday");
 
-	if ( $wday_finish == 'tue' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'tue' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"tue\" $default>" . _("Tuesday");
 
-	if ( $wday_finish == 'wed' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'wed' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"wed\" $default>" . _("Wednesday");
 
-	if ( $wday_finish == 'thu' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'thu' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"thu\" $default>" . _("Thursday");
 
-	if ( $wday_finish == 'fri' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'fri' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"fri\" $default>" . _("Friday");
 
-	if ( $wday_finish == 'sat' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'sat' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sat\" $default>" . _("Saturday");
 
-	if ( $wday_finish == 'sun' ) { 
-		$default = ' selected'; 
+	if ( $wday_finish == 'sun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
@@ -1154,7 +1152,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 		if ($mday_finish === '*') {
 			$mday_finish = $mday_start;
 		}
-		if ( !$mday_finish) { 
+		if ( !$mday_finish) {
 			$mday_finish = $mday_start;
 		}
 	} else {
@@ -1217,92 +1215,92 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[month_start]">';
 
-	if ( $month_start == '-' ) { 
-		$default = ' selected'; 
+	if ( $month_start == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
 
-	if ( $month_start == 'jan' ) { 
-		$default = ' selected'; 
+	if ( $month_start == 'jan' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jan\" $default>" . _("January");
-	                               
-	if ( $month_start == 'feb' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'feb' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"feb\" $default>" . _("February");
-	
-	if ( $month_start == 'mar' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'mar' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mar\" $default>" . _("March");
-	                               
-	if ( $month_start == 'apr' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'apr' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"apr\" $default>" . _("April");
-	 
-	if ( $month_start == 'may' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'may' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"may\" $default>" . _("May");
-                               
-	if ( $month_start == 'jun' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'jun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jun\" $default>" . _("June");
 
-	if ( $month_start == 'jul' ) { 
-		$default = ' selected'; 
+	if ( $month_start == 'jul' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jul\" $default>" . _("July");
-	                               
-	if ( $month_start == 'aug' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'aug' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"aug\" $default>" . _("August");
-	 
-	if ( $month_start == 'sep' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'sep' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sep\" $default>" . _("September");
-                               
-	if ( $month_start == 'oct' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'oct' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"oct\" $default>" . _("October");
 
-	if ( $month_start == 'nov' ) { 
-		$default = ' selected'; 
+	if ( $month_start == 'nov' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"nov\" $default>" . _("November");
-	                               
-	if ( $month_start == 'dec' ) { 
-		$default = ' selected'; 
+
+	if ( $month_start == 'dec' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
@@ -1316,92 +1314,92 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	$html = $html.'<td>';
 	$html = $html.'<select name="'.$name.'[month_finish]">';
 
-	if ( $month_finish == '-' ) { 
-		$default = ' selected'; 
+	if ( $month_finish == '-' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"-\" $default>-";
 
-	if ( $month_finish == 'jan' ) { 
-		$default = ' selected'; 
+	if ( $month_finish == 'jan' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jan\" $default>" . _("January");
-	                               
-	if ( $month_finish == 'feb' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'feb' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"feb\" $default>" . _("February");
-	
-	if ( $month_finish == 'mar' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'mar' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"mar\" $default>" . _("March");
-	                               
-	if ( $month_finish == 'apr' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'apr' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"apr\" $default>" . _("April");
-	 
-	if ( $month_finish == 'may' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'may' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"may\" $default>" . _("May");
-	                               
-	if ( $month_finish == 'jun' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'jun' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jun\" $default>" . _("June");
-	
-	if ( $month_finish == 'jul' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'jul' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"jul\" $default>" . _("July");
-	                               
-	if ( $month_finish == 'aug' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'aug' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"aug\" $default>" . _("August");
-	 
-	if ( $month_finish == 'sep' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'sep' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"sep\" $default>" . _("September");
-	                               
-	if ( $month_finish == 'oct' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'oct' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"oct\" $default>" . _("October");
-	
-	if ( $month_finish == 'nov' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'nov' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}
 	$html = $html."<option value=\"nov\" $default>" . _("November");
-	                               
-	if ( $month_finish == 'dec' ) { 
-		$default = ' selected'; 
+
+	if ( $month_finish == 'dec' ) {
+		$default = ' selected';
 	} else {
 		$default = '';
 	}

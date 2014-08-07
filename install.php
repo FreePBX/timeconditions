@@ -193,10 +193,16 @@ if (is_array($results)) foreach ($results as $item) {
   } else {
     $fcc->setDescription($id._(": Time Condition Override"));
   }
-  $fcc->setDefault('*27'.$id,false);
+  $fcc->setDefault('*27'.$id);
   $fcc->update();
   unset($fcc);	
 }
+
+$fcc = new featurecode('timeconditions', 'toggle-mode-all');
+$fcc->setDescription("All: Time Condition Override");
+$fcc->setDefault('*27');
+$fcc->update();
+unset($fcc);	
 out(_("OK"));
 
 
