@@ -1,0 +1,387 @@
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# FreePBX language template for timeconditions
+# Copyright (C) 2008, 2009, 2010 Bandwith.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"PO-Revision-Date: 2014-07-26 01:03+0200\n"
+"Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://git.freepbx.org/projects/freepbx/timeconditions/pt_BR/>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.10-dev\n"
+
+#, php-format
+msgid "Time Condition: %s"
+msgstr "Condição de Tempo: %s"
+
+msgid ": Time Condition Override"
+msgstr ""
+
+msgid "Description must be alpha-numeric, and may not be left blank"
+msgstr ""
+
+msgid "Time Group"
+msgstr "Grupo de Tempo"
+
+msgid " deleted!"
+msgstr " apagado!"
+
+msgid "Add Time Group"
+msgstr "Adicionar Grupo de Tempo"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "This will display as the name of this Time Group."
+msgstr ""
+
+msgid "Edit Time Group"
+msgstr "Editar Grupo de Tempo"
+
+#, php-format
+msgid "Delete Time Group %s"
+msgstr "Apagar Grupo de Tempo: %s"
+
+msgid "Used By"
+msgstr "Usado por"
+
+msgid "Remove Section and Submit Current Settings"
+msgstr ""
+
+msgid "New Time"
+msgstr "Novo Tempo"
+
+msgid "--Select a Group--"
+msgstr "--Selecionar Grupo--"
+
+msgid "text"
+msgstr "texto"
+
+msgid "Time to start:"
+msgstr "Hora de inicio:"
+
+msgid "Time to finish:"
+msgstr "Hora do termino:"
+
+msgid "Week Day start:"
+msgstr "Dia da semana que inicia:"
+
+msgid "Monday"
+msgstr "Segunda"
+
+msgid "Tuesday"
+msgstr "Terça"
+
+msgid "Wednesday"
+msgstr "Quarta"
+
+msgid "Thursday"
+msgstr "Quinta"
+
+msgid "Friday"
+msgstr "Sexta"
+
+msgid "Saturday"
+msgstr "Sabado"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "Week Day finish:"
+msgstr "Dia da semana que termina:"
+
+msgid "Month Day start:"
+msgstr "Dia do mês que inicia:"
+
+msgid "Month Day finish:"
+msgstr "Dia do mês que termina:"
+
+msgid "Month start:"
+msgstr "Mês que inicia:"
+
+msgid "January"
+msgstr "Janeiro"
+
+msgid "February"
+msgstr "Fevereiro"
+
+msgid "March"
+msgstr "Março"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "May"
+msgstr "Maio"
+
+msgid "June"
+msgstr "Junho"
+
+msgid "July"
+msgstr "Julho"
+
+msgid "August"
+msgstr "Agosto"
+
+msgid "September"
+msgstr "Setembro"
+
+msgid "October"
+msgstr "Outubro"
+
+msgid "November"
+msgstr "Novembro"
+
+msgid "December"
+msgstr "Dezembro"
+
+msgid "Month finish:"
+msgstr "Mês que termina:"
+
+msgid "converting timeconditions time field to int.."
+msgstr ""
+
+msgid "ERROR: failed to convert field "
+msgstr ""
+
+msgid "OK"
+msgstr "OK"
+
+msgid "checking for generate_hint field.."
+msgstr ""
+
+msgid "already exists"
+msgstr "já existe"
+
+msgid "generating feature codes if needed.."
+msgstr ""
+
+msgid "Checking for old timeconditions to upgrade.."
+msgstr ""
+
+msgid "starting migration"
+msgstr "iniciando migração"
+
+#, php-format
+msgid "Upgraded %s and created group %s"
+msgstr ""
+
+#, php-format
+msgid "%sWARNING:%s No time defined for this condition, please review"
+msgstr ""
+
+msgid "no upgrade needed"
+msgstr "nenhuma atualização necessaria"
+
+msgid "Add Time Condition"
+msgstr "Adicionar condição de tempo"
+
+msgid "Time Condition"
+msgstr "Condição de Tempo"
+
+msgid "deleted"
+msgstr "apagado"
+
+msgid "Time Condition:"
+msgstr "Condição de Tempo:"
+
+#, php-format
+msgid "Delete Time Condition: %s"
+msgstr "Apagar Condição de Tempo: %s"
+
+msgid "Edit Time Condition"
+msgstr "Editar Condição de Tempo"
+
+msgid "Time Condition name:"
+msgstr "Nome para Condição de Tempo:"
+
+msgid "Give this Time Condition a brief name to help you identify it."
+msgstr ""
+
+msgid "Generate BLF Hint"
+msgstr ""
+
+#, php-format
+msgid ""
+"If set an Asterisk hint will be created for the override feature code %s "
+"associated with this Time Condition that can be used to light BLF buttons on "
+"a phone programmed to enable/disable this Time Condition. If not using a BLF "
+"it is better to leave this un-checked as additional system resources are "
+"required to keep the hint updated. This Feature Code can be found and "
+"enabled/disabled on the Feature Codes tab under Time Conditions."
+msgstr ""
+
+msgid "Enable Override Code"
+msgstr ""
+
+#, php-format
+msgid ""
+"Check to enable the override feature code %s that allows manual changes to "
+"the timecondition."
+msgstr ""
+
+msgid "No Override"
+msgstr ""
+
+msgid "Temporary Override matching state"
+msgstr ""
+
+msgid "Permanent Override matching state"
+msgstr ""
+
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+msgid "Unknown State"
+msgstr "Estado Desconhecido"
+
+msgid "Current Override:"
+msgstr ""
+
+msgid ""
+"Indicates the current state of this Time Condition. If it is in a Temporary "
+"Override state, it will automatically resume at the next time transition "
+"based on the associated Time Group. If in a Permanent Override state, it "
+"will stay in that state until changed here or through other means such as "
+"external XML applications on your phone. If No Override then it functions "
+"normally based on the time schedule."
+msgstr ""
+
+msgid "Change Override:"
+msgstr ""
+
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+
+msgid "Unchanged"
+msgstr "Não alterado"
+
+msgid "Reset Override"
+msgstr ""
+
+msgid "Temporary matched"
+msgstr ""
+
+msgid "Permanently matched"
+msgstr ""
+
+msgid "Temporary unmatched"
+msgstr ""
+
+msgid "Permanently unmatched"
+msgstr ""
+
+msgid "Time Group:"
+msgstr "Grupo de Tempo:"
+
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+
+msgid "Goto Current Time Group"
+msgstr ""
+
+msgid "Destination if time matches"
+msgstr ""
+
+msgid "Destination if time does not match"
+msgstr ""
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Please enter a valid Time Conditions Name"
+msgstr ""
+
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+
+msgid "Server time:"
+msgstr "Hora do Servidor:"
+
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+
+msgid "Time Conditions"
+msgstr "Condições de Tempo"
+
+msgid "Applications"
+msgstr "Aplicações"
+
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+
+msgid "Time Groups"
+msgstr "Grupos de Tempo"
+
+msgid "Enable Maintenance Polling"
+msgstr ""
+
+msgid "Time Condition Module"
+msgstr "Módulo Condição de Tempo"
+
+msgid ""
+"If set to false, this will override the execution of the Time Conditons "
+"maintenace task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+
+msgid "Maintenance Polling Interval"
+msgstr ""
+
+msgid ""
+"The polling interval in seconds used by the Time Conditions manintenace "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual overide "
+"during such a period is properly reset when the new period starts."
+msgstr ""
