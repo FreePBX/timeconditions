@@ -165,7 +165,7 @@ if ($action == 'delete') {
 <?php
 	}
 	// implementation of module hook
-	// object was initialized in config.php
+	$module_hook = moduleHook::create();
 	echo $module_hook->hookHtml;
 ?>
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time matches")?>:<hr></h5></td></tr>
