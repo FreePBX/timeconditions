@@ -8,7 +8,7 @@ if (!@include_once(getenv('FREEPBX_CONF') ? getenv('FREEPBX_CONF') : '/etc/freep
     include_once('/etc/asterisk/freepbx.conf');
 }
 
-$tmp = "$amp_conf[ASTSPOOLDIR]/tmp";
+$tmp = $amp_conf['ASTSPOOLDIR'] . '/tmp';
 
 if (isset($argv[1]) && ctype_digit($argv[1])) {
     $time_offset = $argv[1];
@@ -19,7 +19,7 @@ if (isset($argv[1]) && ctype_digit($argv[1])) {
 if (isset($argv[2]) && is_dir($argv[2])) {
     $call_spool = $argv[2];
 } else {
-    $call_spool = "$amp_conf[ASTSPOOLDIR]/outgoing";
+    $call_spool = $amp_conf['ASTSPOOLDIR'] . '/outgoing';
 }
 
 if (isset($argv[3]) && ($argv[3] == '0' || $argv[3] == '1')) {
