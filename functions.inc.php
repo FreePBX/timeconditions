@@ -256,7 +256,7 @@ function timeconditions_get_config($engine) {
 						$cf_0 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call';
 						$cf_1 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call';
 						if (!file_exists($cf_0) && !file_exists($cf_1)) {
-							exec($amp_conf['ASTVARLIBDIR'] . '/bin/schedtc.php 60' . $amp_conf['ASTSPOOLDIR'] . '/outgoing 0',$output,$ret_code);
+							exec($amp_conf['ASTVARLIBDIR'] . '/bin/schedtc.php 60 ' . $amp_conf['ASTSPOOLDIR'] . '/outgoing 0',$output,$ret_code);
 							if ($ret_code != 0) {
 								error(_("Unable to initiate Time Conditions call file with schedtc.php: $ret_code"));
 							}
