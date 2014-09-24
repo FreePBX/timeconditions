@@ -1,7 +1,14 @@
 #!/usr/bin/php -q
 <?php
 
-$tmp = "/tmp";
+//include bootstrap
+$restrict_mods = true;
+$bootstrap_settings['freepbx_auth'] = false;
+if (!@include_once(getenv('FREEPBX_CONF') ? getenv('FREEPBX_CONF') : '/etc/freepbx.conf')) {
+    include_once('/etc/asterisk/freepbx.conf');
+}
+
+$tmp = "$amp_conf[ASTSPOOLDIR]/tmp";
 
 if (isset($argv[1]) && ctype_digit($argv[1])) {
 	$time_offset = $argv[1];
@@ -12,10 +19,10 @@ if (isset($argv[1]) && ctype_digit($argv[1])) {
 if (isset($argv[2]) && is_dir($argv[2])) {
   $call_spool = $argv[2];
 } else {
-  $call_spool = "/var/spool/asterisk/outgoing";
+  $call_spool = "$amp_conf[ASTSPOOLDIR]/outgoing";
 }
 
-if (isset($argv[3]) && ($argv[3] == '0') || ($argv[3] == '1')) {
+if (isset($argv[3]) && ($argv[3] == '0' || $argv[3] == '1')) {
   $file_index = $argv[3];
   $next_index = $file_index ? '0' : '1';
 } else {
@@ -47,23 +54,16 @@ if ($next_time < ($now + 30)) {
 //
 $sched_script = "Channel: Local/s@tc-maint\nCallerID: \"$next_index\" <$next_index>\nApplication: NoCDR\n";
 
-$fh = fopen("$tmp/$call_file","w");
-if ($fh === false) {
-  error_log("FATAL: FreePBX Time Conditions {$argv[0]} failed to create temporary file: $tmp/$call_file\n");
+if (file_put_contents("$tmp/$call_file", $sched_script) === false) {
+  error_log("FATAL: FreePBX Time Conditions {$argv[0]} failed to create temporary file: $tmp/$call_file");
   exit(1);
-}
-if (fwrite($fh,$sched_script) === false) {
-  error_log("FATAL: FreePBX Time Conditions {$argv[0]} failed to write to temporary file: $tmp/$call_file\n");
-  exit(1);
-}
-if (fclose($fh) === false) {
-  error_log("ERROR: FreePBX Time Conditions {$argv[0]} failed to close to temporary file: $tmp/$call_file, continuing execution\n");
 }
 if (touch("$tmp/$call_file",$next_time, $next_time) === false) {
-  error_log("ERROR: FreePBX Time Conditions {$argv[0]} failed to set time on temporary file: $tmp/$call_file, continuing execution\n");
+  error_log("ERROR: FreePBX Time Conditions {$argv[0]} failed to set time on temporary file: $tmp/$call_file");
+  exit(1);
 }
 if (rename("$tmp/$call_file","$call_spool/$call_file") === false) {
-  error_log("FATAL: FreePBX Time Conditions {$argv[0]} failed to initiate call file: $call_spool/$call_file\n");
+  error_log("FATAL: FreePBX Time Conditions {$argv[0]} failed to install call file: $call_spool/$call_file");
   exit(1);
 }
 exit(0);
