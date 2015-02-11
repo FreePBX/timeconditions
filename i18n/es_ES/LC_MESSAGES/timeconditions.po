@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-11 18:11-0500\n"
 "PO-Revision-Date: 2009-01-23 00:28+0100\n"
 "Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
@@ -14,240 +14,137 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#, php-format
-msgid "Time Condition: %s"
-msgstr "Condición horaria: %s"
-
-msgid ": Time Condition Override"
-msgstr ""
-
-msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "La descripción debe ser alfanumérica y no puede estar en blanco."
-
-msgid "Time Group"
-msgstr "Grupo horario"
-
+#: /usr/src/freepbx/timeconditions/functions.inc.php:707
 msgid " deleted!"
 msgstr "Eliminado."
 
-msgid "Add Time Group"
-msgstr "Añadir grupo horario"
-
-msgid "Description"
-msgstr "Descripción"
-
-msgid "This will display as the name of this Time Group."
-msgstr "Este valor será mostrado como el nombre del grupo horario."
-
-msgid "Edit Time Group"
-msgstr "Editar grupo horario"
-
-#, php-format
-msgid "Delete Time Group %s"
-msgstr "Eliminar grupo horario %s"
-
-msgid "Used By"
-msgstr "Usado por"
-
-msgid "Remove Section and Submit Current Settings"
-msgstr ""
-
-msgid "New Time"
-msgstr "Nueva hora"
-
-msgid "--Select a Group--"
-msgstr "-- Seleccione un grupo --"
-
-msgid "text"
-msgstr "texto"
-
-msgid "Time to start:"
-msgstr "Hora de inicio:"
-
-msgid "Time to finish:"
-msgstr "Hora de fin:"
-
-msgid "Week Day start:"
-msgstr "Día de la semana de inicio:"
-
-msgid "Monday"
-msgstr "Lunes"
-
-msgid "Tuesday"
-msgstr "Martes"
-
-msgid "Wednesday"
-msgstr "Miércoles"
-
-msgid "Thursday"
-msgstr "Jueves"
-
-msgid "Friday"
-msgstr "Viernes"
-
-msgid "Saturday"
-msgstr "Sábado"
-
-msgid "Sunday"
-msgstr "Domingo"
-
-msgid "Week Day finish:"
-msgstr "Día de la semana de fin:"
-
-msgid "Month Day start:"
-msgstr "Día del mes de inicio:"
-
-msgid "Month Day finish:"
-msgstr "Día del mes de fin:"
-
-msgid "Month start:"
-msgstr "Mes de inicio:"
-
-msgid "January"
-msgstr "Enero"
-
-msgid "February"
-msgstr "Febrero"
-
-msgid "March"
-msgstr "Marzo"
-
-msgid "April"
-msgstr "Abril"
-
-msgid "May"
-msgstr "Mayo"
-
-msgid "June"
-msgstr "Junio"
-
-msgid "July"
-msgstr "Julio"
-
-msgid "August"
-msgstr "Agosto"
-
-msgid "September"
-msgstr "Septiembre"
-
-msgid "October"
-msgstr "Octubre"
-
-msgid "November"
-msgstr "Noviembre"
-
-msgid "December"
-msgstr "Diciembre"
-
-msgid "Month finish:"
-msgstr "Mes de fin:"
-
-msgid "converting timeconditions time field to int.."
-msgstr "Convirtiendo el campo de hora de las condiciones horarias a entero..."
-
-msgid "ERROR: failed to convert field "
-msgstr "Error: fallo al convertir el campo"
-
-msgid "OK"
-msgstr "Hecho"
-
-msgid "checking for generate_hint field.."
-msgstr ""
-
-msgid "already exists"
-msgstr ""
-
-msgid "generating feature codes if needed.."
-msgstr ""
-
-msgid "Checking for old timeconditions to upgrade.."
-msgstr "Comprobando condiciones horarias antiguas que actualizar..."
-
-msgid "starting migration"
-msgstr "Iniciando migración"
-
-#, php-format
-msgid "Upgraded %s and created group %s"
-msgstr "%s actualizadas y %s grupos creados"
-
+#: /usr/src/freepbx/timeconditions/install.php:231
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%sATENCIÓN:%s No se han definido horas para esta condición; por favor, revise"
 
-msgid "no upgrade needed"
-msgstr "No es necesaria ninguna actualización."
+#: /usr/src/freepbx/timeconditions/functions.inc.php:909
+msgid "--Select a Group--"
+msgstr "-- Seleccione un grupo --"
 
+#: /usr/src/freepbx/timeconditions/functions.inc.php:536
+#: /usr/src/freepbx/timeconditions/functions.inc.php:601
+#: /usr/src/freepbx/timeconditions/install.php:198
+msgid ": Time Condition Override"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:39
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:54
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:87
 msgid "Add Time Condition"
 msgstr "Añadir condición horaria"
 
-msgid "Time Condition"
-msgstr "Condición horaria"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:715
+msgid "Add Time Group"
+msgstr "Añadir grupo horario"
 
-msgid "deleted"
-msgstr "eliminada"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1272
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1371
+msgid "April"
+msgstr "Abril"
 
-msgid "Time Condition:"
-msgstr "Condición horaria:"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1300
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1399
+msgid "August"
+msgstr "Agosto"
 
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:138
+msgid "Change Override:"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/install.php:218
+msgid "Checking for old timeconditions to upgrade.."
+msgstr "Comprobando condiciones horarias antiguas que actualizar..."
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:134
+msgid "Current Override:"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1328
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1427
+msgid "December"
+msgstr "Diciembre"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:63
 #, php-format
 msgid "Delete Time Condition: %s"
 msgstr "Eliminar condición horaria: %s"
 
+#: /usr/src/freepbx/timeconditions/functions.inc.php:723
+#, php-format
+msgid "Delete Time Group %s"
+msgstr "Eliminar grupo horario %s"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:716
+#: /usr/src/freepbx/timeconditions/functions.inc.php:736
+msgid "Description"
+msgstr "Descripción"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:703
+msgid "Description must be alpha-numeric, and may not be left blank"
+msgstr "La descripción debe ser alfanumérica y no puede estar en blanco."
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:181
+msgid "Destination if time does not match"
+msgstr "Destino si la hora no coincide:"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:171
+msgid "Destination if time matches"
+msgstr "Destino si la hora coincide:"
+
+#: /usr/src/freepbx/timeconditions/install.php:166
+msgid "ERROR: failed to convert field "
+msgstr "Error: fallo al convertir el campo"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:87
 msgid "Edit Time Condition"
 msgstr "Editar condición horaria:"
 
-msgid "Time Condition name:"
-msgstr "Nombre de la condición horaria:"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:722
+msgid "Edit Time Group"
+msgstr "Editar grupo horario"
 
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1258
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1357
+msgid "February"
+msgstr "Febrero"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1083
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1146
+msgid "Friday"
+msgstr "Viernes"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:94
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 "Asigne un breve nombre a esta condición horaria para ayudarle a "
 "identificarla."
 
-msgid "Generate BLF Hint"
-msgstr ""
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:159
+msgid "Goto Current Time Group"
+msgstr "Ir al grupo horario actual"
 
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:98
 #, php-format
 msgid ""
-"If set an Asterisk hint will be created for the override feature code %s "
-"associated with this Time Condition that can be used to light BLF buttons on "
-"a phone programmed to enable/disable this Time Condition. If not using a BLF "
-"it is better to leave this un-checked as additional system resources are "
-"required to keep the hint updated. This Feature Code can be found and "
-"enabled/disabled on the Feature Codes tab under Time Conditions."
+"If set dialing the feature code will require a pin to change the override "
+"state"
 msgstr ""
 
-msgid "Enable Override Code"
-msgstr ""
-
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:104
 #, php-format
 msgid ""
-"Check to enable the override feature code %s that allows manual changes to "
-"the timecondition."
+"If set the hint will be INUSE if the time condition is matched, and "
+"NOT_INUSE if it fails"
 msgstr ""
 
-msgid "No Override"
-msgstr ""
-
-msgid "Temporary Override matching state"
-msgstr ""
-
-msgid "Permanent Override matching state"
-msgstr ""
-
-msgid "Temporary Override unmatching state"
-msgstr ""
-
-msgid "Permanent Override unmatching state"
-msgstr ""
-
-msgid "Unknown State"
-msgstr ""
-
-msgid "Current Override:"
-msgstr ""
-
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:134
 msgid ""
 "Indicates the current state of this Time Condition. If it is in a Temporary "
 "Override state, it will automatically resume at the next time transition "
@@ -257,9 +154,158 @@ msgid ""
 "normally based on the time schedule."
 msgstr ""
 
-msgid "Change Override:"
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:104
+msgid "Invert BLF Hint"
 msgstr ""
 
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1251
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1350
+msgid "January"
+msgstr "Enero"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1293
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1392
+msgid "July"
+msgstr "Julio"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1286
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1385
+msgid "June"
+msgstr "Junio"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1265
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1364
+msgid "March"
+msgstr "Marzo"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1279
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1378
+msgid "May"
+msgstr "Mayo"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1055
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1118
+msgid "Monday"
+msgstr "Lunes"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1200
+msgid "Month Day finish:"
+msgstr "Día del mes de fin:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1165
+msgid "Month Day start:"
+msgstr "Día del mes de inicio:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1334
+msgid "Month finish:"
+msgstr "Mes de fin:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1219
+msgid "Month start:"
+msgstr "Mes de inicio:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:747
+msgid "New Time"
+msgstr "Nueva hora"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:114
+msgid "No Override"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1321
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1420
+msgid "November"
+msgstr "Noviembre"
+
+#: /usr/src/freepbx/timeconditions/install.php:168
+#: /usr/src/freepbx/timeconditions/install.php:182
+#: /usr/src/freepbx/timeconditions/install.php:210
+msgid "OK"
+msgstr "Hecho"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1314
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1413
+msgid "October"
+msgstr "Octubre"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:98
+msgid "Override Code Pin"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:120
+msgid "Permanent Override matching state"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:126
+msgid "Permanent Override unmatching state"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:144
+msgid "Permanently matched"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:146
+msgid "Permanently unmatched"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:741
+msgid "Remove Section and Submit Current Settings"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:142
+msgid "Reset Override"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1090
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1153
+msgid "Saturday"
+msgstr "Sábado"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:152
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+"Seleccione un grupo horario creado en la sección 'Grupos horarios'. Las "
+"horas que coincidan se enviarán al destino seleccionado. Si no se selecciona "
+"ningún grupo, la llamada siempre irá al destino sin coincidencia."
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1307
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1406
+msgid "September"
+msgstr "Septiembre"
+
+#: /usr/src/freepbx/timeconditions/page.timegroups.php:17
+msgid "Server time:"
+msgstr "Hora del servidor:"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:193
+msgid "Submit"
+msgstr "Enviar"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1097
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1160
+msgid "Sunday"
+msgstr "Domingo"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:117
+msgid "Temporary Override matching state"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:123
+msgid "Temporary Override unmatching state"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:143
+msgid "Temporary matched"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:145
+msgid "Temporary unmatched"
+msgstr ""
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:138
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -272,107 +318,147 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-msgid "Unchanged"
-msgstr ""
-
-msgid "Reset Override"
-msgstr ""
-
-msgid "Temporary matched"
-msgstr ""
-
-msgid "Permanently matched"
-msgstr ""
-
-msgid "Temporary unmatched"
-msgstr ""
-
-msgid "Permanently unmatched"
-msgstr ""
-
-msgid "Time Group:"
-msgstr "Grupo horario:"
-
-msgid ""
-"Select a Time Group created under Time Groups. Matching times will be sent "
-"to matching destination. If no group is selected, call will always go to no-"
-"match destination."
-msgstr ""
-"Seleccione un grupo horario creado en la sección 'Grupos horarios'. Las "
-"horas que coincidan se enviarán al destino seleccionado. Si no se selecciona "
-"ningún grupo, la llamada siempre irá al destino sin coincidencia."
-
-msgid "Goto Current Time Group"
-msgstr "Ir al grupo horario actual"
-
-msgid "Destination if time matches"
-msgstr "Destino si la hora coincide:"
-
-msgid "Destination if time does not match"
-msgstr "Destino si la hora no coincide:"
-
-msgid "Submit"
-msgstr "Enviar"
-
-msgid "Please enter a valid Time Conditions Name"
-msgstr "Por favor, introduzca un nombre para la condición horaria válido."
-
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"No ha seleccionado ningún grupo horario al que asociar esta condición "
-"horaria. Esta regla siempre irá al destino que no coincide a menos que la "
-"actualice con un grupo horario válido."
-
-msgid "Server time:"
-msgstr "Hora del servidor:"
-
+#: /usr/src/freepbx/timeconditions/page.timegroups.php:68
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-msgid "Time Conditions"
-msgstr "Condiciones horarias"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:716
+#: /usr/src/freepbx/timeconditions/functions.inc.php:736
+msgid "This will display as the name of this Time Group."
+msgstr "Este valor será mostrado como el nombre del grupo horario."
 
-msgid "Applications"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1076
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1139
+msgid "Thursday"
+msgstr "Jueves"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:51
+msgid "Time Condition"
+msgstr "Condición horaria"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:94
+msgid "Time Condition name:"
+msgstr "Nombre de la condición horaria:"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:54
+msgid "Time Condition:"
+msgstr "Condición horaria:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:21
+#: /usr/src/freepbx/timeconditions/functions.inc.php:305
+#, php-format
+msgid "Time Condition: %s"
+msgstr "Condición horaria: %s"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:707
+#: /usr/src/freepbx/timeconditions/functions.inc.php:716
+#: /usr/src/freepbx/timeconditions/functions.inc.php:736
+#: /usr/src/freepbx/timeconditions/page.timegroups.php:12
+msgid "Time Group"
+msgstr "Grupo horario"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:152
+msgid "Time Group:"
+msgstr "Grupo horario:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:990
+msgid "Time to finish:"
+msgstr "Hora de fin:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:935
+msgid "Time to start:"
+msgstr "Hora de inicio:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1062
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1125
+msgid "Tuesday"
+msgstr "Martes"
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:141
+msgid "Unchanged"
 msgstr ""
 
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:129
+msgid "Unknown State"
 msgstr ""
 
-msgid "Time Groups"
-msgstr "Grupos horarios"
+#: /usr/src/freepbx/timeconditions/install.php:229
+#, php-format
+msgid "Upgraded %s and created group %s"
+msgstr "%s actualizadas y %s grupos creados"
 
-msgid "Enable Maintenance Polling"
+#: /usr/src/freepbx/timeconditions/functions.inc.php:732
+msgid "Used By"
+msgstr "Usado por"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1069
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1132
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1102
+msgid "Week Day finish:"
+msgstr "Día de la semana de fin:"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:1040
+msgid "Week Day start:"
+msgstr "Día de la semana de inicio:"
+
+#: /usr/src/freepbx/timeconditions/install.php:184
+msgid "already exists"
 msgstr ""
 
-msgid "Time Condition Module"
+#: /usr/src/freepbx/timeconditions/install.php:172
+msgid "checking for generate_hint field.."
 msgstr ""
 
-msgid ""
-"If set to false, this will override the execution of the Time Conditons "
-"maintenace task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
+#: /usr/src/freepbx/timeconditions/install.php:162
+msgid "converting timeconditions time field to int.."
+msgstr "Convirtiendo el campo de hora de las condiciones horarias a entero..."
+
+#: /usr/src/freepbx/timeconditions/page.timeconditions.php:51
+msgid "deleted"
+msgstr "eliminada"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:318
+msgid "false goto"
 msgstr ""
 
-msgid "Maintenance Polling Interval"
+#: /usr/src/freepbx/timeconditions/install.php:189
+msgid "generating feature codes if needed.."
 msgstr ""
 
-msgid ""
-"The polling interval in seconds used by the Time Conditions manintenace "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual overide "
-"during such a period is properly reset when the new period starts."
+#: /usr/src/freepbx/timeconditions/install.php:236
+msgid "no upgrade needed"
+msgstr "No es necesaria ninguna actualización."
+
+#: /usr/src/freepbx/timeconditions/install.php:223
+msgid "starting migration"
+msgstr "Iniciando migración"
+
+#: /usr/src/freepbx/timeconditions/functions.inc.php:310
+msgid "true goto"
 msgstr ""
+
+#~ msgid "text"
+#~ msgstr "texto"
+
+#~ msgid "Please enter a valid Time Conditions Name"
+#~ msgstr "Por favor, introduzca un nombre para la condición horaria válido."
+
+#~ msgid ""
+#~ "You have not selected a time group to associate with this timecondition. "
+#~ "It will go to the un-matching destination until you update it with a "
+#~ "valid group"
+#~ msgstr ""
+#~ "No ha seleccionado ningún grupo horario al que asociar esta condición "
+#~ "horaria. Esta regla siempre irá al destino que no coincide a menos que la "
+#~ "actualice con un grupo horario válido."
+
+#~ msgid "Time Conditions"
+#~ msgstr "Condiciones horarias"
+
+#~ msgid "Time Groups"
+#~ msgstr "Grupos horarios"
