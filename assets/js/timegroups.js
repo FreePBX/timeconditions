@@ -1,6 +1,3 @@
-//var hour = <?php $l = localtime(); echo $l[2]?>;
-//var min  = <?php $l = localtime(); echo $l[1]?>;
-//var sec  = <?php $l = localtime(); echo $l[0]?>;
 var sec = '';
 var min = '';
 var hour = '';
@@ -62,4 +59,66 @@ $(document).ready(function(){
       $(this).closest('form').submit();
     }
   });
+});
+//table
+$("#timegrid").bootstrapTable({
+	method: 'get',
+	url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
+	cache: false,
+	striped: true,
+	showColumns: false,
+	columns: [
+		{
+			field: 'text',
+			title: _("Description"),
+		},
+		{
+			field: 'value',
+			title: _("Actions"),
+			clickToSelect: false,
+			formatter: actionFormatter,
+		}
+		]
+});
+$("#bnavgrid").bootstrapTable({
+	method: 'get',
+	url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
+	cache: false,
+	striped: false,
+	showColumns: false,
+	columns: [
+		{
+			title: _("Time Groups"),
+			field: 'link',
+			formatter: linkFormatter,
+		}
+		]
+});
+function actionFormatter(value){
+	var html = '';
+	html += '<a href="?display=timegroups&view=form&extdisplay='+value+'"><i class="fa fa-edit"></i></a>&nbsp;';
+	html += '<a href="?display=timegroups&action=del&extdisplay='+value+'"><i class="fa fa-trash"></i></a>';
+	return html;
+}
+function linkFormatter(value){
+	html = '<a href="?display=timegroups&view=form&extdisplay='+value[1]+'"><i class="fa fa-pencil"></i>&nbsp'+_("Edit: ")+value[0]+'</a>';
+	return html;
+}
+$("#addTime").live('click',function(e){
+	e.preventDefault();
+	var curid = $(this).prev().attr('id').match(/\d+/)[0];
+
+	curid = parseInt(curid,10);
+	var nextid = curid + 1;
+	var span = $(this).parent().find('span');
+	var newspan  = span.clone();
+	$(this).html('<br/>');
+	var items = newspan.children();
+	items.find('select').each(function(){
+		$(this).children().removeAttr("selected");
+		$(this).attr('name',$(this).attr('name').replace(/\d+/,nextid) );
+		$(this).attr('id',$(this).attr('id').replace(/\d+/,nextid) );
+		});
+	newspan.appendTo('#timerows');
+	$("#timerows").append('<a href="#" id="addTime"><i class="fa fa-plus"></i></a>');
 });

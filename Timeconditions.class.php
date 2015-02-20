@@ -48,6 +48,7 @@ class Timeconditions implements \BMO {
 				}
 			break;
 			case "timegroups":
+				debug($request);
 				$action= isset($request['action'])?$request['action']:null;
 				$timegroup= isset($request['extdisplay'])?$request['extdisplay']:null;
 				$description= isset($request['description'])?$request['description']:null;
@@ -68,6 +69,15 @@ class Timeconditions implements \BMO {
     					switch ($request['jdata']) {
     						case 'servertime':
     							echo $this->serverTime();
+    							exit();
+    						break;
+    						case 'grid':
+    							$timegroupslist = timeconditions_timegroups_list_groups();
+    							$rdata = array();
+    							foreach($timegroupslist as $tg){
+									$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
+    							}
+    							echo json_encode($rdata);
     							exit();
     						break;
    			 				default:

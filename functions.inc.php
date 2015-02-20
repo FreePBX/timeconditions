@@ -868,7 +868,6 @@ function timeconditions_timegroups_edit_group($timegroup,$description) {
 //update the timegroup_detail under a single timegroup from the timegroups page
 function timeconditions_timegroups_edit_times($timegroup,$times) {
 	global $db;
-
 	$sql = "delete from timegroups_details where timegroupid = $timegroup";
 	$db->query($sql);
 	foreach ($times as $key=>$val) {
@@ -923,16 +922,120 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 
 //---------------------------------stolen from time conditions and heavily modified------------------------------------------
 
+/**
+ * Generates options for a select list
+ * @param  string $selected what hour should be marked selected
+ * @return string           generated html
+ */
+function timeconditions_timegroups_hour_opts($selected=''){
+	$html = '<option value=\"-\">-</option>';
+	for ($i = 0 ; $i < 24 ; $i++) {
+		$default = "";
+		if ( sprintf("%02d", $i) === $selected ) {
+			$default = ' selected';
+		}
+		$html .= "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+	}
+	return $html;
+}
+/**
+ * Generates options for a select list
+ * @param  string $selected what minute should be marked selected
+ * @return string           generated html
+ */
+function timeconditions_timegroups_minute_opts($selected=''){
+	$html = '<option value=\"-\">-</option>';
+	for ($i = 0 ; $i < 60 ; $i++) {
+		$default = "";
+		if ( sprintf("%02d", $i) === $selected ) {
+			$default = ' selected';
+		}
+		$html .= "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+	}
+	return $html;
+}
+/**
+ * Generates options for a select list
+ * @param  string $selected what Weekday should be marked selected
+ * @return string           generated html
+ */
+function timeconditions_timegroups_weekday_opts($selected=''){
+	$days = array(
+		'sun' => _("Sunday"),
+		'mon' => _("Monday"),
+		'tue' => _("Tuesday"),
+		'wed' => _("Wednesday"),
+		'thu' => _("Thursday"),
+		'fri' => _("Friday"),
+		'sat' => _("Saturday")
+	);
+	$html = '<option value=\"-\">-</option>';
+	foreach ($days as $key => $value) {
+		if ( $selected == $key ) {
+			$default = ' selected';
+		} else {
+			$default = '';
+		}
+		$html .= '<option value="'.$key.'" '.$default.'>'.$value.'</option>';
+	}
+	return $html;
+}
+/**
+ * Generates options for a select list
+ * @param  string $selected what Month should be marked selected
+ * @return string           generated html
+ */
+function timeconditions_timegroups_month_opts($selected=''){
+	$days = array(
+		'jan' => _("January"),
+		'feb' => _("February"),
+		'mar' => _("March"),
+		'apr' => _("April"),
+		'may' => _("May"),
+		'jun' => _("June"),
+		'jul' => _("July"),
+		'aug' => _("August"),
+		'sep' => _("September"),
+		'oct' => _("October"),
+		'nov' => _("November"),
+		'dec' => _("December")
+	);
+	$html = '<option value=\"-\">-</option>';
+	foreach ($days as $key => $value) {
+		if ( $selected == $key ) {
+			$default = ' selected';
+		} else {
+			$default = '';
+		}
+		$html .= '<option value="'.$key.'" '.$default.'>'.$value.'</option>';
+	}
+	return $html;
+}
+/**
+ * Generates options for a select list
+ * @param  string $selected what monthday should be marked selected
+ * @return string           generated html
+ */
+function timeconditions_timegroups_monthday_opts($selected=''){
+	$html = '<option value=\"-\">-</option>';
+	for ($i = 0 ; $i < 32 ; $i++) {
+		$default = "";
+		if ( sprintf("%02d", $i) === $selected ) {
+			$default = ' selected';
+		}
+		$html .= "<option value=\"$i\" $default> ".sprintf("%02d", $i);
+	}
+	return $html;	
+}
+
+
+
 function timeconditions_timegroups_drawtimeselects($name, $time) {
-	$html = '';
-	// ----- Load Time Pattern Variables -----
 	if (isset($time)) {
 		list($time_hour, $time_wday, $time_mday, $time_month) = explode('|', $time);
 	} else {
 		list($time_hour, $time_wday, $time_mday, $time_month) = Array('*','-','-','-');
 	}
-	$html = $html.'<div class="form-inline">';
-	$html = $html.'<label for="'.$name.'">'._("Time to start").'</label><br/>';
 	// Hour could be *, hh:mm, hh:mm-hhmm
 	if ( $time_hour === '*' ) {
 		$hour_start = $hour_finish = '-';
@@ -954,68 +1057,6 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 			$minute_finish = $minute_start;
 		}
 	}
-	$html = $html.'<select name="'.$name.'[hour_start]" id="'.$name.'" class="form-control">';
-	$default = '';
-	if ( $hour_start === '-' ) {
-		$default = ' selected';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-	for ($i = 0 ; $i < 24 ; $i++) {
-		$default = "";
-		if ( sprintf("%02d", $i) === $hour_start ) {
-			$default = ' selected';
-		}
-		$html = $html."<option value=\"$i\" $default> ".sprintf("%02d", $i);
-	}
-	$html = $html.'</select>';
-	$html = $html.'<nbsp>:<nbsp>';
-	$html = $html.'<select name="'.$name.'[minute_start]" class="form-control">';
-	$default = '';
-	if ( $minute_start === '-' ) {
-	 	$default = ' selected';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-	for ($i = 0 ; $i < 60 ; $i++) {
-		$default = "";
-		if ( sprintf("%02d", $i) === $minute_start ) {
-		 	$default = ' selected';
-		}
-		$html = $html."<option value=\"$i\" $default> ".sprintf("%02d", $i);
-	}
-	$html = $html.'</select>';
-	$html = $html.'</div>';
-	$html = $html.'<div class="form-inline">';
-	$html = $html.'<label for="'.$name.'finish">'._("Time to finish ").'</label><br/>';
-	$html = $html.'<select name="'.$name.'[hour_finish]" id="'.$name.'finish" class="form-control">';
-	$default = '';
-	if ( $hour_finish === '-' ) {
-	 	$default = ' selected';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-	for ($i = 0 ; $i < 24 ; $i++) {
-		$default = "";
-		if ( sprintf("%02d", $i) === $hour_finish) {
-		 	$default = ' selected';
-		}
-		$html = $html."<option value=\"$i\" $default> ".sprintf("%02d", $i);
-	}
-	$html = $html.'</select>';
-	$html = $html.'<nbsp>:<nbsp>';
-	$html = $html.'<select name="'.$name.'[minute_finish]" class="form-control">';
-	$default = '';
-	if ( $minute_finish === '-' ) {
-	 	$default = ' selected';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-	for ($i = 0 ; $i < 60 ; $i++) {
-		$default = '';
-		if ( sprintf("%02d", $i) === $minute_finish ) {
-		 	$default = ' selected';
-		}
-		$html = $html."<option value=\"$i\" $default> ".sprintf("%02d", $i);
-	}
-	$html = $html.'</select>';
-	$html = $html.'</div>';
 	// WDay could be *, day, day1-day2
 	if ( $time_wday != '*' ) {
 		list($wday_start, $wday_finish) = explode('-', $time_wday);
@@ -1031,130 +1072,6 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	} else {
 		$wday_start = $wday_finish = '-';
 	}
-	$html = $html.'<label for="'.$name.'finish">'._("Week Day start ").'</label>';
-	$html = $html.'<select name="'.$name.'[wday_start]" id="'.$name.'wdstart" class="form-control">';
-
-	if ( $wday_start == '-' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-
-	if ( $wday_start == 'mon' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"mon\" $default>" . _("Monday");
-
-	if ( $wday_start == 'tue' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"tue\" $default>" . _("Tuesday");
-
-	if ( $wday_start == 'wed' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"wed\" $default>" . _("Wednesday");
-
-	if ( $wday_start == 'thu' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"thu\" $default>" . _("Thursday");
-
-	if ( $wday_start == 'fri' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"fri\" $default>" . _("Friday");
-
-	if ( $wday_start == 'sat' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"sat\" $default>" . _("Saturday");
-
-	if ( $wday_start == 'sun' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"sun\" $default>" . _("Sunday");
-
-	$html = $html.'</select>';
-
-	$html = $html.'<label for="'.$name.'wdfinish">'._("Week Day finish ").'</label>';
-	$html = $html.'<select name="'.$name.'[wday_finish]" id="'.$name.'wdfinish" class="form-control">';
-
-	if ( $wday_finish == '-' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-
-	if ( $wday_finish == 'mon' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"mon\" $default>" . _("Monday");
-
-	if ( $wday_finish == 'tue' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"tue\" $default>" . _("Tuesday");
-
-	if ( $wday_finish == 'wed' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"wed\" $default>" . _("Wednesday");
-
-	if ( $wday_finish == 'thu' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"thu\" $default>" . _("Thursday");
-
-	if ( $wday_finish == 'fri' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"fri\" $default>" . _("Friday");
-
-	if ( $wday_finish == 'sat' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"sat\" $default>" . _("Saturday");
-
-	if ( $wday_finish == 'sun' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"sun\" $default>" . _("Sunday");
-
-	$html = $html.'</select>';
-	$html = $html.'<label for="'.$name.'mdstart">'._("Month Day Start ").'</label>';
-
-	// MDay could be *, day, day1-day2
 	if ( $time_mday != '*' ) {
 		list($mday_start, $mday_finish) = explode('-', $time_mday);
 		if ($mday_start === '*') {
@@ -1169,40 +1086,6 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	} else {
 		$mday_start = $mday_finish = '-';
 	}
-	$html = $html.'<select name="'.$name.'[mday_start]" id="'.$name.'mdstart" class="form-control">';
-	$default = '';
-	if ( $mday_start == '-' ) {
-		$default = ' selected';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-	for ($i = 1 ; $i < 32 ; $i++) {
-		$default = '';
-		if ( $i == $mday_start ) {
-		 	$default = ' selected';
-		}
-		$html = $html."<option value=\"$i\" $default> $i";
-	}
-	$html = $html.'</select>';
-
-
-	$html = $html.'<label for="'.$name.'mdfinish">'._("Month Day finish ").'</label>';
-	$html = $html.'<select name="'.$name.'[mday_finish]" id="'.$name.'mdfinish" class="form-control">';
-	$default = '';
-	if ( $mday_finish == '-' ) {
- 		$default = ' selected';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-	for ($i = 1 ; $i < 32 ; $i++) {
-		$default = '';
-		if ( $i == $mday_finish ) {
-		 	$default = ' selected';
-		}
-		$html = $html."<option value=\"$i\" $default> $i";
-	}
-	$html = $html.'</select>';
-
-	$html = $html.'<label for="'.$name.'mostart">'._("Month start ").'</label>';
-
 	// Month could be *, month, month1-month2
 	if ( $time_month != '*' ) {
 		list($month_start, $month_finish) = explode('-', $time_month);
@@ -1218,198 +1101,92 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	} else {
 		$month_start = $month_finish = '-';
 	}
-	$html = $html.'<select name="'.$name.'[month_start]" id="'.$name.'mostart" class="form-control">';
 
-	if ( $month_start == '-' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-
-	if ( $month_start == 'jan' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"jan\" $default>" . _("January");
-
-	if ( $month_start == 'feb' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"feb\" $default>" . _("February");
-
-	if ( $month_start == 'mar' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"mar\" $default>" . _("March");
-
-	if ( $month_start == 'apr' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"apr\" $default>" . _("April");
-
-	if ( $month_start == 'may' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"may\" $default>" . _("May");
-
-	if ( $month_start == 'jun' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"jun\" $default>" . _("June");
-
-	if ( $month_start == 'jul' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"jul\" $default>" . _("July");
-
-	if ( $month_start == 'aug' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"aug\" $default>" . _("August");
-
-	if ( $month_start == 'sep' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"sep\" $default>" . _("September");
-
-	if ( $month_start == 'oct' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"oct\" $default>" . _("October");
-
-	if ( $month_start == 'nov' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"nov\" $default>" . _("November");
-
-	if ( $month_start == 'dec' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"dec\" $default>" . _("December");
-
-	$html = $html.'</select>';
-
-	$html = $html.'<label for="'.$name.'mofinish">'._("Month finish ").'</label>';
-	$html = $html.'<select name="'.$name.'[month_finish]" id="'.$name.'mofinish" class="form-control">';
-
-	if ( $month_finish == '-' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"-\" $default>-";
-
-	if ( $month_finish == 'jan' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"jan\" $default>" . _("January");
-
-	if ( $month_finish == 'feb' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"feb\" $default>" . _("February");
-
-	if ( $month_finish == 'mar' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"mar\" $default>" . _("March");
-
-	if ( $month_finish == 'apr' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"apr\" $default>" . _("April");
-
-	if ( $month_finish == 'may' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"may\" $default>" . _("May");
-
-	if ( $month_finish == 'jun' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"jun\" $default>" . _("June");
-
-	if ( $month_finish == 'jul' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"jul\" $default>" . _("July");
-
-	if ( $month_finish == 'aug' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"aug\" $default>" . _("August");
-
-	if ( $month_finish == 'sep' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"sep\" $default>" . _("September");
-
-	if ( $month_finish == 'oct' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"oct\" $default>" . _("October");
-
-	if ( $month_finish == 'nov' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"nov\" $default>" . _("November");
-
-	if ( $month_finish == 'dec' ) {
-		$default = ' selected';
-	} else {
-		$default = '';
-	}
-	$html = $html."<option value=\"dec\" $default>" . _("December");
-
-	$html = $html.'</select>';
-
+	$html = '<span id="fs'.$name.'">';
+	$html .= '<div class="form-group row">';
+	$html .= '<label for="'.$name.'hours" class="col-md-3 control-label">'._("Time to Start").'</label>
+				<div class="col-md-2">
+					<select name="'.$name.'[hour_start]" id="'.$name.'hours" class="form-control">
+						'.timeconditions_timegroups_hour_opts($hour_start).'
+					</select>
+				</div>
+				<div class="col-md-2">
+					<select name="'.$name.'[minute_start]" id="'.$name.'minutes" class="form-control">
+						'.timeconditions_timegroups_minute_opts($minute_start).'
+					</select>
+				</div>';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';
+	$html .= '<label for="'.$name.'houre" class="col-md-3 control-label">'._("Time to finish").'</label>
+				<div class="col-md-2">
+					<select name="'.$name.'[hour_finish]" id="'.$name.'houre" class="form-control">
+						'.timeconditions_timegroups_hour_opts($hour_finish).'
+					</select>
+				</div>
+				<div class="col-md-2">
+					<select name="'.$name.'[minute_finish]" id="'.$name.'minutee" class="form-control">
+						'.timeconditions_timegroups_minute_opts($minute_finish).'
+					</select>
+				</div>';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';
+	$html .= '<label for="'.$name.'wds" class="col-md-3 control-label">'._("Week Day Start").'</label>
+				<div class="col-md-4">
+					<select name="'.$name.'[wday_start]" id="'.$name.'wds" class="form-control">
+						'.timeconditions_timegroups_weekday_opts($wday_start).'
+					</select>				
+				</div>
+			';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';
+	$html .= '<label for="'.$name.'wde" class="col-md-3 control-label">'._("Week Day finish").'</label>
+				<div class="col-md-4">
+					<select name="'.$name.'[wday_finish]" id="'.$name.'wde" class="form-control">
+						'.timeconditions_timegroups_weekday_opts($wday_finish).'
+					</select>				
+				</div>
+			';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';	
+	$html .= '<label for="'.$name.'mds" class="col-md-3 control-label">'._("Month Day start").'</label>
+				<div class="col-md-4">
+					<select name="'.$name.'[mday_start]" id="'.$name.'mds" class="form-control">
+						'.timeconditions_timegroups_monthday_opts($mday_start).'
+					</select>				
+				</div>
+			';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';	
+	$html .= '<label for="'.$name.'mdf" class="col-md-3 control-label">'._("Month Day finish").'</label>
+				<div class="col-md-4">
+					<select name="'.$name.'[mday_finish]" id="'.$name.'mdf" class="form-control">
+						'.timeconditions_timegroups_monthday_opts($mday_finish).'
+					</select>				
+				</div>
+			';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';	
+	$html .= '<label for="'.$name.'mons" class="col-md-3 control-label">'._("Month start").'</label>
+				<div class="col-md-4">
+					<select name="'.$name.'[month_start]" id="'.$name.'mons" class="form-control">
+						'.timeconditions_timegroups_month_opts($month_start).'
+					</select>				
+				</div>
+			';
+	$html .= '</div>';
+	$html .= '<div class="form-group row">';	
+	$html .= '<label for="'.$name.'monf" class="col-md-3 control-label">'._("Month finish").'</label>
+				<div class="col-md-4">
+					<select name="'.$name.'[month_finish]" id="'.$name.'monf" class="form-control">
+						'.timeconditions_timegroups_month_opts($month_finish).'
+					</select>				
+				</div>
+			';
+	$html .= '</div>';
+	$html .= '<br/><hr/><br/>';
+	$html .= '</span>';
 	return $html;
+
 }
 
 function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish) {
