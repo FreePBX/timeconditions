@@ -48,7 +48,7 @@ function updateTime()
 	}
 	
 	document.getElementById("idTime").innerHTML = PadDigits(hour,2)+":"+PadDigits(min,2)+":"+PadDigits(sec,2);
-	setTimeout('updateTime()',1000);
+	var t = setTimeout('updateTime()',1000);
 }
 
 updateTime();
@@ -61,58 +61,60 @@ $(document).ready(function(){
   });
 });
 //table
-$("#timegrid").bootstrapTable({
-	method: 'get',
-	url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
-	cache: false,
-	striped: true,
-	showColumns: false,
-	columns: [
-		{
-			field: 'text',
-			title: _("Description"),
-		},
-		{
-			field: 'value',
-			title: _("Actions"),
-			clickToSelect: false,
-			formatter: actionFormatter,
-		}
-		]
-});
-$("#bnavgrid").bootstrapTable({
-	method: 'get',
-	url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
-	cache: false,
-	striped: false,
-	showColumns: false,
-	columns: [
-		{
-			title: _("Time Groups"),
-			field: 'link',
-			formatter: linkFormatter,
-		}
-		]
+$(document).ready(function(){
+	$("#timegrid").bootstrapTable({
+		method: 'get',
+		url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
+		cache: false,
+		striped: true,
+		showColumns: false,
+		columns: [
+			{
+				field: 'text',
+				title: _("Description"),
+			},
+			{
+				field: 'value',
+				title: _("Actions"),
+				clickToSelect: false,
+				formatter: actionFormatter,
+			}
+			]
+	});
+	$("#bnavgrid").bootstrapTable({
+		method: 'get',
+		url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
+		cache: false,
+		striped: false,
+		showColumns: false,
+		columns: [
+			{
+				title: _("Time Groups"),
+				field: 'link',
+				formatter: linkFormatter,
+			}
+			]
+	});
 });
 function actionFormatter(value){
 	var html = '';
 	html += '<a href="?display=timegroups&view=form&extdisplay='+value+'"><i class="fa fa-edit"></i></a>&nbsp;';
-	html += '<a href="?display=timegroups&action=del&extdisplay='+value+'"><i class="fa fa-trash"></i></a>';
+	html += '<a href="?display=timegroups&action=del&extdisplay='+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 function linkFormatter(value){
 	html = '<a href="?display=timegroups&view=form&extdisplay='+value[1]+'"><i class="fa fa-pencil"></i>&nbsp'+_("Edit: ")+value[0]+'</a>';
 	return html;
 }
-$("#addTime").live('click',function(e){
+$(document).on('click',"#addTime",function(e){
 	e.preventDefault();
-	var curid = $(this).prev().attr('id').match(/\d+/)[0];
-
+	var curelem = $(this).parent().find('span').last();
+	var curid = $(curelem).attr('id').match(/\d+/);
 	curid = parseInt(curid,10);
 	var nextid = curid + 1;
-	var span = $(this).parent().find('span');
+	var span = $(this).parent().find('span').last();
+	$("#addTime").remove();
 	var newspan  = span.clone();
-	$(this).html('<br/>');
 	var items = newspan.children();
 	items.find('select').each(function(){
 		$(this).children().removeAttr("selected");
@@ -120,5 +122,5 @@ $("#addTime").live('click',function(e){
 		$(this).attr('id',$(this).attr('id').replace(/\d+/,nextid) );
 		});
 	newspan.appendTo('#timerows');
-	$("#timerows").append('<a href="#" id="addTime"><i class="fa fa-plus"></i></a>');
+	$("#timerows").append('<a href="#" id="addTime"><i class="fa fa-plus"></i> '+_("Add Time")+'</a>');
 });

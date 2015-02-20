@@ -35,6 +35,4 @@ switch ($request['view']) {
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="/admin/modules/timeconditions/assets/js/timegroups.js"></script>
-<script type="text/javascript" src="/admin/assets/js/bootstrap-table.min.js"></script>
 
