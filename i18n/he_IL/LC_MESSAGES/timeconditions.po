@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:11-0500\n"
+"POT-Creation-Date: 2015-02-20 20:04-0500\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -19,134 +19,151 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:707
+#: functions.inc.php:707
 msgid " deleted!"
 msgstr "נמחק"
 
-#: /usr/src/freepbx/timeconditions/install.php:231
+#: install.php:231
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:909
+#: functions.inc.php:909
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:536
-#: /usr/src/freepbx/timeconditions/functions.inc.php:601
-#: /usr/src/freepbx/timeconditions/install.php:198
+#: functions.inc.php:536 functions.inc.php:601 install.php:198
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:39
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:54
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:87
+#: page.timeconditions.php:39 page.timeconditions.php:54
+#: page.timeconditions.php:87
 msgid "Add Time Condition"
 msgstr "הוספת תנאי זמן"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:715
+#: functions.inc.php:715
 msgid "Add Time Group"
 msgstr "הוסף קבוצת זמנים"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1272
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1371
+#: timeconditions.i18n.php:4
+msgid "Applications"
+msgstr ""
+
+#: functions.inc.php:1272 functions.inc.php:1371
 msgid "April"
 msgstr "אפריל"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1300
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1399
+#: functions.inc.php:1300 functions.inc.php:1399
 msgid "August"
 msgstr "אוגוסט"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:138
+#: page.timeconditions.php:138
 msgid "Change Override:"
 msgstr "שנה מעקף"
 
-#: /usr/src/freepbx/timeconditions/install.php:218
+#: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:134
+#: timeconditions.i18n.php:5
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+
+#: page.timeconditions.php:134
 msgid "Current Override:"
 msgstr "עקיפה נוכחי:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1328
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1427
+#: functions.inc.php:1328 functions.inc.php:1427
 msgid "December"
 msgstr "דצמבר"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:63
+#: page.timeconditions.php:63
 #, php-format
 msgid "Delete Time Condition: %s"
 msgstr "מחק תנאי זמן"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:723
+#: functions.inc.php:723
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "מחק קת קבוצת הזמנים"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:716
-#: /usr/src/freepbx/timeconditions/functions.inc.php:736
+#: functions.inc.php:716 functions.inc.php:736
 msgid "Description"
 msgstr "תיאור"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:703
+#: functions.inc.php:703
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr "התיאור חייב להכיל אותיות ומספרים בלבד"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:181
+#: page.timeconditions.php:181
 msgid "Destination if time does not match"
 msgstr "יעד אם הזמן אינו מתאים"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:171
+#: page.timeconditions.php:171
 msgid "Destination if time matches"
 msgstr "יעד אם הזמן מתאים"
 
-#: /usr/src/freepbx/timeconditions/install.php:166
+#: install.php:166
 msgid "ERROR: failed to convert field "
 msgstr "שגיאה: לא הצליח להמיר שדה"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:87
+#: page.timeconditions.php:87
 msgid "Edit Time Condition"
 msgstr "ערוך תנאי זמן"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:722
+#: functions.inc.php:722
 msgid "Edit Time Group"
 msgstr "ערוך קבוצת זמנים"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1258
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1357
+#: timeconditions.i18n.php:9
+msgid "Enable Maintenance Polling"
+msgstr ""
+
+#: functions.inc.php:1258 functions.inc.php:1357
 msgid "February"
 msgstr "פברואר"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1083
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1146
+#: functions.inc.php:1083 functions.inc.php:1146
 msgid "Friday"
 msgstr "שישי"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:94
+#: page.timeconditions.php:94
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "תן לתנאי זמן זה שם קצר שיעזור לך לזהות אותו."
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:159
+#: page.timeconditions.php:159
 msgid "Goto Current Time Group"
 msgstr "גש לקבות הזמן הנוכחית"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:98
+#: page.timeconditions.php:98
 #, php-format
 msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:104
+#: page.timeconditions.php:104
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:134
+#: timeconditions.i18n.php:13
+msgid ""
+"If set to false, this will override the execution of the Time Conditions "
+"maintenance task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+
+#: page.timeconditions.php:134
 msgid ""
 "Indicates the current state of this Time Condition. If it is in a Temporary "
 "Override state, it will automatically resume at the next time transition "
@@ -156,155 +173,157 @@ msgid ""
 "normally based on the time schedule."
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:104
+#: page.timeconditions.php:104
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1251
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1350
+#: functions.inc.php:1251 functions.inc.php:1350
 msgid "January"
 msgstr "ינואר"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1293
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1392
+#: functions.inc.php:1293 functions.inc.php:1392
 msgid "July"
 msgstr "יולי"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1286
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1385
+#: functions.inc.php:1286 functions.inc.php:1385
 msgid "June"
 msgstr "יוני"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1265
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1364
+#: timeconditions.i18n.php:15
+msgid "Maintenance Polling Interval"
+msgstr ""
+
+#: functions.inc.php:1265 functions.inc.php:1364
 msgid "March"
 msgstr "מרץ"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1279
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1378
+#: functions.inc.php:1279 functions.inc.php:1378
 msgid "May"
 msgstr "מאי"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1055
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1118
+#: functions.inc.php:1055 functions.inc.php:1118
 msgid "Monday"
 msgstr "שני"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1200
+#: functions.inc.php:1200
 msgid "Month Day finish:"
 msgstr "יום בחודש לסיים:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1165
+#: functions.inc.php:1165
 msgid "Month Day start:"
 msgstr "יום בחודש להתחיל:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1334
+#: functions.inc.php:1334
 msgid "Month finish:"
 msgstr "חודש סיום:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1219
+#: functions.inc.php:1219
 msgid "Month start:"
 msgstr "חודש להתחיל:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:747
+#: functions.inc.php:747
 msgid "New Time"
 msgstr "זמן חדש"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:114
+#: page.timeconditions.php:114
 msgid "No Override"
 msgstr "ללא מעקף"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1321
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1420
+#: functions.inc.php:1321 functions.inc.php:1420
 msgid "November"
 msgstr "נובמבר"
 
-#: /usr/src/freepbx/timeconditions/install.php:168
-#: /usr/src/freepbx/timeconditions/install.php:182
-#: /usr/src/freepbx/timeconditions/install.php:210
+#: install.php:168 install.php:182 install.php:210
 msgid "OK"
 msgstr "תקין"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1314
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1413
+#: functions.inc.php:1314 functions.inc.php:1413
 msgid "October"
 msgstr "אוקטובר"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:98
+#: page.timeconditions.php:98
 msgid "Override Code Pin"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:120
+#: page.timeconditions.php:120
 msgid "Permanent Override matching state"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:126
+#: page.timeconditions.php:126
 msgid "Permanent Override unmatching state"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:144
+#: page.timeconditions.php:144
 msgid "Permanently matched"
 msgstr "התאמה קבועה"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:146
+#: page.timeconditions.php:146
 msgid "Permanently unmatched"
 msgstr "התאמה קבועה"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:741
+#: functions.inc.php:741
 msgid "Remove Section and Submit Current Settings"
 msgstr "מחק את הבחירה והחל את ההגדרות הנוכחיות"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:142
+#: page.timeconditions.php:142
 msgid "Reset Override"
 msgstr "אתחל מעקף"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1090
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1153
+#: functions.inc.php:1090 functions.inc.php:1153
 msgid "Saturday"
 msgstr "שבת"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:152
+#: page.timeconditions.php:152
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
 "match destination."
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1307
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1406
+#: functions.inc.php:1307 functions.inc.php:1406
 msgid "September"
 msgstr "ספטמבר"
 
-#: /usr/src/freepbx/timeconditions/page.timegroups.php:17
+#: page.timegroups.php:17
 msgid "Server time:"
 msgstr "שעה בשרת:"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:193
+#: page.timeconditions.php:193
 msgid "Submit"
 msgstr "החל שינויים"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1097
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1160
+#: functions.inc.php:1097 functions.inc.php:1160
 msgid "Sunday"
 msgstr "ראשון"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:117
+#: page.timeconditions.php:117
 msgid "Temporary Override matching state"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:123
+#: page.timeconditions.php:123
 msgid "Temporary Override unmatching state"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:143
+#: page.timeconditions.php:143
 msgid "Temporary matched"
 msgstr "התאמה זמנית"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:145
+#: page.timeconditions.php:145
 msgid "Temporary unmatched"
 msgstr "חוסר התאמה זמני"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:138
+#: timeconditions.i18n.php:17
+msgid ""
+"The polling interval in seconds used by the Time Conditions maintenance "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual override "
+"during such a period is properly reset when the new period starts."
+msgstr ""
+
+#: page.timeconditions.php:138
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -317,127 +336,132 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/page.timegroups.php:68
+#: page.timegroups.php:68
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:716
-#: /usr/src/freepbx/timeconditions/functions.inc.php:736
+#: functions.inc.php:716 functions.inc.php:736
 msgid "This will display as the name of this Time Group."
 msgstr "זהו השם של קבוצת הזמנים"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1076
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1139
+#: functions.inc.php:1076 functions.inc.php:1139
 msgid "Thursday"
 msgstr "חמישי"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:51
+#: page.timeconditions.php:51
 msgid "Time Condition"
 msgstr "תנאי זמן"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:94
+#: timeconditions.i18n.php:11
+msgid "Time Condition Module"
+msgstr ""
+
+#: page.timeconditions.php:94
 msgid "Time Condition name:"
 msgstr "שם תנאי הזמן:"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:54
+#: page.timeconditions.php:54
 msgid "Time Condition:"
 msgstr "תנאי זמן:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:21
-#: /usr/src/freepbx/timeconditions/functions.inc.php:305
+#: functions.inc.php:21 functions.inc.php:305
 #, php-format
 msgid "Time Condition: %s"
 msgstr "מצבים לפי זמנים: %s"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:707
-#: /usr/src/freepbx/timeconditions/functions.inc.php:716
-#: /usr/src/freepbx/timeconditions/functions.inc.php:736
-#: /usr/src/freepbx/timeconditions/page.timegroups.php:12
+#: timeconditions.i18n.php:3 timeconditions.i18n.php:6
+msgid "Time Conditions"
+msgstr "תנאיי זמנים"
+
+#: functions.inc.php:707 functions.inc.php:716 functions.inc.php:736
+#: page.timegroups.php:12
 msgid "Time Group"
 msgstr "קבוצת זמנים"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:152
+#: page.timeconditions.php:152
 msgid "Time Group:"
 msgstr "קבוצת זמנים"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:990
+#: timeconditions.i18n.php:7
+msgid "Time Groups"
+msgstr "קבוצות זמן"
+
+#: functions.inc.php:990
 msgid "Time to finish:"
 msgstr "זמן לסיים:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:935
+#: functions.inc.php:935
 msgid "Time to start:"
 msgstr "זמן להתחיל:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1062
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1125
+#: functions.inc.php:1062 functions.inc.php:1125
 msgid "Tuesday"
 msgstr "שלישי"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:141
+#: page.timeconditions.php:141
 msgid "Unchanged"
 msgstr "ללא שינוי"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:129
+#: page.timeconditions.php:129
 msgid "Unknown State"
 msgstr "מצב לא ידוע"
 
-#: /usr/src/freepbx/timeconditions/install.php:229
+#: install.php:229
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:732
+#: functions.inc.php:732
 msgid "Used By"
 msgstr "בשימוש על ידי"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1069
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1132
+#: functions.inc.php:1069 functions.inc.php:1132
 msgid "Wednesday"
 msgstr "רביעי"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1102
+#: functions.inc.php:1102
 msgid "Week Day finish:"
 msgstr "יום בשבוע לסיים:"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:1040
+#: functions.inc.php:1040
 msgid "Week Day start:"
 msgstr "יום התחלה בשבוע:"
 
-#: /usr/src/freepbx/timeconditions/install.php:184
+#: install.php:184
 msgid "already exists"
 msgstr "כבר קיים"
 
-#: /usr/src/freepbx/timeconditions/install.php:172
+#: install.php:172
 msgid "checking for generate_hint field.."
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/install.php:162
+#: install.php:162
 msgid "converting timeconditions time field to int.."
 msgstr "ממיר קבוצות זמן"
 
-#: /usr/src/freepbx/timeconditions/page.timeconditions.php:51
+#: page.timeconditions.php:51
 msgid "deleted"
 msgstr "נמחק"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:318
+#: functions.inc.php:318
 msgid "false goto"
 msgstr ""
 
-#: /usr/src/freepbx/timeconditions/install.php:189
+#: install.php:189
 msgid "generating feature codes if needed.."
 msgstr "יוצר קודי תכונות אם נדרשים"
 
-#: /usr/src/freepbx/timeconditions/install.php:236
+#: install.php:236
 msgid "no upgrade needed"
 msgstr "אין צורך בשדרוג"
 
-#: /usr/src/freepbx/timeconditions/install.php:223
+#: install.php:223
 msgid "starting migration"
 msgstr "מתחיל שדרוג"
 
-#: /usr/src/freepbx/timeconditions/functions.inc.php:310
+#: functions.inc.php:310
 msgid "true goto"
 msgstr ""
 
@@ -453,12 +477,6 @@ msgstr ""
 
 #~ msgid "Please enter a valid Time Conditions Name"
 #~ msgstr "נא הזן שם לתנאי הזמן"
-
-#~ msgid "Time Conditions"
-#~ msgstr "תנאיי זמנים"
-
-#~ msgid "Time Groups"
-#~ msgstr "קבוצות זמן"
 
 #~ msgid "Inbound Call Control"
 #~ msgstr "שליטה בשיחות נכנסות"
