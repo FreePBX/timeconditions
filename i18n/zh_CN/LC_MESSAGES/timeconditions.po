@@ -174,7 +174,7 @@ msgstr ""
 
 #: page.timeconditions.php:104
 msgid "Invert BLF Hint"
-msgstr ""
+msgstr "切换BLF Hint"
 
 #: functions.inc.php:1251 functions.inc.php:1350
 msgid "January"
@@ -242,7 +242,7 @@ msgstr "十月"
 
 #: page.timeconditions.php:98
 msgid "Override Code Pin"
-msgstr ""
+msgstr "覆盖状态修改密码"
 
 #: page.timeconditions.php:120
 msgid "Permanent Override matching state"
@@ -467,7 +467,7 @@ msgid "true goto"
 msgstr ""
 
 #~ msgid "text"
-#~ msgstr "文字"
+#~ msgstr "文本"
 
 #~ msgid "Please enter a valid Time Conditions Name"
 #~ msgstr "请输入有效的时间条件名"
@@ -476,6 +476,4 @@ msgstr ""
 #~ "You have not selected a time group to associate with this timecondition. "
 #~ "It will go to the un-matching destination until you update it with a "
 #~ "valid group"
-#~ msgstr ""
-#~ "你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目"
-#~ "的地，直到你为它更新一个可用的小组"
+#~ msgstr "你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目的地，直到你为它更新一个可用的小组"
