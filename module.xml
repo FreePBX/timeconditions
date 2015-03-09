@@ -2,7 +2,7 @@
   <rawname>timeconditions</rawname>
   <repo>standard</repo>
   <name>Time Conditions</name>
-  <version>12.0.6</version>
+  <version>13.0.1alpha1</version>
   <publisher>Schmooze Com Inc</publisher>
   <license>GPLv3+</license>
   <licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
     Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
   </description>
   <changelog>
+    *13.0.1alpha1* Visual Changes
     *12.0.6* FREEPBX-7997 Systems with /var and /tmp on different partitions cause problems. Use Asterisk's temporary directory instead.
     *12.0.5* Redo module_hook calls to use static obj
     *12.0.4* Spelling Fixes
@@ -50,6 +51,6 @@
   <location>release/2.11/timeconditions-2.11.0.1.tgz</location>
   <md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
   <supported>
-    <version>12.0</version>
+    <version>13.0</version>
   </supported>
 </module>

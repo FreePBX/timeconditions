@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 20:04-0500\n"
+"POT-Creation-Date: 2015-03-09 14:46-0400\n"
 "PO-Revision-Date: 2014-02-20 22:09+0200\n"
 "Last-Translator: Chise Mishima <c.mishima@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/timeconditions/"
@@ -49,16 +49,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.8\n"
 
-#: functions.inc.php:707
-msgid " deleted!"
-msgstr " 削除されました！"
-
 #: install.php:231
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr "%s 警告:%s この条件への時間が定義されていません、再確認してください"
 
-#: functions.inc.php:909
+#: functions.inc.php:908
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
@@ -66,36 +62,43 @@ msgstr "--グループ選択--"
 msgid ": Time Condition Override"
 msgstr "：タイムコンディションを上書き"
 
-#: page.timeconditions.php:39 page.timeconditions.php:54
-#: page.timeconditions.php:87
+#: views/timeconditions/grid.php:35 assets/js/timegroups.js:78
+msgid "Actions"
+msgstr ""
+
+#: views/timegroups/form.php:61 assets/js/timegroups.js:125
+msgid "Add Time"
+msgstr ""
+
+#: views/timeconditions/bootnav.php:2
 msgid "Add Time Condition"
 msgstr "タイムコンディション追加"
 
-#: functions.inc.php:715
+#: views/timegroups/bootnav.php:10
 msgid "Add Time Group"
 msgstr "タイムグループ追加"
 
-#: timeconditions.i18n.php:4
+#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: functions.inc.php:1272 functions.inc.php:1371
+#: functions.inc.php:993
 msgid "April"
 msgstr "4月"
 
-#: functions.inc.php:1300 functions.inc.php:1399
+#: functions.inc.php:997
 msgid "August"
 msgstr "8月"
 
-#: page.timeconditions.php:138
-msgid "Change Override:"
-msgstr "上書きを変更："
+#: views/timeconditions/form.php:134
+msgid "Change Override"
+msgstr ""
 
 #: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "旧タイムコンディションのアップグレードのチェック中.."
 
-#: timeconditions.i18n.php:5
+#: timeconditions.i18n.php:8
 msgid ""
 "Creates a condition where calls will go to one of two destinations (eg, an "
 "extension, IVR, ring group..) based on the time and/or date. This can be "
@@ -106,87 +109,70 @@ msgstr ""
 "一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信さ"
 "せ、夜は直接IVRに行く等に使用できます。"
 
-#: page.timeconditions.php:134
-msgid "Current Override:"
-msgstr "現在の上書き:"
+#: views/timeconditions/form.php:147
+msgid "Current"
+msgstr ""
 
-#: functions.inc.php:1328 functions.inc.php:1427
+#: functions.inc.php:1001
 msgid "December"
 msgstr "12月"
 
-#: page.timeconditions.php:63
-#, php-format
-msgid "Delete Time Condition: %s"
-msgstr "タイムコンディション削除： %s"
+#: Timeconditions.class.php:101
+msgid "Delete"
+msgstr ""
 
-#: functions.inc.php:723
-#, php-format
-msgid "Delete Time Group %s"
-msgstr "タイムグループを削除 %s"
-
-#: functions.inc.php:716 functions.inc.php:736
+#: views/timegroups/form.php:32 assets/js/timegroups.js:74
 msgid "Description"
 msgstr "説明"
 
-#: functions.inc.php:703
-msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "空欄を埋め、英数字で記入してください"
+#: views/timeconditions/form.php:244
+msgid "Destination if time does not matche"
+msgstr ""
 
-#: page.timeconditions.php:181
-msgid "Destination if time does not match"
-msgstr "時間不一致時の宛先"
-
-#: page.timeconditions.php:171
+#: views/timeconditions/form.php:214
 msgid "Destination if time matches"
 msgstr "時間一致時の宛先"
+
+#: views/timeconditions/form.php:196
+msgid "Destination matches"
+msgstr ""
+
+#: views/timeconditions/form.php:226
+msgid "Destination non-matches"
+msgstr ""
 
 #: install.php:166
 msgid "ERROR: failed to convert field "
 msgstr "エラー：フィールドのコンバート失敗 "
 
-#: page.timeconditions.php:87
-msgid "Edit Time Condition"
-msgstr "タイムコンディション編集"
+#: assets/js/timegroups.js:106
+msgid "Edit: "
+msgstr ""
 
-#: functions.inc.php:722
-msgid "Edit Time Group"
-msgstr "タイムグループ編集"
-
-#: timeconditions.i18n.php:9
+#: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
 msgstr "メンテナンスポーリングを有効にする"
 
-#: functions.inc.php:1258 functions.inc.php:1357
+#: functions.inc.php:991
 msgid "February"
 msgstr "2月"
 
-#: functions.inc.php:1083 functions.inc.php:1146
+#: functions.inc.php:969
 msgid "Friday"
 msgstr "金曜日"
 
-#: page.timeconditions.php:94
+#: views/timeconditions/form.php:69 views/timeconditions/form.php:93
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "このタイムコンディションの明確な名前を入力してください。"
 
-#: page.timeconditions.php:159
-msgid "Goto Current Time Group"
-msgstr "現在のタイムグループに移動"
-
-#: page.timeconditions.php:98
-#, php-format
-msgid ""
-"If set dialing the feature code will require a pin to change the override "
-"state"
-msgstr ""
-
-#: page.timeconditions.php:104
+#: views/timeconditions/form.php:122
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: timeconditions.i18n.php:13
+#: timeconditions.i18n.php:20
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -196,77 +182,75 @@ msgid ""
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: page.timeconditions.php:134
-msgid ""
-"Indicates the current state of this Time Condition. If it is in a Temporary "
-"Override state, it will automatically resume at the next time transition "
-"based on the associated Time Group. If in a Permanent Override state, it "
-"will stay in that state until changed here or through other means such as "
-"external XML applications on your phone. If No Override then it functions "
-"normally based on the time schedule."
-msgstr ""
-"このタイムコンディションの状態を指定します。一時的な上書きは、関連付けられた"
-"タイムグループに基づき、次回、自動的に移行が再開されます。永久的な上書きは、"
-"電話機についている外部のXMPアプリケーションなど他の方法で変更する迄、その状態"
-"が継続されます。上書きしない時は、タイムスケジュールに基づき機能します。"
-
-#: page.timeconditions.php:104
+#: views/timeconditions/form.php:105
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:1251 functions.inc.php:1350
+#: functions.inc.php:990
 msgid "January"
 msgstr "1月"
 
-#: functions.inc.php:1293 functions.inc.php:1392
+#: functions.inc.php:996
 msgid "July"
 msgstr "7月"
 
-#: functions.inc.php:1286 functions.inc.php:1385
+#: functions.inc.php:995
 msgid "June"
 msgstr "6月"
 
-#: timeconditions.i18n.php:15
+#: views/timeconditions/grid.php:34
+msgid "Linked Time Group"
+msgstr ""
+
+#: views/timeconditions/bootnav.php:1
+msgid "List Time Conditions"
+msgstr ""
+
+#: views/timegroups/bootnav.php:9
+msgid "List Time Groups"
+msgstr ""
+
+#: timeconditions.i18n.php:22
 msgid "Maintenance Polling Interval"
 msgstr "メンテナンスポーリング間隔"
 
-#: functions.inc.php:1265 functions.inc.php:1364
+#: functions.inc.php:992
 msgid "March"
 msgstr "3月"
 
-#: functions.inc.php:1279 functions.inc.php:1378
+#: functions.inc.php:994
 msgid "May"
 msgstr "5月"
 
-#: functions.inc.php:1055 functions.inc.php:1118
+#: functions.inc.php:965
 msgid "Monday"
 msgstr "月曜日"
 
-#: functions.inc.php:1200
-msgid "Month Day finish:"
-msgstr "終了日："
+#: functions.inc.php:1160
+msgid "Month Day finish"
+msgstr ""
 
-#: functions.inc.php:1165
-msgid "Month Day start:"
-msgstr "開始日："
+#: functions.inc.php:1151
+msgid "Month Day start"
+msgstr ""
 
-#: functions.inc.php:1334
-msgid "Month finish:"
-msgstr "終了月："
+#: functions.inc.php:1178
+msgid "Month finish"
+msgstr ""
 
-#: functions.inc.php:1219
-msgid "Month start:"
-msgstr "開始月："
+#: functions.inc.php:1169
+msgid "Month start"
+msgstr ""
 
-#: functions.inc.php:747
-msgid "New Time"
-msgstr "新規タイム"
+#: views/timeconditions/form.php:113
+msgid "No"
+msgstr ""
 
-#: page.timeconditions.php:114
+#: views/timeconditions/form.php:22
 msgid "No Override"
 msgstr "上書きなし"
 
-#: functions.inc.php:1321 functions.inc.php:1420
+#: functions.inc.php:1000
 msgid "November"
 msgstr "11月"
 
@@ -274,43 +258,43 @@ msgstr "11月"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:1314 functions.inc.php:1413
+#: functions.inc.php:999
 msgid "October"
 msgstr "10月"
 
-#: page.timeconditions.php:98
+#: views/timeconditions/form.php:81
 msgid "Override Code Pin"
 msgstr ""
 
-#: page.timeconditions.php:120
+#: views/timeconditions/form.php:28
 msgid "Permanent Override matching state"
 msgstr "一致する状態を永久的に上書き"
 
-#: page.timeconditions.php:126
+#: views/timeconditions/form.php:34
 msgid "Permanent Override unmatching state"
 msgstr "一致しない状態を永久的に上書き"
 
-#: page.timeconditions.php:144
+#: views/timeconditions/form.php:142
 msgid "Permanently matched"
 msgstr "永久的一致"
 
-#: page.timeconditions.php:146
+#: views/timeconditions/form.php:144
 msgid "Permanently unmatched"
 msgstr "永久的不一致"
 
-#: functions.inc.php:741
-msgid "Remove Section and Submit Current Settings"
-msgstr "セクションを削除し現在の設定を確定します"
+#: Timeconditions.class.php:106
+msgid "Reset"
+msgstr ""
 
-#: page.timeconditions.php:142
+#: views/timeconditions/form.php:140
 msgid "Reset Override"
 msgstr "上書きをリセット"
 
-#: functions.inc.php:1090 functions.inc.php:1153
+#: functions.inc.php:970
 msgid "Saturday"
 msgstr "土曜日"
 
-#: page.timeconditions.php:152
+#: views/timeconditions/form.php:179
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
@@ -320,39 +304,39 @@ msgstr ""
 "と指定した宛先に送信されます。未選択の場合、呼は常に正しい宛先に送信されませ"
 "ん。"
 
-#: functions.inc.php:1307 functions.inc.php:1406
+#: functions.inc.php:998
 msgid "September"
 msgstr "9月"
 
-#: page.timegroups.php:17
+#: views/timegroups/bootnav.php:7
 msgid "Server time:"
 msgstr "サーバー時刻："
 
-#: page.timeconditions.php:193
+#: Timeconditions.class.php:111
 msgid "Submit"
 msgstr "送信"
 
-#: functions.inc.php:1097 functions.inc.php:1160
+#: functions.inc.php:964
 msgid "Sunday"
 msgstr "日曜日"
 
-#: page.timeconditions.php:117
+#: views/timeconditions/form.php:25
 msgid "Temporary Override matching state"
 msgstr "一致する状態を一時的に上書き"
 
-#: page.timeconditions.php:123
+#: views/timeconditions/form.php:31
 msgid "Temporary Override unmatching state"
 msgstr "一致しない状態を一時的に上書き"
 
-#: page.timeconditions.php:143
+#: views/timeconditions/form.php:141
 msgid "Temporary matched"
 msgstr "一時的一致"
 
-#: page.timeconditions.php:145
+#: views/timeconditions/form.php:143
 msgid "Temporary unmatched"
 msgstr "一時的不一致"
 
-#: timeconditions.i18n.php:17
+#: timeconditions.i18n.php:24
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -363,7 +347,7 @@ msgid ""
 "during such a period is properly reset when the new period starts."
 msgstr ""
 
-#: page.timeconditions.php:138
+#: views/timeconditions/form.php:155
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -383,7 +367,7 @@ msgstr ""
 "の電話オプション等のアプリケーションで、永久的に上書きを削除することもできま"
 "す。"
 
-#: page.timegroups.php:68
+#: assets/js/timegroups.js:57
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -391,69 +375,65 @@ msgstr ""
 "このセクションはこのタイムグループから削除され、変更を含む全ての現設定が更新"
 "されます。続行しますか？"
 
-#: functions.inc.php:716 functions.inc.php:736
-msgid "This will display as the name of this Time Group."
-msgstr "このタイムグループ名を表示します。"
+#: views/timegroups/form.php:44
+msgid "This will display as the name of this Time Group"
+msgstr ""
 
-#: functions.inc.php:1076 functions.inc.php:1139
+#: functions.inc.php:968
 msgid "Thursday"
 msgstr "木曜日"
 
-#: page.timeconditions.php:51
+#: views/timeconditions/grid.php:33
 msgid "Time Condition"
 msgstr "タイムコンディション"
 
-#: timeconditions.i18n.php:11
+#: timeconditions.i18n.php:18
 msgid "Time Condition Module"
 msgstr "タイムコンディションモジュール"
 
-#: page.timeconditions.php:94
-msgid "Time Condition name:"
-msgstr "タイムコンディション名："
-
-#: page.timeconditions.php:54
-msgid "Time Condition:"
-msgstr "タイムコンディション："
+#: views/timeconditions/form.php:57
+msgid "Time Condition name"
+msgstr ""
 
 #: functions.inc.php:21 functions.inc.php:305
 #, php-format
 msgid "Time Condition: %s"
 msgstr "タイムコンディション： %s"
 
-#: timeconditions.i18n.php:3 timeconditions.i18n.php:6
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "タイムコンディション"
 
-#: functions.inc.php:707 functions.inc.php:716 functions.inc.php:736
-#: page.timegroups.php:12
+#: views/timeconditions/form.php:167
 msgid "Time Group"
 msgstr "タイムグループ"
 
-#: page.timeconditions.php:152
-msgid "Time Group:"
-msgstr "タイムグループ："
-
-#: timeconditions.i18n.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:14 assets/js/timegroups.js:92
 msgid "Time Groups"
 msgstr "タイムグループ"
 
-#: functions.inc.php:990
-msgid "Time to finish:"
-msgstr "終了時刻："
+#: functions.inc.php:1107
+msgid "Time to Start"
+msgstr ""
 
-#: functions.inc.php:935
-msgid "Time to start:"
-msgstr "開始時刻："
+#: functions.inc.php:1120
+msgid "Time to finish"
+msgstr ""
 
-#: functions.inc.php:1062 functions.inc.php:1125
+#: views/timegroups/form.php:56
+msgid "Time(s)"
+msgstr ""
+
+#: functions.inc.php:966
 msgid "Tuesday"
 msgstr "火曜日"
 
-#: page.timeconditions.php:141
+#: views/timeconditions/form.php:139
 msgid "Unchanged"
 msgstr "変更なし"
 
-#: page.timeconditions.php:129
+#: views/timeconditions/form.php:37 views/timeconditions/form.php:41
 msgid "Unknown State"
 msgstr "不明ステータス"
 
@@ -462,21 +442,21 @@ msgstr "不明ステータス"
 msgid "Upgraded %s and created group %s"
 msgstr "%s をアップグレードし、グループ%sを作成しました"
 
-#: functions.inc.php:732
-msgid "Used By"
-msgstr "に使用されています"
-
-#: functions.inc.php:1069 functions.inc.php:1132
+#: functions.inc.php:967
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: functions.inc.php:1102
-msgid "Week Day finish:"
-msgstr "終了曜日："
+#: functions.inc.php:1133
+msgid "Week Day Start"
+msgstr ""
 
-#: functions.inc.php:1040
-msgid "Week Day start:"
-msgstr "開始曜日："
+#: functions.inc.php:1142
+msgid "Week Day finish"
+msgstr ""
+
+#: views/timeconditions/form.php:111
+msgid "Yes"
+msgstr ""
 
 #: install.php:184
 msgid "already exists"
@@ -489,10 +469,6 @@ msgstr "generate_hintフィールドをチェック中.."
 #: install.php:162
 msgid "converting timeconditions time field to int.."
 msgstr "タイムコンディションのtimeフィールドをintにコンバート中.."
-
-#: page.timeconditions.php:51
-msgid "deleted"
-msgstr "削除されました"
 
 #: functions.inc.php:318
 msgid "false goto"
@@ -513,6 +489,98 @@ msgstr "移行開始"
 #: functions.inc.php:310
 msgid "true goto"
 msgstr ""
+
+#~ msgid " deleted!"
+#~ msgstr " 削除されました！"
+
+#~ msgid "Change Override:"
+#~ msgstr "上書きを変更："
+
+#~ msgid "Current Override:"
+#~ msgstr "現在の上書き:"
+
+#~ msgid "Delete Time Condition: %s"
+#~ msgstr "タイムコンディション削除： %s"
+
+#~ msgid "Delete Time Group %s"
+#~ msgstr "タイムグループを削除 %s"
+
+#~ msgid "Description must be alpha-numeric, and may not be left blank"
+#~ msgstr "空欄を埋め、英数字で記入してください"
+
+#~ msgid "Destination if time does not match"
+#~ msgstr "時間不一致時の宛先"
+
+#~ msgid "Edit Time Condition"
+#~ msgstr "タイムコンディション編集"
+
+#~ msgid "Edit Time Group"
+#~ msgstr "タイムグループ編集"
+
+#~ msgid "Goto Current Time Group"
+#~ msgstr "現在のタイムグループに移動"
+
+#~ msgid ""
+#~ "Indicates the current state of this Time Condition. If it is in a "
+#~ "Temporary Override state, it will automatically resume at the next time "
+#~ "transition based on the associated Time Group. If in a Permanent Override "
+#~ "state, it will stay in that state until changed here or through other "
+#~ "means such as external XML applications on your phone. If No Override "
+#~ "then it functions normally based on the time schedule."
+#~ msgstr ""
+#~ "このタイムコンディションの状態を指定します。一時的な上書きは、関連付けられ"
+#~ "たタイムグループに基づき、次回、自動的に移行が再開されます。永久的な上書き"
+#~ "は、電話機についている外部のXMPアプリケーションなど他の方法で変更する迄、"
+#~ "その状態が継続されます。上書きしない時は、タイムスケジュールに基づき機能し"
+#~ "ます。"
+
+#~ msgid "Month Day finish:"
+#~ msgstr "終了日："
+
+#~ msgid "Month Day start:"
+#~ msgstr "開始日："
+
+#~ msgid "Month finish:"
+#~ msgstr "終了月："
+
+#~ msgid "Month start:"
+#~ msgstr "開始月："
+
+#~ msgid "New Time"
+#~ msgstr "新規タイム"
+
+#~ msgid "Remove Section and Submit Current Settings"
+#~ msgstr "セクションを削除し現在の設定を確定します"
+
+#~ msgid "This will display as the name of this Time Group."
+#~ msgstr "このタイムグループ名を表示します。"
+
+#~ msgid "Time Condition name:"
+#~ msgstr "タイムコンディション名："
+
+#~ msgid "Time Condition:"
+#~ msgstr "タイムコンディション："
+
+#~ msgid "Time Group:"
+#~ msgstr "タイムグループ："
+
+#~ msgid "Time to finish:"
+#~ msgstr "終了時刻："
+
+#~ msgid "Time to start:"
+#~ msgstr "開始時刻："
+
+#~ msgid "Used By"
+#~ msgstr "に使用されています"
+
+#~ msgid "Week Day finish:"
+#~ msgstr "終了曜日："
+
+#~ msgid "Week Day start:"
+#~ msgstr "開始曜日："
+
+#~ msgid "deleted"
+#~ msgstr "削除されました"
 
 #~ msgid "Generate BLF Hint"
 #~ msgstr "BLFヒントを生成"

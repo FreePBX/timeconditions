@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 20:04-0500\n"
+"POT-Creation-Date: 2015-03-09 14:46-0400\n"
 "PO-Revision-Date: 2009-01-23 00:28+0100\n"
 "Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
@@ -14,17 +14,13 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: functions.inc.php:707
-msgid " deleted!"
-msgstr "Eliminado."
-
 #: install.php:231
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%sATENCIÓN:%s No se han definido horas para esta condición; por favor, revise"
 
-#: functions.inc.php:909
+#: functions.inc.php:908
 msgid "--Select a Group--"
 msgstr "-- Seleccione un grupo --"
 
@@ -32,36 +28,43 @@ msgstr "-- Seleccione un grupo --"
 msgid ": Time Condition Override"
 msgstr ""
 
-#: page.timeconditions.php:39 page.timeconditions.php:54
-#: page.timeconditions.php:87
+#: views/timeconditions/grid.php:35 assets/js/timegroups.js:78
+msgid "Actions"
+msgstr ""
+
+#: views/timegroups/form.php:61 assets/js/timegroups.js:125
+msgid "Add Time"
+msgstr ""
+
+#: views/timeconditions/bootnav.php:2
 msgid "Add Time Condition"
 msgstr "Añadir condición horaria"
 
-#: functions.inc.php:715
+#: views/timegroups/bootnav.php:10
 msgid "Add Time Group"
 msgstr "Añadir grupo horario"
 
-#: timeconditions.i18n.php:4
+#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:1272 functions.inc.php:1371
+#: functions.inc.php:993
 msgid "April"
 msgstr "Abril"
 
-#: functions.inc.php:1300 functions.inc.php:1399
+#: functions.inc.php:997
 msgid "August"
 msgstr "Agosto"
 
-#: page.timeconditions.php:138
-msgid "Change Override:"
+#: views/timeconditions/form.php:134
+msgid "Change Override"
 msgstr ""
 
 #: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Comprobando condiciones horarias antiguas que actualizar..."
 
-#: timeconditions.i18n.php:5
+#: timeconditions.i18n.php:8
 msgid ""
 "Creates a condition where calls will go to one of two destinations (eg, an "
 "extension, IVR, ring group..) based on the time and/or date. This can be "
@@ -69,89 +72,72 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: page.timeconditions.php:134
-msgid "Current Override:"
+#: views/timeconditions/form.php:147
+msgid "Current"
 msgstr ""
 
-#: functions.inc.php:1328 functions.inc.php:1427
+#: functions.inc.php:1001
 msgid "December"
 msgstr "Diciembre"
 
-#: page.timeconditions.php:63
-#, php-format
-msgid "Delete Time Condition: %s"
-msgstr "Eliminar condición horaria: %s"
+#: Timeconditions.class.php:101
+msgid "Delete"
+msgstr ""
 
-#: functions.inc.php:723
-#, php-format
-msgid "Delete Time Group %s"
-msgstr "Eliminar grupo horario %s"
-
-#: functions.inc.php:716 functions.inc.php:736
+#: views/timegroups/form.php:32 assets/js/timegroups.js:74
 msgid "Description"
 msgstr "Descripción"
 
-#: functions.inc.php:703
-msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "La descripción debe ser alfanumérica y no puede estar en blanco."
+#: views/timeconditions/form.php:244
+msgid "Destination if time does not matche"
+msgstr ""
 
-#: page.timeconditions.php:181
-msgid "Destination if time does not match"
-msgstr "Destino si la hora no coincide:"
-
-#: page.timeconditions.php:171
+#: views/timeconditions/form.php:214
 msgid "Destination if time matches"
 msgstr "Destino si la hora coincide:"
+
+#: views/timeconditions/form.php:196
+msgid "Destination matches"
+msgstr ""
+
+#: views/timeconditions/form.php:226
+msgid "Destination non-matches"
+msgstr ""
 
 #: install.php:166
 msgid "ERROR: failed to convert field "
 msgstr "Error: fallo al convertir el campo"
 
-#: page.timeconditions.php:87
-msgid "Edit Time Condition"
-msgstr "Editar condición horaria:"
+#: assets/js/timegroups.js:106
+msgid "Edit: "
+msgstr ""
 
-#: functions.inc.php:722
-msgid "Edit Time Group"
-msgstr "Editar grupo horario"
-
-#: timeconditions.i18n.php:9
+#: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:1258 functions.inc.php:1357
+#: functions.inc.php:991
 msgid "February"
 msgstr "Febrero"
 
-#: functions.inc.php:1083 functions.inc.php:1146
+#: functions.inc.php:969
 msgid "Friday"
 msgstr "Viernes"
 
-#: page.timeconditions.php:94
+#: views/timeconditions/form.php:69 views/timeconditions/form.php:93
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 "Asigne un breve nombre a esta condición horaria para ayudarle a "
 "identificarla."
 
-#: page.timeconditions.php:159
-msgid "Goto Current Time Group"
-msgstr "Ir al grupo horario actual"
-
-#: page.timeconditions.php:98
-#, php-format
-msgid ""
-"If set dialing the feature code will require a pin to change the override "
-"state"
-msgstr ""
-
-#: page.timeconditions.php:104
+#: views/timeconditions/form.php:122
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: timeconditions.i18n.php:13
+#: timeconditions.i18n.php:20
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -161,73 +147,75 @@ msgid ""
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: page.timeconditions.php:134
-msgid ""
-"Indicates the current state of this Time Condition. If it is in a Temporary "
-"Override state, it will automatically resume at the next time transition "
-"based on the associated Time Group. If in a Permanent Override state, it "
-"will stay in that state until changed here or through other means such as "
-"external XML applications on your phone. If No Override then it functions "
-"normally based on the time schedule."
-msgstr ""
-
-#: page.timeconditions.php:104
+#: views/timeconditions/form.php:105
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:1251 functions.inc.php:1350
+#: functions.inc.php:990
 msgid "January"
 msgstr "Enero"
 
-#: functions.inc.php:1293 functions.inc.php:1392
+#: functions.inc.php:996
 msgid "July"
 msgstr "Julio"
 
-#: functions.inc.php:1286 functions.inc.php:1385
+#: functions.inc.php:995
 msgid "June"
 msgstr "Junio"
 
-#: timeconditions.i18n.php:15
+#: views/timeconditions/grid.php:34
+msgid "Linked Time Group"
+msgstr ""
+
+#: views/timeconditions/bootnav.php:1
+msgid "List Time Conditions"
+msgstr ""
+
+#: views/timegroups/bootnav.php:9
+msgid "List Time Groups"
+msgstr ""
+
+#: timeconditions.i18n.php:22
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:1265 functions.inc.php:1364
+#: functions.inc.php:992
 msgid "March"
 msgstr "Marzo"
 
-#: functions.inc.php:1279 functions.inc.php:1378
+#: functions.inc.php:994
 msgid "May"
 msgstr "Mayo"
 
-#: functions.inc.php:1055 functions.inc.php:1118
+#: functions.inc.php:965
 msgid "Monday"
 msgstr "Lunes"
 
-#: functions.inc.php:1200
-msgid "Month Day finish:"
-msgstr "Día del mes de fin:"
+#: functions.inc.php:1160
+msgid "Month Day finish"
+msgstr ""
 
-#: functions.inc.php:1165
-msgid "Month Day start:"
-msgstr "Día del mes de inicio:"
+#: functions.inc.php:1151
+msgid "Month Day start"
+msgstr ""
 
-#: functions.inc.php:1334
-msgid "Month finish:"
-msgstr "Mes de fin:"
+#: functions.inc.php:1178
+msgid "Month finish"
+msgstr ""
 
-#: functions.inc.php:1219
-msgid "Month start:"
-msgstr "Mes de inicio:"
+#: functions.inc.php:1169
+msgid "Month start"
+msgstr ""
 
-#: functions.inc.php:747
-msgid "New Time"
-msgstr "Nueva hora"
+#: views/timeconditions/form.php:113
+msgid "No"
+msgstr ""
 
-#: page.timeconditions.php:114
+#: views/timeconditions/form.php:22
 msgid "No Override"
 msgstr ""
 
-#: functions.inc.php:1321 functions.inc.php:1420
+#: functions.inc.php:1000
 msgid "November"
 msgstr "Noviembre"
 
@@ -235,43 +223,43 @@ msgstr "Noviembre"
 msgid "OK"
 msgstr "Hecho"
 
-#: functions.inc.php:1314 functions.inc.php:1413
+#: functions.inc.php:999
 msgid "October"
 msgstr "Octubre"
 
-#: page.timeconditions.php:98
+#: views/timeconditions/form.php:81
 msgid "Override Code Pin"
 msgstr ""
 
-#: page.timeconditions.php:120
+#: views/timeconditions/form.php:28
 msgid "Permanent Override matching state"
 msgstr ""
 
-#: page.timeconditions.php:126
+#: views/timeconditions/form.php:34
 msgid "Permanent Override unmatching state"
 msgstr ""
 
-#: page.timeconditions.php:144
+#: views/timeconditions/form.php:142
 msgid "Permanently matched"
 msgstr ""
 
-#: page.timeconditions.php:146
+#: views/timeconditions/form.php:144
 msgid "Permanently unmatched"
 msgstr ""
 
-#: functions.inc.php:741
-msgid "Remove Section and Submit Current Settings"
+#: Timeconditions.class.php:106
+msgid "Reset"
 msgstr ""
 
-#: page.timeconditions.php:142
+#: views/timeconditions/form.php:140
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:1090 functions.inc.php:1153
+#: functions.inc.php:970
 msgid "Saturday"
 msgstr "Sábado"
 
-#: page.timeconditions.php:152
+#: views/timeconditions/form.php:179
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
@@ -281,39 +269,39 @@ msgstr ""
 "horas que coincidan se enviarán al destino seleccionado. Si no se selecciona "
 "ningún grupo, la llamada siempre irá al destino sin coincidencia."
 
-#: functions.inc.php:1307 functions.inc.php:1406
+#: functions.inc.php:998
 msgid "September"
 msgstr "Septiembre"
 
-#: page.timegroups.php:17
+#: views/timegroups/bootnav.php:7
 msgid "Server time:"
 msgstr "Hora del servidor:"
 
-#: page.timeconditions.php:193
+#: Timeconditions.class.php:111
 msgid "Submit"
 msgstr "Enviar"
 
-#: functions.inc.php:1097 functions.inc.php:1160
+#: functions.inc.php:964
 msgid "Sunday"
 msgstr "Domingo"
 
-#: page.timeconditions.php:117
+#: views/timeconditions/form.php:25
 msgid "Temporary Override matching state"
 msgstr ""
 
-#: page.timeconditions.php:123
+#: views/timeconditions/form.php:31
 msgid "Temporary Override unmatching state"
 msgstr ""
 
-#: page.timeconditions.php:143
+#: views/timeconditions/form.php:141
 msgid "Temporary matched"
 msgstr ""
 
-#: page.timeconditions.php:145
+#: views/timeconditions/form.php:143
 msgid "Temporary unmatched"
 msgstr ""
 
-#: timeconditions.i18n.php:17
+#: timeconditions.i18n.php:24
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -324,7 +312,7 @@ msgid ""
 "during such a period is properly reset when the new period starts."
 msgstr ""
 
-#: page.timeconditions.php:138
+#: views/timeconditions/form.php:155
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -337,75 +325,71 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: page.timegroups.php:68
+#: assets/js/timegroups.js:57
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: functions.inc.php:716 functions.inc.php:736
-msgid "This will display as the name of this Time Group."
-msgstr "Este valor será mostrado como el nombre del grupo horario."
+#: views/timegroups/form.php:44
+msgid "This will display as the name of this Time Group"
+msgstr ""
 
-#: functions.inc.php:1076 functions.inc.php:1139
+#: functions.inc.php:968
 msgid "Thursday"
 msgstr "Jueves"
 
-#: page.timeconditions.php:51
+#: views/timeconditions/grid.php:33
 msgid "Time Condition"
 msgstr "Condición horaria"
 
-#: timeconditions.i18n.php:11
+#: timeconditions.i18n.php:18
 msgid "Time Condition Module"
 msgstr ""
 
-#: page.timeconditions.php:94
-msgid "Time Condition name:"
-msgstr "Nombre de la condición horaria:"
-
-#: page.timeconditions.php:54
-msgid "Time Condition:"
-msgstr "Condición horaria:"
+#: views/timeconditions/form.php:57
+msgid "Time Condition name"
+msgstr ""
 
 #: functions.inc.php:21 functions.inc.php:305
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Condición horaria: %s"
 
-#: timeconditions.i18n.php:3 timeconditions.i18n.php:6
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Condiciones horarias"
 
-#: functions.inc.php:707 functions.inc.php:716 functions.inc.php:736
-#: page.timegroups.php:12
+#: views/timeconditions/form.php:167
 msgid "Time Group"
 msgstr "Grupo horario"
 
-#: page.timeconditions.php:152
-msgid "Time Group:"
-msgstr "Grupo horario:"
-
-#: timeconditions.i18n.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:14 assets/js/timegroups.js:92
 msgid "Time Groups"
 msgstr "Grupos horarios"
 
-#: functions.inc.php:990
-msgid "Time to finish:"
-msgstr "Hora de fin:"
+#: functions.inc.php:1107
+msgid "Time to Start"
+msgstr ""
 
-#: functions.inc.php:935
-msgid "Time to start:"
-msgstr "Hora de inicio:"
+#: functions.inc.php:1120
+msgid "Time to finish"
+msgstr ""
 
-#: functions.inc.php:1062 functions.inc.php:1125
+#: views/timegroups/form.php:56
+msgid "Time(s)"
+msgstr ""
+
+#: functions.inc.php:966
 msgid "Tuesday"
 msgstr "Martes"
 
-#: page.timeconditions.php:141
+#: views/timeconditions/form.php:139
 msgid "Unchanged"
 msgstr ""
 
-#: page.timeconditions.php:129
+#: views/timeconditions/form.php:37 views/timeconditions/form.php:41
 msgid "Unknown State"
 msgstr ""
 
@@ -414,21 +398,21 @@ msgstr ""
 msgid "Upgraded %s and created group %s"
 msgstr "%s actualizadas y %s grupos creados"
 
-#: functions.inc.php:732
-msgid "Used By"
-msgstr "Usado por"
-
-#: functions.inc.php:1069 functions.inc.php:1132
+#: functions.inc.php:967
 msgid "Wednesday"
 msgstr "Miércoles"
 
-#: functions.inc.php:1102
-msgid "Week Day finish:"
-msgstr "Día de la semana de fin:"
+#: functions.inc.php:1133
+msgid "Week Day Start"
+msgstr ""
 
-#: functions.inc.php:1040
-msgid "Week Day start:"
-msgstr "Día de la semana de inicio:"
+#: functions.inc.php:1142
+msgid "Week Day finish"
+msgstr ""
+
+#: views/timeconditions/form.php:111
+msgid "Yes"
+msgstr ""
 
 #: install.php:184
 msgid "already exists"
@@ -441,10 +425,6 @@ msgstr ""
 #: install.php:162
 msgid "converting timeconditions time field to int.."
 msgstr "Convirtiendo el campo de hora de las condiciones horarias a entero..."
-
-#: page.timeconditions.php:51
-msgid "deleted"
-msgstr "eliminada"
 
 #: functions.inc.php:318
 msgid "false goto"
@@ -465,6 +445,75 @@ msgstr "Iniciando migración"
 #: functions.inc.php:310
 msgid "true goto"
 msgstr ""
+
+#~ msgid " deleted!"
+#~ msgstr "Eliminado."
+
+#~ msgid "Delete Time Condition: %s"
+#~ msgstr "Eliminar condición horaria: %s"
+
+#~ msgid "Delete Time Group %s"
+#~ msgstr "Eliminar grupo horario %s"
+
+#~ msgid "Description must be alpha-numeric, and may not be left blank"
+#~ msgstr "La descripción debe ser alfanumérica y no puede estar en blanco."
+
+#~ msgid "Destination if time does not match"
+#~ msgstr "Destino si la hora no coincide:"
+
+#~ msgid "Edit Time Condition"
+#~ msgstr "Editar condición horaria:"
+
+#~ msgid "Edit Time Group"
+#~ msgstr "Editar grupo horario"
+
+#~ msgid "Goto Current Time Group"
+#~ msgstr "Ir al grupo horario actual"
+
+#~ msgid "Month Day finish:"
+#~ msgstr "Día del mes de fin:"
+
+#~ msgid "Month Day start:"
+#~ msgstr "Día del mes de inicio:"
+
+#~ msgid "Month finish:"
+#~ msgstr "Mes de fin:"
+
+#~ msgid "Month start:"
+#~ msgstr "Mes de inicio:"
+
+#~ msgid "New Time"
+#~ msgstr "Nueva hora"
+
+#~ msgid "This will display as the name of this Time Group."
+#~ msgstr "Este valor será mostrado como el nombre del grupo horario."
+
+#~ msgid "Time Condition name:"
+#~ msgstr "Nombre de la condición horaria:"
+
+#~ msgid "Time Condition:"
+#~ msgstr "Condición horaria:"
+
+#~ msgid "Time Group:"
+#~ msgstr "Grupo horario:"
+
+#~ msgid "Time to finish:"
+#~ msgstr "Hora de fin:"
+
+#~ msgid "Time to start:"
+#~ msgstr "Hora de inicio:"
+
+#~ msgid "Used By"
+#~ msgstr "Usado por"
+
+#~ msgid "Week Day finish:"
+#~ msgstr "Día de la semana de fin:"
+
+#~ msgid "Week Day start:"
+#~ msgstr "Día de la semana de inicio:"
+
+#~ msgid "deleted"
+#~ msgstr "eliminada"
 
 #~ msgid "text"
 #~ msgstr "texto"
