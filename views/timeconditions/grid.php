@@ -19,7 +19,7 @@ foreach ($timeconditions as $tc) {
 	$lrows .= '</td>';
 	$lrows .= '<td>';
 	$lrows .= '<a href="?display=timeconditions&view=form&itemid='.$tc['timeconditions_id'].'"><i class="fa fa-edit"></i></a>&nbsp;';
-	$lrows .= '<a href="?display=timeconditions&action=delete&itemid='.$tc['timeconditions_id'].'"><i class="fa fa-trash"></i></a>';
+	$lrows .= '<a class="delAction" href="?display=timeconditions&action=delete&itemid='.$tc['timeconditions_id'].'"><i class="fa fa-trash"></i></a>';
 	if($tc['time'] != ''){
 		$lrows .= '&nbsp;<a href="?display=timegroups&view=form&extdisplay='.$tc['time'].'"><i class="fa fa-clock-o"></i></a>';
 	}
