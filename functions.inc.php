@@ -76,8 +76,8 @@ function timeconditions_get_config($engine) {
 					$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
 					$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
 
-					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
-					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
+					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint?"NOT_INUSE":"INUSE")));
+					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint?"INUSE":"NOT_INUSE")));
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -89,10 +89,10 @@ function timeconditions_get_config($engine) {
 					$skip_dest = 'falsegoto';
 					//Formerly part of USEDEVSTATE
 					//Modifications by namezero111111 follow (FREEPBX-6415)
-					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"NOT_INUSE":"INUSE"));
+					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint?"NOT_INUSE":"INUSE")));
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
+					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint?"NOT_INUSE":"INUSE")));
 					$skip_dest = '';
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
@@ -103,10 +103,10 @@ function timeconditions_get_config($engine) {
 					$skip_dest = 'truegoto';
 					//Formerly part of USEDEVSTATE
 					//Modifications by namezero111111 follow (FREEPBX-6415)
-					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"INUSE":"NOT_INUSE"));
+					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint?"INUSE":"NOT_INUSE")));
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
+					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint?"NOT_INUSE":"INUSE")));
 					$skip_dest = '';
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
