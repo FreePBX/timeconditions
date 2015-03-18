@@ -89,6 +89,7 @@ function timeconditions_get_config($engine) {
 					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
+					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:5}" = "false"]?true:false)}'));
 					$ext->add($context, $time_id, '', new ext_return(''));
 
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
@@ -101,6 +102,7 @@ function timeconditions_get_config($engine) {
 					}
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
+					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:4}" = "true"]?true:false)}'));
 					$ext->add($context, $time_id, '', new ext_return(''));
 
 					$fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
@@ -212,10 +214,9 @@ function timeconditions_get_config($engine) {
 					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
 					$ext->add($m_context, 's', 'begin1', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
 
-					$ext->add($m_context, 's', '', new ext_setvar('MODE', '${DB(TC/${INDEX})}'));
-					$ext->add($m_context, 's', '', new ext_gotoif('$["${MODE:0:5}" != "false"]', 'end1'));
-
-					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'true'));
+					$ext->add($m_context, 's', '', new ext_gosub('1', '${INDEX}', $context));
+					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE_${INDEX}', '${TCSTATE}'));
+					$ext->add($m_context, 's', '', new ext_execif('$["${TCOVERRIDE}" = "true"]','Set','OVERRIDE=true'));
 
 					$ext->add($m_context, 's', 'end1', new ext_setvar('ITER', '$[${ITER} + 1]'));
 					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin1'));
@@ -224,11 +225,8 @@ function timeconditions_get_config($engine) {
 					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
 					$ext->add($m_context, 's', 'begin2', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
 
-					$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${TCSTATE}" == "true"]?true:false)}'));
-					if ($amp_conf['USEDEVSTATE']) {
-						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TC${INDEX})', '${IF($["${TCSTATE}" = "true"]?NOT_INUSE:INUSE)}'));
-						$ext->add($m_context, 's', '', new ext_set($DEVSTATE.'(Custom:TCSTICKY${INDEX})', 'NOT_INUSE'));
-					}
+					$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${OVERRIDE}" = "true"]?:${IF($["${TCSTATE_${INDEX}}" == "true"]?false:true)})}'));
+					$ext->add($m_context, 's', '', new ext_gosub('1', '${INDEX}', $context));
 
 					$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
 					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
