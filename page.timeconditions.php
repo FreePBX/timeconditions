@@ -152,6 +152,7 @@ if ($action == 'delete') {
 		<td><a href="#" class="info"><?php echo _("Time Group:")?><span><?php echo _("Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination.")?></span></a></td>
 		<td><?php echo timeconditions_timegroups_drawgroupselect('time', (isset($thisItem['time']) ? $thisItem['time'] : ''), true, ''); ?></td>
 	</tr>
+
 <?php
 	if (isset($thisItem['time']) && $thisItem['time'] != '') {
 
@@ -168,6 +169,11 @@ if ($action == 'delete') {
 	$module_hook = moduleHook::create();
 	echo $module_hook->hookHtml;
 ?>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Time Zone:")?><span><?php echo _("Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory.")?></span></a></td>
+                <td><input type="text" name="timezone" id="timezone" value="<?php echo (isset($thisItem['timezone']) ? $thisItem['timezone'] : ''); ?>" tabindex="<?php echo ++$tabindex;?>"></td>
+	</tr>
+
 	<tr><td colspan="2"><br><h5><?php echo _("Destination if time matches")?>:<hr></h5></td></tr>
 <?php
 //draw goto selects
