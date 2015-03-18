@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 20:04-0500\n"
+"POT-Creation-Date: 2015-03-18 16:15-0500\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: functions.inc.php:707
+#: functions.inc.php:705
 msgid " deleted!"
 msgstr " borttagen!"
 
@@ -27,11 +27,11 @@ msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%sVARNING:%s Ingen tid definierad för denna kondition, kontrollera detta"
 
-#: functions.inc.php:909
+#: functions.inc.php:907
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: functions.inc.php:536 functions.inc.php:601 install.php:198
+#: functions.inc.php:534 functions.inc.php:599 install.php:198
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -40,19 +40,19 @@ msgstr ""
 msgid "Add Time Condition"
 msgstr "Lägg till tidsvillkor"
 
-#: functions.inc.php:715
+#: functions.inc.php:713
 msgid "Add Time Group"
 msgstr "Lägg till tidgrupp"
 
-#: timeconditions.i18n.php:4
+#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:1272 functions.inc.php:1371
+#: functions.inc.php:1270 functions.inc.php:1369
 msgid "April"
 msgstr "April"
 
-#: functions.inc.php:1300 functions.inc.php:1399
+#: functions.inc.php:1298 functions.inc.php:1397
 msgid "August"
 msgstr "Augusti"
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Kontrollerar om äldre tidskonditioner behöver uppgraderas.."
 
-#: timeconditions.i18n.php:5
+#: timeconditions.i18n.php:8
 msgid ""
 "Creates a condition where calls will go to one of two destinations (eg, an "
 "extension, IVR, ring group..) based on the time and/or date. This can be "
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Current Override:"
 msgstr ""
 
-#: functions.inc.php:1328 functions.inc.php:1427
+#: functions.inc.php:1326 functions.inc.php:1425
 msgid "December"
 msgstr "December"
 
@@ -85,16 +85,16 @@ msgstr "December"
 msgid "Delete Time Condition: %s"
 msgstr "Ta bort tidsvillkor: %s"
 
-#: functions.inc.php:723
+#: functions.inc.php:721
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "Ta bort tidgruppen %s"
 
-#: functions.inc.php:716 functions.inc.php:736
+#: functions.inc.php:714 functions.inc.php:734
 msgid "Description"
 msgstr "Beskrivning"
 
-#: functions.inc.php:703
+#: functions.inc.php:701
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr ""
 "Beskrivningen kan bara inehålla alfa-numeriska tecken och den kan inte vara "
@@ -116,19 +116,19 @@ msgstr "FEL: kunde inte konvertera fält"
 msgid "Edit Time Condition"
 msgstr "Redigera tidsvillkor"
 
-#: functions.inc.php:722
+#: functions.inc.php:720
 msgid "Edit Time Group"
 msgstr "Redigera tidgrupp"
 
-#: timeconditions.i18n.php:9
+#: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:1258 functions.inc.php:1357
+#: functions.inc.php:1256 functions.inc.php:1355
 msgid "February"
 msgstr "Februari"
 
-#: functions.inc.php:1083 functions.inc.php:1146
+#: functions.inc.php:1081 functions.inc.php:1144
 msgid "Friday"
 msgstr "Fredag"
 
@@ -155,7 +155,7 @@ msgid ""
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: timeconditions.i18n.php:13
+#: timeconditions.i18n.php:20
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -179,51 +179,51 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:1251 functions.inc.php:1350
+#: functions.inc.php:1249 functions.inc.php:1348
 msgid "January"
 msgstr "Januari"
 
-#: functions.inc.php:1293 functions.inc.php:1392
+#: functions.inc.php:1291 functions.inc.php:1390
 msgid "July"
 msgstr "Juli"
 
-#: functions.inc.php:1286 functions.inc.php:1385
+#: functions.inc.php:1284 functions.inc.php:1383
 msgid "June"
 msgstr "Juni"
 
-#: timeconditions.i18n.php:15
+#: timeconditions.i18n.php:22
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:1265 functions.inc.php:1364
+#: functions.inc.php:1263 functions.inc.php:1362
 msgid "March"
 msgstr "Mars"
 
-#: functions.inc.php:1279 functions.inc.php:1378
+#: functions.inc.php:1277 functions.inc.php:1376
 msgid "May"
 msgstr "Maj"
 
-#: functions.inc.php:1055 functions.inc.php:1118
+#: functions.inc.php:1053 functions.inc.php:1116
 msgid "Monday"
 msgstr "Måndag"
 
-#: functions.inc.php:1200
+#: functions.inc.php:1198
 msgid "Month Day finish:"
 msgstr "Slutdag:"
 
-#: functions.inc.php:1165
+#: functions.inc.php:1163
 msgid "Month Day start:"
 msgstr "Startdag:"
 
-#: functions.inc.php:1334
+#: functions.inc.php:1332
 msgid "Month finish:"
 msgstr "Slutmånad:"
 
-#: functions.inc.php:1219
+#: functions.inc.php:1217
 msgid "Month start:"
 msgstr "Startmånad:"
 
-#: functions.inc.php:747
+#: functions.inc.php:745
 msgid "New Time"
 msgstr "Ny tid"
 
@@ -231,7 +231,7 @@ msgstr "Ny tid"
 msgid "No Override"
 msgstr "Ingen åsidosättning"
 
-#: functions.inc.php:1321 functions.inc.php:1420
+#: functions.inc.php:1319 functions.inc.php:1418
 msgid "November"
 msgstr "November"
 
@@ -239,7 +239,7 @@ msgstr "November"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:1314 functions.inc.php:1413
+#: functions.inc.php:1312 functions.inc.php:1411
 msgid "October"
 msgstr "Oktober"
 
@@ -263,7 +263,7 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
-#: functions.inc.php:741
+#: functions.inc.php:739
 msgid "Remove Section and Submit Current Settings"
 msgstr "Ta bort sektionen och spara instaällningar"
 
@@ -271,7 +271,7 @@ msgstr "Ta bort sektionen och spara instaällningar"
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:1090 functions.inc.php:1153
+#: functions.inc.php:1088 functions.inc.php:1151
 msgid "Saturday"
 msgstr "Lördag"
 
@@ -285,7 +285,7 @@ msgstr ""
 "respektive destination. Om ingen grupp väljs kommer samtalen alltid att gå "
 "till Destination om tiden inte matchar."
 
-#: functions.inc.php:1307 functions.inc.php:1406
+#: functions.inc.php:1305 functions.inc.php:1404
 msgid "September"
 msgstr "September"
 
@@ -297,7 +297,7 @@ msgstr "Servertid:"
 msgid "Submit"
 msgstr "Spara ändringar"
 
-#: functions.inc.php:1097 functions.inc.php:1160
+#: functions.inc.php:1095 functions.inc.php:1158
 msgid "Sunday"
 msgstr "Söndag"
 
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Temporary unmatched"
 msgstr ""
 
-#: timeconditions.i18n.php:17
+#: timeconditions.i18n.php:24
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -347,11 +347,11 @@ msgid ""
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: functions.inc.php:716 functions.inc.php:736
+#: functions.inc.php:714 functions.inc.php:734
 msgid "This will display as the name of this Time Group."
 msgstr "Detta kommer att visas som namnet för denna tidgrupp."
 
-#: functions.inc.php:1076 functions.inc.php:1139
+#: functions.inc.php:1074 functions.inc.php:1137
 msgid "Thursday"
 msgstr "Torsdag"
 
@@ -359,7 +359,7 @@ msgstr "Torsdag"
 msgid "Time Condition"
 msgstr "Tidsvillkor"
 
-#: timeconditions.i18n.php:11
+#: timeconditions.i18n.php:18
 msgid "Time Condition Module"
 msgstr ""
 
@@ -371,16 +371,16 @@ msgstr "Namn för tidsvillkor:"
 msgid "Time Condition:"
 msgstr "Tidsvillkor:"
 
-#: functions.inc.php:21 functions.inc.php:305
+#: functions.inc.php:21 functions.inc.php:303
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Tidsvillkor: %s"
 
-#: timeconditions.i18n.php:3 timeconditions.i18n.php:6
+#: timeconditions.i18n.php:4 timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Tidsvillkor"
 
-#: functions.inc.php:707 functions.inc.php:716 functions.inc.php:736
+#: functions.inc.php:705 functions.inc.php:714 functions.inc.php:734
 #: page.timegroups.php:12
 msgid "Time Group"
 msgstr "Tidgrupp"
@@ -389,19 +389,19 @@ msgstr "Tidgrupp"
 msgid "Time Group:"
 msgstr "Tidgrupp"
 
-#: timeconditions.i18n.php:7
+#: timeconditions.i18n.php:14
 msgid "Time Groups"
 msgstr "Tidgrupper"
 
-#: functions.inc.php:990
+#: functions.inc.php:988
 msgid "Time to finish:"
 msgstr "Sluttid:"
 
-#: functions.inc.php:935
+#: functions.inc.php:933
 msgid "Time to start:"
 msgstr "Startid:"
 
-#: functions.inc.php:1062 functions.inc.php:1125
+#: functions.inc.php:1060 functions.inc.php:1123
 msgid "Tuesday"
 msgstr "Tisdag"
 
@@ -418,19 +418,19 @@ msgstr ""
 msgid "Upgraded %s and created group %s"
 msgstr "Uppgraderade %s och skapade grupp %s"
 
-#: functions.inc.php:732
+#: functions.inc.php:730
 msgid "Used By"
 msgstr "Används av"
 
-#: functions.inc.php:1069 functions.inc.php:1132
+#: functions.inc.php:1067 functions.inc.php:1130
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: functions.inc.php:1102
+#: functions.inc.php:1100
 msgid "Week Day finish:"
 msgstr "Slut veckodag:"
 
-#: functions.inc.php:1040
+#: functions.inc.php:1038
 msgid "Week Day start:"
 msgstr "Start veckodag:"
 
@@ -450,7 +450,7 @@ msgstr "konverterar fältet time till int.."
 msgid "deleted"
 msgstr "raderad"
 
-#: functions.inc.php:318
+#: functions.inc.php:316
 msgid "false goto"
 msgstr ""
 
@@ -466,7 +466,7 @@ msgstr "ingen uppgradering behövs"
 msgid "starting migration"
 msgstr "startar migrering"
 
-#: functions.inc.php:310
+#: functions.inc.php:308
 msgid "true goto"
 msgstr ""
 
