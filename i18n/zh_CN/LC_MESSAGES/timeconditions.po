@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 16:15-0500\n"
+"POT-Creation-Date: 2015-03-20 05:33+1000\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: functions.inc.php:705
+#: functions.inc.php:706
 msgid " deleted!"
 msgstr " 已删除！"
 
@@ -27,11 +27,11 @@ msgstr " 已删除！"
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr "%s警告：%s没有为此条件设置时间，请检查"
 
-#: functions.inc.php:907
+#: functions.inc.php:908
 msgid "--Select a Group--"
 msgstr "--选择一个小组--"
 
-#: functions.inc.php:534 functions.inc.php:599 install.php:198
+#: functions.inc.php:535 functions.inc.php:600 install.php:198
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Add Time Condition"
 msgstr "添加时间条件控制"
 
-#: functions.inc.php:713
+#: functions.inc.php:714
 msgid "Add Time Group"
 msgstr "添加时间条件小组"
 
@@ -48,11 +48,11 @@ msgstr "添加时间条件小组"
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:1270 functions.inc.php:1369
+#: functions.inc.php:1271 functions.inc.php:1370
 msgid "April"
 msgstr "四月"
 
-#: functions.inc.php:1298 functions.inc.php:1397
+#: functions.inc.php:1299 functions.inc.php:1398
 msgid "August"
 msgstr "八月"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Current Override:"
 msgstr ""
 
-#: functions.inc.php:1326 functions.inc.php:1425
+#: functions.inc.php:1327 functions.inc.php:1426
 msgid "December"
 msgstr "十二月"
 
@@ -85,16 +85,16 @@ msgstr "十二月"
 msgid "Delete Time Condition: %s"
 msgstr "删除时间条件设置：%s"
 
-#: functions.inc.php:721
+#: functions.inc.php:722
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "删除时间小组%s"
 
-#: functions.inc.php:714 functions.inc.php:734
+#: functions.inc.php:715 functions.inc.php:735
 msgid "Description"
 msgstr "描述"
 
-#: functions.inc.php:701
+#: functions.inc.php:702
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr "在描述信息中只能输入数字和英文字母，并且描述不能为空。"
 
@@ -114,7 +114,7 @@ msgstr "错误：无法转换字段"
 msgid "Edit Time Condition"
 msgstr "编辑时间条件"
 
-#: functions.inc.php:720
+#: functions.inc.php:721
 msgid "Edit Time Group"
 msgstr "编辑时间小组"
 
@@ -122,11 +122,11 @@ msgstr "编辑时间小组"
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:1256 functions.inc.php:1355
+#: functions.inc.php:1257 functions.inc.php:1356
 msgid "February"
 msgstr "二月"
 
-#: functions.inc.php:1081 functions.inc.php:1144
+#: functions.inc.php:1082 functions.inc.php:1145
 msgid "Friday"
 msgstr "周五"
 
@@ -176,15 +176,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "切换BLF Hint"
 
-#: functions.inc.php:1249 functions.inc.php:1348
+#: functions.inc.php:1250 functions.inc.php:1349
 msgid "January"
 msgstr "一月"
 
-#: functions.inc.php:1291 functions.inc.php:1390
+#: functions.inc.php:1292 functions.inc.php:1391
 msgid "July"
 msgstr "七月"
 
-#: functions.inc.php:1284 functions.inc.php:1383
+#: functions.inc.php:1285 functions.inc.php:1384
 msgid "June"
 msgstr "六月"
 
@@ -192,35 +192,35 @@ msgstr "六月"
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:1263 functions.inc.php:1362
+#: functions.inc.php:1264 functions.inc.php:1363
 msgid "March"
 msgstr "三月"
 
-#: functions.inc.php:1277 functions.inc.php:1376
+#: functions.inc.php:1278 functions.inc.php:1377
 msgid "May"
 msgstr "五月"
 
-#: functions.inc.php:1053 functions.inc.php:1116
+#: functions.inc.php:1054 functions.inc.php:1117
 msgid "Monday"
 msgstr "周一"
 
-#: functions.inc.php:1198
+#: functions.inc.php:1199
 msgid "Month Day finish:"
 msgstr "在一个月的第几天终止："
 
-#: functions.inc.php:1163
+#: functions.inc.php:1164
 msgid "Month Day start:"
 msgstr "在一个月的第几天开始："
 
-#: functions.inc.php:1332
+#: functions.inc.php:1333
 msgid "Month finish:"
 msgstr "终止月份："
 
-#: functions.inc.php:1217
+#: functions.inc.php:1218
 msgid "Month start:"
 msgstr "开始月份："
 
-#: functions.inc.php:745
+#: functions.inc.php:746
 msgid "New Time"
 msgstr "添加时间"
 
@@ -228,7 +228,7 @@ msgstr "添加时间"
 msgid "No Override"
 msgstr ""
 
-#: functions.inc.php:1319 functions.inc.php:1418
+#: functions.inc.php:1320 functions.inc.php:1419
 msgid "November"
 msgstr "十一月"
 
@@ -236,7 +236,7 @@ msgstr "十一月"
 msgid "OK"
 msgstr "完成"
 
-#: functions.inc.php:1312 functions.inc.php:1411
+#: functions.inc.php:1313 functions.inc.php:1412
 msgid "October"
 msgstr "十月"
 
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
-#: functions.inc.php:739
+#: functions.inc.php:740
 msgid "Remove Section and Submit Current Settings"
 msgstr ""
 
@@ -268,7 +268,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:1088 functions.inc.php:1151
+#: functions.inc.php:1089 functions.inc.php:1152
 msgid "Saturday"
 msgstr "周六"
 
@@ -281,7 +281,7 @@ msgstr ""
 "选则你创建过的一个时间小组。呼叫在匹配的时间将发送到匹配的目的地。如果没有选"
 "择小组，呼叫总是被发送到处理未匹配情况的目的地。"
 
-#: functions.inc.php:1305 functions.inc.php:1404
+#: functions.inc.php:1306 functions.inc.php:1405
 msgid "September"
 msgstr "九月"
 
@@ -293,7 +293,7 @@ msgstr "服务器时间："
 msgid "Submit"
 msgstr "提交"
 
-#: functions.inc.php:1095 functions.inc.php:1158
+#: functions.inc.php:1096 functions.inc.php:1159
 msgid "Sunday"
 msgstr "周日"
 
@@ -343,11 +343,11 @@ msgid ""
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: functions.inc.php:714 functions.inc.php:734
+#: functions.inc.php:715 functions.inc.php:735
 msgid "This will display as the name of this Time Group."
 msgstr "这将作为时间小组的名字显示。"
 
-#: functions.inc.php:1074 functions.inc.php:1137
+#: functions.inc.php:1075 functions.inc.php:1138
 msgid "Thursday"
 msgstr "周四"
 
@@ -367,7 +367,7 @@ msgstr "时间条件命名："
 msgid "Time Condition:"
 msgstr "时间条件："
 
-#: functions.inc.php:21 functions.inc.php:303
+#: functions.inc.php:21 functions.inc.php:304
 #, php-format
 msgid "Time Condition: %s"
 msgstr "时间条件设置：%s"
@@ -376,7 +376,7 @@ msgstr "时间条件设置：%s"
 msgid "Time Conditions"
 msgstr "时间条件设置"
 
-#: functions.inc.php:705 functions.inc.php:714 functions.inc.php:734
+#: functions.inc.php:706 functions.inc.php:715 functions.inc.php:735
 #: page.timegroups.php:12
 msgid "Time Group"
 msgstr "时间小组"
@@ -389,15 +389,15 @@ msgstr "时间小组："
 msgid "Time Groups"
 msgstr "时间小组"
 
-#: functions.inc.php:988
+#: functions.inc.php:989
 msgid "Time to finish:"
 msgstr "终止时间："
 
-#: functions.inc.php:933
+#: functions.inc.php:934
 msgid "Time to start:"
 msgstr "开始时间："
 
-#: functions.inc.php:1060 functions.inc.php:1123
+#: functions.inc.php:1061 functions.inc.php:1124
 msgid "Tuesday"
 msgstr "周二"
 
@@ -414,19 +414,19 @@ msgstr ""
 msgid "Upgraded %s and created group %s"
 msgstr "升级了%s并且创建了小组%s"
 
-#: functions.inc.php:730
+#: functions.inc.php:731
 msgid "Used By"
 msgstr "被谁使用"
 
-#: functions.inc.php:1067 functions.inc.php:1130
+#: functions.inc.php:1068 functions.inc.php:1131
 msgid "Wednesday"
 msgstr "周三"
 
-#: functions.inc.php:1100
+#: functions.inc.php:1101
 msgid "Week Day finish:"
 msgstr "在星期几终止："
 
-#: functions.inc.php:1038
+#: functions.inc.php:1039
 msgid "Week Day start:"
 msgstr "从星期几开始："
 
@@ -446,7 +446,7 @@ msgstr "正在将时间条件控制的time字段转换成int（整数）。。�
 msgid "deleted"
 msgstr "已删除"
 
-#: functions.inc.php:316
+#: functions.inc.php:317
 msgid "false goto"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr "无须升级"
 msgid "starting migration"
 msgstr "开始迁移"
 
-#: functions.inc.php:308
+#: functions.inc.php:309
 msgid "true goto"
 msgstr ""
 

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 16:15-0500\n"
+"POT-Creation-Date: 2015-03-20 05:33+1000\n"
 "PO-Revision-Date: 2014-07-26 01:03+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -32,7 +32,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: functions.inc.php:705
+#: functions.inc.php:706
 msgid " deleted!"
 msgstr " apagado!"
 
@@ -41,11 +41,11 @@ msgstr " apagado!"
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
-#: functions.inc.php:907
+#: functions.inc.php:908
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: functions.inc.php:534 functions.inc.php:599 install.php:198
+#: functions.inc.php:535 functions.inc.php:600 install.php:198
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Add Time Condition"
 msgstr "Adicionar condição de tempo"
 
-#: functions.inc.php:713
+#: functions.inc.php:714
 msgid "Add Time Group"
 msgstr "Adicionar Grupo de Tempo"
 
@@ -62,11 +62,11 @@ msgstr "Adicionar Grupo de Tempo"
 msgid "Applications"
 msgstr "Aplicações"
 
-#: functions.inc.php:1270 functions.inc.php:1369
+#: functions.inc.php:1271 functions.inc.php:1370
 msgid "April"
 msgstr "Abril"
 
-#: functions.inc.php:1298 functions.inc.php:1397
+#: functions.inc.php:1299 functions.inc.php:1398
 msgid "August"
 msgstr "Agosto"
 
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Current Override:"
 msgstr ""
 
-#: functions.inc.php:1326 functions.inc.php:1425
+#: functions.inc.php:1327 functions.inc.php:1426
 msgid "December"
 msgstr "Dezembro"
 
@@ -99,16 +99,16 @@ msgstr "Dezembro"
 msgid "Delete Time Condition: %s"
 msgstr "Apagar Condição de Tempo: %s"
 
-#: functions.inc.php:721
+#: functions.inc.php:722
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "Apagar Grupo de Tempo: %s"
 
-#: functions.inc.php:714 functions.inc.php:734
+#: functions.inc.php:715 functions.inc.php:735
 msgid "Description"
 msgstr "Descrição"
 
-#: functions.inc.php:701
+#: functions.inc.php:702
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Edit Time Condition"
 msgstr "Editar Condição de Tempo"
 
-#: functions.inc.php:720
+#: functions.inc.php:721
 msgid "Edit Time Group"
 msgstr "Editar Grupo de Tempo"
 
@@ -136,11 +136,11 @@ msgstr "Editar Grupo de Tempo"
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:1256 functions.inc.php:1355
+#: functions.inc.php:1257 functions.inc.php:1356
 msgid "February"
 msgstr "Fevereiro"
 
-#: functions.inc.php:1081 functions.inc.php:1144
+#: functions.inc.php:1082 functions.inc.php:1145
 msgid "Friday"
 msgstr "Sexta"
 
@@ -190,15 +190,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:1249 functions.inc.php:1348
+#: functions.inc.php:1250 functions.inc.php:1349
 msgid "January"
 msgstr "Janeiro"
 
-#: functions.inc.php:1291 functions.inc.php:1390
+#: functions.inc.php:1292 functions.inc.php:1391
 msgid "July"
 msgstr "Julho"
 
-#: functions.inc.php:1284 functions.inc.php:1383
+#: functions.inc.php:1285 functions.inc.php:1384
 msgid "June"
 msgstr "Junho"
 
@@ -206,35 +206,35 @@ msgstr "Junho"
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:1263 functions.inc.php:1362
+#: functions.inc.php:1264 functions.inc.php:1363
 msgid "March"
 msgstr "Março"
 
-#: functions.inc.php:1277 functions.inc.php:1376
+#: functions.inc.php:1278 functions.inc.php:1377
 msgid "May"
 msgstr "Maio"
 
-#: functions.inc.php:1053 functions.inc.php:1116
+#: functions.inc.php:1054 functions.inc.php:1117
 msgid "Monday"
 msgstr "Segunda"
 
-#: functions.inc.php:1198
+#: functions.inc.php:1199
 msgid "Month Day finish:"
 msgstr "Dia do mês que termina:"
 
-#: functions.inc.php:1163
+#: functions.inc.php:1164
 msgid "Month Day start:"
 msgstr "Dia do mês que inicia:"
 
-#: functions.inc.php:1332
+#: functions.inc.php:1333
 msgid "Month finish:"
 msgstr "Mês que termina:"
 
-#: functions.inc.php:1217
+#: functions.inc.php:1218
 msgid "Month start:"
 msgstr "Mês que inicia:"
 
-#: functions.inc.php:745
+#: functions.inc.php:746
 msgid "New Time"
 msgstr "Novo Tempo"
 
@@ -242,7 +242,7 @@ msgstr "Novo Tempo"
 msgid "No Override"
 msgstr ""
 
-#: functions.inc.php:1319 functions.inc.php:1418
+#: functions.inc.php:1320 functions.inc.php:1419
 msgid "November"
 msgstr "Novembro"
 
@@ -250,7 +250,7 @@ msgstr "Novembro"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:1312 functions.inc.php:1411
+#: functions.inc.php:1313 functions.inc.php:1412
 msgid "October"
 msgstr "Outubro"
 
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
-#: functions.inc.php:739
+#: functions.inc.php:740
 msgid "Remove Section and Submit Current Settings"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:1088 functions.inc.php:1151
+#: functions.inc.php:1089 functions.inc.php:1152
 msgid "Saturday"
 msgstr "Sabado"
 
@@ -293,7 +293,7 @@ msgid ""
 "match destination."
 msgstr ""
 
-#: functions.inc.php:1305 functions.inc.php:1404
+#: functions.inc.php:1306 functions.inc.php:1405
 msgid "September"
 msgstr "Setembro"
 
@@ -305,7 +305,7 @@ msgstr "Hora do Servidor:"
 msgid "Submit"
 msgstr "Enviar"
 
-#: functions.inc.php:1095 functions.inc.php:1158
+#: functions.inc.php:1096 functions.inc.php:1159
 msgid "Sunday"
 msgstr "Domingo"
 
@@ -355,11 +355,11 @@ msgid ""
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: functions.inc.php:714 functions.inc.php:734
+#: functions.inc.php:715 functions.inc.php:735
 msgid "This will display as the name of this Time Group."
 msgstr ""
 
-#: functions.inc.php:1074 functions.inc.php:1137
+#: functions.inc.php:1075 functions.inc.php:1138
 msgid "Thursday"
 msgstr "Quinta"
 
@@ -379,7 +379,7 @@ msgstr "Nome para Condição de Tempo:"
 msgid "Time Condition:"
 msgstr "Condição de Tempo:"
 
-#: functions.inc.php:21 functions.inc.php:303
+#: functions.inc.php:21 functions.inc.php:304
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Condição de Tempo: %s"
@@ -388,7 +388,7 @@ msgstr "Condição de Tempo: %s"
 msgid "Time Conditions"
 msgstr "Condições de Tempo"
 
-#: functions.inc.php:705 functions.inc.php:714 functions.inc.php:734
+#: functions.inc.php:706 functions.inc.php:715 functions.inc.php:735
 #: page.timegroups.php:12
 msgid "Time Group"
 msgstr "Grupo de Tempo"
@@ -401,15 +401,15 @@ msgstr "Grupo de Tempo:"
 msgid "Time Groups"
 msgstr "Grupos de Tempo"
 
-#: functions.inc.php:988
+#: functions.inc.php:989
 msgid "Time to finish:"
 msgstr "Hora do termino:"
 
-#: functions.inc.php:933
+#: functions.inc.php:934
 msgid "Time to start:"
 msgstr "Hora de inicio:"
 
-#: functions.inc.php:1060 functions.inc.php:1123
+#: functions.inc.php:1061 functions.inc.php:1124
 msgid "Tuesday"
 msgstr "Terça"
 
@@ -426,19 +426,19 @@ msgstr "Estado Desconhecido"
 msgid "Upgraded %s and created group %s"
 msgstr ""
 
-#: functions.inc.php:730
+#: functions.inc.php:731
 msgid "Used By"
 msgstr "Usado por"
 
-#: functions.inc.php:1067 functions.inc.php:1130
+#: functions.inc.php:1068 functions.inc.php:1131
 msgid "Wednesday"
 msgstr "Quarta"
 
-#: functions.inc.php:1100
+#: functions.inc.php:1101
 msgid "Week Day finish:"
 msgstr "Dia da semana que termina:"
 
-#: functions.inc.php:1038
+#: functions.inc.php:1039
 msgid "Week Day start:"
 msgstr "Dia da semana que inicia:"
 
@@ -458,7 +458,7 @@ msgstr ""
 msgid "deleted"
 msgstr "apagado"
 
-#: functions.inc.php:316
+#: functions.inc.php:317
 msgid "false goto"
 msgstr ""
 
@@ -474,7 +474,7 @@ msgstr "nenhuma atualização necessaria"
 msgid "starting migration"
 msgstr "iniciando migração"
 
-#: functions.inc.php:308
+#: functions.inc.php:309
 msgid "true goto"
 msgstr ""
 
