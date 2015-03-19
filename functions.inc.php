@@ -146,6 +146,7 @@ function timeconditions_get_config($engine) {
 				$c = $fcc->getCodeActive();
 				unset($fcc);
 				if ($c) {
+					$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
 
 					$userFCs = array();
