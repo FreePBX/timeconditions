@@ -4,7 +4,7 @@ msgstr ""
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 05:33+1000\n"
-"PO-Revision-Date: 2015-03-24 22:53+0200\n"
+"PO-Revision-Date: 2015-03-24 22:54+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/es_ES/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: functions.inc.php:706
 msgid " deleted!"
-msgstr "Eliminado."
+msgstr " Eliminado!"
 
 #: install.php:231
 #, php-format
@@ -101,15 +101,15 @@ msgstr "Descripción"
 
 #: functions.inc.php:702
 msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "La descripción debe ser alfanumérica y no puede estar en blanco."
+msgstr "La descripción debe ser alfanumérica y no puede estar en blanco"
 
 #: page.timeconditions.php:181
 msgid "Destination if time does not match"
-msgstr "Destino si la hora no coincide:"
+msgstr "Destino si la hora no coincide"
 
 #: page.timeconditions.php:171
 msgid "Destination if time matches"
-msgstr "Destino si la hora coincide:"
+msgstr "Destino si la hora coincide"
 
 #: install.php:166
 msgid "ERROR: failed to convert field "
@@ -117,7 +117,7 @@ msgstr "Error: fallo al convertir el campo "
 
 #: page.timeconditions.php:87
 msgid "Edit Time Condition"
-msgstr "Editar condición horaria:"
+msgstr "Editar condición horaria"
 
 #: functions.inc.php:721
 msgid "Edit Time Group"
@@ -502,7 +502,7 @@ msgstr "generando códigos de función de ser necesario.."
 
 #: install.php:236
 msgid "no upgrade needed"
-msgstr "No es necesaria ninguna actualización."
+msgstr "No es necesaria ninguna actualización"
 
 #: install.php:223
 msgid "starting migration"
