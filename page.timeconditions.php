@@ -27,7 +27,7 @@ switch ($request['view']) {
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3 hidden-xs bootnav">
+			<div class="col-sm-3 hidden-xs bootnav <?php echo $fw_popover?'hidden':''?>">
 				<div class="list-group">
 					<?php echo load_view(__DIR__.'/views/timeconditions/bootnav.php', array('request' => $request))?>
 				</div>
@@ -35,4 +35,3 @@ switch ($request['view']) {
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="/admin/modules/timeconditions/assets/js/timeconditions.js"></script>

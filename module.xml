@@ -48,6 +48,7 @@
   <popovers>
     <timeconditions>
       <display>timeconditions</display>
+      <view>form</view>
     </timeconditions>
   </popovers>
   <location>release/2.11/timeconditions-2.11.0.1.tgz</location>
