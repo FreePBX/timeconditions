@@ -50,7 +50,7 @@ function timeconditions_get_config($engine) {
 	global $ext;  // is this the best way to pass this?
 	global $conferences_conf;
 	global $amp_conf;
-	
+
 	switch($engine) {
 		case "asterisk":
 			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
@@ -334,19 +334,9 @@ function timeconditions_change_destination($old_dest, $new_dest) {
 function timeconditions_list($getall=false) {
 	$results = sql("SELECT * FROM timeconditions ORDER BY priority ASC","getAll",DB_FETCHMODE_ASSOC);
 	if(is_array($results)){
-		foreach($results as $result){
-			// check to see if we have a dept match for the current AMP User.
-			if ($getall || checkDept($result['deptname'])){
-				// return this item's dialplan destination, and the description
-				$allowed[] = $result;
-			}
-		}
+		return $results;
 	}
-	if (isset($allowed)) {
-		return $allowed;
-	} else {
-		return null;
-	}
+	return null;
 }
 
 function timeconditions_get($id){
@@ -1024,7 +1014,7 @@ function timeconditions_timegroups_monthday_opts($selected=''){
 		}
 		$html .= "<option value=\"$i\" $default> ".sprintf("%02d", $i);
 	}
-	return $html;	
+	return $html;
 }
 
 
@@ -1133,7 +1123,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				<div class="col-md-4">
 					<select name="'.$name.'[wday_start]" id="'.$name.'wds" class="form-control">
 						'.timeconditions_timegroups_weekday_opts($wday_start).'
-					</select>				
+					</select>
 				</div>
 			';
 	$html .= '</div>';
@@ -1142,43 +1132,43 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				<div class="col-md-4">
 					<select name="'.$name.'[wday_finish]" id="'.$name.'wde" class="form-control">
 						'.timeconditions_timegroups_weekday_opts($wday_finish).'
-					</select>				
+					</select>
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';	
+	$html .= '<div class="form-group row">';
 	$html .= '<label for="'.$name.'mds" class="col-md-3 control-label">'._("Month Day start").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[mday_start]" id="'.$name.'mds" class="form-control">
 						'.timeconditions_timegroups_monthday_opts($mday_start).'
-					</select>				
+					</select>
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';	
+	$html .= '<div class="form-group row">';
 	$html .= '<label for="'.$name.'mdf" class="col-md-3 control-label">'._("Month Day finish").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[mday_finish]" id="'.$name.'mdf" class="form-control">
 						'.timeconditions_timegroups_monthday_opts($mday_finish).'
-					</select>				
+					</select>
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';	
+	$html .= '<div class="form-group row">';
 	$html .= '<label for="'.$name.'mons" class="col-md-3 control-label">'._("Month start").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[month_start]" id="'.$name.'mons" class="form-control">
 						'.timeconditions_timegroups_month_opts($month_start).'
-					</select>				
+					</select>
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';	
+	$html .= '<div class="form-group row">';
 	$html .= '<label for="'.$name.'monf" class="col-md-3 control-label">'._("Month finish").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[month_finish]" id="'.$name.'monf" class="form-control">
 						'.timeconditions_timegroups_month_opts($month_finish).'
-					</select>				
+					</select>
 				</div>
 			';
 	$html .= '</div>';
