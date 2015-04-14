@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 18:52-0400\n"
+"POT-Creation-Date: 2015-04-14 18:53-0400\n"
 "PO-Revision-Date: 2014-07-26 01:03+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -60,6 +60,10 @@ msgstr "Adicionar condição de tempo"
 #: views/timegroups/bootnav.php:10
 msgid "Add Time Group"
 msgstr "Adicionar Grupo de Tempo"
+
+#: views/timegroups/form.php:69
+msgid "Add a time for this time condition"
+msgstr ""
 
 #: timeconditions.i18n.php:6 timeconditions.i18n.php:12
 msgid "Applications"

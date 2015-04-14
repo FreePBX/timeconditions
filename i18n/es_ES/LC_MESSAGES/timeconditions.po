@@ -27,6 +27,10 @@ msgstr ""
 msgid "Add Time Group"
 msgstr ""
 
+#: views/timegroups/form.php:69
+msgid "Add a time for this time condition"
+msgstr ""
+
 #: timeconditions.i18n.php:6 timeconditions.i18n.php:12
 msgid "Applications"
 msgstr ""

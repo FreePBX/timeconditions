@@ -66,7 +66,7 @@ if(!empty($timelist)){
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="timewraper-help" class="help-block fpbx-help-block"><?php echo _("")?></span>
+			<span id="timewraper-help" class="help-block fpbx-help-block"><?php echo _("Add a time for this time condition")?></span>
 		</div>
 	</div>
 </div>
