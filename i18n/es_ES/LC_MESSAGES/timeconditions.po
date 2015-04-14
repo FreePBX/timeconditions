@@ -3,11 +3,11 @@
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
-#: functions.inc.php:907
+#: functions.inc.php:897
 msgid "--Select a Group--"
 msgstr ""
 
-#: functions.inc.php:535 functions.inc.php:600 install.php:198
+#: functions.inc.php:525 functions.inc.php:590 install.php:198
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -31,11 +31,11 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:992
+#: functions.inc.php:982
 msgid "April"
 msgstr ""
 
-#: functions.inc.php:996
+#: functions.inc.php:986
 msgid "August"
 msgstr ""
 
@@ -48,14 +48,18 @@ msgid "Checking for old timeconditions to upgrade.."
 msgstr ""
 
 #: timeconditions.i18n.php:8
-msgid "Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night."
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
 msgstr ""
 
 #: views/timeconditions/form.php:147
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:1000
+#: functions.inc.php:990
 msgid "December"
 msgstr ""
 
@@ -95,11 +99,11 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:990
+#: functions.inc.php:980
 msgid "February"
 msgstr ""
 
-#: functions.inc.php:968
+#: functions.inc.php:958
 msgid "Friday"
 msgstr ""
 
@@ -107,28 +111,36 @@ msgstr ""
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 
-#: page.timeconditions.php:104
+#: views/timeconditions/form.php:122
 #, php-format
-msgid "If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"
+msgid ""
+"If set the hint will be INUSE if the time condition is matched, and "
+"NOT_INUSE if it fails"
 msgstr ""
 
 #: timeconditions.i18n.php:20
-msgid "If set to false, this will override the execution of the Time Conditions maintenance task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
+msgid ""
+"If set to false, this will override the execution of the Time Conditions "
+"maintenance task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: page.timeconditions.php:104
+#: views/timeconditions/form.php:105
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:989
+#: functions.inc.php:979
 msgid "January"
 msgstr ""
 
-#: functions.inc.php:995
+#: functions.inc.php:985
 msgid "July"
 msgstr ""
 
-#: functions.inc.php:994
+#: functions.inc.php:984
 msgid "June"
 msgstr ""
 
@@ -148,31 +160,31 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:991
+#: functions.inc.php:981
 msgid "March"
 msgstr ""
 
-#: functions.inc.php:993
+#: functions.inc.php:983
 msgid "May"
 msgstr ""
 
-#: functions.inc.php:964
+#: functions.inc.php:954
 msgid "Monday"
 msgstr ""
 
-#: functions.inc.php:1159
+#: functions.inc.php:1149
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:1150
+#: functions.inc.php:1140
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:1177
+#: functions.inc.php:1167
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:1168
+#: functions.inc.php:1158
 msgid "Month start"
 msgstr ""
 
@@ -180,11 +192,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: page.timeconditions.php:114
+#: views/timeconditions/form.php:22
 msgid "No Override"
 msgstr ""
 
-#: functions.inc.php:999
+#: functions.inc.php:989
 msgid "November"
 msgstr ""
 
@@ -192,27 +204,27 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: functions.inc.php:998
+#: functions.inc.php:988
 msgid "October"
 msgstr ""
 
-#: page.timeconditions.php:98
+#: views/timeconditions/form.php:81
 msgid "Override Code Pin"
 msgstr ""
 
-#: page.timeconditions.php:120
+#: views/timeconditions/form.php:28
 msgid "Permanent Override matching state"
 msgstr ""
 
-#: page.timeconditions.php:126
+#: views/timeconditions/form.php:34
 msgid "Permanent Override unmatching state"
 msgstr ""
 
-#: page.timeconditions.php:144
+#: views/timeconditions/form.php:142
 msgid "Permanently matched"
 msgstr ""
 
-#: page.timeconditions.php:146
+#: views/timeconditions/form.php:144
 msgid "Permanently unmatched"
 msgstr ""
 
@@ -220,19 +232,22 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: page.timeconditions.php:142
+#: views/timeconditions/form.php:140
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:969
+#: functions.inc.php:959
 msgid "Saturday"
 msgstr ""
 
 #: views/timeconditions/form.php:179
-msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
 msgstr ""
 
-#: functions.inc.php:997
+#: functions.inc.php:987
 msgid "September"
 msgstr ""
 
@@ -244,44 +259,61 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: functions.inc.php:963
+#: functions.inc.php:953
 msgid "Sunday"
 msgstr ""
 
-#: page.timeconditions.php:117
+#: views/timeconditions/form.php:25
 msgid "Temporary Override matching state"
 msgstr ""
 
-#: page.timeconditions.php:123
+#: views/timeconditions/form.php:31
 msgid "Temporary Override unmatching state"
 msgstr ""
 
-#: page.timeconditions.php:143
+#: views/timeconditions/form.php:141
 msgid "Temporary matched"
 msgstr ""
 
-#: page.timeconditions.php:145
+#: views/timeconditions/form.php:143
 msgid "Temporary unmatched"
 msgstr ""
 
 #: timeconditions.i18n.php:24
-msgid "The polling interval in seconds used by the Time Conditions maintenance task, launched by an Asterisk call file used to update Time Conditions override states as well as keep custom device state hint values up-to-date when being used with BLF. A shorter interval will assure that BLF keys states are accurate. The interval should be less than the shortest configured span between two time condition states, so that a manual override during such a period is properly reset when the new period starts."
+msgid ""
+"The polling interval in seconds used by the Time Conditions maintenance "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual override "
+"during such a period is properly reset when the new period starts."
 msgstr ""
 
-#: page.timeconditions.php:138
+#: views/timeconditions/form.php:155
 #, php-format
-msgid "This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
 msgstr ""
 
-#: page.timegroups.php:68
-msgid "This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"
+#: assets/js/timegroups.js:57
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
 msgstr ""
 
 #: views/timegroups/form.php:44
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:967
+#: functions.inc.php:957
 msgid "Thursday"
 msgstr ""
 
@@ -315,11 +347,11 @@ msgstr ""
 msgid "Time Groups"
 msgstr ""
 
-#: functions.inc.php:1106
+#: functions.inc.php:1096
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:1119
+#: functions.inc.php:1109
 msgid "Time to finish"
 msgstr ""
 
@@ -327,15 +359,15 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:965
+#: functions.inc.php:955
 msgid "Tuesday"
 msgstr ""
 
-#: page.timeconditions.php:141
+#: views/timeconditions/form.php:139
 msgid "Unchanged"
 msgstr ""
 
-#: page.timeconditions.php:129
+#: views/timeconditions/form.php:37 views/timeconditions/form.php:41
 msgid "Unknown State"
 msgstr ""
 
@@ -344,15 +376,15 @@ msgstr ""
 msgid "Upgraded %s and created group %s"
 msgstr ""
 
-#: functions.inc.php:966
+#: functions.inc.php:956
 msgid "Wednesday"
 msgstr ""
 
-#: functions.inc.php:1132
+#: functions.inc.php:1122
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:1141
+#: functions.inc.php:1131
 msgid "Week Day finish"
 msgstr ""
 
@@ -390,25 +422,4 @@ msgstr ""
 
 #: functions.inc.php:309
 msgid "true goto"
-msgstr ""
-
-#: page.timeconditions.php:138
-msgid "Change Override:"
-msgstr ""
-
-#: page.timeconditions.php:134
-msgid "Current Override:"
-msgstr ""
-
-#: page.timeconditions.php:98
-#, php-format
-msgid "If set dialing the feature code will require a pin to change the override state"
-msgstr ""
-
-#: page.timeconditions.php:134
-msgid "Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule."
-msgstr ""
-
-#: functions.inc.php:740
-msgid "Remove Section and Submit Current Settings"
 msgstr ""
