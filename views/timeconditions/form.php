@@ -157,6 +157,34 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	</div>
 </div>
 <!--END Change Override-->
+<!--Timezone-->
+<div class="element-container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="tcstate_new"><?php echo _("Time Zone:")?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="tcstate_new"></i>
+					</div>
+					<div class="col-md-9">
+						<select id="timezone" class="chosenselect form-control" name="timezone" id="timezone">
+							<?php foreach(DateTimeZone::listIdentifiers(DateTimeZone::ALL) as $tz) {?>
+								<option value="<?php echo $tz?>" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo $tz?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="tcstate_new-help" class="help-block fpbx-help-block"><?php echo _("Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory.") ?></span>
+		</div>
+	</div>
+</div>
+<!--END Timezone-->
 <!--Time Group-->
 <div class="element-container">
 	<div class="row">

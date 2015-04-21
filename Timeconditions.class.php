@@ -48,7 +48,6 @@ class Timeconditions implements \BMO {
 				}
 			break;
 			case "timegroups":
-				debug($request);
 				$action= isset($request['action'])?$request['action']:null;
 				$timegroup= isset($request['extdisplay'])?$request['extdisplay']:null;
 				$description= isset($request['description'])?$request['description']:null;

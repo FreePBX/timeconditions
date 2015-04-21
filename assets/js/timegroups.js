@@ -35,7 +35,7 @@ function updateTime()
 		min++;
 		sec = 0;
 	}
-		
+
 	if (min==60)
 	{
 		hour++;
@@ -46,8 +46,8 @@ function updateTime()
 	{
 		hour = 0;
 	}
-	
-	document.getElementById("idTime").innerHTML = PadDigits(hour,2)+":"+PadDigits(min,2)+":"+PadDigits(sec,2);
+
+	//document.getElementById("idTime").innerHTML = PadDigits(hour,2)+":"+PadDigits(min,2)+":"+PadDigits(sec,2);
 	var t = setTimeout('updateTime()',1000);
 }
 

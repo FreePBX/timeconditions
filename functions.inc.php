@@ -71,13 +71,13 @@ function timeconditions_get_config($engine) {
 				foreach($timelist as $item) {
 					// add dialplan
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
-					$times = timeconditions_timegroups_get_times($item['time']);
+					$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
 					$time_id = $item['timeconditions_id'];
 					$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
 					$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
 
-					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint?"NOT_INUSE":"INUSE")));
-					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint?"INUSE":"NOT_INUSE")));
+					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
+					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
@@ -89,10 +89,10 @@ function timeconditions_get_config($engine) {
 					$skip_dest = 'falsegoto';
 					//Formerly part of USEDEVSTATE
 					//Modifications by namezero111111 follow (FREEPBX-6415)
-					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint?"NOT_INUSE":"INUSE")));
+					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"NOT_INUSE":"INUSE"));
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint?"NOT_INUSE":"INUSE")));
+					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
 					$skip_dest = '';
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
@@ -104,10 +104,10 @@ function timeconditions_get_config($engine) {
 					$skip_dest = 'truegoto';
 					//Formerly part of USEDEVSTATE
 					//Modifications by namezero111111 follow (FREEPBX-6415)
-					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint?"INUSE":"NOT_INUSE")));
+					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"INUSE":"NOT_INUSE"));
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint?"NOT_INUSE":"INUSE")));
+					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
 					$skip_dest = '';
 					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
@@ -538,6 +538,7 @@ function timeconditions_add($post){
 
   $displayname = $db->escapeSimple($post['displayname']);
   $time = $db->escapeSimple($post['time']);
+  $timezone = $db->escapeSimple($post['timezone']);
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
@@ -548,7 +549,7 @@ function timeconditions_add($post){
 	if($displayname == '') {
 	 	$displayname = "unnamed";
 	}
-	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint) values (\"$displayname\",\"$time\",\"$truegoto\",\"$falsegoto\",\"$deptname\",\"$generate_hint\",\"$fcc_password\",\"$invert_hint\")");
+	$results = sql("INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone) values (\"$displayname\",\"$time\",\"$truegoto\",\"$falsegoto\",\"$deptname\",\"$generate_hint\",\"$fcc_password\",\"$invert_hint\",\"$timezone\")");
 	if(method_exists($db,'insert_id')) {
 		$id = $db->insert_id();
 	} else {
@@ -564,6 +565,7 @@ function timeconditions_edit($id,$post){
   $id = $db->escapeSimple($id);
   $displayname = $db->escapeSimple($post['displayname']);
   $time = $db->escapeSimple($post['time']);
+  $timezone = $db->escapeSimple($post['timezone']);
   $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
   $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
   $invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
@@ -575,7 +577,7 @@ function timeconditions_edit($id,$post){
 	if(empty($displayname)) {
 		$displayname = "unnamed";
 	}
-	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\", invert_hint = \"$invert_hint\", fcc_password = \"$fcc_password\" WHERE timeconditions_id = \"$id\"");
+	$results = sql("UPDATE timeconditions SET displayname = \"$displayname\", time = \"$time\", truegoto = \"$truegoto\", falsegoto = \"$falsegoto\", deptname = \"$deptname\", generate_hint = \"$generate_hint\", invert_hint = \"$invert_hint\", fcc_password = \"$fcc_password\", timezone = \"$timezone\" WHERE timeconditions_id = \"$id\"");
 
 	//If invert was switched we need to update the asterisk DB
 	$post['tcstate_new'] = (($old['invert_hint'] != $invert_hint) && $post['tcstate_new'] == 'unchanged') ? timeconditions_get_state($id) : $post['tcstate_new'];
@@ -759,7 +761,7 @@ function timeconditions_timegroups_configprocess() {
 }
 */
 //these are the users time selections for the current timegroup
-function timeconditions_timegroups_get_times($timegroup, $convert=false) {
+function timeconditions_timegroups_get_times($timegroup, $convert=false, $timecondition_id=null) {
 	global $db, $version;
 	$tmparray = array();
 
@@ -775,7 +777,13 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false) {
 	if(DB::IsError($results)) {
 		$results = null;
 	}
+        $tz='';
+	if ($timecondition_id>0) {
+          $timezone = $db->getOne("SELECT timezone FROM timeconditions WHERE timeconditions_id = $timecondition_id");
+          if (strlen($timezone)>0) { $tz="|$timezone"; }
+        }
 	foreach ($results as $val) {
+    $val[1].=$tz;
     $times = ($convert && $ast_ge_16) ? strtr($val[1],'|',',') : $val[1];
     $tmparray[] = array($val[0], $times);
 	}
@@ -1288,4 +1296,12 @@ function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_
 }
 
 //---------------------------end stolen from timeconditions-------------------------------------
+
+// AJAX Handler for jQuery UI AutoComplete Time Zone field on Time Conditions page
+if (isset($_REQUEST['term']) && strlen($_REQUEST['term'])>1) {
+  Header('Content-Type: text/json');
+  die(json_encode(array_values(preg_grep('*'.$_REQUEST['term'].'*i', DateTimeZone::listIdentifiers(DateTimeZone::ALL)))));
+}
+
+
 ?>

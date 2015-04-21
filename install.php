@@ -55,7 +55,8 @@ if($amp_conf["AMPDBENGINE"] == "sqlite3")  {
 		`generate_hint` TINYINT( 1 ) DEFAULT 0,
 		`invert_hint` TINYINT( 1 ) DEFAULT 0,
 		`fcc_password` VARCHAR( 20 ) DEFAULT '',
-		`priority` VARCHAR( 50 )
+		`priority` VARCHAR( 50 ),
+		`timezone` VARCHAR( 255 ),
 	)
 	";
 }
@@ -71,7 +72,8 @@ else  {
 		`generate_hint` TINYINT( 1 ) DEFAULT 0,
 		`invert_hint` TINYINT( 1 ) DEFAULT 0,
 		`fcc_password` VARCHAR( 20 ) DEFAULT '',
-		`priority` VARCHAR( 50 )
+		`priority` VARCHAR( 50 ),
+		`timezone` VARCHAR( 255 )
 	)
 	";
 }
@@ -306,5 +308,11 @@ if (!$db->getAll('SHOW COLUMNS FROM timeconditions WHERE FIELD = "invert_hint"')
 if (!$db->getAll('SHOW COLUMNS FROM timeconditions WHERE FIELD = "fcc_password"')) {
 	out("Adding Time Conditions Password Ability");
 	$sql = "ALTER TABLE `timeconditions` ADD COlUMN `fcc_password` VARCHAR( 20 ) DEFAULT '' AFTER `invert_hint`";
+	$result = $db->query($sql);
+}
+
+if (!$db->getAll('SHOW COLUMNS FROM timeconditions WHERE FIELD = "timezone"')) {
+	out("Adding Time Conditions Password Ability");
+	$sql = "ALTER TABLE `timeconditions` ADD COlUMN `timezone` VARCHAR( 255 ) DEFAULT '' AFTER `priority`";
 	$result = $db->query($sql);
 }
