@@ -23,3 +23,7 @@ function edit_onsubmit() {
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
+$('#timezone').autocomplete({
+  source:'config.php?module=timeconditions&quietmode=1&file=functions.inc.php&handler=file'
+});
