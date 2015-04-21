@@ -4,19 +4,23 @@ msgstr ""
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-20 05:33+1000\n"
-"PO-Revision-Date: 2009-01-23 00:28+0100\n"
-"Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
-"Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
+"PO-Revision-Date: 2015-03-24 22:54+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/timeconditions/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: functions.inc.php:706
 msgid " deleted!"
-msgstr "Eliminado."
+msgstr " Eliminado!"
 
 #: install.php:231
 #, php-format
@@ -30,7 +34,7 @@ msgstr "-- Seleccione un grupo --"
 
 #: functions.inc.php:535 functions.inc.php:600 install.php:198
 msgid ": Time Condition Override"
-msgstr ""
+msgstr ": Condición horaria anulada"
 
 #: page.timeconditions.php:39 page.timeconditions.php:54
 #: page.timeconditions.php:87
@@ -43,7 +47,7 @@ msgstr "Añadir grupo horario"
 
 #: timeconditions.i18n.php:6 timeconditions.i18n.php:12
 msgid "Applications"
-msgstr ""
+msgstr "Aplicaciones"
 
 #: functions.inc.php:1271 functions.inc.php:1370
 msgid "April"
@@ -55,7 +59,7 @@ msgstr "Agosto"
 
 #: page.timeconditions.php:138
 msgid "Change Override:"
-msgstr ""
+msgstr "Cambio Anulado:"
 
 #: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
@@ -68,10 +72,14 @@ msgid ""
 "used for example to ring a receptionist during the day, or go directly to an "
 "IVR at night."
 msgstr ""
+"Crea una condición en la que las llamadas irán a uno de los dos destinos ("
+"por ejemplo, una extensión, IVR, grupo de timbre ..) en función del horario "
+"y / o fecha. Esto se puede utilizar por ejemplo para que suene una "
+"recepcionista durante el día, o ir directamente a un IVR en la noche."
 
 #: page.timeconditions.php:134
 msgid "Current Override:"
-msgstr ""
+msgstr "Actualmente anulado:"
 
 #: functions.inc.php:1327 functions.inc.php:1426
 msgid "December"
@@ -93,23 +101,23 @@ msgstr "Descripción"
 
 #: functions.inc.php:702
 msgid "Description must be alpha-numeric, and may not be left blank"
-msgstr "La descripción debe ser alfanumérica y no puede estar en blanco."
+msgstr "La descripción debe ser alfanumérica y no puede estar en blanco"
 
 #: page.timeconditions.php:181
 msgid "Destination if time does not match"
-msgstr "Destino si la hora no coincide:"
+msgstr "Destino si la hora no coincide"
 
 #: page.timeconditions.php:171
 msgid "Destination if time matches"
-msgstr "Destino si la hora coincide:"
+msgstr "Destino si la hora coincide"
 
 #: install.php:166
 msgid "ERROR: failed to convert field "
-msgstr "Error: fallo al convertir el campo"
+msgstr "Error: fallo al convertir el campo "
 
 #: page.timeconditions.php:87
 msgid "Edit Time Condition"
-msgstr "Editar condición horaria:"
+msgstr "Editar condición horaria"
 
 #: functions.inc.php:721
 msgid "Edit Time Group"
@@ -117,7 +125,7 @@ msgstr "Editar grupo horario"
 
 #: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
-msgstr ""
+msgstr "Habilitar sondeo Mantenimiento"
 
 #: functions.inc.php:1257 functions.inc.php:1356
 msgid "February"
@@ -143,6 +151,8 @@ msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
 msgstr ""
+"Si se usa marcar el código de opción (feature code) requerirá un PIN para "
+"cambiar el estado de anulación"
 
 #: page.timeconditions.php:104
 #, php-format
@@ -150,6 +160,8 @@ msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
+"Si se establece el hint será INUSE si la condición de tiempo se corresponde, "
+"y NOT_INUSE si falla"
 
 #: timeconditions.i18n.php:20
 msgid ""
@@ -160,6 +172,14 @@ msgid ""
 "temporarily if debugging a system to avoid the periodic dialplan running "
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
+"Si se establece en false, esta prevalecerá sobre la ejecución de la tarea de "
+"mantenimiento de las condiciones de hora lanzada por los archivos de "
+"llamadas. Si todos los códigos de funciones para las condiciones horarias "
+"son personas con discapacidad, la tarea de mantenimiento no se pondrá en "
+"marcha de todos modos. Fijar esto a falso sería bastante poco común. Es "
+"posible que desee establecer esta temporalmente para  depuración de un "
+"sistema para evitar el dialplan tenga que estar ejecutando periódicamente a "
+"través de la CLI  y pueden ser una distracción e inconveniencia."
 
 #: page.timeconditions.php:134
 msgid ""
@@ -170,10 +190,16 @@ msgid ""
 "external XML applications on your phone. If No Override then it functions "
 "normally based on the time schedule."
 msgstr ""
+"Indica el estado actual de esta condición horaria. Si está en un estado de "
+"anulación temporal, se reanudará automáticamente en la próxima transición de "
+"tiempo basado en el tiempo con el grupo asociado. Si en un estado de "
+"anulación Permanente, permanecerá en ese estado hasta que se cambie aquí o a "
+"través de otros medios, tales como aplicaciones XML externos en su teléfono. "
+"Si No reemplazar entonces funciona normalmente basado en el calendario."
 
 #: page.timeconditions.php:104
 msgid "Invert BLF Hint"
-msgstr ""
+msgstr "Invertir el hint BLF"
 
 #: functions.inc.php:1250 functions.inc.php:1349
 msgid "January"
@@ -189,7 +215,7 @@ msgstr "Junio"
 
 #: timeconditions.i18n.php:22
 msgid "Maintenance Polling Interval"
-msgstr ""
+msgstr "Intervalo de sondeo Mantenimiento"
 
 #: functions.inc.php:1264 functions.inc.php:1363
 msgid "March"
@@ -205,7 +231,7 @@ msgstr "Lunes"
 
 #: functions.inc.php:1199
 msgid "Month Day finish:"
-msgstr "Día del mes de fin:"
+msgstr "Día del fin de  mes:"
 
 #: functions.inc.php:1164
 msgid "Month Day start:"
@@ -213,7 +239,7 @@ msgstr "Día del mes de inicio:"
 
 #: functions.inc.php:1333
 msgid "Month finish:"
-msgstr "Mes de fin:"
+msgstr "Fin de Mes:"
 
 #: functions.inc.php:1218
 msgid "Month start:"
@@ -225,7 +251,7 @@ msgstr "Nueva hora"
 
 #: page.timeconditions.php:114
 msgid "No Override"
-msgstr ""
+msgstr "No anulado"
 
 #: functions.inc.php:1320 functions.inc.php:1419
 msgid "November"
@@ -241,31 +267,31 @@ msgstr "Octubre"
 
 #: page.timeconditions.php:98
 msgid "Override Code Pin"
-msgstr ""
+msgstr "PIN de anulacion"
 
 #: page.timeconditions.php:120
 msgid "Permanent Override matching state"
-msgstr ""
+msgstr "Estado Permanente de anulación del match"
 
 #: page.timeconditions.php:126
 msgid "Permanent Override unmatching state"
-msgstr ""
+msgstr "Estado permanente de anulación de no match"
 
 #: page.timeconditions.php:144
 msgid "Permanently matched"
-msgstr ""
+msgstr "Permanentemente match"
 
 #: page.timeconditions.php:146
 msgid "Permanently unmatched"
-msgstr ""
+msgstr "Permanentemente sin match"
 
 #: functions.inc.php:740
 msgid "Remove Section and Submit Current Settings"
-msgstr ""
+msgstr "Remover sección y enviar configuración actual"
 
 #: page.timeconditions.php:142
 msgid "Reset Override"
-msgstr ""
+msgstr "resetear anulacion"
 
 #: functions.inc.php:1089 functions.inc.php:1152
 msgid "Saturday"
@@ -299,19 +325,19 @@ msgstr "Domingo"
 
 #: page.timeconditions.php:117
 msgid "Temporary Override matching state"
-msgstr ""
+msgstr "Estado de Anulación temporal match"
 
 #: page.timeconditions.php:123
 msgid "Temporary Override unmatching state"
-msgstr ""
+msgstr "Estado de Anulación temporal no match"
 
 #: page.timeconditions.php:143
 msgid "Temporary matched"
-msgstr ""
+msgstr "Temporalmente match"
 
 #: page.timeconditions.php:145
 msgid "Temporary unmatched"
-msgstr ""
+msgstr "Temporalmente no match"
 
 #: timeconditions.i18n.php:24
 msgid ""
@@ -323,6 +349,15 @@ msgid ""
 "configured span between two time condition states, so that a manual override "
 "during such a period is properly reset when the new period starts."
 msgstr ""
+"El intervalo de sondeo en segundos utilizado por la tarea de mantenimiento "
+"de las condiciones de horario, puesto en marcha por un archivo Asterisk de "
+"llamada, utiliza para actualizar las condiciones de hora estados de "
+"anulación, así como mantener los valores de sugerencia estatales dispositivo "
+"personalizado actualizado en la que se utiliza con BLF. Un intervalo más "
+"corto asegurará que teclas BLF estados son exactas. El intervalo debe ser "
+"menor que el menor lapso configurado entre dos estados de condición "
+"horarias, por lo que un control manual durante un período se restablece "
+"correctamente cuando comience el nuevo período."
 
 #: page.timeconditions.php:138
 #, php-format
@@ -336,12 +371,23 @@ msgid ""
 "Permanent Override which must be done here or with other applications such "
 "as an XML based phone options."
 msgstr ""
+"Esta Condición horaria puede establecerse para ir temporalmente al destino "
+"'match' o 'no match' en cuyo caso la anulación se reiniciará automáticamente "
+"una vez transcurrido el período de tiempo actual. Si se define como "
+"Permanente se mantendrá anulado hasta restablecer manualmente. Todas las "
+"anulaciones se pueden eliminar con la opción de anulación de Reset. "
+"Anulaciones temporales también se pueden activar con el código de opción %s, "
+"que también eliminará una Ignorar Permanente si se define, pero no se puede "
+"establecer una Ignorar Permanente que debe hacerse aquí o con otras "
+"aplicaciones tales como las opciones telefónicas basadas en XML."
 
 #: page.timegroups.php:68
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
+"Esta sección será eliminado de este grupo de tiempo y todos los ajustes "
+"actuales, incluyendo los cambios se actualizará. OK para continuar?"
 
 #: functions.inc.php:715 functions.inc.php:735
 msgid "This will display as the name of this Time Group."
@@ -357,7 +403,7 @@ msgstr "Condición horaria"
 
 #: timeconditions.i18n.php:18
 msgid "Time Condition Module"
-msgstr ""
+msgstr "Modulo de Condición Horaria"
 
 #: page.timeconditions.php:94
 msgid "Time Condition name:"
@@ -403,11 +449,11 @@ msgstr "Martes"
 
 #: page.timeconditions.php:141
 msgid "Unchanged"
-msgstr ""
+msgstr "No cambiado"
 
 #: page.timeconditions.php:129
 msgid "Unknown State"
-msgstr ""
+msgstr "Estado desconocido"
 
 #: install.php:229
 #, php-format
@@ -432,11 +478,11 @@ msgstr "Día de la semana de inicio:"
 
 #: install.php:184
 msgid "already exists"
-msgstr ""
+msgstr "Ya existe"
 
 #: install.php:172
 msgid "checking for generate_hint field.."
-msgstr ""
+msgstr "chequeando campo generate_hint ..."
 
 #: install.php:162
 msgid "converting timeconditions time field to int.."
@@ -448,15 +494,15 @@ msgstr "eliminada"
 
 #: functions.inc.php:317
 msgid "false goto"
-msgstr ""
+msgstr "goto falso"
 
 #: install.php:189
 msgid "generating feature codes if needed.."
-msgstr ""
+msgstr "generando códigos de función de ser necesario.."
 
 #: install.php:236
 msgid "no upgrade needed"
-msgstr "No es necesaria ninguna actualización."
+msgstr "No es necesaria ninguna actualización"
 
 #: install.php:223
 msgid "starting migration"
@@ -464,7 +510,7 @@ msgstr "Iniciando migración"
 
 #: functions.inc.php:309
 msgid "true goto"
-msgstr ""
+msgstr "goto verdadero"
 
 #~ msgid "text"
 #~ msgstr "texto"
