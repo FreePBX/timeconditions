@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-20 05:33+1000\n"
+"POT-Creation-Date: 2015-04-20 21:27-0400\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -19,20 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: functions.inc.php:706
+#: functions.inc.php:708
 msgid " deleted!"
 msgstr "נמחק"
 
-#: install.php:231
+#: install.php:233
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
-#: functions.inc.php:908
+#: functions.inc.php:916
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: functions.inc.php:535 functions.inc.php:600 install.php:198
+#: functions.inc.php:535 functions.inc.php:602 install.php:200
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 
@@ -41,7 +41,7 @@ msgstr "עקופת תנאי זמן"
 msgid "Add Time Condition"
 msgstr "הוספת תנאי זמן"
 
-#: functions.inc.php:714
+#: functions.inc.php:716
 msgid "Add Time Group"
 msgstr "הוסף קבוצת זמנים"
 
@@ -49,11 +49,11 @@ msgstr "הוסף קבוצת זמנים"
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:1271 functions.inc.php:1370
+#: functions.inc.php:1279 functions.inc.php:1378
 msgid "April"
 msgstr "אפריל"
 
-#: functions.inc.php:1299 functions.inc.php:1398
+#: functions.inc.php:1307 functions.inc.php:1406
 msgid "August"
 msgstr "אוגוסט"
 
@@ -61,7 +61,7 @@ msgstr "אוגוסט"
 msgid "Change Override:"
 msgstr "שנה מעקף"
 
-#: install.php:218
+#: install.php:220
 msgid "Checking for old timeconditions to upgrade.."
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Current Override:"
 msgstr "עקיפה נוכחי:"
 
-#: functions.inc.php:1327 functions.inc.php:1426
+#: functions.inc.php:1335 functions.inc.php:1434
 msgid "December"
 msgstr "דצמבר"
 
@@ -86,28 +86,28 @@ msgstr "דצמבר"
 msgid "Delete Time Condition: %s"
 msgstr "מחק תנאי זמן"
 
-#: functions.inc.php:722
+#: functions.inc.php:724
 #, php-format
 msgid "Delete Time Group %s"
 msgstr "מחק קת קבוצת הזמנים"
 
-#: functions.inc.php:715 functions.inc.php:735
+#: functions.inc.php:717 functions.inc.php:737
 msgid "Description"
 msgstr "תיאור"
 
-#: functions.inc.php:702
+#: functions.inc.php:704
 msgid "Description must be alpha-numeric, and may not be left blank"
 msgstr "התיאור חייב להכיל אותיות ומספרים בלבד"
 
-#: page.timeconditions.php:181
+#: page.timeconditions.php:187
 msgid "Destination if time does not match"
 msgstr "יעד אם הזמן אינו מתאים"
 
-#: page.timeconditions.php:171
+#: page.timeconditions.php:177
 msgid "Destination if time matches"
 msgstr "יעד אם הזמן מתאים"
 
-#: install.php:166
+#: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "שגיאה: לא הצליח להמיר שדה"
 
@@ -115,7 +115,7 @@ msgstr "שגיאה: לא הצליח להמיר שדה"
 msgid "Edit Time Condition"
 msgstr "ערוך תנאי זמן"
 
-#: functions.inc.php:721
+#: functions.inc.php:723
 msgid "Edit Time Group"
 msgstr "ערוך קבוצת זמנים"
 
@@ -123,11 +123,11 @@ msgstr "ערוך קבוצת זמנים"
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:1257 functions.inc.php:1356
+#: functions.inc.php:1265 functions.inc.php:1364
 msgid "February"
 msgstr "פברואר"
 
-#: functions.inc.php:1082 functions.inc.php:1145
+#: functions.inc.php:1090 functions.inc.php:1153
 msgid "Friday"
 msgstr "שישי"
 
@@ -135,7 +135,7 @@ msgstr "שישי"
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "תן לתנאי זמן זה שם קצר שיעזור לך לזהות אותו."
 
-#: page.timeconditions.php:159
+#: page.timeconditions.php:160
 msgid "Goto Current Time Group"
 msgstr "גש לקבות הזמן הנוכחית"
 
@@ -177,15 +177,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:1250 functions.inc.php:1349
+#: functions.inc.php:1258 functions.inc.php:1357
 msgid "January"
 msgstr "ינואר"
 
-#: functions.inc.php:1292 functions.inc.php:1391
+#: functions.inc.php:1300 functions.inc.php:1399
 msgid "July"
 msgstr "יולי"
 
-#: functions.inc.php:1285 functions.inc.php:1384
+#: functions.inc.php:1293 functions.inc.php:1392
 msgid "June"
 msgstr "יוני"
 
@@ -193,35 +193,35 @@ msgstr "יוני"
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:1264 functions.inc.php:1363
+#: functions.inc.php:1272 functions.inc.php:1371
 msgid "March"
 msgstr "מרץ"
 
-#: functions.inc.php:1278 functions.inc.php:1377
+#: functions.inc.php:1286 functions.inc.php:1385
 msgid "May"
 msgstr "מאי"
 
-#: functions.inc.php:1054 functions.inc.php:1117
+#: functions.inc.php:1062 functions.inc.php:1125
 msgid "Monday"
 msgstr "שני"
 
-#: functions.inc.php:1199
+#: functions.inc.php:1207
 msgid "Month Day finish:"
 msgstr "יום בחודש לסיים:"
 
-#: functions.inc.php:1164
+#: functions.inc.php:1172
 msgid "Month Day start:"
 msgstr "יום בחודש להתחיל:"
 
-#: functions.inc.php:1333
+#: functions.inc.php:1341
 msgid "Month finish:"
 msgstr "חודש סיום:"
 
-#: functions.inc.php:1218
+#: functions.inc.php:1226
 msgid "Month start:"
 msgstr "חודש להתחיל:"
 
-#: functions.inc.php:746
+#: functions.inc.php:748
 msgid "New Time"
 msgstr "זמן חדש"
 
@@ -229,15 +229,15 @@ msgstr "זמן חדש"
 msgid "No Override"
 msgstr "ללא מעקף"
 
-#: functions.inc.php:1320 functions.inc.php:1419
+#: functions.inc.php:1328 functions.inc.php:1427
 msgid "November"
 msgstr "נובמבר"
 
-#: install.php:168 install.php:182 install.php:210
+#: install.php:170 install.php:184 install.php:212
 msgid "OK"
 msgstr "תקין"
 
-#: functions.inc.php:1313 functions.inc.php:1412
+#: functions.inc.php:1321 functions.inc.php:1420
 msgid "October"
 msgstr "אוקטובר"
 
@@ -261,7 +261,7 @@ msgstr "התאמה קבועה"
 msgid "Permanently unmatched"
 msgstr "התאמה קבועה"
 
-#: functions.inc.php:740
+#: functions.inc.php:742
 msgid "Remove Section and Submit Current Settings"
 msgstr "מחק את הבחירה והחל את ההגדרות הנוכחיות"
 
@@ -269,7 +269,7 @@ msgstr "מחק את הבחירה והחל את ההגדרות הנוכחיות"
 msgid "Reset Override"
 msgstr "אתחל מעקף"
 
-#: functions.inc.php:1089 functions.inc.php:1152
+#: functions.inc.php:1097 functions.inc.php:1160
 msgid "Saturday"
 msgstr "שבת"
 
@@ -280,7 +280,7 @@ msgid ""
 "match destination."
 msgstr ""
 
-#: functions.inc.php:1306 functions.inc.php:1405
+#: functions.inc.php:1314 functions.inc.php:1413
 msgid "September"
 msgstr "ספטמבר"
 
@@ -288,11 +288,19 @@ msgstr "ספטמבר"
 msgid "Server time:"
 msgstr "שעה בשרת:"
 
-#: page.timeconditions.php:193
+#: page.timeconditions.php:173
+msgid ""
+"Specify the time zone by name if the destinations are in a different time "
+"zone than the server. Type two characters to start an auto-complete pick-"
+"list. <strong>Important</strong>: Your selection here <strong>MUST</strong> "
+"appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+msgstr ""
+
+#: page.timeconditions.php:199
 msgid "Submit"
 msgstr "החל שינויים"
 
-#: functions.inc.php:1096 functions.inc.php:1159
+#: functions.inc.php:1104 functions.inc.php:1167
 msgid "Sunday"
 msgstr "ראשון"
 
@@ -342,11 +350,11 @@ msgid ""
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: functions.inc.php:715 functions.inc.php:735
+#: functions.inc.php:717 functions.inc.php:737
 msgid "This will display as the name of this Time Group."
 msgstr "זהו השם של קבוצת הזמנים"
 
-#: functions.inc.php:1075 functions.inc.php:1138
+#: functions.inc.php:1083 functions.inc.php:1146
 msgid "Thursday"
 msgstr "חמישי"
 
@@ -375,7 +383,7 @@ msgstr "מצבים לפי זמנים: %s"
 msgid "Time Conditions"
 msgstr "תנאיי זמנים"
 
-#: functions.inc.php:706 functions.inc.php:715 functions.inc.php:735
+#: functions.inc.php:708 functions.inc.php:717 functions.inc.php:737
 #: page.timegroups.php:12
 msgid "Time Group"
 msgstr "קבוצת זמנים"
@@ -388,15 +396,19 @@ msgstr "קבוצת זמנים"
 msgid "Time Groups"
 msgstr "קבוצות זמן"
 
-#: functions.inc.php:989
+#: page.timeconditions.php:173
+msgid "Time Zone:"
+msgstr ""
+
+#: functions.inc.php:997
 msgid "Time to finish:"
 msgstr "זמן לסיים:"
 
-#: functions.inc.php:934
+#: functions.inc.php:942
 msgid "Time to start:"
 msgstr "זמן להתחיל:"
 
-#: functions.inc.php:1061 functions.inc.php:1124
+#: functions.inc.php:1069 functions.inc.php:1132
 msgid "Tuesday"
 msgstr "שלישי"
 
@@ -408,36 +420,36 @@ msgstr "ללא שינוי"
 msgid "Unknown State"
 msgstr "מצב לא ידוע"
 
-#: install.php:229
+#: install.php:231
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr ""
 
-#: functions.inc.php:731
+#: functions.inc.php:733
 msgid "Used By"
 msgstr "בשימוש על ידי"
 
-#: functions.inc.php:1068 functions.inc.php:1131
+#: functions.inc.php:1076 functions.inc.php:1139
 msgid "Wednesday"
 msgstr "רביעי"
 
-#: functions.inc.php:1101
+#: functions.inc.php:1109
 msgid "Week Day finish:"
 msgstr "יום בשבוע לסיים:"
 
-#: functions.inc.php:1039
+#: functions.inc.php:1047
 msgid "Week Day start:"
 msgstr "יום התחלה בשבוע:"
 
-#: install.php:184
+#: install.php:186
 msgid "already exists"
 msgstr "כבר קיים"
 
-#: install.php:172
+#: install.php:174
 msgid "checking for generate_hint field.."
 msgstr ""
 
-#: install.php:162
+#: install.php:164
 msgid "converting timeconditions time field to int.."
 msgstr "ממיר קבוצות זמן"
 
@@ -449,15 +461,15 @@ msgstr "נמחק"
 msgid "false goto"
 msgstr ""
 
-#: install.php:189
+#: install.php:191
 msgid "generating feature codes if needed.."
 msgstr "יוצר קודי תכונות אם נדרשים"
 
-#: install.php:236
+#: install.php:238
 msgid "no upgrade needed"
 msgstr "אין צורך בשדרוג"
 
-#: install.php:223
+#: install.php:225
 msgid "starting migration"
 msgstr "מתחיל שדרוג"
 
