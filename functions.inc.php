@@ -535,7 +535,6 @@ function timeconditions_create_fc($id, $displayname='') {
 function timeconditions_add($post){
   global $db;
   global $amp_conf;
-
   $displayname = $db->escapeSimple($post['displayname']);
   $time = $db->escapeSimple($post['time']);
   $timezone = $db->escapeSimple($post['timezone']);
@@ -545,7 +544,6 @@ function timeconditions_add($post){
   $fcc_password = $db->escapeSimple($post['fcc_password']);
   $deptname = $db->escapeSimple($post['deptname']);
   $generate_hint = '1';
-
 	if($displayname == '') {
 	 	$displayname = "unnamed";
 	}
@@ -779,8 +777,12 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	}
         $tz='';
 	if ($timecondition_id>0) {
+					$systz = date_default_timezone_get();
           $timezone = $db->getOne("SELECT timezone FROM timeconditions WHERE timeconditions_id = $timecondition_id");
-          if (strlen($timezone)>0) { $tz="|$timezone"; }
+          //If timezone is empty or "drfault" we use the current system tz
+					$timezone = empty($timezone)?$systz:$timezone;
+					$timezone = ($timezone == 'default')?$systz:$timezone;
+ 					$tz="|$timezone";
         }
 	foreach ($results as $val) {
     $val[1].=$tz;

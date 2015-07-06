@@ -13,6 +13,7 @@ if ($itemid){
 	$time = $thisItem['time']?$thisItem['time']:'';
 	$invert_hint = $thisItem['invert_hint']?$thisItem['invert_hint']:'0';
 	$delURL = '?display=timeconditions&action=delete&itemid='.$itemid;
+	$thisItem['timezone'] = isset($thisItem['timezone'])?$thisItem['timezone']:'default';
 
 }
 if ($itemid && $thisItem['tcstate'] !== false) {
@@ -169,6 +170,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 					</div>
 					<div class="col-md-9">
 						<select id="timezone" class="chosenselect form-control" name="timezone" id="timezone">
+							<option value="default" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo _("Use System Timezone")?>
 							<?php foreach(DateTimeZone::listIdentifiers(DateTimeZone::ALL) as $tz) {?>
 								<option value="<?php echo $tz?>" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo $tz?></option>
 							<?php } ?>
