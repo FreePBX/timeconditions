@@ -1100,6 +1100,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	}
 
 	$html = '<span id="fs'.$name.'">';
+	$html .= '<a href="#" class="delTG delAction pull-right" data-for="fs'.$name.'"><i class="fa fa-trash"></i></a>';
 	$html .= '<div class="form-group row">';
 	$html .= '<label for="'.$name.'hours" class="col-md-3 control-label">'._("Time to Start").'</label>
 				<div class="col-md-2">

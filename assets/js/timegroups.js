@@ -124,3 +124,13 @@ $(document).on('click',"#addTime",function(e){
 	newspan.appendTo('#timerows');
 	$("#timerows").append('<a href="#" id="addTime"><i class="fa fa-plus"></i> '+_("Add Time")+'</a>');
 });
+$(document).on('click',".delTG",function(e){
+  e.preventDefault();
+  var rulecount = $(".delTG").length;
+  var elem = $(this).parent();
+  if(rulecount > 1){
+    elem.remove();
+  }else{
+    alert(_("Cannot remove the only rule. At least 1 rule is required."))
+  }
+});
