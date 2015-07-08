@@ -154,6 +154,8 @@ msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
 msgstr ""
+"Ако е установено, при избирането на специален код ще се изисква PIN, за да "
+"се промени текущото състояние"
 
 #: page.timeconditions.php:104
 #, php-format
@@ -161,6 +163,8 @@ msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
+"Ако установите hint ще бъде INUSE ако времевото условие съвпада и NOT_INUSE "
+"ако не съвпада"
 
 #: timeconditions.i18n.php:20
 msgid ""
@@ -184,7 +188,7 @@ msgstr ""
 
 #: page.timeconditions.php:104
 msgid "Invert BLF Hint"
-msgstr ""
+msgstr "Инвертиране на BLF Hint"
 
 #: functions.inc.php:1258 functions.inc.php:1357
 msgid "January"
@@ -307,6 +311,10 @@ msgid ""
 "list. <strong>Important</strong>: Your selection here <strong>MUST</strong> "
 "appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
+"Установете часова зона по име, ако дестинациите са в различна часова зона от "
+"тази на сървъра. Въведете два знака за да се появи падащ списък. "
+"<strong>Важно</strong>: Вашият избор тук <strong>ТРЯБВА</strong> да се появи "
+"в списъка за избор или в директория /usr/share/zoneinfo/"
 
 #: page.timeconditions.php:199
 msgid "Submit"
@@ -473,7 +481,7 @@ msgstr "изтрито"
 
 #: functions.inc.php:317
 msgid "false goto"
-msgstr ""
+msgstr "невярно goto"
 
 #: install.php:191
 msgid "generating feature codes if needed.."
@@ -489,7 +497,7 @@ msgstr "стартиране на преместване"
 
 #: functions.inc.php:309
 msgid "true goto"
-msgstr ""
+msgstr "вярно goto"
 
 #~ msgid "text"
 #~ msgstr "текст"
