@@ -134,18 +134,27 @@ msgstr "Петък"
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "Дайте на това Времево Условие име за да ви помогне с идентифицирането му."
 
-#: views/timeconditions/form.php:122
+#: page.timeconditions.php:98
+#, php-format
+msgid "If set dialing the feature code will require a pin to change the override state"
+msgstr "Ако е установено, при избирането на специален код ще се изисква PIN, за да се промени текущото състояние"
+
+#: page.timeconditions.php:104
 #, php-format
 msgid "If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"
-msgstr ""
+msgstr "Ако установите hint ще бъде INUSE ако времевото условие съвпада и NOT_INUSE ако не съвпада"
 
 #: timeconditions.i18n.php:20
 msgid "If set to false, this will override the execution of the Time Conditions maintenance task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: views/timeconditions/form.php:105
-msgid "Invert BLF Hint"
+#: page.timeconditions.php:134
+msgid "Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule."
 msgstr ""
+
+#: page.timeconditions.php:104
+msgid "Invert BLF Hint"
+msgstr "Инвертиране на BLF Hint"
 
 #: functions.inc.php:979
 msgid "January"
@@ -223,9 +232,9 @@ msgstr "OK"
 msgid "October"
 msgstr "Октомври"
 
-#: views/timeconditions/form.php:81
+#: page.timeconditions.php:98
 msgid "Override Code Pin"
-msgstr ""
+msgstr "PIN на код за отмяна"
 
 #: views/timeconditions/form.php:28
 msgid "Permanent Override matching state"
@@ -266,6 +275,10 @@ msgstr "Септември"
 #: views/timegroups/bootnav.php:7
 msgid "Server time:"
 msgstr "Сървърно Време:"
+
+#: page.timeconditions.php:173
+msgid "Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+msgstr "Установете часова зона по име, ако дестинациите са в различна часова зона от тази на сървъра. Въведете два знака за да се появи падащ списък. <strong>Важно</strong>: Вашият избор тук <strong>ТРЯБВА</strong> да се появи в списъка за избор или в директория /usr/share/zoneinfo/ ."
 
 #: Timeconditions.class.php:111
 msgid "Submit"
@@ -342,6 +355,10 @@ msgstr "Времева Група"
 msgid "Time Groups"
 msgstr "Времеви Групи"
 
+#: page.timeconditions.php:173
+msgid "Time Zone:"
+msgstr "Времева Зона:"
+
 #: functions.inc.php:1096
 msgid "Time to Start"
 msgstr ""
@@ -401,7 +418,7 @@ msgstr "конвертиране на полето времеви условия
 
 #: functions.inc.php:317
 msgid "false goto"
-msgstr ""
+msgstr "невярно goto"
 
 #: install.php:189
 msgid "generating feature codes if needed.."
@@ -417,27 +434,22 @@ msgstr "стартиране на преместване"
 
 #: functions.inc.php:309
 msgid "true goto"
-msgstr ""
-
-#: page.timeconditions.php:98
-#, php-format
-msgid "If set dialing the feature code will require a pin to change the override state"
-msgstr ""
-
-#: page.timeconditions.php:134
-msgid "Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule."
-msgstr ""
-
-#: page.timeconditions.php:173
-msgid "Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
-msgstr ""
-
-#: page.timeconditions.php:173
-msgid "Time Zone:"
-msgstr ""
+msgstr "вярно goto"
 
 #~ msgid " deleted!"
 #~ msgstr " изтрита!"
+
+#~ msgid "Change Override:"
+#~ msgstr "Промяна на Отмяна:"
+
+#~ msgid "Check to enable the override feature code %s that allows manual changes to the timecondition."
+#~ msgstr "Кликнете за да разрешите специален код за отмяна %s който позволява ръчно превключване на времево условие."
+
+#~ msgid "Current Override:"
+#~ msgstr "Текуща Отмяна:"
+
+#~ msgid "Delete Time Condition: %s"
+#~ msgstr "Изтрий Времево Условие: %s"
 
 #~ msgid "Delete Time Group %s"
 #~ msgstr "Изтрий Времева Група %s"
@@ -448,11 +460,23 @@ msgstr ""
 #~ msgid "Destination if time does not match"
 #~ msgstr "Направление ако времето не съвпада"
 
+#~ msgid "Edit Time Condition"
+#~ msgstr "Редактирай Времево Условие"
+
 #~ msgid "Edit Time Group"
 #~ msgstr "Редактирай Времева Група"
 
+#~ msgid "Enable Override Code"
+#~ msgstr "Разреши Kод за Отмяна"
+
+#~ msgid "Generate BLF Hint"
+#~ msgstr "Генериране на BLF Hint"
+
 #~ msgid "Goto Current Time Group"
 #~ msgstr "Отиди на Текущата Времева Група"
+
+#~ msgid "If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."
+#~ msgstr "Ако е установено ще се създаде Asterisk hint за специалния код за отмяна %s асоцииран с това Времево Условие който може да се използва чрез светещите BLF бутони на телефон за включване/изключване на това Времево Условие. Ако не използвате BLF е по-добре да не маркирате това поле."
 
 #~ msgid "Month Day finish:"
 #~ msgstr "Ден от месеца за край:"
@@ -469,11 +493,23 @@ msgstr ""
 #~ msgid "New Time"
 #~ msgstr "Ново Време"
 
+#~ msgid "Please enter a valid Time Conditions Name"
+#~ msgstr "Моля въведете правилно Име на Времево Условие"
+
 #~ msgid "Remove Section and Submit Current Settings"
 #~ msgstr "Премахни Секцията и Приеми Текущите Настройки"
 
 #~ msgid "This will display as the name of this Time Group."
 #~ msgstr "Това ще се изпише за име  на тази Времева Група."
+
+#~ msgid "Time Condition name:"
+#~ msgstr "Име на Времево Условие:"
+
+#~ msgid "Time Condition:"
+#~ msgstr "Времево Условие:"
+
+#~ msgid "Time Group:"
+#~ msgstr "Времева Група:"
 
 #~ msgid "Time to finish:"
 #~ msgstr "Време (час/минути) за край:"
@@ -489,42 +525,6 @@ msgstr ""
 
 #~ msgid "Week Day start:"
 #~ msgstr "Ден от седмицата за начало:"
-
-#~ msgid "Change Override:"
-#~ msgstr "Промяна на Отмяна:"
-
-#~ msgid "Check to enable the override feature code %s that allows manual changes to the timecondition."
-#~ msgstr "Кликнете за да разрешите специален код за отмяна %s който позволява ръчно превключване на времево условие."
-
-#~ msgid "Current Override:"
-#~ msgstr "Текуща Отмяна:"
-
-#~ msgid "Delete Time Condition: %s"
-#~ msgstr "Изтрий Времево Условие: %s"
-
-#~ msgid "Edit Time Condition"
-#~ msgstr "Редактирай Времево Условие"
-
-#~ msgid "Enable Override Code"
-#~ msgstr "Разреши Kод за Отмяна"
-
-#~ msgid "Generate BLF Hint"
-#~ msgstr "Генериране на BLF Hint"
-
-#~ msgid "If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."
-#~ msgstr "Ако е установено ще се създаде Asterisk hint за специалния код за отмяна %s асоцииран с това Времево Условие който може да се използва чрез светещите BLF бутони на телефон за включване/изключване на това Времево Условие. Ако не използвате BLF е по-добре да не маркирате това поле."
-
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "Моля въведете правилно Име на Времево Условие"
-
-#~ msgid "Time Condition name:"
-#~ msgstr "Име на Времево Условие:"
-
-#~ msgid "Time Condition:"
-#~ msgstr "Времево Условие:"
-
-#~ msgid "Time Group:"
-#~ msgstr "Времева Група:"
 
 #~ msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
 #~ msgstr "Не сте избрали времева група за асоцииране с това времево условие. Ще се прехвърли към несъвпадащи направления докато не го обновите с коректна група"
