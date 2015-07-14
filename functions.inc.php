@@ -813,7 +813,6 @@ function timeconditions_timegroups_get_group($timegroup) {
 function timeconditions_timegroups_add_group($description,$times=null) {
 	global $db;
 	global $amp_conf;
-	dbug($times);
 	$sql = "INSERT timegroups_groups(description) VALUES ('$description')";
 	$db->query($sql);
 	if(method_exists($db,'insert_id')) {
