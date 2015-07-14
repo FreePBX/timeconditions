@@ -813,7 +813,7 @@ function timeconditions_timegroups_get_group($timegroup) {
 function timeconditions_timegroups_add_group($description,$times=null) {
 	global $db;
 	global $amp_conf;
-
+	dbug($times);
 	$sql = "INSERT timegroups_groups(description) VALUES ('$description')";
 	$db->query($sql);
 	if(method_exists($db,'insert_id')) {
@@ -927,6 +927,9 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
  * @return string           generated html
  */
 function timeconditions_timegroups_hour_opts($selected=''){
+	if($selected != '-'){
+		$selected = sprintf("%02d", $selected);
+	}
 	$html = '<option value=\"-\">-</option>';
 	for ($i = 0 ; $i < 24 ; $i++) {
 		$default = "";
@@ -943,6 +946,9 @@ function timeconditions_timegroups_hour_opts($selected=''){
  * @return string           generated html
  */
 function timeconditions_timegroups_minute_opts($selected=''){
+	if($selected != '-'){
+		$selected = sprintf("%02d", $selected);
+	}
 	$html = '<option value=\"-\">-</option>';
 	for ($i = 0 ; $i < 60 ; $i++) {
 		$default = "";
@@ -1016,6 +1022,9 @@ function timeconditions_timegroups_month_opts($selected=''){
  * @return string           generated html
  */
 function timeconditions_timegroups_monthday_opts($selected=''){
+	if($selected != '-'){
+		$selected = sprintf("%02d", $selected);
+	}
 	$html = '<option value=\"-\">-</option>';
 	for ($i = 0 ; $i < 32 ; $i++) {
 		$default = "";

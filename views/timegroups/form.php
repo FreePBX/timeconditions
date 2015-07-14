@@ -10,6 +10,7 @@ if($extdisplay){
 	$delURL = '?display=timegroups&action=del&extdisplay='.$extdisplay;
 	$timelist = timeconditions_timegroups_get_times($extdisplay);
 }
+$timehtml ='';
 if(!empty($timelist)){
 	foreach ($timelist as $val) {
 		$timehtml .= timeconditions_timegroups_drawtimeselects('times['.$val[0].']',$val[1]);
