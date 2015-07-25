@@ -1025,7 +1025,7 @@ function timeconditions_timegroups_monthday_opts($selected=''){
 		$selected = sprintf("%02d", $selected);
 	}
 	$html = '<option value=\"-\">-</option>';
-	for ($i = 0 ; $i < 32 ; $i++) {
+	for ($i = 1 ; $i < 32 ; $i++) {
 		$default = "";
 		if ( sprintf("%02d", $i) === $selected ) {
 			$default = ' selected';
