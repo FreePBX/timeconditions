@@ -912,7 +912,7 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 		$itemtext = (isset($item['text']) ? _($item['text']) : '');
 		$itemselected = ($currentvalue == $itemvalue) ? ' selected' : '';
 
-		$output .= "\t\t\t\t<option value=\"$itemvalue\"$itemselected>$itemtext</option>\n";
+		$output .= "\t\t\t\t<option value='$itemvalue' $itemselected>$itemtext</option>\n";
 	}
 	$output .= "\t\t\t</select>\n\t\t";
 	return $output;
@@ -929,7 +929,7 @@ function timeconditions_timegroups_hour_opts($selected=''){
 	if($selected != '-'){
 		$selected = sprintf("%02d", $selected);
 	}
-	$html = '<option value=\"-\">-</option>';
+	$html = '<option value="-">-</option>';
 	for ($i = 0 ; $i < 24 ; $i++) {
 		$default = "";
 		if ( sprintf("%02d", $i) === $selected ) {
@@ -948,7 +948,7 @@ function timeconditions_timegroups_minute_opts($selected=''){
 	if($selected != '-'){
 		$selected = sprintf("%02d", $selected);
 	}
-	$html = '<option value=\"-\">-</option>';
+	$html = '<option value="-">-</option>';
 	for ($i = 0 ; $i < 60 ; $i++) {
 		$default = "";
 		if ( sprintf("%02d", $i) === $selected ) {
@@ -973,7 +973,7 @@ function timeconditions_timegroups_weekday_opts($selected=''){
 		'fri' => _("Friday"),
 		'sat' => _("Saturday")
 	);
-	$html = '<option value=\"-\">-</option>';
+	$html = '<option value="-">-</option>';
 	foreach ($days as $key => $value) {
 		if ( $selected == $key ) {
 			$default = ' selected';
@@ -1004,7 +1004,7 @@ function timeconditions_timegroups_month_opts($selected=''){
 		'nov' => _("November"),
 		'dec' => _("December")
 	);
-	$html = '<option value=\"-\">-</option>';
+	$html = '<option value="-">-</option>';
 	foreach ($days as $key => $value) {
 		if ( $selected == $key ) {
 			$default = ' selected';
@@ -1024,7 +1024,7 @@ function timeconditions_timegroups_monthday_opts($selected=''){
 	if($selected != '-'){
 		$selected = sprintf("%02d", $selected);
 	}
-	$html = '<option value=\"-\">-</option>';
+	$html = '<option value="-">-</option>';
 	for ($i = 1 ; $i < 32 ; $i++) {
 		$default = "";
 		if ( sprintf("%02d", $i) === $selected ) {
