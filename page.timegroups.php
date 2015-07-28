@@ -17,7 +17,7 @@ switch ($request['view']) {
 
 ?>
 <div class="container-fluid">
-	<h1><?php $heading?></h1>
+	<h1><?php echo $heading?></h1>
 	<div class = "display full-border">
 		<div class="row">
 			<div class="col-sm-9">
@@ -35,4 +35,3 @@ switch ($request['view']) {
 		</div>
 	</div>
 </div>
-

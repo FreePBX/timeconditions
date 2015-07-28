@@ -1,62 +1,63 @@
 <module>
-  <rawname>timeconditions</rawname>
-  <repo>standard</repo>
-  <name>Time Conditions</name>
-  <version>13.0.4</version>
-  <publisher>Sangoma Technologies Corporation</publisher>
-  <license>GPLv3+</license>
-  <licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
-  <category>Applications</category>
-  <description>
-    Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
-  </description>
+	<rawname>timeconditions</rawname>
+	<repo>standard</repo>
+	<name>Time Conditions</name>
+	<version>13.0.5</version>
+	<publisher>Sangoma Technologies Corporation</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<category>Applications</category>
+	<description>
+		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
+	</description>
 	<changelog>
+		*13.0.5* FREEPBX-9823 including comments, FREEPBX-9824, Fix time formatting in timegroups, small cleanup
 		*13.0.4* FREEPBX-9702 Not possible configure days less than 10
-    *13.0.3* FREEPBX-9598 Set default timezone
-    *13.0.2* FREEPBX-9039 Remove Departments from FreePBX, Fix popover resolves FREEPBX-8993 for timeconditions
-    *13.0.1* FREEPBX-8689
-    *13.0.1alpha2* Fix toggle all feature code to set states properly.
-    *13.0.1alpha1* Visual Changes
-    *12.0.6* FREEPBX-7997 Systems with /var and /tmp on different partitions cause problems. Use Asterisk's temporary directory instead.
-    *12.0.5* Redo module_hook calls to use static obj
-    *12.0.4* Spelling Fixes
-    *12.0.3* Part fix for #6923 language not being set.
-    *12.0.2* FREEPBX-7166 check destinations bug
-    *12.0.1* FREEPBX-6415 Password and Invert BLF Abilities
-    *2.11.0.6* Update license
-    *2.11.0.5* Add toggle all feature code
-    *2.11.0.4* Database Abstraction Layer Changes
-    *2.11.0.2* FREEPBX-5982 Update Feature Code Admin Descriptions when Time Conditions Changes
-    *2.11.0.1* syntax error
-    *2.11.0.0* #6051
-    *2.10.0.2* #5476, #5478
-    *2.10.0.1* misc bugs
-    *2.10.0.0* new version changes
-    *2.9.0.7* #5175, #5176
-    *2.9.0.6* #5030, spelling errors
-    *2.9.0.5* #4725
-    *2.9.0.4* removed duplicate functions
-    *2.9.0.3* #4651, #4655
-    *2.9.0.2* #4636 sticky override added
-    *2.9.0.1* #4636 typo broke hints, broken destination
-    *2.9.0.0* #4636 Add Auto-resetting manual override
-  </changelog>
-  <depends>
-    <version>12.0.1rc16</version>
-  </depends>
-  <menuitems>
-    <timeconditions>Time Conditions</timeconditions>
-    <timegroups>Time Groups</timegroups>
-  </menuitems>
-  <popovers>
-    <timeconditions>
-      <display>timeconditions</display>
-      <view>form</view>
-    </timeconditions>
-  </popovers>
-  <location>release/2.11/timeconditions-2.11.0.1.tgz</location>
-  <md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
-  <supported>
-    <version>13.0</version>
-  </supported>
+		*13.0.3* FREEPBX-9598 Set default timezone
+		*13.0.2* FREEPBX-9039 Remove Departments from FreePBX, Fix popover resolves FREEPBX-8993 for timeconditions
+		*13.0.1* FREEPBX-8689
+		*13.0.1alpha2* Fix toggle all feature code to set states properly.
+		*13.0.1alpha1* Visual Changes
+		*12.0.6* FREEPBX-7997 Systems with /var and /tmp on different partitions cause problems. Use Asterisk's temporary directory instead.
+		*12.0.5* Redo module_hook calls to use static obj
+		*12.0.4* Spelling Fixes
+		*12.0.3* Part fix for #6923 language not being set.
+		*12.0.2* FREEPBX-7166 check destinations bug
+		*12.0.1* FREEPBX-6415 Password and Invert BLF Abilities
+		*2.11.0.6* Update license
+		*2.11.0.5* Add toggle all feature code
+		*2.11.0.4* Database Abstraction Layer Changes
+		*2.11.0.2* FREEPBX-5982 Update Feature Code Admin Descriptions when Time Conditions Changes
+		*2.11.0.1* syntax error
+		*2.11.0.0* #6051
+		*2.10.0.2* #5476, #5478
+		*2.10.0.1* misc bugs
+		*2.10.0.0* new version changes
+		*2.9.0.7* #5175, #5176
+		*2.9.0.6* #5030, spelling errors
+		*2.9.0.5* #4725
+		*2.9.0.4* removed duplicate functions
+		*2.9.0.3* #4651, #4655
+		*2.9.0.2* #4636 sticky override added
+		*2.9.0.1* #4636 typo broke hints, broken destination
+		*2.9.0.0* #4636 Add Auto-resetting manual override
+	</changelog>
+	<depends>
+		<version>12.0.1rc16</version>
+	</depends>
+	<menuitems>
+		<timeconditions>Time Conditions</timeconditions>
+		<timegroups>Time Groups</timegroups>
+	</menuitems>
+	<popovers>
+		<timeconditions>
+			<display>timeconditions</display>
+			<view>form</view>
+		</timeconditions>
+	</popovers>
+	<location>release/2.11/timeconditions-2.11.0.1.tgz</location>
+	<md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
+	<supported>
+		<version>13.0</version>
+	</supported>
 </module>

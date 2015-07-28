@@ -3,6 +3,7 @@
 //	Copyright 2015 Sangoma Technologies.
 //
 extract($request,EXTR_SKIP);
+$subhead = _("Add Time Condition");
 if ($itemid){
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$itemid);
 	$code = $fcc->getCodeActive();
@@ -14,7 +15,7 @@ if ($itemid){
 	$invert_hint = $thisItem['invert_hint']?$thisItem['invert_hint']:'0';
 	$delURL = '?display=timeconditions&action=delete&itemid='.$itemid;
 	$thisItem['timezone'] = isset($thisItem['timezone'])?$thisItem['timezone']:'default';
-
+	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
 }
 if ($itemid && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
@@ -43,6 +44,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 }
 
 ?>
+<h2><?php echo $subhead?></h2>
 <form autocomplete="off" name="edit" id="edit" action="" method="post" onsubmit="return edit_onsubmit();" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
 <input type="hidden" name="display" value="timeconditions">
 <input type="hidden" name="view" value="form">
@@ -91,7 +93,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="fcc_password-help" class="help-block fpbx-help-block"><?php echo _("Give this Time Condition a brief name to help you identify it.")?></span>
+			<span id="fcc_password-help" class="help-block fpbx-help-block"><?php echo _("If set dialing the feature code will require a pin to change the override state")?></span>
 		</div>
 	</div>
 </div>
