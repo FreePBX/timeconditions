@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-13 21:27-0400\n"
+"POT-Creation-Date: 2015-07-28 16:31-0700\n"
 "PO-Revision-Date: 2015-04-25 23:26+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Add Time"
 msgstr ""
 
-#: views/timeconditions/bootnav.php:4
+#: views/timeconditions/bootnav.php:4 views/timeconditions/form.php:6
 msgid "Add Time Condition"
 msgstr "Добавить временное правило"
 
@@ -66,7 +66,7 @@ msgstr "Август"
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
-#: views/timeconditions/form.php:135
+#: views/timeconditions/form.php:137
 msgid "Change Override"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Проверяем старые правила по времени для обновления.."
 
-#: views/timeconditions/form.php:148
+#: views/timeconditions/form.php:150
 msgid "Current"
 msgstr ""
 
@@ -90,25 +90,30 @@ msgstr ""
 msgid "Description"
 msgstr "Описание"
 
-#: views/timeconditions/form.php:274
+#: views/timeconditions/form.php:276
 msgid "Destination if time does not matche"
 msgstr ""
 
-#: views/timeconditions/form.php:244
+#: views/timeconditions/form.php:246
 msgid "Destination if time matches"
 msgstr "Назначение, если попадает во временную группу"
 
-#: views/timeconditions/form.php:226
+#: views/timeconditions/form.php:228
 msgid "Destination matches"
 msgstr ""
 
-#: views/timeconditions/form.php:256
+#: views/timeconditions/form.php:258
 msgid "Destination non-matches"
 msgstr ""
 
 #: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "ОШИБКА: не удалось сконвертировать поле "
+
+#: views/timeconditions/form.php:18
+#, php-format
+msgid "Edit Time Condition: %s (%s)"
+msgstr ""
 
 #: assets/js/timegroups.js:106
 msgid "Edit: "
@@ -122,13 +127,21 @@ msgstr "Февраль"
 msgid "Friday"
 msgstr "Пятница"
 
-#: views/timeconditions/form.php:70 views/timeconditions/form.php:94
+#: views/timeconditions/form.php:72
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 "Хорошо бы присвоить какое-то описание для Правила по времени, это поможет в "
 "дальнейшем."
 
-#: views/timeconditions/form.php:123
+#: views/timeconditions/form.php:96
+msgid ""
+"If set dialing the feature code will require a pin to change the override "
+"state"
+msgstr ""
+"Если установлено, набор кода функции потребует ПИН, чтобы изменить состояние "
+"переопределения"
+
+#: views/timeconditions/form.php:125
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
@@ -137,7 +150,7 @@ msgstr ""
 "Если установлено, индикатор будет InUse если условие по времени совпадают, и "
 "NOT_INUSE, если нет"
 
-#: views/timeconditions/form.php:106
+#: views/timeconditions/form.php:108
 msgid "Invert BLF Hint"
 msgstr "Инвертировать BLF индикатор"
 
@@ -193,11 +206,11 @@ msgstr ""
 msgid "Month start"
 msgstr ""
 
-#: views/timeconditions/form.php:114
+#: views/timeconditions/form.php:116
 msgid "No"
 msgstr ""
 
-#: views/timeconditions/form.php:23
+#: views/timeconditions/form.php:24
 msgid "No Override"
 msgstr "Не перезаписывать"
 
@@ -213,23 +226,23 @@ msgstr "ОК"
 msgid "October"
 msgstr "Октябрь"
 
-#: views/timeconditions/form.php:82
+#: views/timeconditions/form.php:84
 msgid "Override Code Pin"
 msgstr "Переопределить ПИН"
 
-#: views/timeconditions/form.php:29
+#: views/timeconditions/form.php:30
 msgid "Permanent Override matching state"
 msgstr "Постоянно перезаписывать при совпадении"
 
-#: views/timeconditions/form.php:35
+#: views/timeconditions/form.php:36
 msgid "Permanent Override unmatching state"
 msgstr "Долговременное переопределение несоответствия состояния"
 
-#: views/timeconditions/form.php:143
+#: views/timeconditions/form.php:145
 msgid "Permanently matched"
 msgstr "Постоянное совпадение"
 
-#: views/timeconditions/form.php:145
+#: views/timeconditions/form.php:147
 msgid "Permanently unmatched"
 msgstr "Временное несовпадение"
 
@@ -237,7 +250,7 @@ msgstr "Временное несовпадение"
 msgid "Reset"
 msgstr ""
 
-#: views/timeconditions/form.php:141
+#: views/timeconditions/form.php:143
 msgid "Reset Override"
 msgstr "Сброс перезаписи"
 
@@ -245,7 +258,7 @@ msgstr "Сброс перезаписи"
 msgid "Saturday"
 msgstr "Суббота"
 
-#: views/timeconditions/form.php:209
+#: views/timeconditions/form.php:211
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
@@ -264,7 +277,7 @@ msgstr "Сентябрь"
 msgid "Server time:"
 msgstr "Точное время (сервера):"
 
-#: views/timeconditions/form.php:185
+#: views/timeconditions/form.php:187
 msgid ""
 "Specify the time zone by name if the destinations are in a different time "
 "zone than the server. Type two characters to start an auto-complete pick-"
@@ -280,23 +293,23 @@ msgstr "Применить"
 msgid "Sunday"
 msgstr "Воскресенье"
 
-#: views/timeconditions/form.php:26
+#: views/timeconditions/form.php:27
 msgid "Temporary Override matching state"
 msgstr "Временно перезаписывать при совпадении"
 
-#: views/timeconditions/form.php:32
+#: views/timeconditions/form.php:33
 msgid "Temporary Override unmatching state"
 msgstr "Временно перезаписывать при несовпадении"
 
-#: views/timeconditions/form.php:142
+#: views/timeconditions/form.php:144
 msgid "Temporary matched"
 msgstr "Временное совпадение"
 
-#: views/timeconditions/form.php:144
+#: views/timeconditions/form.php:146
 msgid "Temporary unmatched"
 msgstr "Временное несовпадение"
 
-#: views/timeconditions/form.php:156
+#: views/timeconditions/form.php:158
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -338,7 +351,7 @@ msgstr "Четверг"
 msgid "Time Condition"
 msgstr "Правило по времени"
 
-#: views/timeconditions/form.php:58
+#: views/timeconditions/form.php:60
 msgid "Time Condition name"
 msgstr ""
 
@@ -351,7 +364,7 @@ msgstr "Правило по времени: %s"
 msgid "Time Conditions"
 msgstr "Правила по времени"
 
-#: views/timeconditions/form.php:197
+#: views/timeconditions/form.php:199
 msgid "Time Group"
 msgstr "Временная группа"
 
@@ -359,7 +372,7 @@ msgstr "Временная группа"
 msgid "Time Groups"
 msgstr "Временная группа"
 
-#: views/timeconditions/form.php:168
+#: views/timeconditions/form.php:170
 msgid "Time Zone:"
 msgstr "Часовой пояс:"
 
@@ -379,11 +392,11 @@ msgstr ""
 msgid "Tuesday"
 msgstr "Вторник"
 
-#: views/timeconditions/form.php:140
+#: views/timeconditions/form.php:142
 msgid "Unchanged"
 msgstr "Неизменёный"
 
-#: views/timeconditions/form.php:38 views/timeconditions/form.php:42
+#: views/timeconditions/form.php:39 views/timeconditions/form.php:43
 msgid "Unknown State"
 msgstr "Неизвестное состояние"
 
@@ -392,7 +405,7 @@ msgstr "Неизвестное состояние"
 msgid "Upgraded %s and created group %s"
 msgstr "Обновлено %s и создана группа %s"
 
-#: views/timeconditions/form.php:173
+#: views/timeconditions/form.php:175
 msgid "Use System Timezone"
 msgstr ""
 
@@ -408,7 +421,7 @@ msgstr ""
 msgid "Week Day finish"
 msgstr ""
 
-#: views/timeconditions/form.php:112
+#: views/timeconditions/form.php:114
 msgid "Yes"
 msgstr ""
 
@@ -491,13 +504,6 @@ msgstr "переход, если правда"
 
 #~ msgid "Goto Current Time Group"
 #~ msgstr "Переправить в текущую временную группу"
-
-#~ msgid ""
-#~ "If set dialing the feature code will require a pin to change the override "
-#~ "state"
-#~ msgstr ""
-#~ "Если установлено, набор кода функции потребует ПИН, чтобы изменить "
-#~ "состояние переопределения"
 
 #~ msgid ""
 #~ "If set to false, this will override the execution of the Time Conditions "

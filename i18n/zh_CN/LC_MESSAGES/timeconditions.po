@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-13 21:27-0400\n"
+"POT-Creation-Date: 2015-07-28 16:31-0700\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Add Time"
 msgstr ""
 
-#: views/timeconditions/bootnav.php:4
+#: views/timeconditions/bootnav.php:4 views/timeconditions/form.php:6
 msgid "Add Time Condition"
 msgstr "添加时间条件控制"
 
@@ -63,7 +63,7 @@ msgstr "八月"
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
-#: views/timeconditions/form.php:135
+#: views/timeconditions/form.php:137
 msgid "Change Override"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "检查是否有老的时间条件设置需要升级。。。"
 
-#: views/timeconditions/form.php:148
+#: views/timeconditions/form.php:150
 msgid "Current"
 msgstr ""
 
@@ -87,25 +87,30 @@ msgstr ""
 msgid "Description"
 msgstr "描述"
 
-#: views/timeconditions/form.php:274
+#: views/timeconditions/form.php:276
 msgid "Destination if time does not matche"
 msgstr ""
 
-#: views/timeconditions/form.php:244
+#: views/timeconditions/form.php:246
 msgid "Destination if time matches"
 msgstr "时间匹配时的目的地"
 
-#: views/timeconditions/form.php:226
+#: views/timeconditions/form.php:228
 msgid "Destination matches"
 msgstr ""
 
-#: views/timeconditions/form.php:256
+#: views/timeconditions/form.php:258
 msgid "Destination non-matches"
 msgstr ""
 
 #: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "错误：无法转换字段"
+
+#: views/timeconditions/form.php:18
+#, php-format
+msgid "Edit Time Condition: %s (%s)"
+msgstr ""
 
 #: assets/js/timegroups.js:106
 msgid "Edit: "
@@ -119,18 +124,24 @@ msgstr "二月"
 msgid "Friday"
 msgstr "周五"
 
-#: views/timeconditions/form.php:70 views/timeconditions/form.php:94
+#: views/timeconditions/form.php:72
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "为时间条件控制取一个简短的名字以帮助识别它。"
 
-#: views/timeconditions/form.php:123
+#: views/timeconditions/form.php:96
+msgid ""
+"If set dialing the feature code will require a pin to change the override "
+"state"
+msgstr ""
+
+#: views/timeconditions/form.php:125
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: views/timeconditions/form.php:106
+#: views/timeconditions/form.php:108
 msgid "Invert BLF Hint"
 msgstr "切换BLF Hint"
 
@@ -186,11 +197,11 @@ msgstr ""
 msgid "Month start"
 msgstr ""
 
-#: views/timeconditions/form.php:114
+#: views/timeconditions/form.php:116
 msgid "No"
 msgstr ""
 
-#: views/timeconditions/form.php:23
+#: views/timeconditions/form.php:24
 msgid "No Override"
 msgstr ""
 
@@ -206,23 +217,23 @@ msgstr "完成"
 msgid "October"
 msgstr "十月"
 
-#: views/timeconditions/form.php:82
+#: views/timeconditions/form.php:84
 msgid "Override Code Pin"
 msgstr "覆盖状态修改密码"
 
-#: views/timeconditions/form.php:29
+#: views/timeconditions/form.php:30
 msgid "Permanent Override matching state"
 msgstr ""
 
-#: views/timeconditions/form.php:35
+#: views/timeconditions/form.php:36
 msgid "Permanent Override unmatching state"
 msgstr ""
 
-#: views/timeconditions/form.php:143
+#: views/timeconditions/form.php:145
 msgid "Permanently matched"
 msgstr ""
 
-#: views/timeconditions/form.php:145
+#: views/timeconditions/form.php:147
 msgid "Permanently unmatched"
 msgstr ""
 
@@ -230,7 +241,7 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: views/timeconditions/form.php:141
+#: views/timeconditions/form.php:143
 msgid "Reset Override"
 msgstr ""
 
@@ -238,7 +249,7 @@ msgstr ""
 msgid "Saturday"
 msgstr "周六"
 
-#: views/timeconditions/form.php:209
+#: views/timeconditions/form.php:211
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
@@ -255,7 +266,7 @@ msgstr "九月"
 msgid "Server time:"
 msgstr "服务器时间："
 
-#: views/timeconditions/form.php:185
+#: views/timeconditions/form.php:187
 msgid ""
 "Specify the time zone by name if the destinations are in a different time "
 "zone than the server. Type two characters to start an auto-complete pick-"
@@ -271,23 +282,23 @@ msgstr "提交"
 msgid "Sunday"
 msgstr "周日"
 
-#: views/timeconditions/form.php:26
+#: views/timeconditions/form.php:27
 msgid "Temporary Override matching state"
 msgstr ""
 
-#: views/timeconditions/form.php:32
+#: views/timeconditions/form.php:33
 msgid "Temporary Override unmatching state"
 msgstr ""
 
-#: views/timeconditions/form.php:142
+#: views/timeconditions/form.php:144
 msgid "Temporary matched"
 msgstr ""
 
-#: views/timeconditions/form.php:144
+#: views/timeconditions/form.php:146
 msgid "Temporary unmatched"
 msgstr ""
 
-#: views/timeconditions/form.php:156
+#: views/timeconditions/form.php:158
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -318,7 +329,7 @@ msgstr "周四"
 msgid "Time Condition"
 msgstr "时间条件"
 
-#: views/timeconditions/form.php:58
+#: views/timeconditions/form.php:60
 msgid "Time Condition name"
 msgstr ""
 
@@ -331,7 +342,7 @@ msgstr "时间条件设置：%s"
 msgid "Time Conditions"
 msgstr "时间条件设置"
 
-#: views/timeconditions/form.php:197
+#: views/timeconditions/form.php:199
 msgid "Time Group"
 msgstr "时间小组"
 
@@ -339,7 +350,7 @@ msgstr "时间小组"
 msgid "Time Groups"
 msgstr "时间小组"
 
-#: views/timeconditions/form.php:168
+#: views/timeconditions/form.php:170
 msgid "Time Zone:"
 msgstr ""
 
@@ -359,11 +370,11 @@ msgstr ""
 msgid "Tuesday"
 msgstr "周二"
 
-#: views/timeconditions/form.php:140
+#: views/timeconditions/form.php:142
 msgid "Unchanged"
 msgstr ""
 
-#: views/timeconditions/form.php:38 views/timeconditions/form.php:42
+#: views/timeconditions/form.php:39 views/timeconditions/form.php:43
 msgid "Unknown State"
 msgstr ""
 
@@ -372,7 +383,7 @@ msgstr ""
 msgid "Upgraded %s and created group %s"
 msgstr "升级了%s并且创建了小组%s"
 
-#: views/timeconditions/form.php:173
+#: views/timeconditions/form.php:175
 msgid "Use System Timezone"
 msgstr ""
 
@@ -388,7 +399,7 @@ msgstr ""
 msgid "Week Day finish"
 msgstr ""
 
-#: views/timeconditions/form.php:112
+#: views/timeconditions/form.php:114
 msgid "Yes"
 msgstr ""
 
