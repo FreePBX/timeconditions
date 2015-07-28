@@ -85,7 +85,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="fcc_password"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="number" class="form-control" id="fcc_password" name="fcc_password" value="<?php echo $fcc_password?>">
+						<input type="number" min="0" class="form-control" id="fcc_password" name="fcc_password" value="<?php echo $fcc_password?>">
 					</div>
 				</div>
 			</div>
