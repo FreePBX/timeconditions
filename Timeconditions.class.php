@@ -29,21 +29,17 @@ class Timeconditions implements \BMO {
 				switch ($action) {
 					case "add":
 						$itemid = timeconditions_add($request);
+						$_REQUEST['extdisplay'] = $itemid;
 						needreload();
-						//Todo: Remove this later, need to fix redirects...
-						//redirect_standard('itemid');
 					break;
 					case "delete":
 						timeconditions_del($itemid);
+						$_REQUEST['extdisplay'] = NULL;
 						needreload();
-						//Todo: Remove this later, need to fix redirects the BMO way.
-						//redirect_standard();
 					break;
 					case "edit":  //just delete and re-add
 						timeconditions_edit($itemid,$request);
 						needreload();
-						//Todo: Remove this later, need to fix redirects the BMO way.
-						//redirect_standard('itemid', 'view');
 					break;
 				}
 			break;
@@ -54,7 +50,7 @@ class Timeconditions implements \BMO {
 				$times = isset($request['times'])?$request['times']:null;
 				switch($action){
 					case 'add':
-						timeconditions_timegroups_add_group($description,$times);
+						$_REQUEST['extdisplay'] = timeconditions_timegroups_add_group($description,$times);
 						break;
 					case 'edit':
 						timeconditions_timegroups_edit_group($timegroup,$description);

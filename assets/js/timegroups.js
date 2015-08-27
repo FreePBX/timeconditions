@@ -115,6 +115,7 @@ $(document).on('click',"#addTime",function(e){
 	var span = $(this).parent().find('span').last();
 	$("#addTime").remove();
 	var newspan  = span.clone();
+  newspan.attr('id','fstimes['+nextid+']')
 	var items = newspan.children();
 	items.find('select').each(function(){
 		$(this).children().removeAttr("selected");
