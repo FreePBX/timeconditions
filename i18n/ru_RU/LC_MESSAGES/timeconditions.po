@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-28 16:31-0700\n"
+"POT-Creation-Date: 2015-08-27 12:59-0700\n"
 "PO-Revision-Date: 2015-04-25 23:26+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -38,7 +38,7 @@ msgstr "Перезаписать Правила по времени"
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:125
+#: views/timegroups/form.php:62 assets/js/timegroups.js:126
 msgid "Add Time"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr "Апрель"
 msgid "August"
 msgstr "Август"
 
-#: assets/js/timegroups.js:134
+#: assets/js/timegroups.js:135
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "December"
 msgstr "Декабрь"
 
-#: Timeconditions.class.php:100
+#: Timeconditions.class.php:96
 msgid "Delete"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr "Постоянное совпадение"
 msgid "Permanently unmatched"
 msgstr "Временное несовпадение"
 
-#: Timeconditions.class.php:105
+#: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
 
@@ -285,7 +285,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:110
+#: Timeconditions.class.php:106
 msgid "Submit"
 msgstr "Применить"
 
