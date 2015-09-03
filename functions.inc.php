@@ -260,13 +260,11 @@ function timeconditions_get_config($engine) {
 						$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
 					} else {
 						$ext->add($m_context, 's', 'playback', new ext_gosub('1', 'lang-playback', $m_context, 'hook_0'));
-						//$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 					}
 					$lang = 'en'; //English
 					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 					$lang = 'ja'; //Japanese
 					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
-						//$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 				}
 				if ($need_maint) {
 					/* Now we have to make sure there is an active call file and if not kick one off.
