@@ -212,6 +212,9 @@ function timeconditions_get_config($engine) {
 
 					$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
 					$m_context = 'macro-toggle-tc';
+					// for i18n playback in multiple languages
+					$ext->add($m_context, 'lang-playback', '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$m_context.',${CHANNEL(language)})}]', $m_context.',${CHANNEL(language)},${ARG1}', $m_context.',en,${ARG1}'));
+					$ext->add($m_context, 'lang-playback', '', new ext_return());
 					//Modifications by namezero111111 follow (FREEPBX-6415)
 					if('' != $fcc_password) {
 						$ext->add($m_context, 's', '', new ext_authenticate('${ARG2}'));
@@ -256,8 +259,14 @@ function timeconditions_get_config($engine) {
 					if ($amp_conf['FCBEEPONLY']) {
 						$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
 					} else {
-						$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+						$ext->add($m_context, 's', 'playback', new ext_gosub('1', 'lang-playback', $m_context, 'hook_0'));
+						//$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 					}
+					$lang = 'en'; //English
+					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+					$lang = 'ja'; //Japanese
+					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+						//$ext->add($m_context, 's', 'playback', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 				}
 				if ($need_maint) {
 					/* Now we have to make sure there is an active call file and if not kick one off.
