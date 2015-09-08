@@ -803,6 +803,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 function timeconditions_timegroups_get_group($timegroup) {
 	global $db;
 
+	$timegroup = $db->escapeSimple($timegroup);
 	$sql = "SELECT id, description FROM timegroups_groups WHERE id = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
@@ -820,6 +821,8 @@ function timeconditions_timegroups_get_group($timegroup) {
 function timeconditions_timegroups_add_group($description,$times=null) {
 	global $db;
 	global $amp_conf;
+
+	$description = $db->escapeSimple($description);
 	$sql = "INSERT timegroups_groups(description) VALUES ('$description')";
 	$db->query($sql);
 	if(method_exists($db,'insert_id')) {
@@ -838,6 +841,7 @@ function timeconditions_timegroups_add_group_timestrings($description,$timestrin
 	global $db;
 	global $amp_conf;
 
+	$description = $db->escapeSimple($description);
 	$sql = "insert timegroups_groups(description) VALUES ('$description')";
 	$db->query($sql);
 	if(method_exists($db,'insert_id')) {
@@ -854,6 +858,7 @@ function timeconditions_timegroups_add_group_timestrings($description,$timestrin
 function timeconditions_timegroups_del_group($timegroup) {
 	global $db;
 
+	$timegroup = $db->escapeSimple($timegroup);
 	$sql = "delete from timegroups_details where timegroupid = $timegroup";
 	$db->query($sql);
 	$sql = "delete from timegroups_groups where id = $timegroup";
@@ -865,6 +870,7 @@ function timeconditions_timegroups_del_group($timegroup) {
 function timeconditions_timegroups_edit_group($timegroup,$description) {
 	global $db;
 
+	$timegroup = $db->escapeSimple($timegroup);
 	$sql = "UPDATE timegroups_groups SET description = '$description' WHERE id = $timegroup";
 	$db->query($sql);
 	needreload();
@@ -873,7 +879,9 @@ function timeconditions_timegroups_edit_group($timegroup,$description) {
 //update the timegroup_detail under a single timegroup from the timegroups page
 function timeconditions_timegroups_edit_times($timegroup,$times) {
 	global $db;
-	$sql = "delete from timegroups_details where timegroupid = $timegroup";
+
+	$timegroup = $db->escapeSimple($timegroup);
+	$sql = "DELETE FROM timegroups_details WHERE timegroupid = $timegroup";
 	$db->query($sql);
 	foreach ($times as $key=>$val) {
 		extract($val);
@@ -890,6 +898,7 @@ function timeconditions_timegroups_edit_times($timegroup,$times) {
 function timeconditions_timegroups_edit_timestrings($timegroup,$timestrings) {
 	global $db;
 
+	$timegroup = $db->escapeSimple($timegroup);
 	$sql = "DELETE FROM timegroups_details WHERE timegroupid = $timegroup";
 	$db->query($sql);
 	foreach ($timestrings as $key=>$val) {
