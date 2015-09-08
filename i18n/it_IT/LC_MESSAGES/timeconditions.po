@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-27 12:59-0700\n"
+"POT-Creation-Date: 2015-09-08 12:39-0700\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -24,19 +24,19 @@ msgstr ""
 "%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, "
 "ricontrollare"
 
-#: functions.inc.php:906
+#: functions.inc.php:913
 msgid "--Select a Group--"
 msgstr "--Selezionare un Gruppo--"
 
-#: functions.inc.php:525 functions.inc.php:590 install.php:200
+#: functions.inc.php:532 functions.inc.php:597 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
-#: views/timeconditions/grid.php:35 assets/js/timegroups.js:78
+#: views/timeconditions/grid.php:35 assets/js/timegroups.js:81
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:126
+#: views/timegroups/form.php:62 assets/js/timegroups.js:129
 msgid "Add Time"
 msgstr ""
 
@@ -52,15 +52,15 @@ msgstr "Aggiungi Gruppo Temporale"
 msgid "Add a time for this time condition"
 msgstr ""
 
-#: functions.inc.php:997
+#: functions.inc.php:1004
 msgid "April"
 msgstr "Aprile"
 
-#: functions.inc.php:1001
+#: functions.inc.php:1008
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups.js:135
+#: assets/js/timegroups.js:138
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -76,7 +76,7 @@ msgstr "Sto controllando per le vecchie condizioni temporali da aggiornare.."
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:1005
+#: functions.inc.php:1012
 msgid "December"
 msgstr "Dicembre"
 
@@ -84,7 +84,7 @@ msgstr "Dicembre"
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:33 assets/js/timegroups.js:74
+#: views/timegroups/form.php:33 assets/js/timegroups.js:77
 msgid "Description"
 msgstr "Descrizione"
 
@@ -113,15 +113,15 @@ msgstr "ERRORE: conversione campo fallita"
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: assets/js/timegroups.js:106
+#: assets/js/timegroups.js:109
 msgid "Edit: "
 msgstr ""
 
-#: functions.inc.php:995
+#: functions.inc.php:1002
 msgid "February"
 msgstr "Febbraio"
 
-#: functions.inc.php:973
+#: functions.inc.php:980
 msgid "Friday"
 msgstr "Venerdì"
 
@@ -146,15 +146,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:994
+#: functions.inc.php:1001
 msgid "January"
 msgstr "Gennaio"
 
-#: functions.inc.php:1000
+#: functions.inc.php:1007
 msgid "July"
 msgstr "Luglio"
 
-#: functions.inc.php:999
+#: functions.inc.php:1006
 msgid "June"
 msgstr "Giugno"
 
@@ -170,31 +170,31 @@ msgstr ""
 msgid "List Time Groups"
 msgstr ""
 
-#: functions.inc.php:996
+#: functions.inc.php:1003
 msgid "March"
 msgstr "Marzo"
 
-#: functions.inc.php:998
+#: functions.inc.php:1005
 msgid "May"
 msgstr "Maggio"
 
-#: functions.inc.php:969
+#: functions.inc.php:976
 msgid "Monday"
 msgstr "Lunedì"
 
-#: functions.inc.php:1168
+#: functions.inc.php:1175
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:1159
+#: functions.inc.php:1166
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:1186
+#: functions.inc.php:1193
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:1177
+#: functions.inc.php:1184
 msgid "Month start"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "No Override"
 msgstr ""
 
-#: functions.inc.php:1004
+#: functions.inc.php:1011
 msgid "November"
 msgstr "Novembre"
 
@@ -214,7 +214,7 @@ msgstr "Novembre"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:1003
+#: functions.inc.php:1010
 msgid "October"
 msgstr "Ottobre"
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:974
+#: functions.inc.php:981
 msgid "Saturday"
 msgstr "Sabato"
 
@@ -261,7 +261,7 @@ msgstr ""
 "seleziona un gruppo, la chiamata sarà inviata sempre alla destinazione non "
 "corrispondente."
 
-#: functions.inc.php:1002
+#: functions.inc.php:1009
 msgid "September"
 msgstr "Settembre"
 
@@ -281,7 +281,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Conferma"
 
-#: functions.inc.php:968
+#: functions.inc.php:975
 msgid "Sunday"
 msgstr "Domenica"
 
@@ -314,7 +314,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups.js:57
+#: assets/js/timegroups.js:60
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -324,7 +324,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:972
+#: functions.inc.php:979
 msgid "Thursday"
 msgstr "Giovedì"
 
@@ -336,7 +336,7 @@ msgstr "Condizione Temporale"
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:304
+#: functions.inc.php:21 functions.inc.php:311
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Condizione Temporale: %s"
@@ -349,7 +349,7 @@ msgstr "Condizioni Temporali"
 msgid "Time Group"
 msgstr "Gruppo Temporale"
 
-#: page.timegroups.php:7 assets/js/timegroups.js:92
+#: page.timegroups.php:7 assets/js/timegroups.js:95
 msgid "Time Groups"
 msgstr "Gruppi Temporali"
 
@@ -357,11 +357,11 @@ msgstr "Gruppi Temporali"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:1115
+#: functions.inc.php:1122
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:1128
+#: functions.inc.php:1135
 msgid "Time to finish"
 msgstr ""
 
@@ -369,7 +369,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:970
+#: functions.inc.php:977
 msgid "Tuesday"
 msgstr "Martedì"
 
@@ -390,15 +390,15 @@ msgstr "Aggiornato %s e creato gruppo %s"
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:971
+#: functions.inc.php:978
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: functions.inc.php:1141
+#: functions.inc.php:1148
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:1150
+#: functions.inc.php:1157
 msgid "Week Day finish"
 msgstr ""
 
@@ -418,7 +418,7 @@ msgstr ""
 msgid "converting timeconditions time field to int.."
 msgstr "conversione campo data timeconditions verso int.."
 
-#: functions.inc.php:317
+#: functions.inc.php:324
 msgid "false goto"
 msgstr ""
 
@@ -434,7 +434,7 @@ msgstr "nessun upgrade necessario"
 msgid "starting migration"
 msgstr "inizio migrazione"
 
-#: functions.inc.php:309
+#: functions.inc.php:316
 msgid "true goto"
 msgstr ""
 

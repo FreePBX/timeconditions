@@ -47,8 +47,11 @@ function updateTime()
 		hour = 0;
 	}
 
-	document.getElementById("idTime").innerHTML = PadDigits(hour,2)+":"+PadDigits(min,2)+":"+PadDigits(sec,2);
-	var t = setTimeout('updateTime()',1000);
+  if($("#idTime").length) {
+    document.getElementById("idTime").innerHTML = PadDigits(hour,2)+":"+PadDigits(min,2)+":"+PadDigits(sec,2);
+    var t = setTimeout('updateTime()',1000);
+  }
+
 }
 
 updateTime();

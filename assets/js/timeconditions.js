@@ -1,7 +1,3 @@
-if(FreePBX.params.display == 'timeconditions'){
-var theForm = document.edit;
-theForm.displayname.focus();
-}
 function edit_onsubmit() {
 	var msgInvalidTimeCondName = "Please enter a valid Time Conditions Name";
 	var msgInvalidOverPin = "Please enter a valid Override Code Pin";
