@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 12:39-0700\n"
+"POT-Creation-Date: 2015-09-08 15:00-0700\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 
-#: functions.inc.php:913
+#: functions.inc.php:922
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
@@ -52,11 +52,11 @@ msgstr "הוסף קבוצת זמנים"
 msgid "Add a time for this time condition"
 msgstr ""
 
-#: functions.inc.php:1004
+#: functions.inc.php:1013
 msgid "April"
 msgstr "אפריל"
 
-#: functions.inc.php:1008
+#: functions.inc.php:1017
 msgid "August"
 msgstr "אוגוסט"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:1012
+#: functions.inc.php:1021
 msgid "December"
 msgstr "דצמבר"
 
@@ -117,11 +117,11 @@ msgstr ""
 msgid "Edit: "
 msgstr ""
 
-#: functions.inc.php:1002
+#: functions.inc.php:1011
 msgid "February"
 msgstr "פברואר"
 
-#: functions.inc.php:980
+#: functions.inc.php:989
 msgid "Friday"
 msgstr "שישי"
 
@@ -146,15 +146,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:1001
+#: functions.inc.php:1010
 msgid "January"
 msgstr "ינואר"
 
-#: functions.inc.php:1007
+#: functions.inc.php:1016
 msgid "July"
 msgstr "יולי"
 
-#: functions.inc.php:1006
+#: functions.inc.php:1015
 msgid "June"
 msgstr "יוני"
 
@@ -170,31 +170,31 @@ msgstr ""
 msgid "List Time Groups"
 msgstr ""
 
-#: functions.inc.php:1003
+#: functions.inc.php:1012
 msgid "March"
 msgstr "מרץ"
 
-#: functions.inc.php:1005
+#: functions.inc.php:1014
 msgid "May"
 msgstr "מאי"
 
-#: functions.inc.php:976
+#: functions.inc.php:985
 msgid "Monday"
 msgstr "שני"
 
-#: functions.inc.php:1175
+#: functions.inc.php:1184
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:1166
+#: functions.inc.php:1175
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:1193
+#: functions.inc.php:1202
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:1184
+#: functions.inc.php:1193
 msgid "Month start"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "No Override"
 msgstr "ללא מעקף"
 
-#: functions.inc.php:1011
+#: functions.inc.php:1020
 msgid "November"
 msgstr "נובמבר"
 
@@ -214,7 +214,7 @@ msgstr "נובמבר"
 msgid "OK"
 msgstr "תקין"
 
-#: functions.inc.php:1010
+#: functions.inc.php:1019
 msgid "October"
 msgstr "אוקטובר"
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr "אתחל מעקף"
 
-#: functions.inc.php:981
+#: functions.inc.php:990
 msgid "Saturday"
 msgstr "שבת"
 
@@ -257,7 +257,7 @@ msgid ""
 "match destination."
 msgstr ""
 
-#: functions.inc.php:1009
+#: functions.inc.php:1018
 msgid "September"
 msgstr "ספטמבר"
 
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Submit"
 msgstr "החל שינויים"
 
-#: functions.inc.php:975
+#: functions.inc.php:984
 msgid "Sunday"
 msgstr "ראשון"
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:979
+#: functions.inc.php:988
 msgid "Thursday"
 msgstr "חמישי"
 
@@ -353,11 +353,11 @@ msgstr "קבוצות זמן"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:1122
+#: functions.inc.php:1131
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:1135
+#: functions.inc.php:1144
 msgid "Time to finish"
 msgstr ""
 
@@ -365,7 +365,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:977
+#: functions.inc.php:986
 msgid "Tuesday"
 msgstr "שלישי"
 
@@ -386,15 +386,15 @@ msgstr ""
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:978
+#: functions.inc.php:987
 msgid "Wednesday"
 msgstr "רביעי"
 
-#: functions.inc.php:1148
+#: functions.inc.php:1157
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:1157
+#: functions.inc.php:1166
 msgid "Week Day finish"
 msgstr ""
 
