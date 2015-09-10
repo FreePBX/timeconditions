@@ -45,7 +45,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 
 ?>
 <h2><?php echo $subhead?></h2>
-<form autocomplete="off" name="edit" id="edit" action="" method="post" onsubmit="return edit_onsubmit();" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
+<form autocomplete="off" name="edit" id="edit" action="" method="post" onsubmit="return edit_onsubmit(this);" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
 <input type="hidden" name="display" value="timeconditions">
 <input type="hidden" name="view" value="form">
 <input type="hidden" name="action" value="<?php echo ($itemid ? 'edit' : 'add') ?>">

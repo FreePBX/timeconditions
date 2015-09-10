@@ -1,7 +1,7 @@
-function edit_onsubmit() {
-	var msgInvalidTimeCondName = "Please enter a valid Time Conditions Name";
-	var msgInvalidOverPin = "Please enter a valid Override Code Pin";
-	var msgInvalidTimeGroup = "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group";
+function edit_onsubmit(theForm) {
+	var msgInvalidTimeCondName = _("Please enter a valid Time Conditions Name");
+	var msgInvalidOverPin = _("Please enter a valid Override Code Pin");
+	var msgInvalidTimeGroup = _("You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group");
 
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value))
