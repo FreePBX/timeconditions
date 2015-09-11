@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2014-07-26 01:03+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -251,6 +251,14 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr ""
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -413,6 +421,12 @@ msgstr ""
 
 #: views/timeconditions/form.php:114
 msgid "Yes"
+msgstr ""
+
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
 msgstr ""
 
 #: install.php:186

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2015-04-25 23:26+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -246,6 +246,14 @@ msgstr "Постоянное совпадение"
 msgid "Permanently unmatched"
 msgstr "Временное несовпадение"
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Выбрать разрешённое название для Правила по времени"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -424,6 +432,15 @@ msgstr ""
 #: views/timeconditions/form.php:114
 msgid "Yes"
 msgstr ""
+
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Не выбрана ни одна временная группа для ассоциации с этим правилом по "
+"времени. Входящий звонок будет направлен в нераспознанное назначение пока не "
+"будет выбрана какая-либо группа"
 
 #: install.php:186
 msgid "already exists"
@@ -651,18 +668,6 @@ msgstr "переход, если правда"
 #~ msgstr ""
 #~ "Отметить для включения кода перезаписи %s который позволит вручную менять "
 #~ "правила по времени."
-
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "Выбрать разрешённое название для Правила по времени"
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "Не выбрана ни одна временная группа для ассоциации с этим правилом по "
-#~ "времени. Входящий звонок будет направлен в нераспознанное назначение пока "
-#~ "не будет выбрана какая-либо группа"
 
 #~ msgid ""
 #~ "If set to false, this will override the execution of the Time Conditons "

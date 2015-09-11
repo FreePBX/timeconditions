@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -237,6 +237,14 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "请输入有效的时间条件名"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -403,6 +411,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目的"
+"地，直到你为它更新一个可用的小组"
+
 #: install.php:186
 msgid "already exists"
 msgstr ""
@@ -492,9 +508,6 @@ msgstr ""
 #~ msgid "Edit Time Condition"
 #~ msgstr "编辑时间条件"
 
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "请输入有效的时间条件名"
-
 #~ msgid "Time Condition name:"
 #~ msgstr "时间条件命名："
 
@@ -503,14 +516,6 @@ msgstr ""
 
 #~ msgid "Time Group:"
 #~ msgstr "时间小组："
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目"
-#~ "的地，直到你为它更新一个可用的小组"
 
 #~ msgid "deleted"
 #~ msgstr "已删除"

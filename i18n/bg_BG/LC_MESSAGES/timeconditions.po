@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2014-07-22 14:06+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/"
@@ -247,6 +247,14 @@ msgstr "Трайно съвпадение"
 msgid "Permanently unmatched"
 msgstr "Трайно несъвпадение"
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Моля въведете правилно Име на Времево Условие"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -416,6 +424,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Не сте избрали времева група за асоцииране с това времево условие. Ще се "
+"прехвърли към несъвпадащи направления докато не го обновите с коректна група"
+
 #: install.php:186
 msgid "already exists"
 msgstr "вече съществуват"
@@ -553,9 +569,6 @@ msgstr "вярно goto"
 #~ msgid "New Time"
 #~ msgstr "Ново Време"
 
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "Моля въведете правилно Име на Времево Условие"
-
 #~ msgid "Remove Section and Submit Current Settings"
 #~ msgstr "Премахни Секцията и Приеми Текущите Настройки"
 
@@ -585,15 +598,6 @@ msgstr "вярно goto"
 
 #~ msgid "Week Day start:"
 #~ msgstr "Ден от седмицата за начало:"
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "Не сте избрали времева група за асоцииране с това времево условие. Ще се "
-#~ "прехвърли към несъвпадащи направления докато не го обновите с коректна "
-#~ "група"
 
 #~ msgid "deleted"
 #~ msgstr "изтрито"

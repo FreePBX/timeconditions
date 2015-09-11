@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -238,6 +238,14 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Skriv in ett giltigt namn för tidvillkoret"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -405,6 +413,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att "
+"Destination, om tiden inte matchar, alltid kommer att vara aktiv."
+
 #: install.php:186
 msgid "already exists"
 msgstr "finns redan"
@@ -502,9 +518,6 @@ msgstr ""
 #~ msgid "Generate BLF Hint"
 #~ msgstr "Skapa BLF"
 
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "Skriv in ett giltigt namn för tidvillkoret"
-
 #~ msgid "Time Condition name:"
 #~ msgstr "Namn för tidsvillkor:"
 
@@ -513,14 +526,6 @@ msgstr ""
 
 #~ msgid "Time Group:"
 #~ msgstr "Tidgrupp"
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att "
-#~ "Destination, om tiden inte matchar, alltid kommer att vara aktiv."
 
 #~ msgid "deleted"
 #~ msgstr "raderad"

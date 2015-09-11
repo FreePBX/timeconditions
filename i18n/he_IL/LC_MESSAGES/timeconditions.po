@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -238,6 +238,14 @@ msgstr "התאמה קבועה"
 msgid "Permanently unmatched"
 msgstr "התאמה קבועה"
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "נא הזן שם לתנאי הזמן"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -402,6 +410,12 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+
 #: install.php:186
 msgid "already exists"
 msgstr "כבר קיים"
@@ -509,9 +523,6 @@ msgstr ""
 
 #~ msgid "Inbound Call Control"
 #~ msgstr "שליטה בשיחות נכנסות"
-
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "נא הזן שם לתנאי הזמן"
 
 #~ msgid "Time Condition name:"
 #~ msgstr "שם תנאי הזמן:"

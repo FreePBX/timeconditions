@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2014-02-20 22:09+0200\n"
 "Last-Translator: Chise Mishima <c.mishima@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/timeconditions/"
@@ -268,6 +268,14 @@ msgstr "永久的一致"
 msgid "Permanently unmatched"
 msgstr "永久的不一致"
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "有効なタイムコンディション名を入力してください"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -443,6 +451,14 @@ msgstr ""
 #: views/timeconditions/form.php:114
 msgid "Yes"
 msgstr ""
+
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"このタイムコンディションのタイムグループが選択されていません。有効なグループ"
+"に変更し、正しい宛先に転送されるよう設定してください"
 
 #: install.php:186
 msgid "already exists"
@@ -623,9 +639,6 @@ msgstr ""
 #~ "その状態が継続されます。上書きしない時は、タイムスケジュールに基づき機能し"
 #~ "ます。"
 
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "有効なタイムコンディション名を入力してください"
-
 #~ msgid ""
 #~ "The polling interval in seconds used by the Time Conditions manintenace "
 #~ "task, launched by an Asterisk call file used to update Time Conditions "
@@ -651,14 +664,6 @@ msgstr ""
 
 #~ msgid "Time Group:"
 #~ msgstr "タイムグループ："
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "このタイムコンディションのタイムグループが選択されていません。有効なグルー"
-#~ "プに変更し、正しい宛先に転送されるよう設定してください"
 
 #~ msgid "deleted"
 #~ msgstr "削除されました"

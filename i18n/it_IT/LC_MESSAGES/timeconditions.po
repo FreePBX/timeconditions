@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -238,6 +238,14 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Prego immettere un nome valido per questa Condizione Temporale"
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -406,6 +414,15 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Non hai selezionato un gruppo temporale da associare a questa condizione. "
+"Andrà alla destinazione non corrispondente fino a quando non si aggiorna con "
+"un gruppo valido"
+
 #: install.php:186
 msgid "already exists"
 msgstr ""
@@ -496,9 +513,6 @@ msgstr ""
 #~ msgid "Edit Time Condition"
 #~ msgstr "Modifica Condizione Temporale"
 
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "Prego immettere un nome valido per questa Condizione Temporale"
-
 #~ msgid "Time Condition name:"
 #~ msgstr "Nome Condizione Temporale:"
 
@@ -507,15 +521,6 @@ msgstr ""
 
 #~ msgid "Time Group:"
 #~ msgstr "Gruppo Temporale:"
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "Non hai selezionato un gruppo temporale da associare a questa condizione. "
-#~ "Andrà alla destinazione non corrispondente fino a quando non si aggiorna "
-#~ "con un gruppo valido"
 
 #~ msgid "deleted"
 #~ msgstr "eliminata"

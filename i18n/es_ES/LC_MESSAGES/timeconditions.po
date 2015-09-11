@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 15:00-0700\n"
+"POT-Creation-Date: 2015-09-10 18:48-0700\n"
 "PO-Revision-Date: 2015-04-23 06:36+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -238,6 +238,14 @@ msgstr ""
 msgid "Permanently unmatched"
 msgstr ""
 
+#: assets/js/timeconditions.js:3
+msgid "Please enter a valid Override Code Pin"
+msgstr ""
+
+#: assets/js/timeconditions.js:2
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Por favor, introduzca un nombre para la condición horaria válido."
+
 #: Timeconditions.class.php:101
 msgid "Reset"
 msgstr ""
@@ -402,6 +410,15 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: assets/js/timeconditions.js:4
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"No ha seleccionado ningún grupo horario al que asociar esta condición "
+"horaria. Esta regla siempre irá al destino que no coincide a menos que la "
+"actualice con un grupo horario válido."
+
 #: install.php:186
 msgid "already exists"
 msgstr "Ya existe"
@@ -499,18 +516,6 @@ msgstr "goto verdadero"
 
 #~ msgid "Week Day start:"
 #~ msgstr "Día de la semana de inicio:"
-
-#~ msgid "Please enter a valid Time Conditions Name"
-#~ msgstr "Por favor, introduzca un nombre para la condición horaria válido."
-
-#~ msgid ""
-#~ "You have not selected a time group to associate with this timecondition. "
-#~ "It will go to the un-matching destination until you update it with a "
-#~ "valid group"
-#~ msgstr ""
-#~ "No ha seleccionado ningún grupo horario al que asociar esta condición "
-#~ "horaria. Esta regla siempre irá al destino que no coincide a menos que la "
-#~ "actualice con un grupo horario válido."
 
 #~ msgid "text"
 #~ msgstr "texto"
