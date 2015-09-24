@@ -125,6 +125,9 @@ $(document).on('click',"#addTime",function(e){
 		$(this).attr('name',$(this).attr('name').replace(/\d+/,nextid) );
 		$(this).attr('id',$(this).attr('id').replace(/\d+/,nextid) );
 		});
+  items.find('label').each(function(){
+    $(this).attr('for',$(this).attr('for').replace(/\d+/,nextid));
+  });
 	newspan.appendTo('#timerows');
 	$("#timerows").append('<a href="#" id="addTime"><i class="fa fa-plus"></i> '+_("Add Time")+'</a>');
 });
