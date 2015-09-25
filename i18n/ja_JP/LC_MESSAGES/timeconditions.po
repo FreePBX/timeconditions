@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-10 18:48-0700\n"
+"POT-Creation-Date: 2015-09-25 09:39-0700\n"
 "PO-Revision-Date: 2014-02-20 22:09+0200\n"
 "Last-Translator: Chise Mishima <c.mishima@qloog.com>\n"
 "Language-Team: Japanese <http://example.com/projects/freepbx/timeconditions/"
@@ -66,7 +66,7 @@ msgstr "：タイムコンディションを上書き"
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:129
+#: views/timegroups/form.php:62 assets/js/timegroups.js:132
 msgid "Add Time"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr "4月"
 msgid "August"
 msgstr "8月"
 
-#: assets/js/timegroups.js:138
+#: assets/js/timegroups.js:141
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 

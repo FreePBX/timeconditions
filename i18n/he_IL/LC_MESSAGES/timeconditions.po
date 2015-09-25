@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-10 18:48-0700\n"
+"POT-Creation-Date: 2015-09-25 09:39-0700\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -36,7 +36,7 @@ msgstr "עקופת תנאי זמן"
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:129
+#: views/timegroups/form.php:62 assets/js/timegroups.js:132
 msgid "Add Time"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr "אפריל"
 msgid "August"
 msgstr "אוגוסט"
 
-#: assets/js/timegroups.js:138
+#: assets/js/timegroups.js:141
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 

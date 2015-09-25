@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-10 18:48-0700\n"
+"POT-Creation-Date: 2015-09-25 09:39-0700\n"
 "PO-Revision-Date: 2015-04-23 06:36+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -36,7 +36,7 @@ msgstr ": Condición horaria anulada"
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:129
+#: views/timegroups/form.php:62 assets/js/timegroups.js:132
 msgid "Add Time"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr "Abril"
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups.js:138
+#: assets/js/timegroups.js:141
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-10 18:48-0700\n"
+"POT-Creation-Date: 2015-09-25 09:39-0700\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:129
+#: views/timegroups/form.php:62 assets/js/timegroups.js:132
 msgid "Add Time"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgstr "Aprile"
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups.js:138
+#: assets/js/timegroups.js:141
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 

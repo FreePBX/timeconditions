@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-10 18:48-0700\n"
+"POT-Creation-Date: 2015-09-25 09:39-0700\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:129
+#: views/timegroups/form.php:62 assets/js/timegroups.js:132
 msgid "Add Time"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgstr "四月"
 msgid "August"
 msgstr "八月"
 
-#: assets/js/timegroups.js:138
+#: assets/js/timegroups.js:141
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
