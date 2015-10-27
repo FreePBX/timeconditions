@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-25 09:39-0700\n"
-"PO-Revision-Date: 2015-10-27 11:16+0200\n"
+"PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/ja_JP/>\n"
@@ -222,11 +222,11 @@ msgstr "始まる日"
 
 #: functions.inc.php:1202
 msgid "Month finish"
-msgstr "始まる月"
+msgstr "終わる月"
 
 #: functions.inc.php:1193
 msgid "Month start"
-msgstr "終わる月"
+msgstr "始まる月"
 
 #: views/timeconditions/form.php:116
 msgid "No"
