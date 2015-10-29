@@ -120,6 +120,94 @@ class Timeconditions implements \BMO {
 		return $buttons;
 	}
 	public function serverTime(){
-		return json_encode(localtime());
+		return localtime();
 	}
+	public function ajaxRequest($req, &$setting) {
+		switch ($req) {
+			case 'getJSON':
+				return true;
+			break;
+			default:
+				return false;
+			break;
+		}
+	}
+	public function ajaxHandler(){
+		$request = $_REQUEST;
+		switch ($_REQUEST['command']) {
+			case 'getJSON':
+			switch ($request['jdata']) {
+				case 'servertime':
+					return $this->serverTime();
+				break;
+				case 'tggrid':
+					$timegroupslist = $this->listTimegroups();
+					$rdata = array();
+					foreach($timegroupslist as $tg){
+					$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
+					}
+					return $rdata;
+				break;
+				case 'tcgrid':
+					$timeconditions = $this->listTimeconditions();
+					$timegroups = $this->listTimegroups();
+					$tgs = array();
+					foreach($timegroups as $tg){
+						$tgs[$tg['value']] = $tg['text'];
+					}
+					foreach ($timeconditions as $key => $value) {
+						$timeconditions[$key]['group'] = $tgs[$value['time']];
+					}
+					return array_values($timeconditions);
+				break;
+				default:
+					return false;
+				break;
+			}
+			break;
+
+			default:
+				return false;
+			break;
+		}
+	}
+	public function listTimegroups(){
+		$tmparray = array();
+		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+		$results = $stmt->fetchall();
+		if(!$results) {
+			$results = array();
+		}
+		foreach ($results as $val) {
+			$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+		}
+		return $tmparray;
+	}
+	public function listTimeconditions($getall=false) {
+		$sql = "SELECT * FROM timeconditions ORDER BY priority ASC";
+		$stmt = $this->db->prepare($sql);
+		$stmt->execute();
+		$results = $stmt->fetchall(\PDO::FETCH_ASSOC);
+		if(is_array($results)){
+			return $results;
+		}
+		return array();
+	}
+	public function getRightNav($request) {
+		switch ($request['display']) {
+			case 'timegroups':
+				if(isset($request['view']) && $request['view'] == 'form'){
+					return load_view(__DIR__."/views/timegroups/bootnav.php",array('request'=>$request));
+				}
+			break;
+			case 'timeconditions':
+				if(isset($request['view']) && $request['view'] == 'form'){
+					return load_view(__DIR__."/views/timeconditions/bootnav.php",array('request'=>$request));
+				}
+			break;
+		}
+	}
+
 }

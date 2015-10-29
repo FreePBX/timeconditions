@@ -2,39 +2,30 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2015 Sangoma Technologies.
 //
-$timeconditions = timeconditions_list();
-$timegroupslist = timeconditions_timegroups_list_groups();
-$timegroups = array();
-foreach ($timegroupslist as $tg) {
-	$timegroups[$tg['value']] = $tg['text'];
-}
-
-foreach ($timeconditions as $tc) {
-	$lrows .= '<tr>';
-	$lrows .= '<td>';
-	$lrows .= $tc['displayname'];
-	$lrows .= '</td>';
-	$lrows .= '<td>';
-	$lrows .= $timegroups[$tc['time']];
-	$lrows .= '</td>';
-	$lrows .= '<td>';
-	$lrows .= '<a href="?display=timeconditions&view=form&itemid='.$tc['timeconditions_id'].'"><i class="fa fa-edit"></i></a>&nbsp;';
-	$lrows .= '<a class="delAction" href="?display=timeconditions&action=delete&itemid='.$tc['timeconditions_id'].'"><i class="fa fa-trash"></i></a>';
-	if($tc['time'] != ''){
-		$lrows .= '&nbsp;<a href="?display=timegroups&view=form&extdisplay='.$tc['time'].'"><i class="fa fa-clock-o"></i></a>';
-	}
-	$lrows .= '</td>';
-	$lrows .= '</tr>';
-}
-
+$dataurl = "ajax.php?module=timeconditions&command=getJSON&jdata=tcgrid";
 ?>
-<table class="table table-striped">
-	<thead>
-		<th><?php echo _("Time Condition")?></th>
-		<th><?php echo _("Linked Time Group")?></th>
-		<th><?php echo _("Actions")?></th>
-	</thead>
-	<tbody>
-		<?php echo $lrows ?>
-	</tbody>
+<div id="toolbar-all">
+  <a href="config.php?display=timegroups" class="btn btn-default"><i class="fa fa-list"></i>&nbsp; <?php echo _("List Time Groups") ?></a>
+  <a href="config.php?display=timegconditions&view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp; <?php echo _("Add Time Condition") ?></a>
+  <span class="btn btn-default disabled">
+  	<b><?php echo _("Server time:")?></b> <span id="idTime">Not received</span>
+  </span>
+</div>
+ <table id="tgtable"
+        data-url="<?php echo $dataurl?>"
+        data-cache="false"
+        data-toolbar="#toolbar-all"
+        data-maintain-selected="true"
+
+        data-toggle="table"
+        data-pagination="true"
+        data-search="true"
+        class="table table-striped">
+    <thead>
+            <tr>
+            <th data-field="displayname" data-sortable="true"><?php echo _("Time Condition")?></th>
+            <th data-field="group" data-sortable="true"><?php echo _("Linked Time Group")?></th>
+            <th data-field="timeconditions_id" data-formatter="tcactionFormatter"><?php echo _("Actions")?></th>
+        </tr>
+    </thead>
 </table>

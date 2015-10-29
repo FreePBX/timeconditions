@@ -339,11 +339,7 @@ function timeconditions_change_destination($old_dest, $new_dest) {
 
 
 function timeconditions_list($getall=false) {
-	$results = sql("SELECT * FROM timeconditions ORDER BY priority ASC","getAll",DB_FETCHMODE_ASSOC);
-	if(is_array($results)){
-		return $results;
-	}
-	return null;
+	return \FreePBX::Timeconditions()->listTimeconditions($getall);
 }
 
 function timeconditions_get($id){
@@ -661,18 +657,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time)
 
 //lists any time groups defined by the user
 function timeconditions_timegroups_list_groups() {
-	global $db;
-	$tmparray = array();
-
-	$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
-	$results = $db->getAll($sql);
-	if(DB::IsError($results)) {
-		$results = null;
-	}
-	foreach ($results as $val) {
-		$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
-	}
-	return $tmparray;
+	return \FreePBX::Timeconditions()->listTimegroups();
 }
 /*
 //---------------------------------------------

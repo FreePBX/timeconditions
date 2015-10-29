@@ -2,7 +2,7 @@ var sec = '';
 var min = '';
 var hour = '';
 $.ajax({
-    url: "/admin/config.php?display=timegroups&action=getJSON&jdata=servertime&quietmode=1",
+    url: "/admin/ajax.php?module=timeconditions&command=getJSON&jdata=servertime",
     dataType: 'json',
     success: function(data) {
 		hour = data[2];
@@ -64,41 +64,9 @@ $(document).ready(function(){
   });
 });
 //table
-$(document).ready(function(){
-	$("#timegrid").bootstrapTable({
-		method: 'get',
-		url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
-		cache: false,
-		striped: true,
-		showColumns: false,
-		columns: [
-			{
-				field: 'text',
-				title: _("Description"),
-			},
-			{
-				field: 'value',
-				title: _("Actions"),
-				clickToSelect: false,
-				formatter: actionFormatter,
-			}
-			]
-	});
-	$("#bnavgrid").bootstrapTable({
-		method: 'get',
-		url: '?display=timegroups&action=getJSON&jdata=grid&quietmode=1',
-		cache: false,
-		striped: false,
-		showColumns: false,
-		columns: [
-			{
-				title: _("Time Groups"),
-				field: 'link',
-				formatter: linkFormatter,
-			}
-			]
-	});
-});
+$("#tgrnav").on('click-row.bs.table',function(e,row,elem){
+  window.location = '?display=timegroups&view=form&extdisplay='+row['value'];
+})
 function actionFormatter(value){
 	var html = '';
 	html += '<a href="?display=timegroups&view=form&extdisplay='+value+'"><i class="fa fa-edit"></i></a>&nbsp;';
