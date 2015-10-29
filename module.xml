@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>13.0.10</version>
+	<version>13.0.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
+		*13.0.11* Move grid to ajax, Add slideout menu
 		*13.0.10* FREEPBX-10330 Fix adding group on update
 		*13.0.9* FREEPBX-10163 FREEPBX-10184 fix javascript for form validation.
 		*13.0.8* FREEPBX-10163 Time group with an apostrophe in its description does not get saved
@@ -48,7 +49,7 @@
 		*2.9.0.0* #4636 Add Auto-resetting manual override
 	</changelog>
 	<depends>
-		<version>12.0.1rc16</version>
+		<version>13.0.6</version>
 	</depends>
 	<menuitems>
 		<timeconditions>Time Conditions</timeconditions>
