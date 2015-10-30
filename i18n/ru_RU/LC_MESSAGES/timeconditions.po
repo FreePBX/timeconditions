@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-25 09:39-0700\n"
+"POT-Creation-Date: 2015-10-29 18:51-0700\n"
 "PO-Revision-Date: 2015-04-25 23:26+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -26,27 +26,29 @@ msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%sВНИМАНИЕ:%s Не указано время для этого правила, просмотрите его ещё раз"
 
-#: functions.inc.php:922
+#: functions.inc.php:907
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: functions.inc.php:532 functions.inc.php:597 install.php:200
+#: functions.inc.php:528 functions.inc.php:593 install.php:200
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
-#: views/timeconditions/grid.php:35 assets/js/timegroups.js:81
+#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
+#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:27
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:132
+#: views/timegroups/form.php:62 assets/js/timegroups.js:100
 msgid "Add Time"
 msgstr ""
 
-#: views/timeconditions/bootnav.php:4 views/timeconditions/form.php:6
+#: views/timeconditions/bootnav.php:14 views/timeconditions/form.php:6
+#: views/timeconditions/grid.php:9
 msgid "Add Time Condition"
 msgstr "Добавить временное правило"
 
-#: views/timegroups/bootnav.php:11
+#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:9
 msgid "Add Time Group"
 msgstr "Добавить временную группу"
 
@@ -54,15 +56,15 @@ msgstr "Добавить временную группу"
 msgid "Add a time for this time condition"
 msgstr ""
 
-#: functions.inc.php:1013
+#: functions.inc.php:998
 msgid "April"
 msgstr "Апрель"
 
-#: functions.inc.php:1017
+#: functions.inc.php:1002
 msgid "August"
 msgstr "Август"
 
-#: assets/js/timegroups.js:141
+#: assets/js/timegroups.js:109
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -78,7 +80,7 @@ msgstr "Проверяем старые правила по времени дл�
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:1021
+#: functions.inc.php:1006
 msgid "December"
 msgstr "Декабрь"
 
@@ -86,7 +88,7 @@ msgstr "Декабрь"
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:33 assets/js/timegroups.js:77
+#: views/timegroups/form.php:33
 msgid "Description"
 msgstr "Описание"
 
@@ -115,15 +117,15 @@ msgstr "ОШИБКА: не удалось сконвертировать пол�
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: assets/js/timegroups.js:109
+#: assets/js/timegroups.js:77
 msgid "Edit: "
 msgstr ""
 
-#: functions.inc.php:1011
+#: functions.inc.php:996
 msgid "February"
 msgstr "Февраль"
 
-#: functions.inc.php:989
+#: functions.inc.php:974
 msgid "Friday"
 msgstr "Пятница"
 
@@ -154,55 +156,57 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "Инвертировать BLF индикатор"
 
-#: functions.inc.php:1010
+#: functions.inc.php:995
 msgid "January"
 msgstr "Январь"
 
-#: functions.inc.php:1016
+#: functions.inc.php:1001
 msgid "July"
 msgstr "Июль"
 
-#: functions.inc.php:1015
+#: functions.inc.php:1000
 msgid "June"
 msgstr "Июнь"
 
-#: views/timeconditions/grid.php:34
+#: views/timeconditions/grid.php:27
 msgid "Linked Time Group"
 msgstr ""
 
-#: views/timeconditions/bootnav.php:1 views/timegroups/bootnav.php:10
+#: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
+#: views/timegroups/grid.php:8
 msgid "List Time Conditions"
 msgstr ""
 
-#: views/timeconditions/bootnav.php:2 views/timegroups/bootnav.php:9
+#: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
+#: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr ""
 
-#: functions.inc.php:1012
+#: functions.inc.php:997
 msgid "March"
 msgstr "Март"
 
-#: functions.inc.php:1014
+#: functions.inc.php:999
 msgid "May"
 msgstr "Май"
 
-#: functions.inc.php:985
+#: functions.inc.php:970
 msgid "Monday"
 msgstr "Понедельник"
 
-#: functions.inc.php:1184
+#: functions.inc.php:1169
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:1175
+#: functions.inc.php:1160
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:1202
+#: functions.inc.php:1187
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:1193
+#: functions.inc.php:1178
 msgid "Month start"
 msgstr ""
 
@@ -214,7 +218,7 @@ msgstr ""
 msgid "No Override"
 msgstr "Не перезаписывать"
 
-#: functions.inc.php:1020
+#: functions.inc.php:1005
 msgid "November"
 msgstr "Ноябрь"
 
@@ -222,7 +226,7 @@ msgstr "Ноябрь"
 msgid "OK"
 msgstr "ОК"
 
-#: functions.inc.php:1019
+#: functions.inc.php:1004
 msgid "October"
 msgstr "Октябрь"
 
@@ -262,7 +266,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr "Сброс перезаписи"
 
-#: functions.inc.php:990
+#: functions.inc.php:975
 msgid "Saturday"
 msgstr "Суббота"
 
@@ -277,11 +281,12 @@ msgstr ""
 "группы, звонки будут всегда направляться по назначению не попадающему в "
 "Правило по времени."
 
-#: functions.inc.php:1018
+#: functions.inc.php:1003
 msgid "September"
 msgstr "Сентябрь"
 
-#: views/timegroups/bootnav.php:7
+#: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:11
 msgid "Server time:"
 msgstr "Точное время (сервера):"
 
@@ -297,7 +302,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Применить"
 
-#: functions.inc.php:984
+#: functions.inc.php:969
 msgid "Sunday"
 msgstr "Воскресенье"
 
@@ -351,11 +356,11 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:988
+#: functions.inc.php:973
 msgid "Thursday"
 msgstr "Четверг"
 
-#: views/timeconditions/grid.php:33
+#: views/timeconditions/bootnav.php:32 views/timeconditions/grid.php:26
 msgid "Time Condition"
 msgstr "Правило по времени"
 
@@ -372,11 +377,12 @@ msgstr "Правило по времени: %s"
 msgid "Time Conditions"
 msgstr "Правила по времени"
 
-#: views/timeconditions/form.php:199
+#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:32
+#: views/timegroups/grid.php:26
 msgid "Time Group"
 msgstr "Временная группа"
 
-#: page.timegroups.php:7 assets/js/timegroups.js:95
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "Временная группа"
 
@@ -384,11 +390,11 @@ msgstr "Временная группа"
 msgid "Time Zone:"
 msgstr "Часовой пояс:"
 
-#: functions.inc.php:1131
+#: functions.inc.php:1116
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:1144
+#: functions.inc.php:1129
 msgid "Time to finish"
 msgstr ""
 
@@ -396,7 +402,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:986
+#: functions.inc.php:971
 msgid "Tuesday"
 msgstr "Вторник"
 
@@ -417,15 +423,15 @@ msgstr "Обновлено %s и создана группа %s"
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:987
+#: functions.inc.php:972
 msgid "Wednesday"
 msgstr "Среда"
 
-#: functions.inc.php:1157
+#: functions.inc.php:1142
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:1166
+#: functions.inc.php:1151
 msgid "Week Day finish"
 msgstr ""
 
