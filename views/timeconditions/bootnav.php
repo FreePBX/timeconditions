@@ -10,7 +10,7 @@
 	  </button>
 		<ul class="dropdown-menu">
 			<li><a href="config.php?display=timeconditions"><i class="fa fa-list"></i>&nbsp;<?php echo _("List Time Conditions") ?></a></li>
-			<li><a href="config.php?display=timecgroups"><i class="fa fa-list"></i>&nbsp;<?php echo _("List Time Groups") ?></a></li>
+			<li><a href="config.php?display=timegroups"><i class="fa fa-list"></i>&nbsp;<?php echo _("List Time Groups") ?></a></li>
 			<li><a href="config.php?display=timeconditions&view=form"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Time Condition") ?></a></li>
 		</ul>
 	</div>
@@ -21,10 +21,8 @@
 <table id="tcrnav"
 			 data-url="ajax.php?module=timeconditions&command=getJSON&jdata=tcgrid"
 			 data-cache="false"
-			 data-state-save="true"
 			 data-toolbar="#toolbar-rnav"
 			 data-toggle="table"
-			 data-pagination="true"
 			 data-search="true"
 			 class="table">
 	 <thead>

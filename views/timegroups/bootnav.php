@@ -21,10 +21,8 @@
 <table id="tgrnav"
 			 data-url="ajax.php?module=timeconditions&command=getJSON&jdata=tggrid"
 			 data-cache="false"
-			 data-state-save="true"
 			 data-toolbar="#toolbar-rnav"
 			 data-toggle="table"
-			 data-pagination="true"
 			 data-search="true"
 			 class="table">
 	 <thead>
