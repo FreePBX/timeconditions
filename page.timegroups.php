@@ -18,6 +18,13 @@ switch ($request['view']) {
 ?>
 <div class="container-fluid">
 	<h1><?php echo $heading?></h1>
+	<?php
+	$errormsg = \FreePBX::Timeconditions()->errormsg;
+	if(!empty($errormsg)){
+		echo '<div class="alert alert-danger">'.$errormsg.'</div>';
+		\FreePBX::Timeconditions()->errormsg = '';
+	}
+	?>
 	<div class = "display full-border">
 		<div class="row">
 			<div class="col-sm-12">

@@ -9,6 +9,7 @@ if($extdisplay){
 	$description = $savedtimegroup[1];
 	$delURL = '?display=timegroups&action=del&extdisplay='.$extdisplay;
 	$timelist = timeconditions_timegroups_get_times($extdisplay);
+	$usage =  timeconditions_timegroups_list_usage($extdisplay);
 }
 $timehtml ='';
 if(!empty($timelist)){
@@ -18,7 +19,19 @@ if(!empty($timelist)){
 }else{
 	$timehtml = timeconditions_timegroups_drawtimeselects('times[0]',null);
 }
+if(isset($usage) && !empty($usage)){
+	echo '<script>$(document).ready(function(){$("#delete").attr("disabled",true);});</script>';
+	echo '<div class="alert alert-warning">';
+	echo '<strong>'._("This time group is currently in use and cannot be deleted").'</strong><br/>';
+	echo '<table class="table">';
+	foreach ($usage as $key => $value) {
+		echo '<tr><td><a href="'.$value['url_query'].'">'.$value['description'].'</a></td></tr>';
+	}
+	echo '</table>';
+	echo '</div>';
+}
 ?>
+
 <form autocomplete="off" name="edit" id="edit" action="" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
 <input type="hidden" name="display" value="timegroups">
 <input type="hidden" name="view" value="form">
