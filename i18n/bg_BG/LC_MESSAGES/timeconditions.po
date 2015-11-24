@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-29 18:51-0700\n"
+"POT-Creation-Date: 2015-11-24 12:05-0800\n"
 "PO-Revision-Date: 2014-07-22 14:06+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/"
@@ -37,11 +37,11 @@ msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
-#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:27
+#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:100
+#: views/timegroups/form.php:75 assets/js/timegroups.js:100
 msgid "Add Time"
 msgstr ""
 
@@ -50,13 +50,17 @@ msgstr ""
 msgid "Add Time Condition"
 msgstr "Добави Времево Условие"
 
-#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:9
+#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
 msgid "Add Time Group"
 msgstr "Добави Времева Група"
 
-#: views/timegroups/form.php:70
+#: views/timegroups/form.php:83
 msgid "Add a time for this time condition"
 msgstr ""
+
+#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
+msgid "Applications"
+msgstr "Приложения"
 
 #: functions.inc.php:998
 msgid "April"
@@ -78,6 +82,22 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Проверка за стари времеви условия за обновяване.."
 
+#: Timeconditions.class.php:63
+msgid "Could not delete time group as it is in use"
+msgstr ""
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+"Създава възможност обажданията да се насочват към едно от две направления "
+"(например вътрешна линия, IVR, група на звънене..) в зависимост от час и/или "
+"дата. Може да се използва например да звъни на секретар през деня, а нощно "
+"време да се насочва към IVR."
+
 #: views/timeconditions/form.php:150
 msgid "Current"
 msgstr ""
@@ -86,11 +106,11 @@ msgstr ""
 msgid "December"
 msgstr "Декември"
 
-#: Timeconditions.class.php:96
+#: Timeconditions.class.php:102
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:33
+#: views/timegroups/form.php:46
 msgid "Description"
 msgstr "Описание"
 
@@ -174,7 +194,7 @@ msgid "Linked Time Group"
 msgstr ""
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
-#: views/timegroups/grid.php:8
+#: views/timegroups/grid.php:9
 msgid "List Time Conditions"
 msgstr ""
 
@@ -259,7 +279,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Моля въведете правилно Име на Времево Условие"
 
-#: Timeconditions.class.php:101
+#: Timeconditions.class.php:107
 msgid "Reset"
 msgstr ""
 
@@ -286,7 +306,7 @@ msgid "September"
 msgstr "Септември"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
-#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Server time:"
 msgstr "Сървърно Време:"
 
@@ -298,7 +318,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:106
+#: Timeconditions.class.php:112
 msgid "Submit"
 msgstr "Приеми"
 
@@ -343,7 +363,11 @@ msgstr ""
 "Тази секция ще бъде премахната от тази времева група и всички текущи "
 "настройки включително промените ще бъдат обновени. Да продължа ли?"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:25
+msgid "This time group is currently in use and cannot be deleted"
+msgstr ""
+
+#: views/timegroups/form.php:58
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
@@ -351,7 +375,7 @@ msgstr ""
 msgid "Thursday"
 msgstr "Четвъртък"
 
-#: views/timeconditions/bootnav.php:32 views/timeconditions/grid.php:26
+#: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
 msgstr "Времево Условие"
 
@@ -364,16 +388,17 @@ msgstr ""
 msgid "Time Condition: %s"
 msgstr "Времево Условие: %s"
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Времеви Условия"
 
-#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:32
-#: views/timegroups/grid.php:26
+#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:30
+#: views/timegroups/grid.php:27
 msgid "Time Group"
 msgstr "Времева Група"
 
-#: page.timegroups.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:14
 msgid "Time Groups"
 msgstr "Времеви Групи"
 
@@ -389,7 +414,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:70
 msgid "Time(s)"
 msgstr ""
 
@@ -469,20 +494,6 @@ msgstr "стартиране на преместване"
 #: functions.inc.php:316
 msgid "true goto"
 msgstr "вярно goto"
-
-#~ msgid "Applications"
-#~ msgstr "Приложения"
-
-#~ msgid ""
-#~ "Creates a condition where calls will go to one of two destinations (eg, "
-#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
-#~ "be used for example to ring a receptionist during the day, or go directly "
-#~ "to an IVR at night."
-#~ msgstr ""
-#~ "Създава възможност обажданията да се насочват към едно от две направления "
-#~ "(например вътрешна линия, IVR, група на звънене..) в зависимост от час и/"
-#~ "или дата. Може да се използва например да звъни на секретар през деня, а "
-#~ "нощно време да се насочва към IVR."
 
 #~ msgid "Enable Maintenance Polling"
 #~ msgstr "Разреши Диагностика"

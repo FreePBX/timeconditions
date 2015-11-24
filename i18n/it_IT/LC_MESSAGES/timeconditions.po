@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-29 18:51-0700\n"
+"POT-Creation-Date: 2015-11-24 12:05-0800\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -33,11 +33,11 @@ msgid ": Time Condition Override"
 msgstr ""
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
-#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:27
+#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:100
+#: views/timegroups/form.php:75 assets/js/timegroups.js:100
 msgid "Add Time"
 msgstr ""
 
@@ -46,12 +46,16 @@ msgstr ""
 msgid "Add Time Condition"
 msgstr "Aggiungi Condizione Temporale"
 
-#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:9
+#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
 msgid "Add Time Group"
 msgstr "Aggiungi Gruppo Temporale"
 
-#: views/timegroups/form.php:70
+#: views/timegroups/form.php:83
 msgid "Add a time for this time condition"
+msgstr ""
+
+#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
+msgid "Applications"
 msgstr ""
 
 #: functions.inc.php:998
@@ -74,6 +78,18 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Sto controllando per le vecchie condizioni temporali da aggiornare.."
 
+#: Timeconditions.class.php:63
+msgid "Could not delete time group as it is in use"
+msgstr ""
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+
 #: views/timeconditions/form.php:150
 msgid "Current"
 msgstr ""
@@ -82,11 +98,11 @@ msgstr ""
 msgid "December"
 msgstr "Dicembre"
 
-#: Timeconditions.class.php:96
+#: Timeconditions.class.php:102
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:33
+#: views/timegroups/form.php:46
 msgid "Description"
 msgstr "Descrizione"
 
@@ -165,7 +181,7 @@ msgid "Linked Time Group"
 msgstr ""
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
-#: views/timegroups/grid.php:8
+#: views/timegroups/grid.php:9
 msgid "List Time Conditions"
 msgstr ""
 
@@ -250,7 +266,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Prego immettere un nome valido per questa Condizione Temporale"
 
-#: Timeconditions.class.php:101
+#: Timeconditions.class.php:107
 msgid "Reset"
 msgstr ""
 
@@ -278,7 +294,7 @@ msgid "September"
 msgstr "Settembre"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
-#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Server time:"
 msgstr "Ora server:"
 
@@ -290,7 +306,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:106
+#: Timeconditions.class.php:112
 msgid "Submit"
 msgstr "Conferma"
 
@@ -333,7 +349,11 @@ msgid ""
 "including changes will be updated. OK to proceed?"
 msgstr ""
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:25
+msgid "This time group is currently in use and cannot be deleted"
+msgstr ""
+
+#: views/timegroups/form.php:58
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
@@ -341,7 +361,7 @@ msgstr ""
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: views/timeconditions/bootnav.php:32 views/timeconditions/grid.php:26
+#: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
 msgstr "Condizione Temporale"
 
@@ -354,16 +374,17 @@ msgstr ""
 msgid "Time Condition: %s"
 msgstr "Condizione Temporale: %s"
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Condizioni Temporali"
 
-#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:32
-#: views/timegroups/grid.php:26
+#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:30
+#: views/timegroups/grid.php:27
 msgid "Time Group"
 msgstr "Gruppo Temporale"
 
-#: page.timegroups.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:14
 msgid "Time Groups"
 msgstr "Gruppi Temporali"
 
@@ -379,7 +400,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:70
 msgid "Time(s)"
 msgstr ""
 

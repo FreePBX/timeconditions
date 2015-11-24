@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-29 18:51-0700\n"
+"POT-Creation-Date: 2015-11-24 12:05-0800\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -64,11 +64,11 @@ msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
-#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:27
+#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr "アクション"
 
-#: views/timegroups/form.php:62 assets/js/timegroups.js:100
+#: views/timegroups/form.php:75 assets/js/timegroups.js:100
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -77,13 +77,17 @@ msgstr "時間を追加"
 msgid "Add Time Condition"
 msgstr "時間分岐条件を追加"
 
-#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:9
+#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
 msgid "Add Time Group"
 msgstr "時間グループを追加"
 
-#: views/timegroups/form.php:70
+#: views/timegroups/form.php:83
 msgid "Add a time for this time condition"
 msgstr "この時間分岐条件の時間を追加します"
+
+#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
+msgid "Applications"
+msgstr "アプリケーション"
 
 #: functions.inc.php:998
 msgid "April"
@@ -105,6 +109,21 @@ msgstr "上書きステータスを変更"
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "旧時間分岐条件のアップグレードのチェック中.."
 
+#: Timeconditions.class.php:63
+msgid "Could not delete time group as it is in use"
+msgstr ""
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+"時間や日付に基づいて、コールが二つの宛先(例:内線、IVR、着信グループ..)のうち"
+"一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信さ"
+"せ、夜は直接IVRに行く等に使用できます。"
+
 #: views/timeconditions/form.php:150
 msgid "Current"
 msgstr "現在のステータス"
@@ -113,11 +132,11 @@ msgstr "現在のステータス"
 msgid "December"
 msgstr "12月"
 
-#: Timeconditions.class.php:96
+#: Timeconditions.class.php:102
 msgid "Delete"
 msgstr "削除"
 
-#: views/timegroups/form.php:33
+#: views/timegroups/form.php:46
 msgid "Description"
 msgstr "説明"
 
@@ -200,7 +219,7 @@ msgid "Linked Time Group"
 msgstr "関連付けられた時間グループ"
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
-#: views/timegroups/grid.php:8
+#: views/timegroups/grid.php:9
 msgid "List Time Conditions"
 msgstr "時間分岐条件を表示"
 
@@ -285,7 +304,7 @@ msgstr "入力された暗証番号は無効です。"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "時間分岐条件の名前は無効です。もう一度入力してください"
 
-#: Timeconditions.class.php:101
+#: Timeconditions.class.php:107
 msgid "Reset"
 msgstr "リセット"
 
@@ -312,7 +331,7 @@ msgid "September"
 msgstr "9月"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
-#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Server time:"
 msgstr "サーバ時刻:"
 
@@ -329,7 +348,7 @@ msgstr ""
 "トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
 "い可能性がありますので、ご注意ください。"
 
-#: Timeconditions.class.php:106
+#: Timeconditions.class.php:112
 msgid "Submit"
 msgstr "送信"
 
@@ -380,7 +399,11 @@ msgstr ""
 "このセクションを時間グループから削除し、変更した内容を含めて全ての設定を更新"
 "します。続行しますか？"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:25
+msgid "This time group is currently in use and cannot be deleted"
+msgstr ""
+
+#: views/timegroups/form.php:58
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
@@ -388,7 +411,7 @@ msgstr "時間グループの表示名を設定します。"
 msgid "Thursday"
 msgstr "木曜日"
 
-#: views/timeconditions/bootnav.php:32 views/timeconditions/grid.php:26
+#: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
 msgstr "時間分岐条件"
 
@@ -401,16 +424,17 @@ msgstr "時間分岐条件の名前"
 msgid "Time Condition: %s"
 msgstr "時間分岐条件: %s"
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "時間分岐条件"
 
-#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:32
-#: views/timegroups/grid.php:26
+#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:30
+#: views/timegroups/grid.php:27
 msgid "Time Group"
 msgstr "時間グループ"
 
-#: page.timegroups.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:14
 msgid "Time Groups"
 msgstr "時間グループ"
 
@@ -426,7 +450,7 @@ msgstr "開始時刻"
 msgid "Time to finish"
 msgstr "終了時刻"
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:70
 msgid "Time(s)"
 msgstr "時間設定"
 
@@ -506,19 +530,6 @@ msgstr "移行開始"
 #: functions.inc.php:316
 msgid "true goto"
 msgstr "一致する goto"
-
-#~ msgid "Applications"
-#~ msgstr "アプリケーション"
-
-#~ msgid ""
-#~ "Creates a condition where calls will go to one of two destinations (eg, "
-#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
-#~ "be used for example to ring a receptionist during the day, or go directly "
-#~ "to an IVR at night."
-#~ msgstr ""
-#~ "時間や日付に基づいて、コールが二つの宛先(例:内線、IVR、着信グループ..)のう"
-#~ "ち一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信"
-#~ "させ、夜は直接IVRに行く等に使用できます。"
 
 #~ msgid "Enable Maintenance Polling"
 #~ msgstr "メンテナンスポーリングを有効にする"
