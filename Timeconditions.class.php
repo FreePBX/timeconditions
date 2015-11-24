@@ -156,7 +156,8 @@ class Timeconditions implements \BMO {
 						$tgs[$tg['value']] = $tg['text'];
 					}
 					foreach ($timeconditions as $key => $value) {
-						$timeconditions[$key]['group'] = $tgs[$value['time']];
+						$tgstime = isset($tgs[$value['time']])?$tgs[$value['time']]:'';
+						$timeconditions[$key]['group'] = $tgstime;
 					}
 					return array_values($timeconditions);
 				break;
