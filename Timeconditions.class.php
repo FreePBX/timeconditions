@@ -11,6 +11,7 @@ class Timeconditions implements \BMO {
 		}
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
+		$this->errormsg ='';
 	}
     public function install() {}
     public function uninstall() {}
@@ -57,6 +58,11 @@ class Timeconditions implements \BMO {
 						timeconditions_timegroups_edit_times($timegroup,$times);
 						break;
 					case 'del':
+						$usage =  timeconditions_timegroups_list_usage($timegroup);
+						if(isset($usage) && sizeof($usage) >= 1){
+							$this->errormsg = _("Could not delete time group as it is in use");
+							return;
+						}
 						timeconditions_timegroups_del_group($timegroup);
 						break;
 					case 'getJSON':

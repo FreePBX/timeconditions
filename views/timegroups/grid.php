@@ -3,6 +3,7 @@
 //	Copyright 2015 Sangoma Technologies.
 //
 $dataurl = "ajax.php?module=timeconditions&command=getJSON&jdata=tggrid";
+
 ?>
 <div id="toolbar-all">
   <a href="config.php?display=timeconditions" class="btn btn-default"><i class="fa fa-list"></i>&nbsp; <?php echo _("List Time Conditions") ?></a>
