@@ -11,7 +11,7 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
-		*13.0.12* FREEPBX-8461 FREEPBX-10800 
+		*13.0.12* FREEPBX-10658 FREEPBX-10800 
 		*13.0.11.1* Typo in url
 		*13.0.11* Move grid to ajax, Add slideout menu
 		*13.0.10* FREEPBX-10330 Fix adding group on update
