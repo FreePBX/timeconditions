@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-24 12:05-0800\n"
-"PO-Revision-Date: 2015-04-25 23:26+0200\n"
-"Last-Translator: Yuriy <alliancesko@gmail.com>\n"
-"Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
-"timeconditions/ru_RU/>\n"
+"PO-Revision-Date: 2015-12-08 23:11+0200\n"
+"Last-Translator: Andrew <andrew.nagy@the159.com>\n"
+"Language-Team: Russian "
+"<http://weblate.freepbx.org/projects/freepbx/timeconditions/ru_RU/>\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru_RU\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
 #: install.php:233
@@ -72,7 +72,7 @@ msgstr "Август"
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 "Невозможно удалить единственное правило. Должно существовать как минимум "
-"одно правило"
+"одно правило."
 
 #: views/timeconditions/form.php:137
 msgid "Change Override"
@@ -117,7 +117,7 @@ msgstr "Описание"
 
 #: views/timeconditions/form.php:276
 msgid "Destination if time does not matche"
-msgstr "Направление вызова если текущее  время не соответствует условиям."
+msgstr "Направление вызова если текущее  время не соответствует условиям"
 
 #: views/timeconditions/form.php:246
 msgid "Destination if time matches"
@@ -142,7 +142,7 @@ msgstr "Редактировать временные условия :%s (%s)"
 
 #: assets/js/timegroups.js:77
 msgid "Edit: "
-msgstr "Редактировать:"
+msgstr "Редактировать: "
 
 #: functions.inc.php:996
 msgid "February"
@@ -275,7 +275,7 @@ msgstr "Временное несовпадение"
 
 #: assets/js/timeconditions.js:3
 msgid "Please enter a valid Override Code Pin"
-msgstr "Пожалуйста введите  пин-код "
+msgstr "Пожалуйста введите  пин-код"
 
 #: assets/js/timeconditions.js:2
 msgid "Please enter a valid Time Conditions Name"
@@ -324,7 +324,7 @@ msgstr ""
 "временных зонах по отношению к серверу . Введите первые два символа для "
 "выпадающего списка автозаполения . <br/><strong>Важно</strong>:Ваш выбор "
 "<strong>ДОЛЖЕН</strong>появиться в выпадающем списке или в директории "
-"/usr/share/zoneinfo/ "
+"/usr/share/zoneinfo/."
 
 #: Timeconditions.class.php:112
 msgid "Submit"
