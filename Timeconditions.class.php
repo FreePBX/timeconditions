@@ -68,10 +68,6 @@ class Timeconditions implements \BMO {
 					case 'getJSON':
     					header('Content-Type: application/json');
     					switch ($request['jdata']) {
-    						case 'servertime':
-    							echo $this->serverTime();
-    							exit();
-    						break;
     						case 'grid':
     							$timegroupslist = timeconditions_timegroups_list_groups();
     							$rdata = array();
@@ -143,9 +139,6 @@ class Timeconditions implements \BMO {
 		switch ($_REQUEST['command']) {
 			case 'getJSON':
 			switch ($request['jdata']) {
-				case 'servertime':
-					return $this->serverTime();
-				break;
 				case 'tggrid':
 					$timegroupslist = $this->listTimegroups();
 					$rdata = array();

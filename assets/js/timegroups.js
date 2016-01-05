@@ -1,60 +1,12 @@
-var sec = '';
-var min = '';
-var hour = '';
-$.ajax({
-    url: "/admin/ajax.php?module=timeconditions&command=getJSON&jdata=servertime",
-    dataType: 'json',
-    success: function(data) {
-		hour = data[2];
-		min = data[1];
-		sec = data[0];
-    }
-});
+var time = $("#idTime").data("time");
+var timezone = $("#idTime").data("zone");
+var updateTime = function() {
+	$("#idTime").text(moment.unix(time).tz(timezone).format('HH:mm:ss z'));
+	time = time + 1;
+};
 
-//time groups stole this from timeconditions
-//who stole it from http://www.aspfaq.com/show.asp?id=2300
-function PadDigits(n, totalDigits)
-{
-	n = n.toString();
-	var pd = '';
-	if (totalDigits > n.length)
-	{
-		for (i=0; i < (totalDigits-n.length); i++)
-		{
-			pd += '0';
-		}
-	}
-	return pd + n.toString();
-}
+setInterval(updateTime,1000);
 
-function updateTime()
-{
-	sec++;
-	if (sec==60)
-	{
-		min++;
-		sec = 0;
-	}
-
-	if (min==60)
-	{
-		hour++;
-		min = 0;
-	}
-
-	if (hour==24)
-	{
-		hour = 0;
-	}
-
-  if($("#idTime").length) {
-    document.getElementById("idTime").innerHTML = PadDigits(hour,2)+":"+PadDigits(min,2)+":"+PadDigits(sec,2);
-    var t = setTimeout('updateTime()',1000);
-  }
-
-}
-
-updateTime();
 $(document).ready(function(){
 	$(".remove_section").click(function(){
     if (confirm( _("This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"))) {
