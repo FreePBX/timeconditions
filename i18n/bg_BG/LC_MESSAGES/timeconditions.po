@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 12:05-0800\n"
+"POT-Creation-Date: 2016-01-04 19:49-0800\n"
 "PO-Revision-Date: 2014-07-22 14:06+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/"
@@ -41,7 +41,7 @@ msgstr ": Отмяна на Времево Условие"
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:75 assets/js/timegroups.js:100
+#: views/timegroups/form.php:75 assets/js/timegroups.js:52
 msgid "Add Time"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr "Април"
 msgid "August"
 msgstr "Август"
 
-#: assets/js/timegroups.js:109
+#: assets/js/timegroups.js:61
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "December"
 msgstr "Декември"
 
-#: Timeconditions.class.php:102
+#: Timeconditions.class.php:98
 msgid "Delete"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr "ГРЕШКА: неуспех при конвертиране на пол
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: assets/js/timegroups.js:77
+#: assets/js/timegroups.js:29
 msgid "Edit: "
 msgstr ""
 
@@ -239,6 +239,10 @@ msgstr ""
 msgid "No Override"
 msgstr "Без Отмяна"
 
+#: views/timeconditions/grid.php:11 views/timegroups/grid.php:12
+msgid "Not received"
+msgstr ""
+
 #: functions.inc.php:1005
 msgid "November"
 msgstr "Ноември"
@@ -279,7 +283,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Моля въведете правилно Име на Времево Условие"
 
-#: Timeconditions.class.php:107
+#: Timeconditions.class.php:103
 msgid "Reset"
 msgstr ""
 
@@ -318,7 +322,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:112
+#: Timeconditions.class.php:108
 msgid "Submit"
 msgstr "Приеми"
 
@@ -355,7 +359,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups.js:60
+#: assets/js/timegroups.js:12
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"

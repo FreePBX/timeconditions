@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 12:05-0800\n"
+"POT-Creation-Date: 2016-01-04 19:49-0800\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -68,7 +68,7 @@ msgstr "：時間分岐条件を上書き"
 msgid "Actions"
 msgstr "アクション"
 
-#: views/timegroups/form.php:75 assets/js/timegroups.js:100
+#: views/timegroups/form.php:75 assets/js/timegroups.js:52
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -97,7 +97,7 @@ msgstr "4月"
 msgid "August"
 msgstr "8月"
 
-#: assets/js/timegroups.js:109
+#: assets/js/timegroups.js:61
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr "ルールを一つ以上設定する必要があるため、このルールを削除できません。"
 
@@ -132,7 +132,7 @@ msgstr "現在のステータス"
 msgid "December"
 msgstr "12月"
 
-#: Timeconditions.class.php:102
+#: Timeconditions.class.php:98
 msgid "Delete"
 msgstr "削除"
 
@@ -165,7 +165,7 @@ msgstr "エラー: フィールドのコンバート失敗 "
 msgid "Edit Time Condition: %s (%s)"
 msgstr "時間分岐条件を編集: %s (%s)"
 
-#: assets/js/timegroups.js:77
+#: assets/js/timegroups.js:29
 msgid "Edit: "
 msgstr "編集: "
 
@@ -264,6 +264,10 @@ msgstr "いいえ"
 msgid "No Override"
 msgstr "上書きしない"
 
+#: views/timeconditions/grid.php:11 views/timegroups/grid.php:12
+msgid "Not received"
+msgstr ""
+
 #: functions.inc.php:1005
 msgid "November"
 msgstr "11月"
@@ -304,7 +308,7 @@ msgstr "入力された暗証番号は無効です。"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "時間分岐条件の名前は無効です。もう一度入力してください"
 
-#: Timeconditions.class.php:107
+#: Timeconditions.class.php:103
 msgid "Reset"
 msgstr "リセット"
 
@@ -348,7 +352,7 @@ msgstr ""
 "トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
 "い可能性がありますので、ご注意ください。"
 
-#: Timeconditions.class.php:112
+#: Timeconditions.class.php:108
 msgid "Submit"
 msgstr "送信"
 
@@ -391,7 +395,7 @@ msgstr ""
 "上書きは、 %s 機能コードで切り替えることができます。また、電話上で動くアプリ"
 "ケーションなどでも、この上書き設定をリセットすることもできます。"
 
-#: assets/js/timegroups.js:60
+#: assets/js/timegroups.js:12
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"

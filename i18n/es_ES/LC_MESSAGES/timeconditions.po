@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 12:05-0800\n"
+"POT-Creation-Date: 2016-01-04 19:49-0800\n"
 "PO-Revision-Date: 2015-04-23 06:36+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -37,7 +37,7 @@ msgstr ": Condición horaria anulada"
 msgid "Actions"
 msgstr ""
 
-#: views/timegroups/form.php:75 assets/js/timegroups.js:100
+#: views/timegroups/form.php:75 assets/js/timegroups.js:52
 msgid "Add Time"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr "Abril"
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups.js:109
+#: assets/js/timegroups.js:61
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -98,7 +98,7 @@ msgstr ""
 msgid "December"
 msgstr "Diciembre"
 
-#: Timeconditions.class.php:102
+#: Timeconditions.class.php:98
 msgid "Delete"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr "Error: fallo al convertir el campo "
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: assets/js/timegroups.js:77
+#: assets/js/timegroups.js:29
 msgid "Edit: "
 msgstr ""
 
@@ -226,6 +226,10 @@ msgstr ""
 msgid "No Override"
 msgstr ""
 
+#: views/timeconditions/grid.php:11 views/timegroups/grid.php:12
+msgid "Not received"
+msgstr ""
+
 #: functions.inc.php:1005
 msgid "November"
 msgstr "Noviembre"
@@ -266,7 +270,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Por favor, introduzca un nombre para la condición horaria válido."
 
-#: Timeconditions.class.php:107
+#: Timeconditions.class.php:103
 msgid "Reset"
 msgstr ""
 
@@ -302,7 +306,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:112
+#: Timeconditions.class.php:108
 msgid "Submit"
 msgstr "Enviar"
 
@@ -339,7 +343,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups.js:60
+#: assets/js/timegroups.js:12
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
