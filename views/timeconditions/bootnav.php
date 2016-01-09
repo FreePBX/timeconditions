@@ -11,15 +11,15 @@
 		<ul class="dropdown-menu">
 			<li><a href="config.php?display=timeconditions"><i class="fa fa-list"></i>&nbsp;<?php echo _("List Time Conditions") ?></a></li>
 			<li><a href="config.php?display=timegroups"><i class="fa fa-list"></i>&nbsp;<?php echo _("List Time Groups") ?></a></li>
-			<li><a href="config.php?display=timeconditions&view=form"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Time Condition") ?></a></li>
+			<li><a href="config.php?display=timeconditions&amp;view=form"><i class="fa fa-plus"></i>&nbsp;<?php echo _("Add Time Condition") ?></a></li>
 		</ul>
 	</div>
 	<span class="btn btn-default disabled">
-		<b><?php echo _("Server time:")?></b> <span id="idTime">Not received</span>
+		<b><?php echo _("Server time:")?></b> <span id="idTime" data-time="<?php echo time()?>" data-zone="<?php echo date("e")?>"><?php echo _("Not received")?></span>
 	</span>
 </div>
 <table id="tcrnav"
-			 data-url="ajax.php?module=timeconditions&command=getJSON&jdata=tcgrid"
+			 data-url="ajax.php?module=timeconditions&amp;command=getJSON&amp;jdata=tcgrid"
 			 data-cache="false"
 			 data-toolbar="#toolbar-rnav"
 			 data-toggle="table"
