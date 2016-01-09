@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 19:49-0800\n"
+"POT-Creation-Date: 2016-01-09 01:48-0800\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -241,7 +241,8 @@ msgstr "Нет"
 msgid "No Override"
 msgstr "Не перезаписывать"
 
-#: views/timeconditions/grid.php:11 views/timegroups/grid.php:12
+#: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Not received"
 msgstr ""
 
