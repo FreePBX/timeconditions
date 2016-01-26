@@ -343,38 +343,38 @@ function timeconditions_list($getall=false) {
 }
 
 function timeconditions_get($id){
-  global $astman;
+	global $astman;
 	//get all the variables for the timecondition
 	$results = sql("SELECT * FROM timeconditions WHERE timeconditions_id = '$id'","getRow",DB_FETCHMODE_ASSOC);
 
-  $fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
-  $c = $fcc->getCodeActive();
-  $results['tcval'] = $fcc->getCode();
-  unset($fcc);
-  if ($c == '') {
-    $results['tcstate'] = false;
-    $results['tccode'] = false;
-  } else {
-    $results['tccode'] = $c;
+	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
+	$c = $fcc->getCodeActive();
+	$results['tcval'] = $fcc->getCode();
+	unset($fcc);
+	if ($c == '') {
+		$results['tcstate'] = false;
+		$results['tccode'] = false;
+	} else {
+		$results['tccode'] = $c;
 		if ($astman != null) {
 			$results['tcstate'] = timeconditions_get_state($id);
 		} else {
 			die_freepbx("No manager connection, can't get Time Condition State");
 		}
-  }
+	}
 	return $results;
 }
 
 function timeconditions_del($id){
-  global $astnam;
+	global $astnam;
 	$results = sql("DELETE FROM timeconditions WHERE timeconditions_id = \"$id\"","query");
 
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	$fcc->delete();
 	unset($fcc);
-  if ($astman != null) {
-    $astman->database_del("TC",$id);
-  }
+	if ($astman != null) {
+		$astman->database_del("TC",$id);
+	}
 }
 
 //obsolete handled in timegroups module
@@ -390,7 +390,7 @@ function timeconditions_get_time( $hour_start, $minute_start, $hour_finish, $min
 	if ($minute_finish == '-') {
 		$time_minute_finish = "*";
 	} else {
- 		$time_minute_finish = sprintf("%02d",$minute_finish);
+		$time_minute_finish = sprintf("%02d",$minute_finish);
 	}
 	if ($hour_start == '-') {
 		$time_hour_start = '*';
@@ -518,8 +518,6 @@ function timeconditions_set_state($id, $state,$invert=false) {
 	}
 }
 
-  /*
-  */
 function timeconditions_create_fc($id, $displayname='') {
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$id);
 	if ($displayname) {
@@ -536,17 +534,17 @@ function timeconditions_create_fc($id, $displayname='') {
 }
 
 function timeconditions_add($post){
-  global $db;
-  global $amp_conf;
-  $displayname = $db->escapeSimple($post['displayname']);
-  $time = $db->escapeSimple($post['time']);
-  $timezone = $db->escapeSimple($post['timezone']);
-  $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
-  $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
-  $invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
-  $fcc_password = $db->escapeSimple($post['fcc_password']);
-  $deptname = $db->escapeSimple($post['deptname']);
-  $generate_hint = '1';
+	global $db;
+	global $amp_conf;
+	$displayname = $db->escapeSimple($post['displayname']);
+	$time = $db->escapeSimple($post['time']);
+	$timezone = $db->escapeSimple($post['timezone']);
+	$falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
+	$truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
+	$invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
+	$fcc_password = $db->escapeSimple($post['fcc_password']);
+	$deptname = $db->escapeSimple($post['deptname']);
+	$generate_hint = '1';
 	if($displayname == '') {
 	 	$displayname = "unnamed";
 	}
@@ -556,23 +554,23 @@ function timeconditions_add($post){
 	} else {
 		$id = $amp_conf["AMPDBENGINE"] == "sqlite3" ? sqlite_last_insert_rowid($db->connection) : mysql_insert_id($db->connection);
 	}
-  timeconditions_create_fc($id, $displayname);
-  return $id;
+	timeconditions_create_fc($id, $displayname);
+	return $id;
 }
 
 function timeconditions_edit($id,$post){
-  global $db;
+	global $db;
 
-  $id = $db->escapeSimple($id);
-  $displayname = $db->escapeSimple($post['displayname']);
-  $time = $db->escapeSimple($post['time']);
-  $timezone = $db->escapeSimple($post['timezone']);
-  $falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
-  $truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
-  $invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
-  $fcc_password = $db->escapeSimple($post['fcc_password']);
-  $deptname = $db->escapeSimple($post['deptname']);
-  $generate_hint = '1';
+	$id = $db->escapeSimple($id);
+	$displayname = $db->escapeSimple($post['displayname']);
+	$time = $db->escapeSimple($post['time']);
+	$timezone = $db->escapeSimple($post['timezone']);
+	$falsegoto = $db->escapeSimple($post[$post['goto1'].'1']);
+	$truegoto = $db->escapeSimple($post[$post['goto0'].'0']);
+	$invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
+	$fcc_password = $db->escapeSimple($post['fcc_password']);
+	$deptname = $db->escapeSimple($post['deptname']);
+	$generate_hint = '1';
 
 	$old = timeconditions_get($id);
 	if(empty($displayname)) {
@@ -719,7 +717,7 @@ function timeconditions_timegroups_configpageload() {
 		foreach ($timelist as $val) {
 			$timehtml = timeconditions_timegroups_drawtimeselects('times['.$val[0].']',$val[1]);
 			$timehtml = '<tr><td colspan="2"><table>'.$timehtml.'</table></td></tr>';
-      $timehtml .= '<tr><td colspan="2"><input type="button" class="remove_section" value="'._("Remove Section and Submit Current Settings").'"/></td></tr>';
+	$timehtml .= '<tr><td colspan="2"><input type="button" class="remove_section" value="'._("Remove Section and Submit Current Settings").'"/></td></tr>';
 			$currentcomponent->addguielem($val[1], new guielement('dest0', $timehtml, ''),5);
 		}
 	}
@@ -755,31 +753,31 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	global $db, $version;
 	$tmparray = array();
 
-  if ($convert && (!isset($version) || $version == '')) {
-    $engineinfo = engine_getinfo();
-    $version =  $engineinfo['version'];
-  }
-  if ($convert) {
-    $ast_ge_16 = version_compare($version,'1.6','ge');
-  }
+	if ($convert && (!isset($version) || $version == '')) {
+		$engineinfo = engine_getinfo();
+		$version =  $engineinfo['version'];
+	}
+	if ($convert) {
+		$ast_ge_16 = version_compare($version,'1.6','ge');
+	}
 	$sql = "SELECT id, time FROM timegroups_details WHERE timegroupid = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
 		$results = null;
 	}
-        $tz='';
+	$tz='';
 	if ($timecondition_id>0) {
-					$systz = date_default_timezone_get();
-          $timezone = $db->getOne("SELECT timezone FROM timeconditions WHERE timeconditions_id = $timecondition_id");
-          //If timezone is empty or "drfault" we use the current system tz
-					$timezone = empty($timezone)?$systz:$timezone;
-					$timezone = ($timezone == 'default')?$systz:$timezone;
- 					$tz="|$timezone";
-        }
+		$systz = date_default_timezone_get();
+		$timezone = $db->getOne("SELECT timezone FROM timeconditions WHERE timeconditions_id = $timecondition_id");
+		//If timezone is empty or "drfault" we use the current system tz
+		$timezone = empty($timezone)?$systz:$timezone;
+		$timezone = ($timezone == 'default')?$systz:$timezone;
+		$tz="|$timezone";
+	}
 	foreach ($results as $val) {
-    $val[1].=$tz;
-    $times = ($convert && $ast_ge_16) ? strtr($val[1],'|',',') : $val[1];
-    $tmparray[] = array($val[0], $times);
+		$val[1].=$tz;
+		$times = ($convert && $ast_ge_16) ? strtr($val[1],'|',',') : $val[1];
+		$tmparray[] = array($val[0], $times);
 	}
 	return $tmparray;
 }
@@ -792,7 +790,7 @@ function timeconditions_timegroups_get_group($timegroup) {
 	$sql = "SELECT id, description FROM timegroups_groups WHERE id = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results)) {
- 		$results = null;
+		$results = null;
 	}
 	$tmparray = array($results[0][0], $results[0][1]);
 	return $tmparray;
@@ -1311,8 +1309,8 @@ function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_
 
 // AJAX Handler for jQuery UI AutoComplete Time Zone field on Time Conditions page
 if (isset($_REQUEST['term']) && strlen($_REQUEST['term'])>1) {
-  Header('Content-Type: text/json');
-  die(json_encode(array_values(preg_grep('*'.$_REQUEST['term'].'*i', DateTimeZone::listIdentifiers(DateTimeZone::ALL)))));
+	Header('Content-Type: text/json');
+	die(json_encode(array_values(preg_grep('*'.$_REQUEST['term'].'*i', DateTimeZone::listIdentifiers(DateTimeZone::ALL)))));
 }
 
 

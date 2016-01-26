@@ -13,14 +13,14 @@ class Timeconditions implements \BMO {
 		$this->db = $freepbx->Database;
 		$this->errormsg ='';
 	}
-    public function install() {}
-    public function uninstall() {}
-    public function backup() {}
-    public function restore($backup) {}
-    public function doConfigPageInit($page) {
-    	$request = $_REQUEST;
-    	switch($page){
-    		case "timeconditions":
+	public function install() {}
+	public function uninstall() {}
+	public function backup() {}
+	public function restore($backup) {}
+	public function doConfigPageInit($page) {
+		$request = $_REQUEST;
+		switch($page) {
+			case "timeconditions":
 				isset($request['action'])?$action = $request['action']:$action='';
 				isset($request['itemid'])?$itemid=$request['itemid']:$itemid='';
 				isset($request['view'])?$view=$request['view']:$view='';
@@ -66,28 +66,29 @@ class Timeconditions implements \BMO {
 						timeconditions_timegroups_del_group($timegroup);
 						break;
 					case 'getJSON':
-    					header('Content-Type: application/json');
-    					switch ($request['jdata']) {
-    						case 'grid':
-    							$timegroupslist = timeconditions_timegroups_list_groups();
-    							$rdata = array();
-    							foreach($timegroupslist as $tg){
+						header('Content-Type: application/json');
+						switch ($request['jdata']) {
+							case 'grid':
+								$timegroupslist = timeconditions_timegroups_list_groups();
+								$rdata = array();
+								foreach($timegroupslist as $tg){
 									$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
-    							}
-    							echo json_encode($rdata);
-    							exit();
-    						break;
-   			 				default:
-    							echo json_encode(array("error"=>"Unknown Request"));
-    							exit();
-    						break;
-    					}
-    				break;
-    			}
-    		break;
+								}
+								echo json_encode($rdata);
+								exit();
+								break;
+							default:
+								echo json_encode(array("error"=>"Unknown Request"));
+								exit();
+								break;
+						}
+						break;
+				}
+				break;
 		}
-    }
-    public function getActionBar($request) {
+	}
+
+	public function getActionBar($request) {
 		switch($request['display']) {
 			case 'timeconditions':
 			case 'timegroups':
