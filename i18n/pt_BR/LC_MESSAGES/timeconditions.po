@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 01:48-0800\n"
+"POT-Creation-Date: 2016-01-26 17:32-0800\n"
 "PO-Revision-Date: 2014-07-26 01:03+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -148,6 +148,10 @@ msgstr ""
 msgid "Edit: "
 msgstr ""
 
+#: timeconditions.i18n.php:16
+msgid "Enable Maintenance Polling"
+msgstr ""
+
 #: functions.inc.php:996
 msgid "February"
 msgstr "Fevereiro"
@@ -171,6 +175,16 @@ msgstr ""
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
+msgstr ""
+
+#: timeconditions.i18n.php:20
+msgid ""
+"If set to false, this will override the execution of the Time Conditions "
+"maintenance task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
 #: views/timeconditions/form.php:108
@@ -201,6 +215,10 @@ msgstr ""
 #: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
+msgstr ""
+
+#: timeconditions.i18n.php:22
+msgid "Maintenance Polling Interval"
 msgstr ""
 
 #: functions.inc.php:997
@@ -344,6 +362,17 @@ msgstr ""
 msgid "Temporary unmatched"
 msgstr ""
 
+#: timeconditions.i18n.php:26
+msgid ""
+"The polling interval in seconds used by the Time Conditions maintenance "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual override "
+"during such a period is properly reset when the new period starts."
+msgstr ""
+
 #: views/timeconditions/form.php:158
 #, php-format
 msgid ""
@@ -378,6 +407,10 @@ msgstr "Quinta"
 #: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
 msgstr "Condição de Tempo"
+
+#: timeconditions.i18n.php:18 timeconditions.i18n.php:24
+msgid "Time Condition Module"
+msgstr "Módulo Condição de Tempo"
 
 #: views/timeconditions/form.php:60
 msgid "Time Condition name"
@@ -492,9 +525,6 @@ msgstr "iniciando migração"
 #: functions.inc.php:316
 msgid "true goto"
 msgstr ""
-
-#~ msgid "Time Condition Module"
-#~ msgstr "Módulo Condição de Tempo"
 
 #~ msgid " deleted!"
 #~ msgstr " apagado!"
