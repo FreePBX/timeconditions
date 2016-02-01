@@ -10,13 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-26 17:32-0800\n"
-"PO-Revision-Date: 2016-01-09 01:48-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-02-01 03:12+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/timeconditions/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: install.php:233
 #, php-format
@@ -25,7 +28,7 @@ msgstr ""
 
 #: functions.inc.php:907
 msgid "--Select a Group--"
-msgstr ""
+msgstr "--Sélectionnez un groupe--"
 
 #: functions.inc.php:528 functions.inc.php:593 install.php:200
 msgid ": Time Condition Override"
@@ -34,7 +37,7 @@ msgstr ""
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: views/timegroups/form.php:75 assets/js/timegroups.js:52
 msgid "Add Time"
@@ -59,11 +62,11 @@ msgstr ""
 
 #: functions.inc.php:998
 msgid "April"
-msgstr ""
+msgstr "Avril"
 
 #: functions.inc.php:1002
 msgid "August"
-msgstr ""
+msgstr "Août"
 
 #: assets/js/timegroups.js:61
 msgid "Cannot remove the only rule. At least 1 rule is required."
