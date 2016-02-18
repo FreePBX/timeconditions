@@ -210,5 +210,121 @@ class Timeconditions implements \BMO {
 			break;
 		}
 	}
+	/**
+	* checkTime:
+	* Attempts to faithfuly replicate the logic portion of the dialplan application
+	* gotoiftime. You pass a string with the same format and it returns true or false.
+	* most items can be a *, single (mon), or range (mon-fri) see the gotiftime docs.
+	* @time: <time range>,<days of week>,<days of month>,<months>
+	* return bool
+	*/
+	public function checkTime($time){
+	  $monthA = array(
+	    'jan' => 1,
+	    'feb' => 2,
+	    'mar' => 3,
+	    'apr' => 4,
+	    'may' => 5,
+	    'jun' => 6,
+	    'jul' => 7,
+	    'aug' => 8,
+	    'sep' => 9,
+	    'oct' => 10,
+	    'nov' => 11,
+	    'dec' => 12
+	  );
+	  $daysA = array(
+	    'sun' => 0,
+	    'mon' => 1,
+	    'tue' => 2,
+	    'wed' => 3,
+	    'thu' => 4,
+	    'fri' => 5,
+	    'sat' => 6,
+	  );
+	  //match all don't take time to parse out anything
+	  if($time == '*|*|*|*'){
+	    return true;
+	  }
+	  $return = false;
+	  list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
+	  if($month === '*'){
+	    $return = true;
+	  }else{
+	    $months = explode('-',$month);
+	    $range = isset($months[1]);
+	    if(!$range){
+	        if($monthA[$month] >= date('n')){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((date('n') >= $monthA[$months[0]]) && (date('n') <= $monthA[$months[1]])){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  if($dom === '*'){
+	    $return = true;
+	  }else{
+	    $daysom = explode('-',$dom);
+	    $range = isset($daysom[1]);
+	    if(!$range){
+	        if($dom >= date('j')){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((date('j') >= $daysom[0]) && (date('j') <= $daysom[1])){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  if($dow === '*'){
+	    $return = true;
+	  }else{
+	    $days = explode('-',$dow);
+	    $range = isset($days[1]);
+	    if(!$range){
+	        if($daysA[$dow] >= date('w')){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((date('w') >= $daysA[$days[0]]) && (date('w') <= $daysA[$days[1]])){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  if($hour === '*'){
+	    $return = true;
+	  }else{
+	    $hours = explode('-',$hour);
+	    $range = isset($hours[1]);
+	    if(!$range){
+	        if(strtotime(date('H:i')) >= strtotime($hour)){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((strtotime(date('H:i')) >= strtotime($hours[0])) && (strtotime(date('H:i')) <= strtotime($hours[1]))){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  return $return;
+	}
 
 }
