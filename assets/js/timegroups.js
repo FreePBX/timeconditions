@@ -31,10 +31,13 @@ function linkFormatter(value){
 }
 $(document).on('click',"#addTime",function(e){
 	e.preventDefault();
+	var nextid = Math.max.apply(Math,$.map($("#timerows span"), function(n, i){
+ 		return n.id.match(/\d+/);
+	}));
+	nextid++;
 	var curelem = $(this).parent().find('span').last();
 	var curid = $(curelem).attr('id').match(/\d+/);
 	curid = parseInt(curid,10);
-	var nextid = curid + 1;
 	var span = $(this).parent().find('span').last();
 	$("#addTime").remove();
 	var newspan  = span.clone();
