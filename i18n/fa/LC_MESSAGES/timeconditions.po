@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-01 11:22-0800\n"
+"POT-Creation-Date: 2016-03-04 15:14-0800\n"
 "PO-Revision-Date: 2016-02-14 07:52+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
@@ -39,11 +39,16 @@ msgstr "：بازنویسی شرط زمانی"
 msgid "Actions"
 msgstr "اعمال"
 
-#: views/timegroups/form.php:75 assets/js/timegroups.js:55
+#: functions.inc.php:917 assets/js/timeconditions.js:91
+msgid "Add New Time Group..."
+msgstr ""
+
+#: views/timegroups/form.php:75 assets/js/timegroups.js:59
 msgid "Add Time"
 msgstr "افزودن زمان"
 
-#: views/timeconditions/bootnav.php:14 views/timeconditions/form.php:6
+#: views/timeconditions/advanced_form.php:6
+#: views/timeconditions/basic_form.php:6 views/timeconditions/bootnav.php:14
 #: views/timeconditions/grid.php:9
 msgid "Add Time Condition"
 msgstr "افزودن شرط زمانی"
@@ -60,19 +65,20 @@ msgstr "افزودن زمان برای این شرط زمانی"
 msgid "Applications"
 msgstr "برنامه‌ها"
 
-#: functions.inc.php:996
+#: functions.inc.php:1000
 msgid "April"
 msgstr "آوریل"
 
-#: functions.inc.php:1000
+#: functions.inc.php:1004
 msgid "August"
 msgstr "آگوست"
 
-#: assets/js/timegroups.js:64
+#: assets/js/timegroups.js:68
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr "نمیتوان تنها قانون‌ را حذف کرد. حداقل باید یک قانون‌ موجود باشد."
 
-#: views/timeconditions/form.php:137
+#: views/timeconditions/advanced_form.php:135
+#: views/timeconditions/basic_form.php:252
 msgid "Change Override"
 msgstr "تغییر بازنویسی"
 
@@ -92,11 +98,12 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: views/timeconditions/form.php:150
+#: views/timeconditions/advanced_form.php:148
+#: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr "فعلی"
 
-#: functions.inc.php:1004
+#: functions.inc.php:1008
 msgid "December"
 msgstr "دسامبر"
 
@@ -108,19 +115,23 @@ msgstr "حذف"
 msgid "Description"
 msgstr "شرح"
 
-#: views/timeconditions/form.php:276
+#: views/timeconditions/advanced_form.php:274
+#: views/timeconditions/basic_form.php:186
 msgid "Destination if time does not matche"
 msgstr "مقصد در صورتی که زمان یکسان نباشد"
 
-#: views/timeconditions/form.php:246
+#: views/timeconditions/advanced_form.php:244
+#: views/timeconditions/basic_form.php:156
 msgid "Destination if time matches"
 msgstr "مقصد در صورتی که زمان یکسان باشد"
 
-#: views/timeconditions/form.php:228
+#: views/timeconditions/advanced_form.php:226
+#: views/timeconditions/basic_form.php:138
 msgid "Destination matches"
 msgstr "مقاصد یکسان"
 
-#: views/timeconditions/form.php:258
+#: views/timeconditions/advanced_form.php:256
+#: views/timeconditions/basic_form.php:168
 msgid "Destination non-matches"
 msgstr "مقاصد نایکسان"
 
@@ -128,12 +139,13 @@ msgstr "مقاصد نایکسان"
 msgid "ERROR: failed to convert field "
 msgstr "خطا： اشکال در تبدیل فیلد "
 
-#: views/timeconditions/form.php:18
+#: views/timeconditions/advanced_form.php:18
+#: views/timeconditions/basic_form.php:18
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
 msgstr "ویرایش شرط زمانی ： %s (%s)"
 
-#: assets/js/timegroups.js:29
+#: assets/js/timegroups.js:33
 msgid "Edit: "
 msgstr "ویرایش ： "
 
@@ -141,19 +153,21 @@ msgstr "ویرایش ： "
 msgid "Enable Maintenance Polling"
 msgstr "فعال سازی رای گیری در پشتیبانی"
 
-#: functions.inc.php:994
+#: functions.inc.php:998
 msgid "February"
 msgstr "فوریه"
 
-#: functions.inc.php:972
+#: functions.inc.php:976
 msgid "Friday"
 msgstr "جمعه"
 
-#: views/timeconditions/form.php:72
+#: views/timeconditions/advanced_form.php:70
+#: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "به این شرط زمانی نام خلاصه ای دهید تا قابل تشخیص باشد."
 
-#: views/timeconditions/form.php:96
+#: views/timeconditions/advanced_form.php:94
+#: views/timeconditions/basic_form.php:211
 msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
@@ -161,7 +175,8 @@ msgstr ""
 "اگر برای شماره گیری کدهای ویژه را فعال کنید برای تغییر این وضعیت باید کد پین "
 "وارد کنید"
 
-#: views/timeconditions/form.php:125
+#: views/timeconditions/advanced_form.php:123
+#: views/timeconditions/basic_form.php:240
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
@@ -180,19 +195,20 @@ msgid ""
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: views/timeconditions/form.php:108
+#: views/timeconditions/advanced_form.php:106
+#: views/timeconditions/basic_form.php:223
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:993
+#: functions.inc.php:997
 msgid "January"
 msgstr "ژانویه"
 
-#: functions.inc.php:999
+#: functions.inc.php:1003
 msgid "July"
 msgstr "جولای"
 
-#: functions.inc.php:998
+#: functions.inc.php:1002
 msgid "June"
 msgstr "جون"
 
@@ -214,39 +230,41 @@ msgstr "فهرست گروه زمانی"
 msgid "Maintenance Polling Interval"
 msgstr "مدت رای گیری حالت پشتیبان"
 
-#: functions.inc.php:995
+#: functions.inc.php:999
 msgid "March"
 msgstr "مارس"
 
-#: functions.inc.php:997
+#: functions.inc.php:1001
 msgid "May"
 msgstr "می"
 
-#: functions.inc.php:968
+#: functions.inc.php:972
 msgid "Monday"
 msgstr "دوشنبه"
 
-#: functions.inc.php:1167
+#: functions.inc.php:1171
 msgid "Month Day finish"
 msgstr "روز پایان ماه"
 
-#: functions.inc.php:1158
+#: functions.inc.php:1162
 msgid "Month Day start"
 msgstr "روز اول ماه"
 
-#: functions.inc.php:1185
+#: functions.inc.php:1189
 msgid "Month finish"
 msgstr "پایان ماه"
 
-#: functions.inc.php:1176
+#: functions.inc.php:1180
 msgid "Month start"
 msgstr "اول ماه"
 
-#: views/timeconditions/form.php:116
+#: views/timeconditions/advanced_form.php:114
+#: views/timeconditions/basic_form.php:231
 msgid "No"
 msgstr "خیر"
 
-#: views/timeconditions/form.php:24
+#: views/timeconditions/advanced_form.php:24
+#: views/timeconditions/basic_form.php:24
 msgid "No Override"
 msgstr "بدون بازنویسی"
 
@@ -255,7 +273,7 @@ msgstr "بدون بازنویسی"
 msgid "Not received"
 msgstr "دریافت نشده"
 
-#: functions.inc.php:1003
+#: functions.inc.php:1007
 msgid "November"
 msgstr "نوامبر"
 
@@ -263,27 +281,32 @@ msgstr "نوامبر"
 msgid "OK"
 msgstr "تایید"
 
-#: functions.inc.php:1002
+#: functions.inc.php:1006
 msgid "October"
 msgstr "اکتبر"
 
-#: views/timeconditions/form.php:84
+#: views/timeconditions/advanced_form.php:82
+#: views/timeconditions/basic_form.php:199
 msgid "Override Code Pin"
 msgstr "بازنویسی کد پین"
 
-#: views/timeconditions/form.php:30
+#: views/timeconditions/advanced_form.php:30
+#: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
 msgstr "بازنویسی دایمی وضعیت یکسان"
 
-#: views/timeconditions/form.php:36
+#: views/timeconditions/advanced_form.php:36
+#: views/timeconditions/basic_form.php:36
 msgid "Permanent Override unmatching state"
 msgstr "بازنویسی دایمی وضعیت ناهمسان"
 
-#: views/timeconditions/form.php:145
+#: views/timeconditions/advanced_form.php:143
+#: views/timeconditions/basic_form.php:260
 msgid "Permanently matched"
 msgstr "یکسانی همیشگی"
 
-#: views/timeconditions/form.php:147
+#: views/timeconditions/advanced_form.php:145
+#: views/timeconditions/basic_form.php:262
 msgid "Permanently unmatched"
 msgstr "ناهمسانی همیشگی"
 
@@ -299,15 +322,21 @@ msgstr "لطفا نام درست شرط زمانی وارد کنید"
 msgid "Reset"
 msgstr "بازنشانی"
 
-#: views/timeconditions/form.php:143
+#: views/timeconditions/advanced_form.php:141
+#: views/timeconditions/basic_form.php:258
 msgid "Reset Override"
 msgstr "بازنویسی بازنشانی"
 
-#: functions.inc.php:973
+#: functions.inc.php:977
 msgid "Saturday"
 msgstr "شنبه"
 
-#: views/timeconditions/form.php:211
+#: assets/js/timeconditions.js:87
+msgid "Select a Group"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:209
+#: views/timeconditions/basic_form.php:126
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
@@ -316,7 +345,7 @@ msgstr ""
 "گروه زمانی از گروه های زمانی انتخاب کنید. زمان های یکسان به مقاصد یکسان "
 "ارسال میشوند. اگر گروه انتخاب نشود, تماس به مقصد ناهمسان ارسال میشود."
 
-#: functions.inc.php:1001
+#: functions.inc.php:1005
 msgid "September"
 msgstr "سپتامبر"
 
@@ -325,7 +354,8 @@ msgstr "سپتامبر"
 msgid "Server time:"
 msgstr "زمان سرور："
 
-#: views/timeconditions/form.php:187
+#: views/timeconditions/advanced_form.php:185
+#: views/timeconditions/basic_form.php:102
 msgid ""
 "Specify the time zone by name if the destinations are in a different time "
 "zone than the server. Type two characters to start an auto-complete pick-"
@@ -341,23 +371,27 @@ msgstr ""
 msgid "Submit"
 msgstr "ارسال"
 
-#: functions.inc.php:967
+#: functions.inc.php:971
 msgid "Sunday"
 msgstr "یکشنبه"
 
-#: views/timeconditions/form.php:27
+#: views/timeconditions/advanced_form.php:27
+#: views/timeconditions/basic_form.php:27
 msgid "Temporary Override matching state"
 msgstr "بازنویسی موقت وضعیت یکسان"
 
-#: views/timeconditions/form.php:33
+#: views/timeconditions/advanced_form.php:33
+#: views/timeconditions/basic_form.php:33
 msgid "Temporary Override unmatching state"
 msgstr "بازنویسی موقت وضعیت ناهمسان"
 
-#: views/timeconditions/form.php:144
+#: views/timeconditions/advanced_form.php:142
+#: views/timeconditions/basic_form.php:259
 msgid "Temporary matched"
 msgstr "یکسانی موقت"
 
-#: views/timeconditions/form.php:146
+#: views/timeconditions/advanced_form.php:144
+#: views/timeconditions/basic_form.php:261
 msgid "Temporary unmatched"
 msgstr "ناهمسانی موقت"
 
@@ -372,7 +406,8 @@ msgid ""
 "during such a period is properly reset when the new period starts."
 msgstr ""
 
-#: views/timeconditions/form.php:158
+#: views/timeconditions/advanced_form.php:156
+#: views/timeconditions/basic_form.php:273
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -385,7 +420,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups.js:12
+#: assets/js/timegroups.js:15
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -399,7 +434,7 @@ msgstr "گروه زمانی درحال استفاده است نمیتوان حذ
 msgid "This will display as the name of this Time Group"
 msgstr "این به عنوان نام گروه زمانی نمایش داده میشود"
 
-#: functions.inc.php:971
+#: functions.inc.php:975
 msgid "Thursday"
 msgstr "پنج شنبه"
 
@@ -411,7 +446,8 @@ msgstr "شرط زمانی"
 msgid "Time Condition Module"
 msgstr "ماژول شرط زمانی"
 
-#: views/timeconditions/form.php:60
+#: views/timeconditions/advanced_form.php:58
+#: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
 msgstr "نام شرط زمانی"
 
@@ -425,7 +461,8 @@ msgstr "شرط زمانی ： %s"
 msgid "Time Conditions"
 msgstr "شرایط زمانی"
 
-#: views/timeconditions/form.php:199 views/timegroups/bootnav.php:30
+#: views/timeconditions/advanced_form.php:197
+#: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
 #: views/timegroups/grid.php:27
 msgid "Time Group"
 msgstr "گروه زمانی"
@@ -434,15 +471,16 @@ msgstr "گروه زمانی"
 msgid "Time Groups"
 msgstr "گروه‌های زمانی"
 
-#: views/timeconditions/form.php:170
+#: views/timeconditions/advanced_form.php:168
+#: views/timeconditions/basic_form.php:85
 msgid "Time Zone:"
 msgstr "منطقه زمانی ："
 
-#: functions.inc.php:1114
+#: functions.inc.php:1118
 msgid "Time to Start"
 msgstr "زمان شروع"
 
-#: functions.inc.php:1127
+#: functions.inc.php:1131
 msgid "Time to finish"
 msgstr "زمان پایان"
 
@@ -450,15 +488,19 @@ msgstr "زمان پایان"
 msgid "Time(s)"
 msgstr "زمان (ها)"
 
-#: functions.inc.php:969
+#: functions.inc.php:973
 msgid "Tuesday"
 msgstr "سه‌شنبه"
 
-#: views/timeconditions/form.php:142
+#: views/timeconditions/advanced_form.php:140
+#: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "تغییر نیافته"
 
-#: views/timeconditions/form.php:39 views/timeconditions/form.php:43
+#: views/timeconditions/advanced_form.php:39
+#: views/timeconditions/advanced_form.php:43
+#: views/timeconditions/basic_form.php:39
+#: views/timeconditions/basic_form.php:43
 msgid "Unknown State"
 msgstr "وضعیت نامشخص"
 
@@ -467,23 +509,25 @@ msgstr "وضعیت نامشخص"
 msgid "Upgraded %s and created group %s"
 msgstr "به روزرسانی %s و ایجاد گروه %s"
 
-#: views/timeconditions/form.php:175
+#: views/timeconditions/advanced_form.php:173
+#: views/timeconditions/basic_form.php:90
 msgid "Use System Timezone"
 msgstr "استفاده از منطقه زمانی سیستم"
 
-#: functions.inc.php:970
+#: functions.inc.php:974
 msgid "Wednesday"
 msgstr "چهارشنبه"
 
-#: functions.inc.php:1140
+#: functions.inc.php:1144
 msgid "Week Day Start"
 msgstr "روز شروع هفته"
 
-#: functions.inc.php:1149
+#: functions.inc.php:1153
 msgid "Week Day finish"
 msgstr "روز پایان هفته"
 
-#: views/timeconditions/form.php:114
+#: views/timeconditions/advanced_form.php:112
+#: views/timeconditions/basic_form.php:229
 msgid "Yes"
 msgstr "بله"
 
