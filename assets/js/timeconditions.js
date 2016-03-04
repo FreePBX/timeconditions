@@ -23,10 +23,75 @@ function isNumber(n) {
 function tcactionFormatter(value,row){
 	var html = '';
 	html += '<a href="?display=timeconditions&view=form&itemid='+value+'"><i class="fa fa-edit"></i></a>&nbsp;';
-	html += '<a href="?display=timegroups&view=form&extdisplay='+row['time']+'"><i class="fa fa-clock-o"></i></a>&nbsp;';
+	html += '<a href="?display=timegroups&view=form&extdisplay='+row.time+'"><i class="fa fa-clock-o"></i></a>&nbsp;';
 	html += '<a href="?display=timeconditions&action=delete&itemid='+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 $("#tcrnav").on('click-row.bs.table',function(e,row,elem){
-  window.location = '?display=timeconditions&view=form&itemid='+row['timeconditions_id'];
-})
+  window.location = '?display=timeconditions&view=form&itemid='+row.timeconditions_id;
+});
+
+var previous;
+$("#time").on('focus', function () {
+	// Store the current value on focus and on change
+	if(this.value != "popover") {
+		previous = this.value;
+	}
+}).change(function() {
+	var $this = this;
+	if($(this).val() == "popover") {
+		var urlStr = "config.php?display=timegroups&view=form&fw_popover=1", id = 1;
+		popover_select_id = this.id;
+		popover_box_class = "timegroups";
+		popover_box_mod = "timegroups";
+		popover_box = $("<div id=\"popover-box-id\" data-id=\"" + id + "\"></div>")
+			.html("<iframe data-popover-class=\"" + popover_box_class + "\" id=\"popover-frame\" frameBorder=\"0\" src=\"" + urlStr + "\" width=\"100%\" height=\"95%\"></iframe>")
+			.dialog({
+				title: "Add",
+				resizable: false,
+				modal: true,
+				width: window.innerWidth - (window.innerWidth * '.10'),
+				height: window.innerHeight - (window.innerHeight * '.10'),
+				create: function() {
+					$("body").scrollTop(0).css({ overflow: "hidden" });
+				},
+				close: function(e) {
+					$($this).val(previous);
+					$("#popover-frame").contents().find("body").remove();
+					$("#popover-box-id").html("");
+					$("body").css({ overflow: "inherit" });
+					updateGroups();
+					$(e.target).dialog("destroy").remove();
+				},
+				buttons: [
+						{
+						text: fpbx.msg.framework.save,
+						click: function() {
+							pform = $("#popover-frame").contents().find("form").first();
+							pform.submit();
+						}
+					}, {
+						text: fpbx.msg.framework.cancel,
+						click: function() {
+							$(this).dialog("close");
+						}
+					}
+				]
+			});
+	}
+});
+
+function updateGroups(selectLast) {
+	$.post( "ajax.php", { module: "timeconditions", command: "getGroups" })
+  .success(function( data ) {
+		var options = '<option value="">--'+_('Select a Group')+'--</option>';
+		$.each(data.groups, function(i,v) {
+			options = options + '<option value="'+v.value+'">'+v.text+'</option>';
+		});
+		options = options + '<option value="popover">'+_('Add New Time Group...')+'</option>';
+		$("#time").html(options);
+		if(typeof selectLast === "undefined" || !selectLast) {
+			$("#time").val(data.last);
+		}
+  });
+}

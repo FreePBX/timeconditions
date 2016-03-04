@@ -127,6 +127,7 @@ class Timeconditions implements \BMO {
 	}
 	public function ajaxRequest($req, &$setting) {
 		switch ($req) {
+			case 'getGroups':
 			case 'getJSON':
 				return true;
 			break;
@@ -138,10 +139,18 @@ class Timeconditions implements \BMO {
 	public function ajaxHandler(){
 		$request = $_REQUEST;
 		switch ($_REQUEST['command']) {
+			case 'getGroups':
+				$sql = 'SELECT id FROM timegroups_groups order by id desc limit 1';
+				$sth = $this->db->prepare($sql);
+				$sth->execute();
+				$row = $sth->fetch(\PDO::FETCH_ASSOC);
+				$timegroupslist = $this->listTimegroups();
+				return array("status" => true, "groups" => $timegroupslist, "last" => $row['id']);
+			break;
 			case 'getJSON':
 			switch ($request['jdata']) {
 				case 'tggrid':
-					$timegroupslist = $this->listTimegroups();
+
 					$rdata = array();
 					foreach($timegroupslist as $tg){
 					$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));

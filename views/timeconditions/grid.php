@@ -7,7 +7,7 @@ $dataurl = "ajax.php?module=timeconditions&command=getJSON&jdata=tcgrid";
 <div id="toolbar-all">
   <a href="config.php?display=timegroups" class="btn btn-default"><i class="fa fa-list"></i>&nbsp; <?php echo _("List Time Groups") ?></a>
   <a href="config.php?display=timeconditions&amp;view=form" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp; <?php echo _("Add Time Condition") ?></a>
-  <span class="btn btn-default disabled">
+  <span class="btn btn-info disabled">
   	<b><?php echo _("Server time:")?></b> <span id="idTime" data-time="<?php echo time()?>" data-zone="<?php echo date("e")?>"><?php echo _("Not received")?></span>
   </span>
 </div>

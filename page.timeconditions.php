@@ -6,9 +6,19 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 $dispnum = "timeconditions"; //used for switch on config.php
 $heading = _("Time Conditions");
 $request = $_REQUEST;
+$display_mode = "advanced";
+$mode = \FreePBX::Config()->get("FPBXOPMODE");
+if(!empty($mode)) {
+	$display_mode = $mode;
+}
+
 switch ($request['view']) {
 	case 'form':
-		$content = load_view(__DIR__.'/views/timeconditions/form.php', array('request' => $request));
+		if($display_mode == "basic") {
+			$content = load_view(__DIR__.'/views/timeconditions/basic_form.php', array('request' => $request));
+		} else {
+			$content = load_view(__DIR__.'/views/timeconditions/advanced_form.php', array('request' => $request));
+		}
 	break;
 	default:
 		$content = load_view(__DIR__.'/views/timeconditions/grid.php', array('request' => $request));

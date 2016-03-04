@@ -913,6 +913,10 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 
 		$output .= "\t\t\t\t<option value='$itemvalue' $itemselected>$itemtext</option>\n";
 	}
+	if(!isset($_REQUEST['fw_popover'])) {
+		$output .= "\t\t\t\t<option value='popover'>"._("Add New Time Group...")."</option>\n";
+	}
+
 	$output .= "\t\t\t</select>\n\t\t";
 	return $output;
 }
