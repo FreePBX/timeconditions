@@ -55,12 +55,12 @@ function timeconditions_get_config($engine) {
 		case "asterisk":
 			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
 			$timelist = timeconditions_list(true);
+
 			if(is_array($timelist)) {
 				$context = 'timeconditions';
 				$fc_context = 'timeconditions-toggles';
 				$got_code_autoreset = false;
 				$need_maint = false;
-				$interval = isset($amp_conf['TCINTERVAL']) && ctype_digit($amp_conf['TCINTERVAL']) ? $amp_conf['TCINTERVAL'] : '60';
 
 				foreach($timelist as $item) {
 					// add dialplan
@@ -87,10 +87,7 @@ function timeconditions_get_config($engine) {
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
-					//$ext->add($context, $time_id, '', new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
-					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
-					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:5}" = "false"]?true:false)}'));
-					$ext->add($context, $time_id, '', new ext_return(''));
+					$ext->add($context, $time_id, '', new ext_goto($item['falsegoto']));
 
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
@@ -101,10 +98,7 @@ function timeconditions_get_config($engine) {
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
-					//$ext->add($context, $time_id, '', new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
-					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
-					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:4}" = "true"]?true:false)}'));
-					$ext->add($context, $time_id, '', new ext_return(''));
+					$ext->add($context, $time_id, '', new ext_goto($item['truegoto']));
 
 					$fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
 					$c = $fcc->getCodeActive();
@@ -242,6 +236,7 @@ function timeconditions_get_config($engine) {
 					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 				}
 
+				//TODO: Respect 				$interval = isset($amp_conf['TCINTERVAL']) && ctype_digit($amp_conf['TCINTERVAL']) ? $amp_conf['TCINTERVAL'] : '60';
 				$line = "* * * * * ". $amp_conf['ASTVARLIBDIR']."/bin/schedtc.php";
 				if ($need_maint && $amp_conf['TCMAINT']) {
 					\FreePBX::Cron()->add($line);
