@@ -150,7 +150,7 @@ class Timeconditions implements \BMO {
 			case 'getJSON':
 			switch ($request['jdata']) {
 				case 'tggrid':
-
+					$timegroupslist = $this->listTimegroups();
 					$rdata = array();
 					foreach($timegroupslist as $tg){
 					$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));

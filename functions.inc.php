@@ -62,12 +62,6 @@ function timeconditions_get_config($engine) {
 				$need_maint = false;
 				$interval = isset($amp_conf['TCINTERVAL']) && ctype_digit($amp_conf['TCINTERVAL']) ? $amp_conf['TCINTERVAL'] : '60';
 
-				if ($amp_conf['TCMAINT']) {
-					$maint_context = 'tc-maint';
-					$ext->add($maint_context, 's', '', new ext_nocdr(''));
-					$ext->add($maint_context, 's', '', new ext_set("TCMAINT",'RETURN'));
-				}
-
 				foreach($timelist as $item) {
 					// add dialplan
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
@@ -93,8 +87,7 @@ function timeconditions_get_config($engine) {
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
-					$skip_dest = '';
-					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
+					//$ext->add($context, $time_id, '', new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['falsegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
 					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:5}" = "false"]?true:false)}'));
 					$ext->add($context, $time_id, '', new ext_return(''));
@@ -108,8 +101,7 @@ function timeconditions_get_config($engine) {
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
-					$skip_dest = '';
-					$ext->add($context, $time_id, $skip_dest, new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
+					//$ext->add($context, $time_id, '', new ext_gotoif('$["${TCMAINT}"!="RETURN"]',$item['truegoto']));
 					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
 					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:4}" = "true"]?true:false)}'));
 					$ext->add($context, $time_id, '', new ext_return(''));
@@ -136,7 +128,6 @@ function timeconditions_get_config($engine) {
 						//
 						if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
 							$need_maint = true;
-							$ext->add($maint_context, 's', '', new ext_gosub('1', $time_id, $context));
 						}
 
 					}
@@ -196,17 +187,6 @@ function timeconditions_get_config($engine) {
 					}
 				}
 
-				if ($amp_conf['TCMAINT']) {
-
-					// If we didn't have any maintenance to do, then don't reschedule the call file
-					//
-					if ($need_maint) {
-						$ext->add($maint_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing ${CALLERID(number)}'));
-					}
-					$ext->add($maint_context, 's', '', new ext_answer());
-					$ext->add($maint_context, 's', '', new ext_hangup());
-				}
-
 				if ($got_code_autoreset) {
 					$ext->add($fc_context, 'h', '', new ext_hangup());
 
@@ -222,7 +202,7 @@ function timeconditions_get_config($engine) {
 					//end
 
 					$ext->add($m_context, 's', '', new ext_setvar('INDEXES', '${ARG1}'));
-					$ext->add($m_context, 's', '', new ext_setvar('TCMAINT','RETURN'));
+					//$ext->add($m_context, 's', '', new ext_setvar('TCMAINT','RETURN'));
 					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
 
 					//Modifications by namezero111111 follow (FREEPBX-6415)
@@ -251,11 +231,6 @@ function timeconditions_get_config($engine) {
 					$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
 					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
 
-					if ($amp_conf['TCMAINT']) {
-						$ext->add($m_context, 's', '', new ext_gotoif('$["${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call)}"="1" | "${STAT(e,'.$amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call)}"="1"]','playback'));
-						$ext->add($m_context, 's', '', new ext_system($amp_conf['ASTVARLIBDIR']."/bin/schedtc.php $interval ".$amp_conf['ASTSPOOLDIR'].'/outgoing 0'));
-					}
-
 					if ($amp_conf['FCBEEPONLY']) {
 						$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
 					} else {
@@ -266,24 +241,12 @@ function timeconditions_get_config($engine) {
 					$lang = 'ja'; //Japanese
 					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 				}
-				if ($need_maint) {
-					/* Now we have to make sure there is an active call file and if not kick one off.
-					Enabling the feature code will also do this, but this makes sure that if you
-					are using hints, that the hints are kept up. (Thus if not using hints, this is not
-					run until a feature code requires it).
 
-					If need_maint is false, then we don't have any updating to do so don't start
-					*/
-					if ($amp_conf['TCMAINT']) {
-						$cf_0 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.0.call';
-						$cf_1 = $amp_conf['ASTSPOOLDIR'].'/outgoing/schedtc.1.call';
-						if (!file_exists($cf_0) && !file_exists($cf_1)) {
-							exec($amp_conf['ASTVARLIBDIR'] . '/bin/schedtc.php 60 ' . $amp_conf['ASTSPOOLDIR'] . '/outgoing 0',$output,$ret_code);
-							if ($ret_code != 0) {
-								error(_("Unable to initiate Time Conditions call file with schedtc.php: $ret_code"));
-							}
-						}
-					}
+				$line = "* * * * * ". $amp_conf['ASTVARLIBDIR']."/bin/schedtc.php";
+				if ($need_maint && $amp_conf['TCMAINT']) {
+					\FreePBX::Cron()->add($line);
+				} else {
+					\FreePBX::Cron()->remove($line);
 				}
 			}
 		break;
