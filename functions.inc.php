@@ -565,7 +565,7 @@ function timeconditions_timegroups_usage($group_id) {
 	} else {
 		foreach ($results as $result) {
 			$usage_arr[] = array(
-				"url_query" => "display=timeconditions&itemid=".$result['timeconditions_id'],
+				"url_query" => "config.php?display=timeconditions&view=form&itemid=".$result['timeconditions_id'],
 				"description" => $result['displayname'],
 			);
 		}

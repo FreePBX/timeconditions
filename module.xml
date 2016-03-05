@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>13.0.18</version>
+	<version>13.0.19</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
+		*13.0.19* Fix broken callback links
 		*13.0.18* Fix error in advanced settings add cron for scheduling tc-maint (if enabled)
 		*13.0.17* Add new time groups from time conditions, new time conditions maint script that does not use dialplan!
 		*13.0.16* FREEPBX-11605 figure out the highest number not the last number when adding an index
