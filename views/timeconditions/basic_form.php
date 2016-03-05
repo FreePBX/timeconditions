@@ -141,9 +141,9 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 					<div class="col-md-9">
 						<?php
 						if (isset($thisItem)) {
-							echo drawselects($thisItem['truegoto'],0);
+							echo drawselects($thisItem['truegoto'],0,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
 						} else {
-							echo drawselects(null, 0);
+							echo drawselects(null, 0,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
 						}
 						?>
 					</div>
@@ -171,9 +171,9 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 					<div class="col-md-9">
 						<?php
 						if (isset($thisItem)) {
-							echo drawselects($thisItem['falsegoto'],1);
+							echo drawselects($thisItem['falsegoto'],1,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
 						} else {
-							echo drawselects(null, 1);
+							echo drawselects(null, 1,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
 						}
 						?>
 					</div>
