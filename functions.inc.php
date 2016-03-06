@@ -87,7 +87,10 @@ function timeconditions_get_config($engine) {
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
-					$ext->add($context, $time_id, '', new ext_goto($item['falsegoto']));
+					$ext->add($context, $time_id, '', new ext_gotoif('$["${TCRETURN}"!="RETURN"]',$item['falsegoto']));
+					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
+					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:5}" = "false"]?true:false)}'));
+					$ext->add($context, $time_id, '', new ext_return(''));
 
 					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
@@ -98,7 +101,10 @@ function timeconditions_get_config($engine) {
 					//End USEDEVSTATE case
 					//end modifications by namezero111111
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.($invert_hint)?"NOT_INUSE":"INUSE"));
-					$ext->add($context, $time_id, '', new ext_goto($item['truegoto']));
+					$ext->add($context, $time_id, '', new ext_gotoif('$["${TCRETURN}"!="RETURN"]',$item['truegoto']));
+					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
+					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:4}" = "true"]?true:false)}'));
+					$ext->add($context, $time_id, '', new ext_return(''));
 
 					$fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
 					$c = $fcc->getCodeActive();
@@ -196,7 +202,7 @@ function timeconditions_get_config($engine) {
 					//end
 
 					$ext->add($m_context, 's', '', new ext_setvar('INDEXES', '${ARG1}'));
-					//$ext->add($m_context, 's', '', new ext_setvar('TCMAINT','RETURN'));
+					$ext->add($m_context, 's', '', new ext_setvar('TCRETURN','RETURN'));
 					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
 
 					//Modifications by namezero111111 follow (FREEPBX-6415)
