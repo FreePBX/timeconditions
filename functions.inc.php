@@ -242,13 +242,7 @@ function timeconditions_get_config($engine) {
 					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
 				}
 
-				//TODO: Respect 				$interval = isset($amp_conf['TCINTERVAL']) && ctype_digit($amp_conf['TCINTERVAL']) ? $amp_conf['TCINTERVAL'] : '60';
-				$line = "* * * * * ". $amp_conf['ASTVARLIBDIR']."/bin/schedtc.php";
-				if ($need_maint && $amp_conf['TCMAINT']) {
-					\FreePBX::Cron()->add($line);
-				} else {
-					\FreePBX::Cron()->remove($line);
-				}
+				\FreePBX::Timeconditions()->updateCron();
 			}
 		break;
 	}

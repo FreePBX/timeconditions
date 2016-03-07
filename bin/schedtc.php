@@ -10,7 +10,6 @@ if (!@include_once(getenv('FREEPBX_CONF') ? getenv('FREEPBX_CONF') : '/etc/freep
 $tc = \FreePBX::Timeconditions();
 $conditions = $tc->listTimeconditions();
 $groups = $tc->listTimeGroups();
-//devstate change 'Custom:DAYNIGHT0' INUSE
 foreach($conditions as $item){
     $tctimes = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
     foreach($tctimes as $tctime){
@@ -21,4 +20,5 @@ foreach($conditions as $item){
       }
     }
 }
+$tc->updateCron();
 exit(0);

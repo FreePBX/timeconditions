@@ -13,7 +13,9 @@ class Timeconditions implements \BMO {
 		$this->db = $freepbx->Database;
 		$this->errormsg ='';
 	}
-	public function install() {}
+	public function install() {
+		$this->cleanuptcmaint();
+	}
 	public function uninstall() {}
 	public function backup() {}
 	public function restore($backup) {}
@@ -86,6 +88,71 @@ class Timeconditions implements \BMO {
 				}
 				break;
 		}
+	}
+
+	/**
+	 * Gets rid of the millions of rows of tc-maint
+	 * slowly over time
+	 */
+	public function cleanuptcmaint($limit = 4000) {
+		$ASTVARLIBDIR = $this->FreePBX->Config->get("ASTVARLIBDIR");
+		foreach($this->FreePBX->Cron->getAll() as $cron) {
+			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/cleanuptcmaint.php");
+			if(preg_match("/cleanuptcmaint.php$/",$cron)) {
+				$this->FreePBX->Cron->remove($cron);
+			}
+		}
+		try {
+			$dbh = $this->FreePBX->Cel->cdrdb;
+			$limit = !empty($limit) ? " LIMIT ".$limit : "";
+			$del = $dbh->prepare("DELETE from asteriskcdrdb.cel WHERE context LIKE '%tc-maint%'");
+			$del->execute();
+			$count = $del->rowCount();
+			if($count > 0 && !empty($limit)) {
+				$this->FreePBX->Cron->add("0 */6 * * * ".$ASTVARLIBDIR."/bin/cleanuptcmaint.php");
+				return true;
+			}
+		} catch(\Exception $e) {
+			return;
+		}
+		return false;
+	}
+
+	/**
+	 * Update or remove the TC-Maint cron job
+	 * @return [type]           [description]
+	 */
+	public function updateCron() {
+		$ASTVARLIBDIR = $this->FreePBX->Config->get("ASTVARLIBDIR");
+		$TCMAINT = $this->FreePBX->Config->get("TCMAINT");
+		$TCINTERVAL = $this->FreePBX->Config->get("TCINTERVAL");
+
+		foreach($this->FreePBX->Cron->getAll() as $cron) {
+			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/schedtc.php");
+			if(preg_match("/schedtc.php$/",$cron)) {
+				$this->FreePBX->Cron->remove($cron);
+			}
+		}
+		if(!$TCMAINT) {
+			return;
+		}
+		switch($TCINTERVAL) {
+			case "900":
+			case "600":
+			case "300":
+			case "240":
+			case "180":
+			case "120":
+				$t = $TCINTERVAL / 60;
+				$time = "*/".$t." * * * *";
+			break;
+			case "60":
+			default:
+				$time = "* * * * *";
+			break;
+		}
+		$line = $time." ".$ASTVARLIBDIR."/bin/schedtc.php";
+		$this->FreePBX->Cron->add($line);
 	}
 
 	public function getActionBar($request) {
