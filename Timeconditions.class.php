@@ -105,7 +105,7 @@ class Timeconditions implements \BMO {
 		try {
 			$dbh = $this->FreePBX->Cel->cdrdb;
 			$limit = !empty($limit) ? " LIMIT ".$limit : "";
-			$del = $dbh->prepare("DELETE from asteriskcdrdb.cel WHERE context LIKE '%tc-maint%'");
+			$del = $dbh->prepare("DELETE from asteriskcdrdb.cel WHERE context LIKE '%tc-maint%'".$limit);
 			$del->execute();
 			$count = $del->rowCount();
 			if($count > 0 && !empty($limit)) {
@@ -401,6 +401,19 @@ class Timeconditions implements \BMO {
 	    }
 	  }
 	  return $return;
+	}
+
+	/**
+	 * FreePBX chown hooks
+	 */
+	public function chownFreepbx() {
+		$files = array();
+
+		$files[] = array('type' => 'execdir',
+			'path' => __DIR__.'/bin',
+			'perms' => 0755);
+
+		return $files;
 	}
 
 }
