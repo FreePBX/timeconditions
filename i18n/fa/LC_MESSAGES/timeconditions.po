@@ -10,21 +10,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-07 10:46-0800\n"
-"PO-Revision-Date: 2016-02-14 07:52+0200\n"
+"PO-Revision-Date: 2016-03-17 02:11+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
-"timeconditions/fa/>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/timeconditions/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: install.php:233
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
-msgstr ""
+msgstr "%sهشدار%s : برای این شرایط زمانی در نظر گرفته نشده"
 
 #: functions.inc.php:863
 msgid "--Select a Group--"
@@ -41,7 +41,7 @@ msgstr "اعمال"
 
 #: functions.inc.php:875 assets/js/timeconditions.js:91
 msgid "Add New Time Group..."
-msgstr ""
+msgstr "افزودن گروه زمانی جدید..."
 
 #: views/timegroups/form.php:75 assets/js/timegroups.js:59
 msgid "Add Time"
@@ -97,6 +97,10 @@ msgid ""
 "used for example to ring a receptionist during the day, or go directly to an "
 "IVR at night."
 msgstr ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night ."
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:265
@@ -194,11 +198,17 @@ msgid ""
 "temporarily if debugging a system to avoid the periodic dialplan running "
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
+"If set to false, this will override the execution of the Time Conditions "
+"maintenance task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting ."
 
 #: views/timeconditions/advanced_form.php:109
 #: views/timeconditions/basic_form.php:223
 msgid "Invert BLF Hint"
-msgstr ""
+msgstr "Invert  BLF Hint"
 
 #: functions.inc.php:955
 msgid "January"
@@ -333,7 +343,7 @@ msgstr "شنبه"
 
 #: assets/js/timeconditions.js:87
 msgid "Select a Group"
-msgstr ""
+msgstr "انتخاب گروه"
 
 #: views/timeconditions/advanced_form.php:212
 #: views/timeconditions/basic_form.php:126
@@ -405,6 +415,13 @@ msgid ""
 "configured span between two time condition states, so that a manual override "
 "during such a period is properly reset when the new period starts."
 msgstr ""
+"The polling interval in seconds used by the Time Conditions maintenance "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual override "
+"during such a period is properly reset when the new period starts ."
 
 #: views/timeconditions/advanced_form.php:159
 #: views/timeconditions/basic_form.php:273
@@ -419,12 +436,20 @@ msgid ""
 "Permanent Override which must be done here or with other applications such "
 "as an XML based phone options."
 msgstr ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options ."
 
 #: assets/js/timegroups.js:15
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
-msgstr ""
+msgstr "این بخش از گروه زمانی و تمام تنظیمات حذف میشود. ادامه میدهید؟"
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
