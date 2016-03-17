@@ -330,7 +330,7 @@ class Timeconditions implements \BMO {
 	    $months = explode('-',$month);
 	    $range = isset($months[1]);
 	    if(!$range){
-	        if($monthA[$month] >= date('n')){
+	        if($monthA[$month] == date('n')){
 	          $return = true;
 	        }else{
 	          return false;
@@ -349,7 +349,7 @@ class Timeconditions implements \BMO {
 	    $daysom = explode('-',$dom);
 	    $range = isset($daysom[1]);
 	    if(!$range){
-	        if($dom >= date('j')){
+	        if($dom == date('j')){
 	          $return = true;
 	        }else{
 	          return false;
@@ -368,7 +368,7 @@ class Timeconditions implements \BMO {
 	    $days = explode('-',$dow);
 	    $range = isset($days[1]);
 	    if(!$range){
-	        if($daysA[$dow] >= date('w')){
+	        if($daysA[$dow] == date('w')){
 	          $return = true;
 	        }else{
 	          return false;
@@ -387,7 +387,7 @@ class Timeconditions implements \BMO {
 	    $hours = explode('-',$hour);
 	    $range = isset($hours[1]);
 	    if(!$range){
-	        if(strtotime(date('H:i')) >= strtotime($hour)){
+	        if(strtotime(date('H:i')) == strtotime($hour)){
 	          $return = true;
 	        }else{
 	          return false;
