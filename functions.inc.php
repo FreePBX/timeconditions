@@ -177,17 +177,18 @@ function timeconditions_get_config($engine) {
 
 						$indexes = ltrim($indexes, '&');
 						$hint = ltrim($hint, '&');
-						$astman->database_put("AMPUSER/".$exten."/TC","HINT",$hint);
-						$astman->database_put("AMPUSER/".$exten."/TC","INDEXES",$indexes);
+						$astman->database_put("AMPUSER/".$exten."/tc","hint",$hint);
+						$astman->database_put("AMPUSER/".$exten."/tc","indexes",$indexes);
 
 					}
 				}
 
 				if(is_array($timelist)) {
-					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_gotoif('$["${DB(AMPUSER/${EXTEN:4}/TC/HINT)}" = ""]','hangup'));
-					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_macro('toggle-tc', '${DB(AMPUSER/${EXTEN:4}/TC/INDEXES)}'));
+					$len = strlen($c) + 1;
+					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_gotoif('$["${DB(AMPUSER/${EXTEN:4}/tc/hint)}" = ""]','hangup'));
+					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_macro('toggle-tc', '${DB(AMPUSER/${EXTEN:'.$len.'}/tc/indexes)}'));
 					$ext->add($fc_context, '_'.$c . '*X.', 'hangup', new ext_hangup(''));
-					$ext->addHint($fc_context, '_'.$c . '*X.', '${DB(AMPUSER/${EXTEN:4}/TC/HINT)}');
+					$ext->addHint($fc_context, '_'.$c . '*X.', '${DB(AMPUSER/${EXTEN:'.$len.'}/tc/hint)}');
 				}
 
 				if ($got_code_autoreset) {
