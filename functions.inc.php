@@ -50,6 +50,7 @@ function timeconditions_get_config($engine) {
 	global $ext;  // is this the best way to pass this?
 	global $conferences_conf;
 	global $amp_conf;
+	global $astman;
 
 	switch($engine) {
 		case "asterisk":
@@ -173,18 +174,20 @@ function timeconditions_get_config($engine) {
 							$indexes.= '&' . $time_id;
 							$hint.= '&Custom:TC' . $time_id;
 						}
+
 						$indexes = ltrim($indexes, '&');
 						$hint = ltrim($hint, '&');
+						$astman->database_put("AMPUSER/".$exten."/TC","HINT",$hint);
+						$astman->database_put("AMPUSER/".$exten."/TC","INDEXES",$indexes);
 
-						$ext->addHint($fc_context, $c . '*' . $exten, $hint);
-
-						if (strlen($indexes) == 0) {
-							$ext->add($fc_context, $c . '*' . $exten, '', new ext_hangup(''));
-							continue;
-						}
-
-						$ext->add($fc_context, $c . '*' . $exten, '', new ext_macro('toggle-tc', $indexes));
 					}
+				}
+
+				if(is_array($timelist)) {
+					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_gotoif('$["${DB(AMPUSER/${EXTEN:4}/TC/HINT)}" = ""]','hangup'));
+					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_macro('toggle-tc', '${DB(AMPUSER/${EXTEN:4}/TC/INDEXES)}'));
+					$ext->add($fc_context, '_'.$c . '*X.', 'hangup', new ext_hangup(''));
+					$ext->addHint($fc_context, '_'.$c . '*X.', '${DB(AMPUSER/${EXTEN:4}/TC/HINT)}');
 				}
 
 				if ($got_code_autoreset) {
@@ -1274,6 +1277,3 @@ if (isset($_REQUEST['term']) && strlen($_REQUEST['term'])>1) {
 	Header('Content-Type: text/json');
 	die(json_encode(array_values(preg_grep('*'.$_REQUEST['term'].'*i', DateTimeZone::listIdentifiers(DateTimeZone::ALL)))));
 }
-
-
-?>
