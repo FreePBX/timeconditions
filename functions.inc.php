@@ -140,12 +140,12 @@ function timeconditions_get_config($engine) {
 				if ($c) {
 					$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
-
+					$FreePBX = FreePBX::Create();
 					$userFCs = array();
-					if ($bmo && $bmo->Cos && $bmo->Cos->isLicensed()) {
-						$cos = $bmo->Cos;
+					if ($FreePBX && $FreePBX->Cos && $FreePBX->Cos->isLicensed()) {
+						$cos = $FreePBX->Cos;
 					} else if (function_exists('cos_islicenced') && cos_islicenced()) {
-						$cos = Cos::create();
+						$cos = $FreePBX->Cos();
 					}
 
 					if ($cos) {
