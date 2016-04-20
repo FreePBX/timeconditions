@@ -58,7 +58,7 @@ class Timeconditions implements \BMO {
 					case 'edit':
 						timeconditions_timegroups_edit_group($timegroup,$description);
 						timeconditions_timegroups_edit_times($timegroup,$times);
-						break;
+					break;
 					case 'del':
 						$usage =  timeconditions_timegroups_list_usage($timegroup);
 						if(isset($usage) && sizeof($usage) >= 1){
@@ -66,27 +66,9 @@ class Timeconditions implements \BMO {
 							return;
 						}
 						timeconditions_timegroups_del_group($timegroup);
-						break;
-					case 'getJSON':
-						header('Content-Type: application/json');
-						switch ($request['jdata']) {
-							case 'grid':
-								$timegroupslist = timeconditions_timegroups_list_groups();
-								$rdata = array();
-								foreach($timegroupslist as $tg){
-									$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
-								}
-								echo json_encode($rdata);
-								exit();
-								break;
-							default:
-								echo json_encode(array("error"=>"Unknown Request"));
-								exit();
-								break;
-						}
-						break;
+					break;
 				}
-				break;
+			break;
 		}
 	}
 
