@@ -445,6 +445,7 @@ class Timeconditions implements \BMO {
 		$displayname = empty($post['displayname'])?_("unnamed"):$post['displayname'];
 		$invert_hint = ($post['invert_hint'] == '1') ? '1' : '0';
 		$vars = array(
+		':id' => $id,
 		':displayname' => $displayname,
 		':time' => $post['time'],
 		':timezone' => $post['timezone'],
@@ -455,7 +456,7 @@ class Timeconditions implements \BMO {
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
 	);
-		$old = getTimeCondition($id);
+		$old = $this->getTimeCondition($id);
 
 		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone WHERE timeconditions_id = :id";
 		$stmt = $this->db->prepare($sql);
