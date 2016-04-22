@@ -90,7 +90,7 @@ class Timeconditions implements \BMO {
 						}
 						break;
 				}
-				break;
+			break;
 		}
 	}
 
