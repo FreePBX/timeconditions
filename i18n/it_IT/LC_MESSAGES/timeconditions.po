@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-07 10:46-0800\n"
+"POT-Creation-Date: 2016-04-22 11:26-0700\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -24,11 +24,11 @@ msgstr ""
 "%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, "
 "ricontrollare"
 
-#: functions.inc.php:863
+#: functions.inc.php:582
 msgid "--Select a Group--"
 msgstr "--Selezionare un Gruppo--"
 
-#: functions.inc.php:484 functions.inc.php:549 install.php:200
+#: Timeconditions.class.php:474 Timeconditions.class.php:509 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -37,11 +37,11 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:875 assets/js/timeconditions.js:91
+#: functions.inc.php:594 assets/js/timeconditions.js:91
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:75 assets/js/timegroups.js:59
+#: views/timegroups/form.php:74 assets/js/timegroups.js:59
 msgid "Add Time"
 msgstr ""
 
@@ -55,7 +55,7 @@ msgstr "Aggiungi Condizione Temporale"
 msgid "Add Time Group"
 msgstr "Aggiungi Gruppo Temporale"
 
-#: views/timegroups/form.php:83
+#: views/timegroups/form.php:82
 msgid "Add a time for this time condition"
 msgstr ""
 
@@ -63,11 +63,11 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:958
+#: functions.inc.php:677
 msgid "April"
 msgstr "Aprile"
 
-#: functions.inc.php:962
+#: functions.inc.php:681
 msgid "August"
 msgstr "Agosto"
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Sto controllando per le vecchie condizioni temporali da aggiornare.."
 
-#: Timeconditions.class.php:65
+#: Timeconditions.class.php:68
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -101,15 +101,15 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:966
+#: functions.inc.php:685
 msgid "December"
 msgstr "Dicembre"
 
-#: Timeconditions.class.php:166
+#: Timeconditions.class.php:170
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:46
+#: views/timegroups/form.php:45
 msgid "Description"
 msgstr "Descrizione"
 
@@ -151,11 +151,11 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:956
+#: functions.inc.php:675
 msgid "February"
 msgstr "Febbraio"
 
-#: functions.inc.php:934
+#: functions.inc.php:653
 msgid "Friday"
 msgstr "Venerdì"
 
@@ -194,15 +194,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:955
+#: functions.inc.php:674
 msgid "January"
 msgstr "Gennaio"
 
-#: functions.inc.php:961
+#: functions.inc.php:680
 msgid "July"
 msgstr "Luglio"
 
-#: functions.inc.php:960
+#: functions.inc.php:679
 msgid "June"
 msgstr "Giugno"
 
@@ -224,31 +224,31 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:957
+#: functions.inc.php:676
 msgid "March"
 msgstr "Marzo"
 
-#: functions.inc.php:959
+#: functions.inc.php:678
 msgid "May"
 msgstr "Maggio"
 
-#: functions.inc.php:930
+#: functions.inc.php:649
 msgid "Monday"
 msgstr "Lunedì"
 
-#: functions.inc.php:1129
+#: functions.inc.php:848
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:1120
+#: functions.inc.php:839
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:1147
+#: functions.inc.php:866
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:1138
+#: functions.inc.php:857
 msgid "Month start"
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:965
+#: functions.inc.php:684
 msgid "November"
 msgstr "Novembre"
 
@@ -275,7 +275,7 @@ msgstr "Novembre"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:964
+#: functions.inc.php:683
 msgid "October"
 msgstr "Ottobre"
 
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Prego immettere un nome valido per questa Condizione Temporale"
 
-#: Timeconditions.class.php:171
+#: Timeconditions.class.php:175
 msgid "Reset"
 msgstr ""
 
@@ -321,7 +321,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:935
+#: functions.inc.php:654
 msgid "Saturday"
 msgstr "Sabato"
 
@@ -341,7 +341,7 @@ msgstr ""
 "seleziona un gruppo, la chiamata sarà inviata sempre alla destinazione non "
 "corrispondente."
 
-#: functions.inc.php:963
+#: functions.inc.php:682
 msgid "September"
 msgstr "Settembre"
 
@@ -359,11 +359,11 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:176
+#: Timeconditions.class.php:180
 msgid "Submit"
 msgstr "Conferma"
 
-#: functions.inc.php:929
+#: functions.inc.php:648
 msgid "Sunday"
 msgstr "Domenica"
 
@@ -422,11 +422,11 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:58
+#: views/timegroups/form.php:57
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:933
+#: functions.inc.php:652
 msgid "Thursday"
 msgstr "Giovedì"
 
@@ -443,7 +443,7 @@ msgstr ""
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:269
+#: functions.inc.php:21 functions.inc.php:266
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Condizione Temporale: %s"
@@ -468,19 +468,19 @@ msgstr "Gruppi Temporali"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:1076
+#: functions.inc.php:795
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:1089
+#: functions.inc.php:808
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:70
+#: views/timegroups/form.php:69
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:931
+#: functions.inc.php:650
 msgid "Tuesday"
 msgstr "Martedì"
 
@@ -506,15 +506,15 @@ msgstr "Aggiornato %s e creato gruppo %s"
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:932
+#: functions.inc.php:651
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: functions.inc.php:1102
+#: functions.inc.php:821
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:1111
+#: functions.inc.php:830
 msgid "Week Day finish"
 msgstr ""
 
@@ -544,7 +544,7 @@ msgstr ""
 msgid "converting timeconditions time field to int.."
 msgstr "conversione campo data timeconditions verso int.."
 
-#: functions.inc.php:282
+#: functions.inc.php:279
 msgid "false goto"
 msgstr ""
 
@@ -560,8 +560,12 @@ msgstr "nessun upgrade necessario"
 msgid "starting migration"
 msgstr "inizio migrazione"
 
-#: functions.inc.php:274
+#: functions.inc.php:271
 msgid "true goto"
+msgstr ""
+
+#: Timeconditions.class.php:423 Timeconditions.class.php:445
+msgid "unnamed"
 msgstr ""
 
 #~ msgid " deleted!"
