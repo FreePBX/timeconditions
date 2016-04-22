@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 21:27-0400\n"
+"POT-Creation-Date: 2016-04-22 11:27-0700\n"
 "PO-Revision-Date: 2014-07-26 01:03+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -333,7 +333,7 @@ msgstr ""
 msgid "Temporary unmatched"
 msgstr ""
 
-#: timeconditions.i18n.php:24
+#: timeconditions.i18n.php:26
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -375,7 +375,7 @@ msgstr "Quinta"
 msgid "Time Condition"
 msgstr "Condição de Tempo"
 
-#: timeconditions.i18n.php:18
+#: timeconditions.i18n.php:18 timeconditions.i18n.php:24
 msgid "Time Condition Module"
 msgstr "Módulo Condição de Tempo"
 

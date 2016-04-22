@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for timeconditions
-# Copyright (C) 2008-2015 Sangoma, Inc.
+# Copyright (C) 2008-2016 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 21:27-0400\n"
+"POT-Creation-Date: 2016-04-22 11:27-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -341,7 +341,7 @@ msgstr ""
 msgid "Temporary unmatched"
 msgstr ""
 
-#: timeconditions.i18n.php:24
+#: timeconditions.i18n.php:26
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -386,6 +386,7 @@ msgid "Time Condition"
 msgstr ""
 
 #: timeconditions.i18n.php:18
+#: timeconditions.i18n.php:24
 msgid "Time Condition Module"
 msgstr ""
 

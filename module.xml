@@ -2,15 +2,16 @@
   <rawname>timeconditions</rawname>
   <repo>standard</repo>
   <name>Time Conditions</name>
-  <version>12.0.8</version>
-  <publisher>Schmooze Com Inc</publisher>
+  <version>12.0.9</version>
+  <publisher>Sangoma Technologies Corporation</publisher>
   <license>GPLv3+</license>
   <licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
   <category>Applications</category>
   <description>
     Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
   </description>
-  <changelog>
+	<changelog>
+		*12.0.9* FREEPBX-12110
     *12.0.8* FREEPBX-8461 Add timezone option to time conditions
     *12.0.7.1* FREEPBX-8689 - Re-fix toggle.
     *12.0.7* Fix toggle all feature code to set states properly.
