@@ -140,24 +140,17 @@ function timeconditions_get_config($engine) {
 				if ($c) {
 					$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
-					$FreePBX = FreePBX::Create();
 					$userFCs = array();
-					if ($FreePBX && $FreePBX->Cos && $FreePBX->Cos->isLicensed()) {
-						$cos = $FreePBX->Cos;
-					} else if (function_exists('cos_islicenced') && cos_islicenced()) {
-						$cos = $FreePBX->Cos();
-					}
-
-					if ($cos) {
-						$allCos = $cos->getAllCos();
+					if (\FreePBX::Modules()->moduleHasMethod("cos","isLicensed") && \FreePBX::Cos()->isLicensed()) {
+						$allCos = \FreePBX::Cos()->getAllCos();
 						foreach ($allCos as $cos_name) {
-							$all = $cos->getAll($cos_name);
-
+							$all = \FreePBX::Cos()->getAll($cos_name);
 							foreach ($all['members'] as $key => $val) {
 								$userFCs[$key] = array_merge(($userFCs[$key] ? $userFCs[$key] : array()), $all['fcallow']);
 							}
 						}
 					}
+
 
 					$users = core_users_list();
 					foreach ($users as $user) {
