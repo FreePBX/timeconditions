@@ -475,8 +475,8 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	}
 	$sql = "SELECT id, time FROM timegroups_details WHERE timegroupid = $timegroup";
 	$results = $db->getAll($sql);
-	if(DB::IsError($results)) {
-		$results = null;
+	if(DB::IsError($results) || !is_array($results)) {
+		$results = array();
 	}
 	$tz='';
 	if ($timecondition_id>0) {
