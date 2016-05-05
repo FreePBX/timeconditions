@@ -133,7 +133,7 @@ class Timeconditions implements \BMO {
 
 		foreach($this->FreePBX->Cron->getAll() as $cron) {
 			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/schedtc.php");
-			if(preg_match("/schedtc.php$/",$cron)) {
+			if(preg_match("/schedtc.php/",$cron)) {
 				$this->FreePBX->Cron->remove($cron);
 			}
 		}
@@ -155,7 +155,7 @@ class Timeconditions implements \BMO {
 				$time = "* * * * *";
 			break;
 		}
-		$line = $time." ".$ASTVARLIBDIR."/bin/schedtc.php";
+		$line = $time." [ -x ".$ASTVARLIBDIR."/bin/schedtc.php ] && ".$ASTVARLIBDIR."/bin/schedtc.php";
 		$this->FreePBX->Cron->add($line);
 	}
 
