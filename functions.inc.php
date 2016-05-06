@@ -140,48 +140,7 @@ function timeconditions_get_config($engine) {
 				if ($c) {
 					$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
-					$userFCs = array();
-					if (\FreePBX::Modules()->moduleHasMethod("cos","isLicensed") && \FreePBX::Cos()->isLicensed()) {
-						$allCos = \FreePBX::Cos()->getAllCos();
-						foreach ($allCos as $cos_name) {
-							$all = \FreePBX::Cos()->getAll($cos_name);
-							foreach ($all['members'] as $key => $val) {
-								$userFCs[$key] = array_merge(($userFCs[$key] ? $userFCs[$key] : array()), $all['fcallow']);
-							}
-						}
-					}
-
-
-					$users = core_users_list();
-					foreach ($users as $user) {
-						$exten = $user[0];
-
-						$indexes = '';
-						$hint = '';
-						foreach ($timelist as $item) {
-							$time_id = $item['timeconditions_id'];
-
-							if (count($userFCs) > 1 && (!isset($userFCs[$exten]) || !isset($userFCs[$exten]['toggle-mode-' . $time_id]))) {
-								continue;
-							}
-							$indexes.= '&' . $time_id;
-							$hint.= '&Custom:TC' . $time_id;
-						}
-
-						$indexes = ltrim($indexes, '&');
-						$hint = ltrim($hint, '&');
-						$astman->database_put("AMPUSER/".$exten."/tc","hint",$hint);
-						$astman->database_put("AMPUSER/".$exten."/tc","indexes",$indexes);
-
-					}
-				}
-
-				if(is_array($timelist)) {
-					$len = strlen($c) + 1;
-					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_gotoif('$["${DB(AMPUSER/${EXTEN:4}/tc/hint)}" = ""]','hangup'));
-					$ext->add($fc_context, '_'.$c . '*X.', '', new ext_macro('toggle-tc', '${DB(AMPUSER/${EXTEN:'.$len.'}/tc/indexes)}'));
-					$ext->add($fc_context, '_'.$c . '*X.', 'hangup', new ext_hangup(''));
-					$ext->addHint($fc_context, '_'.$c . '*X.', '${DB(AMPUSER/${EXTEN:'.$len.'}/tc/hint)}');
+					//TODO: technically a hint could be here
 				}
 
 				if ($got_code_autoreset) {
