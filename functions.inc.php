@@ -116,7 +116,8 @@ function timeconditions_get_config($engine) {
 						$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
 						//End USEDEVSTATE
 						//Modifications by namezero111111 follow (FREEPBX-6415)
-						$fcccode_macro_call = (strlen($fcc_password)>0) ? (','.$fcc_password) : '';
+						$fcccode_macro_call = (!empty($fcc_password)) ? ','.$fcc_password:'';
+						dbug($fcccode_macro_call);
 						$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
 						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id.$fcccode_macro_call));
 						//end modifications by namezero111111
@@ -151,20 +152,17 @@ function timeconditions_get_config($engine) {
 					// for i18n playback in multiple languages
 					$ext->add($m_context, 'lang-playback', '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$m_context.',${CHANNEL(language)})}]', $m_context.',${CHANNEL(language)},${ARG1}', $m_context.',en,${ARG1}'));
 					$ext->add($m_context, 'lang-playback', '', new ext_return());
-					//Modifications by namezero111111 follow (FREEPBX-6415)
-					if('' != $fcc_password) {
-						$ext->add($m_context, 's', '', new ext_authenticate('${ARG2}'));
-					}
-					//end
 
-					$ext->add($m_context, 's', '', new ext_setvar('INDEXES', '${ARG1}'));
+					$ext->add($m_context, 's', '', new ext_gotoif('$[${ARG2} > 0]', 'hasauth','toggle'));
+					$ext->add($m_context, 's', 'hasauth', new ext_authenticate('${ARG2}'));
+
+
+					$ext->add($m_context, 's', 'toggle', new ext_setvar('INDEXES', '${ARG1}'));
 					$ext->add($m_context, 's', '', new ext_setvar('TCRETURN','RETURN'));
 					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
 
-					//Modifications by namezero111111 follow (FREEPBX-6415)
 					$ext->add($m_context, 's', '', new ext_set("TCINUSE",'${DB(TC/${ARG1}/INUSESTATE)}'));
 					$ext->add($m_context, 's', '', new ext_set("TCNOTINUSE",'${DB(TC/${ARG1}/NOT_INUSESTATE)}'));
-					//end
 
 					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
 					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
