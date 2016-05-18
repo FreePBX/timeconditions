@@ -27,13 +27,16 @@ foreach($conditions as $item){
 		tcout($debug, "INVERTED BLF: true (NOT_INUSE = ".$not_inuse." & INUSE = ".$inuse.")");
 	}
 	$tco = $astman->database_get("TC",$item['timeconditions_id']);
+	$sticky = false;
 	switch($tco) {
-    case "true_sticky":
+		case "true_sticky":
+			$sticky = true;
 		case "true":
 			$override = true;
 			tcout($debug, "OVERRIDE MODE: True (".$not_inuse.")");
 		break;
-    case "false_sticky":
+		case "false_sticky":
+			$sticky = true;
 		case "false":
 			$override = false;
 			tcout($debug, "OVERRIDE MODE: False (".$inuse.")");
@@ -61,7 +64,7 @@ foreach($conditions as $item){
   tcout($debug, "TIME MATCHED: ".(($timeMatch)?"True":"False")." (".(($timeMatch)?$not_inuse:$inuse).")");
 
 	if(!is_null($override)) {
-		if($timeMatch !== $override) {
+		if($sticky || ($timeMatch !== $override)) {
 			tcout($debug, "BLF MODE: Overridden to ".(($override)?"True":"False")." (".(($override)?$not_inuse:$inuse).")");
 		} else {
       tcout($debug, "BLF MODE: ".(($timeMatch)?"True":"False")." [Reset Override as time match is the same as override mode]");

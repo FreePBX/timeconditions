@@ -27,6 +27,27 @@ function tcactionFormatter(value,row){
 	html += '<a href="?display=timeconditions&action=delete&itemid='+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
+function tcstateFormatter(value,row){
+	var str = '';
+	switch(value) {
+		case "true_sticky":
+			str = _("Permanently matched");
+		break;
+		case "false_sticky":
+			str = _("Permanently unmatched");
+		break;
+		case "false":
+			str = _("Temporary unmatched");
+		break;
+		case "true":
+			str = _("Temporary matched");
+		break;
+		default:
+			str = _("No Override");
+		break;
+	}
+	return str;
+}
 $("#tcrnav").on('click-row.bs.table',function(e,row,elem){
   window.location = '?display=timeconditions&view=form&itemid='+row.timeconditions_id;
 });

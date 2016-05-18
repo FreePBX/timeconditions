@@ -24,6 +24,7 @@ $dataurl = "ajax.php?module=timeconditions&command=getJSON&jdata=tcgrid";
     <thead>
             <tr>
             <th data-field="displayname" data-sortable="true"><?php echo _("Time Condition")?></th>
+						<th data-field="state" data-sortable="true" data-formatter="tcstateFormatter"><?php echo _("Override State")?></th>
             <th data-field="group" data-sortable="true"><?php echo _("Linked Time Group")?></th>
             <th data-field="timeconditions_id" data-formatter="tcactionFormatter"><?php echo _("Actions")?></th>
         </tr>

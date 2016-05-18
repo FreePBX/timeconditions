@@ -235,9 +235,14 @@ class Timeconditions implements \BMO {
 					foreach($timegroups as $tg){
 						$tgs[$tg['value']] = $tg['text'];
 					}
+					$tcs = $this->astman->database_show("TC");
+					dbug($timeconditions);
 					foreach ($timeconditions as $key => $value) {
+						$id = $value['timeconditions_id'];
+						$state = isset($tcs['/TC/'.$id]) ? $tcs['/TC/'.$id] : '';
 						$tgstime = isset($tgs[$value['time']])?$tgs[$value['time']]:'';
 						$timeconditions[$key]['group'] = $tgstime;
+						$timeconditions[$key]['state'] = $state;
 					}
 					return array_values($timeconditions);
 				break;
