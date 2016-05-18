@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-06 09:48-0700\n"
+"POT-Creation-Date: 2016-05-17 17:35-0700\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -27,16 +27,16 @@ msgstr "%s警告：%s没有为此条件设置时间，请检查"
 msgid "--Select a Group--"
 msgstr "--选择一个小组--"
 
-#: Timeconditions.class.php:474 Timeconditions.class.php:509 install.php:200
+#: Timeconditions.class.php:479 Timeconditions.class.php:514 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
-#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
+#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:553 assets/js/timeconditions.js:91
+#: functions.inc.php:553 assets/js/timeconditions.js:112
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr "七月"
 msgid "June"
 msgstr "六月"
 
-#: views/timeconditions/grid.php:27
+#: views/timeconditions/grid.php:28
 msgid "Linked Time Group"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgid "No"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:24
-#: views/timeconditions/basic_form.php:24
+#: views/timeconditions/basic_form.php:24 assets/js/timeconditions.js:46
 msgid "No Override"
 msgstr ""
 
@@ -283,6 +283,10 @@ msgstr "十月"
 msgid "Override Code Pin"
 msgstr "覆盖状态修改密码"
 
+#: views/timeconditions/grid.php:27
+msgid "Override State"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:30
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
@@ -294,12 +298,12 @@ msgid "Permanent Override unmatching state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:146
-#: views/timeconditions/basic_form.php:260
+#: views/timeconditions/basic_form.php:260 assets/js/timeconditions.js:34
 msgid "Permanently matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:148
-#: views/timeconditions/basic_form.php:262
+#: views/timeconditions/basic_form.php:262 assets/js/timeconditions.js:37
 msgid "Permanently unmatched"
 msgstr ""
 
@@ -324,7 +328,7 @@ msgstr ""
 msgid "Saturday"
 msgstr "周六"
 
-#: assets/js/timeconditions.js:87
+#: assets/js/timeconditions.js:108
 msgid "Select a Group"
 msgstr ""
 
@@ -375,12 +379,12 @@ msgid "Temporary Override unmatching state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:145
-#: views/timeconditions/basic_form.php:259
+#: views/timeconditions/basic_form.php:259 assets/js/timeconditions.js:43
 msgid "Temporary matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:147
-#: views/timeconditions/basic_form.php:261
+#: views/timeconditions/basic_form.php:261 assets/js/timeconditions.js:40
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -560,7 +564,7 @@ msgstr "开始迁移"
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:423 Timeconditions.class.php:445
+#: Timeconditions.class.php:428 Timeconditions.class.php:450
 msgid "unnamed"
 msgstr ""
 

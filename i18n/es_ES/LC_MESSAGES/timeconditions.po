@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-06 09:48-0700\n"
+"POT-Creation-Date: 2016-05-17 17:35-0700\n"
 "PO-Revision-Date: 2015-04-23 06:36+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -28,16 +28,16 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- Seleccione un grupo --"
 
-#: Timeconditions.class.php:474 Timeconditions.class.php:509 install.php:200
+#: Timeconditions.class.php:479 Timeconditions.class.php:514 install.php:200
 msgid ": Time Condition Override"
 msgstr ": Condición horaria anulada"
 
-#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:28
+#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:553 assets/js/timeconditions.js:91
+#: functions.inc.php:553 assets/js/timeconditions.js:112
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr "Julio"
 msgid "June"
 msgstr "Junio"
 
-#: views/timeconditions/grid.php:27
+#: views/timeconditions/grid.php:28
 msgid "Linked Time Group"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgid "No"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:24
-#: views/timeconditions/basic_form.php:24
+#: views/timeconditions/basic_form.php:24 assets/js/timeconditions.js:46
 msgid "No Override"
 msgstr ""
 
@@ -284,6 +284,10 @@ msgstr "Octubre"
 msgid "Override Code Pin"
 msgstr ""
 
+#: views/timeconditions/grid.php:27
+msgid "Override State"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:30
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
@@ -295,12 +299,12 @@ msgid "Permanent Override unmatching state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:146
-#: views/timeconditions/basic_form.php:260
+#: views/timeconditions/basic_form.php:260 assets/js/timeconditions.js:34
 msgid "Permanently matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:148
-#: views/timeconditions/basic_form.php:262
+#: views/timeconditions/basic_form.php:262 assets/js/timeconditions.js:37
 msgid "Permanently unmatched"
 msgstr ""
 
@@ -325,7 +329,7 @@ msgstr ""
 msgid "Saturday"
 msgstr "Sábado"
 
-#: assets/js/timeconditions.js:87
+#: assets/js/timeconditions.js:108
 msgid "Select a Group"
 msgstr ""
 
@@ -374,12 +378,12 @@ msgid "Temporary Override unmatching state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:145
-#: views/timeconditions/basic_form.php:259
+#: views/timeconditions/basic_form.php:259 assets/js/timeconditions.js:43
 msgid "Temporary matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:147
-#: views/timeconditions/basic_form.php:261
+#: views/timeconditions/basic_form.php:261 assets/js/timeconditions.js:40
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -560,7 +564,7 @@ msgstr "Iniciando migración"
 msgid "true goto"
 msgstr "goto verdadero"
 
-#: Timeconditions.class.php:423 Timeconditions.class.php:445
+#: Timeconditions.class.php:428 Timeconditions.class.php:450
 msgid "unnamed"
 msgstr ""
 

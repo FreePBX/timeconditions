@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-06 09:48-0700\n"
+"POT-Creation-Date: 2016-05-17 17:35-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,21 +26,21 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: Timeconditions.class.php:474
-#: Timeconditions.class.php:509
+#: Timeconditions.class.php:479
+#: Timeconditions.class.php:514
 #: install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
 #: views/timeconditions/bootnav.php:9
-#: views/timeconditions/grid.php:28
+#: views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9
 #: views/timegroups/grid.php:28
 msgid "Actions"
 msgstr ""
 
 #: functions.inc.php:553
-#: assets/js/timeconditions.js:91
+#: assets/js/timeconditions.js:112
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -213,7 +213,7 @@ msgstr ""
 msgid "June"
 msgstr ""
 
-#: views/timeconditions/grid.php:27
+#: views/timeconditions/grid.php:28
 msgid "Linked Time Group"
 msgstr ""
 
@@ -268,6 +268,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:24
 #: views/timeconditions/basic_form.php:24
+#: assets/js/timeconditions.js:46
 msgid "No Override"
 msgstr ""
 
@@ -297,6 +298,10 @@ msgstr ""
 msgid "Override Code Pin"
 msgstr ""
 
+#: views/timeconditions/grid.php:27
+msgid "Override State"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:30
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
@@ -309,11 +314,13 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:146
 #: views/timeconditions/basic_form.php:260
+#: assets/js/timeconditions.js:34
 msgid "Permanently matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:262
+#: assets/js/timeconditions.js:37
 msgid "Permanently unmatched"
 msgstr ""
 
@@ -338,7 +345,7 @@ msgstr ""
 msgid "Saturday"
 msgstr ""
 
-#: assets/js/timeconditions.js:87
+#: assets/js/timeconditions.js:108
 msgid "Select a Group"
 msgstr ""
 
@@ -390,11 +397,13 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:145
 #: views/timeconditions/basic_form.php:259
+#: assets/js/timeconditions.js:43
 msgid "Temporary matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:147
 #: views/timeconditions/basic_form.php:261
+#: assets/js/timeconditions.js:40
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -578,7 +587,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:423
-#: Timeconditions.class.php:445
+#: Timeconditions.class.php:428
+#: Timeconditions.class.php:450
 msgid "unnamed"
 msgstr ""
