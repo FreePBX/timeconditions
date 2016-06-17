@@ -372,9 +372,8 @@ function timeconditions_add($post){
 }
 
 function timeconditions_edit($id,$post){
-	global $db;
-
-
+	_timeconditions_backtrace();
+	return FreePBX::Timeconditions()->editTimeCondition($id,$post);
 }
 
 function timeconditions_timegroups_usage($group_id) {
