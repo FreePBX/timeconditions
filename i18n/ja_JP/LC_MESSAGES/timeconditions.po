@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-20 14:59-0700\n"
+"POT-Creation-Date: 2016-06-17 13:11-0400\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -55,7 +55,7 @@ msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%s 警告:%s この条件の時間が定義されていません。もう一度確認してください。"
 
-#: functions.inc.php:538
+#: functions.inc.php:537
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
@@ -68,7 +68,7 @@ msgstr "：時間分岐条件を上書き"
 msgid "Actions"
 msgstr "アクション"
 
-#: functions.inc.php:550 assets/js/timeconditions.js:112
+#: functions.inc.php:549 assets/js/timeconditions.js:112
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -94,11 +94,11 @@ msgstr "この時間分岐条件の時間を追加します"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: functions.inc.php:633
+#: functions.inc.php:632
 msgid "April"
 msgstr "4月"
 
-#: functions.inc.php:637
+#: functions.inc.php:636
 msgid "August"
 msgstr "8月"
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "Current"
 msgstr "現在のステータス"
 
-#: functions.inc.php:641
+#: functions.inc.php:640
 msgid "December"
 msgstr "12月"
 
@@ -185,11 +185,11 @@ msgstr "編集: "
 msgid "Enable Maintenance Polling"
 msgstr "メンテナンスポーリングを有効にする"
 
-#: functions.inc.php:631
+#: functions.inc.php:630
 msgid "February"
 msgstr "2月"
 
-#: functions.inc.php:609
+#: functions.inc.php:608
 msgid "Friday"
 msgstr "金曜日"
 
@@ -232,15 +232,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "BLFヒントを逆にする"
 
-#: functions.inc.php:630
+#: functions.inc.php:629
 msgid "January"
 msgstr "1月"
 
-#: functions.inc.php:636
+#: functions.inc.php:635
 msgid "July"
 msgstr "7月"
 
-#: functions.inc.php:635
+#: functions.inc.php:634
 msgid "June"
 msgstr "6月"
 
@@ -262,31 +262,31 @@ msgstr "時間グループを表示"
 msgid "Maintenance Polling Interval"
 msgstr "メンテナンスポーリング間隔"
 
-#: functions.inc.php:632
+#: functions.inc.php:631
 msgid "March"
 msgstr "3月"
 
-#: functions.inc.php:634
+#: functions.inc.php:633
 msgid "May"
 msgstr "5月"
 
-#: functions.inc.php:605
+#: functions.inc.php:604
 msgid "Monday"
 msgstr "月曜日"
 
-#: functions.inc.php:804
+#: functions.inc.php:803
 msgid "Month Day finish"
 msgstr "終わる日"
 
-#: functions.inc.php:795
+#: functions.inc.php:794
 msgid "Month Day start"
 msgstr "始まる日"
 
-#: functions.inc.php:822
+#: functions.inc.php:821
 msgid "Month finish"
 msgstr "終わる月"
 
-#: functions.inc.php:813
+#: functions.inc.php:812
 msgid "Month start"
 msgstr "始まる月"
 
@@ -305,7 +305,7 @@ msgstr "上書きしない"
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:640
+#: functions.inc.php:639
 msgid "November"
 msgstr "11月"
 
@@ -313,7 +313,7 @@ msgstr "11月"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:639
+#: functions.inc.php:638
 msgid "October"
 msgstr "10月"
 
@@ -363,7 +363,7 @@ msgstr "リセット"
 msgid "Reset Override"
 msgstr "上書きをリセット"
 
-#: functions.inc.php:610
+#: functions.inc.php:609
 msgid "Saturday"
 msgstr "土曜日"
 
@@ -382,7 +382,7 @@ msgstr ""
 "間に一致した場合、指定した宛先に転送します。注意: グループを選択しなかった場"
 "合は、他の設定にかかわらず一致しなかった場合の宛先に転送されます。"
 
-#: functions.inc.php:638
+#: functions.inc.php:637
 msgid "September"
 msgstr "9月"
 
@@ -409,7 +409,7 @@ msgstr ""
 msgid "Submit"
 msgstr "送信"
 
-#: functions.inc.php:604
+#: functions.inc.php:603
 msgid "Sunday"
 msgstr "日曜日"
 
@@ -480,7 +480,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
-#: functions.inc.php:608
+#: functions.inc.php:607
 msgid "Thursday"
 msgstr "木曜日"
 
@@ -522,11 +522,11 @@ msgstr "時間グループ"
 msgid "Time Zone:"
 msgstr "タイムゾーン:"
 
-#: functions.inc.php:751
+#: functions.inc.php:750
 msgid "Time to Start"
 msgstr "開始時刻"
 
-#: functions.inc.php:764
+#: functions.inc.php:763
 msgid "Time to finish"
 msgstr "終了時刻"
 
@@ -534,7 +534,7 @@ msgstr "終了時刻"
 msgid "Time(s)"
 msgstr "時間設定"
 
-#: functions.inc.php:606
+#: functions.inc.php:605
 msgid "Tuesday"
 msgstr "火曜日"
 
@@ -560,15 +560,15 @@ msgstr "%s をアップグレードし、グループ %s を作成しました"
 msgid "Use System Timezone"
 msgstr "システムのタイムゾーンを使用"
 
-#: functions.inc.php:607
+#: functions.inc.php:606
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: functions.inc.php:777
+#: functions.inc.php:776
 msgid "Week Day Start"
 msgstr "始まる曜日"
 
-#: functions.inc.php:786
+#: functions.inc.php:785
 msgid "Week Day finish"
 msgstr "終わる曜日"
 
