@@ -16,6 +16,8 @@ if ($itemid){
 	$delURL = '?display=timeconditions&action=delete&itemid='.$itemid;
 	$thisItem['timezone'] = isset($thisItem['timezone'])?$thisItem['timezone']:'default';
 	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
+} else {
+	$thisItem['mode'] = 'time-group';
 }
 if ($itemid && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
@@ -42,6 +44,8 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 }else{
 	$state_msg = _('Unknown State');
 }
+
+$groups = FreePBX::Calendar()->listGroups();
 
 ?>
 <h2><?php echo $subhead?></h2>
@@ -190,8 +194,62 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	</div>
 </div>
 <!--END Timezone-->
-<!--Time Group-->
 <div class="element-container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="mode"><?php echo _("Mode") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="mode"></i>
+					</div>
+					<div class="col-md-9">
+						<span class="radioset">
+						<input type="radio" name="mode" id="mode_legacy" value="time-group" <?php echo ($thisItem['mode'] == "time-group"?"CHECKED":"") ?>>
+						<label for="mode_legacy"><?php echo _("Time Group Mode");?></label>
+						<input type="radio" name="mode" id="mode_calendar" value="calendar-group" <?php echo ($thisItem['mode'] == "calendar-group"?"CHECKED":"") ?>>
+						<label for="mode_calendar"><?php echo _("Calendar Mode");?></label>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="mode-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+		</div>
+	</div>
+</div>
+<div class="element-container calendar-group-container <?php echo ($thisItem['mode'] == "time-group") ? 'hidden' : ''?>">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="calendar-group"><?php echo _("Calendar Group") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="calendar-group"></i>
+					</div>
+					<div class="col-md-9">
+						<select class="form-control" id="calendar-group" name="calendar-group">
+							<option><?php echo _("--Select a Group--")?></option>
+							<?php foreach($groups as $id=> $group) { ?>
+								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="calendar-group-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+		</div>
+	</div>
+</div>
+<!--Time Group-->
+<div class="element-container time-group-container <?php echo ($thisItem['mode'] == "time-group") ? '' : 'hidden'?>">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">

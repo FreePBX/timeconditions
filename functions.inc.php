@@ -66,7 +66,6 @@ function timeconditions_get_config($engine) {
 				foreach($timelist as $item) {
 					// add dialplan
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
-					$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
 					$time_id = $item['timeconditions_id'];
 					$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
 					$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
@@ -74,11 +73,17 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
 
-					if (is_array($times)) {
-						foreach ($times as $time) {
-							$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
+					if($item['mode'] == 'time-group') {
+						$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
+						if (is_array($times)) {
+							foreach ($times as $time) {
+								$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
+							}
 						}
+					} else {
+						$ext->add($context, $time_id, '', FreePBX::Calendar()->ext_calendar_group_goto($item['calendar'],'truestate','falsestate'));
 					}
+
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'falsegoto';

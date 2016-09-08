@@ -116,3 +116,13 @@ function updateGroups(selectLast) {
 		}
   });
 }
+
+$("input[name=mode]").change(function() {
+	if($(this).val() == "time-group") {
+		$(".calendar-group-container").addClass("hidden");
+		$(".time-group-container").removeClass("hidden");
+	} else {
+		$(".calendar-group-container").removeClass("hidden");
+		$(".time-group-container").addClass("hidden");
+	}
+});

@@ -437,8 +437,10 @@ class Timeconditions implements \BMO {
 		':fcc_password' => $post['fcc_password'],
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
+		':mode' => $post['mode'],
+		':calendar' => $post['calendar-group']
 		);
-		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone)";
+		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar)";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($vars);
 		$id = $this->db->lastInsertId();
@@ -460,10 +462,12 @@ class Timeconditions implements \BMO {
 		':fcc_password' => $post['fcc_password'],
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
+		':mode' => $post['mode'],
+		':calendar' => $post['calendar-group']
 	);
 		$old = $this->getTimeCondition($id);
 
-		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone WHERE timeconditions_id = :id";
+		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone, mode = :mode, calendar = :calendar WHERE timeconditions_id = :id";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($vars);
 		//If invert was switched we need to update the asterisk DB
