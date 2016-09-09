@@ -81,7 +81,7 @@ function timeconditions_get_config($engine) {
 							}
 						}
 					} else {
-						$ext->add($context, $time_id, '', FreePBX::Calendar()->ext_calendar_group_goto($item['calendar'],'truestate','falsestate'));
+						$ext->add($context, $time_id, '', FreePBX::Calendar()->ext_calendar_group_goto($item['calendar'],$item['timezone'],'truestate','falsestate'));
 					}
 
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
