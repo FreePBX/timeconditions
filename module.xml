@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>13.0.32</version>
+	<version>14.0.1alpha1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,41 +11,7 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
-		*13.0.32* Fix timeconditions_edit which broke backward compatibility
-		*13.0.31* FREEPBX-12229 Fix toggle macro
-		*13.0.30* FREEPBX-11911 dont reset permanent overrides
-		*13.0.29* FREEPBX-12253 Remove all COS references
-		*13.0.28* Fix job being run on secondary HA node
-		*13.0.27.1* FREEPBX-12088 FREEPBX-12114 FREEPBX-12110
-		*13.0.26* FREEPBX-11830 Timeconditions for certain days are wrong
-		*13.0.25* FREEPBX-11793 Fix timeconditions blf updater
-		*13.0.24* FREEPBX-11784 Make sure bin dir is executable
-		*13.0.23* Slowly remove tc-maint from cel over time
-		*13.0.22* FREEPBX-11763 Feature code not working bug fix
-		*13.0.21* FREEPBX-11758 Fix broken timeconditions
-		*13.0.20* More cleanup
-		*13.0.19* Fix broken callback links
-		*13.0.18* Fix error in advanced settings add cron for scheduling tc-maint (if enabled)
-		*13.0.17* Add new time groups from time conditions, new time conditions maint script that does not use dialplan!
-		*13.0.16* FREEPBX-11605 figure out the highest number not the last number when adding an index
-		*13.0.15* FREEPBX-11344 Fix delete url on timeconditions grid
-		*13.0.14* Floating bootnav clock issues
-		*13.0.13* Use moments to accurately display time
-		*13.0.12* FREEPBX-10658 FREEPBX-10800
-		*13.0.11.1* Typo in url
-		*13.0.11* Move grid to ajax, Add slideout menu
-		*13.0.10* FREEPBX-10330 Fix adding group on update
-		*13.0.9* FREEPBX-10163 FREEPBX-10184 fix javascript for form validation.
-		*13.0.8* FREEPBX-10163 Time group with an apostrophe in its description does not get saved
-		*13.0.7* Language prompt updates
-		*13.0.6* FREEPBX-10089 fix javascript for timegroups
-		*13.0.5* FREEPBX-9823 including comments, FREEPBX-9824, Fix time formatting in timegroups, small cleanup
-		*13.0.4* FREEPBX-9702 Not possible configure days less than 10
-		*13.0.3* FREEPBX-9598 Set default timezone
-		*13.0.2* FREEPBX-9039 Remove Departments from FreePBX, Fix popover resolves FREEPBX-8993 for timeconditions
-		*13.0.1* FREEPBX-8689
-		*13.0.1alpha2* Fix toggle all feature code to set states properly.
-		*13.0.1alpha1* Visual Changes
+		*14.0.1alpha1* Inital Release
 	</changelog>
 	<depends>
 		<version>13.0.74</version>
@@ -66,9 +32,7 @@
 			<view>form</view>
 		</timeconditions>
 	</popovers>
-	<location>release/2.11/timeconditions-2.11.0.1.tgz</location>
-	<md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 </module>

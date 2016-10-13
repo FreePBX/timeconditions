@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-17 13:11-0400\n"
+"POT-Creation-Date: 2016-10-12 22:09-0700\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,16 +19,11 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: install.php:233
-#, php-format
-msgid "%sWARNING:%s No time defined for this condition, please review"
-msgstr "%s警告：%s没有为此条件设置时间，请检查"
-
-#: functions.inc.php:537
+#: functions.inc.php:542 views/timeconditions/advanced_form.php:235
 msgid "--Select a Group--"
 msgstr "--选择一个小组--"
 
-#: Timeconditions.class.php:479 Timeconditions.class.php:514 install.php:200
+#: Timeconditions.class.php:483 Timeconditions.class.php:518
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -36,7 +32,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:549 assets/js/timeconditions.js:112
+#: functions.inc.php:554 assets/js/timeconditions.js:112
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -62,26 +58,30 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:632
+#: functions.inc.php:637
 msgid "April"
 msgstr "四月"
 
-#: functions.inc.php:636
+#: functions.inc.php:641
 msgid "August"
 msgstr "八月"
+
+#: views/timeconditions/advanced_form.php:230
+msgid "Calendar Group"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:211
+msgid "Calendar Mode"
+msgstr ""
 
 #: assets/js/timegroups.js:68
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:138
+#: views/timeconditions/advanced_form.php:142
 #: views/timeconditions/basic_form.php:252
 msgid "Change Override"
 msgstr ""
-
-#: install.php:220
-msgid "Checking for old timeconditions to upgrade.."
-msgstr "检查是否有老的时间条件设置需要升级。。。"
 
 #: Timeconditions.class.php:68
 msgid "Could not delete time group as it is in use"
@@ -95,12 +95,12 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:151
+#: views/timeconditions/advanced_form.php:155
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:640
+#: functions.inc.php:645
 msgid "December"
 msgstr "十二月"
 
@@ -112,29 +112,25 @@ msgstr ""
 msgid "Description"
 msgstr "描述"
 
-#: views/timeconditions/advanced_form.php:277
+#: views/timeconditions/advanced_form.php:335
 #: views/timeconditions/basic_form.php:186
 msgid "Destination if time does not matche"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:247
+#: views/timeconditions/advanced_form.php:305
 #: views/timeconditions/basic_form.php:156
 msgid "Destination if time matches"
 msgstr "时间匹配时的目的地"
 
-#: views/timeconditions/advanced_form.php:229
+#: views/timeconditions/advanced_form.php:287
 #: views/timeconditions/basic_form.php:138
 msgid "Destination matches"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:259
+#: views/timeconditions/advanced_form.php:317
 #: views/timeconditions/basic_form.php:168
 msgid "Destination non-matches"
 msgstr ""
-
-#: install.php:168
-msgid "ERROR: failed to convert field "
-msgstr "错误：无法转换字段"
 
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
@@ -150,27 +146,29 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:630
+#: functions.inc.php:635
 msgid "February"
 msgstr "二月"
 
-#: functions.inc.php:608
+#: functions.inc.php:613
 msgid "Friday"
 msgstr "周五"
 
-#: views/timeconditions/advanced_form.php:73
+#: views/timeconditions/advanced_form.php:77
 #: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr "为时间条件控制取一个简短的名字以帮助识别它。"
 
-#: views/timeconditions/advanced_form.php:97
+#: views/timeconditions/advanced_form.php:101
 #: views/timeconditions/basic_form.php:211
 msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:126
+#: views/timeconditions/advanced_form.php:130
+#: views/timeconditions/advanced_form.php:220
+#: views/timeconditions/advanced_form.php:247
 #: views/timeconditions/basic_form.php:240
 #, php-format
 msgid ""
@@ -188,20 +186,20 @@ msgid ""
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:109
+#: views/timeconditions/advanced_form.php:113
 #: views/timeconditions/basic_form.php:223
 msgid "Invert BLF Hint"
 msgstr "切换BLF Hint"
 
-#: functions.inc.php:629
+#: functions.inc.php:634
 msgid "January"
 msgstr "一月"
 
-#: functions.inc.php:635
+#: functions.inc.php:640
 msgid "July"
 msgstr "七月"
 
-#: functions.inc.php:634
+#: functions.inc.php:639
 msgid "June"
 msgstr "六月"
 
@@ -223,40 +221,44 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:631
+#: functions.inc.php:636
 msgid "March"
 msgstr "三月"
 
-#: functions.inc.php:633
+#: functions.inc.php:638
 msgid "May"
 msgstr "五月"
 
-#: functions.inc.php:604
+#: views/timeconditions/advanced_form.php:203
+msgid "Mode"
+msgstr ""
+
+#: functions.inc.php:609
 msgid "Monday"
 msgstr "周一"
 
-#: functions.inc.php:803
+#: functions.inc.php:808
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:794
+#: functions.inc.php:799
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:821
+#: functions.inc.php:826
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:812
+#: functions.inc.php:817
 msgid "Month start"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:117
+#: views/timeconditions/advanced_form.php:121
 #: views/timeconditions/basic_form.php:231
 msgid "No"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:24
+#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24 assets/js/timeconditions.js:46
 msgid "No Override"
 msgstr ""
@@ -266,19 +268,15 @@ msgstr ""
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:639
+#: functions.inc.php:644
 msgid "November"
 msgstr "十一月"
 
-#: install.php:170 install.php:184 install.php:212
-msgid "OK"
-msgstr "完成"
-
-#: functions.inc.php:638
+#: functions.inc.php:643
 msgid "October"
 msgstr "十月"
 
-#: views/timeconditions/advanced_form.php:85
+#: views/timeconditions/advanced_form.php:89
 #: views/timeconditions/basic_form.php:199
 msgid "Override Code Pin"
 msgstr "覆盖状态修改密码"
@@ -287,22 +285,22 @@ msgstr "覆盖状态修改密码"
 msgid "Override State"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:30
+#: views/timeconditions/advanced_form.php:32
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:36
+#: views/timeconditions/advanced_form.php:38
 #: views/timeconditions/basic_form.php:36
 msgid "Permanent Override unmatching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:146
+#: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:260 assets/js/timeconditions.js:34
 msgid "Permanently matched"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:148
+#: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:262 assets/js/timeconditions.js:37
 msgid "Permanently unmatched"
 msgstr ""
@@ -319,12 +317,12 @@ msgstr "请输入有效的时间条件名"
 msgid "Reset"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:144
+#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:258
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:609
+#: functions.inc.php:614
 msgid "Saturday"
 msgstr "周六"
 
@@ -332,7 +330,7 @@ msgstr "周六"
 msgid "Select a Group"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:212
+#: views/timeconditions/advanced_form.php:270
 #: views/timeconditions/basic_form.php:126
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
@@ -342,7 +340,7 @@ msgstr ""
 "选则你创建过的一个时间小组。呼叫在匹配的时间将发送到匹配的目的地。如果没有选"
 "择小组，呼叫总是被发送到处理未匹配情况的目的地。"
 
-#: functions.inc.php:637
+#: functions.inc.php:642
 msgid "September"
 msgstr "九月"
 
@@ -351,7 +349,7 @@ msgstr "九月"
 msgid "Server time:"
 msgstr "服务器时间："
 
-#: views/timeconditions/advanced_form.php:188
+#: views/timeconditions/advanced_form.php:192
 #: views/timeconditions/basic_form.php:102
 msgid ""
 "Specify the time zone by name if the destinations are in a different time "
@@ -364,26 +362,26 @@ msgstr ""
 msgid "Submit"
 msgstr "提交"
 
-#: functions.inc.php:603
+#: functions.inc.php:608
 msgid "Sunday"
 msgstr "周日"
 
-#: views/timeconditions/advanced_form.php:27
+#: views/timeconditions/advanced_form.php:29
 #: views/timeconditions/basic_form.php:27
 msgid "Temporary Override matching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:33
+#: views/timeconditions/advanced_form.php:35
 #: views/timeconditions/basic_form.php:33
 msgid "Temporary Override unmatching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:145
+#: views/timeconditions/advanced_form.php:149
 #: views/timeconditions/basic_form.php:259 assets/js/timeconditions.js:43
 msgid "Temporary matched"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:147
+#: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:261 assets/js/timeconditions.js:40
 msgid "Temporary unmatched"
 msgstr ""
@@ -399,7 +397,7 @@ msgid ""
 "during such a period is properly reset when the new period starts."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:159
+#: views/timeconditions/advanced_form.php:163
 #: views/timeconditions/basic_form.php:273
 #, php-format
 msgid ""
@@ -427,7 +425,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:607
+#: functions.inc.php:612
 msgid "Thursday"
 msgstr "周四"
 
@@ -439,12 +437,12 @@ msgstr "时间条件"
 msgid "Time Condition Module"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:61
+#: views/timeconditions/advanced_form.php:65
 #: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:222
+#: functions.inc.php:21 functions.inc.php:227
 #, php-format
 msgid "Time Condition: %s"
 msgstr "时间条件设置：%s"
@@ -454,26 +452,30 @@ msgstr "时间条件设置：%s"
 msgid "Time Conditions"
 msgstr "时间条件设置"
 
-#: views/timeconditions/advanced_form.php:200
+#: views/timeconditions/advanced_form.php:258
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
 #: views/timegroups/grid.php:27
 msgid "Time Group"
 msgstr "时间小组"
 
+#: views/timeconditions/advanced_form.php:209
+msgid "Time Group Mode"
+msgstr ""
+
 #: page.timegroups.php:7 timeconditions.i18n.php:14
 msgid "Time Groups"
 msgstr "时间小组"
 
-#: views/timeconditions/advanced_form.php:171
+#: views/timeconditions/advanced_form.php:175
 #: views/timeconditions/basic_form.php:85
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:750
+#: functions.inc.php:755
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:763
+#: functions.inc.php:768
 msgid "Time to finish"
 msgstr ""
 
@@ -481,45 +483,40 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:605
+#: functions.inc.php:610
 msgid "Tuesday"
 msgstr "周二"
 
-#: views/timeconditions/advanced_form.php:143
+#: views/timeconditions/advanced_form.php:147
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:39
-#: views/timeconditions/advanced_form.php:43
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"
 msgstr ""
 
-#: install.php:231
-#, php-format
-msgid "Upgraded %s and created group %s"
-msgstr "升级了%s并且创建了小组%s"
-
-#: views/timeconditions/advanced_form.php:176
+#: views/timeconditions/advanced_form.php:180
 #: views/timeconditions/basic_form.php:90
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:606
+#: functions.inc.php:611
 msgid "Wednesday"
 msgstr "周三"
 
-#: functions.inc.php:776
+#: functions.inc.php:781
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:785
+#: functions.inc.php:790
 msgid "Week Day finish"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:115
+#: views/timeconditions/advanced_form.php:119
 #: views/timeconditions/basic_form.php:229
 msgid "Yes"
 msgstr ""
@@ -532,41 +529,41 @@ msgstr ""
 "你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目的"
 "地，直到你为它更新一个可用的小组"
 
-#: install.php:186
-msgid "already exists"
-msgstr ""
-
-#: install.php:174
-msgid "checking for generate_hint field.."
-msgstr ""
-
-#: install.php:164
-msgid "converting timeconditions time field to int.."
-msgstr "正在将时间条件控制的time字段转换成int（整数）。。。"
-
-#: functions.inc.php:235
+#: functions.inc.php:240
 msgid "false goto"
 msgstr ""
 
-#: install.php:191
-msgid "generating feature codes if needed.."
-msgstr ""
-
-#: install.php:238
-msgid "no upgrade needed"
-msgstr "无须升级"
-
-#: install.php:225
-msgid "starting migration"
-msgstr "开始迁移"
-
-#: functions.inc.php:227
+#: functions.inc.php:232
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:428 Timeconditions.class.php:450
+#: Timeconditions.class.php:428 Timeconditions.class.php:452
 msgid "unnamed"
 msgstr ""
+
+#~ msgid "%sWARNING:%s No time defined for this condition, please review"
+#~ msgstr "%s警告：%s没有为此条件设置时间，请检查"
+
+#~ msgid "Checking for old timeconditions to upgrade.."
+#~ msgstr "检查是否有老的时间条件设置需要升级。。。"
+
+#~ msgid "ERROR: failed to convert field "
+#~ msgstr "错误：无法转换字段"
+
+#~ msgid "OK"
+#~ msgstr "完成"
+
+#~ msgid "Upgraded %s and created group %s"
+#~ msgstr "升级了%s并且创建了小组%s"
+
+#~ msgid "converting timeconditions time field to int.."
+#~ msgstr "正在将时间条件控制的time字段转换成int（整数）。。。"
+
+#~ msgid "no upgrade needed"
+#~ msgstr "无须升级"
+
+#~ msgid "starting migration"
+#~ msgstr "开始迁移"
 
 #~ msgid " deleted!"
 #~ msgstr " 已删除！"
