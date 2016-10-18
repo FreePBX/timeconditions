@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-17 13:11-0400\n"
+"POT-Creation-Date: 2016-10-18 15:57-0700\n"
 "PO-Revision-Date: 2014-07-26 01:03+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: Timeconditions.class.php:479 Timeconditions.class.php:514 install.php:200
+#: Timeconditions.class.php:485 Timeconditions.class.php:520 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups.js:59
+#: views/timegroups/form.php:74 assets/js/timegroups.js:69
 msgid "Add Time"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr "Abril"
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups.js:68
+#: assets/js/timegroups.js:78
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: assets/js/timegroups.js:33
+#: assets/js/timegroups.js:43
 msgid "Edit: "
 msgstr ""
 
@@ -327,6 +327,10 @@ msgstr ""
 
 #: assets/js/timeconditions.js:2
 msgid "Please enter a valid Time Conditions Name"
+msgstr ""
+
+#: assets/js/timegroups.js:24
+msgid "Please use a unique description. The description already exists."
 msgstr ""
 
 #: Timeconditions.class.php:175
@@ -574,7 +578,7 @@ msgstr "iniciando migração"
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:428 Timeconditions.class.php:450
+#: Timeconditions.class.php:434 Timeconditions.class.php:456
 msgid "unnamed"
 msgstr ""
 

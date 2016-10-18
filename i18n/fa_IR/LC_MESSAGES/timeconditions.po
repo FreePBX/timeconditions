@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-17 13:11-0400\n"
+"POT-Creation-Date: 2016-10-18 15:57-0700\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
-"Language-Team: Persian (Iran) "
-"<http://weblate.freepbx.org/projects/freepbx/timeconditions/fa_IR/>\n"
-"Language: fa_IR\n"
+"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
+"timeconditions/fa_IR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -30,7 +30,7 @@ msgstr "%sهشدار%s : برای این شرط، زمانی تعریف نشده
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: Timeconditions.class.php:479 Timeconditions.class.php:514 install.php:200
+#: Timeconditions.class.php:485 Timeconditions.class.php:520 install.php:200
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -43,7 +43,7 @@ msgstr "عملیات"
 msgid "Add New Time Group..."
 msgstr "افزودن گروه زمانی جدید..."
 
-#: views/timegroups/form.php:74 assets/js/timegroups.js:59
+#: views/timegroups/form.php:74 assets/js/timegroups.js:69
 msgid "Add Time"
 msgstr "افزودن زمان"
 
@@ -73,7 +73,7 @@ msgstr "آوریل"
 msgid "August"
 msgstr "آگوست"
 
-#: assets/js/timegroups.js:68
+#: assets/js/timegroups.js:78
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr "نمی توان تنها قانون‌ موجود را حذف کرد. حداقل وجود یک قانون‌ الزامی است."
 
@@ -148,7 +148,7 @@ msgstr "خطا： شکست در تبدیل فیلد "
 msgid "Edit Time Condition: %s (%s)"
 msgstr "ویرایش شرط زمانی ： %s (%s)"
 
-#: assets/js/timegroups.js:33
+#: assets/js/timegroups.js:43
 msgid "Edit: "
 msgstr "ویرایش ： "
 
@@ -329,6 +329,10 @@ msgstr "لطفا یک کلمه عبور معتبر برای بازنویسی و�
 #: assets/js/timeconditions.js:2
 msgid "Please enter a valid Time Conditions Name"
 msgstr "لطفا یک نام معتبر برای شرایط زمانی وارد کنید"
+
+#: assets/js/timegroups.js:24
+msgid "Please use a unique description. The description already exists."
+msgstr ""
 
 #: Timeconditions.class.php:175
 msgid "Reset"
@@ -593,6 +597,6 @@ msgstr "شروع پروسه مهاجرت"
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:428 Timeconditions.class.php:450
+#: Timeconditions.class.php:434 Timeconditions.class.php:456
 msgid "unnamed"
 msgstr "بدون نام"
