@@ -257,7 +257,7 @@ class Timeconditions implements \BMO {
 			break;
 		}
 	}
-	public function listTimegroups(){
+	public function listTimegroups($assoc = false){
 		$tmparray = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->db->prepare($sql);
@@ -266,8 +266,14 @@ class Timeconditions implements \BMO {
 		if(!$results) {
 			$results = array();
 		}
-		foreach ($results as $val) {
-			$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+		if($assoc !== true){
+			foreach ($results as $val) {
+				$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+			}
+		}else{
+			foreach ($results as $val) {
+				$tmparray[] = array("id" => $val[0], "description" => $val[1]);
+			}
 		}
 		return $tmparray;
 	}
@@ -583,6 +589,17 @@ class Timeconditions implements \BMO {
 	public function addTimeGroup($description, $times=null){
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->db->prepare($sql);
+		try {
+			$ret = $stmt->execute(array(':description' => $description));
+		} catch (\PDOException $e) {
+			//catch duplicates
+			if($e->getCode() == '23000'){
+				return false;
+			}else{
+					throw $e;
+			}
+		}
+
 		$ret = $stmt->execute(array(':description' => $description));
 		$timegroup = $this->db->lastInsertId();
 		if (isset($times)) {

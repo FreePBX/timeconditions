@@ -85,3 +85,7 @@ if(isset($usage) && !empty($usage)){
 </div>
 <!--END Time-->
 </form>
+<script>
+	var timegrouplist  = '<?php echo json_encode(FreePBX::Timeconditions()->listTimegroups(true))?>';
+	var currenttimegroup = '<?php echo $description?>';
+</script>
