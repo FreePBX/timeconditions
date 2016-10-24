@@ -452,16 +452,8 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 
 //retrieve a single timegroup for the timegroups page
 function timeconditions_timegroups_get_group($timegroup) {
-	global $db;
-
-	$timegroup = $db->escapeSimple($timegroup);
-	$sql = "SELECT id, description FROM timegroups_groups WHERE id = $timegroup";
-	$results = $db->getAll($sql);
-	if(DB::IsError($results)) {
-		$results = null;
-	}
-	$tmparray = array($results[0][0], $results[0][1]);
-	return $tmparray;
+	_timeconditions_backtrace();
+	return FreePBX::Timeconditions()->getTimeGroup($timegroup);
 }
 
 //add a new timegroup for timegroups page
