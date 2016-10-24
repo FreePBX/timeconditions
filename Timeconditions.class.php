@@ -599,8 +599,6 @@ class Timeconditions implements \BMO {
 					throw $e;
 			}
 		}
-
-		$ret = $stmt->execute(array(':description' => $description));
 		$timegroup = $this->db->lastInsertId();
 		if (isset($times)) {
 			$this->editTimes($timegroup,$times);
