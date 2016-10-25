@@ -1,3 +1,14 @@
+if($("#idTime").length) {
+	var time = $("#idTime").data("time");
+	var timezone = $("#idTime").data("zone");
+	var updateTime = function() {
+		$("#idTime").text(moment.unix(time).tz(timezone).format('HH:mm:ss z'));
+		time = time + 1;
+	};
+
+	setInterval(updateTime,1000);
+}
+
 function edit_onsubmit(theForm) {
 	var msgInvalidTimeCondName = _("Please enter a valid Time Conditions Name");
 	var msgInvalidOverPin = _("Please enter a valid Override Code Pin");
