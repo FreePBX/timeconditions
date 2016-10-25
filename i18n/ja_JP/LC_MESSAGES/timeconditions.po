@@ -40,8 +40,7 @@ msgstr ""
 "POT-Creation-Date: 2016-10-12 22:09-0700\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
-"timeconditions/ja_JP/>\n"
+"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/timeconditions/ja_JP/>\n"
 "Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -118,15 +117,8 @@ msgid "Could not delete time group as it is in use"
 msgstr ""
 
 #: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"時間や日付に基づいて、コールが二つの宛先(例:内線、IVR、着信グループ..)のうち"
-"一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信さ"
-"せ、夜は直接IVRに行く等に使用できます。"
+msgid "Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night."
+msgstr "時間や日付に基づいて、コールが二つの宛先(例:内線、IVR、着信グループ..)のうち一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信させ、夜は直接IVRに行く等に使用できます。"
 
 #: views/timeconditions/advanced_form.php:155
 #: views/timeconditions/basic_form.php:265
@@ -194,33 +186,19 @@ msgstr "この時間分岐条件の分かりやすい名前を入力してくだ
 
 #: views/timeconditions/advanced_form.php:101
 #: views/timeconditions/basic_form.php:211
-msgid ""
-"If set dialing the feature code will require a pin to change the override "
-"state"
-msgstr ""
-"これを設定すると、上書き状態を変更する際には暗証番号 (PINコード) が求められま"
-"す。"
+msgid "If set dialing the feature code will require a pin to change the override state"
+msgstr "これを設定すると、上書き状態を変更する際には暗証番号 (PINコード) が求められます。"
 
 #: views/timeconditions/advanced_form.php:130
 #: views/timeconditions/advanced_form.php:220
 #: views/timeconditions/advanced_form.php:247
 #: views/timeconditions/basic_form.php:240
 #, php-format
-msgid ""
-"If set the hint will be INUSE if the time condition is matched, and "
-"NOT_INUSE if it fails"
-msgstr ""
-"設定すると、条件に一致した場合にはヒントがINUSEとなり、一致しない場合は"
-"NOT_INUSEとなります。"
+msgid "If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"
+msgstr "設定すると、条件に一致した場合にはヒントがINUSEとなり、一致しない場合はNOT_INUSEとなります。"
 
 #: timeconditions.i18n.php:20
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
+msgid "If set to false, this will override the execution of the Time Conditions maintenance task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:113
@@ -369,14 +347,8 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:270
 #: views/timeconditions/basic_form.php:126
-msgid ""
-"Select a Time Group created under Time Groups. Matching times will be sent "
-"to matching destination. If no group is selected, call will always go to no-"
-"match destination."
-msgstr ""
-"時間グループの画面で作成したグループを一つ選択してください。このグループの時"
-"間に一致した場合、指定した宛先に転送します。注意: グループを選択しなかった場"
-"合は、他の設定にかかわらず一致しなかった場合の宛先に転送されます。"
+msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
+msgstr "時間グループの画面で作成したグループを一つ選択してください。このグループの時間に一致した場合、指定した宛先に転送します。注意: グループを選択しなかった場合は、他の設定にかかわらず一致しなかった場合の宛先に転送されます。"
 
 #: functions.inc.php:642
 msgid "September"
@@ -389,17 +361,8 @@ msgstr "サーバ時刻:"
 
 #: views/timeconditions/advanced_form.php:192
 #: views/timeconditions/basic_form.php:102
-msgid ""
-"Specify the time zone by name if the destinations are in a different time "
-"zone than the server. Type two characters to start an auto-complete pick-"
-"list. <br/><strong>Important</strong>: Your selection here <strong>MUST</"
-"strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
-msgstr ""
-"ユーザのタイムゾーンがサーバと異なる場合は、こちらにタイムゾーンの名前を入力"
-"してください。2つ以上の文字を入力すると検索候補を表示します。<br/><strong>注"
-"意:</strong>この設定の内容はリストが選択するか、/usr/share/zoneinfo ディレク"
-"トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
-"い可能性がありますので、ご注意ください。"
+msgid "Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <br/><strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+msgstr "ユーザのタイムゾーンがサーバと異なる場合は、こちらにタイムゾーンの名前を入力してください。2つ以上の文字を入力すると検索候補を表示します。<br/><strong>注意:</strong>この設定の内容はリストが選択するか、/usr/share/zoneinfo ディレクトリに入っているものでなければなりません。正しく設定しなかった場合は動作しない可能性がありますので、ご注意ください。"
 
 #: Timeconditions.class.php:180
 msgid "Submit"
@@ -430,43 +393,18 @@ msgid "Temporary unmatched"
 msgstr "一時的不一致"
 
 #: timeconditions.i18n.php:26
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
+msgid "The polling interval in seconds used by the Time Conditions maintenance task, launched by an Asterisk call file used to update Time Conditions override states as well as keep custom device state hint values up-to-date when being used with BLF. A shorter interval will assure that BLF keys states are accurate. The interval should be less than the shortest configured span between two time condition states, so that a manual override during such a period is properly reset when the new period starts."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:163
 #: views/timeconditions/basic_form.php:273
 #, php-format
-msgid ""
-"This Time Condition can be set to Temporarily go to the 'matched' or "
-"'unmatched' destination in which case the override will automatically reset "
-"once the current time span has elapsed. If set to Permanent it will stay "
-"overridden until manually reset. All overrides can be removed with the Reset "
-"Override option. Temporary Overrides can also be toggled with the %s feature "
-"code, which will also remove a Permanent Override if set but can not set a "
-"Permanent Override which must be done here or with other applications such "
-"as an XML based phone options."
-msgstr ""
-"この時間分岐条件を一時的に'一致する'または'一致しない'宛先に転送するように設"
-"定できます。その場合、次の変化が起こる時刻になると、上書きは自動的にリセット"
-"されます。永久的にセットすると、手動でリセットするまで上書されたままになりま"
-"す。全ての上書き設定は、リセットオプションで削除することができます。一時的な"
-"上書きは、 %s 機能コードで切り替えることができます。また、電話上で動くアプリ"
-"ケーションなどでも、この上書き設定をリセットすることもできます。"
+msgid "This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."
+msgstr "この時間分岐条件を一時的に'一致する'または'一致しない'宛先に転送するように設定できます。その場合、次の変化が起こる時刻になると、上書きは自動的にリセットされます。永久的にセットすると、手動でリセットするまで上書されたままになります。全ての上書き設定は、リセットオプションで削除することができます。一時的な上書きは、 %s 機能コードで切り替えることができます。また、電話上で動くアプリケーションなどでも、この上書き設定をリセットすることもできます。"
 
 #: assets/js/timegroups.js:15
-msgid ""
-"This section will be removed from this time group and all current settings "
-"including changes will be updated. OK to proceed?"
-msgstr ""
-"このセクションを時間グループから削除し、変更した内容を含めて全ての設定を更新"
-"します。続行しますか？"
+msgid "This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"
+msgstr "このセクションを時間グループから削除し、変更した内容を含めて全ての設定を更新します。続行しますか？"
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
@@ -573,12 +511,8 @@ msgid "Yes"
 msgstr "はい"
 
 #: assets/js/timeconditions.js:4
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"この時間分岐条件の時間グループが選択されていません。有効なグループに変更し、"
-"正しい宛先に転送されるよう設定してください。"
+msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
+msgstr "この時間分岐条件の時間グループが選択されていません。有効なグループに変更し、正しい宛先に転送されるよう設定してください。"
 
 #: functions.inc.php:240
 msgid "false goto"
@@ -592,42 +526,30 @@ msgstr "一致する goto"
 msgid "unnamed"
 msgstr ""
 
+#: assets/js/timegroups/timegroups.js:24
+msgid "Please use a unique description. The description already exists."
+msgstr ""
+
+#~ msgid " deleted!"
+#~ msgstr " 削除されました！"
+
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
-#~ msgstr ""
-#~ "%s 警告:%s この条件の時間が定義されていません。もう一度確認してください。"
+#~ msgstr "%s 警告:%s この条件の時間が定義されていません。もう一度確認してください。"
+
+#~ msgid "Change Override:"
+#~ msgstr "上書きを変更："
+
+#~ msgid "Check to enable the override feature code %s that allows manual changes to the timecondition."
+#~ msgstr "タイムコンディションを手動で上書き機能%sを有効にするためにチェックしてください。"
 
 #~ msgid "Checking for old timeconditions to upgrade.."
 #~ msgstr "旧時間分岐条件のアップグレードのチェック中.."
 
-#~ msgid "ERROR: failed to convert field "
-#~ msgstr "エラー: フィールドのコンバート失敗 "
+#~ msgid "Current Override:"
+#~ msgstr "現在の上書き:"
 
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Upgraded %s and created group %s"
-#~ msgstr "%s をアップグレードし、グループ %s を作成しました"
-
-#~ msgid "already exists"
-#~ msgstr "既に存在します"
-
-#~ msgid "checking for generate_hint field.."
-#~ msgstr "generate_hintフィールドを確認中.."
-
-#~ msgid "converting timeconditions time field to int.."
-#~ msgstr "時間分岐条件のtimeフィールドをintに変換中.."
-
-#~ msgid "generating feature codes if needed.."
-#~ msgstr "必要に応じてfeature codesを生成中.."
-
-#~ msgid "no upgrade needed"
-#~ msgstr "アプグレードの必要はありません"
-
-#~ msgid "starting migration"
-#~ msgstr "移行開始"
-
-#~ msgid " deleted!"
-#~ msgstr " 削除されました！"
+#~ msgid "Delete Time Condition: %s"
+#~ msgstr "タイムコンディション削除： %s"
 
 #~ msgid "Delete Time Group %s"
 #~ msgstr "タイムグループを削除 %s"
@@ -638,11 +560,32 @@ msgstr ""
 #~ msgid "Destination if time does not match"
 #~ msgstr "時間不一致時の宛先"
 
+#~ msgid "ERROR: failed to convert field "
+#~ msgstr "エラー: フィールドのコンバート失敗 "
+
+#~ msgid "Edit Time Condition"
+#~ msgstr "タイムコンディション編集"
+
 #~ msgid "Edit Time Group"
 #~ msgstr "タイムグループ編集"
 
+#~ msgid "Enable Override Code"
+#~ msgstr "上書きを有効"
+
+#~ msgid "Generate BLF Hint"
+#~ msgstr "BLFヒントを生成"
+
 #~ msgid "Goto Current Time Group"
 #~ msgstr "現在のタイムグループに移動"
+
+#~ msgid "If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."
+#~ msgstr "設定された場合、このタイムコンディションを有効/無効にするためにプログラムされた電話にあるBLFボタンを光らせるために使用されるこのタイムコンディションと関連付けられた上書きキーコード %s のためにAsteriskヒントｋが作成されます。BLFを使用していない場合は、追加のシステムリソースに、ヒントがアップデートされるように要求されるため、これをチェックしないままにしておくほうが良いです。このキーコードはタイムコンディションの下にあるキーコードタブで見つけることができ、有効/無効にすることができます。"
+
+#~ msgid "If set to false, this will override the execution of the Time Conditons maintenace task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
+#~ msgstr "false設定の場合、コールファイルで起動されるタイムコンディションメンテナンスタスクの実行を上書きします。もしタイムコンディションの全てのキーコードが無効の場合、メンテナンスタスクは起動されません。falseの設定は、非一般的です。メンテナンスタスクが起動するCLIが阻害される可能性がある定期的なダイヤルプランの起動を避けるため、システムをデバッグする場合は、一時的にこの設定をすることあります。"
+
+#~ msgid "Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule."
+#~ msgstr "このタイムコンディションの状態を指定します。一時的な上書きは、関連付けられたタイムグループに基づき、次回、自動的に移行が再開されます。永久的な上書きは、電話機についている外部のXMPアプリケーションなど他の方法で変更する迄、その状態が継続されます。上書きしない時は、タイムスケジュールに基づき機能します。"
 
 #~ msgid "Month Day finish:"
 #~ msgstr "終了日："
@@ -659,114 +602,17 @@ msgstr ""
 #~ msgid "New Time"
 #~ msgstr "新規タイム"
 
+#~ msgid "OK"
+#~ msgstr "OK"
+
 #~ msgid "Remove Section and Submit Current Settings"
 #~ msgstr "セクションを削除し現在の設定を確定します"
 
+#~ msgid "The polling interval in seconds used by the Time Conditions manintenace task, launched by an Asterisk call file used to update Time Conditions override states as well as keep custom device state hint values up-to-date when being used with BLF. A shorter interval will assure that BLF keys states are accurate. The interval should be less than the shortest configured span between two time condition states, so that a manual overide during such a period is properly reset when the new period starts."
+#~ msgstr "BLF使用時にカスタムデバイス状態ヒントの値を最新に保つためと、タイムコンディション上書き状態を更新するために使用されるAsteriskコールファイルによって起動されるタイムコンディションメンテナンスタスクによって使用されるポーリング間隔秒数。間隔をより短くすることで、BLFキー状態が正確になることが保証されます。新しい間隔が開始し、その間隔で手動上書きが正しくリセットされるように、この間隔は、２つのタイムコンディション状態の間に設定された最短スパンよりも短くします。"
+
 #~ msgid "This will display as the name of this Time Group."
 #~ msgstr "このタイムグループ名を表示します。"
-
-#~ msgid "Time to finish:"
-#~ msgstr "終了時刻："
-
-#~ msgid "Time to start:"
-#~ msgstr "開始時刻："
-
-#~ msgid "Used By"
-#~ msgstr "に使用されています"
-
-#~ msgid "Week Day finish:"
-#~ msgstr "終了曜日："
-
-#~ msgid "Week Day start:"
-#~ msgstr "開始曜日："
-
-#~ msgid "Change Override:"
-#~ msgstr "上書きを変更："
-
-#~ msgid ""
-#~ "Check to enable the override feature code %s that allows manual changes "
-#~ "to the timecondition."
-#~ msgstr ""
-#~ "タイムコンディションを手動で上書き機能%sを有効にするためにチェックしてくだ"
-#~ "さい。"
-
-#~ msgid "Current Override:"
-#~ msgstr "現在の上書き:"
-
-#~ msgid "Delete Time Condition: %s"
-#~ msgstr "タイムコンディション削除： %s"
-
-#~ msgid "Edit Time Condition"
-#~ msgstr "タイムコンディション編集"
-
-#~ msgid "Enable Override Code"
-#~ msgstr "上書きを有効"
-
-#~ msgid "Generate BLF Hint"
-#~ msgstr "BLFヒントを生成"
-
-#~ msgid ""
-#~ "If set an Asterisk hint will be created for the override feature code %s "
-#~ "associated with this Time Condition that can be used to light BLF buttons "
-#~ "on a phone programmed to enable/disable this Time Condition. If not using "
-#~ "a BLF it is better to leave this un-checked as additional system "
-#~ "resources are required to keep the hint updated. This Feature Code can be "
-#~ "found and enabled/disabled on the Feature Codes tab under Time Conditions."
-#~ msgstr ""
-#~ "設定された場合、このタイムコンディションを有効/無効にするためにプログラム"
-#~ "された電話にあるBLFボタンを光らせるために使用されるこのタイムコンディショ"
-#~ "ンと関連付けられた上書きキーコード %s のためにAsteriskヒントｋが作成されま"
-#~ "す。BLFを使用していない場合は、追加のシステムリソースに、ヒントがアップ"
-#~ "デートされるように要求されるため、これをチェックしないままにしておくほうが"
-#~ "良いです。このキーコードはタイムコンディションの下にあるキーコードタブで見"
-#~ "つけることができ、有効/無効にすることができます。"
-
-#~ msgid ""
-#~ "If set to false, this will override the execution of the Time Conditons "
-#~ "maintenace task launched by call files. If all the feature codes for time "
-#~ "conditions are disabled, the maintenance task will not be launched "
-#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
-#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
-#~ "running through the CLI that the maintenance task launches and can be "
-#~ "distracting."
-#~ msgstr ""
-#~ "false設定の場合、コールファイルで起動されるタイムコンディションメンテナン"
-#~ "スタスクの実行を上書きします。もしタイムコンディションの全てのキーコードが"
-#~ "無効の場合、メンテナンスタスクは起動されません。falseの設定は、非一般的で"
-#~ "す。メンテナンスタスクが起動するCLIが阻害される可能性がある定期的なダイヤ"
-#~ "ルプランの起動を避けるため、システムをデバッグする場合は、一時的にこの設定"
-#~ "をすることあります。"
-
-#~ msgid ""
-#~ "Indicates the current state of this Time Condition. If it is in a "
-#~ "Temporary Override state, it will automatically resume at the next time "
-#~ "transition based on the associated Time Group. If in a Permanent Override "
-#~ "state, it will stay in that state until changed here or through other "
-#~ "means such as external XML applications on your phone. If No Override "
-#~ "then it functions normally based on the time schedule."
-#~ msgstr ""
-#~ "このタイムコンディションの状態を指定します。一時的な上書きは、関連付けられ"
-#~ "たタイムグループに基づき、次回、自動的に移行が再開されます。永久的な上書き"
-#~ "は、電話機についている外部のXMPアプリケーションなど他の方法で変更する迄、"
-#~ "その状態が継続されます。上書きしない時は、タイムスケジュールに基づき機能し"
-#~ "ます。"
-
-#~ msgid ""
-#~ "The polling interval in seconds used by the Time Conditions manintenace "
-#~ "task, launched by an Asterisk call file used to update Time Conditions "
-#~ "override states as well as keep custom device state hint values up-to-"
-#~ "date when being used with BLF. A shorter interval will assure that BLF "
-#~ "keys states are accurate. The interval should be less than the shortest "
-#~ "configured span between two time condition states, so that a manual "
-#~ "overide during such a period is properly reset when the new period starts."
-#~ msgstr ""
-#~ "BLF使用時にカスタムデバイス状態ヒントの値を最新に保つためと、タイムコン"
-#~ "ディション上書き状態を更新するために使用されるAsteriskコールファイルによっ"
-#~ "て起動されるタイムコンディションメンテナンスタスクによって使用されるポーリ"
-#~ "ング間隔秒数。間隔をより短くすることで、BLFキー状態が正確になることが保証"
-#~ "されます。新しい間隔が開始し、その間隔で手動上書きが正しくリセットされるよ"
-#~ "うに、この間隔は、２つのタイムコンディション状態の間に設定された最短スパン"
-#~ "よりも短くします。"
 
 #~ msgid "Time Condition name:"
 #~ msgstr "タイムコンディション名："
@@ -777,8 +623,44 @@ msgstr ""
 #~ msgid "Time Group:"
 #~ msgstr "タイムグループ："
 
+#~ msgid "Time to finish:"
+#~ msgstr "終了時刻："
+
+#~ msgid "Time to start:"
+#~ msgstr "開始時刻："
+
+#~ msgid "Upgraded %s and created group %s"
+#~ msgstr "%s をアップグレードし、グループ %s を作成しました"
+
+#~ msgid "Used By"
+#~ msgstr "に使用されています"
+
+#~ msgid "Week Day finish:"
+#~ msgstr "終了曜日："
+
+#~ msgid "Week Day start:"
+#~ msgstr "開始曜日："
+
+#~ msgid "already exists"
+#~ msgstr "既に存在します"
+
+#~ msgid "checking for generate_hint field.."
+#~ msgstr "generate_hintフィールドを確認中.."
+
+#~ msgid "converting timeconditions time field to int.."
+#~ msgstr "時間分岐条件のtimeフィールドをintに変換中.."
+
 #~ msgid "deleted"
 #~ msgstr "削除されました"
+
+#~ msgid "generating feature codes if needed.."
+#~ msgstr "必要に応じてfeature codesを生成中.."
+
+#~ msgid "no upgrade needed"
+#~ msgstr "アプグレードの必要はありません"
+
+#~ msgid "starting migration"
+#~ msgstr "移行開始"
 
 #~ msgid "text"
 #~ msgstr "テキスト"

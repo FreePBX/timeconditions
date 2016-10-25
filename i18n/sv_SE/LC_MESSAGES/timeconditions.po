@@ -87,11 +87,7 @@ msgid "Could not delete time group as it is in use"
 msgstr ""
 
 #: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
+msgid "Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:155
@@ -156,14 +152,11 @@ msgstr "Fredag"
 #: views/timeconditions/advanced_form.php:77
 #: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
-msgstr ""
-"Ge denna tidsvillkor ett kortfattat namn som hjälper dig att identifiera den."
+msgstr "Ge denna tidsvillkor ett kortfattat namn som hjälper dig att identifiera den."
 
 #: views/timeconditions/advanced_form.php:101
 #: views/timeconditions/basic_form.php:211
-msgid ""
-"If set dialing the feature code will require a pin to change the override "
-"state"
+msgid "If set dialing the feature code will require a pin to change the override state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:130
@@ -171,19 +164,11 @@ msgstr ""
 #: views/timeconditions/advanced_form.php:247
 #: views/timeconditions/basic_form.php:240
 #, php-format
-msgid ""
-"If set the hint will be INUSE if the time condition is matched, and "
-"NOT_INUSE if it fails"
+msgid "If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"
 msgstr ""
 
 #: timeconditions.i18n.php:20
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
+msgid "If set to false, this will override the execution of the Time Conditions maintenance task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:113
@@ -332,14 +317,8 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:270
 #: views/timeconditions/basic_form.php:126
-msgid ""
-"Select a Time Group created under Time Groups. Matching times will be sent "
-"to matching destination. If no group is selected, call will always go to no-"
-"match destination."
-msgstr ""
-"Välj en tidgrupp skapad under Tidgrupper. Matchande tider kommer att gå till "
-"respektive destination. Om ingen grupp väljs kommer samtalen alltid att gå "
-"till Destination om tiden inte matchar."
+msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
+msgstr "Välj en tidgrupp skapad under Tidgrupper. Matchande tider kommer att gå till respektive destination. Om ingen grupp väljs kommer samtalen alltid att gå till Destination om tiden inte matchar."
 
 #: functions.inc.php:642
 msgid "September"
@@ -352,11 +331,7 @@ msgstr "Servertid:"
 
 #: views/timeconditions/advanced_form.php:192
 #: views/timeconditions/basic_form.php:102
-msgid ""
-"Specify the time zone by name if the destinations are in a different time "
-"zone than the server. Type two characters to start an auto-complete pick-"
-"list. <br/><strong>Important</strong>: Your selection here <strong>MUST</"
-"strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+msgid "Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <br/><strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
 #: Timeconditions.class.php:180
@@ -388,34 +363,17 @@ msgid "Temporary unmatched"
 msgstr ""
 
 #: timeconditions.i18n.php:26
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
+msgid "The polling interval in seconds used by the Time Conditions maintenance task, launched by an Asterisk call file used to update Time Conditions override states as well as keep custom device state hint values up-to-date when being used with BLF. A shorter interval will assure that BLF keys states are accurate. The interval should be less than the shortest configured span between two time condition states, so that a manual override during such a period is properly reset when the new period starts."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:163
 #: views/timeconditions/basic_form.php:273
 #, php-format
-msgid ""
-"This Time Condition can be set to Temporarily go to the 'matched' or "
-"'unmatched' destination in which case the override will automatically reset "
-"once the current time span has elapsed. If set to Permanent it will stay "
-"overridden until manually reset. All overrides can be removed with the Reset "
-"Override option. Temporary Overrides can also be toggled with the %s feature "
-"code, which will also remove a Permanent Override if set but can not set a "
-"Permanent Override which must be done here or with other applications such "
-"as an XML based phone options."
+msgid "This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."
 msgstr ""
 
 #: assets/js/timegroups.js:15
-msgid ""
-"This section will be removed from this time group and all current settings "
-"including changes will be updated. OK to proceed?"
+msgid "This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"
 msgstr ""
 
 #: views/timegroups/form.php:25
@@ -523,12 +481,8 @@ msgid "Yes"
 msgstr ""
 
 #: assets/js/timeconditions.js:4
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att "
-"Destination, om tiden inte matchar, alltid kommer att vara aktiv."
+msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
+msgstr "Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att Destination, om tiden inte matchar, alltid kommer att vara aktiv."
 
 #: functions.inc.php:240
 msgid "false goto"
@@ -542,56 +496,42 @@ msgstr ""
 msgid "unnamed"
 msgstr ""
 
+#: assets/js/timegroups/timegroups.js:24
+msgid "Please use a unique description. The description already exists."
+msgstr ""
+
+#~ msgid " deleted!"
+#~ msgstr " borttagen!"
+
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
-#~ msgstr ""
-#~ "%sVARNING:%s Ingen tid definierad för denna kondition, kontrollera detta"
+#~ msgstr "%sVARNING:%s Ingen tid definierad för denna kondition, kontrollera detta"
 
 #~ msgid "Checking for old timeconditions to upgrade.."
 #~ msgstr "Kontrollerar om äldre tidskonditioner behöver uppgraderas.."
 
-#~ msgid "ERROR: failed to convert field "
-#~ msgstr "FEL: kunde inte konvertera fält"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Upgraded %s and created group %s"
-#~ msgstr "Uppgraderade %s och skapade grupp %s"
-
-#~ msgid "already exists"
-#~ msgstr "finns redan"
-
-#~ msgid "checking for generate_hint field.."
-#~ msgstr "kontrollerar fältet generae_hint.."
-
-#~ msgid "converting timeconditions time field to int.."
-#~ msgstr "konverterar fältet time till int.."
-
-#~ msgid "generating feature codes if needed.."
-#~ msgstr "genererar funktionskoder om det behövs.."
-
-#~ msgid "no upgrade needed"
-#~ msgstr "ingen uppgradering behövs"
-
-#~ msgid "starting migration"
-#~ msgstr "startar migrering"
-
-#~ msgid " deleted!"
-#~ msgstr " borttagen!"
+#~ msgid "Delete Time Condition: %s"
+#~ msgstr "Ta bort tidsvillkor: %s"
 
 #~ msgid "Delete Time Group %s"
 #~ msgstr "Ta bort tidgruppen %s"
 
 #~ msgid "Description must be alpha-numeric, and may not be left blank"
-#~ msgstr ""
-#~ "Beskrivningen kan bara inehålla alfa-numeriska tecken och den kan inte "
-#~ "vara tom"
+#~ msgstr "Beskrivningen kan bara inehålla alfa-numeriska tecken och den kan inte vara tom"
 
 #~ msgid "Destination if time does not match"
 #~ msgstr "Destination om tiden inte matchar"
 
+#~ msgid "ERROR: failed to convert field "
+#~ msgstr "FEL: kunde inte konvertera fält"
+
+#~ msgid "Edit Time Condition"
+#~ msgstr "Redigera tidsvillkor"
+
 #~ msgid "Edit Time Group"
 #~ msgstr "Redigera tidgrupp"
+
+#~ msgid "Generate BLF Hint"
+#~ msgstr "Skapa BLF"
 
 #~ msgid "Goto Current Time Group"
 #~ msgstr "Gå till aktuell tidgrupp"
@@ -611,35 +551,14 @@ msgstr ""
 #~ msgid "New Time"
 #~ msgstr "Ny tid"
 
+#~ msgid "OK"
+#~ msgstr "OK"
+
 #~ msgid "Remove Section and Submit Current Settings"
 #~ msgstr "Ta bort sektionen och spara instaällningar"
 
 #~ msgid "This will display as the name of this Time Group."
 #~ msgstr "Detta kommer att visas som namnet för denna tidgrupp."
-
-#~ msgid "Time to finish:"
-#~ msgstr "Sluttid:"
-
-#~ msgid "Time to start:"
-#~ msgstr "Startid:"
-
-#~ msgid "Used By"
-#~ msgstr "Används av"
-
-#~ msgid "Week Day finish:"
-#~ msgstr "Slut veckodag:"
-
-#~ msgid "Week Day start:"
-#~ msgstr "Start veckodag:"
-
-#~ msgid "Delete Time Condition: %s"
-#~ msgstr "Ta bort tidsvillkor: %s"
-
-#~ msgid "Edit Time Condition"
-#~ msgstr "Redigera tidsvillkor"
-
-#~ msgid "Generate BLF Hint"
-#~ msgstr "Skapa BLF"
 
 #~ msgid "Time Condition name:"
 #~ msgstr "Namn för tidsvillkor:"
@@ -650,8 +569,44 @@ msgstr ""
 #~ msgid "Time Group:"
 #~ msgstr "Tidgrupp"
 
+#~ msgid "Time to finish:"
+#~ msgstr "Sluttid:"
+
+#~ msgid "Time to start:"
+#~ msgstr "Startid:"
+
+#~ msgid "Upgraded %s and created group %s"
+#~ msgstr "Uppgraderade %s och skapade grupp %s"
+
+#~ msgid "Used By"
+#~ msgstr "Används av"
+
+#~ msgid "Week Day finish:"
+#~ msgstr "Slut veckodag:"
+
+#~ msgid "Week Day start:"
+#~ msgstr "Start veckodag:"
+
+#~ msgid "already exists"
+#~ msgstr "finns redan"
+
+#~ msgid "checking for generate_hint field.."
+#~ msgstr "kontrollerar fältet generae_hint.."
+
+#~ msgid "converting timeconditions time field to int.."
+#~ msgstr "konverterar fältet time till int.."
+
 #~ msgid "deleted"
 #~ msgstr "raderad"
+
+#~ msgid "generating feature codes if needed.."
+#~ msgstr "genererar funktionskoder om det behövs.."
+
+#~ msgid "no upgrade needed"
+#~ msgstr "ingen uppgradering behövs"
+
+#~ msgid "starting migration"
+#~ msgstr "startar migrering"
 
 #~ msgid "text"
 #~ msgstr "text"

@@ -10,14 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2016-10-12 22:09-0700\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
-"Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
-"timeconditions/ru_RU/>\n"
+"Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/timeconditions/ru_RU/>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
 #: functions.inc.php:542 views/timeconditions/advanced_form.php:235
@@ -77,9 +75,7 @@ msgstr ""
 
 #: assets/js/timegroups.js:68
 msgid "Cannot remove the only rule. At least 1 rule is required."
-msgstr ""
-"Невозможно удалить единственное правило. Должно существовать как минимум "
-"одно правило."
+msgstr "Невозможно удалить единственное правило. Должно существовать как минимум одно правило."
 
 #: views/timeconditions/advanced_form.php:142
 #: views/timeconditions/basic_form.php:252
@@ -91,17 +87,8 @@ msgid "Could not delete time group as it is in use"
 msgstr ""
 
 #: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"Создаёт условия, при котором вызов будет распределяться на одно и более "
-"назначение (например внутренний номер, Интеркативное меню, ринг-группа..) "
-"основываяь на текущем времени/дате. Это можно использовать например "
-"направляя входящие вызовы секретарю в рабочее время, и на Интерактивное меню "
-"- в ночное."
+msgid "Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night."
+msgstr "Создаёт условия, при котором вызов будет распределяться на одно и более назначение (например внутренний номер, Интеркативное меню, ринг-группа..) основываяь на текущем времени/дате. Это можно использовать например направляя входящие вызовы секретарю в рабочее время, и на Интерактивное меню - в ночное."
 
 #: views/timeconditions/advanced_form.php:155
 #: views/timeconditions/basic_form.php:265
@@ -165,47 +152,24 @@ msgstr "Пятница"
 #: views/timeconditions/advanced_form.php:77
 #: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
-msgstr ""
-"Хорошо бы присвоить какое-то описание для Правила по времени, это поможет в "
-"дальнейшем."
+msgstr "Хорошо бы присвоить какое-то описание для Правила по времени, это поможет в дальнейшем."
 
 #: views/timeconditions/advanced_form.php:101
 #: views/timeconditions/basic_form.php:211
-msgid ""
-"If set dialing the feature code will require a pin to change the override "
-"state"
-msgstr ""
-"Если установлено, набор кода функции потребует ПИН, чтобы изменить состояние "
-"переопределения"
+msgid "If set dialing the feature code will require a pin to change the override state"
+msgstr "Если установлено, набор кода функции потребует ПИН, чтобы изменить состояние переопределения"
 
 #: views/timeconditions/advanced_form.php:130
 #: views/timeconditions/advanced_form.php:220
 #: views/timeconditions/advanced_form.php:247
 #: views/timeconditions/basic_form.php:240
 #, php-format
-msgid ""
-"If set the hint will be INUSE if the time condition is matched, and "
-"NOT_INUSE if it fails"
-msgstr ""
-"Если установлено, индикатор будет InUse если условие по времени совпадают, и "
-"NOT_INUSE, если нет"
+msgid "If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"
+msgstr "Если установлено, индикатор будет InUse если условие по времени совпадают, и NOT_INUSE, если нет"
 
 #: timeconditions.i18n.php:20
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
-msgstr ""
-"Если установлено в ложь, это переопределит выполнение задачи обслуживания "
-"правил по времени, начатой файлами звонков. Если все идентификационные коды "
-"для правил по времени будут отключены, то в этом случае задача обслуживания "
-"не будет начата. Установка этого в Ложь было бы несколько странно. Вы можете "
-"установить это в Ложь временно, отлаживая систему, чтобы избежать "
-"периодического отслеживания запуска задач обслуживания диалплана в CLI и не "
-"отвлекаться."
+msgid "If set to false, this will override the execution of the Time Conditions maintenance task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
+msgstr "Если установлено в ложь, это переопределит выполнение задачи обслуживания правил по времени, начатой файлами звонков. Если все идентификационные коды для правил по времени будут отключены, то в этом случае задача обслуживания не будет начата. Установка этого в Ложь было бы несколько странно. Вы можете установить это в Ложь временно, отлаживая систему, чтобы избежать периодического отслеживания запуска задач обслуживания диалплана в CLI и не отвлекаться."
 
 #: views/timeconditions/advanced_form.php:113
 #: views/timeconditions/basic_form.php:223
@@ -353,15 +317,8 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:270
 #: views/timeconditions/basic_form.php:126
-msgid ""
-"Select a Time Group created under Time Groups. Matching times will be sent "
-"to matching destination. If no group is selected, call will always go to no-"
-"match destination."
-msgstr ""
-"Выбрать группу из списка временных групп. В указаный временной интервал "
-"звонки будут направляться по указанному направлению. Если не выбрано никакой "
-"группы, звонки будут всегда направляться по назначению не попадающему в "
-"Правило по времени."
+msgid "Select a Time Group created under Time Groups. Matching times will be sent to matching destination. If no group is selected, call will always go to no-match destination."
+msgstr "Выбрать группу из списка временных групп. В указаный временной интервал звонки будут направляться по указанному направлению. Если не выбрано никакой группы, звонки будут всегда направляться по назначению не попадающему в Правило по времени."
 
 #: functions.inc.php:642
 msgid "September"
@@ -374,17 +331,8 @@ msgstr "Точное время (сервера):"
 
 #: views/timeconditions/advanced_form.php:192
 #: views/timeconditions/basic_form.php:102
-msgid ""
-"Specify the time zone by name if the destinations are in a different time "
-"zone than the server. Type two characters to start an auto-complete pick-"
-"list. <br/><strong>Important</strong>: Your selection here <strong>MUST</"
-"strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
-msgstr ""
-"Пожалуйста введите имя временной зоны если нахначения находятся в других "
-"временных зонах по отношению к серверу . Введите первые два символа для "
-"выпадающего списка автозаполения . <br/><strong>Важно</strong>:Ваш выбор "
-"<strong>ДОЛЖЕН</strong>появиться в выпадающем списке или в директории /usr/"
-"share/zoneinfo/."
+msgid "Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <br/><strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+msgstr "Пожалуйста введите имя временной зоны если нахначения находятся в других временных зонах по отношению к серверу . Введите первые два символа для выпадающего списка автозаполения . <br/><strong>Важно</strong>:Ваш выбор <strong>ДОЛЖЕН</strong>появиться в выпадающем списке или в директории /usr/share/zoneinfo/."
 
 #: Timeconditions.class.php:180
 msgid "Submit"
@@ -415,54 +363,18 @@ msgid "Temporary unmatched"
 msgstr "Временное несовпадение"
 
 #: timeconditions.i18n.php:26
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-"Интервал опроса в секундах используется задачей обслуживания правил по "
-"времени, запущенный call-файл Астериска используется для обновления правил "
-"по времени, переопределения состояния, а так же поддерживать различные "
-"состояния индикаторов устройств, использующих BLF. Короткий интервал "
-"гарантирует актуальное состояние клавиши BLF. Интервал должен быть меньше, "
-"чем самый короткий настроенный промежуток между двумя состояниями правил по "
-"времени, так чтобы переопределение во время такого периода уже закончилось, "
-"когда начинается новый период."
+msgid "The polling interval in seconds used by the Time Conditions maintenance task, launched by an Asterisk call file used to update Time Conditions override states as well as keep custom device state hint values up-to-date when being used with BLF. A shorter interval will assure that BLF keys states are accurate. The interval should be less than the shortest configured span between two time condition states, so that a manual override during such a period is properly reset when the new period starts."
+msgstr "Интервал опроса в секундах используется задачей обслуживания правил по времени, запущенный call-файл Астериска используется для обновления правил по времени, переопределения состояния, а так же поддерживать различные состояния индикаторов устройств, использующих BLF. Короткий интервал гарантирует актуальное состояние клавиши BLF. Интервал должен быть меньше, чем самый короткий настроенный промежуток между двумя состояниями правил по времени, так чтобы переопределение во время такого периода уже закончилось, когда начинается новый период."
 
 #: views/timeconditions/advanced_form.php:163
 #: views/timeconditions/basic_form.php:273
 #, php-format
-msgid ""
-"This Time Condition can be set to Temporarily go to the 'matched' or "
-"'unmatched' destination in which case the override will automatically reset "
-"once the current time span has elapsed. If set to Permanent it will stay "
-"overridden until manually reset. All overrides can be removed with the Reset "
-"Override option. Temporary Overrides can also be toggled with the %s feature "
-"code, which will also remove a Permanent Override if set but can not set a "
-"Permanent Override which must be done here or with other applications such "
-"as an XML based phone options."
-msgstr ""
-"Правило по времени может быть установлено на срабатывание назначения по "
-"совпадению или несовпадению, в обоих случаях перенаправление сработает в "
-"указанный промежуток времени. Если установлено в положение Постоянное "
-"совпадение, то это будет работать до тех пор, пока не будет включен другой "
-"режим ручным способом. Все установки могут быть отменены опцией Сброс "
-"перезаписи. Временные перезаписи могут быть переключены  при помощи "
-"сервисного кода %s, который также удалит и Постоянную перезапись, если она "
-"установлена, но не затронет внешние приложения, типа XML-скрипт с телефона."
+msgid "This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."
+msgstr "Правило по времени может быть установлено на срабатывание назначения по совпадению или несовпадению, в обоих случаях перенаправление сработает в указанный промежуток времени. Если установлено в положение Постоянное совпадение, то это будет работать до тех пор, пока не будет включен другой режим ручным способом. Все установки могут быть отменены опцией Сброс перезаписи. Временные перезаписи могут быть переключены  при помощи сервисного кода %s, который также удалит и Постоянную перезапись, если она установлена, но не затронет внешние приложения, типа XML-скрипт с телефона."
 
 #: assets/js/timegroups.js:15
-msgid ""
-"This section will be removed from this time group and all current settings "
-"including changes will be updated. OK to proceed?"
-msgstr ""
-"Эта сккция будет удалена из текущей временной группы и всех других "
-"установок, включая изменения, которые сейчас будут обновлены. ОК для "
-"продолжения?"
+msgid "This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"
+msgstr "Эта сккция будет удалена из текущей временной группы и всех других установок, включая изменения, которые сейчас будут обновлены. ОК для продолжения?"
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
@@ -569,13 +481,8 @@ msgid "Yes"
 msgstr "Да"
 
 #: assets/js/timeconditions.js:4
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"Не выбрана ни одна временная группа для ассоциации с этим правилом по "
-"времени. Входящий звонок будет направлен в нераспознанное назначение пока не "
-"будет выбрана какая-либо группа"
+msgid "You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"
+msgstr "Не выбрана ни одна временная группа для ассоциации с этим правилом по времени. Входящий звонок будет направлен в нераспознанное назначение пока не будет выбрана какая-либо группа"
 
 #: functions.inc.php:240
 msgid "false goto"
@@ -589,45 +496,24 @@ msgstr "переход, если правда"
 msgid "unnamed"
 msgstr ""
 
-#~ msgid "%sWARNING:%s No time defined for this condition, please review"
-#~ msgstr ""
-#~ "%sВНИМАНИЕ:%s Не указано время для этого правила, просмотрите его ещё раз"
-
-#~ msgid "Checking for old timeconditions to upgrade.."
-#~ msgstr "Проверяем старые правила по времени для обновления.."
-
-#~ msgid "ERROR: failed to convert field "
-#~ msgstr "ОШИБКА: не удалось сконвертировать поле "
-
-#~ msgid "OK"
-#~ msgstr "ОК"
-
-#~ msgid "Upgraded %s and created group %s"
-#~ msgstr "Обновлено %s и создана группа %s"
-
-#~ msgid "already exists"
-#~ msgstr "уже существует"
-
-#~ msgid "checking for generate_hint field.."
-#~ msgstr "проверяем поле generate_hint.."
-
-#~ msgid "converting timeconditions time field to int.."
-#~ msgstr "поле для правила по времени конвертируется в .."
-
-#~ msgid "generating feature codes if needed.."
-#~ msgstr "генерируем сервисные коды при необходимости.."
-
-#~ msgid "no upgrade needed"
-#~ msgstr "обновления не требуется"
-
-#~ msgid "starting migration"
-#~ msgstr "начинаем миграцию"
+#: assets/js/timegroups/timegroups.js:24
+msgid "Please use a unique description. The description already exists."
+msgstr ""
 
 #~ msgid " deleted!"
 #~ msgstr " удалено!"
 
+#~ msgid "%sWARNING:%s No time defined for this condition, please review"
+#~ msgstr "%sВНИМАНИЕ:%s Не указано время для этого правила, просмотрите его ещё раз"
+
 #~ msgid "Change Override:"
 #~ msgstr "Изменённые параметры:"
+
+#~ msgid "Check to enable the override feature code %s that allows manual changes to the timecondition."
+#~ msgstr "Отметить для включения кода перезаписи %s который позволит вручную менять правила по времени."
+
+#~ msgid "Checking for old timeconditions to upgrade.."
+#~ msgstr "Проверяем старые правила по времени для обновления.."
 
 #~ msgid "Current Override:"
 #~ msgstr "Текущие параметры:"
@@ -644,30 +530,32 @@ msgstr ""
 #~ msgid "Destination if time does not match"
 #~ msgstr "Назначение, если не попадает во временную группу"
 
+#~ msgid "ERROR: failed to convert field "
+#~ msgstr "ОШИБКА: не удалось сконвертировать поле "
+
 #~ msgid "Edit Time Condition"
 #~ msgstr "Редактировать Правило по времени"
 
 #~ msgid "Edit Time Group"
 #~ msgstr "Изменить временную группу"
 
+#~ msgid "Enable Override Code"
+#~ msgstr "Включить код перезаписи"
+
+#~ msgid "Generate BLF Hint"
+#~ msgstr "Генерация BLF хинтов"
+
 #~ msgid "Goto Current Time Group"
 #~ msgstr "Переправить в текущую временную группу"
 
-#~ msgid ""
-#~ "Indicates the current state of this Time Condition. If it is in a "
-#~ "Temporary Override state, it will automatically resume at the next time "
-#~ "transition based on the associated Time Group. If in a Permanent Override "
-#~ "state, it will stay in that state until changed here or through other "
-#~ "means such as external XML applications on your phone. If No Override "
-#~ "then it functions normally based on the time schedule."
-#~ msgstr ""
-#~ "Отображает текущие параметры данного Правила по времени. Если это "
-#~ "временное состояние, то оно автоматически вернётся в первоначальное при "
-#~ "следующей подвижке по времени, ассоциированной с Временной группой. Если "
-#~ "это постоянное состояние, то оно остаётся таким пока не будут сделаны "
-#~ "изменения здесь или другие внешние приложения, такие как XML-скрипт на "
-#~ "телефоне. Если стоит 'Не перезаписывать', то функционал базируется на "
-#~ "стандартном временном расписании."
+#~ msgid "If set an Asterisk hint will be created for the override feature code %s associated with this Time Condition that can be used to light BLF buttons on a phone programmed to enable/disable this Time Condition. If not using a BLF it is better to leave this un-checked as additional system resources are required to keep the hint updated. This Feature Code can be found and enabled/disabled on the Feature Codes tab under Time Conditions."
+#~ msgstr "Если установлено, будет сгененрирован хинт, который перепишет сервисный код %s ассоциированный с этим Правилом по времени, который можно использовать подсвечивая BLF кнопку телефона, запрограммированную для включения/выключения этого Правила по времени. Если BLF не используются, то лучше оставить эту опцию неотмеченной, чтобы иметь возможность передавать хинты другим системным ресурсам, если потребуется. Этот сервисный код можно найти, а также включить/выключиьт его на вкладке Сервисные коды в разделе Правила по времени."
+
+#~ msgid "If set to false, this will override the execution of the Time Conditons maintenace task launched by call files. If all the feature codes for time conditions are disabled, the maintenance task will not be launched anyhow. Setting this to false would be fairly un-common. You may want to set this temporarily if debugging a system to avoid the periodic dialplan running through the CLI that the maintenance task launches and can be distracting."
+#~ msgstr "Если установлено в false, то прерывается исполнение задач Правил по времени, вызываемых call-файлами. Если все сервисные коды для правил по времени выключены, задачи по обслуживанию никак не смогут выполняться. Установка этой опции в false совершенно нетипична. Вы конечно можете установить её временно, чтобы предотвращать периодическое исполнение в диал плане задач по обслуживанию, что может мешать пониманию в CLI."
+
+#~ msgid "Indicates the current state of this Time Condition. If it is in a Temporary Override state, it will automatically resume at the next time transition based on the associated Time Group. If in a Permanent Override state, it will stay in that state until changed here or through other means such as external XML applications on your phone. If No Override then it functions normally based on the time schedule."
+#~ msgstr "Отображает текущие параметры данного Правила по времени. Если это временное состояние, то оно автоматически вернётся в первоначальное при следующей подвижке по времени, ассоциированной с Временной группой. Если это постоянное состояние, то оно остаётся таким пока не будут сделаны изменения здесь или другие внешние приложения, такие как XML-скрипт на телефоне. Если стоит 'Не перезаписывать', то функционал базируется на стандартном временном расписании."
 
 #~ msgid "Month Day finish:"
 #~ msgstr "День месяца, окончание:"
@@ -684,19 +572,17 @@ msgstr ""
 #~ msgid "New Time"
 #~ msgstr "Новое время"
 
+#~ msgid "OK"
+#~ msgstr "ОК"
+
 #~ msgid "Remove Section and Submit Current Settings"
 #~ msgstr "Удалить секцию и подтвердить текущие настройки"
 
-#~ msgid ""
-#~ "Specify the time zone by name if the destinations are in a different time "
-#~ "zone than the server. Type two characters to start an auto-complete pick-"
-#~ "list. <strong>Important</strong>: Your selection here <strong>MUST</"
-#~ "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
-#~ msgstr ""
-#~ "Укажите часовой пояс по имени, если места назначения находятся не в "
-#~ "часовом поясе сервера. Введите два символа для начала автозаполнения. "
-#~ "<strong>Внимание</strong>: ваш выбор здесь <strong>ДОЛЖЕН</strong> "
-#~ "появиться в списке или в каталоге /usr/share/zoneinfo/."
+#~ msgid "Specify the time zone by name if the destinations are in a different time zone than the server. Type two characters to start an auto-complete pick-list. <strong>Important</strong>: Your selection here <strong>MUST</strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+#~ msgstr "Укажите часовой пояс по имени, если места назначения находятся не в часовом поясе сервера. Введите два символа для начала автозаполнения. <strong>Внимание</strong>: ваш выбор здесь <strong>ДОЛЖЕН</strong> появиться в списке или в каталоге /usr/share/zoneinfo/."
+
+#~ msgid "The polling interval in seconds used by the Time Conditions manintenace task, launched by an Asterisk call file used to update Time Conditions override states as well as keep custom device state hint values up-to-date when being used with BLF. A shorter interval will assure that BLF keys states are accurate. The interval should be less than the shortest configured span between two time condition states, so that a manual overide during such a period is properly reset when the new period starts."
+#~ msgstr "Интервал в секундах, используемый в задачах по обслуживанию в Правилах по времени, в течение которого Астериском исполняются call-файлы для обновления статуса Правил по времени, а так же поддерживает актуальный статус хинтов для устройств, которые используют BLF. Более короткий интервал даёт более точное отображение статуса кнопок с BLF, Интервал должен быть меньше, чем наименьший временной зазор между двумя состояниями, тогда ручное изменение состояния в таком периоде благополучно сбросится в начале следующего периода."
 
 #~ msgid "This will display as the name of this Time Group."
 #~ msgstr "Отображение названия этой временной группы."
@@ -716,6 +602,9 @@ msgstr ""
 #~ msgid "Time to start:"
 #~ msgstr "Время начала:"
 
+#~ msgid "Upgraded %s and created group %s"
+#~ msgstr "Обновлено %s и создана группа %s"
+
 #~ msgid "Used By"
 #~ msgstr "Используется"
 
@@ -725,72 +614,26 @@ msgstr ""
 #~ msgid "Week Day start:"
 #~ msgstr "День недели, начало:"
 
+#~ msgid "already exists"
+#~ msgstr "уже существует"
+
+#~ msgid "checking for generate_hint field.."
+#~ msgstr "проверяем поле generate_hint.."
+
+#~ msgid "converting timeconditions time field to int.."
+#~ msgstr "поле для правила по времени конвертируется в .."
+
 #~ msgid "deleted"
 #~ msgstr "удалено"
 
-#~ msgid "Generate BLF Hint"
-#~ msgstr "Генерация BLF хинтов"
+#~ msgid "generating feature codes if needed.."
+#~ msgstr "генерируем сервисные коды при необходимости.."
 
-#~ msgid ""
-#~ "If set an Asterisk hint will be created for the override feature code %s "
-#~ "associated with this Time Condition that can be used to light BLF buttons "
-#~ "on a phone programmed to enable/disable this Time Condition. If not using "
-#~ "a BLF it is better to leave this un-checked as additional system "
-#~ "resources are required to keep the hint updated. This Feature Code can be "
-#~ "found and enabled/disabled on the Feature Codes tab under Time Conditions."
-#~ msgstr ""
-#~ "Если установлено, будет сгененрирован хинт, который перепишет сервисный "
-#~ "код %s ассоциированный с этим Правилом по времени, который можно "
-#~ "использовать подсвечивая BLF кнопку телефона, запрограммированную для "
-#~ "включения/выключения этого Правила по времени. Если BLF не используются, "
-#~ "то лучше оставить эту опцию неотмеченной, чтобы иметь возможность "
-#~ "передавать хинты другим системным ресурсам, если потребуется. Этот "
-#~ "сервисный код можно найти, а также включить/выключиьт его на вкладке "
-#~ "Сервисные коды в разделе Правила по времени."
+#~ msgid "no upgrade needed"
+#~ msgstr "обновления не требуется"
 
-#~ msgid "Enable Override Code"
-#~ msgstr "Включить код перезаписи"
-
-#~ msgid ""
-#~ "Check to enable the override feature code %s that allows manual changes "
-#~ "to the timecondition."
-#~ msgstr ""
-#~ "Отметить для включения кода перезаписи %s который позволит вручную менять "
-#~ "правила по времени."
-
-#~ msgid ""
-#~ "If set to false, this will override the execution of the Time Conditons "
-#~ "maintenace task launched by call files. If all the feature codes for time "
-#~ "conditions are disabled, the maintenance task will not be launched "
-#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
-#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
-#~ "running through the CLI that the maintenance task launches and can be "
-#~ "distracting."
-#~ msgstr ""
-#~ "Если установлено в false, то прерывается исполнение задач Правил по "
-#~ "времени, вызываемых call-файлами. Если все сервисные коды для правил по "
-#~ "времени выключены, задачи по обслуживанию никак не смогут выполняться. "
-#~ "Установка этой опции в false совершенно нетипична. Вы конечно можете "
-#~ "установить её временно, чтобы предотвращать периодическое исполнение в "
-#~ "диал плане задач по обслуживанию, что может мешать пониманию в CLI."
-
-#~ msgid ""
-#~ "The polling interval in seconds used by the Time Conditions manintenace "
-#~ "task, launched by an Asterisk call file used to update Time Conditions "
-#~ "override states as well as keep custom device state hint values up-to-"
-#~ "date when being used with BLF. A shorter interval will assure that BLF "
-#~ "keys states are accurate. The interval should be less than the shortest "
-#~ "configured span between two time condition states, so that a manual "
-#~ "overide during such a period is properly reset when the new period starts."
-#~ msgstr ""
-#~ "Интервал в секундах, используемый в задачах по обслуживанию в Правилах по "
-#~ "времени, в течение которого Астериском исполняются call-файлы для "
-#~ "обновления статуса Правил по времени, а так же поддерживает актуальный "
-#~ "статус хинтов для устройств, которые используют BLF. Более короткий "
-#~ "интервал даёт более точное отображение статуса кнопок с BLF, Интервал "
-#~ "должен быть меньше, чем наименьший временной зазор между двумя "
-#~ "состояниями, тогда ручное изменение состояния в таком периоде "
-#~ "благополучно сбросится в начале следующего периода."
+#~ msgid "starting migration"
+#~ msgstr "начинаем миграцию"
 
 #~ msgid "text"
 #~ msgstr "текст"

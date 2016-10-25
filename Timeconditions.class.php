@@ -257,7 +257,7 @@ class Timeconditions implements \BMO {
 			break;
 		}
 	}
-	public function listTimegroups(){
+	public function listTimegroups($assoc = false){
 		$tmparray = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->db->prepare($sql);
@@ -266,8 +266,14 @@ class Timeconditions implements \BMO {
 		if(!$results) {
 			$results = array();
 		}
-		foreach ($results as $val) {
-			$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+		if($assoc !== true){
+			foreach ($results as $val) {
+				$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+			}
+		}else{
+			foreach ($results as $val) {
+				$tmparray[] = array("id" => $val[0], "description" => $val[1]);
+			}
 		}
 		return $tmparray;
 	}
@@ -587,7 +593,16 @@ class Timeconditions implements \BMO {
 	public function addTimeGroup($description, $times=null){
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->db->prepare($sql);
-		$ret = $stmt->execute(array(':description' => $description));
+		try {
+			$ret = $stmt->execute(array(':description' => $description));
+		} catch (\PDOException $e) {
+			//catch duplicates
+			if($e->getCode() == '23000'){
+				return false;
+			}else{
+					throw $e;
+			}
+		}
 		$timegroup = $this->db->lastInsertId();
 		if (isset($times)) {
 			$this->editTimes($timegroup,$times);
@@ -604,7 +619,14 @@ class Timeconditions implements \BMO {
 		needreload();
 		return $ret;
 	}
-
+	public function getTimeGroup($timegroup) {
+		$sql = "SELECT id, description FROM timegroups_groups WHERE id = :id LIMIT 1";
+		$stmt = $this->db->prepare($sql);
+		$ret = $stmt->execute(array(':id' => $timegroup));
+		$results = $stmt->fetch();
+		$tmparray = array($results[0], $results[1]);
+		return $tmparray;
+	}
 	public function delTimeGroup($id){
 		$sql = "delete from timegroups_details where timegroupid = :id";
 		$stmt = $this->db->prepare($sql);
