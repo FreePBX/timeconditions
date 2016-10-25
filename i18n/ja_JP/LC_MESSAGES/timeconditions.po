@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 15:57-0700\n"
+"POT-Creation-Date: 2016-10-25 10:04-0700\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -55,7 +55,7 @@ msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%s 警告:%s この条件の時間が定義されていません。もう一度確認してください。"
 
-#: functions.inc.php:537
+#: functions.inc.php:529
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
@@ -68,11 +68,11 @@ msgstr "：時間分岐条件を上書き"
 msgid "Actions"
 msgstr "アクション"
 
-#: functions.inc.php:549 assets/js/timeconditions.js:112
+#: functions.inc.php:541 assets/js/timeconditions/timeconditions.js:123
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -94,15 +94,15 @@ msgstr "この時間分岐条件の時間を追加します"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: functions.inc.php:632
+#: functions.inc.php:624
 msgid "April"
 msgstr "4月"
 
-#: functions.inc.php:636
+#: functions.inc.php:628
 msgid "August"
 msgstr "8月"
 
-#: assets/js/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:78
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr "ルールを一つ以上設定する必要があるため、このルールを削除できません。"
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "Current"
 msgstr "現在のステータス"
 
-#: functions.inc.php:640
+#: functions.inc.php:632
 msgid "December"
 msgstr "12月"
 
@@ -177,7 +177,7 @@ msgstr "エラー: フィールドのコンバート失敗 "
 msgid "Edit Time Condition: %s (%s)"
 msgstr "時間分岐条件を編集: %s (%s)"
 
-#: assets/js/timegroups.js:43
+#: assets/js/timegroups/timegroups.js:43
 msgid "Edit: "
 msgstr "編集: "
 
@@ -185,11 +185,11 @@ msgstr "編集: "
 msgid "Enable Maintenance Polling"
 msgstr "メンテナンスポーリングを有効にする"
 
-#: functions.inc.php:630
+#: functions.inc.php:622
 msgid "February"
 msgstr "2月"
 
-#: functions.inc.php:608
+#: functions.inc.php:600
 msgid "Friday"
 msgstr "金曜日"
 
@@ -232,15 +232,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "BLFヒントを逆にする"
 
-#: functions.inc.php:629
+#: functions.inc.php:621
 msgid "January"
 msgstr "1月"
 
-#: functions.inc.php:635
+#: functions.inc.php:627
 msgid "July"
 msgstr "7月"
 
-#: functions.inc.php:634
+#: functions.inc.php:626
 msgid "June"
 msgstr "6月"
 
@@ -262,31 +262,31 @@ msgstr "時間グループを表示"
 msgid "Maintenance Polling Interval"
 msgstr "メンテナンスポーリング間隔"
 
-#: functions.inc.php:631
+#: functions.inc.php:623
 msgid "March"
 msgstr "3月"
 
-#: functions.inc.php:633
+#: functions.inc.php:625
 msgid "May"
 msgstr "5月"
 
-#: functions.inc.php:604
+#: functions.inc.php:596
 msgid "Monday"
 msgstr "月曜日"
 
-#: functions.inc.php:803
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr "終わる日"
 
-#: functions.inc.php:794
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr "始まる日"
 
-#: functions.inc.php:821
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr "終わる月"
 
-#: functions.inc.php:812
+#: functions.inc.php:804
 msgid "Month start"
 msgstr "始まる月"
 
@@ -296,7 +296,8 @@ msgid "No"
 msgstr "いいえ"
 
 #: views/timeconditions/advanced_form.php:24
-#: views/timeconditions/basic_form.php:24 assets/js/timeconditions.js:46
+#: views/timeconditions/basic_form.php:24
+#: assets/js/timeconditions/timeconditions.js:57
 msgid "No Override"
 msgstr "上書きしない"
 
@@ -305,7 +306,7 @@ msgstr "上書きしない"
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:639
+#: functions.inc.php:631
 msgid "November"
 msgstr "11月"
 
@@ -313,7 +314,7 @@ msgstr "11月"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:638
+#: functions.inc.php:630
 msgid "October"
 msgstr "10月"
 
@@ -337,24 +338,26 @@ msgid "Permanent Override unmatching state"
 msgstr "一致しない状態を永久的に上書き"
 
 #: views/timeconditions/advanced_form.php:146
-#: views/timeconditions/basic_form.php:260 assets/js/timeconditions.js:34
+#: views/timeconditions/basic_form.php:260
+#: assets/js/timeconditions/timeconditions.js:45
 msgid "Permanently matched"
 msgstr "永久的一致"
 
 #: views/timeconditions/advanced_form.php:148
-#: views/timeconditions/basic_form.php:262 assets/js/timeconditions.js:37
+#: views/timeconditions/basic_form.php:262
+#: assets/js/timeconditions/timeconditions.js:48
 msgid "Permanently unmatched"
 msgstr "永久的不一致"
 
-#: assets/js/timeconditions.js:3
+#: assets/js/timeconditions/timeconditions.js:14
 msgid "Please enter a valid Override Code Pin"
 msgstr "入力された暗証番号は無効です。"
 
-#: assets/js/timeconditions.js:2
+#: assets/js/timeconditions/timeconditions.js:13
 msgid "Please enter a valid Time Conditions Name"
 msgstr "時間分岐条件の名前は無効です。もう一度入力してください"
 
-#: assets/js/timegroups.js:24
+#: assets/js/timegroups/timegroups.js:24
 msgid "Please use a unique description. The description already exists."
 msgstr ""
 
@@ -367,11 +370,11 @@ msgstr "リセット"
 msgid "Reset Override"
 msgstr "上書きをリセット"
 
-#: functions.inc.php:609
+#: functions.inc.php:601
 msgid "Saturday"
 msgstr "土曜日"
 
-#: assets/js/timeconditions.js:108
+#: assets/js/timeconditions/timeconditions.js:119
 msgid "Select a Group"
 msgstr ""
 
@@ -386,7 +389,7 @@ msgstr ""
 "間に一致した場合、指定した宛先に転送します。注意: グループを選択しなかった場"
 "合は、他の設定にかかわらず一致しなかった場合の宛先に転送されます。"
 
-#: functions.inc.php:637
+#: functions.inc.php:629
 msgid "September"
 msgstr "9月"
 
@@ -413,7 +416,7 @@ msgstr ""
 msgid "Submit"
 msgstr "送信"
 
-#: functions.inc.php:603
+#: functions.inc.php:595
 msgid "Sunday"
 msgstr "日曜日"
 
@@ -428,12 +431,14 @@ msgid "Temporary Override unmatching state"
 msgstr "一致しない状態を一時的に上書き"
 
 #: views/timeconditions/advanced_form.php:145
-#: views/timeconditions/basic_form.php:259 assets/js/timeconditions.js:43
+#: views/timeconditions/basic_form.php:259
+#: assets/js/timeconditions/timeconditions.js:54
 msgid "Temporary matched"
 msgstr "一時的一致"
 
 #: views/timeconditions/advanced_form.php:147
-#: views/timeconditions/basic_form.php:261 assets/js/timeconditions.js:40
+#: views/timeconditions/basic_form.php:261
+#: assets/js/timeconditions/timeconditions.js:51
 msgid "Temporary unmatched"
 msgstr "一時的不一致"
 
@@ -468,7 +473,7 @@ msgstr ""
 "上書きは、 %s 機能コードで切り替えることができます。また、電話上で動くアプリ"
 "ケーションなどでも、この上書き設定をリセットすることもできます。"
 
-#: assets/js/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:15
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -484,7 +489,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
-#: functions.inc.php:607
+#: functions.inc.php:599
 msgid "Thursday"
 msgstr "木曜日"
 
@@ -526,11 +531,11 @@ msgstr "時間グループ"
 msgid "Time Zone:"
 msgstr "タイムゾーン:"
 
-#: functions.inc.php:750
+#: functions.inc.php:742
 msgid "Time to Start"
 msgstr "開始時刻"
 
-#: functions.inc.php:763
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr "終了時刻"
 
@@ -538,7 +543,7 @@ msgstr "終了時刻"
 msgid "Time(s)"
 msgstr "時間設定"
 
-#: functions.inc.php:605
+#: functions.inc.php:597
 msgid "Tuesday"
 msgstr "火曜日"
 
@@ -564,15 +569,15 @@ msgstr "%s をアップグレードし、グループ %s を作成しました"
 msgid "Use System Timezone"
 msgstr "システムのタイムゾーンを使用"
 
-#: functions.inc.php:606
+#: functions.inc.php:598
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: functions.inc.php:776
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr "始まる曜日"
 
-#: functions.inc.php:785
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr "終わる曜日"
 
@@ -581,7 +586,7 @@ msgstr "終わる曜日"
 msgid "Yes"
 msgstr "はい"
 
-#: assets/js/timeconditions.js:4
+#: assets/js/timeconditions/timeconditions.js:15
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"

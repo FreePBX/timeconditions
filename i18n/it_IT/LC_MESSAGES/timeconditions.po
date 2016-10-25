@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 15:57-0700\n"
+"POT-Creation-Date: 2016-10-25 10:04-0700\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -24,7 +24,7 @@ msgstr ""
 "%sATTENZIONE: %s Nessuna data/ora definita per questa condizione, "
 "ricontrollare"
 
-#: functions.inc.php:537
+#: functions.inc.php:529
 msgid "--Select a Group--"
 msgstr "--Selezionare un Gruppo--"
 
@@ -37,11 +37,11 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:549 assets/js/timeconditions.js:112
+#: functions.inc.php:541 assets/js/timeconditions/timeconditions.js:123
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
 msgid "Add Time"
 msgstr ""
 
@@ -63,15 +63,15 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:632
+#: functions.inc.php:624
 msgid "April"
 msgstr "Aprile"
 
-#: functions.inc.php:636
+#: functions.inc.php:628
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:78
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:640
+#: functions.inc.php:632
 msgid "December"
 msgstr "Dicembre"
 
@@ -143,7 +143,7 @@ msgstr "ERRORE: conversione campo fallita"
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: assets/js/timegroups.js:43
+#: assets/js/timegroups/timegroups.js:43
 msgid "Edit: "
 msgstr ""
 
@@ -151,11 +151,11 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:630
+#: functions.inc.php:622
 msgid "February"
 msgstr "Febbraio"
 
-#: functions.inc.php:608
+#: functions.inc.php:600
 msgid "Friday"
 msgstr "Venerdì"
 
@@ -194,15 +194,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:629
+#: functions.inc.php:621
 msgid "January"
 msgstr "Gennaio"
 
-#: functions.inc.php:635
+#: functions.inc.php:627
 msgid "July"
 msgstr "Luglio"
 
-#: functions.inc.php:634
+#: functions.inc.php:626
 msgid "June"
 msgstr "Giugno"
 
@@ -224,31 +224,31 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:631
+#: functions.inc.php:623
 msgid "March"
 msgstr "Marzo"
 
-#: functions.inc.php:633
+#: functions.inc.php:625
 msgid "May"
 msgstr "Maggio"
 
-#: functions.inc.php:604
+#: functions.inc.php:596
 msgid "Monday"
 msgstr "Lunedì"
 
-#: functions.inc.php:803
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:794
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:821
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:812
+#: functions.inc.php:804
 msgid "Month start"
 msgstr ""
 
@@ -258,7 +258,8 @@ msgid "No"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:24
-#: views/timeconditions/basic_form.php:24 assets/js/timeconditions.js:46
+#: views/timeconditions/basic_form.php:24
+#: assets/js/timeconditions/timeconditions.js:57
 msgid "No Override"
 msgstr ""
 
@@ -267,7 +268,7 @@ msgstr ""
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:639
+#: functions.inc.php:631
 msgid "November"
 msgstr "Novembre"
 
@@ -275,7 +276,7 @@ msgstr "Novembre"
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:638
+#: functions.inc.php:630
 msgid "October"
 msgstr "Ottobre"
 
@@ -299,24 +300,26 @@ msgid "Permanent Override unmatching state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:146
-#: views/timeconditions/basic_form.php:260 assets/js/timeconditions.js:34
+#: views/timeconditions/basic_form.php:260
+#: assets/js/timeconditions/timeconditions.js:45
 msgid "Permanently matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:148
-#: views/timeconditions/basic_form.php:262 assets/js/timeconditions.js:37
+#: views/timeconditions/basic_form.php:262
+#: assets/js/timeconditions/timeconditions.js:48
 msgid "Permanently unmatched"
 msgstr ""
 
-#: assets/js/timeconditions.js:3
+#: assets/js/timeconditions/timeconditions.js:14
 msgid "Please enter a valid Override Code Pin"
 msgstr ""
 
-#: assets/js/timeconditions.js:2
+#: assets/js/timeconditions/timeconditions.js:13
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Prego immettere un nome valido per questa Condizione Temporale"
 
-#: assets/js/timegroups.js:24
+#: assets/js/timegroups/timegroups.js:24
 msgid "Please use a unique description. The description already exists."
 msgstr ""
 
@@ -329,11 +332,11 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:609
+#: functions.inc.php:601
 msgid "Saturday"
 msgstr "Sabato"
 
-#: assets/js/timeconditions.js:108
+#: assets/js/timeconditions/timeconditions.js:119
 msgid "Select a Group"
 msgstr ""
 
@@ -349,7 +352,7 @@ msgstr ""
 "seleziona un gruppo, la chiamata sarà inviata sempre alla destinazione non "
 "corrispondente."
 
-#: functions.inc.php:637
+#: functions.inc.php:629
 msgid "September"
 msgstr "Settembre"
 
@@ -371,7 +374,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Conferma"
 
-#: functions.inc.php:603
+#: functions.inc.php:595
 msgid "Sunday"
 msgstr "Domenica"
 
@@ -386,12 +389,14 @@ msgid "Temporary Override unmatching state"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:145
-#: views/timeconditions/basic_form.php:259 assets/js/timeconditions.js:43
+#: views/timeconditions/basic_form.php:259
+#: assets/js/timeconditions/timeconditions.js:54
 msgid "Temporary matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:147
-#: views/timeconditions/basic_form.php:261 assets/js/timeconditions.js:40
+#: views/timeconditions/basic_form.php:261
+#: assets/js/timeconditions/timeconditions.js:51
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -420,7 +425,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:15
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -434,7 +439,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:607
+#: functions.inc.php:599
 msgid "Thursday"
 msgstr "Giovedì"
 
@@ -476,11 +481,11 @@ msgstr "Gruppi Temporali"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:750
+#: functions.inc.php:742
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:763
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr ""
 
@@ -488,7 +493,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:605
+#: functions.inc.php:597
 msgid "Tuesday"
 msgstr "Martedì"
 
@@ -514,15 +519,15 @@ msgstr "Aggiornato %s e creato gruppo %s"
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:606
+#: functions.inc.php:598
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: functions.inc.php:776
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:785
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr ""
 
@@ -531,7 +536,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions.js:4
+#: assets/js/timeconditions/timeconditions.js:15
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
