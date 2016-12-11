@@ -4,7 +4,7 @@ msgstr ""
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-25 10:04-0700\n"
-"PO-Revision-Date: 2016-12-10 23:57+0200\n"
+"PO-Revision-Date: 2016-12-11 01:54+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/es_ES/>\n"
@@ -476,11 +476,11 @@ msgstr ""
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
-msgstr ""
+msgstr "Este grupo horario está actualmente en uso y no se puede eliminar"
 
 #: views/timegroups/form.php:57
 msgid "This will display as the name of this Time Group"
-msgstr ""
+msgstr "Esto se mostrará como el nombre de este grupo horario"
 
 #: functions.inc.php:599
 msgid "Thursday"
@@ -488,26 +488,26 @@ msgstr "Jueves"
 
 #: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
-msgstr ""
+msgstr "Condiciones horarias"
 
 #: timeconditions.i18n.php:18 timeconditions.i18n.php:24
 msgid "Time Condition Module"
-msgstr ""
+msgstr "Modulo Condiciones Horarias"
 
 #: views/timeconditions/advanced_form.php:61
 #: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
-msgstr ""
+msgstr "Nombre Condición Horaria"
 
 #: functions.inc.php:21 functions.inc.php:222
 #, php-format
 msgid "Time Condition: %s"
-msgstr ""
+msgstr "Condición Horaria: %s"
 
 #: page.timeconditions.php:7 timeconditions.i18n.php:4
 #: timeconditions.i18n.php:10
 msgid "Time Conditions"
-msgstr ""
+msgstr "Condiciones Horarias"
 
 #: views/timeconditions/advanced_form.php:200
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
@@ -517,7 +517,7 @@ msgstr "Grupo horario"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:14
 msgid "Time Groups"
-msgstr ""
+msgstr "Grupos Horarios"
 
 #: views/timeconditions/advanced_form.php:171
 #: views/timeconditions/basic_form.php:85
@@ -526,15 +526,15 @@ msgstr "Zona Horaria:"
 
 #: functions.inc.php:742
 msgid "Time to Start"
-msgstr ""
+msgstr "Hora de Inicio"
 
 #: functions.inc.php:755
 msgid "Time to finish"
-msgstr ""
+msgstr "Hora de terminar"
 
 #: views/timegroups/form.php:69
 msgid "Time(s)"
-msgstr ""
+msgstr "Horas(s)"
 
 #: functions.inc.php:597
 msgid "Tuesday"
@@ -543,14 +543,14 @@ msgstr "Martes"
 #: views/timeconditions/advanced_form.php:143
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
-msgstr ""
+msgstr "Sin Alterar"
 
 #: views/timeconditions/advanced_form.php:39
 #: views/timeconditions/advanced_form.php:43
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"
-msgstr ""
+msgstr "Estado Desconocido"
 
 #: install.php:231
 #, php-format
@@ -560,7 +560,7 @@ msgstr "%s actualizadas y %s grupos creados"
 #: views/timeconditions/advanced_form.php:176
 #: views/timeconditions/basic_form.php:90
 msgid "Use System Timezone"
-msgstr ""
+msgstr "Use zona horaria del sistema"
 
 #: functions.inc.php:598
 msgid "Wednesday"
@@ -568,16 +568,16 @@ msgstr "Miércoles"
 
 #: functions.inc.php:768
 msgid "Week Day Start"
-msgstr ""
+msgstr "Semana Día Inicio"
 
 #: functions.inc.php:777
 msgid "Week Day finish"
-msgstr ""
+msgstr "Semana Día Fin"
 
 #: views/timeconditions/advanced_form.php:115
 #: views/timeconditions/basic_form.php:229
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: assets/js/timeconditions/timeconditions.js:15
 msgid ""
@@ -602,7 +602,7 @@ msgstr "Convirtiendo el campo de hora de las condiciones horarias a entero..."
 
 #: functions.inc.php:235
 msgid "false goto"
-msgstr ""
+msgstr "falso ir"
 
 #: install.php:191
 msgid "generating feature codes if needed.."
@@ -622,7 +622,7 @@ msgstr "goto verdadero"
 
 #: Timeconditions.class.php:434 Timeconditions.class.php:456
 msgid "unnamed"
-msgstr ""
+msgstr "sin nombre"
 
 #~ msgid " deleted!"
 #~ msgstr " Eliminado!"
