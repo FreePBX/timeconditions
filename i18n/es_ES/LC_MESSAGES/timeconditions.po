@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 10:04-0700\n"
+"POT-Creation-Date: 2016-12-14 12:35-0800\n"
 "PO-Revision-Date: 2016-12-11 01:54+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/timeconditions/es_ES/>\n"
-"Language: es_ES\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"timeconditions/es_ES/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 "X-Poedit-Language: Spanish\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- Seleccione un grupo --"
 
-#: Timeconditions.class.php:485 Timeconditions.class.php:520 install.php:200
+#: Timeconditions.class.php:511 Timeconditions.class.php:546 install.php:200
 msgid ": Time Condition Override"
 msgstr ": Condición horaria anulada"
 
@@ -73,7 +73,8 @@ msgstr "Agosto"
 
 #: assets/js/timegroups/timegroups.js:78
 msgid "Cannot remove the only rule. At least 1 rule is required."
-msgstr "No se puede eliminar la única regla. Siempre debe existir al menos una."
+msgstr ""
+"No se puede eliminar la única regla. Siempre debe existir al menos una."
 
 #: views/timeconditions/advanced_form.php:138
 #: views/timeconditions/basic_form.php:252
@@ -95,8 +96,8 @@ msgid ""
 "used for example to ring a receptionist during the day, or go directly to an "
 "IVR at night."
 msgstr ""
-"Crea una condición en la que las llamadas irán a uno de los dos destinos ("
-"por ejemplo, una extensión, IVR, grupo de timbrado..) en función de la hora "
+"Crea una condición en la que las llamadas irán a uno de los dos destinos "
+"(por ejemplo, una extensión, IVR, grupo de timbrado..) en función de la hora "
 "y/o la fecha. Esto se puede utilizar por ejemplo para llamar a un "
 "recepcionista durante el día, o ir directamente a un IVR por la noche."
 
@@ -620,7 +621,7 @@ msgstr "Iniciando migración"
 msgid "true goto"
 msgstr "goto verdadero"
 
-#: Timeconditions.class.php:434 Timeconditions.class.php:456
+#: Timeconditions.class.php:460 Timeconditions.class.php:482
 msgid "unnamed"
 msgstr "sin nombre"
 
