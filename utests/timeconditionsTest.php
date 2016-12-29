@@ -76,8 +76,7 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is NOT between ".$add1Hour->format('H:i')." and ".$sub1Hour->format('H:i'));
 
 		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($dtNow->format("H:i")).'|*|*|*');
-		//TODO: this is broken either way..
-		//$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$add1Hour->format('H:i')." and ".$dtNow->format("H:i"));
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$add1Hour->format('H:i')." and ".$dtNow->format("H:i"));
 	}
 
 }
