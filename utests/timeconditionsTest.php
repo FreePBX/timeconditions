@@ -53,6 +53,9 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 
 		$out = self::$o->checkTime('*|'.strtolower(date('D')).'|*|*');
 		$this->assertTrue($out,"Failed to assert that TODAY[".date('D')."] is ".strtolower(date('D')));
+
+		$out = self::$o->checkTime('00:01-23:59|*|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between 00:01 and 23:59");
 	}
 
 	public function testCheckTimeInverted() {
@@ -77,6 +80,9 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 
 		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($dtNow->format("H:i")).'|*|*|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$add1Hour->format('H:i')." and ".$dtNow->format("H:i"));
+
+		$out = self::$o->checkTime('*|mon-sun|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between Mon and Sun");
 	}
 
 }
