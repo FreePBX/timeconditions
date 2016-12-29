@@ -310,119 +310,112 @@ class Timeconditions implements \BMO {
 	* return bool
 	*/
 	public function checkTime($time){
-		$monthA = array(
-			'jan' => 1,
-			'feb' => 2,
-			'mar' => 3,
-			'apr' => 4,
-			'may' => 5,
-			'jun' => 6,
-			'jul' => 7,
-			'aug' => 8,
-			'sep' => 9,
-			'oct' => 10,
-			'nov' => 11,
-			'dec' => 12
-		);
-		$daysA = array(
-			'sun' => 0,
-			'mon' => 1,
-			'tue' => 2,
-			'wed' => 3,
-			'thu' => 4,
-			'fri' => 5,
-			'sat' => 6,
-		);
-
-		list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
-
-		//match all don't take time to parse out anything
-		// Time zone doesn't matter in this case
-		if(substr( $time, 0, 7) == '*|*|*|*'){
-			return true;
-		}
-
-		$match = false;
-		list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
-
-		// Ensure valid time zone
-		if($tz==='*' || !in_array($tz, timezone_identifiers_list())) {
-			$tz='Etc/UTC';
-		}
-
-		$dtnow = new \DateTime("now", new \DateTimeZone($tz));
-
-		// Note that all conditions must be checked; they're AND connected
-
-		// Check month first
-		if($month === '*'){
-			$match = true;
-		}else{
-			$months = explode('-',$month);
-			$range = isset($months[1]);
-			$cur = $dtnow->format('n');
-
-			$match = $range ? $this->isBetween($monthA[$months[0]], $monthA[$months[1]], $cur)
-			: $monthA[$month] == $cur;
-		}
-
-		// Can still fail (Day of month)
-		if($match)
-		{
-			if($dom === '*'){
-				$match = true;
-			}else{
-				$daysom = explode('-',$dom);
-				$range = isset($daysom[1]);
-				$cur = $dtnow->format('j');
-
-
-				$match = $range ? $this->isBetween($daysom[0], $daysom[1], $cur)
-				: $dom == $cur;
-			}
-		}
-
-		// Can still fail (Day of week)
-		if($match)
-		{
-			if($dow === '*'){
-				$match = true;
-			}else{
-				$dows = explode('-',$dow);
-				$range = isset($dows[1]);
-				$cur = $dtnow->format('w');
-
-				$match = $range ? $this->isBetween($daysA[$dows[0]], $daysA[$dows[1]], $cur)
-				: $daysA[$dow] == $cur;
-			}
-		}
-
-		// Can still fail (time)
-		if($match)
-		{
-			if($hour === '*'){
-				$return = true;
-			}else{
-				$hours = explode('-',$hour);
-				$range = isset($hours[1]);
-				// All calculations in minutes of day
-				$cur = explode(':', $dtnow->format('H:i'));
-				$cur = $cur[0] * 60 + $cur[1];
-
-				$mods = array();
-				$mods[0] = explode(':',$hours[0]);
-				$mods[0] = $mods[0][0] * 60 + $mods[0][1];
-				if($range){
-					$mods[1] = explode(':',$hours[1]);
-					$mods[1] = $mods[1][0] * 60 + $mods[1][1];
-				}
-
-				$match = $range ? $this->isBetween($mods[0], $mods[1], $cur)
-				: $mods == $cur;
-			}
-		}
-
-		return $match;
+	  $monthA = array(
+	    'jan' => 1,
+	    'feb' => 2,
+	    'mar' => 3,
+	    'apr' => 4,
+	    'may' => 5,
+	    'jun' => 6,
+	    'jul' => 7,
+	    'aug' => 8,
+	    'sep' => 9,
+	    'oct' => 10,
+	    'nov' => 11,
+	    'dec' => 12
+	  );
+	  $daysA = array(
+	    'sun' => 0,
+	    'mon' => 1,
+	    'tue' => 2,
+	    'wed' => 3,
+	    'thu' => 4,
+	    'fri' => 5,
+	    'sat' => 6,
+	  );
+	  //match all don't take time to parse out anything
+	  if($time == '*|*|*|*'){
+	    return true;
+	  }
+	  $return = false;
+	  list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
+	  if($month === '*'){
+	    $return = true;
+	  }else{
+	    $months = explode('-',$month);
+	    $range = isset($months[1]);
+	    if(!$range){
+	        if($monthA[$month] == date('n')){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((date('n') >= $monthA[$months[0]]) && (date('n') <= $monthA[$months[1]])){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  if($dom === '*'){
+	    $return = true;
+	  }else{
+	    $daysom = explode('-',$dom);
+	    $range = isset($daysom[1]);
+	    if(!$range){
+	        if($dom == date('j')){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((date('j') >= $daysom[0]) && (date('j') <= $daysom[1])){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  if($dow === '*'){
+	    $return = true;
+	  }else{
+	    $days = explode('-',$dow);
+	    $range = isset($days[1]);
+	    if(!$range){
+	        if($daysA[$dow] == date('w')){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((date('w') >= $daysA[$days[0]]) && (date('w') <= $daysA[$days[1]])){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  if($hour === '*'){
+	    $return = true;
+	  }else{
+	    $hours = explode('-',$hour);
+	    $range = isset($hours[1]);
+	    if(!$range){
+	        if(strtotime(date('H:i')) == strtotime($hour)){
+	          $return = true;
+	        }else{
+	          return false;
+	        }
+	    }else{
+	      if((strtotime(date('H:i')) >= strtotime($hours[0])) && (strtotime(date('H:i')) <= strtotime($hours[1]))){
+	        $return = true;
+	      }else{
+	        return false;
+	      }
+	    }
+	  }
+	  return $return;
 	}
 
 	/**
