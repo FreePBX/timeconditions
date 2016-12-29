@@ -301,29 +301,9 @@ class Timeconditions implements \BMO {
 			break;
 		}
 	}
-
-	/**
-	* isBetween:
-	* Helper for checkTime()
-	* @a one end of range
-	* @b other end of range
-	* @v value to check
-	* return bool
-	*/
-	private function isBetween($a, $b, $v)
-	{
-		$res = false;
-		if($a <= $b)
-			$res = $v >= $a && $v <= $b;
-		else
-			$res = $v < $a || $v > $b;
-
-		return $res;
-	}
-
 	/**
 	* checkTime:
-	* Attempts to faithfully replicate the logic portion of the dialplan application
+	* Attempts to faithfuly replicate the logic portion of the dialplan application
 	* gotoiftime. You pass a string with the same format and it returns true or false.
 	* most items can be a *, single (mon), or range (mon-fri) see the gotiftime docs.
 	* @time: <time range>,<days of week>,<days of month>,<months>
