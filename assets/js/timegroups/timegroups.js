@@ -9,36 +9,24 @@ if($("#idTime").length) {
 	setInterval(updateTime,1000);
 }
 
-$("#duplicate").click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('input[name="action"]').val("duplicate");
-    $("#extdisplay").val("");
-    $("#edit").submit();
-});
 
 $(document).ready(function(){
-    $(".remove_section").click(function(){
-        if (confirm( _("This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"))) {
-            $(this).parent().parent().prev().remove();
-            $(this).closest('form').submit();
-        }
-    });
-    $("#edit").on('submit',function(){
-        var ret = true;
-        // We don't need to check the name, function 'duplicate' already gives an unique description
-        if ($("#action").val() == 'duplicate'){
-            ret = true;
-        } else {
-            $.map(JSON.parse(timegrouplist), function(tg, i) {
-                if (tg.description == $("#description").val() && tg.description != currenttimegroup){
-                    warnInvalid($("#description"),_("Please use a unique description. The description already exists."));
-                    ret = false;
-                }
-            });
-        }
-        return ret;
-    });
+	$(".remove_section").click(function(){
+		if (confirm( _("This section will be removed from this time group and all current settings including changes will be updated. OK to proceed?"))) {
+			$(this).parent().parent().prev().remove();
+			$(this).closest('form').submit();
+		}
+	});
+	$("#edit").on('submit',function(){
+		var ret = true;
+		$.map(JSON.parse(timegrouplist), function(tg, i) {
+	 		if (tg.description == $("#description").val() && tg.description != currenttimegroup){
+			 	warnInvalid($("#description"),_("Please use a unique description. The description already exists."));
+				ret = false;
+			}
+	 	});
+		return ret;
+	});
 });
 //table
 $("#tgrnav").on('click-row.bs.table',function(e,row,elem){
