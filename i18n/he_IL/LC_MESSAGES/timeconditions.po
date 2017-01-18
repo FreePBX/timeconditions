@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-14 12:35-0800\n"
+"POT-Creation-Date: 2017-01-18 14:22-0800\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: Timeconditions.class.php:511 Timeconditions.class.php:546 install.php:200
+#: Timeconditions.class.php:524 Timeconditions.class.php:559 install.php:200
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr "אפריל"
 msgid "August"
 msgstr "אוגוסט"
 
-#: assets/js/timegroups/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr ""
 
-#: Timeconditions.class.php:68
+#: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "December"
 msgstr "דצמבר"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:174
 msgid "Delete"
 msgstr ""
 
@@ -133,6 +133,10 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr ""
+
 #: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "שגיאה: לא הצליח להמיר שדה"
@@ -141,10 +145,6 @@ msgstr "שגיאה: לא הצליח להמיר שדה"
 #: views/timeconditions/basic_form.php:18
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
-msgstr ""
-
-#: assets/js/timegroups/timegroups.js:43
-msgid "Edit: "
 msgstr ""
 
 #: timeconditions.i18n.php:16
@@ -319,11 +319,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "נא הזן שם לתנאי הזמן"
 
-#: assets/js/timegroups/timegroups.js:24
-msgid "Please use a unique description. The description already exists."
-msgstr ""
-
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:179
 msgid "Reset"
 msgstr ""
 
@@ -366,7 +362,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:189
 msgid "Submit"
 msgstr "החל שינויים"
 
@@ -421,7 +417,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -570,7 +566,7 @@ msgstr "מתחיל שדרוג"
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:460 Timeconditions.class.php:482
+#: Timeconditions.class.php:473 Timeconditions.class.php:495
 msgid "unnamed"
 msgstr ""
 

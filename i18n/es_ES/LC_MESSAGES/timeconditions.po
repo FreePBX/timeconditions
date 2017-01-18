@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-14 12:35-0800\n"
+"POT-Creation-Date: 2017-01-18 14:22-0800\n"
 "PO-Revision-Date: 2016-12-11 01:54+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- Seleccione un grupo --"
 
-#: Timeconditions.class.php:511 Timeconditions.class.php:546 install.php:200
+#: Timeconditions.class.php:524 Timeconditions.class.php:559 install.php:200
 msgid ": Time Condition Override"
 msgstr ": Condición horaria anulada"
 
@@ -41,7 +41,7 @@ msgstr "Acciones"
 msgid "Add New Time Group..."
 msgstr "Agregar un nuevo Grupo de Horario..."
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Agregar horario"
 
@@ -71,7 +71,7 @@ msgstr "Abril"
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 "No se puede eliminar la única regla. Siempre debe existir al menos una."
@@ -85,7 +85,7 @@ msgstr "Sustituir cambio"
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Comprobando condiciones horarias antiguas que actualizar..."
 
-#: Timeconditions.class.php:68
+#: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
 msgstr "No se puede eliminar el Grupo Horario porque esta en uso"
 
@@ -110,7 +110,7 @@ msgstr "Corriente"
 msgid "December"
 msgstr "Diciembre"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:174
 msgid "Delete"
 msgstr "Borrar"
 
@@ -138,6 +138,10 @@ msgstr "Destinos en horario"
 msgid "Destination non-matches"
 msgstr "Destinos fuera de horario"
 
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr ""
+
 #: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "Error: fallo al convertir el campo "
@@ -147,10 +151,6 @@ msgstr "Error: fallo al convertir el campo "
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Editar Condiciones de horario:%s (%s)"
-
-#: assets/js/timegroups/timegroups.js:43
-msgid "Edit: "
-msgstr "Editar: "
 
 #: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
@@ -337,11 +337,7 @@ msgstr "Introduzca un Pin de código de anulación válido"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Por favor, introduzca un nombre para la condición horaria válido."
 
-#: assets/js/timegroups/timegroups.js:24
-msgid "Please use a unique description. The description already exists."
-msgstr "Utilice una descripción única. La descripción ya existe."
-
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:179
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -392,7 +388,7 @@ msgstr ""
 "selección aquí <strong>DEBE</strong> aparecer en la lista de selección o en "
 "el directorio /usr/share/zoneinfo/."
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:189
 msgid "Submit"
 msgstr "Enviar"
 
@@ -467,7 +463,7 @@ msgstr ""
 "reemplazo permanente que debe realizarse aquí o con otras aplicaciones como "
 "las opciones de un teléfono basado en XML."
 
-#: assets/js/timegroups/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -621,9 +617,15 @@ msgstr "Iniciando migración"
 msgid "true goto"
 msgstr "goto verdadero"
 
-#: Timeconditions.class.php:460 Timeconditions.class.php:482
+#: Timeconditions.class.php:473 Timeconditions.class.php:495
 msgid "unnamed"
 msgstr "sin nombre"
+
+#~ msgid "Edit: "
+#~ msgstr "Editar: "
+
+#~ msgid "Please use a unique description. The description already exists."
+#~ msgstr "Utilice una descripción única. La descripción ya existe."
 
 #~ msgid " deleted!"
 #~ msgstr " Eliminado!"

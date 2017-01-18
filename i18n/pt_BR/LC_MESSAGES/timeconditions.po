@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-14 12:35-0800\n"
+"POT-Creation-Date: 2017-01-18 14:22-0800\n"
 "PO-Revision-Date: 2016-12-12 03:10+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: Timeconditions.class.php:511 Timeconditions.class.php:546 install.php:200
+#: Timeconditions.class.php:524 Timeconditions.class.php:559 install.php:200
 msgid ": Time Condition Override"
 msgstr ": Substituição da Condição Horária"
 
@@ -55,7 +55,7 @@ msgstr "Ações"
 msgid "Add New Time Group..."
 msgstr "Adicionar Novo Grupo de Horário..."
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Adicionar Horário"
 
@@ -85,7 +85,7 @@ msgstr "Abril"
 msgid "August"
 msgstr "Agosto"
 
-#: assets/js/timegroups/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 "Não é possível remover a única regra. Pelo menos uma regra é necessária."
@@ -99,7 +99,7 @@ msgstr "Alterar Substituição"
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Verificando as antigas condições horárias para atualizar .."
 
-#: Timeconditions.class.php:68
+#: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
 msgstr "Não foi possível excluir o grupo horário pois ele está em uso"
 
@@ -124,7 +124,7 @@ msgstr "Atual"
 msgid "December"
 msgstr "Dezembro"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:174
 msgid "Delete"
 msgstr "Apagar"
 
@@ -152,6 +152,10 @@ msgstr "Destino no horário"
 msgid "Destination non-matches"
 msgstr "Destino fora do horário"
 
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr ""
+
 #: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "ERRO: falha ao converter o campo "
@@ -161,10 +165,6 @@ msgstr "ERRO: falha ao converter o campo "
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Editar Condições de Horário: %s (%s)"
-
-#: assets/js/timegroups/timegroups.js:43
-msgid "Edit: "
-msgstr "Editar: "
 
 #: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
@@ -350,11 +350,7 @@ msgstr "Introduza um Código Pin de Substituição válido"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Por favor, introduza um Nome de Condições Horárias válido"
 
-#: assets/js/timegroups/timegroups.js:24
-msgid "Please use a unique description. The description already exists."
-msgstr "Por favor, use uma descrição única. A descrição já existe."
-
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:179
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -404,7 +400,7 @@ msgstr ""
 "de autocompletar.<br/><strong>Importante</strong>: Sua seleção <strong>DEVE</"
 "strong>deve aparecer na lista ou no diretório /usr/share/zoneinfo/."
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:189
 msgid "Submit"
 msgstr "Enviar"
 
@@ -477,7 +473,7 @@ msgstr ""
 "configurada, mas não pode definir uma Substituição Permanente que deve ser "
 "feita aqui ou com outras aplicações, como opções de telefone com base em XML."
 
-#: assets/js/timegroups/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -631,9 +627,15 @@ msgstr "iniciando migração"
 msgid "true goto"
 msgstr "verdadeiro vá para"
 
-#: Timeconditions.class.php:460 Timeconditions.class.php:482
+#: Timeconditions.class.php:473 Timeconditions.class.php:495
 msgid "unnamed"
 msgstr "sem nome"
+
+#~ msgid "Edit: "
+#~ msgstr "Editar: "
+
+#~ msgid "Please use a unique description. The description already exists."
+#~ msgstr "Por favor, use uma descrição única. A descrição já existe."
 
 #~ msgid " deleted!"
 #~ msgstr " apagado!"

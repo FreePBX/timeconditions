@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-14 12:35-0800\n"
+"POT-Creation-Date: 2017-01-18 14:22-0800\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -59,7 +59,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:511 Timeconditions.class.php:546 install.php:200
+#: Timeconditions.class.php:524 Timeconditions.class.php:559 install.php:200
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -72,7 +72,7 @@ msgstr "アクション"
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -102,7 +102,7 @@ msgstr "4月"
 msgid "August"
 msgstr "8月"
 
-#: assets/js/timegroups/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr "ルールを一つ以上設定する必要があるため、このルールを削除できません。"
 
@@ -115,7 +115,7 @@ msgstr "上書きステータスを変更"
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "旧時間分岐条件のアップグレードのチェック中.."
 
-#: Timeconditions.class.php:68
+#: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr "現在のステータス"
 msgid "December"
 msgstr "12月"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:174
 msgid "Delete"
 msgstr "削除"
 
@@ -167,6 +167,10 @@ msgstr "時間内の宛先"
 msgid "Destination non-matches"
 msgstr "時間外の宛先"
 
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr ""
+
 #: install.php:168
 msgid "ERROR: failed to convert field "
 msgstr "エラー: フィールドのコンバート失敗 "
@@ -176,10 +180,6 @@ msgstr "エラー: フィールドのコンバート失敗 "
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
 msgstr "時間分岐条件を編集: %s (%s)"
-
-#: assets/js/timegroups/timegroups.js:43
-msgid "Edit: "
-msgstr "編集: "
 
 #: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
@@ -357,11 +357,7 @@ msgstr "入力された暗証番号は無効です。"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "時間分岐条件の名前は無効です。もう一度入力してください"
 
-#: assets/js/timegroups/timegroups.js:24
-msgid "Please use a unique description. The description already exists."
-msgstr ""
-
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:179
 msgid "Reset"
 msgstr "リセット"
 
@@ -412,7 +408,7 @@ msgstr ""
 "トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
 "い可能性がありますので、ご注意ください。"
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:189
 msgid "Submit"
 msgstr "送信"
 
@@ -473,7 +469,7 @@ msgstr ""
 "上書きは、 %s 機能コードで切り替えることができます。また、電話上で動くアプリ"
 "ケーションなどでも、この上書き設定をリセットすることもできます。"
 
-#: assets/js/timegroups/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -626,9 +622,12 @@ msgstr "移行開始"
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:460 Timeconditions.class.php:482
+#: Timeconditions.class.php:473 Timeconditions.class.php:495
 msgid "unnamed"
 msgstr ""
+
+#~ msgid "Edit: "
+#~ msgstr "編集: "
 
 #~ msgid " deleted!"
 #~ msgstr " 削除されました！"
