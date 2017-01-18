@@ -53,6 +53,10 @@ class Timeconditions implements \BMO {
 				$description= isset($request['description'])?$request['description']:null;
 				$times = isset($request['times'])?$request['times']:null;
 				switch($action){
+					case 'duplicate':
+						$this->duplicateTimeGroup($description,$times);
+						unset($_REQUEST['view']);
+						break;
 					case 'add':
 						$this->addTimeGroup($description,$times);
 						unset($_REQUEST['view']);
@@ -173,6 +177,11 @@ class Timeconditions implements \BMO {
 						'name' => 'reset',
 						'id' => 'reset',
 						'value' => _('Reset')
+					),
+					'duplicate' => array(
+						'name' => 'duplicate',
+						'id' => 'duplicate',
+						'value' => _('Duplicate')
 					),
 					'submit' => array(
 						'name' => 'submit',
@@ -633,6 +642,33 @@ class Timeconditions implements \BMO {
 		needreload();
 		\FreePBX::Hooks()->processHooks($id);
 		return ($ret1 && $ret2);
+	}
+	
+	public function duplicateTimeGroup($description, $times = null){
+		
+		// I don't understand the use of UNIQUE for 'description' :/
+		// So, I'm not breaking the DB logic of this module
+		// Using mysql function CONCAT to concatenate description string (string + auto-increment value of table timegroups_groups
+		// To prevent ERROR 1062 (23000): Duplicate entry for key 'display' and to make description value always unique
+		$sql = "INSERT timegroups_groups(description) VALUES (CONCAT(:description,(SELECT auto_increment FROM information_schema.tables WHERE table_name='timegroups_groups')))";
+		$stmt = $this->db->prepare($sql);
+		try {
+			$ret = $stmt->execute(array(':description' => $description . '_COPY_'));
+		} catch (\PDOException $e) {
+			//catch duplicates
+			if($e->getCode() == '23000'){
+				return false;
+			}else{
+					throw $e;
+			}
+		}
+		$timegroup = $this->db->lastInsertId();
+		if (isset($times)) {
+			$this->editTimes($timegroup,$times);
+		}
+		needreload();
+		\FreePBX::Hooks()->processHooks($timegroup);
+		return $timegroup;
 	}
 
 	public function editTimes($id,$times){
