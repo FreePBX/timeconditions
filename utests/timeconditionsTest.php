@@ -45,17 +45,37 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$add1Day = clone $dtNow;
 		$add1Day->modify('+1 day');
 
+		// DOW
 		$out = self::$o->checkTime('*|'.strtolower($sub1Day->format('D')).'-'.strtolower($add1Day->format('D')).'|*|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between ".$sub1Day->format('D')." and ".$add1Day->format('D'));
-
-		$out = self::$o->checkTime(strtolower($sub1Hour->format('H:i')).'-'.strtolower($add1Hour->format('H:i')).'|*|*|*');
-		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$sub1Hour->format('H:i')." and ".$add1Hour->format('H:i'));
 
 		$out = self::$o->checkTime('*|'.strtolower(date('D')).'|*|*');
 		$this->assertTrue($out,"Failed to assert that TODAY[".date('D')."] is ".strtolower(date('D')));
 
+		// DOM
+		$out = self::$o->checkTime('*|*|'.strtolower($sub1Day->format('j')).'-'.strtolower($add1Day->format('j')).'|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("j")."] is between ".$sub1Day->format('j')." and ".$add1Day->format('j'));
+
+		$out = self::$o->checkTime('*|*|'.strtolower(date('j')).'|*');
+		$this->assertTrue($out,"Failed to assert that TODAY[".date('j')."] is ".strtolower(date('j')));
+
+		// Time
+		$out = self::$o->checkTime(strtolower($sub1Hour->format('H:i')).'-'.strtolower($add1Hour->format('H:i')).'|*|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$sub1Hour->format('H:i')." and ".$add1Hour->format('H:i'));
+
 		$out = self::$o->checkTime('00:01-23:59|*|*|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between 00:01 and 23:59");
+
+			// With TZ
+		$tzname = "America/Vancouver";
+		$tz = new DateTimeZone($tzname); // Time zone = PST-08PDT+01,M3.2.0/02:00,M11.1.0/02:00
+		$dtNow->setTimezone($tz);
+		$sub1Hour->setTimezone($tz);
+		$add1Hour->setTimezone($tz);
+
+		$out = self::$o->checkTime(strtolower($sub1Hour->format('H:i')).'-'.strtolower($add1Hour->format('H:i')).'|*|*|*|' . $tzname);
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] in " . $tzname . " is between ".$sub1Hour->format('H:i')." and ".$add1Hour->format('H:i'));
+
 	}
 
 	public function testCheckTimeInverted() {
@@ -69,20 +89,41 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$add1Day = clone $dtNow;
 		$add1Day->modify('+1 day');
 
+
+		// DOW
 		$out = self::$o->checkTime('*|'.strtolower($add1Day->format('D')).'-'.strtolower($sub1Day->format('D')).'|*|*');
 		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("D")."] is NOT between ".$add1Day->format('D')." and ".$sub1Day->format('D'));
 
 		$out = self::$o->checkTime('*|'.strtolower($add1Day->format('D')).'-'.strtolower($dtNow->format("D")).'|*|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between ".$add1Day->format('D')." and ".$dtNow->format("D"));
 
+		$out = self::$o->checkTime('*|mon-sun|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between Mon and Sun");
+
+		// DOM
+		$out = self::$o->checkTime('*|*|'.strtolower($add1Day->format('j')).'-'.strtolower($sub1Day->format('j')).'|*');
+		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("j")."] is NOT between ".$add1Day->format('j')." and ".$sub1Day->format('j'));
+
+		$out = self::$o->checkTime('*|*|'.strtolower($add1Day->format('j')).'-'.strtolower($dtNow->format("j")).'|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("j")."] is between ".$add1Day->format('j')." and ".$dtNow->format("j"));
+
+		// Time
 		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($sub1Hour->format('H:i')).'|*|*|*');
 		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is NOT between ".$add1Hour->format('H:i')." and ".$sub1Hour->format('H:i'));
 
 		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($dtNow->format("H:i")).'|*|*|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$add1Hour->format('H:i')." and ".$dtNow->format("H:i"));
 
-		$out = self::$o->checkTime('*|mon-sun|*|*');
-		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between Mon and Sun");
+			// With TZ
+		$tzname = "America/Vancouver";
+		$tz = new DateTimeZone($tzname); // Time zone = PST-08PDT+01,M3.2.0/02:00,M11.1.0/02:00
+		$dtNow->setTimezone($tz);
+		$sub1Hour->setTimezone($tz);
+		$add1Hour->setTimezone($tz);
+
+		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($sub1Hour->format('H:i')).'|*|*|*|' . $tzname);
+		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is NOT between ".$add1Hour->format('H:i')." and ".$sub1Hour->format('H:i'));
+
 	}
 
 }
