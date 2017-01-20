@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 22:19+0000\n"
+"POT-Creation-Date: 2017-01-20 10:14-0800\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: Timeconditions.class.php:489 Timeconditions.class.php:524
+#: Timeconditions.class.php:528 Timeconditions.class.php:563
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
@@ -37,7 +37,7 @@ msgstr "Действие"
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Добавить время"
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Calendar Mode"
 msgstr ""
 
-#: assets/js/timegroups/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 "Невозможно удалить единственное правило. Должно существовать как минимум "
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Change Override"
 msgstr "Переопределить изменения"
 
-#: Timeconditions.class.php:68
+#: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr "Текущее"
 msgid "December"
 msgstr "Декабрь"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:174
 msgid "Delete"
 msgstr "Удалить"
 
@@ -140,15 +140,15 @@ msgstr "Назначение ,  если текущее  время  попад�
 msgid "Destination non-matches"
 msgstr "Назначение ,  если текущее  время  не попадает в интервал"
 
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Редактировать временные условия :%s (%s)"
-
-#: assets/js/timegroups/timegroups.js:43
-msgid "Edit: "
-msgstr "Редактировать: "
 
 #: timeconditions.i18n.php:16
 msgid "Enable Maintenance Polling"
@@ -337,11 +337,7 @@ msgstr "Пожалуйста введите  пин-код"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Выбрать разрешённое название для Правила по времени"
 
-#: assets/js/timegroups/timegroups.js:24
-msgid "Please use a unique description. The description already exists."
-msgstr ""
-
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:179
 msgid "Reset"
 msgstr "Сброс"
 
@@ -393,7 +389,7 @@ msgstr ""
 "<strong>ДОЛЖЕН</strong>появиться в выпадающем списке или в директории /usr/"
 "share/zoneinfo/."
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:189
 msgid "Submit"
 msgstr "Применить"
 
@@ -464,7 +460,7 @@ msgstr ""
 "сервисного кода %s, который также удалит и Постоянную перезапись, если она "
 "установлена, но не затронет внешние приложения, типа XML-скрипт с телефона."
 
-#: assets/js/timegroups/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -594,9 +590,12 @@ msgstr "переход, если ложь"
 msgid "true goto"
 msgstr "переход, если правда"
 
-#: Timeconditions.class.php:434 Timeconditions.class.php:458
+#: Timeconditions.class.php:473 Timeconditions.class.php:497
 msgid "unnamed"
 msgstr ""
+
+#~ msgid "Edit: "
+#~ msgstr "Редактировать: "
 
 #~ msgid " deleted!"
 #~ msgstr " удалено!"

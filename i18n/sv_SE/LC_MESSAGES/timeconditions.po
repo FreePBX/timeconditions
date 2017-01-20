@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-25 22:19+0000\n"
+"POT-Creation-Date: 2017-01-20 10:14-0800\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: Timeconditions.class.php:489 Timeconditions.class.php:524
+#: Timeconditions.class.php:528 Timeconditions.class.php:563
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:69
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Calendar Mode"
 msgstr ""
 
-#: assets/js/timegroups/timegroups.js:78
+#: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Change Override"
 msgstr ""
 
-#: Timeconditions.class.php:68
+#: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "December"
 msgstr "December"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:174
 msgid "Delete"
 msgstr ""
 
@@ -131,14 +131,14 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
-msgstr ""
-
-#: assets/js/timegroups/timegroups.js:43
-msgid "Edit: "
 msgstr ""
 
 #: timeconditions.i18n.php:16
@@ -316,11 +316,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Skriv in ett giltigt namn för tidvillkoret"
 
-#: assets/js/timegroups/timegroups.js:24
-msgid "Please use a unique description. The description already exists."
-msgstr ""
-
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:179
 msgid "Reset"
 msgstr ""
 
@@ -366,7 +362,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:189
 msgid "Submit"
 msgstr "Spara ändringar"
 
@@ -421,7 +417,7 @@ msgid ""
 "as an XML based phone options."
 msgstr ""
 
-#: assets/js/timegroups/timegroups.js:15
+#: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
@@ -547,7 +543,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:434 Timeconditions.class.php:458
+#: Timeconditions.class.php:473 Timeconditions.class.php:497
 msgid "unnamed"
 msgstr ""
 
