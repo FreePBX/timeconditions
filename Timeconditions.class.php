@@ -53,6 +53,10 @@ class Timeconditions implements \BMO {
 				$description= isset($request['description'])?$request['description']:null;
 				$times = isset($request['times'])?$request['times']:null;
 				switch($action){
+					case 'duplicate':
+						$this->duplicateTimeGroup($description,$times);
+						unset($_REQUEST['view']);
+						break;
 					case 'add':
 						$this->addTimeGroup($description,$times);
 						unset($_REQUEST['view']);
@@ -173,6 +177,11 @@ class Timeconditions implements \BMO {
 						'name' => 'reset',
 						'id' => 'reset',
 						'value' => _('Reset')
+					),
+					'duplicate' => array(
+						'name' => 'duplicate',
+						'id' => 'duplicate',
+						'value' => _('Duplicate')
 					),
 					'submit' => array(
 						'name' => 'submit',
@@ -301,121 +310,151 @@ class Timeconditions implements \BMO {
 			break;
 		}
 	}
+
+	/**
+	* isBetween:
+	* Helper for checkTime()
+	* @a one end of range
+	* @b other end of range
+	* @v value to check
+	* return bool
+	*/
+	private function isBetween($a, $b, $v) {
+		$a = (int)$a;
+		$b = (int)$b;
+		$v = (int)$v;
+
+		if($a == $b) {
+			$res = $v == $a;
+		} else {
+			$invert = $a > $b;
+
+			if($invert) {
+				$tmp = $a;
+				$a = $b;
+				$b = $tmp;
+			}
+
+			$res = $v > $a && $v < $b;
+
+			if($invert) {
+				$res = !$res;
+			}
+		}
+		return $res;
+	}
+
 	/**
 	* checkTime:
-	* Attempts to faithfuly replicate the logic portion of the dialplan application
+	* Attempts to faithfully replicate the logic portion of the dialplan application
 	* gotoiftime. You pass a string with the same format and it returns true or false.
 	* most items can be a *, single (mon), or range (mon-fri) see the gotiftime docs.
 	* @time: <time range>,<days of week>,<days of month>,<months>
 	* return bool
 	*/
-	public function checkTime($time){
-	  $monthA = array(
-	    'jan' => 1,
-	    'feb' => 2,
-	    'mar' => 3,
-	    'apr' => 4,
-	    'may' => 5,
-	    'jun' => 6,
-	    'jul' => 7,
-	    'aug' => 8,
-	    'sep' => 9,
-	    'oct' => 10,
-	    'nov' => 11,
-	    'dec' => 12
-	  );
-	  $daysA = array(
-	    'sun' => 0,
-	    'mon' => 1,
-	    'tue' => 2,
-	    'wed' => 3,
-	    'thu' => 4,
-	    'fri' => 5,
-	    'sat' => 6,
-	  );
-	  //match all don't take time to parse out anything
-	  if($time == '*|*|*|*'){
-	    return true;
-	  }
-	  $return = false;
-	  list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
-	  if($month === '*'){
-	    $return = true;
-	  }else{
-	    $months = explode('-',$month);
-	    $range = isset($months[1]);
-	    if(!$range){
-	        if($monthA[$month] == date('n')){
-	          $return = true;
-	        }else{
-	          return false;
-	        }
-	    }else{
-	      if((date('n') >= $monthA[$months[0]]) && (date('n') <= $monthA[$months[1]])){
-	        $return = true;
-	      }else{
-	        return false;
-	      }
-	    }
-	  }
-	  if($dom === '*'){
-	    $return = true;
-	  }else{
-	    $daysom = explode('-',$dom);
-	    $range = isset($daysom[1]);
-	    if(!$range){
-	        if($dom == date('j')){
-	          $return = true;
-	        }else{
-	          return false;
-	        }
-	    }else{
-	      if((date('j') >= $daysom[0]) && (date('j') <= $daysom[1])){
-	        $return = true;
-	      }else{
-	        return false;
-	      }
-	    }
-	  }
-	  if($dow === '*'){
-	    $return = true;
-	  }else{
-	    $days = explode('-',$dow);
-	    $range = isset($days[1]);
-	    if(!$range){
-	        if($daysA[$dow] == date('w')){
-	          $return = true;
-	        }else{
-	          return false;
-	        }
-	    }else{
-	      if((date('w') >= $daysA[$days[0]]) && (date('w') <= $daysA[$days[1]])){
-	        $return = true;
-	      }else{
-	        return false;
-	      }
-	    }
-	  }
-	  if($hour === '*'){
-	    $return = true;
-	  }else{
-	    $hours = explode('-',$hour);
-	    $range = isset($hours[1]);
-	    if(!$range){
-	        if(strtotime(date('H:i')) == strtotime($hour)){
-	          $return = true;
-	        }else{
-	          return false;
-	        }
-	    }else{
-	      if((strtotime(date('H:i')) >= strtotime($hours[0])) && (strtotime(date('H:i')) <= strtotime($hours[1]))){
-	        $return = true;
-	      }else{
-	        return false;
-	      }
-	    }
-	  }
-	  return $return;
+	public function checkTime($time) {
+		$monthA = array(
+			'jan' => 1,
+			'feb' => 2,
+			'mar' => 3,
+			'apr' => 4,
+			'may' => 5,
+			'jun' => 6,
+			'jul' => 7,
+			'aug' => 8,
+			'sep' => 9,
+			'oct' => 10,
+			'nov' => 11,
+			'dec' => 12
+		);
+		$daysA = array(
+			'sun' => 0,
+			'mon' => 1,
+			'tue' => 2,
+			'wed' => 3,
+			'thu' => 4,
+			'fri' => 5,
+			'sat' => 6,
+		);
+		//match all don't take time to parse out anything
+		// Time zone doesn't matter in this case
+		if(substr( $time, 0, 7) == '*|*|*|*') {
+			return true;
+		}
+
+		$match = false;
+		list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
+
+		// Ensure valid time zone
+		if($tz==='*' || !in_array($tz, timezone_identifiers_list())) {
+			$dtnow = new \DateTime(); //use system timezone
+		} else {
+			$dtnow = new \DateTime("now", new \DateTimeZone($tz));
+		}
+
+
+
+		// Note that all conditions must be checked; they're AND connected
+
+		// Check month first
+		if($month === '*') {
+			$match = true;
+		} else {
+			$months = explode('-',$month);
+			$range = isset($months[1]);
+			$cur = $dtnow->format('n');
+			$match = $range ? $this->isBetween($monthA[$months[0]], $monthA[$months[1]], $cur) : $monthA[$month] == $cur;
+		}
+
+		// Can still fail (Day of month)
+		if($match) {
+			if($dom === '*') {
+				$match = true;
+			} else {
+				$daysom = explode('-',$dom);
+				$range = isset($daysom[1]);
+				$cur = $dtnow->format('j');
+
+				$match = $range ? $this->isBetween($daysom[0], $daysom[1], $cur)	: $dom == $cur;
+			}
+		}
+
+		// Can still fail (Day of week)
+		if($match) {
+			if($dow === '*') {
+				$match = true;
+			} else {
+				$dows = explode('-',$dow);
+				$range = isset($dows[1]);
+				$cur = $dtnow->format('w');
+
+			$match = $range ? $this->isBetween($daysA[$dows[0]], $daysA[$dows[1]], $cur) : $daysA[$dow] == $cur;
+			}
+		}
+
+		// Can still fail (time)
+		if($match) {
+			if($hour === '*') {
+				$match = true;
+			} else {
+				$hours = explode('-',$hour);
+				$range = isset($hours[1]);
+				// All calculations in minutes of day
+				$cur = explode(':', $dtnow->format('H:i'));
+				$cur = $cur[0] * 60 + $cur[1];
+
+				$mods = array();
+				$mods[0] = explode(':',$hours[0]);
+				$mods[0] = $mods[0][0] * 60 + $mods[0][1];
+				if($range) {
+					$mods[1] = explode(':',$hours[1]);
+					$mods[1] = $mods[1][0] * 60 + $mods[1][1];
+				}
+
+				$match = $range ? $this->isBetween($mods[0], $mods[1], $cur) : $mods == $cur;
+			}
+		}
+		return $match;
 	}
 
 	/**
@@ -637,6 +676,33 @@ class Timeconditions implements \BMO {
 		needreload();
 		\FreePBX::Hooks()->processHooks($id);
 		return ($ret1 && $ret2);
+	}
+
+	public function duplicateTimeGroup($description, $times = null){
+
+		// I don't understand the use of UNIQUE for 'description' :/
+		// So, I'm not breaking the DB logic of this module
+		// Using mysql function CONCAT to concatenate description string (string + auto-increment value of table timegroups_groups
+		// To prevent ERROR 1062 (23000): Duplicate entry for key 'display' and to make description value always unique
+		$sql = "INSERT timegroups_groups(description) VALUES (CONCAT(:description,(SELECT auto_increment FROM information_schema.tables WHERE table_name='timegroups_groups')))";
+		$stmt = $this->db->prepare($sql);
+		try {
+			$ret = $stmt->execute(array(':description' => $description . '_COPY_'));
+		} catch (\PDOException $e) {
+			//catch duplicates
+			if($e->getCode() == '23000'){
+				return false;
+			}else{
+					throw $e;
+			}
+		}
+		$timegroup = $this->db->lastInsertId();
+		if (isset($times)) {
+			$this->editTimes($timegroup,$times);
+		}
+		needreload();
+		\FreePBX::Hooks()->processHooks($timegroup);
+		return $timegroup;
 	}
 
 	public function editTimes($id,$times){
