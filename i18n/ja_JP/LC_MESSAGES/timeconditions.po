@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 14:22-0800\n"
+"POT-Creation-Date: 2017-01-25 10:46-0800\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -49,17 +49,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: install.php:233
+#: install.php:231
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%s 警告:%s この条件の時間が定義されていません。もう一度確認してください。"
 
-#: functions.inc.php:529
+#: functions.inc.php:520
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:524 Timeconditions.class.php:559 install.php:200
+#: Timeconditions.class.php:523 Timeconditions.class.php:558 install.php:200
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -68,7 +68,7 @@ msgstr "：時間分岐条件を上書き"
 msgid "Actions"
 msgstr "アクション"
 
-#: functions.inc.php:541 assets/js/timeconditions/timeconditions.js:123
+#: functions.inc.php:532 assets/js/timeconditions/timeconditions.js:123
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -94,11 +94,11 @@ msgstr "この時間分岐条件の時間を追加します"
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: functions.inc.php:624
+#: functions.inc.php:615
 msgid "April"
 msgstr "4月"
 
-#: functions.inc.php:628
+#: functions.inc.php:619
 msgid "August"
 msgstr "8月"
 
@@ -111,7 +111,7 @@ msgstr "ルールを一つ以上設定する必要があるため、このルー
 msgid "Change Override"
 msgstr "上書きステータスを変更"
 
-#: install.php:220
+#: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "旧時間分岐条件のアップグレードのチェック中.."
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "Current"
 msgstr "現在のステータス"
 
-#: functions.inc.php:632
+#: functions.inc.php:623
 msgid "December"
 msgstr "12月"
 
@@ -185,11 +185,11 @@ msgstr "時間分岐条件を編集: %s (%s)"
 msgid "Enable Maintenance Polling"
 msgstr "メンテナンスポーリングを有効にする"
 
-#: functions.inc.php:622
+#: functions.inc.php:613
 msgid "February"
 msgstr "2月"
 
-#: functions.inc.php:600
+#: functions.inc.php:591
 msgid "Friday"
 msgstr "金曜日"
 
@@ -232,15 +232,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "BLFヒントを逆にする"
 
-#: functions.inc.php:621
+#: functions.inc.php:612
 msgid "January"
 msgstr "1月"
 
-#: functions.inc.php:627
+#: functions.inc.php:618
 msgid "July"
 msgstr "7月"
 
-#: functions.inc.php:626
+#: functions.inc.php:617
 msgid "June"
 msgstr "6月"
 
@@ -262,31 +262,31 @@ msgstr "時間グループを表示"
 msgid "Maintenance Polling Interval"
 msgstr "メンテナンスポーリング間隔"
 
-#: functions.inc.php:623
+#: functions.inc.php:614
 msgid "March"
 msgstr "3月"
 
-#: functions.inc.php:625
+#: functions.inc.php:616
 msgid "May"
 msgstr "5月"
 
-#: functions.inc.php:596
+#: functions.inc.php:587
 msgid "Monday"
 msgstr "月曜日"
 
-#: functions.inc.php:795
+#: functions.inc.php:786
 msgid "Month Day finish"
 msgstr "終わる日"
 
-#: functions.inc.php:786
+#: functions.inc.php:777
 msgid "Month Day start"
 msgstr "始まる日"
 
-#: functions.inc.php:813
+#: functions.inc.php:804
 msgid "Month finish"
 msgstr "終わる月"
 
-#: functions.inc.php:804
+#: functions.inc.php:795
 msgid "Month start"
 msgstr "始まる月"
 
@@ -306,15 +306,15 @@ msgstr "上書きしない"
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:631
+#: functions.inc.php:622
 msgid "November"
 msgstr "11月"
 
-#: install.php:170 install.php:184 install.php:212
+#: install.php:170 install.php:184 install.php:210
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:630
+#: functions.inc.php:621
 msgid "October"
 msgstr "10月"
 
@@ -366,7 +366,7 @@ msgstr "リセット"
 msgid "Reset Override"
 msgstr "上書きをリセット"
 
-#: functions.inc.php:601
+#: functions.inc.php:592
 msgid "Saturday"
 msgstr "土曜日"
 
@@ -385,7 +385,7 @@ msgstr ""
 "間に一致した場合、指定した宛先に転送します。注意: グループを選択しなかった場"
 "合は、他の設定にかかわらず一致しなかった場合の宛先に転送されます。"
 
-#: functions.inc.php:629
+#: functions.inc.php:620
 msgid "September"
 msgstr "9月"
 
@@ -412,7 +412,7 @@ msgstr ""
 msgid "Submit"
 msgstr "送信"
 
-#: functions.inc.php:595
+#: functions.inc.php:586
 msgid "Sunday"
 msgstr "日曜日"
 
@@ -485,7 +485,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
-#: functions.inc.php:599
+#: functions.inc.php:590
 msgid "Thursday"
 msgstr "木曜日"
 
@@ -502,7 +502,7 @@ msgstr "タイムコンディションモジュール"
 msgid "Time Condition name"
 msgstr "時間分岐条件の名前"
 
-#: functions.inc.php:21 functions.inc.php:222
+#: functions.inc.php:21 functions.inc.php:213
 #, php-format
 msgid "Time Condition: %s"
 msgstr "時間分岐条件: %s"
@@ -527,11 +527,11 @@ msgstr "時間グループ"
 msgid "Time Zone:"
 msgstr "タイムゾーン:"
 
-#: functions.inc.php:742
+#: functions.inc.php:733
 msgid "Time to Start"
 msgstr "開始時刻"
 
-#: functions.inc.php:755
+#: functions.inc.php:746
 msgid "Time to finish"
 msgstr "終了時刻"
 
@@ -539,7 +539,7 @@ msgstr "終了時刻"
 msgid "Time(s)"
 msgstr "時間設定"
 
-#: functions.inc.php:597
+#: functions.inc.php:588
 msgid "Tuesday"
 msgstr "火曜日"
 
@@ -555,7 +555,7 @@ msgstr "変更なし"
 msgid "Unknown State"
 msgstr "不明ステータス"
 
-#: install.php:231
+#: install.php:229
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr "%s をアップグレードし、グループ %s を作成しました"
@@ -565,15 +565,15 @@ msgstr "%s をアップグレードし、グループ %s を作成しました"
 msgid "Use System Timezone"
 msgstr "システムのタイムゾーンを使用"
 
-#: functions.inc.php:598
+#: functions.inc.php:589
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: functions.inc.php:768
+#: functions.inc.php:759
 msgid "Week Day Start"
 msgstr "始まる曜日"
 
-#: functions.inc.php:777
+#: functions.inc.php:768
 msgid "Week Day finish"
 msgstr "終わる曜日"
 
@@ -602,7 +602,7 @@ msgstr "generate_hintフィールドを確認中.."
 msgid "converting timeconditions time field to int.."
 msgstr "時間分岐条件のtimeフィールドをintに変換中.."
 
-#: functions.inc.php:235
+#: functions.inc.php:226
 msgid "false goto"
 msgstr "一致しない goto"
 
@@ -610,19 +610,19 @@ msgstr "一致しない goto"
 msgid "generating feature codes if needed.."
 msgstr "必要に応じてfeature codesを生成中.."
 
-#: install.php:238
+#: install.php:236
 msgid "no upgrade needed"
 msgstr "アプグレードの必要はありません"
 
-#: install.php:225
+#: install.php:223
 msgid "starting migration"
 msgstr "移行開始"
 
-#: functions.inc.php:227
+#: functions.inc.php:218
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:473 Timeconditions.class.php:495
+#: Timeconditions.class.php:472 Timeconditions.class.php:494
 msgid "unnamed"
 msgstr ""
 

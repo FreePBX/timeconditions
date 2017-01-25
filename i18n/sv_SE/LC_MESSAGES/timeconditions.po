@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 14:22-0800\n"
+"POT-Creation-Date: 2017-01-25 10:46-0800\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -17,17 +17,17 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: install.php:233
+#: install.php:231
 #, php-format
 msgid "%sWARNING:%s No time defined for this condition, please review"
 msgstr ""
 "%sVARNING:%s Ingen tid definierad för denna kondition, kontrollera detta"
 
-#: functions.inc.php:529
+#: functions.inc.php:520
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: Timeconditions.class.php:524 Timeconditions.class.php:559 install.php:200
+#: Timeconditions.class.php:523 Timeconditions.class.php:558 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:541 assets/js/timeconditions/timeconditions.js:123
+#: functions.inc.php:532 assets/js/timeconditions/timeconditions.js:123
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -62,11 +62,11 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:624
+#: functions.inc.php:615
 msgid "April"
 msgstr "April"
 
-#: functions.inc.php:628
+#: functions.inc.php:619
 msgid "August"
 msgstr "Augusti"
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Change Override"
 msgstr ""
 
-#: install.php:220
+#: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Kontrollerar om äldre tidskonditioner behöver uppgraderas.."
 
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:632
+#: functions.inc.php:623
 msgid "December"
 msgstr "December"
 
@@ -150,11 +150,11 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:622
+#: functions.inc.php:613
 msgid "February"
 msgstr "Februari"
 
-#: functions.inc.php:600
+#: functions.inc.php:591
 msgid "Friday"
 msgstr "Fredag"
 
@@ -194,15 +194,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:621
+#: functions.inc.php:612
 msgid "January"
 msgstr "Januari"
 
-#: functions.inc.php:627
+#: functions.inc.php:618
 msgid "July"
 msgstr "Juli"
 
-#: functions.inc.php:626
+#: functions.inc.php:617
 msgid "June"
 msgstr "Juni"
 
@@ -224,31 +224,31 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:623
+#: functions.inc.php:614
 msgid "March"
 msgstr "Mars"
 
-#: functions.inc.php:625
+#: functions.inc.php:616
 msgid "May"
 msgstr "Maj"
 
-#: functions.inc.php:596
+#: functions.inc.php:587
 msgid "Monday"
 msgstr "Måndag"
 
-#: functions.inc.php:795
+#: functions.inc.php:786
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:786
+#: functions.inc.php:777
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:813
+#: functions.inc.php:804
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:804
+#: functions.inc.php:795
 msgid "Month start"
 msgstr ""
 
@@ -268,15 +268,15 @@ msgstr "Ingen åsidosättning"
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:631
+#: functions.inc.php:622
 msgid "November"
 msgstr "November"
 
-#: install.php:170 install.php:184 install.php:212
+#: install.php:170 install.php:184 install.php:210
 msgid "OK"
 msgstr "OK"
 
-#: functions.inc.php:630
+#: functions.inc.php:621
 msgid "October"
 msgstr "Oktober"
 
@@ -328,7 +328,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:601
+#: functions.inc.php:592
 msgid "Saturday"
 msgstr "Lördag"
 
@@ -347,7 +347,7 @@ msgstr ""
 "respektive destination. Om ingen grupp väljs kommer samtalen alltid att gå "
 "till Destination om tiden inte matchar."
 
-#: functions.inc.php:629
+#: functions.inc.php:620
 msgid "September"
 msgstr "September"
 
@@ -369,7 +369,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Spara ändringar"
 
-#: functions.inc.php:595
+#: functions.inc.php:586
 msgid "Sunday"
 msgstr "Söndag"
 
@@ -434,7 +434,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:599
+#: functions.inc.php:590
 msgid "Thursday"
 msgstr "Torsdag"
 
@@ -451,7 +451,7 @@ msgstr ""
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:222
+#: functions.inc.php:21 functions.inc.php:213
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Tidsvillkor: %s"
@@ -476,11 +476,11 @@ msgstr "Tidgrupper"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:742
+#: functions.inc.php:733
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:755
+#: functions.inc.php:746
 msgid "Time to finish"
 msgstr ""
 
@@ -488,7 +488,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:597
+#: functions.inc.php:588
 msgid "Tuesday"
 msgstr "Tisdag"
 
@@ -504,7 +504,7 @@ msgstr ""
 msgid "Unknown State"
 msgstr ""
 
-#: install.php:231
+#: install.php:229
 #, php-format
 msgid "Upgraded %s and created group %s"
 msgstr "Uppgraderade %s och skapade grupp %s"
@@ -514,15 +514,15 @@ msgstr "Uppgraderade %s och skapade grupp %s"
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:598
+#: functions.inc.php:589
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: functions.inc.php:768
+#: functions.inc.php:759
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:777
+#: functions.inc.php:768
 msgid "Week Day finish"
 msgstr ""
 
@@ -551,7 +551,7 @@ msgstr "kontrollerar fältet generae_hint.."
 msgid "converting timeconditions time field to int.."
 msgstr "konverterar fältet time till int.."
 
-#: functions.inc.php:235
+#: functions.inc.php:226
 msgid "false goto"
 msgstr ""
 
@@ -559,19 +559,19 @@ msgstr ""
 msgid "generating feature codes if needed.."
 msgstr "genererar funktionskoder om det behövs.."
 
-#: install.php:238
+#: install.php:236
 msgid "no upgrade needed"
 msgstr "ingen uppgradering behövs"
 
-#: install.php:225
+#: install.php:223
 msgid "starting migration"
 msgstr "startar migrering"
 
-#: functions.inc.php:227
+#: functions.inc.php:218
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:473 Timeconditions.class.php:495
+#: Timeconditions.class.php:472 Timeconditions.class.php:494
 msgid "unnamed"
 msgstr ""
 
