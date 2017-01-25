@@ -134,15 +134,6 @@ function timeconditions_get_config($engine) {
 					}
 				}
 
-				$fcc = new featurecode('timeconditions', 'toggle-mode-all');
-				$c = $fcc->getCodeActive();
-				unset($fcc);
-				if ($c) {
-					$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
-					$ext->add($fc_context, $c, '', new ext_goto($fc_context.',${EXTEN}*${AMPUSER},1'));
-					//TODO: technically a hint could be here
-				}
-
 				if ($got_code_autoreset) {
 					$ext->add($fc_context, 'h', '', new ext_hangup());
 

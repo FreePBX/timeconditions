@@ -245,7 +245,6 @@ class Timeconditions implements \BMO {
 						$tgs[$tg['value']] = $tg['text'];
 					}
 					$tcs = $this->astman->database_show("TC");
-					dbug($timeconditions);
 					foreach ($timeconditions as $key => $value) {
 						$id = $value['timeconditions_id'];
 						$state = isset($tcs['/TC/'.$id]) ? $tcs['/TC/'.$id] : '';

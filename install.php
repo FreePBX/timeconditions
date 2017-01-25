@@ -205,9 +205,7 @@ if (is_array($results)) foreach ($results as $item) {
 }
 
 $fcc = new featurecode('timeconditions', 'toggle-mode-all');
-$fcc->setDescription("All: Time Condition Override");
-$fcc->setDefault('*27');
-$fcc->update();
+$fcc->delete();
 unset($fcc);
 out(_("OK"));
 
