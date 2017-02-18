@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 10:46-0800\n"
+"POT-Creation-Date: 2017-02-17 17:19-0800\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -27,7 +27,11 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: Timeconditions.class.php:523 Timeconditions.class.php:558 install.php:200
+#: timeconditions.i18n.php:24
+msgid "2: Test"
+msgstr ""
+
+#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -58,7 +62,7 @@ msgstr "Lägg till tidgrupp"
 msgid "Add a time for this time condition"
 msgstr ""
 
-#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
+#: timeconditions.i18n.php:6
 msgid "Applications"
 msgstr ""
 
@@ -146,7 +150,7 @@ msgstr "FEL: kunde inte konvertera fält"
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: timeconditions.i18n.php:16
+#: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
 msgstr ""
 
@@ -179,7 +183,7 @@ msgid ""
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: timeconditions.i18n.php:20
+#: timeconditions.i18n.php:18
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -220,7 +224,7 @@ msgstr ""
 msgid "List Time Groups"
 msgstr ""
 
-#: timeconditions.i18n.php:22
+#: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
 msgstr ""
 
@@ -395,7 +399,7 @@ msgstr ""
 msgid "Temporary unmatched"
 msgstr ""
 
-#: timeconditions.i18n.php:26
+#: timeconditions.i18n.php:22
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -442,7 +446,7 @@ msgstr "Torsdag"
 msgid "Time Condition"
 msgstr "Tidsvillkor"
 
-#: timeconditions.i18n.php:18 timeconditions.i18n.php:24
+#: timeconditions.i18n.php:16
 msgid "Time Condition Module"
 msgstr ""
 
@@ -467,7 +471,7 @@ msgstr "Tidsvillkor"
 msgid "Time Group"
 msgstr "Tidgrupp"
 
-#: page.timegroups.php:7 timeconditions.i18n.php:14
+#: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "Tidgrupper"
 
@@ -571,7 +575,7 @@ msgstr "startar migrering"
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:472 Timeconditions.class.php:494
+#: Timeconditions.class.php:476 Timeconditions.class.php:498
 msgid "unnamed"
 msgstr ""
 
