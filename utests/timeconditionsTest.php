@@ -44,20 +44,32 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$sub1Day->modify('-1 day');
 		$add1Day = clone $dtNow;
 		$add1Day->modify('+1 day');
+		$add3Days = clone $dtNow;
+		$add3Days->modify('+3 days');
 
 		// DOW
 		$out = self::$o->checkTime('*|'.strtolower($sub1Day->format('D')).'-'.strtolower($add1Day->format('D')).'|*|*');
-		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between ".$sub1Day->format('D')." and ".$add1Day->format('D'));
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('D')."] is between ".$sub1Day->format('D')." and ".$add1Day->format('D'));
 
 		$out = self::$o->checkTime('*|'.strtolower(date('D')).'|*|*');
 		$this->assertTrue($out,"Failed to assert that TODAY[".date('D')."] is ".strtolower(date('D')));
 
+		// Day-Day includes both
+		// I.e. Mon-Fri is [Mon,Fri]
+		$out = self::$o->checkTime('*|'.strtolower($dtNow->format('D')).'-'.strtolower($add3Days->format('D')).'|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('D')."] is between ".$dtNow->format('D')." and ".$add3Days->format('D'));
+
 		// DOM
 		$out = self::$o->checkTime('*|*|'.strtolower($sub1Day->format('j')).'-'.strtolower($add1Day->format('j')).'|*');
-		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("j")."] is between ".$sub1Day->format('j')." and ".$add1Day->format('j'));
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('j')."] is between ".$sub1Day->format('j')." and ".$add1Day->format('j'));
 
 		$out = self::$o->checkTime('*|*|'.strtolower(date('j')).'|*');
 		$this->assertTrue($out,"Failed to assert that TODAY[".date('j')."] is ".strtolower(date('j')));
+
+		// Day-Day includes both
+		// I.e. 17-23 is [17,23]
+		$out = self::$o->checkTime('*|*|'.strtolower($dtNow->format('j')).'-'.strtolower($add3Days->format('j')).'|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('j')."] is between ".$dtNow->format('j')." and ".$add3Days->format('j'));
 
 		// Time
 		$out = self::$o->checkTime(strtolower($sub1Hour->format('H:i')).'-'.strtolower($add1Hour->format('H:i')).'|*|*|*');
@@ -88,17 +100,24 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$sub1Day->modify('-1 day');
 		$add1Day = clone $dtNow;
 		$add1Day->modify('+1 day');
+		$add3Days = clone $dtNow;
+		$add3Days->modify('+3 days');
 
 
 		// DOW
 		$out = self::$o->checkTime('*|'.strtolower($add1Day->format('D')).'-'.strtolower($sub1Day->format('D')).'|*|*');
-		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("D")."] is NOT between ".$add1Day->format('D')." and ".$sub1Day->format('D'));
+		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format('D')."] is NOT between ".$add1Day->format('D')." and ".$sub1Day->format('D'));
 
-		$out = self::$o->checkTime('*|'.strtolower($add1Day->format('D')).'-'.strtolower($dtNow->format("D")).'|*|*');
-		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between ".$add1Day->format('D')." and ".$dtNow->format("D"));
+		$out = self::$o->checkTime('*|'.strtolower($add1Day->format('D')).'-'.strtolower($dtNow->format('D')).'|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('D')."] is between ".$add1Day->format('D')." and ".$dtNow->format("D"));
 
 		$out = self::$o->checkTime('*|mon-sun|*|*');
-		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("D")."] is between Mon and Sun");
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('D')."] is between Mon and Sun");
+
+		// Day-Day includes both
+		// I.e. Fri-Mon is [Fri,Mon]
+		$out = self::$o->checkTime('*|'.strtolower($add3Days->format('D')).'-'.strtolower($dtNow->format('D')).'|*|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('D')."] is between ".$add3Days->format('D')." and ".$dtNow->format('D'));
 
 		// DOM
 		$out = self::$o->checkTime('*|*|'.strtolower($add1Day->format('j')).'-'.strtolower($sub1Day->format('j')).'|*');
@@ -107,6 +126,11 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$out = self::$o->checkTime('*|*|'.strtolower($add1Day->format('j')).'-'.strtolower($dtNow->format("j")).'|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("j")."] is between ".$add1Day->format('j')." and ".$dtNow->format("j"));
 
+		// Day-Day includes both
+		// I.e. 23-17 is [23,17]
+		$out = self::$o->checkTime('*|*|'.strtolower($add3Days->format('j')).'-'.strtolower($dtNow->format('j')).'|*');
+		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format('j')."] is between ".$add3Days->format('j')." and ".$dtNow->format('j'));
+
 		// Time
 		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($sub1Hour->format('H:i')).'|*|*|*');
 		$this->assertFalse($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is NOT between ".$add1Hour->format('H:i')." and ".$sub1Hour->format('H:i'));
@@ -114,7 +138,7 @@ class timeconditionsTest extends PHPUnit_Framework_TestCase{
 		$out = self::$o->checkTime(strtolower($add1Hour->format('H:i')).'-'.strtolower($dtNow->format("H:i")).'|*|*|*');
 		$this->assertTrue($out,"Failed to assert that NOW[".$dtNow->format("H:i")."] is between ".$add1Hour->format('H:i')." and ".$dtNow->format("H:i"));
 
-			// With TZ
+		// With TZ
 		$tzname = "America/Vancouver";
 		$tz = new DateTimeZone($tzname); // Time zone = PST-08PDT+01,M3.2.0/02:00,M11.1.0/02:00
 		$dtNow->setTimezone($tz);
