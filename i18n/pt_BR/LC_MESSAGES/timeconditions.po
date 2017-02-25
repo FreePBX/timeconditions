@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-25 10:46-0800\n"
-"PO-Revision-Date: 2017-02-09 19:41+0200\n"
+"PO-Revision-Date: 2017-02-24 20:26+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/pt_BR/>\n"
@@ -244,7 +244,7 @@ msgstr "Grupo de Horários Vinculados"
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
 #: views/timegroups/grid.php:9
 msgid "List Time Conditions"
-msgstr "Lista Condições Horárias"
+msgstr "Listar Condições de Tempo"
 
 #: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
 #: views/timegroups/bootnav.php:12
@@ -495,7 +495,7 @@ msgstr "Quinta"
 
 #: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
-msgstr "Condições Horárias"
+msgstr "Condições de Tempo"
 
 #: timeconditions.i18n.php:18 timeconditions.i18n.php:24
 msgid "Time Condition Module"
@@ -520,11 +520,11 @@ msgstr "Condições Horárias"
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
 #: views/timegroups/grid.php:27
 msgid "Time Group"
-msgstr "Grupo Horário"
+msgstr "Grupo de Tempo"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:14
 msgid "Time Groups"
-msgstr "Grupos Horários"
+msgstr "Grupos de Tempos"
 
 #: views/timeconditions/advanced_form.php:171
 #: views/timeconditions/basic_form.php:85
