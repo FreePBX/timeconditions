@@ -10,26 +10,51 @@ if($("#idTime").length) {
 }
 
 function edit_onsubmit(theForm) {
-	var msgInvalidTimeCondName = _("Please enter a valid Time Conditions Name");
-	var msgInvalidOverPin = _("Please enter a valid Override Code Pin");
-	var msgInvalidTimeGroup = _("You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group");
+
 
 	defaultEmptyOK = false;
-	if (!isAlphanumeric(theForm.displayname.value))
-		return warnInvalid(theForm.displayname, msgInvalidTimeCondName);
-	if (theForm.fcc_password.value !== '' && !isNumber(theForm.fcc_password.value))
-		return warnInvalid(theForm.fcc_password, msgInvalidOverPin);
-	if (isEmpty(theForm.time.value))
-		return confirm(msgInvalidTimeGroup);
+	if (!isAlphanumeric(theForm.displayname.value)) {
+		return warnInvalid(theForm.displayname, _("Please enter a valid Time Conditions Name"));
+	}
 
-	if (!validateDestinations(edit,2,true))
+	if (theForm.fcc_password.value !== '' && !isNumber(theForm.fcc_password.value)) {
+		return warnInvalid(theForm.fcc_password, _("Please enter a valid Override Code Pin"));
+	}
+
+	if ($("#mode_legacy").is(":checked") && isEmpty($("#time").val())) {
+		return confirm(_("You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"));
+	}
+
+	if ($("#mode_calendar").is(":checked") && (isEmpty($("#calendar-group").val()) && isEmpty($("#calendar-id").val()))) {
+		return confirm(_("You have not selected a calendar or calendar group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid calendar/group"));
+	}
+
+	if (!validateDestinations(edit,2,true)) {
 		return false;
+	}
 
 	return true;
 }
 
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
+}
+function tcLinkedFormatter(value,row){
+	var html = '';
+	if(row.mode == "calendar-group") {
+		if(row.calendar_id !== "") {
+			html = '<a href="?display=calendar&action=view&type=calendar&id='+row.calendar_id+'">'+_("Calendar")+'</a>';
+		} else if(row.calendar_group_id !== "") {
+			html = '<a href="?display=calendargroups&action=edit&id='+row.calendar_group_id+'">'+_("Calendar Group")+'</a>';
+		} else {
+			html = _('Not Set');
+		}
+	} else if(row.group !== "") {
+		html = '<a href="?display=timegroups&view=form&extdisplay='+row.group+'">'+_("Time Group")+'</a>';
+	} else {
+		html = _('Not Set');
+	}
+	return html;
 }
 function tcactionFormatter(value,row){
 	var html = '';
@@ -130,10 +155,17 @@ function updateGroups(selectLast) {
 
 $("input[name=mode]").change(function() {
 	if($(this).val() == "time-group") {
-		$(".calendar-group-container").addClass("hidden");
+		$(".calendar-container").addClass("hidden");
 		$(".time-group-container").removeClass("hidden");
 	} else {
-		$(".calendar-group-container").removeClass("hidden");
+		$(".calendar-container").removeClass("hidden");
 		$(".time-group-container").addClass("hidden");
+	}
+});
+
+$("#calendar-id, #calendar-group").change(function() {
+	if($("#calendar-id").val() !== "" && $("#calendar-group").val() !== "") {
+		$(this).val("");
+		warnInvalid($(this),_("You cant set both a group and a calendar"));
 	}
 });

@@ -46,6 +46,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 }
 
 $groups = FreePBX::Calendar()->listGroups();
+$calendars = FreePBX::Calendar()->listCalendars();
 
 ?>
 <h2><?php echo $subhead?></h2>
@@ -221,7 +222,34 @@ $groups = FreePBX::Calendar()->listGroups();
 		</div>
 	</div>
 </div>
-<div class="element-container calendar-group-container <?php echo ($thisItem['mode'] == "time-group") ? 'hidden' : ''?>">
+<div class="element-container calendar-container <?php echo ($thisItem['mode'] == "time-group") ? 'hidden' : ''?>">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="calendar-id"><?php echo _("Calendar") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="calendar-id"></i>
+					</div>
+					<div class="col-md-9">
+						<select class="form-control" id="calendar-id" name="calendar-id">
+							<option value=""><?php echo _("--Select a Calendar--")?></option>
+							<?php foreach($calendars as $id=> $group) { ?>
+								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_id'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="calendar-id-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+		</div>
+	</div>
+</div>
+<div class="element-container calendar-container <?php echo ($thisItem['mode'] == "time-group") ? 'hidden' : ''?>">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
@@ -232,9 +260,9 @@ $groups = FreePBX::Calendar()->listGroups();
 					</div>
 					<div class="col-md-9">
 						<select class="form-control" id="calendar-group" name="calendar-group">
-							<option><?php echo _("--Select a Group--")?></option>
+							<option value=""><?php echo _("--Select a Group--")?></option>
 							<?php foreach($groups as $id=> $group) { ?>
-								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_group_id'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
 							<?php } ?>
 						</select>
 					</div>

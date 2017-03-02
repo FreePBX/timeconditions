@@ -18,7 +18,7 @@
 	<depends>
 		<version>13.0.74</version>
 		<module>cel ge 13.0.18</module>
-		<module>calendar</module>
+		<module>calendar ge 14.0.1alpha6</module>
 	</depends>
 	<menuitems>
 		<timeconditions>Time Conditions</timeconditions>
@@ -29,6 +29,36 @@
 			<method namespace="FreePBX\modules" class="Timeconditions" callingMethod="fwcChownFiles">chownFreepbx</method>
 		</framework>
 	</hooks>
+	<database>
+		<table name="timeconditions">
+			<field name="timeconditions_id" type="integer" primaryKey="true" autoincrement="true"/>
+			<field name="displayname" type="string" length="50" notnull="false"/>
+			<field name="time" type="integer" notnull="false"/>
+			<field name="truegoto" type="string" length="50" notnull="false"/>
+			<field name="falsegoto" type="string" length="50" notnull="false"/>
+			<field name="deptname" type="string" length="50" notnull="false"/>
+			<field name="generate_hint" type="boolean" default="0" notnull="false"/>
+			<field name="invert_hint" type="boolean" default="0" notnull="false"/>
+			<field name="fcc_password" type="string" length="20" default="" notnull="false"/>
+			<field name="priority" type="string" length="50" notnull="false"/>
+			<field name="timezone" type="string" length="255" notnull="false"/>
+			<field name="mode" type="string" length="20" default="time-group" notnull="false"/>
+			<field name="calendar_id" type="string" length="150" notnull="false"/>
+			<field name="calendar_group_id" type="string" length="150" notnull="false"/>
+		</table>
+		<table name="timegroups_groups">
+			<field name="id" type="integer" primaryKey="true" autoincrement="true"/>
+			<field name="description" type="string" length="50" default=""/>
+			<key name="display" type="unique">
+				<column name="description"/>
+			</key>
+		</table>
+		<table name="timegroups_details">
+			<field name="id" type="integer" primaryKey="true" autoincrement="true"/>
+			<field name="timegroupid" type="integer" default="0"/>
+			<field name="time" type="string" length="100" default=""/>
+		</table>
+	</database>
 	<popovers>
 		<timeconditions>
 			<display>timeconditions</display>

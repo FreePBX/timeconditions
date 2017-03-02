@@ -483,9 +483,10 @@ class Timeconditions implements \BMO {
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
 		':mode' => $post['mode'],
-		':calendar' => $post['calendar-group']
+		':calendar_id' => $post['calendar-id'],
+		':calendar_group_id' => $post['calendar-group']
 		);
-		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar)";
+		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar_id,calendar_group_id) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar_id, :calendar_group_id)";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($vars);
 		$id = $this->db->lastInsertId();
@@ -508,11 +509,12 @@ class Timeconditions implements \BMO {
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
 		':mode' => $post['mode'],
-		':calendar' => $post['calendar-group']
+		':calendar_id' => $post['calendar-id'],
+		':calendar_group_id' => $post['calendar-group']
 	);
 		$old = $this->getTimeCondition($id);
 
-		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone, mode = :mode, calendar = :calendar WHERE timeconditions_id = :id";
+		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone, mode = :mode, calendar_id = :calendar_id, calendar_group_id = :calendar_group_id WHERE timeconditions_id = :id";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($vars);
 		//If invert was switched we need to update the asterisk DB
