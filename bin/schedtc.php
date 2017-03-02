@@ -6,6 +6,7 @@ $restrict_mods = array('timeconditions' => true);
 $bootstrap_settings['freepbx_auth'] = false;
 include '/etc/freepbx.conf';
 $tc = \FreePBX::Timeconditions();
+$calendar = FreePBX::Calendar();
 $conditions = $tc->listTimeconditions();
 $groups = $tc->listTimeGroups();
 $debug = false;
@@ -44,30 +45,46 @@ foreach($conditions as $item){
 			tcout($debug, "OVERRIDE MODE: not set");
 		break;
 	}
-	$tctimes = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
 	$timeMatch = false;
-	foreach($tctimes as $tctime){
-		if($tc->checkTime($tctime[1])){
-			$timeMatch = true;
-      if(!$debug) {
-        //no need to check other times if we matched
-        //if debug is true run through all of them
-        break;
-      }
-			tcout($debug, "=>".$tctime[1]. " is now");
+	if($item['mode'] == 'time-group') {
+		$tctimes = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
+		foreach($tctimes as $tctime){
+			if($tc->checkTime($tctime[1])){
+				$timeMatch = true;
+				if(!$debug) {
+					//no need to check other times if we matched
+					//if debug is true run through all of them
+					break;
+				}
+				tcout($debug, "=>".$tctime[1]. " is now");
+			} else {
+				tcout($debug, "=>".$tctime[1]. " is not now");
+			}
+		}
+	} else {
+		$calendar->setTimezone($item['timezone']);
+		if(!empty($item['calendar_group_id'])) {
+			$timeMatch = $calendar->matchGroup($item['calendar_group_id']);
+			$next = $calendar->getNextEventByGroup($item['calendar_group_id'],$timezone);
 		} else {
-			tcout($debug, "=>".$tctime[1]. " is not now");
+			$timeMatch = $calendar->matchCalendar($item['calendar_id']);
+			$next = $calendar->getNextEvent($item['calendar_id'],$timezone);
+		}
+		if($timeMatch) {
+			tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
+		} else {
+			tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is not now");
 		}
 	}
-  tcout($debug, "TIME MATCHED: ".(($timeMatch)?"True":"False")." (".(($timeMatch)?$not_inuse:$inuse).")");
+	tcout($debug, "TIME MATCHED: ".(($timeMatch)?"True":"False")." (".(($timeMatch)?$not_inuse:$inuse).")");
 
 	if(!is_null($override)) {
 		if($sticky || ($timeMatch !== $override)) {
 			tcout($debug, "BLF MODE: Overridden to ".(($override)?"True":"False")." (".(($override)?$not_inuse:$inuse).")");
 		} else {
-      tcout($debug, "BLF MODE: ".(($timeMatch)?"True":"False")." [Reset Override as time match is the same as override mode]");
-      $astman->database_put("TC",$item['timeconditions_id'],"");
-    }
+			tcout($debug, "BLF MODE: ".(($timeMatch)?"True":"False")." [Reset Override as time match is the same as override mode]");
+			$astman->database_put("TC",$item['timeconditions_id'],"");
+		}
 		$timeMatch = $override;
 	} elseif($timeMatch) {
 		tcout($debug, "BLF MODE: True (".$not_inuse.")");
