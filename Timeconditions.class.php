@@ -245,7 +245,6 @@ class Timeconditions implements \BMO {
 						$tgs[$tg['value']] = $tg['text'];
 					}
 					$tcs = $this->astman->database_show("TC");
-					dbug($timeconditions);
 					foreach ($timeconditions as $key => $value) {
 						$id = $value['timeconditions_id'];
 						$state = isset($tcs['/TC/'.$id]) ? $tcs['/TC/'.$id] : '';
@@ -323,19 +322,23 @@ class Timeconditions implements \BMO {
 		$a = (int)$a;
 		$b = (int)$b;
 		$v = (int)$v;
+		$res = false;
 
 		if($a == $b) {
 			$res = $v == $a;
 		} else {
 			$invert = $a > $b;
+			$res = false;
 
 			if($invert) {
 				$tmp = $a;
 				$a = $b;
 				$b = $tmp;
-			}
 
-			$res = $v > $a && $v < $b;
+				$res = $v > $a && $v < $b;
+			} else {
+				$res = $v >= $a && $v <= $b;
+			}
 
 			if($invert) {
 				$res = !$res;

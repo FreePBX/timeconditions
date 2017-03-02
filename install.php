@@ -2,9 +2,7 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 $fcc = new featurecode('timeconditions', 'toggle-mode-all');
-$fcc->setDescription("All: Time Condition Override");
-$fcc->setDefault('*27');
-$fcc->update();
+$fcc->delete();
 unset($fcc);
 
 $freepbx_conf =& freepbx_conf::create();
