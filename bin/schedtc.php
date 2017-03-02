@@ -65,10 +65,10 @@ foreach($conditions as $item){
 		$calendar->setTimezone($item['timezone']);
 		if(!empty($item['calendar_group_id'])) {
 			$timeMatch = $calendar->matchGroup($item['calendar_group_id']);
-			$next = $calendar->getNextEventByGroup($item['calendar_group_id'],$timezone);
+			$next = $calendar->getNextEventByGroup($item['calendar_group_id'],$item['timezone']);
 		} else {
 			$timeMatch = $calendar->matchCalendar($item['calendar_id']);
-			$next = $calendar->getNextEvent($item['calendar_id'],$timezone);
+			$next = $calendar->getNextEvent($item['calendar_id'],$item['timezone']);
 		}
 		if($timeMatch) {
 			tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
