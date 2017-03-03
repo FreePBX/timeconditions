@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 10:46-0800\n"
+"POT-Creation-Date: 2017-02-17 17:19-0800\n"
 "PO-Revision-Date: 2016-12-11 01:54+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -28,7 +28,11 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- Seleccione un grupo --"
 
-#: Timeconditions.class.php:523 Timeconditions.class.php:558 install.php:200
+#: timeconditions.i18n.php:24
+msgid "2: Test"
+msgstr ""
+
+#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
 msgid ": Time Condition Override"
 msgstr ": Condición horaria anulada"
 
@@ -59,7 +63,7 @@ msgstr "Añadir grupo horario"
 msgid "Add a time for this time condition"
 msgstr "Agregar horario para esta condición horaria"
 
-#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
+#: timeconditions.i18n.php:6
 msgid "Applications"
 msgstr "Aplicaciones"
 
@@ -152,7 +156,7 @@ msgstr "Error: fallo al convertir el campo "
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Editar Condiciones de horario:%s (%s)"
 
-#: timeconditions.i18n.php:16
+#: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
 msgstr "Habilitar Mantenimiento de Encuesta"
 
@@ -189,7 +193,7 @@ msgstr ""
 "Si se establece, la sugerencia (hint) será INUSE si la condición horaria "
 "coincide, y NOT_INUSE si no coincide"
 
-#: timeconditions.i18n.php:20
+#: timeconditions.i18n.php:18
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -238,7 +242,7 @@ msgstr "Lista Condiciones Horarias"
 msgid "List Time Groups"
 msgstr "Lista Grupos Horarios"
 
-#: timeconditions.i18n.php:22
+#: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
 msgstr "Intervalo de Polling de Mantenimiento"
 
@@ -418,7 +422,7 @@ msgstr "Temporalmente Coincide"
 msgid "Temporary unmatched"
 msgstr "Temporalmente no Coincide"
 
-#: timeconditions.i18n.php:26
+#: timeconditions.i18n.php:22
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -487,7 +491,7 @@ msgstr "Jueves"
 msgid "Time Condition"
 msgstr "Condiciones horarias"
 
-#: timeconditions.i18n.php:18 timeconditions.i18n.php:24
+#: timeconditions.i18n.php:16
 msgid "Time Condition Module"
 msgstr "Modulo Condiciones Horarias"
 
@@ -512,7 +516,7 @@ msgstr "Condiciones Horarias"
 msgid "Time Group"
 msgstr "Grupo horario"
 
-#: page.timegroups.php:7 timeconditions.i18n.php:14
+#: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "Grupos Horarios"
 
@@ -617,7 +621,7 @@ msgstr "Iniciando migración"
 msgid "true goto"
 msgstr "goto verdadero"
 
-#: Timeconditions.class.php:472 Timeconditions.class.php:494
+#: Timeconditions.class.php:476 Timeconditions.class.php:498
 msgid "unnamed"
 msgstr "sin nombre"
 

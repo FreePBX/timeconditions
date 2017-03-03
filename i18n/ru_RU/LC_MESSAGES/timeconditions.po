@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-25 10:46-0800\n"
+"POT-Creation-Date: 2017-02-17 17:19-0800\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -30,7 +30,11 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: Timeconditions.class.php:523 Timeconditions.class.php:558 install.php:200
+#: timeconditions.i18n.php:24
+msgid "2: Test"
+msgstr ""
+
+#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
@@ -61,7 +65,7 @@ msgstr "Добавить временную группу"
 msgid "Add a time for this time condition"
 msgstr "Добавить время для этого  условия по времени"
 
-#: timeconditions.i18n.php:6 timeconditions.i18n.php:12
+#: timeconditions.i18n.php:6
 msgid "Applications"
 msgstr "Приложения"
 
@@ -156,7 +160,7 @@ msgstr "ОШИБКА: не удалось сконвертировать пол�
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Редактировать временные условия :%s (%s)"
 
-#: timeconditions.i18n.php:16
+#: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
 msgstr "Задействовать опрос по обслуживанию"
 
@@ -194,7 +198,7 @@ msgstr ""
 "Если установлено, индикатор будет InUse если условие по времени совпадают, и "
 "NOT_INUSE, если нет"
 
-#: timeconditions.i18n.php:20
+#: timeconditions.i18n.php:18
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -242,7 +246,7 @@ msgstr "Список временных условий"
 msgid "List Time Groups"
 msgstr "Список временных групп"
 
-#: timeconditions.i18n.php:22
+#: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
 msgstr "Интервал опроса по обслуживанию"
 
@@ -423,7 +427,7 @@ msgstr "Временное совпадение"
 msgid "Temporary unmatched"
 msgstr "Временное несовпадение"
 
-#: timeconditions.i18n.php:26
+#: timeconditions.i18n.php:22
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -489,7 +493,7 @@ msgstr "Четверг"
 msgid "Time Condition"
 msgstr "Правило по времени"
 
-#: timeconditions.i18n.php:18 timeconditions.i18n.php:24
+#: timeconditions.i18n.php:16
 msgid "Time Condition Module"
 msgstr "Модуль правил по времени"
 
@@ -514,7 +518,7 @@ msgstr "Правила по времени"
 msgid "Time Group"
 msgstr "Временная группа"
 
-#: page.timegroups.php:7 timeconditions.i18n.php:14
+#: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "Временная группа"
 
@@ -619,7 +623,7 @@ msgstr "начинаем миграцию"
 msgid "true goto"
 msgstr "переход, если правда"
 
-#: Timeconditions.class.php:472 Timeconditions.class.php:494
+#: Timeconditions.class.php:476 Timeconditions.class.php:498
 msgid "unnamed"
 msgstr ""
 
