@@ -19,7 +19,7 @@ switch ($request['view']) {
 			$usage_list = framework_display_destination_usage(timeconditions_getdest($request['itemid']));
 			if(!empty($usage_list)){
 				$usagehtml = <<< HTML
-<div class="panel panel-default">
+<div class="panel panel-default fpbx-usageinfo">
 	<div class="panel-heading">
 		$usage_list[text]
 	</div>
