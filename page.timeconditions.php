@@ -15,7 +15,7 @@ $usagehtml = '';
 
 switch ($request['view']) {
 	case 'form':
-		if (isset($request['itemid']) {
+		if (isset($request['itemid'])) {
 			$usage_list = framework_display_destination_usage(timeconditions_getdest($request['itemid']));
 			if(!empty($usage_list)){
 				$usagehtml = <<< HTML
