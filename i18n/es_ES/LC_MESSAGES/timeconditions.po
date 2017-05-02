@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - módulo timeconditions module spanish "
 "translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-17 17:19-0800\n"
+"POT-Creation-Date: 2017-05-01 21:58-0400\n"
 "PO-Revision-Date: 2016-12-11 01:54+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgid "--Select a Group--"
 msgstr "-- Seleccione un grupo --"
 
 #: timeconditions.i18n.php:24
-msgid "2: Test"
+msgid "1: test"
 msgstr ""
 
 #: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200

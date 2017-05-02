@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-17 17:19-0800\n"
+"POT-Creation-Date: 2017-05-01 21:58-0400\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -31,7 +31,7 @@ msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
 #: timeconditions.i18n.php:24
-msgid "2: Test"
+msgid "1: test"
 msgstr ""
 
 #: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
