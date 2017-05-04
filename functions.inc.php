@@ -426,12 +426,10 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	}
 	$tz='';
 	if ($timecondition_id>0) {
-		$systz = date_default_timezone_get();
 		$timezone = $db->getOne("SELECT timezone FROM timeconditions WHERE timeconditions_id = $timecondition_id");
-		//If timezone is empty or "drfault" we use the current system tz
+		//If timezone is empty or "default" we use the current system tz
 		$timezone = empty($timezone)?$systz:$timezone;
-		$timezone = ($timezone == 'default')?$systz:$timezone;
-		$tz="|$timezone";
+		$tz = ($timezone == 'default')?"":"|$timezone";
 	}
 	foreach ($results as $val) {
 		$val[1].=$tz;
