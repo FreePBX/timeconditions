@@ -428,8 +428,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	if ($timecondition_id>0) {
 		$timezone = $db->getOne("SELECT timezone FROM timeconditions WHERE timeconditions_id = $timecondition_id");
 		//If timezone is empty or "default" we use the current system tz
-		$timezone = empty($timezone)?$systz:$timezone;
-		$tz = ($timezone == 'default')?"":"|$timezone";
+		$tz = (empty($timezone) || ($timezone == 'default')) ? "" : "|$timezone";
 	}
 	foreach ($results as $val) {
 		$val[1].=$tz;
