@@ -11,9 +11,13 @@ $mode = \FreePBX::Config()->get("FPBXOPMODE");
 if(!empty($mode)) {
 	$display_mode = $mode;
 }
+$usagehtml = '';
 
 switch ($request['view']) {
 	case 'form':
+		if (isset($request['itemid'])) {
+			$usagehtml = FreePBX::View()->destinationUsage(timeconditions_getdest($request['itemid']));
+		}
 		if($display_mode == "basic") {
 			$content = load_view(__DIR__.'/views/timeconditions/basic_form.php', array('request' => $request));
 		} else {
@@ -28,6 +32,7 @@ switch ($request['view']) {
 ?>
 <div class="container-fluid">
 	<h1><?php echo $heading?></h1>
+	<?php echo $usagehtml?>
 	<div class = "display full-border">
 		<div class="row">
 			<div class="col-sm-12">
