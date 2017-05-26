@@ -218,7 +218,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="mode-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="mode-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Select the Mode for checking time conditions"),$tcval)?></span>
 		</div>
 	</div>
 </div>
@@ -245,7 +245,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="calendar-id-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="calendar-id-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Calendar to check for time condition"),$tcval)?></span>
 		</div>
 	</div>
 </div>
@@ -272,7 +272,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="calendar-group-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="calendar-group-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Calendar Group to check for timeconditions"),$tcval)?></span>
 		</div>
 	</div>
 </div>
