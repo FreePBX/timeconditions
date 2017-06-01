@@ -76,6 +76,8 @@ function timeconditions_get_config($engine) {
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
+							$ext->add($context, $time_id, '', new ext_set("TIMENOW",'${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
+							$ext->add($context, $time_id, '', new ext_set("TIMEMATCHED",'${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
 							$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
 						}
 					}
@@ -433,7 +435,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	foreach ($results as $val) {
 		$val[1].=$tz;
 		$times = ($convert && $ast_ge_16) ? strtr($val[1],'|',',') : $val[1];
-		$tmparray[] = array($val[0], $times);
+		$tmparray[] = array($val[0], $times, str_replace("|","",$tz));
 	}
 	return $tmparray;
 }
