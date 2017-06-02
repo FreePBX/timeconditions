@@ -76,8 +76,8 @@ function timeconditions_get_config($engine) {
 
 					if (is_array($times)) {
 						foreach ($times as $time) {
-							$ext->add($context, $time_id, '', new ext_set("TIMENOW",'${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
-							$ext->add($context, $time_id, '', new ext_set("TIMEMATCHED",'${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
+							$ext->add($context, $time_id, '', new ext_noop('TIMENOW: ${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
+							$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
 							$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
 						}
 					}
