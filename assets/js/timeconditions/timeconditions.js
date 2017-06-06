@@ -10,11 +10,12 @@ if($("#idTime").length) {
 }
 
 function edit_onsubmit(theForm) {
-
-
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value)) {
 		return warnInvalid(theForm.displayname, _("Please enter a valid Time Conditions Name"));
+	}
+	if (TimeConditionNames.indexOf(theForm.displayname.value) >= 0) {
+		return warnInvalid(theForm.displayname, _("Duplicate Time Conditions Name"));
 	}
 
 	if (theForm.fcc_password.value !== '' && !isNumber(theForm.fcc_password.value)) {

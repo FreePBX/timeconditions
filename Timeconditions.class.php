@@ -236,7 +236,6 @@ class Timeconditions implements \BMO {
 					$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
 					}
 					return $rdata;
-				break;
 				case 'tcgrid':
 					$timeconditions = $this->listTimeconditions();
 					$timegroups = $this->listTimegroups();
@@ -253,16 +252,12 @@ class Timeconditions implements \BMO {
 						$timeconditions[$key]['state'] = $state;
 					}
 					return array_values($timeconditions);
-				break;
 				default:
 					return false;
-				break;
 			}
-			break;
 
 			default:
 				return false;
-			break;
 		}
 	}
 	public function listTimegroups($assoc = false){
@@ -710,6 +705,7 @@ class Timeconditions implements \BMO {
 		return $timegroup;
 	}
 
+
 	public function editTimes($id,$times){
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
 		$stmt = $this->db->prepare($sql);
@@ -834,4 +830,11 @@ class Timeconditions implements \BMO {
 		$time = $time_hour . '|' . $time_wday . '|' . $time_mday . '|' . $time_month;
 		return $time;
 	}
+
+	public function getAllTimeconditonNames() {
+		$sql = "SELECT displayname FROM timeconditions";
+		$res = \FreePBX::Database()->query($sql)->fetchAll(\PDO::FETCH_COLUMN, 0);
+		return $res;
+	}
+
 }
