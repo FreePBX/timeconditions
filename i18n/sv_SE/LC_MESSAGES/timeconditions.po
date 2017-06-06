@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 10:24-0700\n"
+"POT-Creation-Date: 2017-06-06 10:31-0700\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "--Select a Calendar--"
 msgstr ""
 
-#: functions.inc.php:528 views/timeconditions/advanced_form.php:263
+#: functions.inc.php:530 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:540 assets/js/timeconditions/timeconditions.js:149
+#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:149
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -61,11 +61,11 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:623
+#: functions.inc.php:625
 msgid "April"
 msgstr "April"
 
-#: functions.inc.php:627
+#: functions.inc.php:629
 msgid "August"
 msgstr "Augusti"
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:631
+#: functions.inc.php:633
 msgid "December"
 msgstr "December"
 
@@ -167,11 +167,11 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:621
+#: functions.inc.php:623
 msgid "February"
 msgstr "Februari"
 
-#: functions.inc.php:599
+#: functions.inc.php:601
 msgid "Friday"
 msgstr "Fredag"
 
@@ -211,15 +211,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:620
+#: functions.inc.php:622
 msgid "January"
 msgstr "Januari"
 
-#: functions.inc.php:626
+#: functions.inc.php:628
 msgid "July"
 msgstr "Juli"
 
-#: functions.inc.php:625
+#: functions.inc.php:627
 msgid "June"
 msgstr "Juni"
 
@@ -241,11 +241,11 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:622
+#: functions.inc.php:624
 msgid "March"
 msgstr "Mars"
 
-#: functions.inc.php:624
+#: functions.inc.php:626
 msgid "May"
 msgstr "Maj"
 
@@ -253,23 +253,23 @@ msgstr "Maj"
 msgid "Mode"
 msgstr ""
 
-#: functions.inc.php:595
+#: functions.inc.php:597
 msgid "Monday"
 msgstr "Måndag"
 
-#: functions.inc.php:794
+#: functions.inc.php:796
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:785
+#: functions.inc.php:787
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:812
+#: functions.inc.php:814
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:803
+#: functions.inc.php:805
 msgid "Month start"
 msgstr ""
 
@@ -294,11 +294,11 @@ msgstr ""
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:630
+#: functions.inc.php:632
 msgid "November"
 msgstr "November"
 
-#: functions.inc.php:629
+#: functions.inc.php:631
 msgid "October"
 msgstr "Oktober"
 
@@ -350,7 +350,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:600
+#: functions.inc.php:602
 msgid "Saturday"
 msgstr "Lördag"
 
@@ -373,7 +373,7 @@ msgstr ""
 msgid "Select the Mode for checking time conditions"
 msgstr ""
 
-#: functions.inc.php:628
+#: functions.inc.php:630
 msgid "September"
 msgstr "September"
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Spara ändringar"
 
-#: functions.inc.php:594
+#: functions.inc.php:596
 msgid "Sunday"
 msgstr "Söndag"
 
@@ -460,7 +460,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:598
+#: functions.inc.php:600
 msgid "Thursday"
 msgstr "Torsdag"
 
@@ -477,7 +477,7 @@ msgstr ""
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:224
+#: functions.inc.php:21 functions.inc.php:226
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Tidsvillkor: %s"
@@ -506,11 +506,11 @@ msgstr "Tidgrupper"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:741
+#: functions.inc.php:743
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:754
+#: functions.inc.php:756
 msgid "Time to finish"
 msgstr ""
 
@@ -518,7 +518,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:596
+#: functions.inc.php:598
 msgid "Tuesday"
 msgstr "Tisdag"
 
@@ -539,15 +539,15 @@ msgstr ""
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:597
+#: functions.inc.php:599
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: functions.inc.php:767
+#: functions.inc.php:769
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:776
+#: functions.inc.php:778
 msgid "Week Day finish"
 msgstr ""
 
@@ -575,11 +575,11 @@ msgstr ""
 "Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att "
 "Destination, om tiden inte matchar, alltid kommer att vara aktiv."
 
-#: functions.inc.php:237
+#: functions.inc.php:239
 msgid "false goto"
 msgstr ""
 
-#: functions.inc.php:229
+#: functions.inc.php:231
 msgid "true goto"
 msgstr ""
 

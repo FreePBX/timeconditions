@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 10:24-0700\n"
+"POT-Creation-Date: 2017-06-06 10:31-0700\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "--Select a Calendar--"
 msgstr ""
 
-#: functions.inc.php:528 views/timeconditions/advanced_form.php:263
+#: functions.inc.php:530 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
@@ -38,7 +38,7 @@ msgstr "：بازنویسی شرط زمانی"
 msgid "Actions"
 msgstr "عملیات"
 
-#: functions.inc.php:540 assets/js/timeconditions/timeconditions.js:149
+#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:149
 msgid "Add New Time Group..."
 msgstr "افزودن گروه زمانی جدید..."
 
@@ -64,11 +64,11 @@ msgstr "افزودن زمان برای این شرط زمانی"
 msgid "Applications"
 msgstr "برنامه‌های کاربردی"
 
-#: functions.inc.php:623
+#: functions.inc.php:625
 msgid "April"
 msgstr "آوریل"
 
-#: functions.inc.php:627
+#: functions.inc.php:629
 msgid "August"
 msgstr "آگوست"
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Current"
 msgstr "فعلی"
 
-#: functions.inc.php:631
+#: functions.inc.php:633
 msgid "December"
 msgstr "دسامبر"
 
@@ -173,11 +173,11 @@ msgstr "ویرایش شرط زمانی ： %s (%s)"
 msgid "Enable Maintenance Polling"
 msgstr "فعال سازی درخواست های نگهداری"
 
-#: functions.inc.php:621
+#: functions.inc.php:623
 msgid "February"
 msgstr "فوریه"
 
-#: functions.inc.php:599
+#: functions.inc.php:601
 msgid "Friday"
 msgstr "جمعه"
 
@@ -225,15 +225,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "معکوس کردن حالت BLF"
 
-#: functions.inc.php:620
+#: functions.inc.php:622
 msgid "January"
 msgstr "ژانویه"
 
-#: functions.inc.php:626
+#: functions.inc.php:628
 msgid "July"
 msgstr "جولای"
 
-#: functions.inc.php:625
+#: functions.inc.php:627
 msgid "June"
 msgstr "ژوئن"
 
@@ -255,11 +255,11 @@ msgstr "فهرست گروه های زمانی"
 msgid "Maintenance Polling Interval"
 msgstr "زمان سرکشی نگهداری"
 
-#: functions.inc.php:622
+#: functions.inc.php:624
 msgid "March"
 msgstr "مارس"
 
-#: functions.inc.php:624
+#: functions.inc.php:626
 msgid "May"
 msgstr "می"
 
@@ -267,23 +267,23 @@ msgstr "می"
 msgid "Mode"
 msgstr ""
 
-#: functions.inc.php:595
+#: functions.inc.php:597
 msgid "Monday"
 msgstr "دوشنبه"
 
-#: functions.inc.php:794
+#: functions.inc.php:796
 msgid "Month Day finish"
 msgstr "روز پایان در ماه"
 
-#: functions.inc.php:785
+#: functions.inc.php:787
 msgid "Month Day start"
 msgstr "روز شروع در ماه"
 
-#: functions.inc.php:812
+#: functions.inc.php:814
 msgid "Month finish"
 msgstr "ماه اتمام"
 
-#: functions.inc.php:803
+#: functions.inc.php:805
 msgid "Month start"
 msgstr "ماه شروع"
 
@@ -308,11 +308,11 @@ msgstr ""
 msgid "Not received"
 msgstr "دریافت نشده"
 
-#: functions.inc.php:630
+#: functions.inc.php:632
 msgid "November"
 msgstr "نوامبر"
 
-#: functions.inc.php:629
+#: functions.inc.php:631
 msgid "October"
 msgstr "اکتبر"
 
@@ -364,7 +364,7 @@ msgstr "بازنشانی"
 msgid "Reset Override"
 msgstr "بازنویسی بازنشانی"
 
-#: functions.inc.php:600
+#: functions.inc.php:602
 msgid "Saturday"
 msgstr "شنبه"
 
@@ -387,7 +387,7 @@ msgstr ""
 msgid "Select the Mode for checking time conditions"
 msgstr ""
 
-#: functions.inc.php:628
+#: functions.inc.php:630
 msgid "September"
 msgstr "سپتامبر"
 
@@ -413,7 +413,7 @@ msgstr ""
 msgid "Submit"
 msgstr "ثبت"
 
-#: functions.inc.php:594
+#: functions.inc.php:596
 msgid "Sunday"
 msgstr "یکشنبه"
 
@@ -487,7 +487,7 @@ msgstr "این گروه زمانی درحال استفاده است و نمی ت
 msgid "This will display as the name of this Time Group"
 msgstr "به عنوان نام گروه زمانی نمایش داده می شود"
 
-#: functions.inc.php:598
+#: functions.inc.php:600
 msgid "Thursday"
 msgstr "پنج شنبه"
 
@@ -504,7 +504,7 @@ msgstr "ماژول شرط زمانی"
 msgid "Time Condition name"
 msgstr "نام شرط زمانی"
 
-#: functions.inc.php:21 functions.inc.php:224
+#: functions.inc.php:21 functions.inc.php:226
 #, php-format
 msgid "Time Condition: %s"
 msgstr "شرط زمانی ： %s"
@@ -533,11 +533,11 @@ msgstr "گروه‌های زمانی"
 msgid "Time Zone:"
 msgstr "منطقه زمانی ："
 
-#: functions.inc.php:741
+#: functions.inc.php:743
 msgid "Time to Start"
 msgstr "زمان شروع"
 
-#: functions.inc.php:754
+#: functions.inc.php:756
 msgid "Time to finish"
 msgstr "زمان پایان"
 
@@ -545,7 +545,7 @@ msgstr "زمان پایان"
 msgid "Time(s)"
 msgstr "زمان (ها)"
 
-#: functions.inc.php:596
+#: functions.inc.php:598
 msgid "Tuesday"
 msgstr "سه‌شنبه"
 
@@ -566,15 +566,15 @@ msgstr "وضعیت نامشخص"
 msgid "Use System Timezone"
 msgstr "استفاده از منطقه زمانی سیستم"
 
-#: functions.inc.php:597
+#: functions.inc.php:599
 msgid "Wednesday"
 msgstr "چهارشنبه"
 
-#: functions.inc.php:767
+#: functions.inc.php:769
 msgid "Week Day Start"
 msgstr "روز هفته ی شروع"
 
-#: functions.inc.php:776
+#: functions.inc.php:778
 msgid "Week Day finish"
 msgstr "روز هفته ی پایان"
 
@@ -602,11 +602,11 @@ msgstr ""
 "شما هیچ گروه زمانی را برای این شرط زمانی انتخاب نکرده اید. تا زمان انتخاب "
 "گروه درست، تماس ها به مقصد تعیین شده برای زمان ناهمخوان ارسال می شوند"
 
-#: functions.inc.php:237
+#: functions.inc.php:239
 msgid "false goto"
 msgstr "goto نادرست"
 
-#: functions.inc.php:229
+#: functions.inc.php:231
 msgid "true goto"
 msgstr "goto درست"
 
