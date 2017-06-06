@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-01 09:44-0700\n"
+"POT-Creation-Date: 2017-06-06 10:24-0700\n"
 "PO-Revision-Date: 2016-09-19 20:29+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://weblate.freepbx.org/projects/freepbx/"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: Timeconditions.class.php:533 Timeconditions.class.php:568
+#: Timeconditions.class.php:528 Timeconditions.class.php:563
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -39,7 +39,7 @@ msgstr ": Отмяна на Времево Условие"
 msgid "Actions"
 msgstr "Действия"
 
-#: functions.inc.php:540 assets/js/timeconditions/timeconditions.js:148
+#: functions.inc.php:540 assets/js/timeconditions/timeconditions.js:149
 msgid "Add New Time Group..."
 msgstr "Добави Нова Времева Група..."
 
@@ -74,17 +74,25 @@ msgid "August"
 msgstr "Август"
 
 #: views/timeconditions/advanced_form.php:231
-#: assets/js/timeconditions/timeconditions.js:46
+#: assets/js/timeconditions/timeconditions.js:47
 msgid "Calendar"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:258
-#: assets/js/timeconditions/timeconditions.js:48
+#: assets/js/timeconditions/timeconditions.js:49
 msgid "Calendar Group"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:275
+msgid "Calendar Group to check for timeconditions"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:248
+msgid "Calendar to check for time condition"
 msgstr ""
 
 #: assets/js/timegroups/timegroups.js:90
@@ -153,6 +161,10 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
+#: assets/js/timeconditions/timeconditions.js:18
+msgid "Duplicate Time Conditions Name"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
 #, php-format
@@ -187,9 +199,6 @@ msgstr ""
 "се промени текущото състояние"
 
 #: views/timeconditions/advanced_form.php:131
-#: views/timeconditions/advanced_form.php:221
-#: views/timeconditions/advanced_form.php:248
-#: views/timeconditions/advanced_form.php:275
 #: views/timeconditions/basic_form.php:240
 #, php-format
 msgid ""
@@ -283,12 +292,12 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:82
+#: assets/js/timeconditions/timeconditions.js:83
 msgid "No Override"
 msgstr "Без Отмяна"
 
-#: assets/js/timeconditions/timeconditions.js:50
-#: assets/js/timeconditions/timeconditions.js:55
+#: assets/js/timeconditions/timeconditions.js:51
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Not Set"
 msgstr ""
 
@@ -326,21 +335,21 @@ msgstr "Трайна Отмяна на Състояние на несъвпад�
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:70
+#: assets/js/timeconditions/timeconditions.js:71
 msgid "Permanently matched"
 msgstr "Трайно съвпадение"
 
 #: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:73
+#: assets/js/timeconditions/timeconditions.js:74
 msgid "Permanently unmatched"
 msgstr "Трайно несъвпадение"
 
-#: assets/js/timeconditions/timeconditions.js:21
+#: assets/js/timeconditions/timeconditions.js:22
 msgid "Please enter a valid Override Code Pin"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:17
+#: assets/js/timeconditions/timeconditions.js:15
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Моля въведете правилно Име на Времево Условие"
 
@@ -357,7 +366,7 @@ msgstr "Ресетни Отмяна"
 msgid "Saturday"
 msgstr "Събота"
 
-#: assets/js/timeconditions/timeconditions.js:144
+#: assets/js/timeconditions/timeconditions.js:145
 msgid "Select a Group"
 msgstr ""
 
@@ -371,6 +380,10 @@ msgstr ""
 "Изберете Времева Група съдадена в  'Времеви Групи'. При съвпадане на времето "
 "ще се изпраща към избраното направление. Ако не е избрана група, обажданията "
 "ще се прехвърлят към несъвпадащи направления."
+
+#: views/timeconditions/advanced_form.php:221
+msgid "Select the Mode for checking time conditions"
+msgstr ""
 
 #: functions.inc.php:628
 msgid "September"
@@ -410,13 +423,13 @@ msgstr "Временна Отмяна на Състояние на несъвп�
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:79
+#: assets/js/timeconditions/timeconditions.js:80
 msgid "Temporary matched"
 msgstr "Временно съвпадение"
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:76
+#: assets/js/timeconditions/timeconditions.js:77
 msgid "Temporary unmatched"
 msgstr "Временно несъвпадение"
 
@@ -490,7 +503,7 @@ msgstr "Времеви Условия"
 
 #: views/timeconditions/advanced_form.php:286
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:53
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:54
 msgid "Time Group"
 msgstr "Времева Група"
 
@@ -557,18 +570,18 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:169
+#: assets/js/timeconditions/timeconditions.js:170
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:29
+#: assets/js/timeconditions/timeconditions.js:30
 msgid ""
 "You have not selected a calendar or calendar group to associate with this "
 "timecondition. It will go to the un-matching destination until you update it "
 "with a valid calendar/group"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:25
+#: assets/js/timeconditions/timeconditions.js:26
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
@@ -584,7 +597,7 @@ msgstr "невярно goto"
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:476 Timeconditions.class.php:501
+#: Timeconditions.class.php:471 Timeconditions.class.php:496
 msgid "unnamed"
 msgstr ""
 

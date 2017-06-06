@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-01 09:44-0700\n"
+"POT-Creation-Date: 2017-06-06 10:24-0700\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: Timeconditions.class.php:533 Timeconditions.class.php:568
+#: Timeconditions.class.php:528 Timeconditions.class.php:563
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 
@@ -36,7 +36,7 @@ msgstr "עקופת תנאי זמן"
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:540 assets/js/timeconditions/timeconditions.js:148
+#: functions.inc.php:540 assets/js/timeconditions/timeconditions.js:149
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -71,17 +71,25 @@ msgid "August"
 msgstr "אוגוסט"
 
 #: views/timeconditions/advanced_form.php:231
-#: assets/js/timeconditions/timeconditions.js:46
+#: assets/js/timeconditions/timeconditions.js:47
 msgid "Calendar"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:258
-#: assets/js/timeconditions/timeconditions.js:48
+#: assets/js/timeconditions/timeconditions.js:49
 msgid "Calendar Group"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:275
+msgid "Calendar Group to check for timeconditions"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:248
+msgid "Calendar to check for time condition"
 msgstr ""
 
 #: assets/js/timegroups/timegroups.js:90
@@ -146,6 +154,10 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
+#: assets/js/timeconditions/timeconditions.js:18
+msgid "Duplicate Time Conditions Name"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
 #, php-format
@@ -177,9 +189,6 @@ msgid ""
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:131
-#: views/timeconditions/advanced_form.php:221
-#: views/timeconditions/advanced_form.php:248
-#: views/timeconditions/advanced_form.php:275
 #: views/timeconditions/basic_form.php:240
 #, php-format
 msgid ""
@@ -271,12 +280,12 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:82
+#: assets/js/timeconditions/timeconditions.js:83
 msgid "No Override"
 msgstr "ללא מעקף"
 
-#: assets/js/timeconditions/timeconditions.js:50
-#: assets/js/timeconditions/timeconditions.js:55
+#: assets/js/timeconditions/timeconditions.js:51
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Not Set"
 msgstr ""
 
@@ -314,21 +323,21 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:70
+#: assets/js/timeconditions/timeconditions.js:71
 msgid "Permanently matched"
 msgstr "התאמה קבועה"
 
 #: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:73
+#: assets/js/timeconditions/timeconditions.js:74
 msgid "Permanently unmatched"
 msgstr "התאמה קבועה"
 
-#: assets/js/timeconditions/timeconditions.js:21
+#: assets/js/timeconditions/timeconditions.js:22
 msgid "Please enter a valid Override Code Pin"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:17
+#: assets/js/timeconditions/timeconditions.js:15
 msgid "Please enter a valid Time Conditions Name"
 msgstr "נא הזן שם לתנאי הזמן"
 
@@ -345,7 +354,7 @@ msgstr "אתחל מעקף"
 msgid "Saturday"
 msgstr "שבת"
 
-#: assets/js/timeconditions/timeconditions.js:144
+#: assets/js/timeconditions/timeconditions.js:145
 msgid "Select a Group"
 msgstr ""
 
@@ -355,6 +364,10 @@ msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
 "match destination."
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:221
+msgid "Select the Mode for checking time conditions"
 msgstr ""
 
 #: functions.inc.php:628
@@ -395,13 +408,13 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:79
+#: assets/js/timeconditions/timeconditions.js:80
 msgid "Temporary matched"
 msgstr "התאמה זמנית"
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:76
+#: assets/js/timeconditions/timeconditions.js:77
 msgid "Temporary unmatched"
 msgstr "חוסר התאמה זמני"
 
@@ -473,7 +486,7 @@ msgstr "תנאיי זמנים"
 
 #: views/timeconditions/advanced_form.php:286
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:53
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:54
 msgid "Time Group"
 msgstr "קבוצת זמנים"
 
@@ -540,18 +553,18 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:169
+#: assets/js/timeconditions/timeconditions.js:170
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:29
+#: assets/js/timeconditions/timeconditions.js:30
 msgid ""
 "You have not selected a calendar or calendar group to associate with this "
 "timecondition. It will go to the un-matching destination until you update it "
 "with a valid calendar/group"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:25
+#: assets/js/timeconditions/timeconditions.js:26
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
@@ -565,7 +578,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:476 Timeconditions.class.php:501
+#: Timeconditions.class.php:471 Timeconditions.class.php:496
 msgid "unnamed"
 msgstr ""
 
