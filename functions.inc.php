@@ -32,6 +32,8 @@ function timeconditions_destinations() {
 	//get the list of timeconditions
 	$results = timeconditions_list(true);
 
+	$extens = array();
+
 	// return an associative array with destination and description
 	if (isset($results)) {
 		foreach($results as $result){
