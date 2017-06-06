@@ -128,7 +128,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="invert_hint-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="invert_hint-help" class="help-block fpbx-help-block"><?php echo _("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails")?></span>
 		</div>
 	</div>
 </div>
@@ -161,7 +161,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="tcstate_new-help" class="help-block fpbx-help-block"><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."),$tcval) ?></span>
+			<span id="tcstate_new-help" class="help-block fpbx-help-block"><?php echo _("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options.") ?></span>
 		</div>
 	</div>
 </div>
@@ -218,7 +218,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="mode-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="mode-help" class="help-block fpbx-help-block"><?php echo _("Select the Mode for checking time conditions")?></span>
 		</div>
 	</div>
 </div>
@@ -245,7 +245,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="calendar-id-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="calendar-id-help" class="help-block fpbx-help-block"><?php echo _("Calendar to check for time condition")?></span>
 		</div>
 	</div>
 </div>
@@ -272,7 +272,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="calendar-group-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="calendar-group-help" class="help-block fpbx-help-block"><?php echo _("Calendar Group to check for timeconditions")?></span>
 		</div>
 	</div>
 </div>
