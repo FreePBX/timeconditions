@@ -367,5 +367,5 @@ echo $module_hook->hookHtml;
 <!--END Destination non-matches-->
 </form>
 <script>
-var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames()); ?>;
+var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid)); ?>;
 </script>

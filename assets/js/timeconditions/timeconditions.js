@@ -15,7 +15,16 @@ function edit_onsubmit(theForm) {
 		return warnInvalid(theForm.displayname, _("Please enter a valid Time Conditions Name"));
 	}
 	if (TimeConditionNames.indexOf(theForm.displayname.value) >= 0) {
-		return warnInvalid(theForm.displayname, _("Duplicate Time Conditions Name"));
+		// check the condition for EDIT from 
+		if(typeof theForm.itemid === 'undefined'){
+			//Its a new one
+			return warnInvalid(theForm.displayname, _("Duplicate Time Conditions Name"));
+		}
+		else{// its a edit form so check displayname exist in TimeConditionNames
+		        if (TimeConditionNames.indexOf(theForm.displayname.value) >= 0) {
+				return warnInvalid(theForm.displayname, _("Already exists Time Conditions Name:"+theForm.displayname.value));
+			}
+		}
 	}
 
 	if (theForm.fcc_password.value !== '' && !isNumber(theForm.fcc_password.value)) {
