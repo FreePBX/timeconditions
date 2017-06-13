@@ -831,8 +831,13 @@ class Timeconditions implements \BMO {
 		return $time;
 	}
 
-	public function getAllTimeconditonNames() {
-		$sql = "SELECT displayname FROM timeconditions";
+	public function getAllTimeconditonNames($itemid) {
+		if($itemid ==NULL){
+			$sql = "SELECT displayname FROM timeconditions";
+		}
+		else{
+			$sql = "SELECT displayname FROM timeconditions WHERE timeconditions_id <> '$itemid' ";
+		}
 		$res = \FreePBX::Database()->query($sql)->fetchAll(\PDO::FETCH_COLUMN, 0);
 		return $res;
 	}
