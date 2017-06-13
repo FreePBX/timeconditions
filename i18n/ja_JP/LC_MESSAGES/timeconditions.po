@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 10:31-0700\n"
+"POT-Creation-Date: 2017-06-13 15:54-0700\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -66,7 +66,7 @@ msgstr "：時間分岐条件を上書き"
 msgid "Actions"
 msgstr "アクション"
 
-#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:149
+#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:158
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -88,6 +88,10 @@ msgstr "時間グループを追加"
 msgid "Add a time for this time condition"
 msgstr "この時間分岐条件の時間を追加します"
 
+#: assets/js/timeconditions/timeconditions.js:25
+msgid "Already exists Time Conditions Name:"
+msgstr ""
+
 #: timeconditions.i18n.php:6
 msgid "Applications"
 msgstr "アプリケーション"
@@ -101,12 +105,12 @@ msgid "August"
 msgstr "8月"
 
 #: views/timeconditions/advanced_form.php:231
-#: assets/js/timeconditions/timeconditions.js:47
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Calendar"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:258
-#: assets/js/timeconditions/timeconditions.js:49
+#: assets/js/timeconditions/timeconditions.js:58
 msgid "Calendar Group"
 msgstr ""
 
@@ -187,7 +191,7 @@ msgstr "時間外の宛先"
 msgid "Duplicate"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:18
+#: assets/js/timeconditions/timeconditions.js:21
 msgid "Duplicate Time Conditions Name"
 msgstr ""
 
@@ -317,12 +321,12 @@ msgstr "いいえ"
 
 #: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:83
+#: assets/js/timeconditions/timeconditions.js:92
 msgid "No Override"
 msgstr "上書きしない"
 
-#: assets/js/timeconditions/timeconditions.js:51
-#: assets/js/timeconditions/timeconditions.js:56
+#: assets/js/timeconditions/timeconditions.js:60
+#: assets/js/timeconditions/timeconditions.js:65
 msgid "Not Set"
 msgstr ""
 
@@ -360,17 +364,17 @@ msgstr "一致しない状態を永久的に上書き"
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:71
+#: assets/js/timeconditions/timeconditions.js:80
 msgid "Permanently matched"
 msgstr "永久的一致"
 
 #: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:74
+#: assets/js/timeconditions/timeconditions.js:83
 msgid "Permanently unmatched"
 msgstr "永久的不一致"
 
-#: assets/js/timeconditions/timeconditions.js:22
+#: assets/js/timeconditions/timeconditions.js:31
 msgid "Please enter a valid Override Code Pin"
 msgstr "入力された暗証番号は無効です。"
 
@@ -391,7 +395,7 @@ msgstr "上書きをリセット"
 msgid "Saturday"
 msgstr "土曜日"
 
-#: assets/js/timeconditions/timeconditions.js:145
+#: assets/js/timeconditions/timeconditions.js:154
 msgid "Select a Group"
 msgstr ""
 
@@ -453,13 +457,13 @@ msgstr "一致しない状態を一時的に上書き"
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:80
+#: assets/js/timeconditions/timeconditions.js:89
 msgid "Temporary matched"
 msgstr "一時的一致"
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:77
+#: assets/js/timeconditions/timeconditions.js:86
 msgid "Temporary unmatched"
 msgstr "一時的不一致"
 
@@ -539,7 +543,7 @@ msgstr "時間分岐条件"
 
 #: views/timeconditions/advanced_form.php:286
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:54
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:63
 msgid "Time Group"
 msgstr "時間グループ"
 
@@ -606,18 +610,18 @@ msgstr "終わる曜日"
 msgid "Yes"
 msgstr "はい"
 
-#: assets/js/timeconditions/timeconditions.js:170
+#: assets/js/timeconditions/timeconditions.js:179
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:30
+#: assets/js/timeconditions/timeconditions.js:39
 msgid ""
 "You have not selected a calendar or calendar group to associate with this "
 "timecondition. It will go to the un-matching destination until you update it "
 "with a valid calendar/group"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:26
+#: assets/js/timeconditions/timeconditions.js:35
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"

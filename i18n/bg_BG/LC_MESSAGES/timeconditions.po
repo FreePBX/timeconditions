@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 10:31-0700\n"
+"POT-Creation-Date: 2017-06-13 15:54-0700\n"
 "PO-Revision-Date: 2016-09-19 20:29+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://weblate.freepbx.org/projects/freepbx/"
@@ -39,7 +39,7 @@ msgstr ": Отмяна на Времево Условие"
 msgid "Actions"
 msgstr "Действия"
 
-#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:149
+#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:158
 msgid "Add New Time Group..."
 msgstr "Добави Нова Времева Група..."
 
@@ -61,6 +61,10 @@ msgstr "Добави Времева Група"
 msgid "Add a time for this time condition"
 msgstr ""
 
+#: assets/js/timeconditions/timeconditions.js:25
+msgid "Already exists Time Conditions Name:"
+msgstr ""
+
 #: timeconditions.i18n.php:6
 msgid "Applications"
 msgstr "Приложения"
@@ -74,12 +78,12 @@ msgid "August"
 msgstr "Август"
 
 #: views/timeconditions/advanced_form.php:231
-#: assets/js/timeconditions/timeconditions.js:47
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Calendar"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:258
-#: assets/js/timeconditions/timeconditions.js:49
+#: assets/js/timeconditions/timeconditions.js:58
 msgid "Calendar Group"
 msgstr ""
 
@@ -161,7 +165,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:18
+#: assets/js/timeconditions/timeconditions.js:21
 msgid "Duplicate Time Conditions Name"
 msgstr ""
 
@@ -292,12 +296,12 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:83
+#: assets/js/timeconditions/timeconditions.js:92
 msgid "No Override"
 msgstr "Без Отмяна"
 
-#: assets/js/timeconditions/timeconditions.js:51
-#: assets/js/timeconditions/timeconditions.js:56
+#: assets/js/timeconditions/timeconditions.js:60
+#: assets/js/timeconditions/timeconditions.js:65
 msgid "Not Set"
 msgstr ""
 
@@ -335,17 +339,17 @@ msgstr "Трайна Отмяна на Състояние на несъвпад�
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:71
+#: assets/js/timeconditions/timeconditions.js:80
 msgid "Permanently matched"
 msgstr "Трайно съвпадение"
 
 #: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:74
+#: assets/js/timeconditions/timeconditions.js:83
 msgid "Permanently unmatched"
 msgstr "Трайно несъвпадение"
 
-#: assets/js/timeconditions/timeconditions.js:22
+#: assets/js/timeconditions/timeconditions.js:31
 msgid "Please enter a valid Override Code Pin"
 msgstr ""
 
@@ -366,7 +370,7 @@ msgstr "Ресетни Отмяна"
 msgid "Saturday"
 msgstr "Събота"
 
-#: assets/js/timeconditions/timeconditions.js:145
+#: assets/js/timeconditions/timeconditions.js:154
 msgid "Select a Group"
 msgstr ""
 
@@ -423,13 +427,13 @@ msgstr "Временна Отмяна на Състояние на несъвп�
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:80
+#: assets/js/timeconditions/timeconditions.js:89
 msgid "Temporary matched"
 msgstr "Временно съвпадение"
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:77
+#: assets/js/timeconditions/timeconditions.js:86
 msgid "Temporary unmatched"
 msgstr "Временно несъвпадение"
 
@@ -503,7 +507,7 @@ msgstr "Времеви Условия"
 
 #: views/timeconditions/advanced_form.php:286
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:54
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:63
 msgid "Time Group"
 msgstr "Времева Група"
 
@@ -570,18 +574,18 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:170
+#: assets/js/timeconditions/timeconditions.js:179
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:30
+#: assets/js/timeconditions/timeconditions.js:39
 msgid ""
 "You have not selected a calendar or calendar group to associate with this "
 "timecondition. It will go to the un-matching destination until you update it "
 "with a valid calendar/group"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:26
+#: assets/js/timeconditions/timeconditions.js:35
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
