@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-13 15:54-0700\n"
+"POT-Creation-Date: 2017-06-23 14:38-0700\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "--Select a Calendar--"
 msgstr ""
 
-#: functions.inc.php:530 views/timeconditions/advanced_form.php:263
+#: functions.inc.php:555 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
 msgstr "--选择一个小组--"
 
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:158
+#: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:158
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -66,11 +66,11 @@ msgstr ""
 msgid "Applications"
 msgstr ""
 
-#: functions.inc.php:625
+#: functions.inc.php:650
 msgid "April"
 msgstr "四月"
 
-#: functions.inc.php:629
+#: functions.inc.php:654
 msgid "August"
 msgstr "八月"
 
@@ -90,6 +90,10 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
+msgstr ""
+
+#: functions.inc.php:102 functions.inc.php:113
+msgid "Calendar Not found"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:248
@@ -122,7 +126,7 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: functions.inc.php:633
+#: functions.inc.php:658
 msgid "December"
 msgstr "十二月"
 
@@ -172,11 +176,11 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:623
+#: functions.inc.php:648
 msgid "February"
 msgstr "二月"
 
-#: functions.inc.php:601
+#: functions.inc.php:626
 msgid "Friday"
 msgstr "周五"
 
@@ -215,15 +219,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "切换BLF Hint"
 
-#: functions.inc.php:622
+#: functions.inc.php:647
 msgid "January"
 msgstr "一月"
 
-#: functions.inc.php:628
+#: functions.inc.php:653
 msgid "July"
 msgstr "七月"
 
-#: functions.inc.php:627
+#: functions.inc.php:652
 msgid "June"
 msgstr "六月"
 
@@ -245,11 +249,11 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:624
+#: functions.inc.php:649
 msgid "March"
 msgstr "三月"
 
-#: functions.inc.php:626
+#: functions.inc.php:651
 msgid "May"
 msgstr "五月"
 
@@ -257,23 +261,23 @@ msgstr "五月"
 msgid "Mode"
 msgstr ""
 
-#: functions.inc.php:597
+#: functions.inc.php:622
 msgid "Monday"
 msgstr "周一"
 
-#: functions.inc.php:796
+#: functions.inc.php:821
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:787
+#: functions.inc.php:812
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:814
+#: functions.inc.php:839
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:805
+#: functions.inc.php:830
 msgid "Month start"
 msgstr ""
 
@@ -298,11 +302,11 @@ msgstr ""
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:632
+#: functions.inc.php:657
 msgid "November"
 msgstr "十一月"
 
-#: functions.inc.php:631
+#: functions.inc.php:656
 msgid "October"
 msgstr "十月"
 
@@ -354,7 +358,7 @@ msgstr ""
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:602
+#: functions.inc.php:627
 msgid "Saturday"
 msgstr "周六"
 
@@ -376,7 +380,7 @@ msgstr ""
 msgid "Select the Mode for checking time conditions"
 msgstr ""
 
-#: functions.inc.php:630
+#: functions.inc.php:655
 msgid "September"
 msgstr "九月"
 
@@ -398,7 +402,7 @@ msgstr ""
 msgid "Submit"
 msgstr "提交"
 
-#: functions.inc.php:596
+#: functions.inc.php:621
 msgid "Sunday"
 msgstr "周日"
 
@@ -463,7 +467,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:600
+#: functions.inc.php:625
 msgid "Thursday"
 msgstr "周四"
 
@@ -480,7 +484,7 @@ msgstr ""
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:226
+#: functions.inc.php:21 functions.inc.php:251
 #, php-format
 msgid "Time Condition: %s"
 msgstr "时间条件设置：%s"
@@ -509,11 +513,11 @@ msgstr "时间小组"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:743
+#: functions.inc.php:768
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:756
+#: functions.inc.php:781
 msgid "Time to finish"
 msgstr ""
 
@@ -521,7 +525,7 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:598
+#: functions.inc.php:623
 msgid "Tuesday"
 msgstr "周二"
 
@@ -542,15 +546,15 @@ msgstr ""
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:599
+#: functions.inc.php:624
 msgid "Wednesday"
 msgstr "周三"
 
-#: functions.inc.php:769
+#: functions.inc.php:794
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:778
+#: functions.inc.php:803
 msgid "Week Day finish"
 msgstr ""
 
@@ -578,11 +582,19 @@ msgstr ""
 "你尚未选择一个与此时间条件设置相关的时间小组。它将发送到处理未匹配情况的目的"
 "地，直到你为它更新一个可用的小组"
 
-#: functions.inc.php:239
+#: functions.inc.php:102
+msgid "Your timecondition is linked to a non-existant calendar"
+msgstr ""
+
+#: functions.inc.php:113
+msgid "Your timecondition is linked to a non-existant calendar group"
+msgstr ""
+
+#: functions.inc.php:264
 msgid "false goto"
 msgstr ""
 
-#: functions.inc.php:231
+#: functions.inc.php:256
 msgid "true goto"
 msgstr ""
 

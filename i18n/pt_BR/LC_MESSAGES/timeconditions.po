@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-13 15:54-0700\n"
+"POT-Creation-Date: 2017-06-23 14:38-0700\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "--Select a Calendar--"
 msgstr ""
 
-#: functions.inc.php:530 views/timeconditions/advanced_form.php:263
+#: functions.inc.php:555 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
@@ -49,7 +49,7 @@ msgstr ": Substituição da Condição Horária"
 msgid "Actions"
 msgstr "Ações"
 
-#: functions.inc.php:542 assets/js/timeconditions/timeconditions.js:158
+#: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:158
 msgid "Add New Time Group..."
 msgstr "Adicionar Novo Grupo de Horário..."
 
@@ -79,11 +79,11 @@ msgstr ""
 msgid "Applications"
 msgstr "Aplicações"
 
-#: functions.inc.php:625
+#: functions.inc.php:650
 msgid "April"
 msgstr "Abril"
 
-#: functions.inc.php:629
+#: functions.inc.php:654
 msgid "August"
 msgstr "Agosto"
 
@@ -103,6 +103,10 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
+msgstr ""
+
+#: functions.inc.php:102 functions.inc.php:113
+msgid "Calendar Not found"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:248
@@ -140,7 +144,7 @@ msgstr ""
 msgid "Current"
 msgstr "Atual"
 
-#: functions.inc.php:633
+#: functions.inc.php:658
 msgid "December"
 msgstr "Dezembro"
 
@@ -190,11 +194,11 @@ msgstr "Editar Condições de Horário: %s (%s)"
 msgid "Enable Maintenance Polling"
 msgstr "Habilitar Manutenção de Apuração"
 
-#: functions.inc.php:623
+#: functions.inc.php:648
 msgid "February"
 msgstr "Fevereiro"
 
-#: functions.inc.php:601
+#: functions.inc.php:626
 msgid "Friday"
 msgstr "Sexta"
 
@@ -245,15 +249,15 @@ msgstr ""
 msgid "Invert BLF Hint"
 msgstr "Inverter Sugestão BLF"
 
-#: functions.inc.php:622
+#: functions.inc.php:647
 msgid "January"
 msgstr "Janeiro"
 
-#: functions.inc.php:628
+#: functions.inc.php:653
 msgid "July"
 msgstr "Julho"
 
-#: functions.inc.php:627
+#: functions.inc.php:652
 msgid "June"
 msgstr "Junho"
 
@@ -275,11 +279,11 @@ msgstr "Lista Grupos Horários"
 msgid "Maintenance Polling Interval"
 msgstr "Intervalo de Manutenção de Apuração"
 
-#: functions.inc.php:624
+#: functions.inc.php:649
 msgid "March"
 msgstr "Março"
 
-#: functions.inc.php:626
+#: functions.inc.php:651
 msgid "May"
 msgstr "Maio"
 
@@ -287,23 +291,23 @@ msgstr "Maio"
 msgid "Mode"
 msgstr ""
 
-#: functions.inc.php:597
+#: functions.inc.php:622
 msgid "Monday"
 msgstr "Segunda"
 
-#: functions.inc.php:796
+#: functions.inc.php:821
 msgid "Month Day finish"
 msgstr "Mês Dia final"
 
-#: functions.inc.php:787
+#: functions.inc.php:812
 msgid "Month Day start"
 msgstr "Mês Dia início"
 
-#: functions.inc.php:814
+#: functions.inc.php:839
 msgid "Month finish"
 msgstr "Mês final"
 
-#: functions.inc.php:805
+#: functions.inc.php:830
 msgid "Month start"
 msgstr "Mês início"
 
@@ -328,11 +332,11 @@ msgstr ""
 msgid "Not received"
 msgstr "Não recebido"
 
-#: functions.inc.php:632
+#: functions.inc.php:657
 msgid "November"
 msgstr "Novembro"
 
-#: functions.inc.php:631
+#: functions.inc.php:656
 msgid "October"
 msgstr "Outubro"
 
@@ -384,7 +388,7 @@ msgstr "Reiniciar"
 msgid "Reset Override"
 msgstr "Reiniciar Substituição"
 
-#: functions.inc.php:602
+#: functions.inc.php:627
 msgid "Saturday"
 msgstr "Sabado"
 
@@ -407,7 +411,7 @@ msgstr ""
 msgid "Select the Mode for checking time conditions"
 msgstr ""
 
-#: functions.inc.php:630
+#: functions.inc.php:655
 msgid "September"
 msgstr "Setembro"
 
@@ -433,7 +437,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Enviar"
 
-#: functions.inc.php:596
+#: functions.inc.php:621
 msgid "Sunday"
 msgstr "Domingo"
 
@@ -518,7 +522,7 @@ msgstr "Este grupo horário está atualmente em uso e não pode ser excluído"
 msgid "This will display as the name of this Time Group"
 msgstr "Isso será exibido como o nome deste Grupo Horário"
 
-#: functions.inc.php:600
+#: functions.inc.php:625
 msgid "Thursday"
 msgstr "Quinta"
 
@@ -535,7 +539,7 @@ msgstr "Módulo Condições Horárias"
 msgid "Time Condition name"
 msgstr "Nome da Condição Horária"
 
-#: functions.inc.php:21 functions.inc.php:226
+#: functions.inc.php:21 functions.inc.php:251
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Condição Horária: %s"
@@ -565,11 +569,11 @@ msgstr "Grupos Horários"
 msgid "Time Zone:"
 msgstr "Fuso Horário:"
 
-#: functions.inc.php:743
+#: functions.inc.php:768
 msgid "Time to Start"
 msgstr "Hora de Início"
 
-#: functions.inc.php:756
+#: functions.inc.php:781
 msgid "Time to finish"
 msgstr "Hora de Término"
 
@@ -577,7 +581,7 @@ msgstr "Hora de Término"
 msgid "Time(s)"
 msgstr "Hora(s)"
 
-#: functions.inc.php:598
+#: functions.inc.php:623
 msgid "Tuesday"
 msgstr "Terça"
 
@@ -598,15 +602,15 @@ msgstr "Estado Desconhecido"
 msgid "Use System Timezone"
 msgstr "Utilizar Fuso Horário do Sistema"
 
-#: functions.inc.php:599
+#: functions.inc.php:624
 msgid "Wednesday"
 msgstr "Quarta"
 
-#: functions.inc.php:769
+#: functions.inc.php:794
 msgid "Week Day Start"
 msgstr "Dia da Semana Início"
 
-#: functions.inc.php:778
+#: functions.inc.php:803
 msgid "Week Day finish"
 msgstr "Dia da Semana Término"
 
@@ -635,11 +639,19 @@ msgstr ""
 "Ele irá para o destino não-coincidente até você atualizá-lo com um grupo "
 "válido"
 
-#: functions.inc.php:239
+#: functions.inc.php:102
+msgid "Your timecondition is linked to a non-existant calendar"
+msgstr ""
+
+#: functions.inc.php:113
+msgid "Your timecondition is linked to a non-existant calendar group"
+msgstr ""
+
+#: functions.inc.php:264
 msgid "false goto"
 msgstr "falso vá para"
 
-#: functions.inc.php:231
+#: functions.inc.php:256
 msgid "true goto"
 msgstr "verdadeiro vá para"
 
