@@ -53,7 +53,14 @@ function timeconditions_get_config($engine) {
 	global $conferences_conf;
 	global $amp_conf;
 	global $astman;
-
+	$nt = FreePBX::Notifications();
+	$rawname = 'timeconditionscal';
+	//Cleanup... only look at "notice"
+	foreach ($nt->list_all(600) as $notification) {
+		if(isset($notification['module']) && $notification['module'] == $rawname){
+			$nt->delete($rawname,$notification['id']);
+		}
+	}
 	switch($engine) {
 		case "asterisk":
 			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
@@ -90,6 +97,10 @@ function timeconditions_get_config($engine) {
 								 $val = FreePBX::Calendar()->ext_calendar_goto($item['calendar_id'],$item['timezone'],'truestate','falsestate');
 								 $ext->add($context, $time_id, '', $val);
 							} catch (Exception $e) {
+								$uid = 'CAL-'.$item['calendar_group_id'];
+								if(!$nt->exists($rawname, $uid)) {
+									$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
+								}
 								dbug($e->getMessage());
 							}
 						} elseif($item['calendar_group_id']) {
@@ -97,6 +108,10 @@ function timeconditions_get_config($engine) {
 								$val = FreePBX::Calendar()->ext_calendar_group_goto($item['calendar_group_id'],$item['timezone'],'truestate','falsestate');
 								$ext->add($context, $time_id, '', $val);
 							} catch (Exception $e) {
+								$uid = 'CALG-'.$item['calendar_group_id'];
+								if(!$nt->exists($rawname, $uid)) {
+									$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar group"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
+								}
 								dbug($e->getMessage());
 							}
 						}
