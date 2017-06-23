@@ -86,9 +86,19 @@ function timeconditions_get_config($engine) {
 						}
 					} else {
 						if(!empty($item['calendar_id'])) {
-							$ext->add($context, $time_id, '', FreePBX::Calendar()->ext_calendar_goto($item['calendar_id'],$item['timezone'],'truestate','falsestate'));
+							try {
+								 $val = FreePBX::Calendar()->ext_calendar_goto($item['calendar_id'],$item['timezone'],'truestate','falsestate');
+								 $ext->add($context, $time_id, '', $val);
+							} catch (Exception $e) {
+								dbug($e->getMessage());
+							}
 						} elseif($item['calendar_group_id']) {
-							$ext->add($context, $time_id, '', FreePBX::Calendar()->ext_calendar_group_goto($item['calendar_group_id'],$item['timezone'],'truestate','falsestate'));
+							try {
+								$val = FreePBX::Calendar()->ext_calendar_group_goto($item['calendar_group_id'],$item['timezone'],'truestate','falsestate');
+								$ext->add($context, $time_id, '', $val);
+							} catch (Exception $e) {
+								dbug($e->getMessage());
+							}
 						}
 					}
 
