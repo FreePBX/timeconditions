@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-06 13:27-0400\n"
-"PO-Revision-Date: 2017-07-16 09:08+0200\n"
+"PO-Revision-Date: 2017-07-16 12:22+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/vi/>\n"
@@ -34,50 +34,50 @@ msgstr "--Thiết lạp một nhóm--"
 
 #: timeconditions.i18n.php:24
 msgid "1: test"
-msgstr ""
+msgstr "1: test"
 
 #: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
 msgid ": Time Condition Override"
-msgstr ""
+msgstr "Ghi đè điều kiện thời gian"
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
-msgstr ""
+msgstr "Các thao tác"
 
 #: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:123
 msgid "Add New Time Group..."
-msgstr ""
+msgstr "Thêm nhóm thời gian mới..."
 
 #: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
-msgstr ""
+msgstr "Thêm Thời gian"
 
 #: views/timeconditions/advanced_form.php:6
 #: views/timeconditions/basic_form.php:6 views/timeconditions/bootnav.php:14
 #: views/timeconditions/grid.php:9
 msgid "Add Time Condition"
-msgstr ""
+msgstr "Thêm Điều kiện thời gian"
 
 #: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
 msgid "Add Time Group"
-msgstr ""
+msgstr "Thêm nhóm Thời gian"
 
 #: views/timegroups/form.php:82
 msgid "Add a time for this time condition"
-msgstr ""
+msgstr "Thêm Thời gian cho Điều kiện thời gian này"
 
 #: timeconditions.i18n.php:6
 msgid "Applications"
-msgstr ""
+msgstr "Các ứng dụng"
 
 #: functions.inc.php:616
 msgid "April"
-msgstr ""
+msgstr "Tháng tư"
 
 #: functions.inc.php:620
 msgid "August"
-msgstr ""
+msgstr "Tháng tám"
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
@@ -86,15 +86,15 @@ msgstr ""
 #: views/timeconditions/advanced_form.php:138
 #: views/timeconditions/basic_form.php:252
 msgid "Change Override"
-msgstr ""
+msgstr "Thay đổi ghi đè"
 
 #: install.php:218
 msgid "Checking for old timeconditions to upgrade.."
-msgstr ""
+msgstr "Đang kiểm tra các điều kiện thời gian đã cũ để cập nhật.."
 
 #: Timeconditions.class.php:72
 msgid "Could not delete time group as it is in use"
-msgstr ""
+msgstr "Không thể xóa nhóm Thời gian vì nó đang được sử dụng"
 
 #: timeconditions.i18n.php:8
 msgid ""
