@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-06 13:27-0400\n"
-"PO-Revision-Date: 2017-07-16 12:22+0200\n"
+"PO-Revision-Date: 2017-07-17 09:35+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/vi/>\n"
@@ -81,7 +81,7 @@ msgstr "Tháng tám"
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
-msgstr ""
+msgstr "Không thể xóa nguyên tắc duy nhất. Yêu cầu có ít nhất 1 nguyên tắc."
 
 #: views/timeconditions/advanced_form.php:138
 #: views/timeconditions/basic_form.php:252
@@ -103,57 +103,61 @@ msgid ""
 "used for example to ring a receptionist during the day, or go directly to an "
 "IVR at night."
 msgstr ""
+"Tạo một điều kiện nơi các cuộc gọi sẽ đi đến một trong hai điểm đến (ví dụ, "
+"một máy nhánh, IVR, Nhóm đổ chuông ..) dựa trên thời gian và / hoặc ngày "
+"tháng. Điều này có thể được sử dụng ví dụ như để gọi một nhân viên tiếp tân "
+"trong ngày, hoặc đi trực tiếp đến một IVR vào ban đêm."
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
-msgstr ""
+msgstr "Hiện tại"
 
 #: functions.inc.php:624
 msgid "December"
-msgstr ""
+msgstr "Tháng mười hai"
 
 #: Timeconditions.class.php:174
 msgid "Delete"
-msgstr ""
+msgstr "Xóa"
 
 #: views/timegroups/form.php:45
 msgid "Description"
-msgstr ""
+msgstr "Mô tả"
 
 #: views/timeconditions/advanced_form.php:277
 #: views/timeconditions/basic_form.php:186
 msgid "Destination if time does not matche"
-msgstr ""
+msgstr "Điểm đích nếu thời gian không khớp"
 
 #: views/timeconditions/advanced_form.php:247
 #: views/timeconditions/basic_form.php:156
 msgid "Destination if time matches"
-msgstr ""
+msgstr "Điểm đích nếu thời gian khớp"
 
 #: views/timeconditions/advanced_form.php:229
 #: views/timeconditions/basic_form.php:138
 msgid "Destination matches"
-msgstr ""
+msgstr "Điểm đích khớp"
 
 #: views/timeconditions/advanced_form.php:259
 #: views/timeconditions/basic_form.php:168
 msgid "Destination non-matches"
-msgstr ""
+msgstr "Điểm đích không khớp"
 
 #: Timeconditions.class.php:184
 msgid "Duplicate"
-msgstr ""
+msgstr "Bản sao"
 
 #: install.php:168
 msgid "ERROR: failed to convert field "
-msgstr ""
+msgstr "LỖI: Chuyển đổi trường không thành công "
 
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
-msgstr ""
+msgstr "Chỉnh sửa Điều kiện thời gian: %s (%s)"
 
 #: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
