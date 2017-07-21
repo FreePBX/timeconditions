@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-06 13:27-0400\n"
-"PO-Revision-Date: 2017-07-20 21:42+0200\n"
+"PO-Revision-Date: 2017-07-21 09:34+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/vi/>\n"
@@ -455,6 +455,15 @@ msgid ""
 "Permanent Override which must be done here or with other applications such "
 "as an XML based phone options."
 msgstr ""
+"Điều kiện Thời gian này có thể được đặt thành là Temporarily ( Tạm thời) để "
+"đi đến đích 'tương khớp' hoặc 'không tương khớp', trong trường hợp này Ghi "
+"đè sẽ tự động đặt lại sau khi khoảng thời gian hiện tại trôi qua. Nếu đặt là "
+"Permanent (Vĩnh viễn), nó sẽ vẫn bị ghi đè cho đến khi được cài lại thủ "
+"công. Bằng tùy chọn Reset Override, mọi Ghi đè có thể được loại bỏ. "
+"Temporary Overrides (Ghi đè tạm thời) có thể được chuyển đổi bằng mã tính "
+"năng %s, và nếu được thiết lập một Permanent Override sẽ bị loại bỏ,  nhưng "
+"không thể cài đặt một Permanent Override ở đây với các ứng dụng khác chẳng "
+"hạn như các tùy chọn điện thoại dựa trên XML."
 
 #: assets/js/timegroups/timegroups.js:22
 msgid ""
@@ -497,87 +506,90 @@ msgstr "Điều kiện thời gian: %s"
 #: page.timeconditions.php:7 timeconditions.i18n.php:4
 #: timeconditions.i18n.php:10
 msgid "Time Conditions"
-msgstr ""
+msgstr "Các Điều kiện thời gian"
 
 #: views/timeconditions/advanced_form.php:200
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
 #: views/timegroups/grid.php:27
 msgid "Time Group"
-msgstr ""
+msgstr "Nhóm thời gian"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
-msgstr ""
+msgstr "Các Nhóm thời gian"
 
 #: views/timeconditions/advanced_form.php:171
 #: views/timeconditions/basic_form.php:85
 msgid "Time Zone:"
-msgstr ""
+msgstr "Múi giờ:"
 
 #: functions.inc.php:734
 msgid "Time to Start"
-msgstr ""
+msgstr "Thời gian bắt đầu"
 
 #: functions.inc.php:747
 msgid "Time to finish"
-msgstr ""
+msgstr "Thời gian kết thúc"
 
 #: views/timegroups/form.php:69
 msgid "Time(s)"
-msgstr ""
+msgstr "Time(s)"
 
 #: functions.inc.php:589
 msgid "Tuesday"
-msgstr ""
+msgstr "Thứ ba"
 
 #: views/timeconditions/advanced_form.php:143
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
-msgstr ""
+msgstr "Không thay đổi"
 
 #: views/timeconditions/advanced_form.php:39
 #: views/timeconditions/advanced_form.php:43
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"
-msgstr ""
+msgstr "Trạng thái không xác định"
 
 #: install.php:229
 #, php-format
 msgid "Upgraded %s and created group %s"
-msgstr ""
+msgstr "Đã cập nhật %s và đã tạo nhóm %s"
 
 #: views/timeconditions/advanced_form.php:176
 #: views/timeconditions/basic_form.php:90
 msgid "Use System Timezone"
-msgstr ""
+msgstr "Sử dụng múi giờ hẹ thống"
 
 #: functions.inc.php:590
 msgid "Wednesday"
-msgstr ""
+msgstr "Thứ tư"
 
 #: functions.inc.php:760
 msgid "Week Day Start"
-msgstr ""
+msgstr "Ngày bắt đầu trong tuần"
 
 #: functions.inc.php:769
 msgid "Week Day finish"
-msgstr ""
+msgstr "Ngày kết thúc trong tuần"
 
 #: views/timeconditions/advanced_form.php:115
 #: views/timeconditions/basic_form.php:229
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: assets/js/timeconditions/timeconditions.js:15
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
 msgstr ""
+"Bạn đã không chọn một nhóm thời gian liên quan tới Điều kiện thời gian này. "
+"Nó sx đi đến điểm đích không tương khớp cho đến khi bạn cập nhật nó với một "
+"nhóm hợp lệ"
 
 #: install.php:186
 msgid "already exists"
-msgstr ""
+msgstr "Đã tồn tại"
 
 #: install.php:174
 msgid "checking for generate_hint field.."
@@ -585,28 +597,28 @@ msgstr "Đang kiểm tra trường generate_hint.."
 
 #: install.php:164
 msgid "converting timeconditions time field to int.."
-msgstr ""
+msgstr "Đang chuyển đổi trường thời gian timeconditions thành int..."
 
 #: functions.inc.php:230
 msgid "false goto"
-msgstr ""
+msgstr "Đi đến sai"
 
 #: install.php:191
 msgid "generating feature codes if needed.."
-msgstr ""
+msgstr "Đang khởi tạo các mã tính năng nếu cần thiết.."
 
 #: install.php:236
 msgid "no upgrade needed"
-msgstr ""
+msgstr "Không cần thiết nâng cấp"
 
 #: install.php:223
 msgid "starting migration"
-msgstr ""
+msgstr "Đang khởi động imigration (dịch chuyển)"
 
 #: functions.inc.php:222
 msgid "true goto"
-msgstr ""
+msgstr "Đi đến đúng"
 
 #: Timeconditions.class.php:476 Timeconditions.class.php:498
 msgid "unnamed"
-msgstr ""
+msgstr "không có tên"
