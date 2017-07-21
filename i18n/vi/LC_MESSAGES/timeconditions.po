@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-06 13:27-0400\n"
-"PO-Revision-Date: 2017-07-20 18:44+0200\n"
+"PO-Revision-Date: 2017-07-20 21:42+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/timeconditions/vi/>\n"
@@ -461,36 +461,38 @@ msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
+"Phần này sẽ được xóa khỏi Nhóm thời gian và tất cả các cuộc gọi hiện tại bao "
+"gồm các thay đổi sẽ được cập nhật. Nhấn Ok để tiếp tục?"
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
-msgstr ""
+msgstr "Nhóm thời gian này hiện đang được sử dụng và không thể xóa được"
 
 #: views/timegroups/form.php:57
 msgid "This will display as the name of this Time Group"
-msgstr ""
+msgstr "Điều này sẽ được hiển thị như là một tên của Nhóm Thời gian này"
 
 #: functions.inc.php:591
 msgid "Thursday"
-msgstr ""
+msgstr "Thứ năm"
 
 #: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
-msgstr ""
+msgstr "Điều kiện thời gian"
 
 #: timeconditions.i18n.php:16
 msgid "Time Condition Module"
-msgstr ""
+msgstr "Mô đun Điều kiện thời gian"
 
 #: views/timeconditions/advanced_form.php:61
 #: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
-msgstr ""
+msgstr "Tên của Điều kiện thời gian"
 
 #: functions.inc.php:21 functions.inc.php:217
 #, php-format
 msgid "Time Condition: %s"
-msgstr ""
+msgstr "Điều kiện thời gian: %s"
 
 #: page.timeconditions.php:7 timeconditions.i18n.php:4
 #: timeconditions.i18n.php:10
