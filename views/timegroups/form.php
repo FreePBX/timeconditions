@@ -46,7 +46,7 @@ if(isset($usage) && !empty($usage)){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="description" name="description" value="<?php echo $description?>" required>
+						<input type="text" class="form-control" id="description" name="description" value="<?php echo htmlspecialchars($description)?>" required>
 					</div>
 				</div>
 			</div>
@@ -87,5 +87,5 @@ if(isset($usage) && !empty($usage)){
 </form>
 <script>
 	var timegrouplist  = '<?php echo json_encode(FreePBX::Timeconditions()->listTimegroups(true))?>';
-	var currenttimegroup = '<?php echo $description?>';
+	var currenttimegroup = '<?php echo htmlspecialchars($description,ENT_QUOTES)?>';
 </script>

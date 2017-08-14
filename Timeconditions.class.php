@@ -50,7 +50,7 @@ class Timeconditions implements \BMO {
 			case "timegroups":
 				$action= isset($request['action'])?$request['action']:null;
 				$timegroup= isset($request['extdisplay'])?$request['extdisplay']:null;
-				$description= isset($request['description'])?$request['description']:null;
+				$description= isset($request['description'])?htmlspecialchars_decode($request['description']):null;
 				$times = isset($request['times'])?$request['times']:null;
 				switch($action){
 					case 'duplicate':
@@ -280,7 +280,7 @@ class Timeconditions implements \BMO {
 			}
 		}else{
 			foreach ($results as $val) {
-				$tmparray[] = array("id" => $val[0], "description" => $val[1]);
+				$tmparray[] = array("id" => $val[0], "description" => htmlspecialchars($val[1],ENT_QUOTES));
 			}
 		}
 		return $tmparray;
