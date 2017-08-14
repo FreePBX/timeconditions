@@ -1,0 +1,624 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for timeconditions
+# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-06 13:27-0400\n"
+"PO-Revision-Date: 2017-07-21 09:37+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/timeconditions/vi/>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
+
+#: install.php:231
+#, php-format
+msgid "%sWARNING:%s No time defined for this condition, please review"
+msgstr ""
+"%sWARNING: %s Không có thời gian xác định cho điều kiện này, vui lòng kiểm "
+"tra lại"
+
+#: functions.inc.php:521
+msgid "--Select a Group--"
+msgstr "--Thiết lạp một nhóm--"
+
+#: timeconditions.i18n.php:24
+msgid "1: test"
+msgstr "1: test"
+
+#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
+msgid ": Time Condition Override"
+msgstr "Ghi đè điều kiện thời gian"
+
+#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
+#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
+msgid "Actions"
+msgstr "Các thao tác"
+
+#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:123
+msgid "Add New Time Group..."
+msgstr "Thêm nhóm thời gian mới..."
+
+#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
+msgid "Add Time"
+msgstr "Thêm Thời gian"
+
+#: views/timeconditions/advanced_form.php:6
+#: views/timeconditions/basic_form.php:6 views/timeconditions/bootnav.php:14
+#: views/timeconditions/grid.php:9
+msgid "Add Time Condition"
+msgstr "Thêm Điều kiện thời gian"
+
+#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
+msgid "Add Time Group"
+msgstr "Thêm nhóm Thời gian"
+
+#: views/timegroups/form.php:82
+msgid "Add a time for this time condition"
+msgstr "Thêm Thời gian cho Điều kiện thời gian này"
+
+#: timeconditions.i18n.php:6
+msgid "Applications"
+msgstr "Các ứng dụng"
+
+#: functions.inc.php:616
+msgid "April"
+msgstr "Tháng tư"
+
+#: functions.inc.php:620
+msgid "August"
+msgstr "Tháng tám"
+
+#: assets/js/timegroups/timegroups.js:90
+msgid "Cannot remove the only rule. At least 1 rule is required."
+msgstr "Không thể xóa nguyên tắc duy nhất. Yêu cầu có ít nhất 1 nguyên tắc."
+
+#: views/timeconditions/advanced_form.php:138
+#: views/timeconditions/basic_form.php:252
+msgid "Change Override"
+msgstr "Thay đổi ghi đè"
+
+#: install.php:218
+msgid "Checking for old timeconditions to upgrade.."
+msgstr "Đang kiểm tra các điều kiện thời gian đã cũ để cập nhật.."
+
+#: Timeconditions.class.php:72
+msgid "Could not delete time group as it is in use"
+msgstr "Không thể xóa nhóm Thời gian vì nó đang được sử dụng"
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+"Tạo một điều kiện nơi các cuộc gọi sẽ đi đến một trong hai điểm đến (ví dụ, "
+"một máy nhánh, IVR, Nhóm đổ chuông ..) dựa trên thời gian và / hoặc ngày "
+"tháng. Điều này có thể được sử dụng ví dụ như để gọi một nhân viên tiếp tân "
+"trong ngày, hoặc đi trực tiếp đến một IVR vào ban đêm."
+
+#: views/timeconditions/advanced_form.php:151
+#: views/timeconditions/basic_form.php:265
+msgid "Current"
+msgstr "Hiện tại"
+
+#: functions.inc.php:624
+msgid "December"
+msgstr "Tháng mười hai"
+
+#: Timeconditions.class.php:174
+msgid "Delete"
+msgstr "Xóa"
+
+#: views/timegroups/form.php:45
+msgid "Description"
+msgstr "Mô tả"
+
+#: views/timeconditions/advanced_form.php:277
+#: views/timeconditions/basic_form.php:186
+msgid "Destination if time does not matche"
+msgstr "Điểm đích nếu thời gian không khớp"
+
+#: views/timeconditions/advanced_form.php:247
+#: views/timeconditions/basic_form.php:156
+msgid "Destination if time matches"
+msgstr "Điểm đích nếu thời gian khớp"
+
+#: views/timeconditions/advanced_form.php:229
+#: views/timeconditions/basic_form.php:138
+msgid "Destination matches"
+msgstr "Điểm đích khớp"
+
+#: views/timeconditions/advanced_form.php:259
+#: views/timeconditions/basic_form.php:168
+msgid "Destination non-matches"
+msgstr "Điểm đích không khớp"
+
+#: Timeconditions.class.php:184
+msgid "Duplicate"
+msgstr "Bản sao"
+
+#: install.php:168
+msgid "ERROR: failed to convert field "
+msgstr "LỖI: Chuyển đổi trường không thành công "
+
+#: views/timeconditions/advanced_form.php:18
+#: views/timeconditions/basic_form.php:18
+#, php-format
+msgid "Edit Time Condition: %s (%s)"
+msgstr "Chỉnh sửa Điều kiện thời gian: %s (%s)"
+
+#: timeconditions.i18n.php:14
+msgid "Enable Maintenance Polling"
+msgstr "Kích hoạt Maintenance Polling ( Kiểm soát vòng bảo dưỡng)"
+
+#: functions.inc.php:614
+msgid "February"
+msgstr "Tháng hai"
+
+#: functions.inc.php:592
+msgid "Friday"
+msgstr "Thứ sáu"
+
+#: views/timeconditions/advanced_form.php:73
+#: views/timeconditions/basic_form.php:73
+msgid "Give this Time Condition a brief name to help you identify it."
+msgstr ""
+"Đặt cho Điều kiện thời gian này một tên ngắn gọn để giúp bạn nhận dạng nó."
+
+#: views/timeconditions/advanced_form.php:97
+#: views/timeconditions/basic_form.php:211
+msgid ""
+"If set dialing the feature code will require a pin to change the override "
+"state"
+msgstr ""
+"Nếu cài đặt quay số, mã tính năng sẽ cần một mã Pin để thay đổi trạng thái "
+"ghi đè"
+
+#: views/timeconditions/advanced_form.php:126
+#: views/timeconditions/basic_form.php:240
+#, php-format
+msgid ""
+"If set the hint will be INUSE if the time condition is matched, and "
+"NOT_INUSE if it fails"
+msgstr ""
+"Nếu được cài đặt, Gợi ý (Hint) sẽ là INUSE nếu điều kiện thời gian tương "
+"khớp, và ngược lại nếu không tương khớp thì Gợi ý sẽ là NOT_INUSE"
+
+#: timeconditions.i18n.php:18
+msgid ""
+"If set to false, this will override the execution of the Time Conditions "
+"maintenance task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+"Nếu đặt là False, điều này sẽ ghi đè lên thực thi của các tác vụ bảo dưỡng "
+"Điều kiện thời gian do các tệp cuộc gọi yêu cầu. Nếu tất cả các mã tính năng "
+"cho Điều kiện thời gian vị vô hiệu, thì dù thế nào tác vụ bảo dưỡng cũng sẽ "
+"không được thực hiện. Cài đặt về False thường không phổ biến lắm. Bạn có thể "
+"sẽ muốn cài đặt về False tạm thời nếu đang gỡ lỗi một hệ thống nhằm tránh "
+"các kế hoạch quay số theo chu kỳ đang chạy qua CLU gây mất tập trung các tác "
+"vụ bảo dưỡng đang chạy."
+
+#: views/timeconditions/advanced_form.php:109
+#: views/timeconditions/basic_form.php:223
+msgid "Invert BLF Hint"
+msgstr "Đảo ngược BLF Hint"
+
+#: functions.inc.php:613
+msgid "January"
+msgstr "Tháng một"
+
+#: functions.inc.php:619
+msgid "July"
+msgstr "Tháng bảy"
+
+#: functions.inc.php:618
+msgid "June"
+msgstr "Tháng sáu"
+
+#: views/timeconditions/grid.php:28
+msgid "Linked Time Group"
+msgstr "Nhóm thời gian đã được kết nối"
+
+#: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
+#: views/timegroups/grid.php:9
+msgid "List Time Conditions"
+msgstr "Danh sách các Điều kiện thời gian"
+
+#: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
+#: views/timegroups/bootnav.php:12
+msgid "List Time Groups"
+msgstr "Danh sách các Nhóm thời gian"
+
+#: timeconditions.i18n.php:20
+msgid "Maintenance Polling Interval"
+msgstr "Khoảng thời gian Maintenance Polling ( Kiểm soát vòng bảo dưỡng)"
+
+#: functions.inc.php:615
+msgid "March"
+msgstr "Tháng ba"
+
+#: functions.inc.php:617
+msgid "May"
+msgstr "Tháng năm"
+
+#: functions.inc.php:588
+msgid "Monday"
+msgstr "Thứ hai"
+
+#: functions.inc.php:787
+msgid "Month Day finish"
+msgstr "Ngày tháng kết thúc"
+
+#: functions.inc.php:778
+msgid "Month Day start"
+msgstr "Ngày tháng bắt đầu"
+
+#: functions.inc.php:805
+msgid "Month finish"
+msgstr "Tháng kết thúc"
+
+#: functions.inc.php:796
+msgid "Month start"
+msgstr "Tháng bắt đầu"
+
+#: views/timeconditions/advanced_form.php:117
+#: views/timeconditions/basic_form.php:231
+msgid "No"
+msgstr "Không"
+
+#: views/timeconditions/advanced_form.php:24
+#: views/timeconditions/basic_form.php:24
+#: assets/js/timeconditions/timeconditions.js:57
+msgid "No Override"
+msgstr "Không ghì đè"
+
+#: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
+msgid "Not received"
+msgstr "Không nhận được"
+
+#: functions.inc.php:623
+msgid "November"
+msgstr "Tháng mười một"
+
+#: install.php:170 install.php:184 install.php:210
+msgid "OK"
+msgstr "OK"
+
+#: functions.inc.php:622
+msgid "October"
+msgstr "Tháng mười"
+
+#: views/timeconditions/advanced_form.php:85
+#: views/timeconditions/basic_form.php:199
+msgid "Override Code Pin"
+msgstr "Ghi đè mã pin"
+
+#: views/timeconditions/grid.php:27
+msgid "Override State"
+msgstr "Ghi đè trạng thái"
+
+#: views/timeconditions/advanced_form.php:30
+#: views/timeconditions/basic_form.php:30
+msgid "Permanent Override matching state"
+msgstr "Vĩnh viễn ghi đè trạng thái tương khớp"
+
+#: views/timeconditions/advanced_form.php:36
+#: views/timeconditions/basic_form.php:36
+msgid "Permanent Override unmatching state"
+msgstr "Vĩnh viễn ghi đè trạng thái không tương khớp"
+
+#: views/timeconditions/advanced_form.php:146
+#: views/timeconditions/basic_form.php:260
+#: assets/js/timeconditions/timeconditions.js:45
+msgid "Permanently matched"
+msgstr "Tương khớp vĩnh viễn"
+
+#: views/timeconditions/advanced_form.php:148
+#: views/timeconditions/basic_form.php:262
+#: assets/js/timeconditions/timeconditions.js:48
+msgid "Permanently unmatched"
+msgstr "Không tương khớp vĩnh viễn"
+
+#: assets/js/timeconditions/timeconditions.js:14
+msgid "Please enter a valid Override Code Pin"
+msgstr "Vui lòng nhập một Mã Pin ghi đè hợp lệ"
+
+#: assets/js/timeconditions/timeconditions.js:13
+msgid "Please enter a valid Time Conditions Name"
+msgstr "Vui lòng nhập một Tên hợp lệ cho Điều kiện thời gian"
+
+#: Timeconditions.class.php:179
+msgid "Reset"
+msgstr "Cài đặt lại"
+
+#: views/timeconditions/advanced_form.php:144
+#: views/timeconditions/basic_form.php:258
+msgid "Reset Override"
+msgstr "Cài đặt lại Ghi đè"
+
+#: functions.inc.php:593
+msgid "Saturday"
+msgstr "Thứ bảy"
+
+#: assets/js/timeconditions/timeconditions.js:119
+msgid "Select a Group"
+msgstr "Chọn một Nhóm"
+
+#: views/timeconditions/advanced_form.php:212
+#: views/timeconditions/basic_form.php:126
+msgid ""
+"Select a Time Group created under Time Groups. Matching times will be sent "
+"to matching destination. If no group is selected, call will always go to no-"
+"match destination."
+msgstr ""
+"Chọn một Nhóm Thời gian được tạo bởi các Nhóm Thời gian. Các thời gian tương "
+"khớp sẽ được gửi tới điểm đích tương khớp. Nếu không có nhóm Thời gian nào "
+"được chọn, cuộc gọi sẽ luôn luôn đi đến một điểm đích không tương khớp."
+
+#: functions.inc.php:621
+msgid "September"
+msgstr "Tháng chín"
+
+#: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
+msgid "Server time:"
+msgstr "Thời gian phục vụ:"
+
+#: views/timeconditions/advanced_form.php:188
+#: views/timeconditions/basic_form.php:102
+msgid ""
+"Specify the time zone by name if the destinations are in a different time "
+"zone than the server. Type two characters to start an auto-complete pick-"
+"list. <br/><strong>Important</strong>: Your selection here <strong>MUST</"
+"strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
+msgstr ""
+"Xác định múi giờ bằng tên nếu các điểm đích nằm trong các múi giờ khác nhau. "
+"Nhập 2 ký tự để khởi động một auto-complete pick-list. "
+"<br/><strong>Important</strong>: Lựa chọn của bạn ở đây <strong>PHẢI</strong>"
+" xuất hiện trong pick-list hoặc trong /usr/share/zoneinfo/ directory."
+
+#: Timeconditions.class.php:189
+msgid "Submit"
+msgstr "Gửi đi"
+
+#: functions.inc.php:587
+msgid "Sunday"
+msgstr "Chủ nhật"
+
+#: views/timeconditions/advanced_form.php:27
+#: views/timeconditions/basic_form.php:27
+msgid "Temporary Override matching state"
+msgstr "Ghi đè trạng thái tương khớp tạm thời"
+
+#: views/timeconditions/advanced_form.php:33
+#: views/timeconditions/basic_form.php:33
+msgid "Temporary Override unmatching state"
+msgstr "Ghi đè trạng thái không tương khớp tạm thời"
+
+#: views/timeconditions/advanced_form.php:145
+#: views/timeconditions/basic_form.php:259
+#: assets/js/timeconditions/timeconditions.js:54
+msgid "Temporary matched"
+msgstr "Tương khớp tạm thời"
+
+#: views/timeconditions/advanced_form.php:147
+#: views/timeconditions/basic_form.php:261
+#: assets/js/timeconditions/timeconditions.js:51
+msgid "Temporary unmatched"
+msgstr "Không tương khớp tạm thời"
+
+#: timeconditions.i18n.php:22
+msgid ""
+"The polling interval in seconds used by the Time Conditions maintenance "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual override "
+"during such a period is properly reset when the new period starts."
+msgstr ""
+"Khoảng thời gian kiểm soát vòng tính bằng giây được sử dụng bởi tác vụ Bảo "
+"trì Thời gian, khởi chạy bởi tệp tin cuộc gọi Asterisk được sử dụng để cập "
+"nhật trạng thái Ghi đè Điều kiện Thời gian cũng như giữ các giá trị hint  "
+"trạng thái thiết bị tùy chỉnh tới thời điểm hiện tại khi được sử dụng với "
+"BLF. Một khoảng thời gian ngắn hơn đảm bảo các phím BLF sẽ chính xác. Khoảng "
+"thời gian này phải ngắn hơn khoảng thời gian ngắn nhất được cấu hình giữa "
+"hai trạng thái thời gian để ghi đè thủ công trong khoảng thời gian đó được "
+"đặt lại đúng khi bắt đầu giai đoạn mới."
+
+#: views/timeconditions/advanced_form.php:159
+#: views/timeconditions/basic_form.php:273
+#, php-format
+msgid ""
+"This Time Condition can be set to Temporarily go to the 'matched' or "
+"'unmatched' destination in which case the override will automatically reset "
+"once the current time span has elapsed. If set to Permanent it will stay "
+"overridden until manually reset. All overrides can be removed with the Reset "
+"Override option. Temporary Overrides can also be toggled with the %s feature "
+"code, which will also remove a Permanent Override if set but can not set a "
+"Permanent Override which must be done here or with other applications such "
+"as an XML based phone options."
+msgstr ""
+"Điều kiện Thời gian này có thể được đặt thành là Temporarily ( Tạm thời) để "
+"đi đến đích 'tương khớp' hoặc 'không tương khớp', trong trường hợp này Ghi "
+"đè sẽ tự động đặt lại sau khi khoảng thời gian hiện tại trôi qua. Nếu đặt là "
+"Permanent (Vĩnh viễn), nó sẽ vẫn bị ghi đè cho đến khi được cài lại thủ "
+"công. Bằng tùy chọn Reset Override, mọi Ghi đè có thể được loại bỏ. "
+"Temporary Overrides (Ghi đè tạm thời) có thể được chuyển đổi bằng mã tính "
+"năng %s, và nếu được thiết lập một Permanent Override sẽ bị loại bỏ,  nhưng "
+"không thể cài đặt một Permanent Override ở đây với các ứng dụng khác chẳng "
+"hạn như các tùy chọn điện thoại dựa trên XML."
+
+#: assets/js/timegroups/timegroups.js:22
+msgid ""
+"This section will be removed from this time group and all current settings "
+"including changes will be updated. OK to proceed?"
+msgstr ""
+"Phần này sẽ được xóa khỏi Nhóm thời gian và tất cả các cuộc gọi hiện tại bao "
+"gồm các thay đổi sẽ được cập nhật. Nhấn Ok để tiếp tục?"
+
+#: views/timegroups/form.php:25
+msgid "This time group is currently in use and cannot be deleted"
+msgstr "Nhóm thời gian này hiện đang được sử dụng và không thể xóa được"
+
+#: views/timegroups/form.php:57
+msgid "This will display as the name of this Time Group"
+msgstr "Điều này sẽ được hiển thị như là một tên của Nhóm Thời gian này"
+
+#: functions.inc.php:591
+msgid "Thursday"
+msgstr "Thứ năm"
+
+#: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
+msgid "Time Condition"
+msgstr "Điều kiện thời gian"
+
+#: timeconditions.i18n.php:16
+msgid "Time Condition Module"
+msgstr "Mô đun Điều kiện thời gian"
+
+#: views/timeconditions/advanced_form.php:61
+#: views/timeconditions/basic_form.php:61
+msgid "Time Condition name"
+msgstr "Tên của Điều kiện thời gian"
+
+#: functions.inc.php:21 functions.inc.php:217
+#, php-format
+msgid "Time Condition: %s"
+msgstr "Điều kiện thời gian: %s"
+
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
+msgid "Time Conditions"
+msgstr "Các Điều kiện thời gian"
+
+#: views/timeconditions/advanced_form.php:200
+#: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
+#: views/timegroups/grid.php:27
+msgid "Time Group"
+msgstr "Nhóm thời gian"
+
+#: page.timegroups.php:7 timeconditions.i18n.php:12
+msgid "Time Groups"
+msgstr "Các Nhóm thời gian"
+
+#: views/timeconditions/advanced_form.php:171
+#: views/timeconditions/basic_form.php:85
+msgid "Time Zone:"
+msgstr "Múi giờ:"
+
+#: functions.inc.php:734
+msgid "Time to Start"
+msgstr "Thời gian bắt đầu"
+
+#: functions.inc.php:747
+msgid "Time to finish"
+msgstr "Thời gian kết thúc"
+
+#: views/timegroups/form.php:69
+msgid "Time(s)"
+msgstr "Time(s) ( Thời gian)"
+
+#: functions.inc.php:589
+msgid "Tuesday"
+msgstr "Thứ ba"
+
+#: views/timeconditions/advanced_form.php:143
+#: views/timeconditions/basic_form.php:257
+msgid "Unchanged"
+msgstr "Không thay đổi"
+
+#: views/timeconditions/advanced_form.php:39
+#: views/timeconditions/advanced_form.php:43
+#: views/timeconditions/basic_form.php:39
+#: views/timeconditions/basic_form.php:43
+msgid "Unknown State"
+msgstr "Trạng thái không xác định"
+
+#: install.php:229
+#, php-format
+msgid "Upgraded %s and created group %s"
+msgstr "Đã cập nhật %s và đã tạo nhóm %s"
+
+#: views/timeconditions/advanced_form.php:176
+#: views/timeconditions/basic_form.php:90
+msgid "Use System Timezone"
+msgstr "Sử dụng múi giờ hẹ thống"
+
+#: functions.inc.php:590
+msgid "Wednesday"
+msgstr "Thứ tư"
+
+#: functions.inc.php:760
+msgid "Week Day Start"
+msgstr "Ngày bắt đầu trong tuần"
+
+#: functions.inc.php:769
+msgid "Week Day finish"
+msgstr "Ngày kết thúc trong tuần"
+
+#: views/timeconditions/advanced_form.php:115
+#: views/timeconditions/basic_form.php:229
+msgid "Yes"
+msgstr "Có"
+
+#: assets/js/timeconditions/timeconditions.js:15
+msgid ""
+"You have not selected a time group to associate with this timecondition. It "
+"will go to the un-matching destination until you update it with a valid group"
+msgstr ""
+"Bạn đã không chọn một nhóm thời gian liên quan tới Điều kiện thời gian này. "
+"Nó sx đi đến điểm đích không tương khớp cho đến khi bạn cập nhật nó với một "
+"nhóm hợp lệ"
+
+#: install.php:186
+msgid "already exists"
+msgstr "Đã tồn tại"
+
+#: install.php:174
+msgid "checking for generate_hint field.."
+msgstr "Đang kiểm tra trường generate_hint.."
+
+#: install.php:164
+msgid "converting timeconditions time field to int.."
+msgstr "Đang chuyển đổi trường thời gian timeconditions thành int..."
+
+#: functions.inc.php:230
+msgid "false goto"
+msgstr "false goto (Đi đến sai)"
+
+#: install.php:191
+msgid "generating feature codes if needed.."
+msgstr "Đang khởi tạo các mã tính năng nếu cần thiết.."
+
+#: install.php:236
+msgid "no upgrade needed"
+msgstr "Không cần thiết nâng cấp"
+
+#: install.php:223
+msgid "starting migration"
+msgstr "Đang khởi động imigration (dịch chuyển)"
+
+#: functions.inc.php:222
+msgid "true goto"
+msgstr "true goto (Đi đến đúng)"
+
+#: Timeconditions.class.php:476 Timeconditions.class.php:498
+msgid "unnamed"
+msgstr "không có tên"
