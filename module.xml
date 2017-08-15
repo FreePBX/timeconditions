@@ -67,8 +67,8 @@
 		<module>cel ge 13.0.18</module>
 	</depends>
 	<menuitems>
-		<timeconditions>Time Conditions</timeconditions>
-		<timegroups>Time Groups</timegroups>
+		<timeconditions needsenginedb="yes">Time Conditions</timeconditions>
+		<timegroups needsenginedb="yes">Time Groups</timegroups>
 	</menuitems>
 	<hooks>
 		<framework namespace="FreePBX\Console\Command" class="Chown">
