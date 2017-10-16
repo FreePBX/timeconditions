@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 13:27-0400\n"
+"POT-Creation-Date: 2017-10-16 13:16-0400\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -34,7 +34,15 @@ msgstr "--انتخاب یک گروه--"
 msgid "1: test"
 msgstr ""
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
+#: timeconditions.i18n.php:26
+msgid "3: test_COPY_"
+msgstr ""
+
+#: timeconditions.i18n.php:28
+msgid "4: test_COPY_"
+msgstr ""
+
+#: Timeconditions.class.php:535 Timeconditions.class.php:570 install.php:200
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -43,7 +51,7 @@ msgstr "：بازنویسی شرط زمانی"
 msgid "Actions"
 msgstr "عملیات"
 
-#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:123
+#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:131
 msgid "Add New Time Group..."
 msgstr "افزودن گروه زمانی جدید..."
 
@@ -90,7 +98,7 @@ msgstr "تغییر بازنویسی"
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "بررسی شرایط زمانی قبلی برای به روزرسانی.."
 
-#: Timeconditions.class.php:72
+#: Timeconditions.class.php:76
 msgid "Could not delete time group as it is in use"
 msgstr "نمی توان گروه زمانی درحال استفاده را حذف کرد"
 
@@ -114,7 +122,7 @@ msgstr "فعلی"
 msgid "December"
 msgstr "دسامبر"
 
-#: Timeconditions.class.php:174
+#: Timeconditions.class.php:178
 msgid "Delete"
 msgstr "حذف"
 
@@ -142,7 +150,7 @@ msgstr "مقصد تماس در صورت همخوانی"
 msgid "Destination non-matches"
 msgstr "مقصد تماس در صورت ناهمخوانی"
 
-#: Timeconditions.class.php:184
+#: Timeconditions.class.php:188
 msgid "Duplicate"
 msgstr ""
 
@@ -277,7 +285,7 @@ msgstr "خیر"
 
 #: views/timeconditions/advanced_form.php:24
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:57
+#: assets/js/timeconditions/timeconditions.js:65
 msgid "No Override"
 msgstr "بدون بازنویسی"
 
@@ -319,25 +327,25 @@ msgstr "بازنویسی وضعیت دائمی ناهمخوانی"
 
 #: views/timeconditions/advanced_form.php:146
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:45
+#: assets/js/timeconditions/timeconditions.js:53
 msgid "Permanently matched"
 msgstr "همخوانی دائمی"
 
 #: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:48
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Permanently unmatched"
 msgstr "ناهمخوانی دائمی"
 
-#: assets/js/timeconditions/timeconditions.js:14
+#: assets/js/timeconditions/timeconditions.js:22
 msgid "Please enter a valid Override Code Pin"
 msgstr "لطفا یک کلمه عبور معتبر برای بازنویسی وارد کنید"
 
-#: assets/js/timeconditions/timeconditions.js:13
+#: assets/js/timeconditions/timeconditions.js:21
 msgid "Please enter a valid Time Conditions Name"
 msgstr "لطفا یک نام معتبر برای شرایط زمانی وارد کنید"
 
-#: Timeconditions.class.php:179
+#: Timeconditions.class.php:183
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -350,7 +358,7 @@ msgstr "بازنویسی بازنشانی"
 msgid "Saturday"
 msgstr "شنبه"
 
-#: assets/js/timeconditions/timeconditions.js:119
+#: assets/js/timeconditions/timeconditions.js:127
 msgid "Select a Group"
 msgstr "یک گروه انتخاب نمایید"
 
@@ -387,7 +395,7 @@ msgstr ""
 "کامل شود. <br/><strong>مهم</strong>: انتخاب شما <strong>باید</strong> در "
 "لیست و یا در مسیر /usr/share/zoneinfo/ وجود داشته باشد."
 
-#: Timeconditions.class.php:189
+#: Timeconditions.class.php:193
 msgid "Submit"
 msgstr "ثبت"
 
@@ -407,13 +415,13 @@ msgstr "بازنویسی موقت وضعیت ناهمخوان"
 
 #: views/timeconditions/advanced_form.php:145
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:54
+#: assets/js/timeconditions/timeconditions.js:62
 msgid "Temporary matched"
 msgstr "همخوانی موقت"
 
 #: views/timeconditions/advanced_form.php:147
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:51
+#: assets/js/timeconditions/timeconditions.js:59
 msgid "Temporary unmatched"
 msgstr "ناهمخوانی موقت"
 
@@ -562,7 +570,7 @@ msgstr "روز هفته ی پایان"
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/timeconditions/timeconditions.js:15
+#: assets/js/timeconditions/timeconditions.js:23
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
@@ -602,7 +610,7 @@ msgstr "شروع پروسه مهاجرت"
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:476 Timeconditions.class.php:498
+#: Timeconditions.class.php:480 Timeconditions.class.php:506
 msgid "unnamed"
 msgstr "بدون نام"
 

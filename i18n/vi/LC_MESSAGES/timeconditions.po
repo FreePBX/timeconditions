@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 13:27-0400\n"
+"POT-Creation-Date: 2017-10-16 13:16-0400\n"
 "PO-Revision-Date: 2017-07-21 09:37+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -36,7 +36,15 @@ msgstr "--Thiết lạp một nhóm--"
 msgid "1: test"
 msgstr "1: test"
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
+#: timeconditions.i18n.php:26
+msgid "3: test_COPY_"
+msgstr ""
+
+#: timeconditions.i18n.php:28
+msgid "4: test_COPY_"
+msgstr ""
+
+#: Timeconditions.class.php:535 Timeconditions.class.php:570 install.php:200
 msgid ": Time Condition Override"
 msgstr "Ghi đè điều kiện thời gian"
 
@@ -45,7 +53,7 @@ msgstr "Ghi đè điều kiện thời gian"
 msgid "Actions"
 msgstr "Các thao tác"
 
-#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:123
+#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:131
 msgid "Add New Time Group..."
 msgstr "Thêm nhóm thời gian mới..."
 
@@ -92,7 +100,7 @@ msgstr "Thay đổi ghi đè"
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Đang kiểm tra các điều kiện thời gian đã cũ để cập nhật.."
 
-#: Timeconditions.class.php:72
+#: Timeconditions.class.php:76
 msgid "Could not delete time group as it is in use"
 msgstr "Không thể xóa nhóm Thời gian vì nó đang được sử dụng"
 
@@ -117,7 +125,7 @@ msgstr "Hiện tại"
 msgid "December"
 msgstr "Tháng mười hai"
 
-#: Timeconditions.class.php:174
+#: Timeconditions.class.php:178
 msgid "Delete"
 msgstr "Xóa"
 
@@ -145,7 +153,7 @@ msgstr "Điểm đích khớp"
 msgid "Destination non-matches"
 msgstr "Điểm đích không khớp"
 
-#: Timeconditions.class.php:184
+#: Timeconditions.class.php:188
 msgid "Duplicate"
 msgstr "Bản sao"
 
@@ -283,7 +291,7 @@ msgstr "Không"
 
 #: views/timeconditions/advanced_form.php:24
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:57
+#: assets/js/timeconditions/timeconditions.js:65
 msgid "No Override"
 msgstr "Không ghì đè"
 
@@ -325,25 +333,25 @@ msgstr "Vĩnh viễn ghi đè trạng thái không tương khớp"
 
 #: views/timeconditions/advanced_form.php:146
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:45
+#: assets/js/timeconditions/timeconditions.js:53
 msgid "Permanently matched"
 msgstr "Tương khớp vĩnh viễn"
 
 #: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:48
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Permanently unmatched"
 msgstr "Không tương khớp vĩnh viễn"
 
-#: assets/js/timeconditions/timeconditions.js:14
+#: assets/js/timeconditions/timeconditions.js:22
 msgid "Please enter a valid Override Code Pin"
 msgstr "Vui lòng nhập một Mã Pin ghi đè hợp lệ"
 
-#: assets/js/timeconditions/timeconditions.js:13
+#: assets/js/timeconditions/timeconditions.js:21
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Vui lòng nhập một Tên hợp lệ cho Điều kiện thời gian"
 
-#: Timeconditions.class.php:179
+#: Timeconditions.class.php:183
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -356,7 +364,7 @@ msgstr "Cài đặt lại Ghi đè"
 msgid "Saturday"
 msgstr "Thứ bảy"
 
-#: assets/js/timeconditions/timeconditions.js:119
+#: assets/js/timeconditions/timeconditions.js:127
 msgid "Select a Group"
 msgstr "Chọn một Nhóm"
 
@@ -393,7 +401,7 @@ msgstr ""
 "><strong>Important</strong>: Lựa chọn của bạn ở đây <strong>PHẢI</strong> "
 "xuất hiện trong pick-list hoặc trong /usr/share/zoneinfo/ directory."
 
-#: Timeconditions.class.php:189
+#: Timeconditions.class.php:193
 msgid "Submit"
 msgstr "Gửi đi"
 
@@ -413,13 +421,13 @@ msgstr "Ghi đè trạng thái không tương khớp tạm thời"
 
 #: views/timeconditions/advanced_form.php:145
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:54
+#: assets/js/timeconditions/timeconditions.js:62
 msgid "Temporary matched"
 msgstr "Tương khớp tạm thời"
 
 #: views/timeconditions/advanced_form.php:147
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:51
+#: assets/js/timeconditions/timeconditions.js:59
 msgid "Temporary unmatched"
 msgstr "Không tương khớp tạm thời"
 
@@ -578,7 +586,7 @@ msgstr "Ngày kết thúc trong tuần"
 msgid "Yes"
 msgstr "Có"
 
-#: assets/js/timeconditions/timeconditions.js:15
+#: assets/js/timeconditions/timeconditions.js:23
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
@@ -619,6 +627,6 @@ msgstr "Đang khởi động imigration (dịch chuyển)"
 msgid "true goto"
 msgstr "true goto (Đi đến đúng)"
 
-#: Timeconditions.class.php:476 Timeconditions.class.php:498
+#: Timeconditions.class.php:480 Timeconditions.class.php:506
 msgid "unnamed"
 msgstr "không có tên"

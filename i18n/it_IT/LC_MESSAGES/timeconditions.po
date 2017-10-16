@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-06 13:27-0400\n"
+"POT-Creation-Date: 2017-10-16 13:16-0400\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -32,7 +32,15 @@ msgstr "--Selezionare un Gruppo--"
 msgid "1: test"
 msgstr ""
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:562 install.php:200
+#: timeconditions.i18n.php:26
+msgid "3: test_COPY_"
+msgstr ""
+
+#: timeconditions.i18n.php:28
+msgid "4: test_COPY_"
+msgstr ""
+
+#: Timeconditions.class.php:535 Timeconditions.class.php:570 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -41,7 +49,7 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:123
+#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:131
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -88,7 +96,7 @@ msgstr ""
 msgid "Checking for old timeconditions to upgrade.."
 msgstr "Sto controllando per le vecchie condizioni temporali da aggiornare.."
 
-#: Timeconditions.class.php:72
+#: Timeconditions.class.php:76
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -109,7 +117,7 @@ msgstr ""
 msgid "December"
 msgstr "Dicembre"
 
-#: Timeconditions.class.php:174
+#: Timeconditions.class.php:178
 msgid "Delete"
 msgstr ""
 
@@ -137,7 +145,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:184
+#: Timeconditions.class.php:188
 msgid "Duplicate"
 msgstr ""
 
@@ -263,7 +271,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:24
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:57
+#: assets/js/timeconditions/timeconditions.js:65
 msgid "No Override"
 msgstr ""
 
@@ -305,25 +313,25 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:146
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:45
+#: assets/js/timeconditions/timeconditions.js:53
 msgid "Permanently matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:48
+#: assets/js/timeconditions/timeconditions.js:56
 msgid "Permanently unmatched"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:14
+#: assets/js/timeconditions/timeconditions.js:22
 msgid "Please enter a valid Override Code Pin"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:13
+#: assets/js/timeconditions/timeconditions.js:21
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Prego immettere un nome valido per questa Condizione Temporale"
 
-#: Timeconditions.class.php:179
+#: Timeconditions.class.php:183
 msgid "Reset"
 msgstr ""
 
@@ -336,7 +344,7 @@ msgstr ""
 msgid "Saturday"
 msgstr "Sabato"
 
-#: assets/js/timeconditions/timeconditions.js:119
+#: assets/js/timeconditions/timeconditions.js:127
 msgid "Select a Group"
 msgstr ""
 
@@ -370,7 +378,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:189
+#: Timeconditions.class.php:193
 msgid "Submit"
 msgstr "Conferma"
 
@@ -390,13 +398,13 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:145
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:54
+#: assets/js/timeconditions/timeconditions.js:62
 msgid "Temporary matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:147
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:51
+#: assets/js/timeconditions/timeconditions.js:59
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -536,7 +544,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:15
+#: assets/js/timeconditions/timeconditions.js:23
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
@@ -577,7 +585,7 @@ msgstr "inizio migrazione"
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:476 Timeconditions.class.php:498
+#: Timeconditions.class.php:480 Timeconditions.class.php:506
 msgid "unnamed"
 msgstr ""
 
