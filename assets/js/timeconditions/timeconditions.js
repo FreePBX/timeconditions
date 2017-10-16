@@ -9,6 +9,14 @@ if($("#idTime").length) {
 	setInterval(updateTime,1000);
 }
 
+$("#duplicate").click(function(e){
+	e.preventDefault();
+	e.stopPropagation();
+	$('input[name="action"]').val("duplicate");
+	$("#extdisplay").val("");
+	$("#edit").submit();
+});
+
 function edit_onsubmit(theForm) {
 	defaultEmptyOK = false;
 	if (!isAlphanumeric(theForm.displayname.value)) {
