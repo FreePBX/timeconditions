@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 14:38-0700\n"
+"POT-Creation-Date: 2017-10-16 10:21-0700\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: Timeconditions.class.php:528 Timeconditions.class.php:563
+#: Timeconditions.class.php:536 Timeconditions.class.php:571
 msgid ": Time Condition Override"
 msgstr ": Substituição da Condição Horária"
 
@@ -49,7 +49,7 @@ msgstr ": Substituição da Condição Horária"
 msgid "Actions"
 msgstr "Ações"
 
-#: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:158
+#: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:166
 msgid "Add New Time Group..."
 msgstr "Adicionar Novo Grupo de Horário..."
 
@@ -71,7 +71,7 @@ msgstr "Adicionar Grupo Horário"
 msgid "Add a time for this time condition"
 msgstr "Adicionar um horário para esta condição horária"
 
-#: assets/js/timeconditions/timeconditions.js:25
+#: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
 
@@ -88,12 +88,12 @@ msgid "August"
 msgstr "Agosto"
 
 #: views/timeconditions/advanced_form.php:231
-#: assets/js/timeconditions/timeconditions.js:56
+#: assets/js/timeconditions/timeconditions.js:64
 msgid "Calendar"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:258
-#: assets/js/timeconditions/timeconditions.js:58
+#: assets/js/timeconditions/timeconditions.js:66
 msgid "Calendar Group"
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Change Override"
 msgstr "Alterar Substituição"
 
-#: Timeconditions.class.php:72
+#: Timeconditions.class.php:76
 msgid "Could not delete time group as it is in use"
 msgstr "Não foi possível excluir o grupo horário pois ele está em uso"
 
@@ -148,7 +148,7 @@ msgstr "Atual"
 msgid "December"
 msgstr "Dezembro"
 
-#: Timeconditions.class.php:174
+#: Timeconditions.class.php:178
 msgid "Delete"
 msgstr "Apagar"
 
@@ -176,11 +176,11 @@ msgstr "Destino no horário"
 msgid "Destination non-matches"
 msgstr "Destino fora do horário"
 
-#: Timeconditions.class.php:184
+#: Timeconditions.class.php:188
 msgid "Duplicate"
 msgstr "Duplicar"
 
-#: assets/js/timeconditions/timeconditions.js:21
+#: assets/js/timeconditions/timeconditions.js:29
 msgid "Duplicate Time Conditions Name"
 msgstr ""
 
@@ -318,12 +318,12 @@ msgstr "Não"
 
 #: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:92
+#: assets/js/timeconditions/timeconditions.js:100
 msgid "No Override"
 msgstr "Não Substituir"
 
-#: assets/js/timeconditions/timeconditions.js:60
-#: assets/js/timeconditions/timeconditions.js:65
+#: assets/js/timeconditions/timeconditions.js:68
+#: assets/js/timeconditions/timeconditions.js:73
 msgid "Not Set"
 msgstr ""
 
@@ -361,25 +361,25 @@ msgstr "Estado de não-coincidência em Substituição Permanente"
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:80
+#: assets/js/timeconditions/timeconditions.js:88
 msgid "Permanently matched"
 msgstr "Permanentemente coincidente"
 
 #: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:83
+#: assets/js/timeconditions/timeconditions.js:91
 msgid "Permanently unmatched"
 msgstr "Permanentemente não coincidente"
 
-#: assets/js/timeconditions/timeconditions.js:31
+#: assets/js/timeconditions/timeconditions.js:39
 msgid "Please enter a valid Override Code Pin"
 msgstr "Introduza um Código Pin de Substituição válido"
 
-#: assets/js/timeconditions/timeconditions.js:15
+#: assets/js/timeconditions/timeconditions.js:23
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Por favor, introduza um Nome de Condições Horárias válido"
 
-#: Timeconditions.class.php:179
+#: Timeconditions.class.php:183
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -392,7 +392,7 @@ msgstr "Reiniciar Substituição"
 msgid "Saturday"
 msgstr "Sabado"
 
-#: assets/js/timeconditions/timeconditions.js:154
+#: assets/js/timeconditions/timeconditions.js:162
 msgid "Select a Group"
 msgstr "Selecione um Grupo"
 
@@ -433,7 +433,7 @@ msgstr ""
 "de autocompletar.<br/><strong>Importante</strong>: Sua seleção <strong>DEVE</"
 "strong>deve aparecer na lista ou no diretório /usr/share/zoneinfo/."
 
-#: Timeconditions.class.php:189
+#: Timeconditions.class.php:193
 msgid "Submit"
 msgstr "Enviar"
 
@@ -453,13 +453,13 @@ msgstr "Estado de Substituição de não-Coincidência Temporal"
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:89
+#: assets/js/timeconditions/timeconditions.js:97
 msgid "Temporary matched"
 msgstr "Temporalmente coincide"
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:86
+#: assets/js/timeconditions/timeconditions.js:94
 msgid "Temporary unmatched"
 msgstr "Temporalmente não-coincide"
 
@@ -551,7 +551,7 @@ msgstr "Condições Horárias"
 
 #: views/timeconditions/advanced_form.php:286
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:63
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:71
 msgid "Time Group"
 msgstr "Grupo de Tempo"
 
@@ -619,18 +619,18 @@ msgstr "Dia da Semana Término"
 msgid "Yes"
 msgstr "Sim"
 
-#: assets/js/timeconditions/timeconditions.js:179
+#: assets/js/timeconditions/timeconditions.js:187
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:39
+#: assets/js/timeconditions/timeconditions.js:47
 msgid ""
 "You have not selected a calendar or calendar group to associate with this "
 "timecondition. It will go to the un-matching destination until you update it "
 "with a valid calendar/group"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:35
+#: assets/js/timeconditions/timeconditions.js:43
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
@@ -655,7 +655,7 @@ msgstr "falso vá para"
 msgid "true goto"
 msgstr "verdadeiro vá para"
 
-#: Timeconditions.class.php:471 Timeconditions.class.php:496
+#: Timeconditions.class.php:475 Timeconditions.class.php:504
 msgid "unnamed"
 msgstr "sem nome"
 
