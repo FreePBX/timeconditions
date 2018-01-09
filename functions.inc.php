@@ -19,7 +19,7 @@ function timeconditions_getdestinfo($dest) {
 		} else {
 			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
 			return array('description' => sprintf(_("Time Condition: %s"),$thisexten['displayname']),
-			             'edit_url' => 'config.php?display=timeconditions&itemid='.urlencode($exten),
+			             'edit_url' => 'config.php?display=timeconditions&view=form&itemid='.urlencode($exten),
 			            );
 		}
 	} else {
