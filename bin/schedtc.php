@@ -62,6 +62,7 @@ foreach($conditions as $item){
 			}
 		}
 	} else {
+		$item['timezone'] = ($item['timezone'] !== 'default') ? $item['timezone'] : \FreePBX::View()->getTimezone();
 		$calendar->setTimezone($item['timezone']);
 		if(!empty($item['calendar_group_id'])) {
 			$timeMatch = $calendar->matchGroup($item['calendar_group_id']);
