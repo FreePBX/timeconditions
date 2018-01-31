@@ -16,6 +16,9 @@ class Timeconditions implements \BMO {
 	}
 	public function install() {
 		$this->cleanuptcmaint();
+		$sql = "DELETE FROM timegroups_details WHERE timegroupid = '0'";
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
 	}
 	public function uninstall() {}
 	public function backup() {}
@@ -228,13 +231,13 @@ class Timeconditions implements \BMO {
 				$sth = $this->db->prepare($sql);
 				$sth->execute();
 				$row = $sth->fetch(\PDO::FETCH_ASSOC);
-				$timegroupslist = $this->listTimegroups();
+				$timegroupslist = $this->listTimegroups(false, true);
 				return array("status" => true, "groups" => $timegroupslist, "last" => $row['id']);
 			break;
 			case 'getJSON':
 			switch ($request['jdata']) {
 				case 'tggrid':
-					$timegroupslist = $this->listTimegroups();
+					$timegroupslist = $this->listTimegroups(false, true);
 					$rdata = array();
 					foreach($timegroupslist as $tg){
 					$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
@@ -264,7 +267,7 @@ class Timeconditions implements \BMO {
 				return false;
 		}
 	}
-	public function listTimegroups($assoc = false){
+	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->db->prepare($sql);
@@ -275,7 +278,14 @@ class Timeconditions implements \BMO {
 		}
 		if($assoc !== true){
 			foreach ($results as $val) {
-				$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+				if ($ajrq){
+					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+				}
+				else{
+					// Used for link. Need to send index and not the label.
+					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[0]);
+				}
+				
 			}
 		}else{
 			foreach ($results as $val) {

@@ -42,7 +42,7 @@ function edit_onsubmit(theForm) {
 	if ($("#mode_legacy").is(":checked") && isEmpty($("#time").val())) {
 		return confirm(_("You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"));
 	}
-
+	
 	if ($("#mode_calendar").is(":checked") && (isEmpty($("#calendar-group").val()) && isEmpty($("#calendar-id").val()))) {
 		return confirm(_("You have not selected a calendar or calendar group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid calendar/group"));
 	}
@@ -77,7 +77,7 @@ function tcLinkedFormatter(value,row){
 function tcactionFormatter(value,row){
 	var html = '';
 	html += '<a href="?display=timeconditions&view=form&itemid='+value+'"><i class="fa fa-edit"></i></a>&nbsp;';
-	html += '<a href="?display=timegroups&view=form&extdisplay='+row.time+'"><i class="fa fa-clock-o"></i></a>&nbsp;';
+	//html += '<a href="?display=timegroups&view=form&extdisplay='+row.time+'"><i class="fa fa-clock-o"></i></a>&nbsp;';
 	html += '<a href="?display=timeconditions&action=delete&itemid='+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
