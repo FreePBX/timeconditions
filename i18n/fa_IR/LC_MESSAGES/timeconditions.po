@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-16 10:21-0700\n"
+"POT-Creation-Date: 2018-02-02 00:48-0500\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,11 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: Timeconditions.class.php:536 Timeconditions.class.php:571
+#: timeconditions.i18n.php:24
+msgid "1: Test"
+msgstr ""
+
+#: Timeconditions.class.php:546 Timeconditions.class.php:581
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -111,7 +115,7 @@ msgstr "نمی توان تنها قانون‌ موجود را حذف کرد. ح
 msgid "Change Override"
 msgstr "تغییر بازنویسی"
 
-#: Timeconditions.class.php:76
+#: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
 msgstr "نمی توان گروه زمانی درحال استفاده را حذف کرد"
 
@@ -135,7 +139,7 @@ msgstr "فعلی"
 msgid "December"
 msgstr "دسامبر"
 
-#: Timeconditions.class.php:178
+#: Timeconditions.class.php:181
 msgid "Delete"
 msgstr "حذف"
 
@@ -163,7 +167,7 @@ msgstr "مقصد تماس در صورت همخوانی"
 msgid "Destination non-matches"
 msgstr "مقصد تماس در صورت ناهمخوانی"
 
-#: Timeconditions.class.php:188
+#: Timeconditions.class.php:191
 msgid "Duplicate"
 msgstr ""
 
@@ -363,7 +367,7 @@ msgstr "لطفا یک کلمه عبور معتبر برای بازنویسی و�
 msgid "Please enter a valid Time Conditions Name"
 msgstr "لطفا یک نام معتبر برای شرایط زمانی وارد کنید"
 
-#: Timeconditions.class.php:183
+#: Timeconditions.class.php:186
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -417,7 +421,7 @@ msgstr ""
 "کامل شود. <br/><strong>مهم</strong>: انتخاب شما <strong>باید</strong> در "
 "لیست و یا در مسیر /usr/share/zoneinfo/ وجود داشته باشد."
 
-#: Timeconditions.class.php:193
+#: Timeconditions.class.php:196
 msgid "Submit"
 msgstr "ثبت"
 
@@ -626,7 +630,7 @@ msgstr "goto نادرست"
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:475 Timeconditions.class.php:504
+#: Timeconditions.class.php:485 Timeconditions.class.php:514
 msgid "unnamed"
 msgstr "بدون نام"
 
