@@ -441,7 +441,7 @@ function timeconditions_timegroups_list_usage($timegroup_id) {
 
 function timeconditions_timegroups_list_groups() {
 	_timeconditions_backtrace();
-	return \FreePBX::Timeconditions()->listTimegroups();
+	return \FreePBX::Timeconditions()->listTimegroups(false, true);
 }
 
 
