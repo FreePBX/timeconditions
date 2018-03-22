@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 14:01-0500\n"
+"POT-Creation-Date: 2018-03-22 17:26-0400\n"
 "PO-Revision-Date: 2017-03-05 23:07+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -31,6 +31,10 @@ msgstr ""
 #: functions.inc.php:521
 msgid "--Select a Group--"
 msgstr "--Sélectionnez un groupe--"
+
+#: timeconditions.i18n.php:24
+msgid "1: Test"
+msgstr ""
 
 #: Timeconditions.class.php:535 Timeconditions.class.php:570 install.php:200
 msgid ": Time Condition Override"
