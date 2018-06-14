@@ -2,32 +2,16 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>14.0.2.14</version>
+	<version>15.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
-	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<category>Applications</category>
 	<description>
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
-		*14.0.2.14* FREEPBX-17552 Wrong URL's in Used as Destination 
-		*14.0.2.13* FREEPBX-17083 
-		*14.0.2.12* FREEPBX-16710 Fix issue with the link Time Group 
-		*14.0.2.11* FREEPBX-16483 dont allow default as a timezone
-		*14.0.2.10* FREEPBX-16490 Inbound Routes -&amp;gt; Time conditions going to main page not actual time condition
-		*14.0.2.9* FREEPBX-15663 add ability to duplicate time conditions and simplify code
-		*14.0.2.8* FREEPBX-15287
-		*14.0.2.7* FREEPBX-14922 Catch exceptions on calendar calls for deleted calendars
-		*14.0.2.6* FREEPBX-14892 Able to create Duplicate Time Conditions with same Time Condition name
-		*14.0.2.5* add init array because Undefined variable
-		*14.0.2.4* FREEPBX-14892 FREEPBX-14893
-		*14.0.2.3* More debug from time groups
-		*14.0.2.2* Merge from 13
-		*14.0.2.1* Add more calendar control and let calendars modify blfs
-		*14.0.1.2* FREEPBX-13950 require calendar module
-		*14.0.1* Merge from 13
-		*14.0.1alpha1* Inital Release
+		*15.0.1* Branch to 15, add backup and restore
 	</changelog>
 	<depends>
 		<version>13.0.74</version>
@@ -80,6 +64,6 @@
 		</timeconditions>
 	</popovers>
 	<supported>
-		<version>14.0</version>
+		<version>15.0</version>
 	</supported>
 </module>

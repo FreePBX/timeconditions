@@ -77,7 +77,6 @@ function tcLinkedFormatter(value,row){
 function tcactionFormatter(value,row){
 	var html = '';
 	html += '<a href="?display=timeconditions&view=form&itemid='+value+'"><i class="fa fa-edit"></i></a>&nbsp;';
-	//html += '<a href="?display=timegroups&view=form&extdisplay='+row.time+'"><i class="fa fa-clock-o"></i></a>&nbsp;';
 	html += '<a href="?display=timeconditions&action=delete&itemid='+value+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
