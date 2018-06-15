@@ -32,7 +32,7 @@ if(isset($usage) && !empty($usage)){
 }
 ?>
 
-<form autocomplete="off" name="edit" id="edit" action="" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
+<form autocomplete="off" name="edit" id="edit" action="?display=timegroups" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
 <input type="hidden" name="display" value="timegroups">
 <input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
 <!--Description-->
