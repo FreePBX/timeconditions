@@ -135,3 +135,23 @@ function updateGroups(selectLast) {
 		}
   });
 }
+
+/* Removing self time codition entry from the destination list */
+$(document).on('change', 'select[name="goto0"], select[name="goto1"]', function() {
+        if ($("select[id^='goto0']").val() == "Time_Conditions") {
+                $("#Time_Conditions0").find('option').each(function() {
+                        if ($(this).text() == $("#displayname").val()) {
+                                $(this).remove();
+                        }
+                });
+        }
+
+        if ($("select[id^='goto1']").val() == "Time_Conditions") {
+                $("#Time_Conditions1").find('option').each(function() {
+                        if ($(this).text() == $("#displayname").val()) {
+                                $(this).remove();
+                        }
+                });
+        }
+});
+
