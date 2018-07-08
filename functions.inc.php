@@ -215,7 +215,7 @@ function timeconditions_check_destinations($dest=true) {
 		$thisdest    = $result['truegoto'];
 		$thisid      = $result['timeconditions_id'];
 		$description = sprintf(_("Time Condition: %s"),$result['displayname']);
-		$thisurl     = 'config.php?display=timeconditions&itemid='.urlencode($thisid);
+		$thisurl     = 'config.php?display=timeconditions&view=form&itemid='.urlencode($thisid);
 		if ($dest === true || $dest[0] == $thisdest) {
 			$destlist[] = array(
 				'dest' => $thisdest,
