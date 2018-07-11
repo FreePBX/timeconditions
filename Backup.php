@@ -6,7 +6,7 @@ class Backup Extends Base\BackupBase{
     $timecond = $this->FreePBX->Timeconditions();
     $configs = [
         'timeconditions' => $timecond->listTimeconditions(),
-        'timegroups' => $timecond->dumpTimegroups();
+        'timegroups' => $timecond->dumpTimegroups(),
     ];
     $this->addDependency('cel');
     $this->addDependency('calendar');
