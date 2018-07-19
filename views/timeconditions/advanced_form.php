@@ -16,6 +16,8 @@ if ($itemid){
 	$delURL = '?display=timeconditions&action=delete&itemid='.$itemid;
 	$thisItem['timezone'] = isset($thisItem['timezone'])?$thisItem['timezone']:'default';
 	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
+} else {
+	$thisItem['mode'] = 'time-group';
 }
 if ($itemid && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
@@ -42,6 +44,9 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 }else{
 	$state_msg = _('Unknown State');
 }
+
+$groups = FreePBX::Calendar()->listGroups();
+$calendars = FreePBX::Calendar()->listCalendars();
 
 ?>
 <h2><?php echo $subhead?></h2>
@@ -123,7 +128,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="invert_hint-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+			<span id="invert_hint-help" class="help-block fpbx-help-block"><?php echo _("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails")?></span>
 		</div>
 	</div>
 </div>
@@ -156,7 +161,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<span id="tcstate_new-help" class="help-block fpbx-help-block"><?php echo sprintf(_("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options."),$tcval) ?></span>
+			<span id="tcstate_new-help" class="help-block fpbx-help-block"><?php echo _("This Time Condition can be set to Temporarily go to the 'matched' or 'unmatched' destination in which case the override will automatically reset once the current time span has elapsed. If set to Permanent it will stay overridden until manually reset. All overrides can be removed with the Reset Override option. Temporary Overrides can also be toggled with the %s feature code, which will also remove a Permanent Override if set but can not set a Permanent Override which must be done here or with other applications such as an XML based phone options.") ?></span>
 		</div>
 	</div>
 </div>
@@ -190,8 +195,89 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	</div>
 </div>
 <!--END Timezone-->
-<!--Time Group-->
 <div class="element-container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="mode"><?php echo _("Mode") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="mode"></i>
+					</div>
+					<div class="col-md-9">
+						<span class="radioset">
+						<input type="radio" name="mode" id="mode_legacy" value="time-group" <?php echo ($thisItem['mode'] == "time-group"?"CHECKED":"") ?>>
+						<label for="mode_legacy"><?php echo _("Time Group Mode");?></label>
+						<input type="radio" name="mode" id="mode_calendar" value="calendar-group" <?php echo ($thisItem['mode'] == "calendar-group"?"CHECKED":"") ?>>
+						<label for="mode_calendar"><?php echo _("Calendar Mode");?></label>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="mode-help" class="help-block fpbx-help-block"><?php echo _("Select the Mode for checking time conditions")?></span>
+		</div>
+	</div>
+</div>
+<div class="element-container calendar-container <?php echo ($thisItem['mode'] == "time-group") ? 'hidden' : ''?>">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="calendar-id"><?php echo _("Calendar") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="calendar-id"></i>
+					</div>
+					<div class="col-md-9">
+						<select class="form-control" id="calendar-id" name="calendar-id">
+							<option value=""><?php echo _("--Select a Calendar--")?></option>
+							<?php foreach($calendars as $id=> $group) { ?>
+								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_id'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="calendar-id-help" class="help-block fpbx-help-block"><?php echo _("Calendar to check for time condition")?></span>
+		</div>
+	</div>
+</div>
+<div class="element-container calendar-container <?php echo ($thisItem['mode'] == "time-group") ? 'hidden' : ''?>">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label class="control-label" for="calendar-group"><?php echo _("Calendar Group") ?></label>
+						<i class="fa fa-question-circle fpbx-help-icon" data-for="calendar-group"></i>
+					</div>
+					<div class="col-md-9">
+						<select class="form-control" id="calendar-group" name="calendar-group">
+							<option value=""><?php echo _("--Select a Group--")?></option>
+							<?php foreach($groups as $id=> $group) { ?>
+								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_group_id'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<span id="calendar-group-help" class="help-block fpbx-help-block"><?php echo _("Calendar Group to check for timeconditions")?></span>
+		</div>
+	</div>
+</div>
+<!--Time Group-->
+<div class="element-container time-group-container <?php echo ($thisItem['mode'] == "time-group") ? '' : 'hidden'?>">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
@@ -280,3 +366,6 @@ echo $module_hook->hookHtml;
 </div>
 <!--END Destination non-matches-->
 </form>
+<script>
+var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid)); ?>;
+</script>

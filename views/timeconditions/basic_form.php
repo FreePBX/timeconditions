@@ -282,3 +282,6 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	?>
 </div>
 </form>
+<script>
+var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid)); ?>;
+</script>

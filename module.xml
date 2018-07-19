@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>13.0.34.10</version>
+	<version>14.0.2.14</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,64 +11,28 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
-		*13.0.34.10* FREEPBX-17552 Wrong URL's in Used as Destination 
-		*13.0.34.9* FREEPBX-17083 
-		*13.0.34.8* FREEPBX-16490 Inbound Routes -&amp;gt; Time conditions going to main page not actual time condition 
-		*13.0.34.7* FREEPBX-15663 add ability to duplicate time conditions and simplify code
-		*13.0.34.6* FREEPBX-15287
-		*13.0.34.5* add init array because Undefined variable
-		*13.0.34.4* FREEPBX-14892 Able to create Duplicate Time Conditions with same Time Condition name
-		*13.0.34.3* Add more debugging to time groups in the dialplan
-		*13.0.34.2* Tweak timezones more
-		*13.0.34.1* Fix potential bug with default timezone
-		*13.0.34* FREEPBX-12690 add view for destinations usage
-		*13.0.33.3* FREEPBX-13802 Fix for special cases
-		*13.0.33.2* FREEPBX-13609 Remove toggle all feature code as it was broken
-		*13.0.33.1* FREEPBX-13802 Time conditions BLF: Timeconditions::checkTime() failure fix
-		*13.0.33* FREEPBX-13614 Duplicate feature for time groups
-		*13.0.32.4* FREEPBX-13802 Time conditions BLF: Timeconditions::checkTime() failure
-		*13.0.32.3* FREEPBX-13416 Javascript collisions in timeconditions module
-		*13.0.32.2* FREEPBX-13334 Wrong time in TimeConditions module
-		*13.0.32.1* FREEPBX-13321 Validate the description in the front end and backend to prevent duplicates
-		*13.0.32* Fix timeconditions_edit which broke backward compatibility
-		*13.0.31* FREEPBX-12229 Fix toggle macro
-		*13.0.30* FREEPBX-11911 dont reset permanent overrides
-		*13.0.29* FREEPBX-12253 Remove all COS references
-		*13.0.28* Fix job being run on secondary HA node
-		*13.0.27.1* FREEPBX-12088 FREEPBX-12114 FREEPBX-12110
-		*13.0.26* FREEPBX-11830 Timeconditions for certain days are wrong
-		*13.0.25* FREEPBX-11793 Fix timeconditions blf updater
-		*13.0.24* FREEPBX-11784 Make sure bin dir is executable
-		*13.0.23* Slowly remove tc-maint from cel over time
-		*13.0.22* FREEPBX-11763 Feature code not working bug fix
-		*13.0.21* FREEPBX-11758 Fix broken timeconditions
-		*13.0.20* More cleanup
-		*13.0.19* Fix broken callback links
-		*13.0.18* Fix error in advanced settings add cron for scheduling tc-maint (if enabled)
-		*13.0.17* Add new time groups from time conditions, new time conditions maint script that does not use dialplan!
-		*13.0.16* FREEPBX-11605 figure out the highest number not the last number when adding an index
-		*13.0.15* FREEPBX-11344 Fix delete url on timeconditions grid
-		*13.0.14* Floating bootnav clock issues
-		*13.0.13* Use moments to accurately display time
-		*13.0.12* FREEPBX-10658 FREEPBX-10800
-		*13.0.11.1* Typo in url
-		*13.0.11* Move grid to ajax, Add slideout menu
-		*13.0.10* FREEPBX-10330 Fix adding group on update
-		*13.0.9* FREEPBX-10163 FREEPBX-10184 fix javascript for form validation.
-		*13.0.8* FREEPBX-10163 Time group with an apostrophe in its description does not get saved
-		*13.0.7* Language prompt updates
-		*13.0.6* FREEPBX-10089 fix javascript for timegroups
-		*13.0.5* FREEPBX-9823 including comments, FREEPBX-9824, Fix time formatting in timegroups, small cleanup
-		*13.0.4* FREEPBX-9702 Not possible configure days less than 10
-		*13.0.3* FREEPBX-9598 Set default timezone
-		*13.0.2* FREEPBX-9039 Remove Departments from FreePBX, Fix popover resolves FREEPBX-8993 for timeconditions
-		*13.0.1* FREEPBX-8689
-		*13.0.1alpha2* Fix toggle all feature code to set states properly.
-		*13.0.1alpha1* Visual Changes
+		*14.0.2.14* FREEPBX-17552 Wrong URL's in Used as Destination 
+		*14.0.2.13* FREEPBX-17083 
+		*14.0.2.12* FREEPBX-16710 Fix issue with the link Time Group 
+		*14.0.2.11* FREEPBX-16483 dont allow default as a timezone
+		*14.0.2.10* FREEPBX-16490 Inbound Routes -&amp;gt; Time conditions going to main page not actual time condition
+		*14.0.2.9* FREEPBX-15663 add ability to duplicate time conditions and simplify code
+		*14.0.2.8* FREEPBX-15287
+		*14.0.2.7* FREEPBX-14922 Catch exceptions on calendar calls for deleted calendars
+		*14.0.2.6* FREEPBX-14892 Able to create Duplicate Time Conditions with same Time Condition name
+		*14.0.2.5* add init array because Undefined variable
+		*14.0.2.4* FREEPBX-14892 FREEPBX-14893
+		*14.0.2.3* More debug from time groups
+		*14.0.2.2* Merge from 13
+		*14.0.2.1* Add more calendar control and let calendars modify blfs
+		*14.0.1.2* FREEPBX-13950 require calendar module
+		*14.0.1* Merge from 13
+		*14.0.1alpha1* Inital Release
 	</changelog>
 	<depends>
-		<version>13.0.191.12</version>
+		<version>13.0.74</version>
 		<module>cel ge 13.0.18</module>
+		<module>calendar ge 14.0.1alpha6</module>
 	</depends>
 	<menuitems>
 		<timeconditions needsenginedb="yes">Time Conditions</timeconditions>
@@ -79,15 +43,43 @@
 			<method namespace="FreePBX\modules" class="Timeconditions" callingMethod="fwcChownFiles">chownFreepbx</method>
 		</framework>
 	</hooks>
+	<database>
+		<table name="timeconditions">
+			<field name="timeconditions_id" type="integer" primaryKey="true" autoincrement="true"/>
+			<field name="displayname" type="string" length="50" notnull="false"/>
+			<field name="time" type="integer" notnull="false"/>
+			<field name="truegoto" type="string" length="50" notnull="false"/>
+			<field name="falsegoto" type="string" length="50" notnull="false"/>
+			<field name="deptname" type="string" length="50" notnull="false"/>
+			<field name="generate_hint" type="boolean" default="0" notnull="false"/>
+			<field name="invert_hint" type="boolean" default="0" notnull="false"/>
+			<field name="fcc_password" type="string" length="20" default="" notnull="false"/>
+			<field name="priority" type="string" length="50" notnull="false"/>
+			<field name="timezone" type="string" length="255" notnull="false"/>
+			<field name="mode" type="string" length="20" default="time-group" notnull="false"/>
+			<field name="calendar_id" type="string" length="150" notnull="false"/>
+			<field name="calendar_group_id" type="string" length="150" notnull="false"/>
+		</table>
+		<table name="timegroups_groups">
+			<field name="id" type="integer" primaryKey="true" autoincrement="true"/>
+			<field name="description" type="string" length="50" default=""/>
+			<key name="display" type="unique">
+				<column name="description"/>
+			</key>
+		</table>
+		<table name="timegroups_details">
+			<field name="id" type="integer" primaryKey="true" autoincrement="true"/>
+			<field name="timegroupid" type="integer" default="0"/>
+			<field name="time" type="string" length="100" default=""/>
+		</table>
+	</database>
 	<popovers>
 		<timeconditions>
 			<display>timeconditions</display>
 			<view>form</view>
 		</timeconditions>
 	</popovers>
-	<location>release/2.11/timeconditions-2.11.0.1.tgz</location>
-	<md5sum>45f60aacda79c8e5b17a1d48f9758c36</md5sum>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 </module>

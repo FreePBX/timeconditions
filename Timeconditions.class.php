@@ -16,6 +16,9 @@ class Timeconditions implements \BMO {
 	}
 	public function install() {
 		$this->cleanuptcmaint();
+		$sql = "DELETE FROM timegroups_details WHERE timegroupid = '0'";
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
 	}
 	public function uninstall() {}
 	public function backup() {}
@@ -228,19 +231,18 @@ class Timeconditions implements \BMO {
 				$sth = $this->db->prepare($sql);
 				$sth->execute();
 				$row = $sth->fetch(\PDO::FETCH_ASSOC);
-				$timegroupslist = $this->listTimegroups();
+				$timegroupslist = $this->listTimegroups(false, true);
 				return array("status" => true, "groups" => $timegroupslist, "last" => $row['id']);
 			break;
 			case 'getJSON':
 			switch ($request['jdata']) {
 				case 'tggrid':
-					$timegroupslist = $this->listTimegroups();
+					$timegroupslist = $this->listTimegroups(false, true);
 					$rdata = array();
 					foreach($timegroupslist as $tg){
 					$rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
 					}
 					return $rdata;
-				break;
 				case 'tcgrid':
 					$timeconditions = $this->listTimeconditions();
 					$timegroups = $this->listTimegroups();
@@ -257,19 +259,15 @@ class Timeconditions implements \BMO {
 						$timeconditions[$key]['state'] = $state;
 					}
 					return array_values($timeconditions);
-				break;
 				default:
 					return false;
-				break;
 			}
-			break;
 
 			default:
 				return false;
-			break;
 		}
 	}
-	public function listTimegroups($assoc = false){
+	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->db->prepare($sql);
@@ -280,7 +278,14 @@ class Timeconditions implements \BMO {
 		}
 		if($assoc !== true){
 			foreach ($results as $val) {
-				$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+				if ($ajrq){
+					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+				}
+				else{
+					// Used for link. Need to send index and not the label.
+					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[0]);
+				}
+				
 			}
 		}else{
 			foreach ($results as $val) {
@@ -489,8 +494,11 @@ class Timeconditions implements \BMO {
 		':fcc_password' => $post['fcc_password'],
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
+		':mode' => $post['mode'],
+		':calendar_id' => $post['calendar-id'],
+		':calendar_group_id' => $post['calendar-group']
 		);
-		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone)";
+		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar_id,calendar_group_id) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar_id, :calendar_group_id)";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($vars);
 		$id = $this->db->lastInsertId();
@@ -516,10 +524,13 @@ class Timeconditions implements \BMO {
 		':fcc_password' => $post['fcc_password'],
 		':deptname' => $post['deptname'],
 		':generate_hint' => '1',
+		':mode' => $post['mode'],
+		':calendar_id' => $post['calendar-id'],
+		':calendar_group_id' => $post['calendar-group']
 	);
 		$old = $this->getTimeCondition($id);
 
-		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone WHERE timeconditions_id = :id";
+		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone, mode = :mode, calendar_id = :calendar_id, calendar_group_id = :calendar_group_id WHERE timeconditions_id = :id";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute($vars);
 		//If invert was switched we need to update the asterisk DB
@@ -689,6 +700,7 @@ class Timeconditions implements \BMO {
 		return $this->addTimeGroup($description . '_COPY_', $times);
 	}
 
+
 	public function editTimes($id,$times){
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
 		$stmt = $this->db->prepare($sql);
@@ -813,4 +825,16 @@ class Timeconditions implements \BMO {
 		$time = $time_hour . '|' . $time_wday . '|' . $time_mday . '|' . $time_month;
 		return $time;
 	}
+
+	public function getAllTimeconditonNames($itemid) {
+		if($itemid ==NULL){
+			$sql = "SELECT displayname FROM timeconditions";
+		}
+		else{
+			$sql = "SELECT displayname FROM timeconditions WHERE timeconditions_id <> '$itemid' ";
+		}
+		$res = \FreePBX::Database()->query($sql)->fetchAll(\PDO::FETCH_COLUMN, 0);
+		return $res;
+	}
+
 }

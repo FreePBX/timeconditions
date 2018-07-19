@@ -53,7 +53,14 @@ function timeconditions_get_config($engine) {
 	global $conferences_conf;
 	global $amp_conf;
 	global $astman;
-
+	$nt = FreePBX::Notifications();
+	$rawname = 'timeconditionscal';
+	//Cleanup... only look at "notice"
+	foreach ($nt->list_all(600) as $notification) {
+		if(isset($notification['module']) && $notification['module'] == $rawname){
+			$nt->delete($rawname,$notification['id']);
+		}
+	}
 	switch($engine) {
 		case "asterisk":
 			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
@@ -68,7 +75,6 @@ function timeconditions_get_config($engine) {
 				foreach($timelist as $item) {
 					// add dialplan
 					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
-					$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
 					$time_id = $item['timeconditions_id'];
 					$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
 					$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
@@ -76,13 +82,41 @@ function timeconditions_get_config($engine) {
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
 					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
 
-					if (is_array($times)) {
-						foreach ($times as $time) {
-							$ext->add($context, $time_id, '', new ext_noop('TIMENOW: ${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
-							$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
-							$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
+					if($item['mode'] == 'time-group') {
+						$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
+						if (is_array($times)) {
+							foreach ($times as $time) {
+								$ext->add($context, $time_id, '', new ext_noop('TIMENOW: ${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
+								$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
+								$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
+							}
+						}
+					} else {
+						if(!empty($item['calendar_id'])) {
+							try {
+								 $val = FreePBX::Calendar()->ext_calendar_goto($item['calendar_id'],$item['timezone'],'truestate','falsestate');
+								 $ext->add($context, $time_id, '', $val);
+							} catch (Exception $e) {
+								$uid = 'CAL-'.$item['calendar_group_id'];
+								if(!$nt->exists($rawname, $uid)) {
+									$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
+								}
+								dbug($e->getMessage());
+							}
+						} elseif($item['calendar_group_id']) {
+							try {
+								$val = FreePBX::Calendar()->ext_calendar_group_goto($item['calendar_group_id'],$item['timezone'],'truestate','falsestate');
+								$ext->add($context, $time_id, '', $val);
+							} catch (Exception $e) {
+								$uid = 'CALG-'.$item['calendar_group_id'];
+								if(!$nt->exists($rawname, $uid)) {
+									$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar group"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
+								}
+								dbug($e->getMessage());
+							}
 						}
 					}
+
 					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
 					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
 					$skip_dest = 'falsegoto';
@@ -407,7 +441,7 @@ function timeconditions_timegroups_list_usage($timegroup_id) {
 
 function timeconditions_timegroups_list_groups() {
 	_timeconditions_backtrace();
-	return \FreePBX::Timeconditions()->listTimegroups();
+	return \FreePBX::Timeconditions()->listTimegroups(false, true);
 }
 
 

@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 17:26-0400\n"
-"PO-Revision-Date: 2017-03-05 23:07+0200\n"
-"Last-Translator: Nicolas <freepbx@riendeau.org>\n"
+"POT-Creation-Date: 2018-02-02 00:48-0500\n"
+"PO-Revision-Date: 2016-02-04 23:22+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditions/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -19,16 +19,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 2.2-dev\n"
 
-#: install.php:231
-#, php-format
-msgid "%sWARNING:%s No time defined for this condition, please review"
+#: views/timeconditions/advanced_form.php:236
+msgid "--Select a Calendar--"
 msgstr ""
-"%sAVERTISSEMENT :%s Aucune plage définie pour cette condition, s'il vous "
-"plaît vérifiez"
 
-#: functions.inc.php:521
+#: functions.inc.php:555 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
 msgstr "--Sélectionnez un groupe--"
 
@@ -36,16 +33,16 @@ msgstr "--Sélectionnez un groupe--"
 msgid "1: Test"
 msgstr ""
 
-#: Timeconditions.class.php:535 Timeconditions.class.php:570 install.php:200
+#: Timeconditions.class.php:546 Timeconditions.class.php:581
 msgid ": Time Condition Override"
-msgstr ": Dérogation aux condtions temporelles"
+msgstr ""
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr "Actions"
 
-#: functions.inc.php:533 assets/js/timeconditions/timeconditions.js:131
+#: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:166
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -67,32 +64,58 @@ msgstr ""
 msgid "Add a time for this time condition"
 msgstr ""
 
+#: assets/js/timeconditions/timeconditions.js:33
+msgid "Already exists Time Conditions Name:"
+msgstr ""
+
 #: timeconditions.i18n.php:6
 msgid "Applications"
 msgstr "Applications"
 
-#: functions.inc.php:616
+#: functions.inc.php:650
 msgid "April"
 msgstr "Avril"
 
-#: functions.inc.php:620
+#: functions.inc.php:654
 msgid "August"
 msgstr "Août"
+
+#: views/timeconditions/advanced_form.php:231
+#: assets/js/timeconditions/timeconditions.js:64
+msgid "Calendar"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:258
+#: assets/js/timeconditions/timeconditions.js:66
+msgid "Calendar Group"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:275
+msgid "Calendar Group to check for timeconditions"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:212
+msgid "Calendar Mode"
+msgstr ""
+
+#: functions.inc.php:102 functions.inc.php:113
+msgid "Calendar Not found"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:248
+msgid "Calendar to check for time condition"
+msgstr ""
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:138
+#: views/timeconditions/advanced_form.php:143
 #: views/timeconditions/basic_form.php:252
 msgid "Change Override"
 msgstr ""
 
-#: install.php:218
-msgid "Checking for old timeconditions to upgrade.."
-msgstr ""
-
-#: Timeconditions.class.php:76
+#: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -104,16 +127,16 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:151
+#: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr "Courant(e)"
 
-#: functions.inc.php:624
+#: functions.inc.php:658
 msgid "December"
 msgstr "Décembre"
 
-#: Timeconditions.class.php:178
+#: Timeconditions.class.php:181
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -121,32 +144,32 @@ msgstr "Supprimer"
 msgid "Description"
 msgstr "Description"
 
-#: views/timeconditions/advanced_form.php:277
+#: views/timeconditions/advanced_form.php:363
 #: views/timeconditions/basic_form.php:186
 msgid "Destination if time does not matche"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:247
+#: views/timeconditions/advanced_form.php:333
 #: views/timeconditions/basic_form.php:156
 msgid "Destination if time matches"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:229
+#: views/timeconditions/advanced_form.php:315
 #: views/timeconditions/basic_form.php:138
 msgid "Destination matches"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:259
+#: views/timeconditions/advanced_form.php:345
 #: views/timeconditions/basic_form.php:168
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:188
+#: Timeconditions.class.php:191
 msgid "Duplicate"
 msgstr ""
 
-#: install.php:168
-msgid "ERROR: failed to convert field "
+#: assets/js/timeconditions/timeconditions.js:29
+msgid "Duplicate Time Conditions Name"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:18
@@ -159,27 +182,27 @@ msgstr ""
 msgid "Enable Maintenance Polling"
 msgstr ""
 
-#: functions.inc.php:614
+#: functions.inc.php:648
 msgid "February"
 msgstr "Février"
 
-#: functions.inc.php:592
+#: functions.inc.php:626
 msgid "Friday"
 msgstr "Vendredi"
 
-#: views/timeconditions/advanced_form.php:73
+#: views/timeconditions/advanced_form.php:78
 #: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:97
+#: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
 msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:126
+#: views/timeconditions/advanced_form.php:131
 #: views/timeconditions/basic_form.php:240
 #, php-format
 msgid ""
@@ -197,25 +220,25 @@ msgid ""
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:109
+#: views/timeconditions/advanced_form.php:114
 #: views/timeconditions/basic_form.php:223
 msgid "Invert BLF Hint"
 msgstr ""
 
-#: functions.inc.php:613
+#: functions.inc.php:647
 msgid "January"
 msgstr "Janvier"
 
-#: functions.inc.php:619
+#: functions.inc.php:653
 msgid "July"
 msgstr "Juillet"
 
-#: functions.inc.php:618
+#: functions.inc.php:652
 msgid "June"
 msgstr "Juin"
 
 #: views/timeconditions/grid.php:28
-msgid "Linked Time Group"
+msgid "Linked Item"
 msgstr ""
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
@@ -232,43 +255,52 @@ msgstr ""
 msgid "Maintenance Polling Interval"
 msgstr ""
 
-#: functions.inc.php:615
+#: functions.inc.php:649
 msgid "March"
 msgstr "Mars"
 
-#: functions.inc.php:617
+#: functions.inc.php:651
 msgid "May"
 msgstr "Mai"
 
-#: functions.inc.php:588
+#: views/timeconditions/advanced_form.php:204
+msgid "Mode"
+msgstr ""
+
+#: functions.inc.php:622
 msgid "Monday"
 msgstr "Lundi"
 
-#: functions.inc.php:787
+#: functions.inc.php:821
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:778
+#: functions.inc.php:812
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:805
+#: functions.inc.php:839
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:796
+#: functions.inc.php:830
 msgid "Month start"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:117
+#: views/timeconditions/advanced_form.php:122
 #: views/timeconditions/basic_form.php:231
 msgid "No"
 msgstr "Non"
 
-#: views/timeconditions/advanced_form.php:24
+#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:65
+#: assets/js/timeconditions/timeconditions.js:100
 msgid "No Override"
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:68
+#: assets/js/timeconditions/timeconditions.js:73
+msgid "Not Set"
 msgstr ""
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
@@ -276,19 +308,15 @@ msgstr ""
 msgid "Not received"
 msgstr ""
 
-#: functions.inc.php:623
+#: functions.inc.php:657
 msgid "November"
 msgstr "Novembre"
 
-#: install.php:170 install.php:184 install.php:210
-msgid "OK"
-msgstr "OK"
-
-#: functions.inc.php:622
+#: functions.inc.php:656
 msgid "October"
 msgstr "Octobre"
 
-#: views/timeconditions/advanced_form.php:85
+#: views/timeconditions/advanced_form.php:90
 #: views/timeconditions/basic_form.php:199
 msgid "Override Code Pin"
 msgstr ""
@@ -297,54 +325,54 @@ msgstr ""
 msgid "Override State"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:30
+#: views/timeconditions/advanced_form.php:32
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:36
+#: views/timeconditions/advanced_form.php:38
 #: views/timeconditions/basic_form.php:36
 msgid "Permanent Override unmatching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:146
+#: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:53
+#: assets/js/timeconditions/timeconditions.js:88
 msgid "Permanently matched"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:148
+#: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:56
+#: assets/js/timeconditions/timeconditions.js:91
 msgid "Permanently unmatched"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:22
+#: assets/js/timeconditions/timeconditions.js:39
 msgid "Please enter a valid Override Code Pin"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:21
+#: assets/js/timeconditions/timeconditions.js:23
 msgid "Please enter a valid Time Conditions Name"
 msgstr ""
 
-#: Timeconditions.class.php:183
+#: Timeconditions.class.php:186
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: views/timeconditions/advanced_form.php:144
+#: views/timeconditions/advanced_form.php:149
 #: views/timeconditions/basic_form.php:258
 msgid "Reset Override"
 msgstr ""
 
-#: functions.inc.php:593
+#: functions.inc.php:627
 msgid "Saturday"
 msgstr "Samedi"
 
-#: assets/js/timeconditions/timeconditions.js:127
+#: assets/js/timeconditions/timeconditions.js:162
 msgid "Select a Group"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:212
+#: views/timeconditions/advanced_form.php:298
 #: views/timeconditions/basic_form.php:126
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
@@ -352,7 +380,11 @@ msgid ""
 "match destination."
 msgstr ""
 
-#: functions.inc.php:621
+#: views/timeconditions/advanced_form.php:221
+msgid "Select the Mode for checking time conditions"
+msgstr ""
+
+#: functions.inc.php:655
 msgid "September"
 msgstr "Septembre"
 
@@ -361,7 +393,7 @@ msgstr "Septembre"
 msgid "Server time:"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:188
+#: views/timeconditions/advanced_form.php:193
 #: views/timeconditions/basic_form.php:102
 msgid ""
 "Specify the time zone by name if the destinations are in a different time "
@@ -370,33 +402,33 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:193
+#: Timeconditions.class.php:196
 msgid "Submit"
 msgstr "Soumettre"
 
-#: functions.inc.php:587
+#: functions.inc.php:621
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: views/timeconditions/advanced_form.php:27
+#: views/timeconditions/advanced_form.php:29
 #: views/timeconditions/basic_form.php:27
 msgid "Temporary Override matching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:33
+#: views/timeconditions/advanced_form.php:35
 #: views/timeconditions/basic_form.php:33
 msgid "Temporary Override unmatching state"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:145
+#: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:62
+#: assets/js/timeconditions/timeconditions.js:97
 msgid "Temporary matched"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:147
+#: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:59
+#: assets/js/timeconditions/timeconditions.js:94
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -411,7 +443,7 @@ msgid ""
 "during such a period is properly reset when the new period starts."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:159
+#: views/timeconditions/advanced_form.php:164
 #: views/timeconditions/basic_form.php:273
 #, php-format
 msgid ""
@@ -439,7 +471,7 @@ msgstr ""
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
-#: functions.inc.php:591
+#: functions.inc.php:625
 msgid "Thursday"
 msgstr "Jeudi"
 
@@ -451,12 +483,12 @@ msgstr ""
 msgid "Time Condition Module"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:61
+#: views/timeconditions/advanced_form.php:66
 #: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
 msgstr ""
 
-#: functions.inc.php:21 functions.inc.php:217
+#: functions.inc.php:21 functions.inc.php:251
 #, php-format
 msgid "Time Condition: %s"
 msgstr ""
@@ -466,26 +498,30 @@ msgstr ""
 msgid "Time Conditions"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:200
+#: views/timeconditions/advanced_form.php:286
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:71
 msgid "Time Group"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:210
+msgid "Time Group Mode"
 msgstr ""
 
 #: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:171
+#: views/timeconditions/advanced_form.php:176
 #: views/timeconditions/basic_form.php:85
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:734
+#: functions.inc.php:768
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:747
+#: functions.inc.php:781
 msgid "Time to finish"
 msgstr ""
 
@@ -493,90 +529,94 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: functions.inc.php:589
+#: functions.inc.php:623
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: views/timeconditions/advanced_form.php:143
+#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "Inchangé"
 
-#: views/timeconditions/advanced_form.php:39
-#: views/timeconditions/advanced_form.php:43
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"
 msgstr "État inconnu"
 
-#: install.php:229
-#, php-format
-msgid "Upgraded %s and created group %s"
-msgstr ""
-
-#: views/timeconditions/advanced_form.php:176
+#: views/timeconditions/advanced_form.php:181
 #: views/timeconditions/basic_form.php:90
 msgid "Use System Timezone"
 msgstr ""
 
-#: functions.inc.php:590
+#: functions.inc.php:624
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: functions.inc.php:760
+#: functions.inc.php:794
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:769
+#: functions.inc.php:803
 msgid "Week Day finish"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:115
+#: views/timeconditions/advanced_form.php:120
 #: views/timeconditions/basic_form.php:229
 msgid "Yes"
 msgstr "Oui"
 
-#: assets/js/timeconditions/timeconditions.js:23
+#: assets/js/timeconditions/timeconditions.js:187
+msgid "You cant set both a group and a calendar"
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:47
+msgid ""
+"You have not selected a calendar or calendar group to associate with this "
+"timecondition. It will go to the un-matching destination until you update it "
+"with a valid calendar/group"
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:43
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
 msgstr ""
 
-#: install.php:186
-msgid "already exists"
-msgstr "existe déjà"
-
-#: install.php:174
-msgid "checking for generate_hint field.."
+#: functions.inc.php:102
+msgid "Your timecondition is linked to a non-existant calendar"
 msgstr ""
 
-#: install.php:164
-msgid "converting timeconditions time field to int.."
+#: functions.inc.php:113
+msgid "Your timecondition is linked to a non-existant calendar group"
 msgstr ""
 
-#: functions.inc.php:230
+#: functions.inc.php:264
 msgid "false goto"
 msgstr ""
 
-#: install.php:191
-msgid "generating feature codes if needed.."
-msgstr ""
-
-#: install.php:236
-msgid "no upgrade needed"
-msgstr ""
-
-#: install.php:223
-msgid "starting migration"
-msgstr "début de la migration"
-
-#: functions.inc.php:222
+#: functions.inc.php:256
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:480 Timeconditions.class.php:506
+#: Timeconditions.class.php:485 Timeconditions.class.php:514
 msgid "unnamed"
 msgstr ""
 
 #~ msgid "Edit: "
 #~ msgstr "Éditer : "
+
+#~ msgid "%sWARNING:%s No time defined for this condition, please review"
+#~ msgstr ""
+#~ "%sAVERTISSEMENT :%s Aucune plage définie pour cette condition, s'il vous "
+#~ "plaît vérifiez"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "already exists"
+#~ msgstr "existe déjà"
+
+#~ msgid "starting migration"
+#~ msgstr "début de la migration"
