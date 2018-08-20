@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 14:35-0400\n"
+"POT-Creation-Date: 2018-08-20 14:00-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,8 +31,8 @@ msgstr ""
 msgid "1: Test"
 msgstr ""
 
-#: Timeconditions.class.php:546
-#: Timeconditions.class.php:581
+#: Timeconditions.class.php:525
+#: Timeconditions.class.php:560
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -44,7 +44,7 @@ msgid "Actions"
 msgstr ""
 
 #: functions.inc.php:567
-#: assets/js/timeconditions/timeconditions.js:166
+#: assets/js/timeconditions/timeconditions.js:165
 msgid "Add New Time Group..."
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Change Override"
 msgstr ""
 
-#: Timeconditions.class.php:79
+#: Timeconditions.class.php:75
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: Timeconditions.class.php:181
+#: Timeconditions.class.php:161
 msgid "Delete"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:191
+#: Timeconditions.class.php:171
 msgid "Duplicate"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:100
+#: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr ""
 
@@ -347,13 +347,13 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:88
+#: assets/js/timeconditions/timeconditions.js:87
 msgid "Permanently matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:153
 #: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:91
+#: assets/js/timeconditions/timeconditions.js:90
 msgid "Permanently unmatched"
 msgstr ""
 
@@ -365,7 +365,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr ""
 
-#: Timeconditions.class.php:186
+#: Timeconditions.class.php:166
 msgid "Reset"
 msgstr ""
 
@@ -378,7 +378,7 @@ msgstr ""
 msgid "Saturday"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:162
+#: assets/js/timeconditions/timeconditions.js:161
 msgid "Select a Group"
 msgstr ""
 
@@ -414,7 +414,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:196
+#: Timeconditions.class.php:176
 msgid "Submit"
 msgstr ""
 
@@ -434,13 +434,13 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:97
+#: assets/js/timeconditions/timeconditions.js:96
 msgid "Temporary matched"
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:94
+#: assets/js/timeconditions/timeconditions.js:93
 msgid "Temporary unmatched"
 msgstr ""
 
@@ -585,7 +585,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:187
+#: assets/js/timeconditions/timeconditions.js:186
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
@@ -618,7 +618,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:485
-#: Timeconditions.class.php:514
+#: Timeconditions.class.php:464
+#: Timeconditions.class.php:493
 msgid "unnamed"
 msgstr ""
