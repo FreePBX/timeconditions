@@ -19,7 +19,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function install() {
 		$this->cleanuptcmaint();
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = '0'";
-		$sth = $this->FreePBX->Database->prepare($sql);
+		$sth = $this->Database->prepare($sql);
 		$sth->execute();
 	}
 	public function uninstall() {}
@@ -205,7 +205,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		switch ($_REQUEST['command']) {
 			case 'getGroups':
 				$sql = 'SELECT id FROM timegroups_groups order by id desc limit 1';
-				$sth = $this->FreePBX->Database->prepare($sql);
+				$sth = $this->Database->prepare($sql);
 				$sth->execute();
 				$row = $sth->fetch(PDO::FETCH_ASSOC);
 				$timegroupslist = $this->listTimegroups(false, true);
@@ -247,7 +247,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute();
 		$results = $stmt->fetchall();
 		if(!$results) {
@@ -274,13 +274,13 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
     
 	public function dumpTimegroups(){
 		$sql = "SELECT * FROM timegroups_groups ORDER BY description";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchall(PDO::FETCH_ASSOC);
 	}
 	public function listTimeconditions($getall=false) {
 		$sql = "SELECT * FROM timeconditions ORDER BY priority ASC";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute();
 		$results = $stmt->fetchall(PDO::FETCH_ASSOC);
 		if(is_array($results)){
@@ -478,9 +478,9 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		':calendar_group_id' => $post['calendar-group']
 		);
 		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar_id,calendar_group_id) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar_id, :calendar_group_id)";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute($vars);
-		$id = $this->FreePBX->Database->lastInsertId();
+		$id = $this->Database->lastInsertId();
 		$this->createFeatureCode($id, $displayname);
 		$this->FreePBX->Hooks->processHooks(array('id' => $id, 'post' => $post));
 		return $id;
@@ -510,7 +510,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$old = $this->getTimeCondition($id);
 
 		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone, mode = :mode, calendar_id = :calendar_id, calendar_group_id = :calendar_group_id WHERE timeconditions_id = :id";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute($vars);
 		//If invert was switched we need to update the asterisk DB
 		$post['tcstate_new'] = (($old['invert_hint'] != $invert_hint) && $post['tcstate_new'] === 'unchanged') ? $this->getState($id) : $post['tcstate_new'];
@@ -531,7 +531,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 	public function getTimeCondition($id){
 		$sql = "SELECT * FROM timeconditions WHERE timeconditions_id = :id LIMIT 1";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute(array(':id' => $id));
 		$results = $stmt->fetch();
 		$fcc = new \featurecode('timeconditions', 'toggle-mode-'.$id);
@@ -616,7 +616,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 	public function delTimeCondition($id){
 		$sql = "DELETE FROM timeconditions WHERE timeconditions_id = :id";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$fcc = new \featurecode('timeconditions', 'toggle-mode-'.$id);
 		$fcc->delete();
 		unset($fcc);
@@ -628,7 +628,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 	public function addTimeGroup($description, $times=null){
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		try {
 			$stmt->execute(array(':description' => $description));
 		} catch (PDOException $e) {
@@ -639,7 +639,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 					throw $e;
 			}
 		}
-		$timegroup = $this->FreePBX->Database->lastInsertId();
+		$timegroup = $this->Database->lastInsertId();
 		if (isset($times)) {
 			$this->editTimes($timegroup,$times);
 		}
@@ -649,7 +649,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 	public function editTimeGroup($id,$description){
 		$sql = "UPDATE timegroups_groups SET description = :description WHERE id = :id";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$ret = $stmt->execute(array(':description' => $description, ':id' => $id));
 		$this->FreePBX->Hooks->processHooks($id);
 		needreload();
@@ -657,17 +657,17 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 	public function getTimeGroup($timegroup) {
 		$sql = "SELECT id, description FROM timegroups_groups WHERE id = :id LIMIT 1";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute(array(':id' => $timegroup));
 		$results = $stmt->fetch();
 		return array($results[0], $results[1]);
 	}
 	public function delTimeGroup($id){
 		$sql = "delete from timegroups_details where timegroupid = :id";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$ret1 = $stmt->execute(array(':id'=>$id));
 		$sql = "delete from timegroups_groups where id = :id";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$ret2 = $stmt->execute(array(':id'=>$id));
 		needreload();
 		$this->FreePBX->Hooks->processHooks($id);
@@ -681,11 +681,11 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 	public function editTimes($id,$times){
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		$stmt->execute(array(':id' => $id));
 		$times = is_array($times)?$times:array();
 		$sql = "INSERT timegroups_details (timegroupid, time) VALUES (:id, :time)";
-		$stmt = $this->FreePBX->Database->prepare($sql);
+		$stmt = $this->Database->prepare($sql);
 		foreach ($times as $key=>$val) {
 			extract($val);
 			$time = $this->buildTime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
@@ -810,7 +810,17 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		else{
 			$sql = "SELECT displayname FROM timeconditions WHERE timeconditions_id <> '$itemid' ";
 		}
-		return $this->FreePBX->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
+		return $this->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
+	}
+
+	public function setDatabase($pdo){
+		$this->Database = $pdo;	
+		return $this;
+	}
+	
+	public function resetDatabase(){
+		$this->Database = $this->FreePBX->Database;
+		return $this;
 	}
 
 }

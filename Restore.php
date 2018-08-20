@@ -12,4 +12,25 @@ class Restore Extends Base\RestoreBase{
         $timecond->addTimecondition($condition);
     }
   }
+  
+  public function processLegacy($pdo, $data, $tables, $unknownTables, $tmpfiledir){
+    $tables = array_flip($tables+$unknownTables);
+    if(!isset(tables['timeconditions'])){
+      return $this;
+    }
+    $bmo = $this->FreePBX->Timeconditions;
+    $bmo->setDatabase($pdo);
+    $configs = [
+      'timeconditions' => $timecond->listTimeconditions(),
+      'timegroups' => $timecond->dumpTimegroups(),
+    ];
+    $bmo->resetDatabase();
+    foreach ($configs['timegroups'] as $timegroup) {
+      $bmo->addTimeGroup($timegroup['description'], $timegroup['times']);
+    }
+    foreach ($configs['timeconditions'] as $condition) {
+      $bmo->addTimecondition($condition);
+    }
+    return $this;
+  }
 }
