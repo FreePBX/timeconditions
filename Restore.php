@@ -21,8 +21,8 @@ class Restore Extends Base\RestoreBase{
     $bmo = $this->FreePBX->Timeconditions;
     $bmo->setDatabase($pdo);
     $configs = [
-      'timeconditions' => $timecond->listTimeconditions(),
-      'timegroups' => $timecond->dumpTimegroups(),
+      'timeconditions' => $bmo->listTimeconditions(),
+      'timegroups' => $bmo->dumpTimegroups(),
     ];
     $bmo->resetDatabase();
     foreach ($configs['timegroups'] as $timegroup) {
