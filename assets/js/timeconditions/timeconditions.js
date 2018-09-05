@@ -23,7 +23,7 @@ function edit_onsubmit(theForm) {
 		return warnInvalid(theForm.displayname, _("Please enter a valid Time Conditions Name"));
 	}
 	if (TimeConditionNames.indexOf(theForm.displayname.value) >= 0) {
-		// check the condition for EDIT from 
+		// check the condition for EDIT from
 		if(typeof theForm.itemid === 'undefined'){
 			//Its a new one
 			return warnInvalid(theForm.displayname, _("Duplicate Time Conditions Name"));
@@ -42,7 +42,7 @@ function edit_onsubmit(theForm) {
 	if ($("#mode_legacy").is(":checked") && isEmpty($("#time").val())) {
 		return confirm(_("You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"));
 	}
-	
+
 	if ($("#mode_calendar").is(":checked") && (isEmpty($("#calendar-group").val()) && isEmpty($("#calendar-id").val()))) {
 		return confirm(_("You have not selected a calendar or calendar group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid calendar/group"));
 	}
@@ -185,4 +185,22 @@ $("#calendar-id, #calendar-group").change(function() {
 		$(this).val("");
 		warnInvalid($(this),_("You cant set both a group and a calendar"));
 	}
+});
+/* Removing self time codition entry from the destination list */
+$(document).on('change', 'select[name="goto0"], select[name="goto1"]', function() {
+        if ($("select[id^='goto0']").val() == "Time_Conditions") {
+                $("#Time_Conditions0").find('option').each(function() {
+                        if ($(this).text() == $("#displayname").val()) {
+                                $(this).remove();
+                        }
+                });
+        }
+
+        if ($("select[id^='goto1']").val() == "Time_Conditions") {
+                $("#Time_Conditions1").find('option').each(function() {
+                        if ($(this).text() == $("#displayname").val()) {
+                                $(this).remove();
+                        }
+                });
+        }
 });
