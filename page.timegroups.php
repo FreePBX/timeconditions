@@ -5,6 +5,7 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 $dispnum = "timegroups"; //used for switch on config.php
 $heading = _("Time Groups");
+$request = $_REQUEST;
 $freepbx = FreePBX::Create();
 switch ($_GET['view']) {
 	case 'form':
