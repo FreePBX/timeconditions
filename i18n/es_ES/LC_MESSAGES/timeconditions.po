@@ -10,6 +10,10 @@ msgstr ""
 msgid "1: Test"
 msgstr ""
 
+#: timeconditions.i18n.php:26
+msgid "2: sdfd"
+msgstr ""
+
 #: Timeconditions.class.php:525 Timeconditions.class.php:560
 msgid ": Time Condition Override"
 msgstr ""

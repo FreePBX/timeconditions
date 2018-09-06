@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:00-0400\n"
+"POT-Creation-Date: 2018-09-06 19:08-0400\n"
 "PO-Revision-Date: 2016-02-04 23:22+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -31,6 +31,10 @@ msgstr "--Sélectionnez un groupe--"
 
 #: timeconditions.i18n.php:24
 msgid "1: Test"
+msgstr ""
+
+#: timeconditions.i18n.php:26
+msgid "2: sdfd"
 msgstr ""
 
 #: Timeconditions.class.php:525 Timeconditions.class.php:560

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:00-0400\n"
+"POT-Creation-Date: 2018-09-06 19:08-0400\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -42,6 +42,10 @@ msgstr "--Selecionar Grupo--"
 
 #: timeconditions.i18n.php:24
 msgid "1: Test"
+msgstr ""
+
+#: timeconditions.i18n.php:26
+msgid "2: sdfd"
 msgstr ""
 
 #: Timeconditions.class.php:525 Timeconditions.class.php:560

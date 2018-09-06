@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:00-0400\n"
+"POT-Creation-Date: 2018-09-06 19:08-0400\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -29,6 +29,10 @@ msgstr "--选择一个小组--"
 
 #: timeconditions.i18n.php:24
 msgid "1: Test"
+msgstr ""
+
+#: timeconditions.i18n.php:26
+msgid "2: sdfd"
 msgstr ""
 
 #: Timeconditions.class.php:525 Timeconditions.class.php:560
