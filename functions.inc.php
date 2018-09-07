@@ -17,7 +17,6 @@ function timeconditions_getdestinfo($dest) {
 		if (empty($thisexten)) {
 			return array();
 		} else {
-			//$type = isset($active_modules['announcement']['type'])?$active_modules['announcement']['type']:'setup';
 			return array('description' => sprintf(_("Time Condition: %s"),$thisexten['displayname']),
 			             'edit_url' => 'config.php?display=timeconditions&view=form&itemid='.urlencode($exten),
 			            );
@@ -61,172 +60,169 @@ function timeconditions_get_config($engine) {
 			$nt->delete($rawname,$notification['id']);
 		}
 	}
-	switch($engine) {
-		case "asterisk":
-			$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
-			$timelist = timeconditions_list(true);
 
-			if(is_array($timelist)) {
-				$context = 'timeconditions';
-				$fc_context = 'timeconditions-toggles';
-				$got_code_autoreset = false;
-				$need_maint = false;
+	$DEVSTATE = $amp_conf['AST_FUNC_DEVICE_STATE'];
+	$timelist = timeconditions_list(true);
 
-				foreach($timelist as $item) {
-					// add dialplan
-					// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
-					$time_id = $item['timeconditions_id'];
-					$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
-					$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
+	if(is_array($timelist)) {
+		$context = 'timeconditions';
+		$fc_context = 'timeconditions-toggles';
+		$got_code_autoreset = false;
+		$need_maint = false;
 
-					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
-					$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
+		foreach($timelist as $item) {
+			// add dialplan
+			// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
+			$time_id = $item['timeconditions_id'];
+			$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
+			$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
 
-					if($item['mode'] == 'time-group') {
-						$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
-						if (is_array($times)) {
-							foreach ($times as $time) {
-								$ext->add($context, $time_id, '', new ext_noop('TIMENOW: ${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
-								$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
-								$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
-							}
-						}
-					} else {
-						if(!empty($item['calendar_id'])) {
-							try {
-								 $val = FreePBX::Calendar()->ext_calendar_goto($item['calendar_id'],$item['timezone'],'truestate','falsestate');
-								 $ext->add($context, $time_id, '', $val);
-							} catch (Exception $e) {
-								$uid = 'CAL-'.$item['calendar_group_id'];
-								if(!$nt->exists($rawname, $uid)) {
-									$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
-								}
-								dbug($e->getMessage());
-							}
-						} elseif($item['calendar_group_id']) {
-							try {
-								$val = FreePBX::Calendar()->ext_calendar_group_goto($item['calendar_group_id'],$item['timezone'],'truestate','falsestate');
-								$ext->add($context, $time_id, '', $val);
-							} catch (Exception $e) {
-								$uid = 'CALG-'.$item['calendar_group_id'];
-								if(!$nt->exists($rawname, $uid)) {
-									$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar group"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
-								}
-								dbug($e->getMessage());
-							}
-						}
-					}
+			$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
+			$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
 
-					$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
-					$skip_dest = 'falsegoto';
-					//Formerly part of USEDEVSTATE
-					//Modifications by namezero111111 follow (FREEPBX-6415)
-					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"NOT_INUSE":"INUSE"));
-					//End USEDEVSTATE case
-					//end modifications by namezero111111
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.(($invert_hint)?"NOT_INUSE":"INUSE")));
-					$ext->add($context, $time_id, '', new ext_gotoif('$["${TCRETURN}"!="RETURN"]',$item['falsegoto']));
-					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
-					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:5}" = "false"]?true:false)}'));
-					$ext->add($context, $time_id, '', new ext_return(''));
-
-					$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
-					$skip_dest = 'truegoto';
-					//Formerly part of USEDEVSTATE
-					//Modifications by namezero111111 follow (FREEPBX-6415)
-					$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"INUSE":"NOT_INUSE"));
-					//End USEDEVSTATE case
-					//end modifications by namezero111111
-					$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.(($invert_hint)?"NOT_INUSE":"INUSE")));
-					$ext->add($context, $time_id, '', new ext_gotoif('$["${TCRETURN}"!="RETURN"]',$item['truegoto']));
-					$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
-					$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:4}" = "true"]?true:false)}'));
-					$ext->add($context, $time_id, '', new ext_return(''));
-
-					$fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
-					$c = $fcc->getCodeActive();
-					unset($fcc);
-					if ($c != '') {
-						$got_code_autoreset = true;
-						//Formerly part of USEDEVSTATE
-						$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
-						//End USEDEVSTATE
-						//Modifications by namezero111111 follow (FREEPBX-6415)
-						$fcccode_macro_call = (!empty($fcc_password)) ? ','.$fcc_password:'';
-						$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
-						$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id.$fcccode_macro_call));
-						//end modifications by namezero111111
-						$ext->add($fc_context, $c, '', new ext_hangup());
-
-						// If using hints then we want to keep the current, if not, then we only need to update if it is
-						// currently overridden
-						//
-						// If there are no times then this is purely manual and does not need to be updated
-						//
-						if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
-							$need_maint = true;
-						}
-
+			if($item['mode'] == 'time-group') {
+				$times = timeconditions_timegroups_get_times($item['time'],null,$item['timeconditions_id']);
+				if (is_array($times)) {
+					foreach ($times as $time) {
+						$ext->add($context, $time_id, '', new ext_noop('TIMENOW: ${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
+						$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
+						$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
 					}
 				}
-
-				if ($got_code_autoreset) {
-					$ext->add($fc_context, 'h', '', new ext_hangup());
-
-					$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
-					$m_context = 'macro-toggle-tc';
-					// for i18n playback in multiple languages
-					$ext->add($m_context, 'lang-playback', '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$m_context.',${CHANNEL(language)})}]', $m_context.',${CHANNEL(language)},${ARG1}', $m_context.',en,${ARG1}'));
-					$ext->add($m_context, 'lang-playback', '', new ext_return());
-
-					$ext->add($m_context, 's', '', new ext_gotoif('$[${ARG2} > 0]', 'hasauth','toggle'));
-					$ext->add($m_context, 's', 'hasauth', new ext_authenticate('${ARG2}'));
-
-
-					$ext->add($m_context, 's', 'toggle', new ext_setvar('INDEXES', '${ARG1}'));
-					$ext->add($m_context, 's', '', new ext_setvar('TCRETURN','RETURN'));
-					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
-
-					$ext->add($m_context, 's', '', new ext_set("TCINUSE",'${DB(TC/${ARG1}/INUSESTATE)}'));
-					$ext->add($m_context, 's', '', new ext_set("TCNOTINUSE",'${DB(TC/${ARG1}/NOT_INUSESTATE)}'));
-
-					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
-					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
-					$ext->add($m_context, 's', 'begin1', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
-
-					$ext->add($m_context, 's', '', new ext_gosub('1', '${INDEX}', $context));
-					$ext->add($m_context, 's', '', new ext_setvar('TCSTATE_${INDEX}', '${TCSTATE}'));
-					$ext->add($m_context, 's', '', new ext_execif('$["${TCOVERRIDE}" = "true"]','Set','OVERRIDE=true'));
-
-					$ext->add($m_context, 's', 'end1', new ext_setvar('ITER', '$[${ITER} + 1]'));
-					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin1'));
-
-					$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
-					$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
-					$ext->add($m_context, 's', 'begin2', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
-
-					$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${OVERRIDE}" = "true"]?:${IF($["${TCSTATE_${INDEX}}" == "true"]?false:true)})}'));
-					$ext->add($m_context, 's', '', new ext_gosub('1', '${INDEX}', $context));
-
-					$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
-					$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
-
-					if ($amp_conf['FCBEEPONLY']) {
-						$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
-					} else {
-						$ext->add($m_context, 's', 'playback', new ext_gosub('1', 'lang-playback', $m_context, 'hook_0'));
+			} else {
+				if(!empty($item['calendar_id'])) {
+					try {
+							$val = FreePBX::Calendar()->ext_calendar_goto($item['calendar_id'],$item['timezone'],'truestate','falsestate');
+							$ext->add($context, $time_id, '', $val);
+					} catch (Exception $e) {
+						$uid = 'CAL-'.$item['calendar_group_id'];
+						if(!$nt->exists($rawname, $uid)) {
+							$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
+						}
+						dbug($e->getMessage());
 					}
-					$lang = 'en'; //English
-					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
-					$lang = 'ja'; //Japanese
-					$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+				} elseif($item['calendar_group_id']) {
+					try {
+						$val = FreePBX::Calendar()->ext_calendar_group_goto($item['calendar_group_id'],$item['timezone'],'truestate','falsestate');
+						$ext->add($context, $time_id, '', $val);
+					} catch (Exception $e) {
+						$uid = 'CALG-'.$item['calendar_group_id'];
+						if(!$nt->exists($rawname, $uid)) {
+							$nt->add_notice($rawname, $uid, _("Calendar Not found"), _("Your timecondition is linked to a non-existant calendar group"), '?display=timeconditions&view=form&itemid='.$item['timeconditions_id'], true, false);
+						}
+						dbug($e->getMessage());
+					}
 				}
-
-				\FreePBX::Timeconditions()->updateCron();
 			}
-		break;
+
+			$ext->add($context, $time_id, 'falsestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:4}" = "true"]','truegoto'));
+			$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false"]','Set',"DB(TC/$time_id)="));
+			$skip_dest = 'falsegoto';
+			//Formerly part of USEDEVSTATE
+			//Modifications by namezero111111 follow (FREEPBX-6415)
+			$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"NOT_INUSE":"INUSE"));
+			//End USEDEVSTATE case
+			//end modifications by namezero111111
+			$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "false_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.(($invert_hint)?"NOT_INUSE":"INUSE")));
+			$ext->add($context, $time_id, '', new ext_gotoif('$["${TCRETURN}"!="RETURN"]',$item['falsegoto']));
+			$ext->add($context, $time_id, '', new ext_set("TCSTATE",'false'));
+			$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:5}" = "false"]?true:false)}'));
+			$ext->add($context, $time_id, '', new ext_return(''));
+
+			$ext->add($context, $time_id, 'truestate', new ext_gotoif('$["${DB(TC/'.$time_id.'):0:5}" = "false"]','falsegoto'));
+			$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true"]','Set',"DB(TC/$time_id)="));
+			$skip_dest = 'truegoto';
+			//Formerly part of USEDEVSTATE
+			//Modifications by namezero111111 follow (FREEPBX-6415)
+			$ext->add($context, $time_id, $skip_dest, new ext_set("$DEVSTATE(Custom:TC$time_id)",($invert_hint)?"INUSE":"NOT_INUSE"));
+			//End USEDEVSTATE case
+			//end modifications by namezero111111
+			$ext->add($context, $time_id, '', new ext_execif('$["${DB(TC/'.$time_id.')}" = "true_sticky"]','Set',$DEVSTATE.'(Custom:TCSTICKY${ARG1})='.(($invert_hint)?"NOT_INUSE":"INUSE")));
+			$ext->add($context, $time_id, '', new ext_gotoif('$["${TCRETURN}"!="RETURN"]',$item['truegoto']));
+			$ext->add($context, $time_id, '', new ext_set("TCSTATE",'true'));
+			$ext->add($context, $time_id, '', new ext_set("TCOVERRIDE",'${IF($["${DB(TC/'.$time_id.'):0:4}" = "true"]?true:false)}'));
+			$ext->add($context, $time_id, '', new ext_return(''));
+
+			$fcc = new featurecode('timeconditions', 'toggle-mode-'.$time_id);
+			$c = $fcc->getCodeActive();
+			unset($fcc);
+			if ($c != '') {
+				$got_code_autoreset = true;
+				//Formerly part of USEDEVSTATE
+				$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
+				//End USEDEVSTATE
+				//Modifications by namezero111111 follow (FREEPBX-6415)
+				$fcccode_macro_call = (!empty($fcc_password)) ? ','.$fcc_password:'';
+				$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
+				$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id.$fcccode_macro_call));
+				//end modifications by namezero111111
+				$ext->add($fc_context, $c, '', new ext_hangup());
+
+				// If using hints then we want to keep the current, if not, then we only need to update if it is
+				// currently overridden
+				//
+				// If there are no times then this is purely manual and does not need to be updated
+				//
+				if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
+					$need_maint = true;
+				}
+
+			}
+		}
+
+		if ($got_code_autoreset) {
+			$ext->add($fc_context, 'h', '', new ext_hangup());
+
+			$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
+			$m_context = 'macro-toggle-tc';
+			// for i18n playback in multiple languages
+			$ext->add($m_context, 'lang-playback', '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$m_context.',${CHANNEL(language)})}]', $m_context.',${CHANNEL(language)},${ARG1}', $m_context.',en,${ARG1}'));
+			$ext->add($m_context, 'lang-playback', '', new ext_return());
+
+			$ext->add($m_context, 's', '', new ext_gotoif('$[${ARG2} > 0]', 'hasauth','toggle'));
+			$ext->add($m_context, 's', 'hasauth', new ext_authenticate('${ARG2}'));
+
+
+			$ext->add($m_context, 's', 'toggle', new ext_setvar('INDEXES', '${ARG1}'));
+			$ext->add($m_context, 's', '', new ext_setvar('TCRETURN','RETURN'));
+			$ext->add($m_context, 's', '', new ext_setvar('TCSTATE', 'false'));
+
+			$ext->add($m_context, 's', '', new ext_set("TCINUSE",'${DB(TC/${ARG1}/INUSESTATE)}'));
+			$ext->add($m_context, 's', '', new ext_set("TCNOTINUSE",'${DB(TC/${ARG1}/NOT_INUSESTATE)}'));
+
+			$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
+			$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
+			$ext->add($m_context, 's', 'begin1', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
+
+			$ext->add($m_context, 's', '', new ext_gosub('1', '${INDEX}', $context));
+			$ext->add($m_context, 's', '', new ext_setvar('TCSTATE_${INDEX}', '${TCSTATE}'));
+			$ext->add($m_context, 's', '', new ext_execif('$["${TCOVERRIDE}" = "true"]','Set','OVERRIDE=true'));
+
+			$ext->add($m_context, 's', 'end1', new ext_setvar('ITER', '$[${ITER} + 1]'));
+			$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin1'));
+
+			$ext->add($m_context, 's', '', new ext_setvar('LOOPCNT', '${FIELDQTY(INDEXES,&)}'));
+			$ext->add($m_context, 's', '', new ext_setvar('ITER', '1'));
+			$ext->add($m_context, 's', 'begin2', new ext_setvar('INDEX', '${CUT(INDEXES,&,${ITER})}'));
+
+			$ext->add($m_context, 's', '', new ext_set('DB(TC/${INDEX})', '${IF($["${OVERRIDE}" = "true"]?:${IF($["${TCSTATE_${INDEX}}" == "true"]?false:true)})}'));
+			$ext->add($m_context, 's', '', new ext_gosub('1', '${INDEX}', $context));
+
+			$ext->add($m_context, 's', 'end2', new ext_setvar('ITER', '$[${ITER} + 1]'));
+			$ext->add($m_context, 's', '', new ext_gotoif('$[${ITER} <= ${LOOPCNT}]', 'begin2'));
+
+			if ($amp_conf['FCBEEPONLY']) {
+				$ext->add($m_context, 's', 'playback', new ext_playback('beep'));
+			} else {
+				$ext->add($m_context, 's', 'playback', new ext_gosub('1', 'lang-playback', $m_context, 'hook_0'));
+			}
+			$lang = 'en'; //English
+			$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+			$lang = 'ja'; //Japanese
+			$ext->add($m_context, $lang, 'hook_0', new ext_playback('beep&silence/1&time-change&${IF($["${TCSTATE}" = "true"]?de-activated:activated)}'));
+		}
+
+		\FreePBX::Timeconditions()->updateCron();
 	}
 }
 

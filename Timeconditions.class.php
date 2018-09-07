@@ -153,7 +153,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 	public function getActionBar($request) {
         $buttons = [];
-        if($request['display'] === 'timeconditions' || $request['timegroups']){
+        if($request['display'] === 'timeconditions' || $request['display'] === 'timegroups'){
             $buttons = [
                 'delete' => [
                     'name' => 'delete',
