@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-04 23:27-0400\n"
-"PO-Revision-Date: 2018-08-25 12:00+0000\n"
+"PO-Revision-Date: 2018-10-17 13:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
 "Language: de_DE\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:236
 msgid "--Select a Calendar--"
-msgstr ""
+msgstr "--Wählen Sie einen Kalender--"
 
 #: functions.inc.php:555 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
@@ -65,7 +65,7 @@ msgstr "Fügen Sie eine Zeit für diese Zeitbedingung hinzu"
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
-msgstr ""
+msgstr "Dieser Name für die Zeitbedingung existiert bereits:"
 
 #: timeconditions.i18n.php:6
 msgid "Applications"
@@ -82,28 +82,28 @@ msgstr "August"
 #: views/timeconditions/advanced_form.php:231
 #: assets/js/timeconditions/timeconditions.js:64
 msgid "Calendar"
-msgstr ""
+msgstr "Kalender"
 
 #: views/timeconditions/advanced_form.php:258
 #: assets/js/timeconditions/timeconditions.js:66
 msgid "Calendar Group"
-msgstr ""
+msgstr "Kalendergruppe"
 
 #: views/timeconditions/advanced_form.php:275
 msgid "Calendar Group to check for timeconditions"
-msgstr ""
+msgstr "Kalendergruppe in der nach Zeitbedingungen gesucht werden soll"
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
-msgstr ""
+msgstr "Kalendermodus"
 
 #: functions.inc.php:102 functions.inc.php:113
 msgid "Calendar Not found"
-msgstr ""
+msgstr "Kalender nicht gefunden"
 
 #: views/timeconditions/advanced_form.php:248
 msgid "Calendar to check for time condition"
-msgstr ""
+msgstr "Kalender mit dem die Zeitbedingung überprüft werden soll"
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
@@ -127,6 +127,10 @@ msgid ""
 "used for example to ring a receptionist during the day, or go directly to an "
 "IVR at night."
 msgstr ""
+"Erzeugt eine Bedingung, die Anrufe abhängig von Uhrzeit und/oder Datum zu "
+"einem von zwei Zielen (z.B. eine Nebenstelle, IVR oder Rufgruppe) "
+"durchstellt. Dies kann beispielsweise verwendet werden, um tagsüber einen "
+"Rezeptionisten anzurufen und nachts direkt auf ein IVR zu schalten."
 
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
@@ -167,11 +171,11 @@ msgstr "Ziel bei Nichtübereinsimmung"
 
 #: Timeconditions.class.php:191
 msgid "Duplicate"
-msgstr ""
+msgstr "Doppelt"
 
 #: assets/js/timeconditions/timeconditions.js:29
 msgid "Duplicate Time Conditions Name"
-msgstr ""
+msgstr "Doppelter Name für die Zeitbedingung"
 
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
@@ -181,7 +185,7 @@ msgstr "Zeitbedingung bearbeiten: %s (%s)"
 
 #: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
-msgstr ""
+msgstr "Wartungsabruf aktivieren"
 
 #: functions.inc.php:648
 msgid "February"
@@ -214,6 +218,8 @@ msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
+"Wird dies gesetzt, wir der Hinweis „INUSE“ melden, falls die Zeitbedingung "
+"zutrifft und „NOT_INUSE“, falls nicht"
 
 #: timeconditions.i18n.php:18
 msgid ""
@@ -244,7 +250,7 @@ msgstr "Juni"
 
 #: views/timeconditions/grid.php:28
 msgid "Linked Item"
-msgstr ""
+msgstr "Verknüpftes Element"
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
 #: views/timegroups/grid.php:9
@@ -258,7 +264,7 @@ msgstr "Zeitgruppen auflisten"
 
 #: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
-msgstr ""
+msgstr "Intervall für den Wartungsabruf"
 
 #: functions.inc.php:649
 msgid "March"
@@ -270,7 +276,7 @@ msgstr "Mai"
 
 #: views/timeconditions/advanced_form.php:204
 msgid "Mode"
-msgstr ""
+msgstr "Modus"
 
 #: functions.inc.php:622
 msgid "Monday"
@@ -306,7 +312,7 @@ msgstr "Keine Überbrückung"
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
 msgid "Not Set"
-msgstr ""
+msgstr "Nicht gesetzt"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
 #: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
@@ -391,7 +397,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:221
 msgid "Select the Mode for checking time conditions"
-msgstr ""
+msgstr "Wählen Sie den Modus für die Überprüfung von Zeitbedingungen"
 
 #: functions.inc.php:655
 msgid "September"
@@ -485,6 +491,9 @@ msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
+"Dieser Abschnitt wird aus dieser Zeitgruppe entfernt und alle aktuellen "
+"Einstellungen einschließlich Änderungen werden aktualisiert. OK, um "
+"fortzufahren?"
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
@@ -505,7 +514,7 @@ msgstr "Zeitbedingung"
 
 #: timeconditions.i18n.php:16
 msgid "Time Condition Module"
-msgstr ""
+msgstr "Modul für Zeitbedingungen"
 
 #: views/timeconditions/advanced_form.php:66
 #: views/timeconditions/basic_form.php:61
@@ -530,7 +539,7 @@ msgstr "Zeitgruppe"
 
 #: views/timeconditions/advanced_form.php:210
 msgid "Time Group Mode"
-msgstr ""
+msgstr "Zeitgruppen-Modus"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
@@ -543,11 +552,11 @@ msgstr "Zeitzone:"
 
 #: functions.inc.php:768
 msgid "Time to Start"
-msgstr ""
+msgstr "Startzeit"
 
 #: functions.inc.php:781
 msgid "Time to finish"
-msgstr ""
+msgstr "Endzeit"
 
 #: views/timegroups/form.php:69
 msgid "Time(s)"
@@ -593,7 +602,7 @@ msgstr "Ja"
 
 #: assets/js/timeconditions/timeconditions.js:187
 msgid "You cant set both a group and a calendar"
-msgstr ""
+msgstr "Sie können sowohl eine Gruppe als auch einen Kalender einstellen"
 
 #: assets/js/timeconditions/timeconditions.js:47
 msgid ""
@@ -601,20 +610,27 @@ msgid ""
 "timecondition. It will go to the un-matching destination until you update it "
 "with a valid calendar/group"
 msgstr ""
+"Sie haben weder einen Kalender noch eine Kalendergruppe für diese "
+"Zeitbedingung angegeben. Bis Sie eine/n gültige/n Kalender/Gruppe angeben, "
+"wird auf das „Ziel bei Nicht-Übereinstimmung“ geschaltet"
 
 #: assets/js/timeconditions/timeconditions.js:43
 msgid ""
 "You have not selected a time group to associate with this timecondition. It "
 "will go to the un-matching destination until you update it with a valid group"
 msgstr ""
+"Sie haben keine Zeitgruppe für diese Zeitbedingung angegeben. Bis Sie eine "
+"gültige Gruppe angeben, wird auf das „Ziel bei Nicht-Übereinstimmung“ "
+"geschaltet"
 
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
-msgstr ""
+msgstr "Ihre Zeitbedingung ist mit einem nicht-existenten Kalender verknüpft"
 
 #: functions.inc.php:113
 msgid "Your timecondition is linked to a non-existant calendar group"
 msgstr ""
+"Ihre Zeitbedingung ist mit einer nicht-existenten Kalendergruppe verknüpft"
 
 #: functions.inc.php:264
 msgid "false goto"
