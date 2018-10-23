@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-04 23:27-0400\n"
-"PO-Revision-Date: 2018-10-19 14:00+0000\n"
+"PO-Revision-Date: 2018-10-24 13:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
 "Language: de_DE\n"
@@ -284,19 +284,19 @@ msgstr "Montag"
 
 #: functions.inc.php:821
 msgid "Month Day finish"
-msgstr ""
+msgstr "Endet an Monatstag"
 
 #: functions.inc.php:812
 msgid "Month Day start"
-msgstr ""
+msgstr "Beginnt an Monatstag"
 
 #: functions.inc.php:839
 msgid "Month finish"
-msgstr ""
+msgstr "Endet an Monat"
 
 #: functions.inc.php:830
 msgid "Month start"
-msgstr ""
+msgstr "Beginnt an Monat"
 
 #: views/timeconditions/advanced_form.php:122
 #: views/timeconditions/basic_form.php:231
@@ -339,12 +339,12 @@ msgstr "Status der Überbrückung"
 #: views/timeconditions/advanced_form.php:32
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
-msgstr ""
+msgstr "Dauerhafte Überbrückung: Bedingung trifft zu"
 
 #: views/timeconditions/advanced_form.php:38
 #: views/timeconditions/basic_form.php:36
 msgid "Permanent Override unmatching state"
-msgstr ""
+msgstr "Dauerhafte Überbrückung: Bedingung trifft nicht zu"
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
@@ -433,12 +433,12 @@ msgstr "Sonntag"
 #: views/timeconditions/advanced_form.php:29
 #: views/timeconditions/basic_form.php:27
 msgid "Temporary Override matching state"
-msgstr ""
+msgstr "Vorübergehende Überbrückung: Bedingung trifft zu"
 
 #: views/timeconditions/advanced_form.php:35
 #: views/timeconditions/basic_form.php:33
 msgid "Temporary Override unmatching state"
-msgstr ""
+msgstr "Vorübergehende Überbrückung: Bedingung trifft nicht zu"
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
@@ -589,11 +589,11 @@ msgstr "Mittwoch"
 
 #: functions.inc.php:794
 msgid "Week Day Start"
-msgstr ""
+msgstr "Beginnt an Wochentag"
 
 #: functions.inc.php:803
 msgid "Week Day finish"
-msgstr ""
+msgstr "Endet an Wochentag"
 
 #: views/timeconditions/advanced_form.php:120
 #: views/timeconditions/basic_form.php:229
