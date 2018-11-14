@@ -374,8 +374,16 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		}
 
 		$match = false;
-		list($hour, $dow, $dom, $month, $tz) = explode("|", $time);
-
+		$result = explode("|", $time);
+		$hour = $result[0];
+		$dow = $result[1];
+		$dom = $result[2];
+		$month = $result[3];
+		if (isset($result[4])) {
+			$tz = $result[4];
+		} else {
+			$tz = '*';
+		}
 		// Ensure valid time zone
 		if($tz==='*' || !in_array($tz, timezone_identifiers_list())) {
 			$dtnow = new DateTime(); //use system timezone
