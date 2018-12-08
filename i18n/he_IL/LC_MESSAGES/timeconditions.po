@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-02 00:48-0500\n"
+"POT-Creation-Date: 2018-12-07 19:08-0500\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -27,11 +27,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: Timeconditions.class.php:546 Timeconditions.class.php:581
+#: Timeconditions.class.php:561 Timeconditions.class.php:596
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 
@@ -134,7 +130,7 @@ msgstr ""
 msgid "December"
 msgstr "דצמבר"
 
-#: Timeconditions.class.php:181
+#: Timeconditions.class.php:188
 msgid "Delete"
 msgstr ""
 
@@ -162,7 +158,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:191
+#: Timeconditions.class.php:198
 msgid "Duplicate"
 msgstr ""
 
@@ -353,7 +349,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "נא הזן שם לתנאי הזמן"
 
-#: Timeconditions.class.php:186
+#: Timeconditions.class.php:193
 msgid "Reset"
 msgstr ""
 
@@ -400,7 +396,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:196
+#: Timeconditions.class.php:203
 msgid "Submit"
 msgstr "החל שינויים"
 
@@ -598,7 +594,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:485 Timeconditions.class.php:514
+#: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr ""
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-04 23:27-0400\n"
+"POT-Creation-Date: 2018-12-07 19:08-0500\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -28,11 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr "1: Тест"
-
-#: Timeconditions.class.php:546 Timeconditions.class.php:581
+#: Timeconditions.class.php:561 Timeconditions.class.php:596
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -141,7 +137,7 @@ msgstr "Текущ"
 msgid "December"
 msgstr "Декември"
 
-#: Timeconditions.class.php:181
+#: Timeconditions.class.php:188
 msgid "Delete"
 msgstr "Изтрий"
 
@@ -169,7 +165,7 @@ msgstr "Направленията съвпадат"
 msgid "Destination non-matches"
 msgstr "Направленията не съвпадат"
 
-#: Timeconditions.class.php:191
+#: Timeconditions.class.php:198
 msgid "Duplicate"
 msgstr "Дублирай"
 
@@ -373,7 +369,7 @@ msgstr "Моля въведете валиден Код за Отмяна"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Моля въведете правилно Име на Времево Условие"
 
-#: Timeconditions.class.php:186
+#: Timeconditions.class.php:193
 msgid "Reset"
 msgstr "Изчисти"
 
@@ -428,7 +424,7 @@ msgstr ""
 "<strong>ТРЯБВА</strong> да се показва в падащото меню или в директорията /"
 "usr/share/zoneinfo/ ."
 
-#: Timeconditions.class.php:196
+#: Timeconditions.class.php:203
 msgid "Submit"
 msgstr "Приеми"
 
@@ -647,9 +643,12 @@ msgstr "невярно goto"
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:485 Timeconditions.class.php:514
+#: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr "без име"
+
+#~ msgid "1: Test"
+#~ msgstr "1: Тест"
 
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
 #~ msgstr ""

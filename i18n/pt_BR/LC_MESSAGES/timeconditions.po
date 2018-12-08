@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-02 00:48-0500\n"
+"POT-Creation-Date: 2018-12-07 19:08-0500\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -40,11 +40,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: Timeconditions.class.php:546 Timeconditions.class.php:581
+#: Timeconditions.class.php:561 Timeconditions.class.php:596
 msgid ": Time Condition Override"
 msgstr ": Substituição da Condição Horária"
 
@@ -152,7 +148,7 @@ msgstr "Atual"
 msgid "December"
 msgstr "Dezembro"
 
-#: Timeconditions.class.php:181
+#: Timeconditions.class.php:188
 msgid "Delete"
 msgstr "Apagar"
 
@@ -180,7 +176,7 @@ msgstr "Destino no horário"
 msgid "Destination non-matches"
 msgstr "Destino fora do horário"
 
-#: Timeconditions.class.php:191
+#: Timeconditions.class.php:198
 msgid "Duplicate"
 msgstr "Duplicar"
 
@@ -383,7 +379,7 @@ msgstr "Introduza um Código Pin de Substituição válido"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Por favor, introduza um Nome de Condições Horárias válido"
 
-#: Timeconditions.class.php:186
+#: Timeconditions.class.php:193
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -437,7 +433,7 @@ msgstr ""
 "de autocompletar.<br/><strong>Importante</strong>: Sua seleção <strong>DEVE</"
 "strong>deve aparecer na lista ou no diretório /usr/share/zoneinfo/."
 
-#: Timeconditions.class.php:196
+#: Timeconditions.class.php:203
 msgid "Submit"
 msgstr "Enviar"
 
@@ -659,7 +655,7 @@ msgstr "falso vá para"
 msgid "true goto"
 msgstr "verdadeiro vá para"
 
-#: Timeconditions.class.php:485 Timeconditions.class.php:514
+#: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr "sem nome"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-04 23:27-0400\n"
+"POT-Creation-Date: 2018-12-07 19:08-0500\n"
 "PO-Revision-Date: 2018-10-24 13:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -28,11 +28,7 @@ msgstr "--Wählen Sie einen Kalender--"
 msgid "--Select a Group--"
 msgstr "--Wählen Sie eine Gruppe aus--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr "1: Test"
-
-#: Timeconditions.class.php:546 Timeconditions.class.php:581
+#: Timeconditions.class.php:561 Timeconditions.class.php:596
 msgid ": Time Condition Override"
 msgstr ": Überbrückung der Zeitbedingung"
 
@@ -141,7 +137,7 @@ msgstr "Aktuell"
 msgid "December"
 msgstr "Dezember"
 
-#: Timeconditions.class.php:181
+#: Timeconditions.class.php:188
 msgid "Delete"
 msgstr "Löschen"
 
@@ -169,7 +165,7 @@ msgstr "Ziel bei Übereinstimmung"
 msgid "Destination non-matches"
 msgstr "Ziel bei Nichtübereinsimmung"
 
-#: Timeconditions.class.php:191
+#: Timeconditions.class.php:198
 msgid "Duplicate"
 msgstr "Doppelt"
 
@@ -366,7 +362,7 @@ msgstr "Bitte geben Sie eine gültige Überbrückungscode-PIN ein"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Bitte geben Sie einen gültigen Namen für die Zeitbedingung ein"
 
-#: Timeconditions.class.php:186
+#: Timeconditions.class.php:193
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -422,7 +418,7 @@ msgstr ""
 "Auswahl hier <strong>MUSS</strong> in der Auswahlliste oder im Verzeichnis /"
 "usr/share/zoneinfo erscheinen."
 
-#: Timeconditions.class.php:196
+#: Timeconditions.class.php:203
 msgid "Submit"
 msgstr "Absenden"
 
@@ -640,9 +636,12 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:485 Timeconditions.class.php:514
+#: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr "unbenannt"
+
+#~ msgid "1: Test"
+#~ msgstr "1: Test"
 
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
 #~ msgstr ""
