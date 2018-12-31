@@ -123,15 +123,6 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$TCMAINT = $this->FreePBX->Config->get("TCMAINT");
 		$TCINTERVAL = $this->FreePBX->Config->get("TCINTERVAL");
 
-		foreach($this->FreePBX->Cron->getAll() as $cron) {
-			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/schedtc.php");
-			if(preg_match("/schedtc.php/",$cron)) {
-				$this->FreePBX->Cron->remove($cron);
-			}
-		}
-		if(!$TCMAINT) {
-			return;
-		}
 		switch($TCINTERVAL) {
 			case "900":
 			case "600":
@@ -148,7 +139,23 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			break;
 		}
 		$line = $time." [ -x ".$ASTVARLIBDIR."/bin/schedtc.php ] && ".$ASTVARLIBDIR."/bin/schedtc.php";
-		$this->FreePBX->Cron->add($line);
+
+		//TODO: fix this when Config hooks are fully implemented
+		$removed = false;
+		$found = false;
+		foreach($this->FreePBX->Cron->getAll() as $cron) {
+			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/schedtc.php");
+			if(preg_match("/schedtc.php/",$cron)) {
+				$found = true;
+				if(!$TCMAINT || $line != $cron) {
+					$removed = true;
+					$this->FreePBX->Cron->remove($cron);
+				}
+			}
+		}
+		if($TCMAINT && (!$found || $removed)) {
+			$this->FreePBX->Cron->add($line);
+		}
 	}
 
 	public function getActionBar($request) {
@@ -262,7 +269,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 					// Used for link. Need to send index and not the label.
 					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[0]);
 				}
-				
+
 			}
 		}else{
 			foreach ($results as $val) {
