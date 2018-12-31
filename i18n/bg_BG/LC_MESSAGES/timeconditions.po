@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-07 13:06-0400\n"
+"POT-Creation-Date: 2018-12-31 10:10+0530\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -28,15 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr "1: Тест"
-
-#: timeconditions.i18n.php:26
-msgid "2: sdfd"
-msgstr ""
-
-#: Timeconditions.class.php:525 Timeconditions.class.php:560
+#: Timeconditions.class.php:540 Timeconditions.class.php:575
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -49,7 +41,7 @@ msgstr "Действия"
 msgid "Add New Time Group..."
 msgstr "Добави Нова Времева Група..."
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Добави Час"
 
@@ -63,7 +55,7 @@ msgstr "Добави Времево Условие"
 msgid "Add Time Group"
 msgstr "Добави Времева Група"
 
-#: views/timegroups/form.php:82
+#: views/timegroups/form.php:85
 msgid "Add a time for this time condition"
 msgstr "Въведете време за това времево условие"
 
@@ -145,11 +137,11 @@ msgstr "Текущ"
 msgid "December"
 msgstr "Декември"
 
-#: Timeconditions.class.php:161
+#: Timeconditions.class.php:168
 msgid "Delete"
 msgstr "Изтрий"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:48
 msgid "Description"
 msgstr "Описание"
 
@@ -173,7 +165,7 @@ msgstr "Направленията съвпадат"
 msgid "Destination non-matches"
 msgstr "Направленията не съвпадат"
 
-#: Timeconditions.class.php:171
+#: Timeconditions.class.php:178
 msgid "Duplicate"
 msgstr "Дублирай"
 
@@ -377,7 +369,7 @@ msgstr "Моля въведете валиден Код за Отмяна"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Моля въведете правилно Име на Времево Условие"
 
-#: Timeconditions.class.php:166
+#: Timeconditions.class.php:173
 msgid "Reset"
 msgstr "Изчисти"
 
@@ -432,7 +424,7 @@ msgstr ""
 "<strong>ТРЯБВА</strong> да се показва в падащото меню или в директорията /"
 "usr/share/zoneinfo/ ."
 
-#: Timeconditions.class.php:176
+#: Timeconditions.class.php:183
 msgid "Submit"
 msgstr "Приеми"
 
@@ -516,7 +508,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "Времевата група в момента се използва и не може да бъде изтрита"
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:60
 msgid "This will display as the name of this Time Group"
 msgstr "Име на тази Времева Група"
 
@@ -574,7 +566,7 @@ msgstr "Начален Час"
 msgid "Time to finish"
 msgstr "Краен Час"
 
-#: views/timegroups/form.php:69
+#: views/timegroups/form.php:72
 msgid "Time(s)"
 msgstr "Време(на)"
 
@@ -651,9 +643,12 @@ msgstr "невярно goto"
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:464 Timeconditions.class.php:493
+#: Timeconditions.class.php:479 Timeconditions.class.php:508
 msgid "unnamed"
 msgstr "без име"
+
+#~ msgid "1: Test"
+#~ msgstr "1: Тест"
 
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
 #~ msgstr ""

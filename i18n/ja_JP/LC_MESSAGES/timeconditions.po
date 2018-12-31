@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-07 13:06-0400\n"
+"POT-Creation-Date: 2018-12-31 10:10+0530\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -57,15 +57,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: timeconditions.i18n.php:26
-msgid "2: sdfd"
-msgstr ""
-
-#: Timeconditions.class.php:525 Timeconditions.class.php:560
+#: Timeconditions.class.php:540 Timeconditions.class.php:575
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -78,7 +70,7 @@ msgstr "アクション"
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -92,7 +84,7 @@ msgstr "時間分岐条件を追加"
 msgid "Add Time Group"
 msgstr "時間グループを追加"
 
-#: views/timegroups/form.php:82
+#: views/timegroups/form.php:85
 msgid "Add a time for this time condition"
 msgstr "この時間分岐条件の時間を追加します"
 
@@ -171,11 +163,11 @@ msgstr "現在のステータス"
 msgid "December"
 msgstr "12月"
 
-#: Timeconditions.class.php:161
+#: Timeconditions.class.php:168
 msgid "Delete"
 msgstr "削除"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:48
 msgid "Description"
 msgstr "説明"
 
@@ -199,7 +191,7 @@ msgstr "時間内の宛先"
 msgid "Destination non-matches"
 msgstr "時間外の宛先"
 
-#: Timeconditions.class.php:171
+#: Timeconditions.class.php:178
 msgid "Duplicate"
 msgstr ""
 
@@ -394,7 +386,7 @@ msgstr "入力された暗証番号は無効です。"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "時間分岐条件の名前は無効です。もう一度入力してください"
 
-#: Timeconditions.class.php:166
+#: Timeconditions.class.php:173
 msgid "Reset"
 msgstr "リセット"
 
@@ -449,7 +441,7 @@ msgstr ""
 "トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
 "い可能性がありますので、ご注意ください。"
 
-#: Timeconditions.class.php:176
+#: Timeconditions.class.php:183
 msgid "Submit"
 msgstr "送信"
 
@@ -522,7 +514,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:60
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
@@ -580,7 +572,7 @@ msgstr "開始時刻"
 msgid "Time to finish"
 msgstr "終了時刻"
 
-#: views/timegroups/form.php:69
+#: views/timegroups/form.php:72
 msgid "Time(s)"
 msgstr "時間設定"
 
@@ -657,7 +649,7 @@ msgstr "一致しない goto"
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:464 Timeconditions.class.php:493
+#: Timeconditions.class.php:479 Timeconditions.class.php:508
 msgid "unnamed"
 msgstr ""
 

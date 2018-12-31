@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-07 13:06-0400\n"
+"POT-Creation-Date: 2018-12-31 10:10+0530\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,15 +29,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: timeconditions.i18n.php:26
-msgid "2: sdfd"
-msgstr ""
-
-#: Timeconditions.class.php:525 Timeconditions.class.php:560
+#: Timeconditions.class.php:540 Timeconditions.class.php:575
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -50,7 +42,7 @@ msgstr "عملیات"
 msgid "Add New Time Group..."
 msgstr "افزودن گروه زمانی جدید..."
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "افزودن زمان"
 
@@ -64,7 +56,7 @@ msgstr "افزودن شرط زمانی"
 msgid "Add Time Group"
 msgstr "افزودن گروه زمانی"
 
-#: views/timegroups/form.php:82
+#: views/timegroups/form.php:85
 msgid "Add a time for this time condition"
 msgstr "افزودن زمان برای این شرط زمانی"
 
@@ -143,11 +135,11 @@ msgstr "فعلی"
 msgid "December"
 msgstr "دسامبر"
 
-#: Timeconditions.class.php:161
+#: Timeconditions.class.php:168
 msgid "Delete"
 msgstr "حذف"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:48
 msgid "Description"
 msgstr "توضیحات"
 
@@ -171,7 +163,7 @@ msgstr "مقصد تماس در صورت همخوانی"
 msgid "Destination non-matches"
 msgstr "مقصد تماس در صورت ناهمخوانی"
 
-#: Timeconditions.class.php:171
+#: Timeconditions.class.php:178
 msgid "Duplicate"
 msgstr ""
 
@@ -371,7 +363,7 @@ msgstr "لطفا یک کلمه عبور معتبر برای بازنویسی و�
 msgid "Please enter a valid Time Conditions Name"
 msgstr "لطفا یک نام معتبر برای شرایط زمانی وارد کنید"
 
-#: Timeconditions.class.php:166
+#: Timeconditions.class.php:173
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -425,7 +417,7 @@ msgstr ""
 "کامل شود. <br/><strong>مهم</strong>: انتخاب شما <strong>باید</strong> در "
 "لیست و یا در مسیر /usr/share/zoneinfo/ وجود داشته باشد."
 
-#: Timeconditions.class.php:176
+#: Timeconditions.class.php:183
 msgid "Submit"
 msgstr "ثبت"
 
@@ -499,7 +491,7 @@ msgstr "این بخش از گروه زمانی و تمامی تنظیمات حذ
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "این گروه زمانی درحال استفاده است و نمی توان آن را حذف کرد"
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:60
 msgid "This will display as the name of this Time Group"
 msgstr "به عنوان نام گروه زمانی نمایش داده می شود"
 
@@ -557,7 +549,7 @@ msgstr "زمان شروع"
 msgid "Time to finish"
 msgstr "زمان پایان"
 
-#: views/timegroups/form.php:69
+#: views/timegroups/form.php:72
 msgid "Time(s)"
 msgstr "زمان (ها)"
 
@@ -634,7 +626,7 @@ msgstr "goto نادرست"
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:464 Timeconditions.class.php:493
+#: Timeconditions.class.php:479 Timeconditions.class.php:508
 msgid "unnamed"
 msgstr "بدون نام"
 

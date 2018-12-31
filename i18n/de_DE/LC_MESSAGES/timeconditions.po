@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-07 13:06-0400\n"
+"POT-Creation-Date: 2018-12-31 10:10+0530\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -28,15 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Wählen Sie eine Gruppe aus--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr "1: Test"
-
-#: timeconditions.i18n.php:26
-msgid "2: sdfd"
-msgstr ""
-
-#: Timeconditions.class.php:525 Timeconditions.class.php:560
+#: Timeconditions.class.php:540 Timeconditions.class.php:575
 msgid ": Time Condition Override"
 msgstr ": Überbrückung der Zeitbedingung"
 
@@ -49,7 +41,7 @@ msgstr "Aktionen"
 msgid "Add New Time Group..."
 msgstr "Neue Zeitgruppe hinzufügen…"
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Zeit hinzufügen"
 
@@ -63,7 +55,7 @@ msgstr "Zeitbedingung hinzufügen"
 msgid "Add Time Group"
 msgstr "Zeitgruppe hinzufügen"
 
-#: views/timegroups/form.php:82
+#: views/timegroups/form.php:85
 msgid "Add a time for this time condition"
 msgstr "Fügen Sie eine Zeit für diese Zeitbedingung hinzu"
 
@@ -141,11 +133,11 @@ msgstr "Aktuell"
 msgid "December"
 msgstr "Dezember"
 
-#: Timeconditions.class.php:161
+#: Timeconditions.class.php:168
 msgid "Delete"
 msgstr "Löschen"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:48
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -169,7 +161,7 @@ msgstr "Ziel bei Übereinstimmung"
 msgid "Destination non-matches"
 msgstr "Ziel bei Nichtübereinsimmung"
 
-#: Timeconditions.class.php:171
+#: Timeconditions.class.php:178
 msgid "Duplicate"
 msgstr ""
 
@@ -364,7 +356,7 @@ msgstr "Bitte geben Sie eine gültige Überbrückungscode-PIN ein"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Bitte geben Sie einen gültigen Namen für die Zeitbedingung ein"
 
-#: Timeconditions.class.php:166
+#: Timeconditions.class.php:173
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -420,7 +412,7 @@ msgstr ""
 "Auswahl hier <strong>MUSS</strong> in der Auswahlliste oder im Verzeichnis /"
 "usr/share/zoneinfo erscheinen."
 
-#: Timeconditions.class.php:176
+#: Timeconditions.class.php:183
 msgid "Submit"
 msgstr ""
 
@@ -495,7 +487,7 @@ msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 "Diese Zeitgruppe wird momentan verwendet und kann nicht gelöscht werden"
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:60
 msgid "This will display as the name of this Time Group"
 msgstr "Dies wird den Namen dieser Zeitgruppe anzeigen"
 
@@ -553,7 +545,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:69
+#: views/timegroups/form.php:72
 msgid "Time(s)"
 msgstr "Zeit(en)"
 
@@ -628,9 +620,12 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:464 Timeconditions.class.php:493
+#: Timeconditions.class.php:479 Timeconditions.class.php:508
 msgid "unnamed"
 msgstr "unbenannt"
+
+#~ msgid "1: Test"
+#~ msgstr "1: Test"
 
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
 #~ msgstr ""

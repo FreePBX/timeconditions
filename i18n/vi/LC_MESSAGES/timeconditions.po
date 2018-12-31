@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-07 13:06-0400\n"
+"POT-Creation-Date: 2018-12-31 10:10+0530\n"
 "PO-Revision-Date: 2017-06-06 13:27-0400\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -27,15 +27,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: timeconditions.i18n.php:26
-msgid "2: sdfd"
-msgstr ""
-
-#: Timeconditions.class.php:525 Timeconditions.class.php:560
+#: Timeconditions.class.php:540 Timeconditions.class.php:575
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -48,7 +40,7 @@ msgstr ""
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr ""
 
@@ -62,7 +54,7 @@ msgstr ""
 msgid "Add Time Group"
 msgstr ""
 
-#: views/timegroups/form.php:82
+#: views/timegroups/form.php:85
 msgid "Add a time for this time condition"
 msgstr ""
 
@@ -138,11 +130,11 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: Timeconditions.class.php:161
+#: Timeconditions.class.php:168
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:48
 msgid "Description"
 msgstr ""
 
@@ -166,7 +158,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:171
+#: Timeconditions.class.php:178
 msgid "Duplicate"
 msgstr ""
 
@@ -357,7 +349,7 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr ""
 
-#: Timeconditions.class.php:166
+#: Timeconditions.class.php:173
 msgid "Reset"
 msgstr ""
 
@@ -404,7 +396,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:176
+#: Timeconditions.class.php:183
 msgid "Submit"
 msgstr ""
 
@@ -469,7 +461,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:60
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
@@ -527,7 +519,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:69
+#: views/timegroups/form.php:72
 msgid "Time(s)"
 msgstr ""
 
@@ -602,6 +594,6 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:464 Timeconditions.class.php:493
+#: Timeconditions.class.php:479 Timeconditions.class.php:508
 msgid "unnamed"
 msgstr ""
