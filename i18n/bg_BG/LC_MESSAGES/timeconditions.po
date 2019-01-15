@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-07 19:08-0500\n"
+"POT-Creation-Date: 2019-01-15 16:52-0500\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -369,6 +369,16 @@ msgstr "Моля въведете валиден Код за Отмяна"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Моля въведете правилно Име на Времево Условие"
 
+#: assets/js/timeconditions/timeconditions.js:47
+msgid ""
+"Please select a calendar or calendar group to associate with this "
+"timecondition."
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:43
+msgid "Please select a time group to associate with this timecondition."
+msgstr ""
+
 #: Timeconditions.class.php:193
 msgid "Reset"
 msgstr "Изчисти"
@@ -612,21 +622,6 @@ msgstr "Да"
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:47
-msgid ""
-"You have not selected a calendar or calendar group to associate with this "
-"timecondition. It will go to the un-matching destination until you update it "
-"with a valid calendar/group"
-msgstr ""
-
-#: assets/js/timeconditions/timeconditions.js:43
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"Не сте избрали времева група за асоцииране с това времево условие. Ще се "
-"прехвърли към несъвпадащи направления докато не го обновите с коректна група"
-
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
 msgstr ""
@@ -646,6 +641,15 @@ msgstr "вярно goto"
 #: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr "без име"
+
+#~ msgid ""
+#~ "You have not selected a time group to associate with this timecondition. "
+#~ "It will go to the un-matching destination until you update it with a "
+#~ "valid group"
+#~ msgstr ""
+#~ "Не сте избрали времева група за асоцииране с това времево условие. Ще се "
+#~ "прехвърли към несъвпадащи направления докато не го обновите с коректна "
+#~ "група"
 
 #~ msgid "1: Test"
 #~ msgstr "1: Тест"

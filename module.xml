@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>14.0.2.16</version>
+	<version>14.0.2.17</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
+		*14.0.2.17* FREEPBX-18838 Time Condition allows to add the entry without Destination matches and/or Destination non-matches when the Time Group or Calendar is empty. 
 		*14.0.2.16* Fix always adding cronjobs, update to work against FREEPBX-17403
 		*14.0.2.15* Packaging of ver 14.0.2.15
 		*14.0.2.14* FREEPBX-17552 Wrong URL's in Used as Destination

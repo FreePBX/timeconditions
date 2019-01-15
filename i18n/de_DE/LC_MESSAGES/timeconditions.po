@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-07 19:08-0500\n"
+"POT-Creation-Date: 2019-01-15 16:52-0500\n"
 "PO-Revision-Date: 2018-10-24 13:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -362,6 +362,16 @@ msgstr "Bitte geben Sie eine gültige Überbrückungscode-PIN ein"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Bitte geben Sie einen gültigen Namen für die Zeitbedingung ein"
 
+#: assets/js/timeconditions/timeconditions.js:47
+msgid ""
+"Please select a calendar or calendar group to associate with this "
+"timecondition."
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:43
+msgid "Please select a time group to associate with this timecondition."
+msgstr ""
+
 #: Timeconditions.class.php:193
 msgid "Reset"
 msgstr "Zurücksetzen"
@@ -600,25 +610,6 @@ msgstr "Ja"
 msgid "You cant set both a group and a calendar"
 msgstr "Sie können sowohl eine Gruppe als auch einen Kalender einstellen"
 
-#: assets/js/timeconditions/timeconditions.js:47
-msgid ""
-"You have not selected a calendar or calendar group to associate with this "
-"timecondition. It will go to the un-matching destination until you update it "
-"with a valid calendar/group"
-msgstr ""
-"Sie haben weder einen Kalender noch eine Kalendergruppe für diese "
-"Zeitbedingung angegeben. Bis Sie eine/n gültige/n Kalender/Gruppe angeben, "
-"wird auf das „Ziel bei Nicht-Übereinstimmung“ geschaltet"
-
-#: assets/js/timeconditions/timeconditions.js:43
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"Sie haben keine Zeitgruppe für diese Zeitbedingung angegeben. Bis Sie eine "
-"gültige Gruppe angeben, wird auf das „Ziel bei Nicht-Übereinstimmung“ "
-"geschaltet"
-
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
 msgstr "Ihre Zeitbedingung ist mit einem nicht-existenten Kalender verknüpft"
@@ -639,6 +630,24 @@ msgstr ""
 #: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr "unbenannt"
+
+#~ msgid ""
+#~ "You have not selected a calendar or calendar group to associate with this "
+#~ "timecondition. It will go to the un-matching destination until you update "
+#~ "it with a valid calendar/group"
+#~ msgstr ""
+#~ "Sie haben weder einen Kalender noch eine Kalendergruppe für diese "
+#~ "Zeitbedingung angegeben. Bis Sie eine/n gültige/n Kalender/Gruppe "
+#~ "angeben, wird auf das „Ziel bei Nicht-Übereinstimmung“ geschaltet"
+
+#~ msgid ""
+#~ "You have not selected a time group to associate with this timecondition. "
+#~ "It will go to the un-matching destination until you update it with a "
+#~ "valid group"
+#~ msgstr ""
+#~ "Sie haben keine Zeitgruppe für diese Zeitbedingung angegeben. Bis Sie "
+#~ "eine gültige Gruppe angeben, wird auf das „Ziel bei Nicht-"
+#~ "Übereinstimmung“ geschaltet"
 
 #~ msgid "1: Test"
 #~ msgstr "1: Test"

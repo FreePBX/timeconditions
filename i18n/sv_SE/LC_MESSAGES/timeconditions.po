@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-07 19:08-0500\n"
+"POT-Creation-Date: 2019-01-15 16:52-0500\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -349,6 +349,16 @@ msgstr ""
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Skriv in ett giltigt namn för tidvillkoret"
 
+#: assets/js/timeconditions/timeconditions.js:47
+msgid ""
+"Please select a calendar or calendar group to associate with this "
+"timecondition."
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:43
+msgid "Please select a time group to associate with this timecondition."
+msgstr ""
+
 #: Timeconditions.class.php:193
 msgid "Reset"
 msgstr ""
@@ -568,21 +578,6 @@ msgstr ""
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:47
-msgid ""
-"You have not selected a calendar or calendar group to associate with this "
-"timecondition. It will go to the un-matching destination until you update it "
-"with a valid calendar/group"
-msgstr ""
-
-#: assets/js/timeconditions/timeconditions.js:43
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att "
-"Destination, om tiden inte matchar, alltid kommer att vara aktiv."
-
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
 msgstr ""
@@ -602,6 +597,14 @@ msgstr ""
 #: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr ""
+
+#~ msgid ""
+#~ "You have not selected a time group to associate with this timecondition. "
+#~ "It will go to the un-matching destination until you update it with a "
+#~ "valid group"
+#~ msgstr ""
+#~ "Du har inte valt en tidgrupp för detta tidsvillkoret. Detta innebär att "
+#~ "Destination, om tiden inte matchar, alltid kommer att vara aktiv."
 
 #~ msgid " deleted!"
 #~ msgstr " borttagen!"

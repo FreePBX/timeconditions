@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-07 19:08-0500\n"
+"POT-Creation-Date: 2019-01-15 16:52-0500\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -379,6 +379,16 @@ msgstr "Introduza um Código Pin de Substituição válido"
 msgid "Please enter a valid Time Conditions Name"
 msgstr "Por favor, introduza um Nome de Condições Horárias válido"
 
+#: assets/js/timeconditions/timeconditions.js:47
+msgid ""
+"Please select a calendar or calendar group to associate with this "
+"timecondition."
+msgstr ""
+
+#: assets/js/timeconditions/timeconditions.js:43
+msgid "Please select a time group to associate with this timecondition."
+msgstr ""
+
 #: Timeconditions.class.php:193
 msgid "Reset"
 msgstr "Reiniciar"
@@ -623,22 +633,6 @@ msgstr "Sim"
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:47
-msgid ""
-"You have not selected a calendar or calendar group to associate with this "
-"timecondition. It will go to the un-matching destination until you update it "
-"with a valid calendar/group"
-msgstr ""
-
-#: assets/js/timeconditions/timeconditions.js:43
-msgid ""
-"You have not selected a time group to associate with this timecondition. It "
-"will go to the un-matching destination until you update it with a valid group"
-msgstr ""
-"Você não selecionou um grupo horário para associar a esta condição horária. "
-"Ele irá para o destino não-coincidente até você atualizá-lo com um grupo "
-"válido"
-
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
 msgstr ""
@@ -658,6 +652,15 @@ msgstr "verdadeiro vá para"
 #: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
 msgstr "sem nome"
+
+#~ msgid ""
+#~ "You have not selected a time group to associate with this timecondition. "
+#~ "It will go to the un-matching destination until you update it with a "
+#~ "valid group"
+#~ msgstr ""
+#~ "Você não selecionou um grupo horário para associar a esta condição "
+#~ "horária. Ele irá para o destino não-coincidente até você atualizá-lo com "
+#~ "um grupo válido"
 
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
 #~ msgstr ""
