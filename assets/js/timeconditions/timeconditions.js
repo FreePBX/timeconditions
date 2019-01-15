@@ -40,11 +40,11 @@ function edit_onsubmit(theForm) {
 	}
 
 	if ($("#mode_legacy").is(":checked") && isEmpty($("#time").val())) {
-		return confirm(_("You have not selected a time group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid group"));
+		return warnInvalid(theForm.time, _("Please select a time group to associate with this timecondition."));
 	}
 
 	if ($("#mode_calendar").is(":checked") && (isEmpty($("#calendar-group").val()) && isEmpty($("#calendar-id").val()))) {
-		return confirm(_("You have not selected a calendar or calendar group to associate with this timecondition. It will go to the un-matching destination until you update it with a valid calendar/group"));
+		return warnInvalid($('select[name="calendar-id"]'), _("Please select a calendar or calendar group to associate with this timecondition."));
 	}
 
 	if (!validateDestinations(edit,2,true)) {
