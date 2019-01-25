@@ -10,20 +10,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-15 16:52-0500\n"
-"PO-Revision-Date: 2016-06-22 11:42+0200\n"
-"Last-Translator: psdk <hyavari26@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"timeconditions/fa_IR/>\n"
+"PO-Revision-Date: 2019-01-25 07:53+0000\n"
+"Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
+"Language-Team: Persian <http://*/projects/freepbx/timeconditons/fa/>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: views/timeconditions/advanced_form.php:236
 msgid "--Select a Calendar--"
-msgstr ""
+msgstr "--انتخاب تقویم--"
 
 #: functions.inc.php:555 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
@@ -62,7 +61,7 @@ msgstr "افزودن زمان برای این شرط زمانی"
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
-msgstr ""
+msgstr "نام شرایط زمان فعلی وجود دارد:"
 
 #: timeconditions.i18n.php:6
 msgid "Applications"
@@ -79,28 +78,28 @@ msgstr "آگوست"
 #: views/timeconditions/advanced_form.php:231
 #: assets/js/timeconditions/timeconditions.js:64
 msgid "Calendar"
-msgstr ""
+msgstr "تقویم"
 
 #: views/timeconditions/advanced_form.php:258
 #: assets/js/timeconditions/timeconditions.js:66
 msgid "Calendar Group"
-msgstr ""
+msgstr "تقویم گروه"
 
 #: views/timeconditions/advanced_form.php:275
 msgid "Calendar Group to check for timeconditions"
-msgstr ""
+msgstr "تقویم گروه برای چک کردن شرایط زمان"
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
-msgstr ""
+msgstr "حالت تقویم"
 
 #: functions.inc.php:102 functions.inc.php:113
 msgid "Calendar Not found"
-msgstr ""
+msgstr "تقویم یافت نشد"
 
 #: views/timeconditions/advanced_form.php:248
 msgid "Calendar to check for time condition"
-msgstr ""
+msgstr "تقویم برای بررسی شرایط زمانی"
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
@@ -165,11 +164,11 @@ msgstr "مقصد تماس در صورت ناهمخوانی"
 
 #: Timeconditions.class.php:198
 msgid "Duplicate"
-msgstr ""
+msgstr "تکراری"
 
 #: assets/js/timeconditions/timeconditions.js:29
 msgid "Duplicate Time Conditions Name"
-msgstr ""
+msgstr "نام شرایط زمانی تکراری"
 
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
@@ -247,7 +246,7 @@ msgstr "ژوئن"
 
 #: views/timeconditions/grid.php:28
 msgid "Linked Item"
-msgstr ""
+msgstr "آیتم لینک شده"
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
 #: views/timegroups/grid.php:9
@@ -273,7 +272,7 @@ msgstr "می"
 
 #: views/timeconditions/advanced_form.php:204
 msgid "Mode"
-msgstr ""
+msgstr "حالت"
 
 #: functions.inc.php:622
 msgid "Monday"
@@ -309,7 +308,7 @@ msgstr "بدون بازنویسی"
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
 msgid "Not Set"
-msgstr ""
+msgstr "تنظیم نشده"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
 #: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
@@ -367,11 +366,11 @@ msgstr "لطفا یک نام معتبر برای شرایط زمانی وارد 
 msgid ""
 "Please select a calendar or calendar group to associate with this "
 "timecondition."
-msgstr ""
+msgstr "لطفاً یک تقویم برای این شرایط زمانی انتخاب کنید."
 
 #: assets/js/timeconditions/timeconditions.js:43
 msgid "Please select a time group to associate with this timecondition."
-msgstr ""
+msgstr "لطفاً یک گروه زمانی برای این شرایط زمانی انتخاب کنید."
 
 #: Timeconditions.class.php:193
 msgid "Reset"
@@ -403,7 +402,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:221
 msgid "Select the Mode for checking time conditions"
-msgstr ""
+msgstr "یک حالت برای بررسی شرایط زمانی انتخاب کنید"
 
 #: functions.inc.php:655
 msgid "September"
@@ -540,7 +539,7 @@ msgstr "گروه زمانی"
 
 #: views/timeconditions/advanced_form.php:210
 msgid "Time Group Mode"
-msgstr ""
+msgstr "حالت گروه زمانی"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
@@ -603,15 +602,15 @@ msgstr "بله"
 
 #: assets/js/timeconditions/timeconditions.js:187
 msgid "You cant set both a group and a calendar"
-msgstr ""
+msgstr "شما میتوانید جفت گروه و تقویم تنظیم کنید"
 
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
-msgstr ""
+msgstr "شرایط زمانی شما به یک تقویم ناموجود لینک شده"
 
 #: functions.inc.php:113
 msgid "Your timecondition is linked to a non-existant calendar group"
-msgstr ""
+msgstr "شرایط زمانی شما به یک گروه تقویم ناموجود لینک شده"
 
 #: functions.inc.php:264
 msgid "false goto"
