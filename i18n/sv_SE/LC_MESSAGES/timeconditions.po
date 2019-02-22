@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-15 16:52-0500\n"
+"POT-Creation-Date: 2019-02-21 23:41-0500\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: Timeconditions.class.php:540 Timeconditions.class.php:575
+#: Timeconditions.class.php:534 Timeconditions.class.php:569
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -594,7 +594,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:479 Timeconditions.class.php:508
+#: Timeconditions.class.php:473 Timeconditions.class.php:502
 msgid "unnamed"
 msgstr ""
 

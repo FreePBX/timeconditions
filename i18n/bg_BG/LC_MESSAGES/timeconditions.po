@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-15 16:52-0500\n"
+"POT-Creation-Date: 2019-02-21 23:41-0500\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: Timeconditions.class.php:540 Timeconditions.class.php:575
+#: Timeconditions.class.php:534 Timeconditions.class.php:569
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -638,7 +638,7 @@ msgstr "невярно goto"
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:479 Timeconditions.class.php:508
+#: Timeconditions.class.php:473 Timeconditions.class.php:502
 msgid "unnamed"
 msgstr "без име"
 

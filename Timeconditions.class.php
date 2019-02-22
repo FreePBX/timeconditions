@@ -1,6 +1,6 @@
 <?php
 
-/** 
+/**
  * License for all code of this FreePBX module can be found in the license file inside the module directory
  * Copyright 2015-2018 Sangoma Technologies.
  */
@@ -250,7 +250,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				return false;
 		}
     }
-    
+
 	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
@@ -278,13 +278,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		}
 		return $tmparray;
     }
-    
-	public function dumpTimegroups(){
-		$sql = "SELECT * FROM timegroups_groups ORDER BY description";
-		$stmt = $this->Database->prepare($sql);
-		$stmt->execute();
-		return $stmt->fetchall(PDO::FETCH_ASSOC);
-	}
+
 	public function listTimeconditions($getall=false) {
 		$sql = "SELECT * FROM timeconditions ORDER BY priority ASC";
 		$stmt = $this->Database->prepare($sql);
@@ -826,16 +820,6 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			$sql = "SELECT displayname FROM timeconditions WHERE timeconditions_id <> '$itemid' ";
 		}
 		return $this->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
-	}
-
-	public function setDatabase($pdo){
-		$this->Database = $pdo;	
-		return $this;
-	}
-	
-	public function resetDatabase(){
-		$this->Database = $this->FreePBX->Database;
-		return $this;
 	}
 
 }
