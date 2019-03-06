@@ -7,7 +7,8 @@ class Backup Extends Base\BackupBase{
 		$this->addDependency('calendar');
 		$this->addConfigs([
 			'tables' => $this->dumpTables(),
-			'features' => $this->dumpFeatureCodes()
+			'features' => $this->dumpFeatureCodes(),
+			'settings' => $this->dumpAdvancedSettings()
 		]);
 	}
 }
