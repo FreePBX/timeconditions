@@ -3,10 +3,11 @@ namespace FreePBX\modules\Timeconditions;
 use FreePBX\modules\Backup as Base;
 class Backup Extends Base\BackupBase{
 	public function runBackup($id,$transaction){
-		$timecond = $this->FreePBX->Timeconditions();
-		$configs = $this->dumpTables();
 		$this->addDependency('cel');
 		$this->addDependency('calendar');
-		$this->addConfigs($configs);
+		$this->addConfigs([
+			'tables' => $this->dumpTables(),
+			'features' => $this->dumpFeatureCodes()
+		]);
 	}
 }

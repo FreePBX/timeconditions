@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>15.0.10</version>
+	<version>15.0.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,13 +11,13 @@
 		Creates a condition where calls will go to one of two destinations (eg, an extension, IVR, ring group..) based on the time and/or date. This can be used for example to ring a receptionist during the day, or go directly to an IVR at night.
 	</description>
 	<changelog>
-		*15.0.10* fixing legacy restore 
-		*15.0.9* FREEPBX-18838 Time Condition allows to add the entry without Destination matches and/or Destination non-matches when the Time Group or Calendar is empty. 
-		*15.0.8* FREEPBX-18825 Time Groups FreePBX 15 Will Not Save 
-		*15.0.7* FREEPBX-18137 Fix condition for form buttons 
-		*15.0.6* FREEPBX-18137 Fix request paramiter 
-		*15.0.5* FREEPBX-18141 
-		*15.0.4* Rest Api 
+		*15.0.10* fixing legacy restore
+		*15.0.9* FREEPBX-18838 Time Condition allows to add the entry without Destination matches and/or Destination non-matches when the Time Group or Calendar is empty.
+		*15.0.8* FREEPBX-18825 Time Groups FreePBX 15 Will Not Save
+		*15.0.7* FREEPBX-18137 Fix condition for form buttons
+		*15.0.6* FREEPBX-18137 Fix request paramiter
+		*15.0.5* FREEPBX-18141
+		*15.0.4* Rest Api
 		*15.0.3* Packaging of ver 15.0.3
 		*15.0.2* Packaging of ver 15.0.2
 		*15.0.1* Branch to 15, add backup and restore
