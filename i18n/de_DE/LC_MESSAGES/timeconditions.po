@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-15 16:52-0500\n"
-"PO-Revision-Date: 2018-10-24 13:00+0000\n"
+"PO-Revision-Date: 2019-04-03 11:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
 "Language: de_DE\n"
@@ -367,10 +367,14 @@ msgid ""
 "Please select a calendar or calendar group to associate with this "
 "timecondition."
 msgstr ""
+"Bitte wählen Sie einen Kalender oder eine Kalendergruppe, die dieser "
+"Zeitbedingung zugeordnet werden soll."
 
 #: assets/js/timeconditions/timeconditions.js:43
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
+"Bitte wählen Sie eine Zeitgruppe, die dieser Zeitbedingung zugeordnet werden "
+"soll."
 
 #: Timeconditions.class.php:193
 msgid "Reset"
