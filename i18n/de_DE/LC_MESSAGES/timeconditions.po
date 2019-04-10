@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-15 16:52-0500\n"
-"PO-Revision-Date: 2019-04-03 11:00+0000\n"
-"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"PO-Revision-Date: 2019-04-10 09:43+0000\n"
+"Last-Translator: florian alberts <alberts@ar-systems.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -226,6 +226,12 @@ msgid ""
 "temporarily if debugging a system to avoid the periodic dialplan running "
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
+"Wenn nicht ausgewählt, werden von Anrufdateien (call file) veränderte "
+"Zeitbedingungen überschrieben. Wenn alle Funktionscodes für Zeitbedingungen "
+"deaktiviert sind, wird die Bearbeitung nie gestartet. Dies sollte eigentlich "
+"nie so eingestellt werden, kann aber bei der Fehlersuche verhindern, dass "
+"wahnsinnig viele Meldungen im Kommandozeilenfenster angezeigt werden und die "
+"eigentlich ausgeführten Tasks nicht mehr zu sehen sind."
 
 #: views/timeconditions/advanced_form.php:114
 #: views/timeconditions/basic_form.php:223
@@ -472,6 +478,14 @@ msgid ""
 "configured span between two time condition states, so that a manual override "
 "during such a period is properly reset when the new period starts."
 msgstr ""
+"Das Abfrageintervall in Sekunden, welches auf Änderungen im "
+"Zeitbedingungsmodul prüft, die ihren Ursprung in einer \"Anrufdatei\" (call "
+"file) haben, welche den Status einer solchen verändern soll oder "
+"individuelle Verfügbarkeits-Besetztlampenfelder aktuell hält. Ein kürzeres "
+"Intervall stellt die Aktualität der Zustände sicher. Das Intervall sollte "
+"kürzer als die kürzeste Zeitspanne zwischen zwei Zeitbedingungszuständen "
+"sein, damit eine temporäre Zustandsänderung innerhalb dieses Zeitfensters "
+"richtig zurückgesetzt wird, wenn die nächste Periode beginnt."
 
 #: views/timeconditions/advanced_form.php:164
 #: views/timeconditions/basic_form.php:273
@@ -625,11 +639,11 @@ msgstr ""
 
 #: functions.inc.php:264
 msgid "false goto"
-msgstr ""
+msgstr "Wenn nicht zutreffend gehe zu"
 
 #: functions.inc.php:256
 msgid "true goto"
-msgstr ""
+msgstr "wenn zutreffend gehe zu"
 
 #: Timeconditions.class.php:500 Timeconditions.class.php:529
 msgid "unnamed"
