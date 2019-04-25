@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-15 16:52-0500\n"
+"POT-Creation-Date: 2019-04-25 19:28-0400\n"
 "PO-Revision-Date: 2019-04-10 09:43+0000\n"
 "Last-Translator: florian alberts <alberts@ar-systems.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -28,7 +28,11 @@ msgstr "--Wählen Sie einen Kalender--"
 msgid "--Select a Group--"
 msgstr "--Wählen Sie eine Gruppe aus--"
 
-#: Timeconditions.class.php:561 Timeconditions.class.php:596
+#: timeconditions.i18n.php:24
+msgid "1: Test"
+msgstr "1: Test"
+
+#: Timeconditions.class.php:553 Timeconditions.class.php:588
 msgid ": Time Condition Override"
 msgstr ": Überbrückung der Zeitbedingung"
 
@@ -137,7 +141,7 @@ msgstr "Aktuell"
 msgid "December"
 msgstr "Dezember"
 
-#: Timeconditions.class.php:188
+#: Timeconditions.class.php:180
 msgid "Delete"
 msgstr "Löschen"
 
@@ -165,7 +169,7 @@ msgstr "Ziel bei Übereinstimmung"
 msgid "Destination non-matches"
 msgstr "Ziel bei Nichtübereinsimmung"
 
-#: Timeconditions.class.php:198
+#: Timeconditions.class.php:190
 msgid "Duplicate"
 msgstr "Doppelt"
 
@@ -382,7 +386,7 @@ msgstr ""
 "Bitte wählen Sie eine Zeitgruppe, die dieser Zeitbedingung zugeordnet werden "
 "soll."
 
-#: Timeconditions.class.php:193
+#: Timeconditions.class.php:185
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -438,7 +442,7 @@ msgstr ""
 "Auswahl hier <strong>MUSS</strong> in der Auswahlliste oder im Verzeichnis /"
 "usr/share/zoneinfo erscheinen."
 
-#: Timeconditions.class.php:203
+#: Timeconditions.class.php:195
 msgid "Submit"
 msgstr "Absenden"
 
@@ -645,7 +649,7 @@ msgstr "Wenn nicht zutreffend gehe zu"
 msgid "true goto"
 msgstr "wenn zutreffend gehe zu"
 
-#: Timeconditions.class.php:500 Timeconditions.class.php:529
+#: Timeconditions.class.php:492 Timeconditions.class.php:521
 msgid "unnamed"
 msgstr "unbenannt"
 
@@ -666,9 +670,6 @@ msgstr "unbenannt"
 #~ "Sie haben keine Zeitgruppe für diese Zeitbedingung angegeben. Bis Sie "
 #~ "eine gültige Gruppe angeben, wird auf das „Ziel bei Nicht-"
 #~ "Übereinstimmung“ geschaltet"
-
-#~ msgid "1: Test"
-#~ msgstr "1: Test"
 
 #~ msgid "%sWARNING:%s No time defined for this condition, please review"
 #~ msgstr ""

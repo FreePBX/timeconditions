@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-15 16:52-0500\n"
+"POT-Creation-Date: 2019-04-25 19:28-0400\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -28,7 +28,11 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: Timeconditions.class.php:561 Timeconditions.class.php:596
+#: timeconditions.i18n.php:24
+msgid "1: Test"
+msgstr ""
+
+#: Timeconditions.class.php:553 Timeconditions.class.php:588
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
@@ -138,7 +142,7 @@ msgstr "Текущее"
 msgid "December"
 msgstr "Декабрь"
 
-#: Timeconditions.class.php:188
+#: Timeconditions.class.php:180
 msgid "Delete"
 msgstr "Удалить"
 
@@ -166,7 +170,7 @@ msgstr "Назначение ,  если текущее  время  попад�
 msgid "Destination non-matches"
 msgstr "Назначение ,  если текущее  время  не попадает в интервал"
 
-#: Timeconditions.class.php:198
+#: Timeconditions.class.php:190
 msgid "Duplicate"
 msgstr ""
 
@@ -380,7 +384,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:193
+#: Timeconditions.class.php:185
 msgid "Reset"
 msgstr "Сброс"
 
@@ -436,7 +440,7 @@ msgstr ""
 "<strong>ДОЛЖЕН</strong>появиться в выпадающем списке или в директории /usr/"
 "share/zoneinfo/."
 
-#: Timeconditions.class.php:203
+#: Timeconditions.class.php:195
 msgid "Submit"
 msgstr "Применить"
 
@@ -640,7 +644,7 @@ msgstr "переход, если ложь"
 msgid "true goto"
 msgstr "переход, если правда"
 
-#: Timeconditions.class.php:500 Timeconditions.class.php:529
+#: Timeconditions.class.php:492 Timeconditions.class.php:521
 msgid "unnamed"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-15 16:52-0500\n"
+"POT-Creation-Date: 2019-04-25 19:28-0400\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -26,7 +26,11 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: Timeconditions.class.php:561 Timeconditions.class.php:596
+#: timeconditions.i18n.php:24
+msgid "1: Test"
+msgstr ""
+
+#: Timeconditions.class.php:553 Timeconditions.class.php:588
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -129,7 +133,7 @@ msgstr ""
 msgid "December"
 msgstr "December"
 
-#: Timeconditions.class.php:188
+#: Timeconditions.class.php:180
 msgid "Delete"
 msgstr ""
 
@@ -157,7 +161,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:198
+#: Timeconditions.class.php:190
 msgid "Duplicate"
 msgstr ""
 
@@ -359,7 +363,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:193
+#: Timeconditions.class.php:185
 msgid "Reset"
 msgstr ""
 
@@ -409,7 +413,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:203
+#: Timeconditions.class.php:195
 msgid "Submit"
 msgstr "Spara ändringar"
 
@@ -594,7 +598,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:500 Timeconditions.class.php:529
+#: Timeconditions.class.php:492 Timeconditions.class.php:521
 msgid "unnamed"
 msgstr ""
 
