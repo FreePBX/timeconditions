@@ -138,7 +138,6 @@ class Timeconditions implements \BMO {
 	 * @return [type]           [description]
 	 */
 	public function updateCron() {
-		$ASTVARLIBDIR = $this->FreePBX->Config->get("ASTVARLIBDIR");
 		$TCMAINT = $this->FreePBX->Config->get("TCMAINT");
 		$TCINTERVAL = $this->FreePBX->Config->get("TCINTERVAL");
 
@@ -157,24 +156,17 @@ class Timeconditions implements \BMO {
 				$time = "* * * * *";
 			break;
 		}
-		$line = $time." [ -x ".$ASTVARLIBDIR."/bin/schedtc.php ] && ".$ASTVARLIBDIR."/bin/schedtc.php";
 
-		//TODO: fix this when Config hooks are fully implemented
-		$removed = false;
-		$found = false;
-		foreach($this->FreePBX->Cron->getAll() as $cron) {
-			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/schedtc.php");
-			if(preg_match("/schedtc.php/",$cron)) {
-				$found = true;
-				if(!$TCMAINT || $line != $cron) {
-					$removed = true;
-					$this->FreePBX->Cron->remove($cron);
-				}
+
+		$crons = $this->FreePBX->Cron->getAll();
+		foreach($crons as $c) {
+			if(preg_match('/schedtc\.php/',$c,$matches)) {
+				$this->FreePBX->Cron->remove($c);
 			}
 		}
-		if($TCMAINT && (!$found || $removed)) {
-			$this->FreePBX->Cron->add($line);
-		}
+
+		$this->FreePBX->Job->addClass('timeconditions', 'schedtc', 'FreePBX\modules\Timeconditions\Job', $time);
+		$this->FreePBX->Job->setEnabled('timeconditions', 'schedtc', $TCMAINT);
 	}
 
 	public function getActionBar($request) {
