@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 23:41-0500\n"
+"POT-Creation-Date: 2019-07-18 14:58+0530\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: Timeconditions.class.php:534 Timeconditions.class.php:569
+#: Timeconditions.class.php:526 Timeconditions.class.php:561
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -135,7 +135,7 @@ msgstr "فعلی"
 msgid "December"
 msgstr "دسامبر"
 
-#: Timeconditions.class.php:168
+#: Timeconditions.class.php:160
 msgid "Delete"
 msgstr "حذف"
 
@@ -163,7 +163,7 @@ msgstr "مقصد تماس در صورت همخوانی"
 msgid "Destination non-matches"
 msgstr "مقصد تماس در صورت ناهمخوانی"
 
-#: Timeconditions.class.php:178
+#: Timeconditions.class.php:170
 msgid "Duplicate"
 msgstr ""
 
@@ -373,7 +373,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:173
+#: Timeconditions.class.php:165
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -427,7 +427,7 @@ msgstr ""
 "کامل شود. <br/><strong>مهم</strong>: انتخاب شما <strong>باید</strong> در "
 "لیست و یا در مسیر /usr/share/zoneinfo/ وجود داشته باشد."
 
-#: Timeconditions.class.php:183
+#: Timeconditions.class.php:175
 msgid "Submit"
 msgstr "ثبت"
 
@@ -621,7 +621,7 @@ msgstr "goto نادرست"
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:473 Timeconditions.class.php:502
+#: Timeconditions.class.php:465 Timeconditions.class.php:494
 msgid "unnamed"
 msgstr "بدون نام"
 

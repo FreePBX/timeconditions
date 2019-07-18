@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-06 18:03-0500\n"
+"POT-Creation-Date: 2019-07-18 14:58+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,8 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: Timeconditions.class.php:534
-#: Timeconditions.class.php:569
+#: Timeconditions.class.php:526
+#: Timeconditions.class.php:561
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "December"
 msgstr ""
 
-#: Timeconditions.class.php:168
+#: Timeconditions.class.php:160
 msgid "Delete"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:178
+#: Timeconditions.class.php:170
 msgid "Duplicate"
 msgstr ""
 
@@ -371,7 +371,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:173
+#: Timeconditions.class.php:165
 msgid "Reset"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:183
+#: Timeconditions.class.php:175
 msgid "Submit"
 msgstr ""
 
@@ -611,7 +611,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:473
-#: Timeconditions.class.php:502
+#: Timeconditions.class.php:465
+#: Timeconditions.class.php:494
 msgid "unnamed"
 msgstr ""

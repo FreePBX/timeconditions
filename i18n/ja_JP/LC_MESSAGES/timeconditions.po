@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 23:41-0500\n"
+"POT-Creation-Date: 2019-07-18 14:58+0530\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:534 Timeconditions.class.php:569
+#: Timeconditions.class.php:526 Timeconditions.class.php:561
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -163,7 +163,7 @@ msgstr "現在のステータス"
 msgid "December"
 msgstr "12月"
 
-#: Timeconditions.class.php:168
+#: Timeconditions.class.php:160
 msgid "Delete"
 msgstr "削除"
 
@@ -191,7 +191,7 @@ msgstr "時間内の宛先"
 msgid "Destination non-matches"
 msgstr "時間外の宛先"
 
-#: Timeconditions.class.php:178
+#: Timeconditions.class.php:170
 msgid "Duplicate"
 msgstr ""
 
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:173
+#: Timeconditions.class.php:165
 msgid "Reset"
 msgstr "リセット"
 
@@ -451,7 +451,7 @@ msgstr ""
 "トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
 "い可能性がありますので、ご注意ください。"
 
-#: Timeconditions.class.php:183
+#: Timeconditions.class.php:175
 msgid "Submit"
 msgstr "送信"
 
@@ -644,7 +644,7 @@ msgstr "一致しない goto"
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:473 Timeconditions.class.php:502
+#: Timeconditions.class.php:465 Timeconditions.class.php:494
 msgid "unnamed"
 msgstr ""
 
