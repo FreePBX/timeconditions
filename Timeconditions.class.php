@@ -268,6 +268,7 @@ class Timeconditions implements \BMO {
 	}
 	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
+		$trimedresult = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->db->prepare($sql);
 		$stmt->execute();
@@ -275,8 +276,11 @@ class Timeconditions implements \BMO {
 		if(!$results) {
 			$results = array();
 		}
+		foreach($results as $val) {
+			$trimedresult[] = array_map('trim', $val);
+		}
 		if($assoc !== true){
-			foreach ($results as $val) {
+			foreach ($trimedresult as $val) {
 				if ($ajrq){
 					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
 				}
@@ -287,7 +291,7 @@ class Timeconditions implements \BMO {
 
 			}
 		}else{
-			foreach ($results as $val) {
+			foreach ($trimedresult as $val) {
 				$tmparray[] = array("id" => $val[0], "description" => htmlspecialchars($val[1],ENT_QUOTES));
 			}
 		}
@@ -658,7 +662,7 @@ class Timeconditions implements \BMO {
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->db->prepare($sql);
 		try {
-			$ret = $stmt->execute(array(':description' => $description));
+			$ret = $stmt->execute(array(':description' => trim($description)));
 		} catch (\PDOException $e) {
 			//catch duplicates
 			if($e->getCode() == '23000'){
@@ -678,7 +682,7 @@ class Timeconditions implements \BMO {
 	public function editTimeGroup($id,$description){
 		$sql = "UPDATE timegroups_groups SET description = :description WHERE id = :id";
 		$stmt = $this->db->prepare($sql);
-		$ret = $stmt->execute(array(':description' => $description, ':id' => $id));
+		$ret = $stmt->execute(array(':description' => trim($description), ':id' => $id));
 		\FreePBX::Hooks()->processHooks($id);
 		needreload();
 		return $ret;
