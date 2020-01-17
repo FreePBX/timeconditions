@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-18 14:58+0530\n"
+"POT-Creation-Date: 2020-01-17 17:22+0530\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: Timeconditions.class.php:526 Timeconditions.class.php:561
+#: Timeconditions.class.php:530 Timeconditions.class.php:565
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -62,10 +62,6 @@ msgstr "Въведете време за това времево условие"
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
-
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "Приложения"
 
 #: functions.inc.php:646
 msgid "April"
@@ -115,18 +111,6 @@ msgstr "Промени Отмяна"
 #: Timeconditions.class.php:75
 msgid "Could not delete time group as it is in use"
 msgstr "Не мога да изтрия времевата група тъй като се използва"
-
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"Създава възможност обажданията да се насочват към едно от две направления "
-"(например вътрешна линия, IVR, група на звънене..) в зависимост от час и/или "
-"дата. Може да се използва например да звъни на секретар през деня, а нощно "
-"време да се насочва към IVR."
 
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
@@ -179,7 +163,7 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Редактиране на Времево Условие: %s (%s)"
 
-#: timeconditions.i18n.php:14
+#: timeconditions.i18n.php:4
 msgid "Enable Maintenance Polling"
 msgstr "Разреши Диагностика"
 
@@ -216,7 +200,7 @@ msgstr ""
 "Ако установите hint ще бъде INUSE ако времевото условие съвпада и NOT_INUSE "
 "ако не съвпада"
 
-#: timeconditions.i18n.php:18
+#: timeconditions.i18n.php:8
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -265,7 +249,7 @@ msgstr "Списък с Времеви Условия"
 msgid "List Time Groups"
 msgstr "Списък с Времеви Групи"
 
-#: timeconditions.i18n.php:20
+#: timeconditions.i18n.php:10
 msgid "Maintenance Polling Interval"
 msgstr "Интервал за Диагностика"
 
@@ -464,7 +448,7 @@ msgstr "Временно съвпадение"
 msgid "Temporary unmatched"
 msgstr "Временно несъвпадение"
 
-#: timeconditions.i18n.php:22
+#: timeconditions.i18n.php:12
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -530,7 +514,7 @@ msgstr "Четвъртък"
 msgid "Time Condition"
 msgstr "Времево Условие"
 
-#: timeconditions.i18n.php:16
+#: timeconditions.i18n.php:6
 msgid "Time Condition Module"
 msgstr "Модул Времеви Условия"
 
@@ -544,8 +528,7 @@ msgstr "Име на Времево Условие"
 msgid "Time Condition: %s"
 msgstr "Времево Условие: %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "Времеви Условия"
 
@@ -559,7 +542,7 @@ msgstr "Времева Група"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "Времеви Групи"
 
@@ -638,9 +621,23 @@ msgstr "невярно goto"
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:465 Timeconditions.class.php:494
+#: Timeconditions.class.php:469 Timeconditions.class.php:498
 msgid "unnamed"
 msgstr "без име"
+
+#~ msgid "Applications"
+#~ msgstr "Приложения"
+
+#~ msgid ""
+#~ "Creates a condition where calls will go to one of two destinations (eg, "
+#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
+#~ "be used for example to ring a receptionist during the day, or go directly "
+#~ "to an IVR at night."
+#~ msgstr ""
+#~ "Създава възможност обажданията да се насочват към едно от две направления "
+#~ "(например вътрешна линия, IVR, група на звънене..) в зависимост от час и/"
+#~ "или дата. Може да се използва например да звъни на секретар през деня, а "
+#~ "нощно време да се насочва към IVR."
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "

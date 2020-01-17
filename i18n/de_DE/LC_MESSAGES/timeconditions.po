@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-18 14:58+0530\n"
+"POT-Creation-Date: 2020-01-17 17:22+0530\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Wählen Sie eine Gruppe aus--"
 
-#: Timeconditions.class.php:526 Timeconditions.class.php:561
+#: Timeconditions.class.php:530 Timeconditions.class.php:565
 msgid ": Time Condition Override"
 msgstr ": Überbrückung der Zeitbedingung"
 
@@ -62,10 +62,6 @@ msgstr "Fügen Sie eine Zeit für diese Zeitbedingung hinzu"
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
-
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "Anwendungen"
 
 #: functions.inc.php:646
 msgid "April"
@@ -115,14 +111,6 @@ msgstr "Überbrückung ändern"
 #: Timeconditions.class.php:75
 msgid "Could not delete time group as it is in use"
 msgstr "Konnte die Zeitgruppe nicht löschen, da sie verwendet wird"
-
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
 
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
@@ -175,7 +163,7 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Zeitbedingung bearbeiten: %s (%s)"
 
-#: timeconditions.i18n.php:14
+#: timeconditions.i18n.php:4
 msgid "Enable Maintenance Polling"
 msgstr ""
 
@@ -211,7 +199,7 @@ msgid ""
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: timeconditions.i18n.php:18
+#: timeconditions.i18n.php:8
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -252,7 +240,7 @@ msgstr "Zeitbedingungen auflisten"
 msgid "List Time Groups"
 msgstr "Zeitgruppen auflisten"
 
-#: timeconditions.i18n.php:20
+#: timeconditions.i18n.php:10
 msgid "Maintenance Polling Interval"
 msgstr ""
 
@@ -452,7 +440,7 @@ msgstr "Vorübergehend übereinstimmend"
 msgid "Temporary unmatched"
 msgstr "Vorübergehend nicht übereinstimmend"
 
-#: timeconditions.i18n.php:22
+#: timeconditions.i18n.php:12
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -509,7 +497,7 @@ msgstr "Donnerstag"
 msgid "Time Condition"
 msgstr "Zeitbedingung"
 
-#: timeconditions.i18n.php:16
+#: timeconditions.i18n.php:6
 msgid "Time Condition Module"
 msgstr ""
 
@@ -523,8 +511,7 @@ msgstr "Name der Zeitbedingung"
 msgid "Time Condition: %s"
 msgstr "Zeitbedingung: %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "Zeitbedingungen"
 
@@ -538,7 +525,7 @@ msgstr "Zeitgruppe"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "Zeitgruppen"
 
@@ -617,9 +604,12 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:465 Timeconditions.class.php:494
+#: Timeconditions.class.php:469 Timeconditions.class.php:498
 msgid "unnamed"
 msgstr "unbenannt"
+
+#~ msgid "Applications"
+#~ msgstr "Anwendungen"
 
 #~ msgid "1: Test"
 #~ msgstr "1: Test"
