@@ -245,6 +245,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
+		$trimedresult = array();
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->Database->prepare($sql);
 		$stmt->execute();
@@ -252,8 +253,11 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		if(!$results) {
 			$results = array();
 		}
+		foreach($results as $val) {
+			$trimedresult[] = array_map('trim', $val);
+		}
 		if($assoc !== true){
-			foreach ($results as $val) {
+			foreach ($trimedresult as $val) {
 				if ($ajrq){
 					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
 				}
@@ -264,7 +268,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 			}
 		}else{
-			foreach ($results as $val) {
+			foreach ($trimedresult as $val) {
 				$tmparray[] = array("id" => $val[0], "description" => htmlspecialchars($val[1],ENT_QUOTES));
 			}
 		}
@@ -631,8 +635,8 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->Database->prepare($sql);
 		try {
-			$stmt->execute(array(':description' => $description));
-		} catch (PDOException $e) {
+			$ret = $stmt->execute(array(':description' => trim($description)));
+		} catch (\PDOException $e) {
 			//catch duplicates
 			if($e->getCode() === '23000'){
 				return false;
@@ -651,7 +655,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function editTimeGroup($id,$description){
 		$sql = "UPDATE timegroups_groups SET description = :description WHERE id = :id";
 		$stmt = $this->Database->prepare($sql);
-		$ret = $stmt->execute(array(':description' => $description, ':id' => $id));
+		$ret = $stmt->execute(array(':description' => trim($description), ':id' => $id));
 		$this->FreePBX->Hooks->processHooks($id);
 		needreload();
 		return $ret;
