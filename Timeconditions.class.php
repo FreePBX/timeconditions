@@ -399,7 +399,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			$months = explode('-',$month);
 			$range = isset($months[1]);
 			$cur = $dtnow->format('n');
-			$match = $range ? $this->isBetween($monthA[$months[0]], $monthA[$months[1]], $cur) : $monthA[$month] === $cur;
+			$match = $range ? $this->isBetween($monthA[$months[0]], $monthA[$months[1]], $cur) : $monthA[$month] == $cur;
 		}
 
 		// Can still fail (Day of month)
@@ -424,7 +424,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				$range = isset($dows[1]);
 				$cur = $dtnow->format('w');
 
-			$match = $range ? $this->isBetween($daysA[$dows[0]], $daysA[$dows[1]], $cur) : $daysA[$dow] === $cur;
+			$match = $range ? $this->isBetween($daysA[$dows[0]], $daysA[$dows[1]], $cur) : $daysA[$dow] == $cur;
 			}
 		}
 
