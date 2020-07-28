@@ -41,6 +41,10 @@ msgstr ""
 msgid "Already exists Time Conditions Name:"
 msgstr ""
 
+#: timeconditions.i18n.php:6
+msgid "Applications"
+msgstr ""
+
 #: functions.inc.php:650
 msgid "April"
 msgstr ""
@@ -86,6 +90,14 @@ msgstr ""
 
 #: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
+msgstr ""
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:156
@@ -139,7 +151,7 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: timeconditions.i18n.php:4
+#: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
 msgstr ""
 
@@ -171,7 +183,7 @@ msgid ""
 "NOT_INUSE if it fails"
 msgstr ""
 
-#: timeconditions.i18n.php:8
+#: timeconditions.i18n.php:18
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -212,7 +224,7 @@ msgstr ""
 msgid "List Time Groups"
 msgstr ""
 
-#: timeconditions.i18n.php:10
+#: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
 msgstr ""
 
@@ -403,7 +415,7 @@ msgstr ""
 msgid "Temporary unmatched"
 msgstr ""
 
-#: timeconditions.i18n.php:12
+#: timeconditions.i18n.php:22
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -450,7 +462,7 @@ msgstr ""
 msgid "Time Condition"
 msgstr ""
 
-#: timeconditions.i18n.php:6
+#: timeconditions.i18n.php:16
 msgid "Time Condition Module"
 msgstr ""
 
@@ -464,7 +476,8 @@ msgstr ""
 msgid "Time Condition: %s"
 msgstr ""
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr ""
 
@@ -478,7 +491,7 @@ msgstr ""
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr ""
 

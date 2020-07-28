@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-17 12:25+0530\n"
+"POT-Creation-Date: 2020-07-28 12:43+0000\n"
 "PO-Revision-Date: 2019-08-13 11:57+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/timeconditons/fa/>\n"
@@ -63,6 +63,10 @@ msgstr "افزودن زمان برای این شرط زمانی"
 msgid "Already exists Time Conditions Name:"
 msgstr "نام شرایط زمان فعلی وجود دارد:"
 
+#: timeconditions.i18n.php:6
+msgid "Applications"
+msgstr "برنامه‌های کاربردی"
+
 #: functions.inc.php:650
 msgid "April"
 msgstr "آوریل"
@@ -109,6 +113,17 @@ msgstr "تغییر بازنویسی"
 #: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
 msgstr "نمی توان گروه زمانی درحال استفاده را حذف کرد"
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+"هنگامی که تماس باید بر اساس تاریخ و زمان به یک مقصد هدایت شود، می بایست یک "
+"شرط زمانی تعریف کنید. به عنوان مثال در طول روز تماس به یک داخلی هدایت می شود "
+"در صورتی که در طول شب به منوی صوتی وصل خواهد شد."
 
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
@@ -161,7 +176,7 @@ msgstr "نام شرایط زمانی تکراری"
 msgid "Edit Time Condition: %s (%s)"
 msgstr "ویرایش شرط زمانی ： %s (%s)"
 
-#: timeconditions.i18n.php:4
+#: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
 msgstr "فعال سازی درخواست های نگهداری"
 
@@ -198,7 +213,7 @@ msgstr ""
 "اگر این گزینه تنظیم شود، در صورت همخوان بودن شرط زمانی، حالت INUSE برای BLF "
 "در نظر گرفته می شود. در غیر اینصورت NOT_INUSE گزینش می شود"
 
-#: timeconditions.i18n.php:8
+#: timeconditions.i18n.php:18
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -243,7 +258,7 @@ msgstr "فهرست شرایط زمانی"
 msgid "List Time Groups"
 msgstr "فهرست گروه های زمانی"
 
-#: timeconditions.i18n.php:10
+#: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
 msgstr "زمان سرکشی نگهداری"
 
@@ -441,7 +456,7 @@ msgstr "همخوانی موقت"
 msgid "Temporary unmatched"
 msgstr "ناهمخوانی موقت"
 
-#: timeconditions.i18n.php:12
+#: timeconditions.i18n.php:22
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -497,7 +512,7 @@ msgstr "پنج شنبه"
 msgid "Time Condition"
 msgstr "شرط زمانی"
 
-#: timeconditions.i18n.php:6
+#: timeconditions.i18n.php:16
 msgid "Time Condition Module"
 msgstr "ماژول شرط زمانی"
 
@@ -511,7 +526,8 @@ msgstr "نام شرط زمانی"
 msgid "Time Condition: %s"
 msgstr "شرط زمانی ： %s"
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "شرایط زمانی"
 
@@ -525,7 +541,7 @@ msgstr "گروه زمانی"
 msgid "Time Group Mode"
 msgstr "حالت گروه زمانی"
 
-#: page.timegroups.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "گروه‌های زمانی"
 
@@ -610,19 +626,6 @@ msgstr "بدون نام"
 
 #~ msgid "1: Test"
 #~ msgstr "۱: تست"
-
-#~ msgid "Applications"
-#~ msgstr "برنامه‌های کاربردی"
-
-#~ msgid ""
-#~ "Creates a condition where calls will go to one of two destinations (eg, "
-#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
-#~ "be used for example to ring a receptionist during the day, or go directly "
-#~ "to an IVR at night."
-#~ msgstr ""
-#~ "هنگامی که تماس باید بر اساس تاریخ و زمان به یک مقصد هدایت شود، می بایست "
-#~ "یک شرط زمانی تعریف کنید. به عنوان مثال در طول روز تماس به یک داخلی هدایت "
-#~ "می شود در صورتی که در طول شب به منوی صوتی وصل خواهد شد."
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "

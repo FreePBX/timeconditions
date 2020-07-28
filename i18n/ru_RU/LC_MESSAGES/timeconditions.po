@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-17 12:25+0530\n"
+"POT-Creation-Date: 2020-07-28 12:43+0000\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -63,6 +63,10 @@ msgstr "Добавить время для этого  условия по вр�
 msgid "Already exists Time Conditions Name:"
 msgstr ""
 
+#: timeconditions.i18n.php:6
+msgid "Applications"
+msgstr "Приложения"
+
 #: functions.inc.php:650
 msgid "April"
 msgstr "Апрель"
@@ -111,6 +115,19 @@ msgstr "Переопределить изменения"
 #: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
 msgstr ""
+
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+"Создаёт условия, при котором вызов будет распределяться на одно и более "
+"назначение (например внутренний номер, Интеркативное меню, ринг-группа..) "
+"основываяь на текущем времени/дате. Это можно использовать например "
+"направляя входящие вызовы секретарю в рабочее время, и на Интерактивное меню "
+"- в ночное."
 
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
@@ -163,7 +180,7 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Редактировать временные условия :%s (%s)"
 
-#: timeconditions.i18n.php:4
+#: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
 msgstr "Задействовать опрос по обслуживанию"
 
@@ -201,7 +218,7 @@ msgstr ""
 "Если установлено, индикатор будет InUse если условие по времени совпадают, и "
 "NOT_INUSE, если нет"
 
-#: timeconditions.i18n.php:8
+#: timeconditions.i18n.php:18
 msgid ""
 "If set to false, this will override the execution of the Time Conditions "
 "maintenance task launched by call files. If all the feature codes for time "
@@ -249,7 +266,7 @@ msgstr "Список временных условий"
 msgid "List Time Groups"
 msgstr "Список временных групп"
 
-#: timeconditions.i18n.php:10
+#: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
 msgstr "Интервал опроса по обслуживанию"
 
@@ -449,7 +466,7 @@ msgstr "Временное совпадение"
 msgid "Temporary unmatched"
 msgstr "Временное несовпадение"
 
-#: timeconditions.i18n.php:12
+#: timeconditions.i18n.php:22
 msgid ""
 "The polling interval in seconds used by the Time Conditions maintenance "
 "task, launched by an Asterisk call file used to update Time Conditions "
@@ -515,7 +532,7 @@ msgstr "Четверг"
 msgid "Time Condition"
 msgstr "Правило по времени"
 
-#: timeconditions.i18n.php:6
+#: timeconditions.i18n.php:16
 msgid "Time Condition Module"
 msgstr "Модуль правил по времени"
 
@@ -529,7 +546,8 @@ msgstr "Имя  условия по времени"
 msgid "Time Condition: %s"
 msgstr "Правило по времени: %s"
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:7 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Правила по времени"
 
@@ -543,7 +561,7 @@ msgstr "Временная группа"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7
+#: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "Временная группа"
 
@@ -625,21 +643,6 @@ msgstr "переход, если правда"
 #: Timeconditions.class.php:496 Timeconditions.class.php:525
 msgid "unnamed"
 msgstr ""
-
-#~ msgid "Applications"
-#~ msgstr "Приложения"
-
-#~ msgid ""
-#~ "Creates a condition where calls will go to one of two destinations (eg, "
-#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
-#~ "be used for example to ring a receptionist during the day, or go directly "
-#~ "to an IVR at night."
-#~ msgstr ""
-#~ "Создаёт условия, при котором вызов будет распределяться на одно и более "
-#~ "назначение (например внутренний номер, Интеркативное меню, ринг-группа..) "
-#~ "основываяь на текущем времени/дате. Это можно использовать например "
-#~ "направляя входящие вызовы секретарю в рабочее время, и на Интерактивное "
-#~ "меню - в ночное."
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "
