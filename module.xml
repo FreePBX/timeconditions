@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>13.0.34.11</version>
+	<version>13.0.34.12</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/F2/Time+Conditions+Module</more-info>
 	<changelog>
+		*13.0.34.12* Packaging of ver 13.0.34.12
 		*13.0.34.11* Fixing FREEPBX-17723 Removing self timecondition entry from the destination time conditions list 
 		*13.0.34.10* FREEPBX-17552 Wrong URL's in Used as Destination 
 		*13.0.34.9* FREEPBX-17083 

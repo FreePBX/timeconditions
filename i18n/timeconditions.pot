@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for timeconditions
-# Copyright (C) 2008-2018 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2020 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-04 23:25-0400\n"
+"POT-Creation-Date: 2020-08-19 10:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,12 +27,8 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: Timeconditions.class.php:535
-#: Timeconditions.class.php:570
+#: Timeconditions.class.php:543
+#: Timeconditions.class.php:578
 #: install.php:200
 msgid ": Time Condition Override"
 msgstr ""
@@ -590,7 +586,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:480
-#: Timeconditions.class.php:506
+#: Timeconditions.class.php:488
+#: Timeconditions.class.php:514
 msgid "unnamed"
 msgstr ""

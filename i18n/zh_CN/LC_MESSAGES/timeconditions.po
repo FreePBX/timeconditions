@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 17:26-0400\n"
+"POT-Creation-Date: 2020-08-19 10:40+0000\n"
 "PO-Revision-Date: 2009-01-31 14:46+0800\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -28,11 +28,7 @@ msgstr "%s警告：%s没有为此条件设置时间，请检查"
 msgid "--Select a Group--"
 msgstr "--选择一个小组--"
 
-#: timeconditions.i18n.php:24
-msgid "1: Test"
-msgstr ""
-
-#: Timeconditions.class.php:535 Timeconditions.class.php:570 install.php:200
+#: Timeconditions.class.php:543 Timeconditions.class.php:578 install.php:200
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -574,7 +570,7 @@ msgstr "开始迁移"
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:480 Timeconditions.class.php:506
+#: Timeconditions.class.php:488 Timeconditions.class.php:514
 msgid "unnamed"
 msgstr ""
 
