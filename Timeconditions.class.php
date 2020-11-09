@@ -522,15 +522,22 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		if (isset($post['tcstate_new']) && $post['tcstate_new'] != 'unchanged') {
 			$this->setState($id, $post['tcstate_new'],!empty($invert_hint));
 		}
-
 		$fcc = new \featurecode('timeconditions', 'toggle-mode-'.$id);
-		if ($displayname) {
-			$fcc->setDescription("$id: $displayname");
-		} else {
-			$fcc->setDescription($id._(": Time Condition Override"));
-		}
-		$fcc->update();
+		$c = $fcc->getCodeActive();
+		$tcval = $fcc->getCode();
 		unset($fcc);
+		if($tcval == ''){
+			$this->createFeatureCode($id, $displayname);
+		} else {
+			$fcc = new \featurecode('timeconditions', 'toggle-mode-'.$id);
+			if ($displayname) {
+				$fcc->setDescription("$id: $displayname");
+			} else {
+				$fcc->setDescription($id._(": Time Condition Override"));
+			}
+			$fcc->update();
+			unset($fcc);
+		}
 		$this->FreePBX->Hooks->processHooks(array('id' => $id, 'post' => $post));
 	}
 
