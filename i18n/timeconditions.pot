@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-19 10:43+0000\n"
+"POT-Creation-Date: 2020-11-13 07:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,8 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: Timeconditions.class.php:530
-#: Timeconditions.class.php:565
+#: Timeconditions.class.php:536
+#: Timeconditions.class.php:572
 msgid ": Time Condition Override"
 msgstr ""
 
