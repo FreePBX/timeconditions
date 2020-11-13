@@ -6,7 +6,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: Timeconditions.class.php:530 Timeconditions.class.php:565
+#: Timeconditions.class.php:536 Timeconditions.class.php:572
 msgid ": Time Condition Override"
 msgstr ""
 

@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>15.0.15.4</version>
+	<version>15.0.15.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/F2/Time+Conditions+Module</more-info>
 	<changelog>
+		*15.0.15.5* FREEPBX-21827 Time Conditions not showing state 
 		*15.0.15.4* Packaging of ver 15.0.15.4
 		*15.0.15.3* FREEI-1968  timegroup not saving time details 
 		*15.0.15.2* FREEPBX-21190 
