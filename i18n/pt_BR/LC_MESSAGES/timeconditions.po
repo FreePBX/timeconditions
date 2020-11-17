@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-13 07:37+0000\n"
+"POT-Creation-Date: 2020-11-17 09:19+0530\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -75,10 +75,6 @@ msgstr "Adicionar um horário para esta condição horária"
 msgid "Already exists Time Conditions Name:"
 msgstr ""
 
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "Aplicações"
-
 #: functions.inc.php:646
 msgid "April"
 msgstr "Abril"
@@ -126,18 +122,6 @@ msgstr "Alterar Substituição"
 #: Timeconditions.class.php:75
 msgid "Could not delete time group as it is in use"
 msgstr "Não foi possível excluir o grupo horário pois ele está em uso"
-
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"Cria uma condição onde as chamadas irão para um dos dois destinos (por "
-"exemplo, um ramal, URA, grupo de toque...) com base na hora e/ou data. Isso "
-"pode ser usado, por exemplo, para ligar para uma recepcionista durante o "
-"dia, ou ir diretamente para uma URA durante a noite."
 
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
@@ -190,10 +174,6 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Editar Condições de Horário: %s (%s)"
 
-#: timeconditions.i18n.php:14
-msgid "Enable Maintenance Polling"
-msgstr "Habilitar Manutenção de Apuração"
-
 #: functions.inc.php:644
 msgid "February"
 msgstr "Fevereiro"
@@ -226,24 +206,6 @@ msgstr ""
 "Se definido, a dica será INUSE se a condição horária for igualada e "
 "NOT_INUSE se não coincidir"
 
-#: timeconditions.i18n.php:18
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
-msgstr ""
-"Se definido como falso, isso irá substituir a execução da tarefa de "
-"manutenção das Condições Horárias iniciadas pelos arquivos de chamada. Se "
-"todos os códigos de recurso para condições horárias estiverem desativados, a "
-"tarefa de manutenção não será iniciada de qualquer forma. Definir isto como "
-"falso seria pouco comum. Talvez você queira configurá-lo temporariamente se "
-"estiver depurando um sistema para evitar que o plano de discagem "
-"periodicamente execute através da CLI que inicia a tarefa de manutenção e "
-"pode distrair."
-
 #: views/timeconditions/advanced_form.php:114
 #: views/timeconditions/basic_form.php:223
 msgid "Invert BLF Hint"
@@ -274,10 +236,6 @@ msgstr "Listar Condições de Tempo"
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr "Lista Grupos Horários"
-
-#: timeconditions.i18n.php:20
-msgid "Maintenance Polling Interval"
-msgstr "Intervalo de Manutenção de Apuração"
 
 #: functions.inc.php:645
 msgid "March"
@@ -473,26 +431,6 @@ msgstr "Temporalmente coincide"
 msgid "Temporary unmatched"
 msgstr "Temporalmente não-coincide"
 
-#: timeconditions.i18n.php:22
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-"O intervalo de sondagem em segundos usado pela tarefa de manutenção de "
-"Condições Horárias, lançado por um arquivo de chamada Asterisk usado para "
-"atualizar estados substituição de condições horárias, bem como manter os "
-"valores de dica de estado de dispositivo personalizados atualizados quando "
-"usado com BLF. Um intervalo mais curto assegurará que os estados das chaves "
-"BLF sejam precisos. O intervalo deve ser menor do que o intervalo "
-"configurado mais curto entre dois estados de condição horária, de modo que "
-"uma substituição manual durante tal período seja devidamente reiniciada "
-"quando o novo período começar."
-
 #: views/timeconditions/advanced_form.php:164
 #: views/timeconditions/basic_form.php:273
 #, php-format
@@ -540,10 +478,6 @@ msgstr "Quinta"
 msgid "Time Condition"
 msgstr "Condições de Tempo"
 
-#: timeconditions.i18n.php:16
-msgid "Time Condition Module"
-msgstr "Módulo Condições Horárias"
-
 #: views/timeconditions/advanced_form.php:66
 #: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
@@ -554,8 +488,7 @@ msgstr "Nome da Condição Horária"
 msgid "Time Condition: %s"
 msgstr "Condição Horária: %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "Condições Horárias"
 
@@ -569,7 +502,7 @@ msgstr "Grupo de Tempo"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 #, fuzzy
 msgid "Time Groups"
 msgstr "Grupos Horários"
@@ -652,6 +585,67 @@ msgstr "verdadeiro vá para"
 #: Timeconditions.class.php:469 Timeconditions.class.php:498
 msgid "unnamed"
 msgstr "sem nome"
+
+#~ msgid "Applications"
+#~ msgstr "Aplicações"
+
+#~ msgid ""
+#~ "Creates a condition where calls will go to one of two destinations (eg, "
+#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
+#~ "be used for example to ring a receptionist during the day, or go directly "
+#~ "to an IVR at night."
+#~ msgstr ""
+#~ "Cria uma condição onde as chamadas irão para um dos dois destinos (por "
+#~ "exemplo, um ramal, URA, grupo de toque...) com base na hora e/ou data. "
+#~ "Isso pode ser usado, por exemplo, para ligar para uma recepcionista "
+#~ "durante o dia, ou ir diretamente para uma URA durante a noite."
+
+#~ msgid "Enable Maintenance Polling"
+#~ msgstr "Habilitar Manutenção de Apuração"
+
+#~ msgid ""
+#~ "If set to false, this will override the execution of the Time Conditions "
+#~ "maintenance task launched by call files. If all the feature codes for "
+#~ "time conditions are disabled, the maintenance task will not be launched "
+#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
+#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
+#~ "running through the CLI that the maintenance task launches and can be "
+#~ "distracting."
+#~ msgstr ""
+#~ "Se definido como falso, isso irá substituir a execução da tarefa de "
+#~ "manutenção das Condições Horárias iniciadas pelos arquivos de chamada. Se "
+#~ "todos os códigos de recurso para condições horárias estiverem "
+#~ "desativados, a tarefa de manutenção não será iniciada de qualquer forma. "
+#~ "Definir isto como falso seria pouco comum. Talvez você queira configurá-"
+#~ "lo temporariamente se estiver depurando um sistema para evitar que o "
+#~ "plano de discagem periodicamente execute através da CLI que inicia a "
+#~ "tarefa de manutenção e pode distrair."
+
+#~ msgid "Maintenance Polling Interval"
+#~ msgstr "Intervalo de Manutenção de Apuração"
+
+#~ msgid ""
+#~ "The polling interval in seconds used by the Time Conditions maintenance "
+#~ "task, launched by an Asterisk call file used to update Time Conditions "
+#~ "override states as well as keep custom device state hint values up-to-"
+#~ "date when being used with BLF. A shorter interval will assure that BLF "
+#~ "keys states are accurate. The interval should be less than the shortest "
+#~ "configured span between two time condition states, so that a manual "
+#~ "override during such a period is properly reset when the new period "
+#~ "starts."
+#~ msgstr ""
+#~ "O intervalo de sondagem em segundos usado pela tarefa de manutenção de "
+#~ "Condições Horárias, lançado por um arquivo de chamada Asterisk usado para "
+#~ "atualizar estados substituição de condições horárias, bem como manter os "
+#~ "valores de dica de estado de dispositivo personalizados atualizados "
+#~ "quando usado com BLF. Um intervalo mais curto assegurará que os estados "
+#~ "das chaves BLF sejam precisos. O intervalo deve ser menor do que o "
+#~ "intervalo configurado mais curto entre dois estados de condição horária, "
+#~ "de modo que uma substituição manual durante tal período seja devidamente "
+#~ "reiniciada quando o novo período começar."
+
+#~ msgid "Time Condition Module"
+#~ msgstr "Módulo Condições Horárias"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "
