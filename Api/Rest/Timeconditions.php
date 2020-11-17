@@ -24,7 +24,7 @@ class Timeconditions extends Base {
 		 */
 		$app->get('/{id}', function ($request, $response, $args) {
 			\FreePBX::Modules()->loadFunctionsInc('timeconditions');
-			$tcstate = timeconditions_get_state($params['id']);
+			$tcstate = timeconditions_get_state($args['id']);
 			if ($tcstate !== false) {
 				$timeconditions = array();
 				$timeconditions['state'] = $tcstate;
