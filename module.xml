@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>14.0.2.21</version>
+	<version>14.0.2.22</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/F2/Time+Conditions+Module</more-info>
 	<changelog>
+		*14.0.2.22* FREEPBX-22058 [BC-Break][TimeGroup] Empty time in timegroup 
 		*14.0.2.21* Packaging of ver 14.0.2.21
 		*14.0.2.20* FREEI-1968  timegroup not saving time details 
 		*14.0.2.19* FREEI-1135 Can't create Time Group 
