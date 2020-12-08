@@ -701,7 +701,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		foreach ($times as $key=>$val) {
 			extract($val);
 			$time = $this->buildTime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
-			if (isset($time) && $time != '') {
+			if (isset($time) && $time != '' && $time <> '*|*|*|*') {
 				$stmt->execute(array(':id' => $id, ':time' => $time));
 			}
 		}
