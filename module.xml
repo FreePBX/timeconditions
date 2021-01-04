@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>15.0.15.8</version>
+	<version>15.0.15.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/FPG/Time+Conditions+Module</more-info>
 	<changelog>
+		*15.0.15.9* FREEPBX-22141
 		*15.0.15.8* FREEPBX-22058 [BC-Break][TimeGroup] Empty time in timegroup 
 		*15.0.15.7* Packaging of ver 15.0.15.7
 		*15.0.15.6* Packaging of ver 15.0.15.6
@@ -67,7 +68,7 @@
 		</table>
 		<table name="timegroups_groups">
 			<field name="id" type="integer" primaryKey="true" autoincrement="true"/>
-			<field name="description" type="string" length="50" default=""/>
+			<field name="description" type="string" length="80" default=""/>
 			<key name="display" type="unique">
 				<column name="description"/>
 			</key>
