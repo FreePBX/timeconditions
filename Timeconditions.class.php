@@ -642,7 +642,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->Database->prepare($sql);
 		try {
-			$ret = $stmt->execute(array(':description' => trim($description)));
+			$ret = $stmt->execute(array(':description' => trim(preg_replace('/\s+/',' ', $description))));
 		} catch (\PDOException $e) {
 			//catch duplicates
 			if($e->getCode() === '23000'){
