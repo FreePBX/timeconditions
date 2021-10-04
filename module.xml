@@ -49,6 +49,12 @@
 		<framework namespace="FreePBX\Console\Command" class="Chown">
 			<method namespace="FreePBX\modules" class="Timeconditions" callingMethod="fwcChownFiles">chownFreepbx</method>
 		</framework>
+		<bulkhandler class="Bulkhandler" namespace="FreePBX\modules">
+			<method callingMethod="getHeaders" namespace="FreePBX\modules" class="Timeconditions">bulkhandlerGetHeaders</method>
+			<method callingMethod="getTypes" namespace="FreePBX\modules" class="Timeconditions">bulkhandlerGetTypes</method>
+			<method callingMethod="import" namespace="FreePBX\modules" class="Timeconditions">bulkhandlerImport</method>
+			<method callingMethod="export" namespace="FreePBX\modules" class="Timeconditions">bulkhandlerExport</method>
+		</bulkhandler>
 	</hooks>
 	<database>
 		<table name="timeconditions">
