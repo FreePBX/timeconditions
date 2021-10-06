@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-25 05:26+0000\n"
+"POT-Creation-Date: 2021-10-06 02:40+0000\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -20,6 +20,14 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
+#: Timeconditions.class.php:260
+msgid " Time for this time condition"
+msgstr ""
+
+#: Timeconditions.class.php:259
+msgid " Timee for this time condition"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:236
 msgid "--Select a Calendar--"
 msgstr ""
@@ -28,7 +36,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: Timeconditions.class.php:536 Timeconditions.class.php:572
+#: Timeconditions.class.php:620 Timeconditions.class.php:656
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
@@ -145,6 +153,10 @@ msgstr "Удалить"
 #: views/timegroups/form.php:48
 msgid "Description"
 msgstr "Описание"
+
+#: Timeconditions.class.php:271
+msgid "Description is required."
+msgstr ""
 
 #: views/timeconditions/advanced_form.php:363
 #: views/timeconditions/basic_form.php:186
@@ -582,6 +594,22 @@ msgstr "Конец интервала"
 msgid "Time(s)"
 msgstr "Время"
 
+#: Timeconditions.class.php:282
+msgid "TimeGroup already exists"
+msgstr ""
+
+#: Timeconditions.class.php:258
+msgid "TimeGroup description"
+msgstr ""
+
+#: Timeconditions.class.php:248 Timeconditions.class.php:249
+msgid "TimeGroups"
+msgstr ""
+
+#: Timeconditions.class.php:258
+msgid "Timegroup Description"
+msgstr ""
+
 #: functions.inc.php:619
 msgid "Tuesday"
 msgstr "Вторник"
@@ -636,11 +664,19 @@ msgstr ""
 msgid "false goto"
 msgstr "переход, если ложь"
 
+#: Timeconditions.class.php:259
+msgid "time1"
+msgstr ""
+
+#: Timeconditions.class.php:260
+msgid "time2"
+msgstr ""
+
 #: functions.inc.php:252
 msgid "true goto"
 msgstr "переход, если правда"
 
-#: Timeconditions.class.php:469 Timeconditions.class.php:498
+#: Timeconditions.class.php:553 Timeconditions.class.php:582
 msgid "unnamed"
 msgstr ""
 
