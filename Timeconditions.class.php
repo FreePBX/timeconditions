@@ -243,6 +243,90 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		}
     }
 
+	public function bulkhandlerGetTypes() {
+		$final['timegroup'] = array(
+				'name' => _('TimeGroups'),
+				'description' => _('TimeGroups')
+		);
+		return $final;
+	}
+
+	public function bulkhandlerGetHeaders($type) {
+		switch($type){
+			case 'timegroup':
+				$headers = array();
+				$headers['description'] = array('required' => true, 'identifier' => _("Timegroup Description"), 'description' => _("TimeGroup description"));
+				$headers['time1'] = array('required' => true, 'identifier' => _("time1"), 'description' => _(" Timee for this time condition"));
+				$headers['time2'] = array('required' => false, 'identifier' => _("time2"), 'description' => _(" Time for this time condition"));
+			break;
+		}
+		return $headers;
+	}
+
+	public function bulkhandlerImport($type, $rawData, $replaceExisting = true) {
+		switch($type) {
+			case 'timegroup':
+				foreach ($rawData as $data) {
+					if (empty($data['description'])) {
+						return array("status" => false, "message" => _("Description is required."));
+					}
+					$sql = "SELECT id FROM timegroups_groups WHERE description = :description LIMIT 1";
+					$stmt = $this->Database->prepare($sql);
+					$stmt->execute(array(':description' => $data['description']));
+					$results = $stmt->fetch();
+					unset($exitingid);
+					if(isset($results[0])){
+						$exitingid = $results[0];
+					}
+					if(!$replaceExisting && isset($results[0])) {
+						return array("status" => false, "message" => _("TimeGroup already exists"));
+					}
+					unset($times);
+					$times = array();
+					foreach($data as $key=>$val){
+						if($key == 'description'){
+							continue;
+						}
+						if(trim($val) !=''){
+							$times[] = $val;
+						}
+					}
+					if($replaceExisting && isset($exitingid)){
+					//removing the existing one from db
+						$this->delTimeGroup($exitingid);
+					}
+					$this->addTimeGroupFromBulkhandler($data['description'], $times);
+				}
+			break;
+		}
+		return array('status' => true);
+	}
+
+	public function bulkhandlerExport($type) {
+		switch ($type) {
+		case 'timegroup':
+			$timegroups = $this->listTimegroups(true);
+			$data = array();
+			foreach($timegroups as $key => $tg){
+				$count = 1;
+				unset($data);
+				$data = array();
+				$sql = "SELECT `time` from timegroups_details where timegroupid = :id";
+				$stmt = $this->Database->prepare($sql);
+				$stmt->execute(array(':id'=>$tg['id']));
+				$results = $stmt->fetchall();
+				foreach($results as $result){
+					$akey = 'time'.$count;
+					$data[$akey] =$result['time'];
+					$count ++;
+				}
+				$returnarray[$key] = array_merge(array('description'=>$tg['description']),$data);
+			}
+			return $returnarray;
+		}
+	}
+
+
 	public function listTimegroups($assoc = false, $ajrq = false){
 		$tmparray = array();
 		$trimedresult = array();
@@ -659,6 +743,28 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$this->FreePBX->Hooks->processHooks($timegroup);
 		return $timegroup;
 	}
+
+	public function addTimeGroupFromBulkhandler($description, $times){
+		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
+		$stmt = $this->Database->prepare($sql);
+		try {
+			$ret = $stmt->execute(array(':description' => trim(preg_replace('/\s+/',' ', $description))));
+		} catch (\PDOException $e) {
+			//catch duplicates
+			if($e->getCode() === '23000'){
+				return false;
+			}else{
+					throw $e;
+			}
+		}
+		$timegroup = $this->Database->lastInsertId();
+		if (isset($times)) {
+			$this->addTimesFromBulkhandler($timegroup,$times);
+		}
+		needreload();
+		$this->FreePBX->Hooks->processHooks($timegroup);
+		return $timegroup;
+	}
 	public function editTimeGroup($id,$description){
 		$sql = "UPDATE timegroups_groups SET description = :description WHERE id = :id";
 		$stmt = $this->Database->prepare($sql);
@@ -690,7 +796,18 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		return $this->addTimeGroup($description . '_COPY_', $times);
 	}
 
-
+	public function addTimesFromBulkhandler($id,$times){
+		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
+		$stmt = $this->Database->prepare($sql);
+		$stmt->execute(array(':id' => $id));
+		$times = is_array($times)?$times:array();
+		$sql = "INSERT timegroups_details (timegroupid, time) VALUES (:id, :time)";
+		$stmt = $this->Database->prepare($sql);
+		foreach ($times as $key=>$val) {
+			$stmt->execute(array(':id' => $id, ':time' => $val));
+		}
+		needreload();
+	}
 	public function editTimes($id,$times){
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
 		$stmt = $this->Database->prepare($sql);
