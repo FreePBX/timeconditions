@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>15.0.15.10</version>
+	<version>15.0.15.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/FPG/Time+Conditions+Module</more-info>
 	<changelog>
+		*15.0.15.11* FREEPBX-22461 Bulk Handler export time Groups 
 		*15.0.15.10* FREEI-1714-timegroups-tabs-error 
 		*15.0.15.9* FREEPBX-22141
 		*15.0.15.8* FREEPBX-22058 [BC-Break][TimeGroup] Empty time in timegroup 

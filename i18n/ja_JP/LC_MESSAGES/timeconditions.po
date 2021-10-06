@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-25 05:26+0000\n"
+"POT-Creation-Date: 2021-10-06 02:40+0000\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -49,6 +49,14 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
+#: Timeconditions.class.php:260
+msgid " Time for this time condition"
+msgstr ""
+
+#: Timeconditions.class.php:259
+msgid " Timee for this time condition"
+msgstr ""
+
 #: views/timeconditions/advanced_form.php:236
 msgid "--Select a Calendar--"
 msgstr ""
@@ -57,7 +65,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:536 Timeconditions.class.php:572
+#: Timeconditions.class.php:620 Timeconditions.class.php:656
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -170,6 +178,10 @@ msgstr "削除"
 #: views/timegroups/form.php:48
 msgid "Description"
 msgstr "説明"
+
+#: Timeconditions.class.php:271
+msgid "Description is required."
+msgstr ""
 
 #: views/timeconditions/advanced_form.php:363
 #: views/timeconditions/basic_form.php:186
@@ -586,6 +598,22 @@ msgstr "終了時刻"
 msgid "Time(s)"
 msgstr "時間設定"
 
+#: Timeconditions.class.php:282
+msgid "TimeGroup already exists"
+msgstr ""
+
+#: Timeconditions.class.php:258
+msgid "TimeGroup description"
+msgstr ""
+
+#: Timeconditions.class.php:248 Timeconditions.class.php:249
+msgid "TimeGroups"
+msgstr ""
+
+#: Timeconditions.class.php:258
+msgid "Timegroup Description"
+msgstr ""
+
 #: functions.inc.php:619
 msgid "Tuesday"
 msgstr "火曜日"
@@ -640,11 +668,19 @@ msgstr ""
 msgid "false goto"
 msgstr "一致しない goto"
 
+#: Timeconditions.class.php:259
+msgid "time1"
+msgstr ""
+
+#: Timeconditions.class.php:260
+msgid "time2"
+msgstr ""
+
 #: functions.inc.php:252
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:469 Timeconditions.class.php:498
+#: Timeconditions.class.php:553 Timeconditions.class.php:582
 msgid "unnamed"
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-03 04:04+0000\n"
+"POT-Creation-Date: 2021-10-06 02:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: Timeconditions.class.php:260
+msgid " Time for this time condition"
+msgstr ""
+
+#: Timeconditions.class.php:259
+msgid " Timee for this time condition"
+msgstr ""
 
 #: views/timeconditions/advanced_form.php:236
 msgid "--Select a Calendar--"
@@ -27,8 +35,8 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: Timeconditions.class.php:536
-#: Timeconditions.class.php:572
+#: Timeconditions.class.php:620
+#: Timeconditions.class.php:656
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -144,6 +152,10 @@ msgstr ""
 
 #: views/timegroups/form.php:48
 msgid "Description"
+msgstr ""
+
+#: Timeconditions.class.php:271
+msgid "Description is required."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:363
@@ -553,6 +565,23 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
+#: Timeconditions.class.php:282
+msgid "TimeGroup already exists"
+msgstr ""
+
+#: Timeconditions.class.php:258
+msgid "TimeGroup description"
+msgstr ""
+
+#: Timeconditions.class.php:248
+#: Timeconditions.class.php:249
+msgid "TimeGroups"
+msgstr ""
+
+#: Timeconditions.class.php:258
+msgid "Timegroup Description"
+msgstr ""
+
 #: functions.inc.php:619
 msgid "Tuesday"
 msgstr ""
@@ -607,11 +636,19 @@ msgstr ""
 msgid "false goto"
 msgstr ""
 
+#: Timeconditions.class.php:259
+msgid "time1"
+msgstr ""
+
+#: Timeconditions.class.php:260
+msgid "time2"
+msgstr ""
+
 #: functions.inc.php:252
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:469
-#: Timeconditions.class.php:498
+#: Timeconditions.class.php:553
+#: Timeconditions.class.php:582
 msgid "unnamed"
 msgstr ""
