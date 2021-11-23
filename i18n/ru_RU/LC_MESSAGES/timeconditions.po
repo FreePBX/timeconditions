@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 12:43+0000\n"
-"PO-Revision-Date: 2021-11-23 12:00+0000\n"
+"PO-Revision-Date: 2021-11-24 15:00+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/ru/>\n"
@@ -168,7 +168,7 @@ msgstr "Назначение ,  если текущее  время  не поп
 
 #: Timeconditions.class.php:190
 msgid "Duplicate"
-msgstr ""
+msgstr "Скопировать"
 
 #: assets/js/timeconditions/timeconditions.js:29
 msgid "Duplicate Time Conditions Name"
