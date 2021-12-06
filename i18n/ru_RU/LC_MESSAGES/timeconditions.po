@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 12:43+0000\n"
-"PO-Revision-Date: 2021-11-24 15:00+0000\n"
+"PO-Revision-Date: 2021-12-08 11:01+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/ru/>\n"
@@ -30,12 +30,12 @@ msgstr "--Выбрать группу--"
 
 #: Timeconditions.class.php:557 Timeconditions.class.php:592
 msgid ": Time Condition Override"
-msgstr "Перезаписать Правила по времени"
+msgstr ": переопределить Правило по времени"
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
-msgstr "Действие"
+msgstr "Действия"
 
 #: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:166
 msgid "Add New Time Group..."
@@ -280,7 +280,7 @@ msgstr "Май"
 
 #: views/timeconditions/advanced_form.php:204
 msgid "Mode"
-msgstr ""
+msgstr "Режим"
 
 #: functions.inc.php:622
 msgid "Monday"
