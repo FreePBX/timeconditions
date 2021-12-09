@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 12:43+0000\n"
-"PO-Revision-Date: 2021-12-08 11:01+0000\n"
+"PO-Revision-Date: 2021-12-09 11:44+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/ru/>\n"
@@ -39,7 +39,7 @@ msgstr "Действия"
 
 #: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:166
 msgid "Add New Time Group..."
-msgstr ""
+msgstr "Добавить новую группу времени..."
 
 #: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
@@ -61,7 +61,7 @@ msgstr "Добавить время для этого  условия по вр�
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
-msgstr ""
+msgstr "Такое название правил по времени уже существует:"
 
 #: timeconditions.i18n.php:6
 msgid "Applications"
@@ -78,28 +78,28 @@ msgstr "Август"
 #: views/timeconditions/advanced_form.php:231
 #: assets/js/timeconditions/timeconditions.js:64
 msgid "Calendar"
-msgstr ""
+msgstr "Календарь"
 
 #: views/timeconditions/advanced_form.php:258
 #: assets/js/timeconditions/timeconditions.js:66
 msgid "Calendar Group"
-msgstr ""
+msgstr "Группа календаря"
 
 #: views/timeconditions/advanced_form.php:275
 msgid "Calendar Group to check for timeconditions"
-msgstr ""
+msgstr "Группа календаря для проверки правил по времени"
 
 #: views/timeconditions/advanced_form.php:212
 msgid "Calendar Mode"
-msgstr ""
+msgstr "Режим календаря"
 
 #: functions.inc.php:102 functions.inc.php:113
 msgid "Calendar Not found"
-msgstr ""
+msgstr "Календарь не найден"
 
 #: views/timeconditions/advanced_form.php:248
 msgid "Calendar to check for time condition"
-msgstr ""
+msgstr "Календарь для проверки правил по времени"
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
@@ -114,7 +114,7 @@ msgstr "Переопределить изменения"
 
 #: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
-msgstr ""
+msgstr "Невозможно удалить группу времени, так как она используется"
 
 #: timeconditions.i18n.php:8
 msgid ""
@@ -172,7 +172,7 @@ msgstr "Скопировать"
 
 #: assets/js/timeconditions/timeconditions.js:29
 msgid "Duplicate Time Conditions Name"
-msgstr ""
+msgstr "Повторяющееся название правил по времени"
 
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
@@ -254,7 +254,7 @@ msgstr "Июнь"
 
 #: views/timeconditions/grid.php:28
 msgid "Linked Item"
-msgstr ""
+msgstr "Связанный элемент"
 
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
 #: views/timegroups/grid.php:9
@@ -316,12 +316,12 @@ msgstr "Не перезаписывать"
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
 msgid "Not Set"
-msgstr ""
+msgstr "Не установлен"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
 #: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Not received"
-msgstr ""
+msgstr "Не получено"
 
 #: functions.inc.php:657
 msgid "November"
@@ -338,7 +338,7 @@ msgstr "Переопределить ПИН"
 
 #: views/timeconditions/grid.php:27
 msgid "Override State"
-msgstr ""
+msgstr "Переопределить состояние"
 
 #: views/timeconditions/advanced_form.php:32
 #: views/timeconditions/basic_form.php:30
@@ -375,10 +375,13 @@ msgid ""
 "Please select a calendar or calendar group to associate with this "
 "timecondition."
 msgstr ""
+"Пожалуйста, выберите календарь или группу календарей для связки с этим "
+"правилом по времени."
 
 #: assets/js/timeconditions/timeconditions.js:43
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
+"Пожалуйста, выберите группу времени для связки с этим правилом по времени."
 
 #: Timeconditions.class.php:185
 msgid "Reset"
@@ -395,7 +398,7 @@ msgstr "Суббота"
 
 #: assets/js/timeconditions/timeconditions.js:162
 msgid "Select a Group"
-msgstr ""
+msgstr "Выберите группу"
 
 #: views/timeconditions/advanced_form.php:298
 #: views/timeconditions/basic_form.php:126
@@ -411,7 +414,7 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:221
 msgid "Select the Mode for checking time conditions"
-msgstr ""
+msgstr "Выберите режим для проверки правил по времени"
 
 #: functions.inc.php:655
 msgid "September"
@@ -519,6 +522,7 @@ msgstr ""
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
+"Эта группа времени в настоящее время используется и не может быть удалена"
 
 #: views/timegroups/form.php:57
 msgid "This will display as the name of this Time Group"
@@ -559,7 +563,7 @@ msgstr "Временная группа"
 
 #: views/timeconditions/advanced_form.php:210
 msgid "Time Group Mode"
-msgstr ""
+msgstr "Режим временной группы"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
@@ -622,15 +626,15 @@ msgstr "Да"
 
 #: assets/js/timeconditions/timeconditions.js:187
 msgid "You cant set both a group and a calendar"
-msgstr ""
+msgstr "Вы не можете установить одновременно группу и календарь"
 
 #: functions.inc.php:102
 msgid "Your timecondition is linked to a non-existant calendar"
-msgstr ""
+msgstr "Ваше правило по времени связано с несуществующим календарем"
 
 #: functions.inc.php:113
 msgid "Your timecondition is linked to a non-existant calendar group"
-msgstr ""
+msgstr "Ваше правило по времени связано с несуществующей группой календаря"
 
 #: functions.inc.php:264
 msgid "false goto"
@@ -642,7 +646,7 @@ msgstr "переход, если правда"
 
 #: Timeconditions.class.php:496 Timeconditions.class.php:525
 msgid "unnamed"
-msgstr ""
+msgstr "безымянный"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "
