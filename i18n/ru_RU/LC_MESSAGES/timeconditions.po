@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 12:43+0000\n"
-"PO-Revision-Date: 2021-12-09 11:44+0000\n"
+"PO-Revision-Date: 2021-12-10 13:01+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/ru/>\n"
@@ -39,7 +39,7 @@ msgstr "Действия"
 
 #: functions.inc.php:567 assets/js/timeconditions/timeconditions.js:166
 msgid "Add New Time Group..."
-msgstr "Добавить новую группу времени..."
+msgstr "Добавить новую временную группу..."
 
 #: views/timegroups/form.php:74 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
@@ -49,7 +49,7 @@ msgstr "Добавить время"
 #: views/timeconditions/basic_form.php:6 views/timeconditions/bootnav.php:14
 #: views/timeconditions/grid.php:9
 msgid "Add Time Condition"
-msgstr "Добавить временное правило"
+msgstr "Добавить правило по времени"
 
 #: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
 msgid "Add Time Group"
@@ -57,7 +57,7 @@ msgstr "Добавить временную группу"
 
 #: views/timegroups/form.php:82
 msgid "Add a time for this time condition"
-msgstr "Добавить время для этого  условия по времени"
+msgstr "Добавить время для этого правила по времени"
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
