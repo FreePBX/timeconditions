@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-28 12:43+0000\n"
-"PO-Revision-Date: 2021-12-15 07:00+0000\n"
+"PO-Revision-Date: 2021-12-21 06:00+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/ru/>\n"
@@ -195,8 +195,8 @@ msgstr "Пятница"
 #: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
-"Хорошо бы присвоить какое-то описание для Правила по времени, это поможет в "
-"дальнейшем."
+"Дайте этому правилу по времени краткое название чтобы потом идентифицировать "
+"его."
 
 #: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
@@ -214,8 +214,8 @@ msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
-"Если установлено, индикатор будет InUse если условие по времени совпадают, и "
-"NOT_INUSE, если нет"
+"Если установлено - hint будет INUSE, если правило по времени соответствует и "
+"NOT_INUSE - если не соответствует"
 
 #: timeconditions.i18n.php:18
 msgid ""
