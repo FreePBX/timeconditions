@@ -1,14 +1,13 @@
-# Russian freePBX ver. translation
-# Copyright (c) 2006-2008 PostMet Corporation
-# This file is distributed under the same license as the freePBX package.
-# Alexander Kozyrev <ceo@postmet.com>, Alexander Anikin <may@postmet.com>, 2006-2013.
-#
+# This file is part of FreePBX.
+# For licensing information, please see the file named LICENSE located in the module directory
+# FreePBX language template for timeconditions
+# Copyright (C) 2008-2020 Sangoma Technologies, Inc.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.3\n"
+"Project-Id-Version: Time Conditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-28 12:43+0000\n"
-"PO-Revision-Date: 2021-12-23 14:00+0000\n"
+"POT-Creation-Date: 2020-01-17 12:25+0530\n"
+"PO-Revision-Date: 2022-04-19 05:32+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/ru/>\n"
@@ -22,15 +21,15 @@ msgstr ""
 
 #: views/timeconditions/advanced_form.php:236
 msgid "--Select a Calendar--"
-msgstr "--Выбрать календарь--"
+msgstr "--Выбор календаря--"
 
 #: functions.inc.php:555 views/timeconditions/advanced_form.php:263
 msgid "--Select a Group--"
-msgstr "--Выбрать группу--"
+msgstr "--Выбор группы--"
 
 #: Timeconditions.class.php:557 Timeconditions.class.php:592
 msgid ": Time Condition Override"
-msgstr ": переопределить Правило по времени"
+msgstr ": Переопределение правил по времени"
 
 #: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
 #: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
@@ -61,7 +60,7 @@ msgstr "Добавить время для этого правила по вре
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
-msgstr "Такое название правил по времени уже существует:"
+msgstr "Такое название правила по времени уже существует:"
 
 #: timeconditions.i18n.php:6
 msgid "Applications"
@@ -99,22 +98,20 @@ msgstr "Календарь не найден"
 
 #: views/timeconditions/advanced_form.php:248
 msgid "Calendar to check for time condition"
-msgstr "Календарь для проверки правил по времени"
+msgstr "Календарь для проверки правила по времени"
 
 #: assets/js/timegroups/timegroups.js:90
 msgid "Cannot remove the only rule. At least 1 rule is required."
-msgstr ""
-"Невозможно удалить единственное правило. Должно существовать как минимум "
-"одно правило."
+msgstr "Не удается удалить единственное правило. Требуется не менее 1 правила."
 
 #: views/timeconditions/advanced_form.php:143
 #: views/timeconditions/basic_form.php:252
 msgid "Change Override"
-msgstr "Переопределить изменения"
+msgstr "Переопределение изменений"
 
 #: Timeconditions.class.php:79
 msgid "Could not delete time group as it is in use"
-msgstr "Невозможно удалить временную группу, так как она используется"
+msgstr "Невозможно удалить временную группу, т.к. она используется"
 
 #: timeconditions.i18n.php:8
 msgid ""
@@ -131,7 +128,7 @@ msgstr ""
 #: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
-msgstr "Текущее"
+msgstr "Текущий"
 
 #: functions.inc.php:658
 msgid "December"
@@ -148,12 +145,12 @@ msgstr "Описание"
 #: views/timeconditions/advanced_form.php:363
 #: views/timeconditions/basic_form.php:186
 msgid "Destination if time does not matche"
-msgstr "Назначение при несовпадении текущего времени условиям"
+msgstr "Назначение при несовпадении времени"
 
 #: views/timeconditions/advanced_form.php:333
 #: views/timeconditions/basic_form.php:156
 msgid "Destination if time matches"
-msgstr "Назначение при попадании во временную группу"
+msgstr "Назначение если время совпадает"
 
 #: views/timeconditions/advanced_form.php:315
 #: views/timeconditions/basic_form.php:138
@@ -171,17 +168,17 @@ msgstr "Скопировать"
 
 #: assets/js/timeconditions/timeconditions.js:29
 msgid "Duplicate Time Conditions Name"
-msgstr "Повторяющееся название правил по времени"
+msgstr "Такое название правила по времени уже существует"
 
 #: views/timeconditions/advanced_form.php:18
 #: views/timeconditions/basic_form.php:18
 #, php-format
 msgid "Edit Time Condition: %s (%s)"
-msgstr "Редактировать правила по времени: %s (%s)"
+msgstr "Редактировать правило по времени: %s (%s)"
 
 #: timeconditions.i18n.php:14
 msgid "Enable Maintenance Polling"
-msgstr "Задействовать опрос техобслуживания"
+msgstr "Включить опрос для обслуживания"
 
 #: functions.inc.php:648
 msgid "February"
@@ -195,8 +192,8 @@ msgstr "Пятница"
 #: views/timeconditions/basic_form.php:73
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
-"Дайте этому правилу по времени краткое название чтобы потом идентифицировать "
-"его."
+"Дайте этому правилу по времени краткое название, чтобы помочь вам "
+"идентифицировать его."
 
 #: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
@@ -204,8 +201,8 @@ msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
 msgstr ""
-"Если установлено - набор кода функции потребует пин-код для изменения "
-"состояния переопределения"
+"Если установлен сервисный код - потребуется pin-код для переопределения "
+"изменения состояния"
 
 #: views/timeconditions/advanced_form.php:131
 #: views/timeconditions/basic_form.php:240
@@ -214,8 +211,8 @@ msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
 msgstr ""
-"Если установлено - hint будет INUSE, если правило по времени соответствует и "
-"NOT_INUSE - если не соответствует"
+"Если установлено - hint будет INUSE если правило по времени совпадает; и "
+"NOT_INUSE - если оно не выполняется"
 
 #: timeconditions.i18n.php:18
 msgid ""
@@ -226,18 +223,18 @@ msgid ""
 "temporarily if debugging a system to avoid the periodic dialplan running "
 "through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
-"Если установлено в ложь, это переопределит выполнение задачи обслуживания "
-"правил по времени, начатой файлами звонков. Если все идентификационные коды "
-"для правил по времени будут отключены, то в этом случае задача обслуживания "
-"не будет начата. Установка этого в Ложь было бы несколько странно. Вы можете "
-"установить это в Ложь временно, отлаживая систему, чтобы избежать "
-"периодического отслеживания запуска задач обслуживания диалплана в CLI и не "
-"отвлекаться."
+"Если установлено значение false - это переопределит выполнение задачи "
+"обслуживания временных условий, запущенной файлами вызовов. Если все коды "
+"функций для временных условий отключены - задача обслуживания все равно не "
+"будет запущена. Параметр в false, будет довольно редко. Вы можете установить "
+"его временно, если отлаживаете систему, чтобы избежать периодического "
+"выполнения диалплана через CLI, который запускает задачу обслуживания и "
+"может отвлекать внимание."
 
 #: views/timeconditions/advanced_form.php:114
 #: views/timeconditions/basic_form.php:223
 msgid "Invert BLF Hint"
-msgstr "Инвертировать BLF индикатор"
+msgstr "Инвертировать хинт BLF"
 
 #: functions.inc.php:647
 msgid "January"
@@ -258,7 +255,7 @@ msgstr "Связанный элемент"
 #: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
 #: views/timegroups/grid.php:9
 msgid "List Time Conditions"
-msgstr "Список временных условий"
+msgstr "Список правил по времени"
 
 #: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
 #: views/timegroups/bootnav.php:12
@@ -267,7 +264,7 @@ msgstr "Список временных групп"
 
 #: timeconditions.i18n.php:20
 msgid "Maintenance Polling Interval"
-msgstr "Интервал опроса по обслуживанию"
+msgstr "Интервал технического обслуживания"
 
 #: functions.inc.php:649
 msgid "March"
@@ -287,19 +284,19 @@ msgstr "Понедельник"
 
 #: functions.inc.php:821
 msgid "Month Day finish"
-msgstr "День окончания  временного интервала"
+msgstr "Число месяца для окончания"
 
 #: functions.inc.php:812
 msgid "Month Day start"
-msgstr "День начала временного интервала"
+msgstr "Число месяца для начала"
 
 #: functions.inc.php:839
 msgid "Month finish"
-msgstr "Месяц окончания временного интервала"
+msgstr "Месяц окончания"
 
 #: functions.inc.php:830
 msgid "Month start"
-msgstr "Месяца начала временного интервала"
+msgstr "Месяц начала"
 
 #: views/timeconditions/advanced_form.php:122
 #: views/timeconditions/basic_form.php:231
@@ -310,17 +307,17 @@ msgstr "Нет"
 #: views/timeconditions/basic_form.php:24
 #: assets/js/timeconditions/timeconditions.js:100
 msgid "No Override"
-msgstr "Не перезаписывать"
+msgstr "Не переопределять"
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
 msgid "Not Set"
-msgstr "Не установлен"
+msgstr "Не установлено"
 
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
 #: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Not received"
-msgstr "Не получено"
+msgstr "Неполученный"
 
 #: functions.inc.php:657
 msgid "November"
@@ -333,7 +330,7 @@ msgstr "Октябрь"
 #: views/timeconditions/advanced_form.php:90
 #: views/timeconditions/basic_form.php:199
 msgid "Override Code Pin"
-msgstr "Переопределить ПИН"
+msgstr "Pin-код переопределения"
 
 #: views/timeconditions/grid.php:27
 msgid "Override State"
@@ -342,12 +339,12 @@ msgstr "Переопределить состояние"
 #: views/timeconditions/advanced_form.php:32
 #: views/timeconditions/basic_form.php:30
 msgid "Permanent Override matching state"
-msgstr "Постоянно перезаписывать при совпадении"
+msgstr "Состояние соответствия постоянного переопределения"
 
 #: views/timeconditions/advanced_form.php:38
 #: views/timeconditions/basic_form.php:36
 msgid "Permanent Override unmatching state"
-msgstr "Долговременное переопределение несоответствия состояния"
+msgstr "Состояние несоответствия постоянного переопределения"
 
 #: views/timeconditions/advanced_form.php:151
 #: views/timeconditions/basic_form.php:260
@@ -359,28 +356,29 @@ msgstr "Постоянное совпадение"
 #: views/timeconditions/basic_form.php:262
 #: assets/js/timeconditions/timeconditions.js:91
 msgid "Permanently unmatched"
-msgstr "Временное несовпадение"
+msgstr "Постоянное несовпадение"
 
 #: assets/js/timeconditions/timeconditions.js:39
 msgid "Please enter a valid Override Code Pin"
-msgstr "Пожалуйста введите  пин-код"
+msgstr "Пожалуйста, введите действительное переопределение PIN-кода"
 
 #: assets/js/timeconditions/timeconditions.js:23
 msgid "Please enter a valid Time Conditions Name"
-msgstr "Выбрать разрешённое название для Правила по времени"
+msgstr "Пожалуйста, введите действительное название правила по времени"
 
 #: assets/js/timeconditions/timeconditions.js:47
 msgid ""
 "Please select a calendar or calendar group to associate with this "
 "timecondition."
 msgstr ""
-"Пожалуйста, выберите календарь или группу календарей для связки с этим "
-"правилом по времени."
+"Выберите календарь или группу календарей для связи с этим правилом по "
+"времени."
 
 #: assets/js/timeconditions/timeconditions.js:43
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
-"Пожалуйста, выберите группу времени для связки с этим правилом по времени."
+"Пожалуйста, выберите временную группу для связи ее с этим правилом по "
+"времени."
 
 #: Timeconditions.class.php:185
 msgid "Reset"
@@ -389,7 +387,7 @@ msgstr "Сброс"
 #: views/timeconditions/advanced_form.php:149
 #: views/timeconditions/basic_form.php:258
 msgid "Reset Override"
-msgstr "Сброс перезаписи"
+msgstr "Сброс переопределения"
 
 #: functions.inc.php:627
 msgid "Saturday"
@@ -397,7 +395,7 @@ msgstr "Суббота"
 
 #: assets/js/timeconditions/timeconditions.js:162
 msgid "Select a Group"
-msgstr "Выберите группу"
+msgstr "Выбор группы"
 
 #: views/timeconditions/advanced_form.php:298
 #: views/timeconditions/basic_form.php:126
@@ -406,14 +404,13 @@ msgid ""
 "to matching destination. If no group is selected, call will always go to no-"
 "match destination."
 msgstr ""
-"Выбрать группу из списка временных групп. В указаный временной интервал "
-"звонки будут направляться по указанному направлению. Если не выбрано никакой "
-"группы, звонки будут всегда направляться по назначению не попадающему в "
-"Правило по времени."
+"Выберите Временную группу, созданную в разделе Временные группы. Совпадающее "
+"время будет отправлено в соответствующий пункт назначения. Если ни одна "
+"группа не выбрана - вызов всегда будет идти в назначение при несовпадении."
 
 #: views/timeconditions/advanced_form.php:221
 msgid "Select the Mode for checking time conditions"
-msgstr "Выберите режим для проверки правил по времени"
+msgstr "Выберите режим проверки правил по времени"
 
 #: functions.inc.php:655
 msgid "September"
@@ -422,7 +419,7 @@ msgstr "Сентябрь"
 #: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
 #: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Server time:"
-msgstr "Точное время (сервера):"
+msgstr "Время сервера:"
 
 #: views/timeconditions/advanced_form.php:193
 #: views/timeconditions/basic_form.php:102
@@ -432,15 +429,15 @@ msgid ""
 "list. <br/><strong>Important</strong>: Your selection here <strong>MUST</"
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
-"Пожалуйста введите имя временной зоны если нахначения находятся в других "
-"временных зонах по отношению к серверу . Введите первые два символа для "
-"выпадающего списка автозаполения . <br/><strong>Важно</strong>:Ваш выбор "
-"<strong>ДОЛЖЕН</strong>появиться в выпадающем списке или в директории /usr/"
-"share/zoneinfo/."
+"Укажите часовой пояс по имени, если пункты назначения находятся в ином "
+"часовом поясе, чем сервер. Введите два символа, чтобы запустить поиск по "
+"списку выбора. <br/><strong>Важно</strong>: ваш выбор здесь "
+"<strong>должен</strong> появиться в списке выбора или в каталоге /usr/share/"
+"zoneinfo/."
 
 #: Timeconditions.class.php:195
 msgid "Submit"
-msgstr "Применить"
+msgstr "Принять"
 
 #: functions.inc.php:621
 msgid "Sunday"
@@ -449,24 +446,24 @@ msgstr "Воскресенье"
 #: views/timeconditions/advanced_form.php:29
 #: views/timeconditions/basic_form.php:27
 msgid "Temporary Override matching state"
-msgstr "Временно перезаписывать при совпадении"
+msgstr "Временное переопределение соответствующего состояния"
 
 #: views/timeconditions/advanced_form.php:35
 #: views/timeconditions/basic_form.php:33
 msgid "Temporary Override unmatching state"
-msgstr "Временно перезаписывать при несовпадении"
+msgstr "Временное переопределение несоответствующего состояния"
 
 #: views/timeconditions/advanced_form.php:150
 #: views/timeconditions/basic_form.php:259
 #: assets/js/timeconditions/timeconditions.js:97
 msgid "Temporary matched"
-msgstr "Временное совпадение"
+msgstr "Временное соответствие"
 
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
 #: assets/js/timeconditions/timeconditions.js:94
 msgid "Temporary unmatched"
-msgstr "Временное несовпадение"
+msgstr "Временное несоответствие"
 
 #: timeconditions.i18n.php:22
 msgid ""
@@ -478,14 +475,14 @@ msgid ""
 "configured span between two time condition states, so that a manual override "
 "during such a period is properly reset when the new period starts."
 msgstr ""
-"Интервал опроса в секундах используется задачей обслуживания правил по "
-"времени, запущенный call-файл Астериска используется для обновления правил "
-"по времени, переопределения состояния, а так же поддерживать различные "
-"состояния индикаторов устройств, использующих BLF. Короткий интервал "
-"гарантирует актуальное состояние клавиши BLF. Интервал должен быть меньше, "
-"чем самый короткий настроенный промежуток между двумя состояниями правил по "
-"времени, так чтобы переопределение во время такого периода уже закончилось, "
-"когда начинается новый период."
+"Интервал опроса в секундах, используемый задачей обслуживания временных "
+"условий, запускаемой файлом вызова Asterisk, используемым для обновления "
+"состояний переопределения временных условий, а также для обновления значений "
+"hint'ов пользовательских состояний устройств при использовании с BLF. Более "
+"короткий интервал гарантирует более точные состояния клавиш BLF. Интервал "
+"должен быть меньше самого короткого настроенного промежутка между двумя "
+"состояниями правил по времени, чтобы ручное переопределение в течение такого "
+"периода было правильно сброшено при запуске нового периода."
 
 #: views/timeconditions/advanced_form.php:164
 #: views/timeconditions/basic_form.php:273
@@ -500,32 +497,34 @@ msgid ""
 "Permanent Override which must be done here or with other applications such "
 "as an XML based phone options."
 msgstr ""
-"Правило по времени может быть установлено на срабатывание назначения по "
-"совпадению или несовпадению, в обоих случаях перенаправление сработает в "
-"указанный промежуток времени. Если установлено в положение Постоянное "
-"совпадение, то это будет работать до тех пор, пока не будет включен другой "
-"режим ручным способом. Все установки могут быть отменены опцией Сброс "
-"перезаписи. Временные перезаписи могут быть переключены  при помощи "
-"сервисного кода %s, который также удалит и Постоянную перезапись, если она "
-"установлена, но не затронет внешние приложения, типа XML-скрипт с телефона."
+"Это правило по времени может быть установлено для временного перехода к "
+"назначению \"при совпадении\" или \"при несовпадении\", и в этом случае "
+"переопределение автоматически сбрасывается по истечении текущего промежутка "
+"времени. Если он установлен в постоянное значение, то будет оставаться "
+"переопределенным до тех пор, пока не будет сброшен вручную. Все "
+"переопределения можно удалить с помощью опции Сброс переопределения. "
+"Временные переопределения также могут быть переключены с помощью кода "
+"функции %s, который также удалит постоянное переопределение, если оно "
+"установлено, но не может установить постоянное переопределение, которое "
+"должно быть выполнено здесь или с другими приложениями, такими как параметры "
+"телефона на основе XML."
 
 #: assets/js/timegroups/timegroups.js:22
 msgid ""
 "This section will be removed from this time group and all current settings "
 "including changes will be updated. OK to proceed?"
 msgstr ""
-"Эта сккция будет удалена из текущей временной группы и всех других "
-"установок, включая изменения, которые сейчас будут обновлены. ОК для "
-"продолжения?"
+"Этот раздел будет удален из этой временной группы и все текущие настройки, "
+"включая изменения, будут обновлены. Жмите ОК чтобы продолжить."
 
 #: views/timegroups/form.php:25
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
-"Эта группа времени в настоящее время используется и не может быть удалена"
+"Эта временная группа в настоящее время используется и не может быть удалена"
 
 #: views/timegroups/form.php:57
 msgid "This will display as the name of this Time Group"
-msgstr "Это будет отображаться  как имя Временной группы"
+msgstr "Это будет отображаться как имя этой временной группы"
 
 #: functions.inc.php:625
 msgid "Thursday"
@@ -537,12 +536,12 @@ msgstr "Правило по времени"
 
 #: timeconditions.i18n.php:16
 msgid "Time Condition Module"
-msgstr "Модуль правил по времени"
+msgstr "Модуль правило по времени"
 
 #: views/timeconditions/advanced_form.php:66
 #: views/timeconditions/basic_form.php:61
 msgid "Time Condition name"
-msgstr "Имя  условия по времени"
+msgstr "Название правила по времени"
 
 #: functions.inc.php:21 functions.inc.php:251
 #, php-format
@@ -558,7 +557,7 @@ msgstr "Правила по времени"
 #: views/timeconditions/basic_form.php:114 views/timegroups/bootnav.php:30
 #: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:71
 msgid "Time Group"
-msgstr "Временная группа"
+msgstr "Временная Группа"
 
 #: views/timeconditions/advanced_form.php:210
 msgid "Time Group Mode"
@@ -566,7 +565,7 @@ msgstr "Режим временной группы"
 
 #: page.timegroups.php:7 timeconditions.i18n.php:12
 msgid "Time Groups"
-msgstr "Временная группа"
+msgstr "Временные группы"
 
 #: views/timeconditions/advanced_form.php:176
 #: views/timeconditions/basic_form.php:85
@@ -575,11 +574,11 @@ msgstr "Часовой пояс:"
 
 #: functions.inc.php:768
 msgid "Time to Start"
-msgstr "Начало интервала"
+msgstr "Время начала"
 
 #: functions.inc.php:781
 msgid "Time to finish"
-msgstr "Конец интервала"
+msgstr "Время окончания"
 
 #: views/timegroups/form.php:69
 msgid "Time(s)"
@@ -592,7 +591,7 @@ msgstr "Вторник"
 #: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
-msgstr "Неизменёный"
+msgstr "Не выбрано"
 
 #: views/timeconditions/advanced_form.php:41
 #: views/timeconditions/advanced_form.php:45
@@ -604,7 +603,7 @@ msgstr "Неизвестное состояние"
 #: views/timeconditions/advanced_form.php:181
 #: views/timeconditions/basic_form.php:90
 msgid "Use System Timezone"
-msgstr "Использовать системную временную группу"
+msgstr "Использовать системный часовой пояс"
 
 #: functions.inc.php:624
 msgid "Wednesday"
@@ -633,19 +632,19 @@ msgstr "Ваше правило по времени связано с несущ
 
 #: functions.inc.php:113
 msgid "Your timecondition is linked to a non-existant calendar group"
-msgstr "Ваше правило по времени связано с несуществующей группой календаря"
+msgstr "Ваше правило по времени связано с несуществующей календарной группой"
 
 #: functions.inc.php:264
 msgid "false goto"
-msgstr "переход, если ложь"
+msgstr "переход при лжи"
 
 #: functions.inc.php:256
 msgid "true goto"
-msgstr "переход, если правда"
+msgstr "переход при истине"
 
 #: Timeconditions.class.php:496 Timeconditions.class.php:525
 msgid "unnamed"
-msgstr "безымянный"
+msgstr "без имени"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "
