@@ -23,7 +23,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
 	switch ($tcstate) {
 		case 'auto':
-			$state_msg = _('No Override');
+			$state_msg = _('No Override State');
 		break;
 		case 'true':
 			$state_msg = _('Temporary Override matching state');
@@ -38,11 +38,11 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 			$state_msg = _('Permanent Override unmatching state');
 		break;
 		default:
-			$state_msg = _('Unknown State');
+			$state_msg = _('No Override State');
 		break;
 	}
 }else{
-	$state_msg = _('Unknown State');
+	$state_msg = _('No Override State');
 }
 
 $groups = FreePBX::Calendar()->listGroups();
@@ -145,7 +145,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 					</div>
 					<div class="col-md-9">
 							<select class="form-control" id="tcstate_new" name="tcstate_new">
-								<option value="unchanged" SELECTED><?php echo _("Unchanged");?></option>
+								<option value="unchanged" SELECTED><?php echo _("No override");?></option>
 								<option value="auto" ><?php echo _("Reset Override");?></option>
 								<option value="true" ><?php echo _("Temporary matched");?></option>
 								<option value="true_sticky" ><?php echo _("Permanently matched");?></option>
@@ -153,7 +153,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 								<option value="false_sticky" ><?php echo _("Permanently unmatched");?></option>
 							</select>
 							<br/>
-							<b><?php echo _("Current")?>: </b><?php echo $state_msg; ?>
+							<b><?php echo _("Current override state")?>: </b><?php echo $state_msg; ?>
 					</div>
 				</div>
 			</div>
