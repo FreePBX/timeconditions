@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 02:40+0000\n"
+"POT-Creation-Date: 2022-09-04 02:59+0000\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -162,10 +162,13 @@ msgstr ""
 "一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信さ"
 "せ、夜は直接IVRに行く等に使用できます。"
 
-#: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr "現在のステータス"
+
+#: views/timeconditions/advanced_form.php:156
+msgid "Current override state"
+msgstr ""
 
 #: functions.inc.php:654
 msgid "December"
@@ -335,11 +338,20 @@ msgstr "始まる月"
 msgid "No"
 msgstr "いいえ"
 
-#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
 #: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr "上書きしない"
+
+#: views/timeconditions/advanced_form.php:26
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
+msgid "No Override State"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:148
+msgid "No override"
+msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
@@ -618,13 +630,10 @@ msgstr ""
 msgid "Tuesday"
 msgstr "火曜日"
 
-#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "変更なし"
 
-#: views/timeconditions/advanced_form.php:41
-#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"

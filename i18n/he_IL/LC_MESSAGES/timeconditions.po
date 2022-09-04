@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 02:40+0000\n"
+"POT-Creation-Date: 2022-09-04 02:59+0000\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -129,9 +129,12 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:156
+msgid "Current override state"
 msgstr ""
 
 #: functions.inc.php:654
@@ -298,11 +301,20 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
 #: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr "ללא מעקף"
+
+#: views/timeconditions/advanced_form.php:26
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
+msgid "No Override State"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:148
+msgid "No override"
+msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
@@ -565,13 +577,10 @@ msgstr ""
 msgid "Tuesday"
 msgstr "שלישי"
 
-#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "ללא שינוי"
 
-#: views/timeconditions/advanced_form.php:41
-#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"

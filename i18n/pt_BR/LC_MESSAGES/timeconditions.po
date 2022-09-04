@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 02:40+0000\n"
+"POT-Creation-Date: 2022-09-04 02:59+0000\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -147,10 +147,13 @@ msgstr ""
 "pode ser usado, por exemplo, para ligar para uma recepcionista durante o "
 "dia, ou ir diretamente para uma URA durante a noite."
 
-#: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr "Atual"
+
+#: views/timeconditions/advanced_form.php:156
+msgid "Current override state"
+msgstr ""
 
 #: functions.inc.php:654
 msgid "December"
@@ -328,11 +331,20 @@ msgstr "Mês início"
 msgid "No"
 msgstr "Não"
 
-#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
 #: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr "Não Substituir"
+
+#: views/timeconditions/advanced_form.php:26
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
+msgid "No Override State"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:148
+msgid "No override"
+msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
@@ -623,13 +635,10 @@ msgstr ""
 msgid "Tuesday"
 msgstr "Terça"
 
-#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "Não alterado"
 
-#: views/timeconditions/advanced_form.php:41
-#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"

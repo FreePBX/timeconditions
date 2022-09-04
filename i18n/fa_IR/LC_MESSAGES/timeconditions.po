@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 02:40+0000\n"
+"POT-Creation-Date: 2022-09-04 02:59+0000\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -134,10 +134,13 @@ msgstr ""
 "شرط زمانی تعریف کنید. به عنوان مثال در طول روز تماس به یک داخلی هدایت می شود "
 "در صورتی که در طول شب به منوی صوتی وصل خواهد شد."
 
-#: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr "فعلی"
+
+#: views/timeconditions/advanced_form.php:156
+msgid "Current override state"
+msgstr ""
 
 #: functions.inc.php:654
 msgid "December"
@@ -312,11 +315,20 @@ msgstr "ماه شروع"
 msgid "No"
 msgstr "خیر"
 
-#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
 #: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr "بدون بازنویسی"
+
+#: views/timeconditions/advanced_form.php:26
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
+msgid "No Override State"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:148
+msgid "No override"
+msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
@@ -595,13 +607,10 @@ msgstr ""
 msgid "Tuesday"
 msgstr "سه‌شنبه"
 
-#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "بدون تغییر"
 
-#: views/timeconditions/advanced_form.php:41
-#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"

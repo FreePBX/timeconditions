@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-06 02:40+0000\n"
+"POT-Creation-Date: 2022-09-04 02:59+0000\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -132,10 +132,13 @@ msgid ""
 "IVR at night."
 msgstr ""
 
-#: views/timeconditions/advanced_form.php:156
 #: views/timeconditions/basic_form.php:265
 msgid "Current"
 msgstr "Aktuell"
+
+#: views/timeconditions/advanced_form.php:156
+msgid "Current override state"
+msgstr ""
 
 #: functions.inc.php:654
 msgid "December"
@@ -305,11 +308,20 @@ msgstr ""
 msgid "No"
 msgstr "Nein"
 
-#: views/timeconditions/advanced_form.php:26
 #: views/timeconditions/basic_form.php:24
 #: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr "Keine Überbrückung"
+
+#: views/timeconditions/advanced_form.php:26
+#: views/timeconditions/advanced_form.php:41
+#: views/timeconditions/advanced_form.php:45
+msgid "No Override State"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:148
+msgid "No override"
+msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
@@ -591,13 +603,10 @@ msgstr ""
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: views/timeconditions/advanced_form.php:148
 #: views/timeconditions/basic_form.php:257
 msgid "Unchanged"
 msgstr "Unverändert"
 
-#: views/timeconditions/advanced_form.php:41
-#: views/timeconditions/advanced_form.php:45
 #: views/timeconditions/basic_form.php:39
 #: views/timeconditions/basic_form.php:43
 msgid "Unknown State"
