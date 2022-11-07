@@ -152,9 +152,9 @@ function timeconditions_get_config($engine) {
 				$ext->addHint($fc_context, $c, 'Custom:TC'.$time_id);
 				//End USEDEVSTATE
 				//Modifications by namezero111111 follow (FREEPBX-6415)
-				$fcccode_sub_call = (!empty($fcc_password)) ? ','.$fcc_password:'';
-				$ext->add($fc_context, $c, '', new ext_gosub('1','s','sub-user-callerid'));
-				$ext->add($fc_context, $c, '', new ext_gosub('1','s','sub-toggle-tc', $time_id.$fcccode_sub_call));
+				$fcccode_macro_call = (!empty($fcc_password)) ? ','.$fcc_password:'';
+				$ext->add($fc_context, $c, '', new ext_macro('user-callerid'));
+				$ext->add($fc_context, $c, '', new ext_macro('toggle-tc', $time_id.$fcccode_macro_call));
 				//end modifications by namezero111111
 				$ext->add($fc_context, $c, '', new ext_hangup());
 
@@ -174,7 +174,7 @@ function timeconditions_get_config($engine) {
 			$ext->add($fc_context, 'h', '', new ext_hangup());
 
 			$ext->addInclude('from-internal-additional', $fc_context); // Add the include from from-internal
-			$m_context = 'sub-toggle-tc';
+			$m_context = 'macro-toggle-tc';
 			// for i18n playback in multiple languages
 			$ext->add($m_context, 'lang-playback', '', new ext_gosubif('$[${DIALPLAN_EXISTS('.$m_context.',${CHANNEL(language)})}]', $m_context.',${CHANNEL(language)},${ARG1}', $m_context.',en,${ARG1}'));
 			$ext->add($m_context, 'lang-playback', '', new ext_return());
