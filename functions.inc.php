@@ -759,8 +759,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	}
 
 	$html = '<span id="fs'.$name.'">';
-	$html .= '<a href="#" class="delTG delAction" data-for="fs'.$name.'"><i class="fa fa-trash"></i></a>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'hours" class="col-md-3 control-label">'._("Time to Start").'</label>
 				<div class="col-md-2">
 					<select name="'.$name.'[hour_start]" id="'.$name.'hours" class="form-control">
@@ -771,9 +770,14 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 					<select name="'.$name.'[minute_start]" id="'.$name.'minutes" class="form-control">
 						'.timeconditions_timegroups_minute_opts($minute_start).'
 					</select>
+				</div>
+				<div class="col-md-1 offset-md-4">
+					<a href="#" class="delTG pull-right" data-for="fs'.$name.'">
+						<i class="fa fa-trash fa-lg"></i>
+					</a>
 				</div>';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'houre" class="col-md-3 control-label">'._("Time to finish").'</label>
 				<div class="col-md-2">
 					<select name="'.$name.'[hour_finish]" id="'.$name.'houre" class="form-control">
@@ -786,7 +790,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 					</select>
 				</div>';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'wds" class="col-md-3 control-label">'._("Week Day Start").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[wday_start]" id="'.$name.'wds" class="form-control">
@@ -795,7 +799,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'wde" class="col-md-3 control-label">'._("Week Day finish").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[wday_finish]" id="'.$name.'wde" class="form-control">
@@ -804,7 +808,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'mds" class="col-md-3 control-label">'._("Month Day start").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[mday_start]" id="'.$name.'mds" class="form-control">
@@ -813,7 +817,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'mdf" class="col-md-3 control-label">'._("Month Day finish").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[mday_finish]" id="'.$name.'mdf" class="form-control">
@@ -822,7 +826,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'mons" class="col-md-3 control-label">'._("Month start").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[month_start]" id="'.$name.'mons" class="form-control">
@@ -831,7 +835,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<div class="form-group row">';
+	$html .= '<div class="row">';
 	$html .= '<label for="'.$name.'monf" class="col-md-3 control-label">'._("Month finish").'</label>
 				<div class="col-md-4">
 					<select name="'.$name.'[month_finish]" id="'.$name.'monf" class="form-control">
