@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>16.0.9</version>
+	<version>17.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,15 +12,7 @@
 	</description>
   	<more-info>https://wiki.freepbx.org/display/F2/Time+Conditions+Module</more-info>
 	<changelog>
-		*16.0.9* FREEPBX-23661 
-		*16.0.8* FREEPBX-22461 Bulk Handler export time Groups 
-		*16.0.7* Packaging of ver 16.0.7
-		*16.0.6* FREEI-1714-timegroups-tabs-error 
-		*16.0.5* FREEPBX-22058 [BC-Break][TimeGroup] Empty time in timegroup 
-		*16.0.4* FREEPBX-21827 Time Conditions not showing state 
-		*16.0.3* Packaging of ver 16.0.3
-		*16.0.2* FREEI-1968  timegroup not saving time details 
-		*16.0.1alpha* 16.0.1 alpha release
+		*17.0.1* 17.0.1 alpha release
 	</changelog>
 	<depends>
 		<version>13.0.74</version>
@@ -80,6 +72,6 @@
 		</timeconditions>
 	</popovers>
 	<supported>
-		<version>16.0</version>
+		<version>17.0</version>
 	</supported>
 </module>
