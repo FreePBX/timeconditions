@@ -70,13 +70,13 @@ foreach($conditions as $item){
 			$timeMatch = $calendar->matchCalendar($item['calendar_id'],null,$item['timezone']);
 			if ($debug) $next = $calendar->getNextEvent($item['calendar_id'],null,$item['timezone']);
 		}
-      	if ($debug) 
-          if($timeMatch) {
-              tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
-          } else {
-              tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is not now");
-          }
-    	}
+		if ($debug) {
+			if($timeMatch) {
+				tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
+			} else {
+				tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is not now");
+			}
+		}
 	}
 	tcout($debug, "TIME MATCHED: ".(($timeMatch)?"True":"False")." (".(($timeMatch)?$not_inuse:$inuse).")");
 
