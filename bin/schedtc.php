@@ -2,7 +2,7 @@
 <?php
 
 //include bootstrap
-$restrict_mods = array('timeconditions' => true);
+$restrict_mods = ['timeconditions' => true];
 $bootstrap_settings['freepbx_auth'] = false;
 include '/etc/freepbx.conf';
 $tc = \FreePBX::Timeconditions();
@@ -92,9 +92,9 @@ foreach($conditions as $item){
 		tcout($debug, "BLF MODE: False (".$inuse.")");
 	}
 	if($timeMatch) {
-		$response = $astman->send_request('Command',array('Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$not_inuse));
+		$response = $astman->send_request('Command',['Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$not_inuse]);
 	} else {
-		$response = $astman->send_request('Command',array('Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$inuse));
+		$response = $astman->send_request('Command',['Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$inuse]);
 	}
 	tcout($debug, $response['data']);
 	tcout($debug, "");

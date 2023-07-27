@@ -32,7 +32,7 @@ if(isset($usage) && !empty($usage)){
 }
 ?>
 
-<form autocomplete="off" name="edit" id="edit" action="?display=timegroups" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
+<form autocomplete="off" name="edit" id="edit" action="?display=timegroups" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL ?? ''?>">
 <input type="hidden" name="display" value="timegroups">
 <input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
 <?php if($extdisplay) { ?>
@@ -49,7 +49,7 @@ if(isset($usage) && !empty($usage)){
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="description" name="description" onchange="check_empty(this.value);" value="<?php echo ($description== "")? "tg-".strtotime("now") : htmlspecialchars($description) ?>" required>
+						<input type="text" class="form-control" id="description" name="description" onchange="check_empty(this.value);" value="<?php echo (isset($description))? "tg-".strtotime("now") : htmlspecialchars((string) ($description ?? '')) ?>" required>
 					</div>
 				</div>
 			</div>
@@ -89,8 +89,8 @@ if(isset($usage) && !empty($usage)){
 <!--END Time-->
 </form>
 <script>
-	var timegrouplist  = '<?php echo json_encode(FreePBX::Timeconditions()->listTimegroups(true))?>';
-	var currenttimegroup = '<?php echo htmlspecialchars($description,ENT_QUOTES)?>';
+	var timegrouplist  = '<?php echo json_encode(FreePBX::Timeconditions()->listTimegroups(true), JSON_THROW_ON_ERROR)?>';
+	var currenttimegroup = '<?php echo htmlspecialchars((string) ($description ?? ''),ENT_QUOTES)?>';
 	
 	function check_empty(description){
 		if (description == ""){

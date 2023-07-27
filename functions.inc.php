@@ -4,22 +4,20 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 //	Copyright 2013 Schmooze Com Inc.
 //
 function timeconditions_getdest($exten) {
-	return array('timeconditions,'.$exten.',1');
+	return ['timeconditions,'.$exten.',1'];
 }
 
 function timeconditions_getdestinfo($dest) {
 	global $active_modules;
 
-	if (substr(trim($dest),0,15) == 'timeconditions,') {
-		$exten = explode(',',$dest);
+	if (str_starts_with(trim((string) $dest), 'timeconditions,')) {
+		$exten = explode(',',(string) $dest);
 		$exten = $exten[1];
 		$thisexten = timeconditions_get($exten);
 		if (empty($thisexten)) {
-			return array();
+			return [];
 		} else {
-			return array('description' => sprintf(_("Time Condition: %s"),$thisexten['displayname']),
-			             'edit_url' => 'config.php?display=timeconditions&view=form&itemid='.urlencode($exten),
-			            );
+			return ['description' => sprintf(_("Time Condition: %s"),$thisexten['displayname']), 'edit_url' => 'config.php?display=timeconditions&view=form&itemid='.urlencode($exten)];
 		}
 	} else {
 		return false;
@@ -31,12 +29,12 @@ function timeconditions_destinations() {
 	//get the list of timeconditions
 	$results = timeconditions_list(true);
 
-	$extens = array();
+	$extens = [];
 
 	// return an associative array with destination and description
 	if (isset($results)) {
 		foreach($results as $result){
-				$extens[] = array('destination' => 'timeconditions,'.$result['timeconditions_id'].',1', 'description' => $result['displayname']);
+				$extens[] = ['destination' => 'timeconditions,'.$result['timeconditions_id'].',1', 'description' => $result['displayname']];
 		}
 		return $extens;
 	} else {
@@ -75,7 +73,7 @@ function timeconditions_get_config($engine) {
 			// note we don't need to add 2nd optional option of true, gotoiftime will convert '|' to ',' for 1.6+
 			$time_id = $item['timeconditions_id'];
 			$invert_hint = (isset($item['invert_hint']) && ($item['invert_hint'] == '1')) ? true : false;
-			$fcc_password = isset($item['fcc_password']) ? trim($item['fcc_password']) : '';
+			$fcc_password = isset($item['fcc_password']) ? trim((string) $item['fcc_password']) : '';
 
 			$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/INUSESTATE)", ($invert_hint)?"NOT_INUSE":"INUSE"));
 			$ext->add($context, $time_id, '', new ext_set("DB(TC/".$time_id."/NOT_INUSESTATE)", ($invert_hint)?"INUSE":"NOT_INUSE"));
@@ -85,7 +83,7 @@ function timeconditions_get_config($engine) {
 				if (is_array($times)) {
 					foreach ($times as $time) {
 						$ext->add($context, $time_id, '', new ext_noop('TIMENOW: ${STRFTIME(${EPOCH},'.$time[2].',%H:%M,%a,%e,%b)}'.(!empty($time[2]) ? ','.$time[2] : '')));
-						$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",$time[1]).'?TRUE:FALSE)}'));
+						$ext->add($context, $time_id, '', new ext_noop('TIMEMATCHED: ${IFTIME('.str_replace("|",",",(string) $time[1]).'?TRUE:FALSE)}'));
 						$ext->add($context, $time_id, '', new ext_gotoiftime($time[1],'truestate'));
 					}
 				}
@@ -232,7 +230,7 @@ function timeconditions_get_config($engine) {
 function timeconditions_check_destinations($dest=true) {
 	global $active_modules;
 
-	$destlist = array();
+	$destlist = [];
 	if (is_array($dest) && empty($dest)) {
 		return $destlist;
 	}
@@ -242,27 +240,19 @@ function timeconditions_check_destinations($dest=true) {
 	}
 	$results = sql($sql,"getAll",DB_FETCHMODE_ASSOC);
 
-	$type = isset($active_modules['timeconditions']['type'])?$active_modules['timeconditions']['type']:'setup';
+	$type = $active_modules['timeconditions']['type'] ?? 'setup';
 
 	foreach ($results as $result) {
 		$thisdest    = $result['truegoto'];
 		$thisid      = $result['timeconditions_id'];
 		$description = sprintf(_("Time Condition: %s"),$result['displayname']);
-		$thisurl     = 'config.php?display=timeconditions&view=form&itemid='.urlencode($thisid);
+		$thisurl     = 'config.php?display=timeconditions&view=form&itemid='.urlencode((string) $thisid);
 		if ($dest === true || $dest[0] == $thisdest) {
-			$destlist[] = array(
-				'dest' => $thisdest,
-				'description' => $description . '('._('true goto').')',
-				'edit_url' => $thisurl,
-			);
+			$destlist[] = ['dest' => $thisdest, 'description' => $description . '('._('true goto').')', 'edit_url' => $thisurl];
 		}
 		$thisdest = $result['falsegoto'];
 		if ($dest === true || $dest[0] == $thisdest) {
-			$destlist[] = array(
-				'dest' => $thisdest,
-				'description' => $description . '('._('false goto').')',
-				'edit_url' => $thisurl,
-			);
+			$destlist[] = ['dest' => $thisdest, 'description' => $description . '('._('false goto').')', 'edit_url' => $thisurl];
 		}
 	}
 	return $destlist;
@@ -406,15 +396,13 @@ function timeconditions_edit($id,$post){
 
 function timeconditions_timegroups_usage($group_id) {
 
-	$results = sql("SELECT timeconditions_id, displayname FROM timeconditions WHERE time = '$group_id'","getAll",DB_FETCHMODE_ASSOC);
+	$usage_arr = [];
+ $results = sql("SELECT timeconditions_id, displayname FROM timeconditions WHERE time = '$group_id'","getAll",DB_FETCHMODE_ASSOC);
 	if (empty($results)) {
-		return array();
+		return [];
 	} else {
 		foreach ($results as $result) {
-			$usage_arr[] = array(
-				"url_query" => "config.php?display=timeconditions&view=form&itemid=".$result['timeconditions_id'],
-				"description" => $result['displayname'],
-			);
+			$usage_arr[] = ["url_query" => "config.php?display=timeconditions&view=form&itemid=".$result['timeconditions_id'], "description" => $result['displayname']];
 		}
 		return $usage_arr;
 	}
@@ -423,7 +411,7 @@ function timeconditions_timegroups_usage($group_id) {
 
 function timeconditions_timegroups_list_usage($timegroup_id) {
 	global $active_modules;
-	$full_usage_arr = array();
+	$full_usage_arr = [];
 
 	foreach(array_keys($active_modules) as $mod) {
 		$function = $mod."_timegroups_usage";
@@ -447,7 +435,7 @@ function timeconditions_timegroups_list_groups() {
 //these are the users time selections for the current timegroup
 function timeconditions_timegroups_get_times($timegroup, $convert=false, $timecondition_id=null) {
 	global $db, $version;
-	$tmparray = array();
+	$tmparray = [];
 
 	if ($convert && (!isset($version) || $version == '')) {
 		$engineinfo = engine_getinfo();
@@ -459,7 +447,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	$sql = "SELECT id, time FROM timegroups_details WHERE timegroupid = $timegroup";
 	$results = $db->getAll($sql);
 	if(DB::IsError($results) || !is_array($results)) {
-		$results = array();
+		$results = [];
 	}
 	$tz='';
 	if ($timecondition_id>0) {
@@ -470,7 +458,7 @@ function timeconditions_timegroups_get_times($timegroup, $convert=false, $timeco
 	foreach ($results as $val) {
 		$val[1].=$tz;
 		$times = ($convert && $ast_ge_16) ? strtr($val[1],'|',',') : $val[1];
-		$tmparray[] = array($val[0], $times, str_replace("|","",$tz));
+		$tmparray[] = [$val[0], $times, str_replace("|","",$tz)];
 	}
 	return $tmparray;
 }
@@ -556,7 +544,7 @@ function timeconditions_timegroups_drawgroupselect($elemname, $currentvalue = ''
 	// build the options
 	$valarray = timeconditions_timegroups_list_groups();
 	foreach ($valarray as $item) {
-		$itemvalue = (isset($item['value']) ? $item['value'] : '');
+		$itemvalue = ($item['value'] ?? '');
 		$itemtext = (isset($item['text']) ? _($item['text']) : '');
 		$itemselected = ($currentvalue == $itemvalue) ? ' selected' : '';
 
@@ -616,15 +604,7 @@ function timeconditions_timegroups_minute_opts($selected=''){
  * @return string           generated html
  */
 function timeconditions_timegroups_weekday_opts($selected=''){
-	$days = array(
-		'sun' => _("Sunday"),
-		'mon' => _("Monday"),
-		'tue' => _("Tuesday"),
-		'wed' => _("Wednesday"),
-		'thu' => _("Thursday"),
-		'fri' => _("Friday"),
-		'sat' => _("Saturday")
-	);
+	$days = ['sun' => _("Sunday"), 'mon' => _("Monday"), 'tue' => _("Tuesday"), 'wed' => _("Wednesday"), 'thu' => _("Thursday"), 'fri' => _("Friday"), 'sat' => _("Saturday")];
 	$html = '<option value="-">-</option>';
 	foreach ($days as $key => $value) {
 		if ( $selected == $key ) {
@@ -642,20 +622,7 @@ function timeconditions_timegroups_weekday_opts($selected=''){
  * @return string           generated html
  */
 function timeconditions_timegroups_month_opts($selected=''){
-	$days = array(
-		'jan' => _("January"),
-		'feb' => _("February"),
-		'mar' => _("March"),
-		'apr' => _("April"),
-		'may' => _("May"),
-		'jun' => _("June"),
-		'jul' => _("July"),
-		'aug' => _("August"),
-		'sep' => _("September"),
-		'oct' => _("October"),
-		'nov' => _("November"),
-		'dec' => _("December")
-	);
+	$days = ['jan' => _("January"), 'feb' => _("February"), 'mar' => _("March"), 'apr' => _("April"), 'may' => _("May"), 'jun' => _("June"), 'jul' => _("July"), 'aug' => _("August"), 'sep' => _("September"), 'oct' => _("October"), 'nov' => _("November"), 'dec' => _("December")];
 	$html = '<option value="-">-</option>';
 	foreach ($days as $key => $value) {
 		if ( $selected == $key ) {
@@ -691,24 +658,24 @@ function timeconditions_timegroups_monthday_opts($selected=''){
 
 function timeconditions_timegroups_drawtimeselects($name, $time) {
 	if (isset($time)) {
-		list($time_hour, $time_wday, $time_mday, $time_month) = explode('|', $time);
+		[$time_hour, $time_wday, $time_mday, $time_month] = explode('|', (string) $time);
 	} else {
-		list($time_hour, $time_wday, $time_mday, $time_month) = Array('*','-','-','-');
+		[$time_hour, $time_wday, $time_mday, $time_month] = ['*', '-', '-', '-'];
 	}
 	// Hour could be *, hh:mm, hh:mm-hhmm
 	if ( $time_hour === '*' ) {
 		$hour_start = $hour_finish = '-';
 		$minute_start = $minute_finish = '-';
 	} else {
-		list($hour_start_string, $hour_finish_string) = explode('-', $time_hour);
+		[$hour_start_string, $hour_finish_string] = explode('-', $time_hour);
 		if ($hour_start_string === '*') {
 			$hour_start_string = $hour_finish_string;
 		}
 		if ($hour_finish_string === '*') {
 			$hour_finish_string = $hour_start_string;
 		}
-		list($hour_start, $minute_start) = explode( ':', $hour_start_string);
-		list($hour_finish, $minute_finish) = explode( ':', $hour_finish_string);
+		[$hour_start, $minute_start] = explode( ':', $hour_start_string);
+		[$hour_finish, $minute_finish] = explode( ':', $hour_finish_string);
 		if ( !$hour_finish) {
 			$hour_finish = $hour_start;
 		}
@@ -718,7 +685,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	}
 	// WDay could be *, day, day1-day2
 	if ( $time_wday != '*' ) {
-		list($wday_start, $wday_finish) = explode('-', $time_wday);
+		[$wday_start, $wday_finish] = explode('-', $time_wday);
 		if ($wday_start === '*') {
 			$wday_start = $wday_finish;
 		}
@@ -732,7 +699,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 		$wday_start = $wday_finish = '-';
 	}
 	if ( $time_mday != '*' ) {
-		list($mday_start, $mday_finish) = explode('-', $time_mday);
+		[$mday_start, $mday_finish] = explode('-', $time_mday);
 		if ($mday_start === '*') {
 			$mday_start = $mday_finish;
 		}
@@ -747,7 +714,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	}
 	// Month could be *, month, month1-month2
 	if ( $time_month != '*' ) {
-		list($month_start, $month_finish) = explode('-', $time_month);
+		[$month_start, $month_finish] = explode('-', $time_month);
 		if ($month_start === '*') {
 			$month_start = $month_finish;
 		}
@@ -861,9 +828,9 @@ function timeconditions_timegroups_buildtime( $hour_start, $minute_start, $hour_
 //---------------------------end stolen from timeconditions-------------------------------------
 
 // AJAX Handler for jQuery UI AutoComplete Time Zone field on Time Conditions page
-if (isset($_REQUEST['term']) && strlen($_REQUEST['term'])>1) {
+if (isset($_REQUEST['term']) && strlen((string) $_REQUEST['term'])>1) {
 	Header('Content-Type: text/json');
-	die(json_encode(array_values(preg_grep('*'.$_REQUEST['term'].'*i', DateTimeZone::listIdentifiers(DateTimeZone::ALL)))));
+	die(json_encode(array_values(preg_grep('*'.$_REQUEST['term'].'*i', DateTimeZone::listIdentifiers(DateTimeZone::ALL))), JSON_THROW_ON_ERROR));
 }
 
 function _timeconditions_backtrace() {

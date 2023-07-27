@@ -4,43 +4,31 @@
 //
 extract($request,EXTR_SKIP);
 $subhead = _("Add Time Condition");
-if ($itemid){
+if (isset($itemid)){
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$itemid);
 	$code = $fcc->getCodeActive();
 	unset($fcc);
 	$thisItem = timeconditions_get($itemid);
-	$displayname = $thisItem['displayname']?$thisItem['displayname']:'';
-	$fcc_password = $thisItem['fcc_password']?$thisItem['fcc_password']:'';
-	$time = $thisItem['time']?$thisItem['time']:'';
-	$invert_hint = $thisItem['invert_hint']?$thisItem['invert_hint']:'0';
+	$displayname = $thisItem['displayname'] ?: '';
+	$fcc_password = $thisItem['fcc_password'] ?: '';
+	$time = $thisItem['time'] ?: '';
+	$invert_hint = $thisItem['invert_hint'] ?: '0';
 	$delURL = '?display=timeconditions&action=delete&itemid='.$itemid;
-	$thisItem['timezone'] = isset($thisItem['timezone'])?$thisItem['timezone']:'default';
+	$thisItem['timezone'] ??= 'default';
 	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
 } else {
 	$thisItem['mode'] = 'time-group';
 }
-if ($itemid && $thisItem['tcstate'] !== false) {
+if (isset($itemid) && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
-	switch ($tcstate) {
-		case 'auto':
-			$state_msg = _('No Override State');
-		break;
-		case 'true':
-			$state_msg = _('Temporary Override matching state');
-		break;
-		case 'true_sticky':
-			$state_msg = _('Permanent Override matching state');
-		break;
-		case 'false':
-			$state_msg = _('Temporary Override unmatching state');
-		break;
-		case 'false_sticky':
-			$state_msg = _('Permanent Override unmatching state');
-		break;
-		default:
-			$state_msg = _('No Override State');
-		break;
-	}
+	$state_msg = match ($tcstate) {
+     'auto' => _('No Override State'),
+     'true' => _('Temporary Override matching state'),
+     'true_sticky' => _('Permanent Override matching state'),
+     'false' => _('Temporary Override unmatching state'),
+     'false_sticky' => _('Permanent Override unmatching state'),
+     default => _('No Override State'),
+ };
 }else{
 	$state_msg = _('No Override State');
 }
@@ -50,11 +38,11 @@ $calendars = FreePBX::Calendar()->listCalendars();
 
 ?>
 <h2><?php echo $subhead?></h2>
-<form autocomplete="off" name="edit" id="edit" action="config.php?display=timeconditions" method="post" onsubmit="return edit_onsubmit(this);" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
+<form autocomplete="off" name="edit" id="edit" action="config.php?display=timeconditions" method="post" onsubmit="return edit_onsubmit(this);" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL ?? '';?>">
 <input type="hidden" name="display" value="timeconditions">
-<input type="hidden" name="action" value="<?php echo ($itemid ? 'edit' : 'add') ?>">
-<?php if($itemid) { ?>
-	<input type="hidden" name="itemid" value="<?php echo $itemid?>">
+<input type="hidden" name="action" value="<?php echo (isset($itemid) ? 'edit' : 'add') ?>">
+<?php if(isset($itemid)) { ?>
+	<input type="hidden" name="itemid" value="<?php echo $itemid ?? ''?>">
 <?php } ?>
 <!--Time Condition name-->
 <div class="element-container">
@@ -67,7 +55,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="displayname"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="displayname" name="displayname" value="<?php echo $displayname?>">
+						<input type="text" class="form-control" id="displayname" name="displayname" value="<?php echo $displayname ?? ''?>">
 					</div>
 				</div>
 			</div>
@@ -91,7 +79,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="fcc_password"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="number" min="0" class="form-control" id="fcc_password" name="fcc_password" value="<?php echo $fcc_password?>">
+						<input type="number" min="0" class="form-control" id="fcc_password" name="fcc_password" value="<?php echo $fcc_password ?? ''?>">
 					</div>
 				</div>
 			</div>
@@ -116,9 +104,9 @@ $calendars = FreePBX::Calendar()->listCalendars();
 					</div>
 					<div class="col-md-9">
 						<span class="radioset">
-						<input type="radio" name="invert_hint" id="invert_hintyes" value="1" <?php echo ($invert_hint == "1"?"CHECKED":"") ?>>
+						<input type="radio" name="invert_hint" id="invert_hintyes" value="1" <?php echo (isset($invert_hint) && $invert_hint == "1"?"CHECKED":"") ?>>
 						<label for="invert_hintyes"><?php echo _("Yes");?></label>
-						<input type="radio" name="invert_hint" id="invert_hintno" value="0" <?php echo ($invert_hint == "1"?"":"CHECKED") ?>>
+						<input type="radio" name="invert_hint" id="invert_hintno" value="0" <?php echo (isset($invert_hint) && $invert_hint == "1"?"":"CHECKED") ?>>
 						<label for="invert_hintno"><?php echo _("No");?></label>
 						</span>
 					</div>
@@ -153,7 +141,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 								<option value="false_sticky" ><?php echo _("Permanently unmatched");?></option>
 							</select>
 							<br/>
-							<b><?php echo _("Current override state")?>: </b><?php echo $state_msg; ?>
+							<b><?php echo _("Current override state")?>: </b><?php echo $state_msg ?? ''; ?>
 					</div>
 				</div>
 			</div>
@@ -178,9 +166,9 @@ $calendars = FreePBX::Calendar()->listCalendars();
 					</div>
 					<div class="col-md-9">
 						<select id="timezone" class="chosenselect form-control" name="timezone" id="timezone">
-							<option value="default" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo _("Use System Timezone")?>
+							<option value="default" <?php echo (isset($tz) && isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo _("Use System Timezone")?>
 							<?php foreach(DateTimeZone::listIdentifiers(DateTimeZone::ALL) as $tz) {?>
-								<option value="<?php echo $tz?>" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo $tz?></option>
+								<option value="<?php echo $tz?>" <?php echo (isset($tz) && isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo $tz ?? ''?></option>
 							<?php } ?>
 						</select>
 					</div>
@@ -235,7 +223,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 						<select class="form-control" id="calendar-id" name="calendar-id">
 							<option value=""><?php echo _("--Select a Calendar--")?></option>
 							<?php foreach($calendars as $id=> $group) { ?>
-								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_id'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+								<option value="<?php echo $id?>" <?php echo (isset($thisItem['calendar_id']) && $thisItem['calendar_id'] == $id) ? "selected" : ""?>><?php echo $group['name'] ?? ''?></option>
 							<?php } ?>
 						</select>
 					</div>
@@ -262,7 +250,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 						<select class="form-control" id="calendar-group" name="calendar-group">
 							<option value=""><?php echo _("--Select a Group--")?></option>
 							<?php foreach($groups as $id=> $group) { ?>
-								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_group_id'] == $id) ? "selected" : ""?>><?php echo $group['name']?></option>
+								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_group_id'] == $id) ? "selected" : ""?>><?php echo $group['name'] ?? ''?></option>
 							<?php } ?>
 						</select>
 					</div>
@@ -287,7 +275,7 @@ $calendars = FreePBX::Calendar()->listCalendars();
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="tgw"></i>
 					</div>
 					<div class="col-md-9">
-						<?php echo timeconditions_timegroups_drawgroupselect('time', (isset($thisItem['time']) ? $thisItem['time'] : ''), true, ''); ?>
+						<?php echo timeconditions_timegroups_drawgroupselect('time', ($thisItem['time'] ?? ''), true, ''); ?>
 					</div>
 				</div>
 			</div>
@@ -318,7 +306,7 @@ echo $module_hook->hookHtml;
 					<div class="col-md-9">
 						<?php
 						if (isset($thisItem)) {
-							echo drawselects($thisItem['truegoto'],0);
+							echo drawselects($thisItem['truegoto'] ?? '',0);
 						} else {
 							echo drawselects(null, 0);
 						}
@@ -348,7 +336,7 @@ echo $module_hook->hookHtml;
 					<div class="col-md-9">
 						<?php
 						if (isset($thisItem)) {
-							echo drawselects($thisItem['falsegoto'],1);
+							echo drawselects($thisItem['falsegoto'] ?? '',1);
 						} else {
 							echo drawselects(null, 1);
 						}
@@ -367,5 +355,5 @@ echo $module_hook->hookHtml;
 <!--END Destination non-matches-->
 </form>
 <script>
-var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid)); ?>;
+var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid ?? ''), JSON_THROW_ON_ERROR); ?>;
 </script>

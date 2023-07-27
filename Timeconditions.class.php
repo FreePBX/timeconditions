@@ -30,8 +30,8 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		switch($page) {
             case "timeconditions":
                 $itemid = $this->getReq('itemid');
-				$invert_hint = isset($request['invert_hint'])?$request['invert_hint']:'0';
-				$fcc_password = isset($request['fcc_password'])?$request['fcc_password']:'';
+				$invert_hint = $request['invert_hint'] ?? '0';
+				$fcc_password = $request['fcc_password'] ?? '';
 				//if submitting form, update database
 				switch ($action) {
 					case "add":
@@ -94,7 +94,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$ASTVARLIBDIR = $this->FreePBX->Config->get("ASTVARLIBDIR");
 		foreach($this->FreePBX->Cron->getAll() as $cron) {
 			$str = str_replace("/", "\/", $ASTVARLIBDIR."/bin/cleanuptcmaint.php");
-			if(preg_match("/cleanuptcmaint.php$/",$cron)) {
+			if(preg_match("/cleanuptcmaint.php$/",(string) $cron)) {
 				$this->FreePBX->Cron->remove($cron);
 			}
 		}
@@ -108,7 +108,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				$this->FreePBX->Cron->add("0 */6 * * * ".$ASTVARLIBDIR."/bin/cleanuptcmaint.php");
 				return true;
 			}
-		} catch(Exception $e) {
+		} catch(Exception) {
 			return;
 		}
 		return false;
@@ -141,12 +141,12 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 		$crons = $this->FreePBX->Cron->getAll();
 		foreach($crons as $c) {
-			if(preg_match('/schedtc\.php/',$c,$matches)) {
+			if(preg_match('/schedtc\.php/',(string) $c,$matches)) {
 				$this->FreePBX->Cron->remove($c);
 			}
 		}
 
-		$this->FreePBX->Job->addClass('timeconditions', 'schedtc', 'FreePBX\modules\Timeconditions\Job', $time);
+		$this->FreePBX->Job->addClass('timeconditions', 'schedtc', \FreePBX\modules\Timeconditions\Job::class, $time);
 		$this->FreePBX->Job->setEnabled('timeconditions', 'schedtc', $TCMAINT);
 	}
 
@@ -191,13 +191,10 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		return localtime();
 	}
 	public function ajaxRequest($req, &$setting) {
-		switch ($req) {
-			case 'getGroups':
-			case 'getJSON':
-				return true;
-			default:
-				return false;
-		}
+		return match ($req) {
+      'getGroups', 'getJSON' => true,
+      default => false,
+  };
 	}
 	public function ajaxHandler(){
 		$request = $_REQUEST;
@@ -208,28 +205,28 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				$sth->execute();
 				$row = $sth->fetch(PDO::FETCH_ASSOC);
 				$timegroupslist = $this->listTimegroups(false, true);
-				return array("status" => true, "groups" => $timegroupslist, "last" => $row['id']);
+				return ["status" => true, "groups" => $timegroupslist, "last" => $row['id']];
 			case 'getJSON':
                 switch ($request['jdata']) {
                     case 'tggrid':
                         $timegroupslist = $this->listTimegroups(false, true);
-                        $rdata = array();
+                        $rdata = [];
                         foreach($timegroupslist as $tg){
-                        $rdata[] = array('text' => $tg['text'],'value' => $tg['value'], 'link' => array($tg['text'],$tg['value']));
+                        $rdata[] = ['text' => $tg['text'], 'value' => $tg['value'], 'link' => [$tg['text'], $tg['value']]];
                         }
                         return $rdata;
                     case 'tcgrid':
                         $timeconditions = $this->listTimeconditions();
                         $timegroups = $this->listTimegroups();
-                        $tgs = array();
+                        $tgs = [];
                         foreach($timegroups as $tg){
                             $tgs[$tg['value']] = $tg['text'];
                         }
                         $tcs = $this->FreePBX->astman->database_show("TC");
                         foreach ($timeconditions as $key => $value) {
                             $id = $value['timeconditions_id'];
-                            $state = isset($tcs['/TC/'.$id]) ? $tcs['/TC/'.$id] : '';
-                            $tgstime = isset($tgs[$value['time']])?$tgs[$value['time']]:'';
+                            $state = $tcs['/TC/'.$id] ?? '';
+                            $tgstime = $tgs[$value['time']] ?? '';
                             $timeconditions[$key]['group'] = $tgstime;
                             $timeconditions[$key]['state'] = $state;
                         }
@@ -244,20 +241,19 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
     }
 
 	public function bulkhandlerGetTypes() {
-		$final['timegroup'] = array(
-				'name' => _('TimeGroups'),
-				'description' => _('TimeGroups')
-		);
+		$final = [];
+  $final['timegroup'] = ['name' => _('TimeGroups'), 'description' => _('TimeGroups')];
 		return $final;
 	}
 
 	public function bulkhandlerGetHeaders($type) {
-		switch($type){
+		$headers = [];
+  switch($type){
 			case 'timegroup':
-				$headers = array();
-				$headers['description'] = array('required' => true, 'identifier' => _("Timegroup Description"), 'description' => _("TimeGroup description"));
-				$headers['time1'] = array('required' => true, 'identifier' => _("time1"), 'description' => _(" Timee for this time condition"));
-				$headers['time2'] = array('required' => false, 'identifier' => _("time2"), 'description' => _(" Time for this time condition"));
+				$headers = [];
+				$headers['description'] = ['required' => true, 'identifier' => _("Timegroup Description"), 'description' => _("TimeGroup description")];
+				$headers['time1'] = ['required' => true, 'identifier' => _("time1"), 'description' => _(" Timee for this time condition")];
+				$headers['time2'] = ['required' => false, 'identifier' => _("time2"), 'description' => _(" Time for this time condition")];
 			break;
 		}
 		return $headers;
@@ -268,26 +264,26 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			case 'timegroup':
 				foreach ($rawData as $data) {
 					if (empty($data['description'])) {
-						return array("status" => false, "message" => _("Description is required."));
+						return ["status" => false, "message" => _("Description is required.")];
 					}
 					$sql = "SELECT id FROM timegroups_groups WHERE description = :description LIMIT 1";
 					$stmt = $this->Database->prepare($sql);
-					$stmt->execute(array(':description' => $data['description']));
+					$stmt->execute([':description' => $data['description']]);
 					$results = $stmt->fetch();
 					unset($exitingid);
 					if(isset($results[0])){
 						$exitingid = $results[0];
 					}
 					if(!$replaceExisting && isset($results[0])) {
-						return array("status" => false, "message" => _("TimeGroup already exists"));
+						return ["status" => false, "message" => _("TimeGroup already exists")];
 					}
 					unset($times);
-					$times = array();
+					$times = [];
 					foreach($data as $key=>$val){
 						if($key == 'description'){
 							continue;
 						}
-						if(trim($val) !=''){
+						if(trim((string) $val) !=''){
 							$times[] = $val;
 						}
 					}
@@ -299,28 +295,28 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				}
 			break;
 		}
-		return array('status' => true);
+		return ['status' => true];
 	}
 
 	public function bulkhandlerExport($type) {
 		switch ($type) {
 		case 'timegroup':
 			$timegroups = $this->listTimegroups(true);
-			$data = array();
+			$data = [];
 			foreach($timegroups as $key => $tg){
 				$count = 1;
 				unset($data);
-				$data = array();
+				$data = [];
 				$sql = "SELECT `time` from timegroups_details where timegroupid = :id";
 				$stmt = $this->Database->prepare($sql);
-				$stmt->execute(array(':id'=>$tg['id']));
+				$stmt->execute([':id'=>$tg['id']]);
 				$results = $stmt->fetchall();
 				foreach($results as $result){
 					$akey = 'time'.$count;
 					$data[$akey] =$result['time'];
 					$count ++;
 				}
-				$returnarray[$key] = array_merge(array('description'=>$tg['description']),$data);
+				$returnarray[$key] = ['description'=>$tg['description'], ...$data];
 			}
 			return $returnarray;
 		}
@@ -328,14 +324,14 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 
 
 	public function listTimegroups($assoc = false, $ajrq = false){
-		$tmparray = array();
-		$trimedresult = array();
+		$tmparray = [];
+		$trimedresult = [];
 		$sql = "SELECT id, description FROM timegroups_groups ORDER BY description";
 		$stmt = $this->Database->prepare($sql);
 		$stmt->execute();
 		$results = $stmt->fetchall();
 		if(!$results) {
-			$results = array();
+			$results = [];
 		}
 		foreach($results as $val) {
 			$trimedresult[] = array_map('trim', $val);
@@ -343,17 +339,17 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		if($assoc !== true){
 			foreach ($trimedresult as $val) {
 				if ($ajrq){
-					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[1]);
+					$tmparray[] = [$val[0], $val[1], "value" => $val[0], "text" => $val[1]];
 				}
 				else{
 					// Used for link. Need to send index and not the label.
-					$tmparray[] = array($val[0], $val[1], "value" => $val[0], "text" => $val[0]);
+					$tmparray[] = [$val[0], $val[1], "value" => $val[0], "text" => $val[0]];
 				}
 
 			}
 		}else{
 			foreach ($trimedresult as $val) {
-				$tmparray[] = array("id" => $val[0], "description" => htmlspecialchars($val[1],ENT_QUOTES));
+				$tmparray[] = ["id" => $val[0], "description" => htmlspecialchars($val[1],ENT_QUOTES)];
 			}
 		}
 		return $tmparray;
@@ -367,14 +363,14 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		if(is_array($results)){
 			return $results;
 		}
-		return array();
+		return [];
 	}
 	public function getRightNav($request) {
         if($request['display'] === 'timegroups' && $request['view'] === 'form'){
-            return load_view(__DIR__."/views/timegroups/bootnav.php",array('request'=>$request));
+            return load_view(__DIR__."/views/timegroups/bootnav.php",['request'=>$request]);
         }
         if($request['display'] === 'timeconditions' && $request['view'] === 'form'){
-            return load_view(__DIR__ . "/views/timeconditions/bootnav.php", array('request' => $request));
+            return load_view(__DIR__ . "/views/timeconditions/bootnav.php", ['request' => $request]);
         }
         return;
 	}
@@ -425,37 +421,16 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	* return bool
 	*/
 	public function checkTime($time) {
-		$monthA = array(
-			'jan' => 1,
-			'feb' => 2,
-			'mar' => 3,
-			'apr' => 4,
-			'may' => 5,
-			'jun' => 6,
-			'jul' => 7,
-			'aug' => 8,
-			'sep' => 9,
-			'oct' => 10,
-			'nov' => 11,
-			'dec' => 12
-		);
-		$daysA = array(
-			'sun' => 0,
-			'mon' => 1,
-			'tue' => 2,
-			'wed' => 3,
-			'thu' => 4,
-			'fri' => 5,
-			'sat' => 6,
-		);
+		$monthA = ['jan' => 1, 'feb' => 2, 'mar' => 3, 'apr' => 4, 'may' => 5, 'jun' => 6, 'jul' => 7, 'aug' => 8, 'sep' => 9, 'oct' => 10, 'nov' => 11, 'dec' => 12];
+		$daysA = ['sun' => 0, 'mon' => 1, 'tue' => 2, 'wed' => 3, 'thu' => 4, 'fri' => 5, 'sat' => 6];
 		//match all don't take time to parse out anything
 		// Time zone doesn't matter in this case
-		if(substr( $time, 0, 7) === '*|*|*|*') {
+		if(str_starts_with((string) $time, '*|*|*|*')) {
 			return true;
 		}
 
 		$match = false;
-		$result = explode("|", $time);
+		$result = explode("|", (string) $time);
 		$hour = $result[0];
 		$dow = $result[1];
 		$dom = $result[2];
@@ -523,7 +498,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				$cur = explode(':', $dtnow->format('H:i'));
 				$cur = $cur[0] * 60 + $cur[1];
 
-				$mods = array();
+				$mods = [];
 				$mods[0] = explode(':',$hours[0]);
 				$mods[0] = $mods[0][0] * 60 + $mods[0][1];
 				if($range) {
@@ -541,37 +516,22 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	 * FreePBX chown hooks
 	 */
 	public function chownFreepbx() {
-		$files = array();
+		$files = [];
 
-		$files[] = array('type' => 'execdir',
-			'path' => __DIR__.'/bin',
-			'perms' => 0755);
+		$files[] = ['type' => 'execdir', 'path' => __DIR__.'/bin', 'perms' => 0755];
 
 		return $files;
 	}
 	public function addTimeCondition($post){
 		$displayname = empty($post['displayname'])?_("unnamed"):$post['displayname'];
 		$invert_hint = ($post['invert_hint'] === '1') ? '1' : '0';
-		$vars = array(
-		':displayname' => $displayname,
-		':time' => $post['time'],
-		':timezone' => $post['timezone'],
-		':falsegoto' => $post[$post['goto1'].'1'],
-		':truegoto' => $post[$post['goto0'].'0'],
-		':invert_hint' => $invert_hint,
-		':fcc_password' => $post['fcc_password'],
-		':deptname' => $post['deptname'],
-		':generate_hint' => '1',
-		':mode' => $post['mode'],
-		':calendar_id' => $post['calendar-id'],
-		':calendar_group_id' => $post['calendar-group']
-		);
+		$vars = [':displayname' => $displayname ?? '', ':time' => $post['time'] ?? 0, ':timezone' => $post['timezone'] ?? '', ':falsegoto' => $post[$post['goto1'].'1'] ?? '', ':truegoto' => $post[$post['goto0'].'0'] ?? '', ':invert_hint' => $invert_hint ?? 0, ':fcc_password' => $post['fcc_password'] ?? '', ':deptname' => $post['deptname'] ?? '', ':generate_hint' => '1', ':mode' => $post['mode'] ?? '', ':calendar_id' => $post['calendar-id'] ?? '', ':calendar_group_id' => $post['calendar-group'] ?? ''];
 		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar_id,calendar_group_id) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar_id, :calendar_group_id)";
 		$stmt = $this->Database->prepare($sql);
 		$stmt->execute($vars);
 		$id = $this->Database->lastInsertId();
 		$this->createFeatureCode($id, $displayname);
-		$this->FreePBX->Hooks->processHooks(array('id' => $id, 'post' => $post));
+		$this->FreePBX->Hooks->processHooks(['id' => $id, 'post' => $post]);
 		return $id;
 	}
 	public function duplicateTimeCondition($id,$post) {
@@ -581,21 +541,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function editTimeCondition($id,$post){
 		$displayname = empty($post['displayname'])?_("unnamed"):$post['displayname'];
 		$invert_hint = ($post['invert_hint'] === '1') ? '1' : '0';
-		$vars = array(
-		':id' => $id,
-		':displayname' => $displayname,
-		':time' => $post['time'],
-		':timezone' => $post['timezone'],
-		':falsegoto' => $post[$post['goto1'].'1'],
-		':truegoto' => $post[$post['goto0'].'0'],
-		':invert_hint' => $invert_hint,
-		':fcc_password' => $post['fcc_password'],
-		':deptname' => $post['deptname'],
-		':generate_hint' => '1',
-		':mode' => $post['mode'],
-		':calendar_id' => $post['calendar-id'],
-		':calendar_group_id' => $post['calendar-group']
-	);
+		$vars = [':id' => $id, ':displayname' => $displayname ?? '', ':time' => $post['time'] ?? 0, ':timezone' => $post['timezone'] ?? '', ':falsegoto' => $post[$post['goto1'].'1'] ?? '', ':truegoto' => $post[$post['goto0'].'0'] ?? '', ':invert_hint' => $invert_hint ?? 0, ':fcc_password' => $post['fcc_password'] ?? '', ':deptname' => $post['deptname'] ?? '', ':generate_hint' => '1', ':mode' => $post['mode'] ?? '', ':calendar_id' => $post['calendar-id'] ?? '', ':calendar_group_id' => $post['calendar-group'] ?? ''];
 		$old = $this->getTimeCondition($id);
 
 		$sql = "UPDATE timeconditions SET displayname = :displayname, time = :time, truegoto = :truegoto, falsegoto = :falsegoto, deptname = :deptname, generate_hint = :generate_hint, invert_hint = :invert_hint, fcc_password = :fcc_password, timezone = :timezone, mode = :mode, calendar_id = :calendar_id, calendar_group_id = :calendar_group_id WHERE timeconditions_id = :id";
@@ -622,13 +568,13 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			$fcc->update();
 			unset($fcc);
 		}
-		$this->FreePBX->Hooks->processHooks(array('id' => $id, 'post' => $post));
+		$this->FreePBX->Hooks->processHooks(['id' => $id, 'post' => $post]);
 	}
 
 	public function getTimeCondition($id){
 		$sql = "SELECT * FROM timeconditions WHERE timeconditions_id = :id LIMIT 1";
 		$stmt = $this->Database->prepare($sql);
-		$stmt->execute(array(':id' => $id));
+		$stmt->execute([':id' => $id]);
 		$results = $stmt->fetch();
 		$fcc = new \featurecode('timeconditions', 'toggle-mode-'.$id);
 		$c = $fcc->getCodeActive();
@@ -667,7 +613,9 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 
 	public function setState($id, $state,$invert=false){
-		if ($this->FreePBX->astman != null) {
+		$blf = null;
+  $sticky = null;
+  if ($this->FreePBX->astman != null) {
 			switch ($state) {
 			case 'auto':
 			case '':
@@ -720,13 +668,13 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			$this->FreePBX->astman->database_del("TC",$id);
 		}
 		$this->FreePBX->Hooks->processHooks($id);
-		return $stmt->execute(array(':id' => $id));
+		return $stmt->execute([':id' => $id]);
 	}
 	public function addTimeGroup($description, $times=null){
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->Database->prepare($sql);
 		try {
-			$ret = $stmt->execute(array(':description' => trim(preg_replace('/\s+/',' ', $description))));
+			$ret = $stmt->execute([':description' => trim(preg_replace('/\s+/',' ', (string) $description))]);
 		} catch (\PDOException $e) {
 			//catch duplicates
 			if($e->getCode() === '23000'){
@@ -748,7 +696,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$sql = "INSERT timegroups_groups(description) VALUES (:description)";
 		$stmt = $this->Database->prepare($sql);
 		try {
-			$ret = $stmt->execute(array(':description' => trim(preg_replace('/\s+/',' ', $description))));
+			$ret = $stmt->execute([':description' => trim(preg_replace('/\s+/',' ', (string) $description))]);
 		} catch (\PDOException $e) {
 			//catch duplicates
 			if($e->getCode() === '23000'){
@@ -768,7 +716,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function editTimeGroup($id,$description){
 		$sql = "UPDATE timegroups_groups SET description = :description WHERE id = :id";
 		$stmt = $this->Database->prepare($sql);
-		$ret = $stmt->execute(array(':description' => trim($description), ':id' => $id));
+		$ret = $stmt->execute([':description' => trim((string) $description), ':id' => $id]);
 		$this->FreePBX->Hooks->processHooks($id);
 		needreload();
 		return $ret;
@@ -776,17 +724,17 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function getTimeGroup($timegroup) {
 		$sql = "SELECT id, description FROM timegroups_groups WHERE id = :id LIMIT 1";
 		$stmt = $this->Database->prepare($sql);
-		$stmt->execute(array(':id' => $timegroup));
+		$stmt->execute([':id' => $timegroup]);
 		$results = $stmt->fetch();
-		return array($results[0], $results[1]);
+		return [$results[0], $results[1]];
 	}
 	public function delTimeGroup($id){
 		$sql = "delete from timegroups_details where timegroupid = :id";
 		$stmt = $this->Database->prepare($sql);
-		$ret1 = $stmt->execute(array(':id'=>$id));
+		$ret1 = $stmt->execute([':id'=>$id]);
 		$sql = "delete from timegroups_groups where id = :id";
 		$stmt = $this->Database->prepare($sql);
-		$ret2 = $stmt->execute(array(':id'=>$id));
+		$ret2 = $stmt->execute([':id'=>$id]);
 		needreload();
 		$this->FreePBX->Hooks->processHooks($id);
 		return ($ret1 && $ret2);
@@ -799,27 +747,27 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function addTimesFromBulkhandler($id,$times){
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
 		$stmt = $this->Database->prepare($sql);
-		$stmt->execute(array(':id' => $id));
-		$times = is_array($times)?$times:array();
+		$stmt->execute([':id' => $id]);
+		$times = is_array($times)?$times:[];
 		$sql = "INSERT timegroups_details (timegroupid, time) VALUES (:id, :time)";
 		$stmt = $this->Database->prepare($sql);
 		foreach ($times as $key=>$val) {
-			$stmt->execute(array(':id' => $id, ':time' => $val));
+			$stmt->execute([':id' => $id, ':time' => $val]);
 		}
 		needreload();
 	}
 	public function editTimes($id,$times){
 		$sql = "DELETE FROM timegroups_details WHERE timegroupid = :id";
 		$stmt = $this->Database->prepare($sql);
-		$stmt->execute(array(':id' => $id));
-		$times = is_array($times)?$times:array();
+		$stmt->execute([':id' => $id]);
+		$times = is_array($times)?$times:[];
 		$sql = "INSERT timegroups_details (timegroupid, time) VALUES (:id, :time)";
 		$stmt = $this->Database->prepare($sql);
 		foreach ($times as $key=>$val) {
 			extract($val);
 			$time = $this->buildTime( $hour_start, $minute_start, $hour_finish, $minute_finish, $wday_start, $wday_finish, $mday_start, $mday_finish, $month_start, $month_finish);
 			if (isset($time) && $time != '' && $time <> '*|*|*|*') {
-				$stmt->execute(array(':id' => $id, ':time' => $time));
+				$stmt->execute([':id' => $id, ':time' => $time]);
 			}
 		}
 		needreload();

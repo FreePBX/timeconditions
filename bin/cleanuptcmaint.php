@@ -2,7 +2,7 @@
 <?php
 
 //include bootstrap
-$restrict_mods = array('timeconditions' => true);
+$restrict_mods = ['timeconditions' => true];
 $bootstrap_settings['freepbx_auth'] = false;
 include '/etc/freepbx.conf';
 $tc = \FreePBX::Timeconditions();

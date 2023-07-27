@@ -89,9 +89,9 @@ class Job implements \FreePBX\Job\TaskInterface {
 				$output->writeln("BLF MODE: False (".$inuse.")");
 			}
 			if($timeMatch) {
-				$response = $astman->send_request('Command',array('Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$not_inuse));
+				$response = $astman->send_request('Command',['Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$not_inuse]);
 			} else {
-				$response = $astman->send_request('Command',array('Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$inuse));
+				$response = $astman->send_request('Command',['Command'=>"devstate change Custom:TC".$item['timeconditions_id']." ".$inuse]);
 			}
 			$output->writeln($response['data']);
 			$output->writeln("");

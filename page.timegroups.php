@@ -8,13 +8,13 @@ $heading = _("Time Groups");
 $request = $_REQUEST;
 $freepbx = FreePBX::Create();
 $request = $_REQUEST;
-switch ($_GET['view']) {
-	case 'form':
-		$content = load_view(__DIR__.'/views/timegroups/form.php', array('request' => $request));
-	break;
-	default:
-		$content = load_view(__DIR__.'/views/timegroups/grid.php', array('request' => $request));
-	break;
+if(isset($_GET['view'])) {
+	$content = match ($_GET['view']) {
+		'form' => load_view(__DIR__.'/views/timegroups/form.php', ['request' => $request]),
+		default => load_view(__DIR__.'/views/timegroups/grid.php', ['request' => $request]),
+	};
+} else {
+	$content = load_view(__DIR__.'/views/timegroups/grid.php', ['request' => $request]);
 }
 
 ?>

@@ -13,7 +13,7 @@ class Timeconditions extends Base {
 		$app->get('/', function ($request, $response, $args) {
 			\FreePBX::Modules()->loadFunctionsInc('timeconditions');
 			$timeconditions = timeconditions_list();
-			$timeconditions = $timeconditions ? $timeconditions : false;
+			$timeconditions = $timeconditions ?: false;
 			return $response->withJson($timeconditions);
 		})->add($this->checkAllReadScopeMiddleware());
 
@@ -23,13 +23,14 @@ class Timeconditions extends Base {
 		 * @uri /timeconditions/:id
 		 */
 		$app->get('/{id}', function ($request, $response, $args) {
-			\FreePBX::Modules()->loadFunctionsInc('timeconditions');
+			$timeconditions = [];
+   \FreePBX::Modules()->loadFunctionsInc('timeconditions');
 			$tcstate = timeconditions_get_state($args['id']);
 			if ($tcstate !== false) {
-				$timeconditions = array();
+				$timeconditions = [];
 				$timeconditions['state'] = $tcstate;
 			}
-			$timeconditions = $timeconditions ? $timeconditions : false;
+			$timeconditions = $timeconditions ?: false;
 			return $response->withJson($timeconditions);
 		})->add($this->checkAllReadScopeMiddleware());
 
