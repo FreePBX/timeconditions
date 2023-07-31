@@ -65,15 +65,17 @@ foreach($conditions as $item){
 		$item['timezone'] = ($item['timezone'] !== 'default') ? $item['timezone'] : \FreePBX::View()->getTimezone();
 		if(!empty($item['calendar_group_id'])) {
 			$timeMatch = $calendar->matchGroup($item['calendar_group_id'],null,$item['timezone']);
-			$next = $calendar->getNextEventByGroup($item['calendar_group_id'],null,$item['timezone']);
+			if ($debug) $next = $calendar->getNextEventByGroup($item['calendar_group_id'],null,$item['timezone']);
 		} else {
 			$timeMatch = $calendar->matchCalendar($item['calendar_id'],null,$item['timezone']);
-			$next = $calendar->getNextEvent($item['calendar_id'],null,$item['timezone']);
+			if ($debug) $next = $calendar->getNextEvent($item['calendar_id'],null,$item['timezone']);
 		}
-		if($timeMatch) {
-			tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
-		} else {
-			tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is not now");
+		if ($debug) {
+			if($timeMatch) {
+				tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
+			} else {
+				tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is not now");
+			}
 		}
 	}
 	tcout($debug, "TIME MATCHED: ".(($timeMatch)?"True":"False")." (".(($timeMatch)?$not_inuse:$inuse).")");
