@@ -252,9 +252,9 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 
 	public function bulkhandlerGetHeaders($type) {
+		$headers = array();
 		switch($type){
 			case 'timegroup':
-				$headers = array();
 				$headers['description'] = array('required' => true, 'identifier' => _("Timegroup Description"), 'description' => _("TimeGroup description"));
 				$headers['time1'] = array('required' => true, 'identifier' => _("time1"), 'description' => _(" Timee for this time condition"));
 				$headers['time2'] = array('required' => false, 'identifier' => _("time2"), 'description' => _(" Time for this time condition"));
@@ -303,6 +303,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 
 	public function bulkhandlerExport($type) {
+		$returnarray = [];
 		switch ($type) {
 		case 'timegroup':
 			$timegroups = $this->listTimegroups(true);

@@ -30,6 +30,8 @@ if(isset($usage) && !empty($usage)){
 	echo '</table>';
 	echo '</div>';
 }
+$delURL??='';
+$description??='';
 ?>
 
 <form autocomplete="off" name="edit" id="edit" action="?display=timegroups" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">

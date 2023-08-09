@@ -8,7 +8,7 @@ $heading = _("Time Groups");
 $request = $_REQUEST;
 $freepbx = FreePBX::Create();
 $request = $_REQUEST;
-switch ($_GET['view']) {
+switch ($_GET['view']??'') {
 	case 'form':
 		$content = load_view(__DIR__.'/views/timegroups/form.php', array('request' => $request));
 	break;
