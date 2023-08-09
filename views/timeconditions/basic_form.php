@@ -9,36 +9,24 @@ if ($itemid){
 	$code = $fcc->getCodeActive();
 	unset($fcc);
 	$thisItem = timeconditions_get($itemid);
-	$displayname = $thisItem['displayname']?$thisItem['displayname']:'';
-	$fcc_password = $thisItem['fcc_password']?$thisItem['fcc_password']:'';
-	$time = $thisItem['time']?$thisItem['time']:'';
-	$invert_hint = $thisItem['invert_hint']?$thisItem['invert_hint']:'0';
+	$displayname = $thisItem['displayname'] ?: '';
+	$fcc_password = $thisItem['fcc_password'] ?: '';
+	$time = $thisItem['time'] ?: '';
+	$invert_hint = $thisItem['invert_hint'] ?: '0';
 	$delURL = '?display=timeconditions&action=delete&itemid='.$itemid;
-	$thisItem['timezone'] = isset($thisItem['timezone'])?$thisItem['timezone']:'default';
+	$thisItem['timezone'] ??= 'default';
 	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
 }
 if ($itemid && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
-	switch ($tcstate) {
-		case 'auto':
-			$state_msg = _('No Override');
-		break;
-		case 'true':
-			$state_msg = _('Temporary Override matching state');
-		break;
-		case 'true_sticky':
-			$state_msg = _('Permanent Override matching state');
-		break;
-		case 'false':
-			$state_msg = _('Temporary Override unmatching state');
-		break;
-		case 'false_sticky':
-			$state_msg = _('Permanent Override unmatching state');
-		break;
-		default:
-			$state_msg = _('Unknown State');
-		break;
-	}
+	$state_msg = match ($tcstate) {
+     'auto' => _('No Override'),
+     'true' => _('Temporary Override matching state'),
+     'true_sticky' => _('Permanent Override matching state'),
+     'false' => _('Temporary Override unmatching state'),
+     'false_sticky' => _('Permanent Override unmatching state'),
+     default => _('Unknown State'),
+ };
 }else{
 	$state_msg = _('Unknown State');
 }
@@ -115,7 +103,7 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="tgw"></i>
 					</div>
 					<div class="col-md-9">
-						<?php echo timeconditions_timegroups_drawgroupselect('time', (isset($thisItem['time']) ? $thisItem['time'] : ''), true, ''); ?>
+						<?php echo timeconditions_timegroups_drawgroupselect('time', ($thisItem['time'] ?? ''), true, ''); ?>
 					</div>
 				</div>
 			</div>
@@ -141,9 +129,9 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 					<div class="col-md-9">
 						<?php
 						if (isset($thisItem)) {
-							echo drawselects($thisItem['truegoto'],0,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
+							echo drawselects($thisItem['truegoto'],0,["core" => ["extensions", "voicemail"], "ringgroups", "ivr"],false,'', false, false, true);
 						} else {
-							echo drawselects(null, 0,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
+							echo drawselects(null, 0,["core" => ["extensions", "voicemail"], "ringgroups", "ivr"],false,'', false, false, true);
 						}
 						?>
 					</div>
@@ -171,9 +159,9 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 					<div class="col-md-9">
 						<?php
 						if (isset($thisItem)) {
-							echo drawselects($thisItem['falsegoto'],1,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
+							echo drawselects($thisItem['falsegoto'],1,["core" => ["extensions", "voicemail"], "ringgroups", "ivr"],false,'', false, false, true);
 						} else {
-							echo drawselects(null, 1,array("core" => array("extensions","voicemail"), "ringgroups", "ivr"),false,'', false, false, true);
+							echo drawselects(null, 1,["core" => ["extensions", "voicemail"], "ringgroups", "ivr"],false,'', false, false, true);
 						}
 						?>
 					</div>
@@ -283,5 +271,5 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 </div>
 </form>
 <script>
-var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid)); ?>;
+var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid), JSON_THROW_ON_ERROR); ?>;
 </script>

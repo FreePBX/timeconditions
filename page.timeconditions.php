@@ -13,20 +13,24 @@ if(!empty($mode)) {
 }
 $usagehtml = '';
 
-switch ($request['view']) {
-	case 'form':
-		if (isset($request['itemid'])) {
-			$usagehtml = FreePBX::View()->destinationUsage(timeconditions_getdest($request['itemid']));
-		}
-		if($display_mode == "basic") {
-			$content = load_view(__DIR__.'/views/timeconditions/basic_form.php', array('request' => $request));
-		} else {
-			$content = load_view(__DIR__.'/views/timeconditions/advanced_form.php', array('request' => $request));
-		}
-	break;
-	default:
-		$content = load_view(__DIR__.'/views/timeconditions/grid.php', array('request' => $request));
-	break;
+if(isset($request['view'])){
+	switch ($request['view']) {
+		case 'form':
+			if (isset($request['itemid'])) {
+				$usagehtml = FreePBX::View()->destinationUsage(timeconditions_getdest($request['itemid']));
+			}
+			if($display_mode == "basic") {
+				$content = load_view(__DIR__.'/views/timeconditions/basic_form.php', ['request' => $request]);
+			} else {
+				$content = load_view(__DIR__.'/views/timeconditions/advanced_form.php', ['request' => $request]);
+			}
+		break;
+		default:
+			$content = load_view(__DIR__.'/views/timeconditions/grid.php', ['request' => $request]);
+		break;
+	}
+} else {
+	$content = load_view(__DIR__.'/views/timeconditions/grid.php', ['request' => $request]);
 }
 
 ?>
