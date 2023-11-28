@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 06:06+0000\n"
+"POT-Creation-Date: 2023-11-28 07:04+0000\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: Timeconditions.class.php:566 Timeconditions.class.php:602
+#: Timeconditions.class.php:567 Timeconditions.class.php:603
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr ""
 
@@ -62,16 +62,12 @@ msgstr "הוספת תנאי זמן"
 msgid "Add Time Group"
 msgstr "הוסף קבוצת זמנים"
 
-#: views/timegroups/form.php:85
+#: views/timegroups/form.php:87
 msgid "Add a time for this time condition"
 msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
-msgstr ""
-
-#: timeconditions.i18n.php:6
-msgid "Applications"
 msgstr ""
 
 #: functions.inc.php:625
@@ -121,14 +117,6 @@ msgstr ""
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-
 #: views/timeconditions/basic_form.php:253
 msgid "Current"
 msgstr ""
@@ -145,7 +133,7 @@ msgstr "דצמבר"
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:48
+#: views/timegroups/form.php:50
 msgid "Description"
 msgstr "תיאור"
 
@@ -187,10 +175,6 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr ""
 
-#: timeconditions.i18n.php:14
-msgid "Enable Maintenance Polling"
-msgstr ""
-
 #: functions.inc.php:625
 msgid "February"
 msgstr "פברואר"
@@ -217,16 +201,6 @@ msgstr ""
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
 "NOT_INUSE if it fails"
-msgstr ""
-
-#: timeconditions.i18n.php:18
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
 msgstr ""
 
 #: views/timeconditions/advanced_form.php:102
@@ -258,10 +232,6 @@ msgstr ""
 #: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
-msgstr ""
-
-#: timeconditions.i18n.php:20
-msgid "Maintenance Polling Interval"
 msgstr ""
 
 #: functions.inc.php:625
@@ -460,17 +430,6 @@ msgstr "התאמה זמנית"
 msgid "Temporary unmatched"
 msgstr "חוסר התאמה זמני"
 
-#: timeconditions.i18n.php:22
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
 #, php-format
@@ -495,7 +454,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:60
+#: views/timegroups/form.php:62
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
@@ -507,10 +466,6 @@ msgstr "חמישי"
 msgid "Time Condition"
 msgstr "תנאי זמן"
 
-#: timeconditions.i18n.php:16
-msgid "Time Condition Module"
-msgstr ""
-
 #: views/timeconditions/advanced_form.php:54
 #: views/timeconditions/basic_form.php:49
 msgid "Time Condition name"
@@ -521,8 +476,7 @@ msgstr ""
 msgid "Time Condition: %s"
 msgstr "מצבים לפי זמנים: %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "תנאיי זמנים"
 
@@ -536,7 +490,7 @@ msgstr "קבוצת זמנים"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "קבוצות זמן"
 
@@ -553,7 +507,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:72
+#: views/timegroups/form.php:74
 msgid "Time(s)"
 msgstr ""
 
@@ -636,7 +590,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:526 Timeconditions.class.php:542
+#: Timeconditions.class.php:527 Timeconditions.class.php:543
 msgid "unnamed"
 msgstr ""
 

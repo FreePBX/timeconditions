@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 06:06+0000\n"
+"POT-Creation-Date: 2023-11-28 07:04+0000\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: Timeconditions.class.php:566 Timeconditions.class.php:602
+#: Timeconditions.class.php:567 Timeconditions.class.php:603
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -50,7 +50,7 @@ msgstr "عملیات"
 msgid "Add New Time Group..."
 msgstr "افزودن گروه زمانی جدید..."
 
-#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "افزودن زمان"
 
@@ -64,17 +64,13 @@ msgstr "افزودن شرط زمانی"
 msgid "Add Time Group"
 msgstr "افزودن گروه زمانی"
 
-#: views/timegroups/form.php:85
+#: views/timegroups/form.php:87
 msgid "Add a time for this time condition"
 msgstr "افزودن زمان برای این شرط زمانی"
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
-
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "برنامه‌های کاربردی"
 
 #: functions.inc.php:625
 msgid "April"
@@ -123,17 +119,6 @@ msgstr "تغییر بازنویسی"
 msgid "Could not delete time group as it is in use"
 msgstr "نمی توان گروه زمانی درحال استفاده را حذف کرد"
 
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"هنگامی که تماس باید بر اساس تاریخ و زمان به یک مقصد هدایت شود، می بایست یک "
-"شرط زمانی تعریف کنید. به عنوان مثال در طول روز تماس به یک داخلی هدایت می شود "
-"در صورتی که در طول شب به منوی صوتی وصل خواهد شد."
-
 #: views/timeconditions/basic_form.php:253
 msgid "Current"
 msgstr "فعلی"
@@ -150,7 +135,7 @@ msgstr "دسامبر"
 msgid "Delete"
 msgstr "حذف"
 
-#: views/timegroups/form.php:48
+#: views/timegroups/form.php:50
 msgid "Description"
 msgstr "توضیحات"
 
@@ -192,10 +177,6 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "ویرایش شرط زمانی ： %s (%s)"
 
-#: timeconditions.i18n.php:14
-msgid "Enable Maintenance Polling"
-msgstr "فعال سازی درخواست های نگهداری"
-
 #: functions.inc.php:625
 msgid "February"
 msgstr "فوریه"
@@ -229,20 +210,6 @@ msgstr ""
 "اگر این گزینه تنظیم شود، در صورت همخوان بودن شرط زمانی، حالت INUSE برای BLF "
 "در نظر گرفته می شود. در غیر اینصورت NOT_INUSE گزینش می شود"
 
-#: timeconditions.i18n.php:18
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
-msgstr ""
-"اگر این مقدار برابر با false ست شود، اجرای شرایط زمانی توسط کال فایل "
-"بازنویسی می شود. اگر تمام کدهای ویژه برای شرایط زمانی غیرفعال شوند، پروسه "
-"نگهداری اجرا نخواهد شد. تنظیم این مقدار بر روی false اصلا رایج نیست. ممکن "
-"است برای دیباگ کردن سیستم مورد استفاده قرار گیرد."
-
 #: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
 msgid "Invert BLF Hint"
@@ -273,10 +240,6 @@ msgstr "فهرست شرایط زمانی"
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr "فهرست گروه های زمانی"
-
-#: timeconditions.i18n.php:20
-msgid "Maintenance Polling Interval"
-msgstr "زمان سرکشی نگهداری"
 
 #: functions.inc.php:625
 msgid "March"
@@ -481,19 +444,6 @@ msgstr "همخوانی موقت"
 msgid "Temporary unmatched"
 msgstr "ناهمخوانی موقت"
 
-#: timeconditions.i18n.php:22
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-"فواصل زمانی که پروسه سرکشی نگهداری شرایط زمانی توسط استریسک اجرا می شوند. "
-"فواصل زمانی کوتاه باعث افزایش دقت وضعیت نمایش BLF ها می شود."
-
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
 #, php-format
@@ -525,7 +475,7 @@ msgstr "این بخش از گروه زمانی و تمامی تنظیمات حذ
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "این گروه زمانی درحال استفاده است و نمی توان آن را حذف کرد"
 
-#: views/timegroups/form.php:60
+#: views/timegroups/form.php:62
 msgid "This will display as the name of this Time Group"
 msgstr "به عنوان نام گروه زمانی نمایش داده می شود"
 
@@ -537,10 +487,6 @@ msgstr "پنج شنبه"
 msgid "Time Condition"
 msgstr "شرط زمانی"
 
-#: timeconditions.i18n.php:16
-msgid "Time Condition Module"
-msgstr "ماژول شرط زمانی"
-
 #: views/timeconditions/advanced_form.php:54
 #: views/timeconditions/basic_form.php:49
 msgid "Time Condition name"
@@ -551,8 +497,7 @@ msgstr "نام شرط زمانی"
 msgid "Time Condition: %s"
 msgstr "شرط زمانی ： %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "شرایط زمانی"
 
@@ -566,7 +511,7 @@ msgstr "گروه زمانی"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "گروه‌های زمانی"
 
@@ -583,7 +528,7 @@ msgstr "زمان شروع"
 msgid "Time to finish"
 msgstr "زمان پایان"
 
-#: views/timegroups/form.php:72
+#: views/timegroups/form.php:74
 msgid "Time(s)"
 msgstr "زمان (ها)"
 
@@ -666,9 +611,58 @@ msgstr ""
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:526 Timeconditions.class.php:542
+#: Timeconditions.class.php:527 Timeconditions.class.php:543
 msgid "unnamed"
 msgstr "بدون نام"
+
+#~ msgid "Applications"
+#~ msgstr "برنامه‌های کاربردی"
+
+#~ msgid ""
+#~ "Creates a condition where calls will go to one of two destinations (eg, "
+#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
+#~ "be used for example to ring a receptionist during the day, or go directly "
+#~ "to an IVR at night."
+#~ msgstr ""
+#~ "هنگامی که تماس باید بر اساس تاریخ و زمان به یک مقصد هدایت شود، می بایست "
+#~ "یک شرط زمانی تعریف کنید. به عنوان مثال در طول روز تماس به یک داخلی هدایت "
+#~ "می شود در صورتی که در طول شب به منوی صوتی وصل خواهد شد."
+
+#~ msgid "Enable Maintenance Polling"
+#~ msgstr "فعال سازی درخواست های نگهداری"
+
+#~ msgid ""
+#~ "If set to false, this will override the execution of the Time Conditions "
+#~ "maintenance task launched by call files. If all the feature codes for "
+#~ "time conditions are disabled, the maintenance task will not be launched "
+#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
+#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
+#~ "running through the CLI that the maintenance task launches and can be "
+#~ "distracting."
+#~ msgstr ""
+#~ "اگر این مقدار برابر با false ست شود، اجرای شرایط زمانی توسط کال فایل "
+#~ "بازنویسی می شود. اگر تمام کدهای ویژه برای شرایط زمانی غیرفعال شوند، پروسه "
+#~ "نگهداری اجرا نخواهد شد. تنظیم این مقدار بر روی false اصلا رایج نیست. ممکن "
+#~ "است برای دیباگ کردن سیستم مورد استفاده قرار گیرد."
+
+#~ msgid "Maintenance Polling Interval"
+#~ msgstr "زمان سرکشی نگهداری"
+
+#~ msgid ""
+#~ "The polling interval in seconds used by the Time Conditions maintenance "
+#~ "task, launched by an Asterisk call file used to update Time Conditions "
+#~ "override states as well as keep custom device state hint values up-to-"
+#~ "date when being used with BLF. A shorter interval will assure that BLF "
+#~ "keys states are accurate. The interval should be less than the shortest "
+#~ "configured span between two time condition states, so that a manual "
+#~ "override during such a period is properly reset when the new period "
+#~ "starts."
+#~ msgstr ""
+#~ "فواصل زمانی که پروسه سرکشی نگهداری شرایط زمانی توسط استریسک اجرا می شوند. "
+#~ "فواصل زمانی کوتاه باعث افزایش دقت وضعیت نمایش BLF ها می شود."
+
+#~ msgid "Time Condition Module"
+#~ msgstr "ماژول شرط زمانی"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "

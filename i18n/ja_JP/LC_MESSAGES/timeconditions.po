@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 06:06+0000\n"
+"POT-Creation-Date: 2023-11-28 07:04+0000\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:566 Timeconditions.class.php:602
+#: Timeconditions.class.php:567 Timeconditions.class.php:603
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -78,7 +78,7 @@ msgstr "アクション"
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -92,17 +92,13 @@ msgstr "時間分岐条件を追加"
 msgid "Add Time Group"
 msgstr "時間グループを追加"
 
-#: views/timegroups/form.php:85
+#: views/timegroups/form.php:87
 msgid "Add a time for this time condition"
 msgstr "この時間分岐条件の時間を追加します"
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
-
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "アプリケーション"
 
 #: functions.inc.php:625
 msgid "April"
@@ -151,17 +147,6 @@ msgstr "上書きステータスを変更"
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"時間や日付に基づいて、コールが二つの宛先(例:内線、IVR、着信グループ..)のうち"
-"一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信さ"
-"せ、夜は直接IVRに行く等に使用できます。"
-
 #: views/timeconditions/basic_form.php:253
 msgid "Current"
 msgstr "現在のステータス"
@@ -178,7 +163,7 @@ msgstr "12月"
 msgid "Delete"
 msgstr "削除"
 
-#: views/timegroups/form.php:48
+#: views/timegroups/form.php:50
 msgid "Description"
 msgstr "説明"
 
@@ -220,10 +205,6 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "時間分岐条件を編集: %s (%s)"
 
-#: timeconditions.i18n.php:14
-msgid "Enable Maintenance Polling"
-msgstr "メンテナンスポーリングを有効にする"
-
 #: functions.inc.php:625
 msgid "February"
 msgstr "2月"
@@ -256,16 +237,6 @@ msgstr ""
 "設定すると、条件に一致した場合にはヒントがINUSEとなり、一致しない場合は"
 "NOT_INUSEとなります。"
 
-#: timeconditions.i18n.php:18
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
-msgstr ""
-
 #: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
 msgid "Invert BLF Hint"
@@ -296,10 +267,6 @@ msgstr "時間分岐条件を表示"
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr "時間グループを表示"
-
-#: timeconditions.i18n.php:20
-msgid "Maintenance Polling Interval"
-msgstr "メンテナンスポーリング間隔"
 
 #: functions.inc.php:625
 msgid "March"
@@ -505,17 +472,6 @@ msgstr "一時的一致"
 msgid "Temporary unmatched"
 msgstr "一時的不一致"
 
-#: timeconditions.i18n.php:22
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
 #, php-format
@@ -548,7 +504,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:60
+#: views/timegroups/form.php:62
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
@@ -560,10 +516,6 @@ msgstr "木曜日"
 msgid "Time Condition"
 msgstr "時間分岐条件"
 
-#: timeconditions.i18n.php:16
-msgid "Time Condition Module"
-msgstr "タイムコンディションモジュール"
-
 #: views/timeconditions/advanced_form.php:54
 #: views/timeconditions/basic_form.php:49
 msgid "Time Condition name"
@@ -574,8 +526,7 @@ msgstr "時間分岐条件の名前"
 msgid "Time Condition: %s"
 msgstr "時間分岐条件: %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "時間分岐条件"
 
@@ -589,7 +540,7 @@ msgstr "時間グループ"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "時間グループ"
 
@@ -606,7 +557,7 @@ msgstr "開始時刻"
 msgid "Time to finish"
 msgstr "終了時刻"
 
-#: views/timegroups/form.php:72
+#: views/timegroups/form.php:74
 msgid "Time(s)"
 msgstr "時間設定"
 
@@ -689,9 +640,31 @@ msgstr ""
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:526 Timeconditions.class.php:542
+#: Timeconditions.class.php:527 Timeconditions.class.php:543
 msgid "unnamed"
 msgstr ""
+
+#~ msgid "Applications"
+#~ msgstr "アプリケーション"
+
+#~ msgid ""
+#~ "Creates a condition where calls will go to one of two destinations (eg, "
+#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
+#~ "be used for example to ring a receptionist during the day, or go directly "
+#~ "to an IVR at night."
+#~ msgstr ""
+#~ "時間や日付に基づいて、コールが二つの宛先(例:内線、IVR、着信グループ..)のう"
+#~ "ち一つに行く条件を作成します。これは例えば、昼の間はレセプショニストを着信"
+#~ "させ、夜は直接IVRに行く等に使用できます。"
+
+#~ msgid "Enable Maintenance Polling"
+#~ msgstr "メンテナンスポーリングを有効にする"
+
+#~ msgid "Maintenance Polling Interval"
+#~ msgstr "メンテナンスポーリング間隔"
+
+#~ msgid "Time Condition Module"
+#~ msgstr "タイムコンディションモジュール"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "

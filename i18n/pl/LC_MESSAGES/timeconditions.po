@@ -9,63 +9,63 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 06:11+0000\n"
+"POT-Creation-Date: 2023-11-28 07:04+0000\n"
 "PO-Revision-Date: 2023-11-19 23:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: views/timeconditions/advanced_form.php:236
+#: Timeconditions.class.php:256
+msgid " Time for this time condition"
+msgstr ""
+
+#: Timeconditions.class.php:255
+msgid " Timee for this time condition"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:224
 msgid "--Select a Calendar--"
 msgstr "--Wybierz kalendarz--"
 
-#: functions.inc.php:555
-#: views/timeconditions/advanced_form.php:263
+#: functions.inc.php:542 views/timeconditions/advanced_form.php:251
 msgid "--Select a Group--"
 msgstr "--Wybierz grupę--"
 
-#: Timeconditions.class.php:557
-#: Timeconditions.class.php:592
+#: Timeconditions.class.php:567 Timeconditions.class.php:603
 msgid ": Time Condition Override"
 msgstr ": Nadpisanie warunku czasowego"
 
-#: views/timeconditions/bootnav.php:9
-#: views/timeconditions/grid.php:29
-#: views/timegroups/bootnav.php:9
-#: views/timegroups/grid.php:28
+#: views/timeconditions/bootnav.php:9 views/timeconditions/grid.php:29
+#: views/timegroups/bootnav.php:9 views/timegroups/grid.php:28
 msgid "Actions"
 msgstr "Działania"
 
-#: functions.inc.php:567
-#: assets/js/timeconditions/timeconditions.js:166
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
 msgid "Add New Time Group..."
 msgstr "Dodaj nową grupę czasową..."
 
-#: views/timegroups/form.php:74
-#: assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Dodaj czas"
 
 #: views/timeconditions/advanced_form.php:6
-#: views/timeconditions/basic_form.php:6
-#: views/timeconditions/bootnav.php:14
+#: views/timeconditions/basic_form.php:6 views/timeconditions/bootnav.php:14
 #: views/timeconditions/grid.php:9
 msgid "Add Time Condition"
 msgstr "Dodaj warunek czasowy"
 
-#: views/timegroups/bootnav.php:14
-#: views/timegroups/grid.php:10
+#: views/timegroups/bootnav.php:14 views/timegroups/grid.php:10
 msgid "Add Time Group"
 msgstr "Dodawaj grupę czasową"
 
-#: views/timegroups/form.php:82
+#: views/timegroups/form.php:87
 msgid "Add a time for this time condition"
 msgstr "Dodaj czas dla tego warunku czasu"
 
@@ -73,42 +73,37 @@ msgstr "Dodaj czas dla tego warunku czasu"
 msgid "Already exists Time Conditions Name:"
 msgstr "Nazwa warunków czasowych już istnieje:"
 
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "Aplikacje"
-
-#: functions.inc.php:650
+#: functions.inc.php:625
 msgid "April"
 msgstr "Kwiecień"
 
-#: functions.inc.php:654
+#: functions.inc.php:625
 msgid "August"
 msgstr "Sierpień"
 
-#: views/timeconditions/advanced_form.php:231
+#: views/timeconditions/advanced_form.php:219
 #: assets/js/timeconditions/timeconditions.js:64
 msgid "Calendar"
 msgstr "Kalendarz"
 
-#: views/timeconditions/advanced_form.php:258
+#: views/timeconditions/advanced_form.php:246
 #: assets/js/timeconditions/timeconditions.js:66
 msgid "Calendar Group"
 msgstr "Grupa kalendarzy"
 
-#: views/timeconditions/advanced_form.php:275
+#: views/timeconditions/advanced_form.php:263
 msgid "Calendar Group to check for timeconditions"
 msgstr "Grupa kalendarza do sprawdzania warunków czasowych"
 
-#: views/timeconditions/advanced_form.php:212
+#: views/timeconditions/advanced_form.php:200
 msgid "Calendar Mode"
 msgstr "Tryb kalendarza"
 
-#: functions.inc.php:102
-#: functions.inc.php:113
+#: functions.inc.php:98 functions.inc.php:109
 msgid "Calendar Not found"
 msgstr "Nie znaleziono kalendarza"
 
-#: views/timeconditions/advanced_form.php:248
+#: views/timeconditions/advanced_form.php:236
 msgid "Calendar to check for time condition"
 msgstr "Kalendarz do sprawdzania warunków czasowych"
 
@@ -116,65 +111,60 @@ msgstr "Kalendarz do sprawdzania warunków czasowych"
 msgid "Cannot remove the only rule. At least 1 rule is required."
 msgstr "Nie można usunąć jedynej reguły. Wymagana jest co najmniej 1 reguła."
 
-#: views/timeconditions/advanced_form.php:143
-#: views/timeconditions/basic_form.php:252
+#: views/timeconditions/advanced_form.php:131
+#: views/timeconditions/basic_form.php:240
 msgid "Change Override"
 msgstr "Zmień nadpisanie"
 
-#: Timeconditions.class.php:79
+#: Timeconditions.class.php:75
 msgid "Could not delete time group as it is in use"
 msgstr "Nie można usunąć grupy czasowej, ponieważ jest używana"
 
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"Tworzy warunek, w którym połączenia będą kierowane do jednego z dwóch miejsc "
-"docelowych (np. numer wewnętrzny, IVR, grupa kontaktowa...) na podstawie "
-"godziny i/lub daty. Można to wykorzystać na przykład do zadzwonienia do "
-"recepcjonisty w ciągu dnia lub przejść bezpośrednio do IVR w nocy."
-
-#: views/timeconditions/advanced_form.php:156
-#: views/timeconditions/basic_form.php:265
+#: views/timeconditions/basic_form.php:253
 msgid "Current"
 msgstr "Aktualne"
 
-#: functions.inc.php:658
+#: views/timeconditions/advanced_form.php:144
+msgid "Current override state"
+msgstr ""
+
+#: functions.inc.php:625
 msgid "December"
 msgstr "Grudzień"
 
-#: Timeconditions.class.php:180
+#: Timeconditions.class.php:160
 msgid "Delete"
 msgstr "Usuń"
 
-#: views/timegroups/form.php:45
+#: views/timegroups/form.php:50
 msgid "Description"
 msgstr "Opis"
 
-#: views/timeconditions/advanced_form.php:363
-#: views/timeconditions/basic_form.php:186
+#: Timeconditions.class.php:267
+msgid "Description is required."
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:351
+#: views/timeconditions/basic_form.php:174
 msgid "Destination if time does not matche"
 msgstr "Miejsce docelowe, jeśli czas nie jest zgodny"
 
-#: views/timeconditions/advanced_form.php:333
-#: views/timeconditions/basic_form.php:156
+#: views/timeconditions/advanced_form.php:321
+#: views/timeconditions/basic_form.php:144
 msgid "Destination if time matches"
 msgstr "Miejsce docelowe, jeśli czas jest zgodny"
 
-#: views/timeconditions/advanced_form.php:315
-#: views/timeconditions/basic_form.php:138
+#: views/timeconditions/advanced_form.php:303
+#: views/timeconditions/basic_form.php:126
 msgid "Destination matches"
 msgstr "Miejsce docelowe zgodne"
 
-#: views/timeconditions/advanced_form.php:345
-#: views/timeconditions/basic_form.php:168
+#: views/timeconditions/advanced_form.php:333
+#: views/timeconditions/basic_form.php:156
 msgid "Destination non-matches"
 msgstr "Miejsce docelowe nie pasuje"
 
-#: Timeconditions.class.php:190
+#: Timeconditions.class.php:170
 msgid "Duplicate"
 msgstr "Duplikat"
 
@@ -188,26 +178,22 @@ msgstr "Duplikat nazwy warunków czasowych"
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Edytuj warunek czasowy: %s (%s)"
 
-#: timeconditions.i18n.php:14
-msgid "Enable Maintenance Polling"
-msgstr "Uruchom Maintenence Pooling"
-
-#: functions.inc.php:648
+#: functions.inc.php:625
 msgid "February"
 msgstr "Luty"
 
-#: functions.inc.php:626
+#: functions.inc.php:607
 msgid "Friday"
 msgstr "Piątek"
 
-#: views/timeconditions/advanced_form.php:78
-#: views/timeconditions/basic_form.php:73
+#: views/timeconditions/advanced_form.php:66
+#: views/timeconditions/basic_form.php:61
 msgid "Give this Time Condition a brief name to help you identify it."
 msgstr ""
 "Nadaj temu warunkowi czasowemu krótką nazwę, aby ułatwić jego identyfikację."
 
-#: views/timeconditions/advanced_form.php:102
-#: views/timeconditions/basic_form.php:211
+#: views/timeconditions/advanced_form.php:90
+#: views/timeconditions/basic_form.php:199
 msgid ""
 "If set dialing the feature code will require a pin to change the override "
 "state"
@@ -215,8 +201,8 @@ msgstr ""
 "Jeśli ustawiono wybieranie numeru, kod funkcji będzie wymagał kodu PIN w "
 "celu zmiany stanu zastąpienia"
 
-#: views/timeconditions/advanced_form.php:131
-#: views/timeconditions/basic_form.php:240
+#: views/timeconditions/advanced_form.php:119
+#: views/timeconditions/basic_form.php:228
 #, php-format
 msgid ""
 "If set the hint will be INUSE if the time condition is matched, and "
@@ -225,37 +211,20 @@ msgstr ""
 "Jeśli ustawiona wskazówką będzie INUSE, a warunek czasowy będzie spełniony, "
 "to NOT_INUSE się nie powiedzie"
 
-#: timeconditions.i18n.php:18
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
-msgstr ""
-"Jeśli ustawiona jest wartość false, zastąpi to wykonanie zadania konserwacji "
-"warunków czasowych uruchomionego przez pliki wywołań. Jeśli wszystkie kody "
-"funkcji dla warunków czasowych są wyłączone, zadanie konserwacji i tak nie "
-"zostanie uruchomione. Tą wartość na false ustawia się bardzo rzadko. Możesz "
-"ustawić to tymczasowo podczas debugowania systemu, aby uniknąć okresowego "
-"wybierania numeru uruchamianego przez interfejs wiersza polecenia, który "
-"jest uruchamiany przez zadanie konserwacji i może być rozpraszające."
-
-#: views/timeconditions/advanced_form.php:114
-#: views/timeconditions/basic_form.php:223
+#: views/timeconditions/advanced_form.php:102
+#: views/timeconditions/basic_form.php:211
 msgid "Invert BLF Hint"
 msgstr "Odwróć podpowiedź BLF"
 
-#: functions.inc.php:647
+#: functions.inc.php:625
 msgid "January"
 msgstr "Styczeń"
 
-#: functions.inc.php:653
+#: functions.inc.php:625
 msgid "July"
 msgstr "Lipiec"
 
-#: functions.inc.php:652
+#: functions.inc.php:625
 msgid "June"
 msgstr "Czerwiec"
 
@@ -263,87 +232,88 @@ msgstr "Czerwiec"
 msgid "Linked Item"
 msgstr "Powiązany element"
 
-#: views/timeconditions/bootnav.php:12
-#: views/timegroups/bootnav.php:13
+#: views/timeconditions/bootnav.php:12 views/timegroups/bootnav.php:13
 #: views/timegroups/grid.php:9
 msgid "List Time Conditions"
 msgstr "Wyświetl listę warunków czasowych"
 
-#: views/timeconditions/bootnav.php:13
-#: views/timeconditions/grid.php:8
+#: views/timeconditions/bootnav.php:13 views/timeconditions/grid.php:8
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr "Wyświetl listę grup czasowych"
 
-#: timeconditions.i18n.php:20
-msgid "Maintenance Polling Interval"
-msgstr "Interwał odpytywania konserwacji"
-
-#: functions.inc.php:649
+#: functions.inc.php:625
 msgid "March"
 msgstr "Marzec"
 
-#: functions.inc.php:651
+#: functions.inc.php:625
 msgid "May"
 msgstr "Maj"
 
-#: views/timeconditions/advanced_form.php:204
+#: views/timeconditions/advanced_form.php:192
 msgid "Mode"
 msgstr "Tryb"
 
-#: functions.inc.php:622
+#: functions.inc.php:607
 msgid "Monday"
 msgstr "Poniedziałek"
 
-#: functions.inc.php:821
+#: functions.inc.php:791
 msgid "Month Day finish"
 msgstr "Zakończenie dnia miesiąca"
 
-#: functions.inc.php:812
+#: functions.inc.php:782
 msgid "Month Day start"
 msgstr "Rozpoczęcie dnia miesiąca"
 
-#: functions.inc.php:839
+#: functions.inc.php:809
 msgid "Month finish"
 msgstr "Zakończenie miesiąca"
 
-#: functions.inc.php:830
+#: functions.inc.php:800
 msgid "Month start"
 msgstr "Rozpoczęcie miesiąca"
 
-#: views/timeconditions/advanced_form.php:122
-#: views/timeconditions/basic_form.php:231
+#: views/timeconditions/advanced_form.php:110
+#: views/timeconditions/basic_form.php:219
 msgid "No"
 msgstr "Nie"
 
-#: views/timeconditions/advanced_form.php:26
-#: views/timeconditions/basic_form.php:24
-#: assets/js/timeconditions/timeconditions.js:100
+#: views/timeconditions/basic_form.php:23
+#: assets/js/timeconditions/timeconditions.js:99
 msgid "No Override"
 msgstr "Brak nadpisania"
+
+#: views/timeconditions/advanced_form.php:25
+#: views/timeconditions/advanced_form.php:30
+#: views/timeconditions/advanced_form.php:33
+msgid "No Override State"
+msgstr ""
+
+#: views/timeconditions/advanced_form.php:136
+msgid "No override"
+msgstr ""
 
 #: assets/js/timeconditions/timeconditions.js:68
 #: assets/js/timeconditions/timeconditions.js:73
 msgid "Not Set"
 msgstr "Nie ustawione"
 
-#: views/timeconditions/bootnav.php:18
-#: views/timeconditions/grid.php:11
-#: views/timegroups/bootnav.php:18
-#: views/timegroups/grid.php:12
+#: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Not received"
 msgstr "Nieotrzymany"
 
-#: functions.inc.php:657
+#: functions.inc.php:625
 msgid "November"
 msgstr "Listopad"
 
-#: functions.inc.php:656
+#: functions.inc.php:625
 msgid "October"
 msgstr "Październik"
 
-#: views/timeconditions/advanced_form.php:90
-#: views/timeconditions/basic_form.php:199
+#: views/timeconditions/advanced_form.php:78
+#: views/timeconditions/basic_form.php:187
 msgid "Override Code Pin"
 msgstr "Zastąp kod PIN"
 
@@ -351,25 +321,25 @@ msgstr "Zastąp kod PIN"
 msgid "Override State"
 msgstr "Zastąp stan"
 
-#: views/timeconditions/advanced_form.php:32
-#: views/timeconditions/basic_form.php:30
+#: views/timeconditions/advanced_form.php:27
+#: views/timeconditions/basic_form.php:25
 msgid "Permanent Override matching state"
 msgstr "Trwałe zastąpienie pasującego stanu"
 
-#: views/timeconditions/advanced_form.php:38
-#: views/timeconditions/basic_form.php:36
+#: views/timeconditions/advanced_form.php:29
+#: views/timeconditions/basic_form.php:27
 msgid "Permanent Override unmatching state"
 msgstr "Trwale zastąpienie niepasującego stanu"
 
-#: views/timeconditions/advanced_form.php:151
-#: views/timeconditions/basic_form.php:260
-#: assets/js/timeconditions/timeconditions.js:88
+#: views/timeconditions/advanced_form.php:139
+#: views/timeconditions/basic_form.php:248
+#: assets/js/timeconditions/timeconditions.js:87
 msgid "Permanently matched"
 msgstr "Stałe dopasowanie"
 
-#: views/timeconditions/advanced_form.php:153
-#: views/timeconditions/basic_form.php:262
-#: assets/js/timeconditions/timeconditions.js:91
+#: views/timeconditions/advanced_form.php:141
+#: views/timeconditions/basic_form.php:250
+#: assets/js/timeconditions/timeconditions.js:90
 msgid "Permanently unmatched"
 msgstr "Stałe niedopasowanie"
 
@@ -393,25 +363,25 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr "Wybierz grupę czasową, którą chcesz powiązać z tym warunkiem czasowym."
 
-#: Timeconditions.class.php:185
+#: Timeconditions.class.php:165
 msgid "Reset"
 msgstr "Zresetuj"
 
-#: views/timeconditions/advanced_form.php:149
-#: views/timeconditions/basic_form.php:258
+#: views/timeconditions/advanced_form.php:137
+#: views/timeconditions/basic_form.php:246
 msgid "Reset Override"
 msgstr "Zresetuj nadpisanie"
 
-#: functions.inc.php:627
+#: functions.inc.php:607
 msgid "Saturday"
 msgstr "Sobota"
 
-#: assets/js/timeconditions/timeconditions.js:162
+#: assets/js/timeconditions/timeconditions.js:161
 msgid "Select a Group"
 msgstr "Wybierz grupę"
 
-#: views/timeconditions/advanced_form.php:298
-#: views/timeconditions/basic_form.php:126
+#: views/timeconditions/advanced_form.php:286
+#: views/timeconditions/basic_form.php:114
 msgid ""
 "Select a Time Group created under Time Groups. Matching times will be sent "
 "to matching destination. If no group is selected, call will always go to no-"
@@ -422,23 +392,21 @@ msgstr ""
 "żadna grupa, połączenie będzie zawsze kierowane do miejsca docelowego, które "
 "nie pasuje."
 
-#: views/timeconditions/advanced_form.php:221
+#: views/timeconditions/advanced_form.php:209
 msgid "Select the Mode for checking time conditions"
 msgstr "Wybierz tryb sprawdzania warunków czasowych"
 
-#: functions.inc.php:655
+#: functions.inc.php:625
 msgid "September"
 msgstr "Wrzesień"
 
-#: views/timeconditions/bootnav.php:18
-#: views/timeconditions/grid.php:11
-#: views/timegroups/bootnav.php:18
-#: views/timegroups/grid.php:12
+#: views/timeconditions/bootnav.php:18 views/timeconditions/grid.php:11
+#: views/timegroups/bootnav.php:18 views/timegroups/grid.php:12
 msgid "Server time:"
 msgstr "Czas serwera:"
 
-#: views/timeconditions/advanced_form.php:193
-#: views/timeconditions/basic_form.php:102
+#: views/timeconditions/advanced_form.php:181
+#: views/timeconditions/basic_form.php:90
 msgid ""
 "Specify the time zone by name if the destinations are in a different time "
 "zone than the server. Type two characters to start an auto-complete pick-"
@@ -451,57 +419,38 @@ msgstr ""
 "wybór tutaj <strong>MUSI</strong> pojawić się na liście wyboru lub w "
 "katalogu /usr/share/zoneinfo/."
 
-#: Timeconditions.class.php:195
+#: Timeconditions.class.php:175
 msgid "Submit"
 msgstr "Wyślij"
 
-#: functions.inc.php:621
+#: functions.inc.php:607
 msgid "Sunday"
 msgstr "Niedziela"
 
-#: views/timeconditions/advanced_form.php:29
-#: views/timeconditions/basic_form.php:27
+#: views/timeconditions/advanced_form.php:26
+#: views/timeconditions/basic_form.php:24
 msgid "Temporary Override matching state"
 msgstr "Tymczasowe zastąpienie pasującego stanu"
 
-#: views/timeconditions/advanced_form.php:35
-#: views/timeconditions/basic_form.php:33
+#: views/timeconditions/advanced_form.php:28
+#: views/timeconditions/basic_form.php:26
 msgid "Temporary Override unmatching state"
 msgstr "Tymczasowe zastąpienie niepasującego stanu"
 
-#: views/timeconditions/advanced_form.php:150
-#: views/timeconditions/basic_form.php:259
-#: assets/js/timeconditions/timeconditions.js:97
+#: views/timeconditions/advanced_form.php:138
+#: views/timeconditions/basic_form.php:247
+#: assets/js/timeconditions/timeconditions.js:96
 msgid "Temporary matched"
 msgstr "Tymczasowe dopasowanie"
 
-#: views/timeconditions/advanced_form.php:152
-#: views/timeconditions/basic_form.php:261
-#: assets/js/timeconditions/timeconditions.js:94
+#: views/timeconditions/advanced_form.php:140
+#: views/timeconditions/basic_form.php:249
+#: assets/js/timeconditions/timeconditions.js:93
 msgid "Temporary unmatched"
 msgstr "Tymczasowe niedopasowanie"
 
-#: timeconditions.i18n.php:22
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-"Interwał odpytywania w sekundach używany przez zadanie konserwacji warunków "
-"czasowych, uruchamiane przez plik wywołania Asterisk używany do "
-"aktualizowania stanów zastąpienia warunków czasowych, a także aktualizowania "
-"niestandardowych wartości wskazówek dotyczących stanu urządzenia podczas "
-"korzystania z BLF. Krótszy interwał zapewni dokładność stanów kluczy BLF. "
-"Odstęp powinien być mniejszy niż najkrótszy skonfigurowany odstęp między "
-"dwoma stanami warunków czasowych, aby ręczne nadpisanie w takim okresie "
-"zostało prawidłowo zresetowane po rozpoczęciu nowego okresu."
-
-#: views/timeconditions/advanced_form.php:164
-#: views/timeconditions/basic_form.php:273
+#: views/timeconditions/advanced_form.php:152
+#: views/timeconditions/basic_form.php:261
 #, php-format
 msgid ""
 "This Time Condition can be set to Temporarily go to the 'matched' or "
@@ -535,133 +484,204 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "Ta grupa czasowa jest aktualnie używana i nie można jej usunąć"
 
-#: views/timegroups/form.php:57
+#: views/timegroups/form.php:62
 msgid "This will display as the name of this Time Group"
 msgstr "To bedzie wyświetlane jako nazwa tej grupy czasowej"
 
-#: functions.inc.php:625
+#: functions.inc.php:607
 msgid "Thursday"
 msgstr "Czwartek"
 
-#: views/timeconditions/bootnav.php:30
-#: views/timeconditions/grid.php:26
+#: views/timeconditions/bootnav.php:30 views/timeconditions/grid.php:26
 msgid "Time Condition"
 msgstr "Warunek czasowy"
 
-#: timeconditions.i18n.php:16
-msgid "Time Condition Module"
-msgstr "Moduł warunków czasowych"
-
-#: views/timeconditions/advanced_form.php:66
-#: views/timeconditions/basic_form.php:61
+#: views/timeconditions/advanced_form.php:54
+#: views/timeconditions/basic_form.php:49
 msgid "Time Condition name"
 msgstr "Nazwa warunku czasowego"
 
-#: functions.inc.php:21
-#: functions.inc.php:251
+#: functions.inc.php:20 functions.inc.php:248
 #, php-format
 msgid "Time Condition: %s"
 msgstr "Warunek czasowy: %s"
 
 #: page.timeconditions.php:7
-#: timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Warunki czasowe"
 
-#: views/timeconditions/advanced_form.php:286
-#: views/timeconditions/basic_form.php:114
-#: views/timegroups/bootnav.php:30
-#: views/timegroups/grid.php:27
-#: assets/js/timeconditions/timeconditions.js:71
+#: views/timeconditions/advanced_form.php:274
+#: views/timeconditions/basic_form.php:102 views/timegroups/bootnav.php:30
+#: views/timegroups/grid.php:27 assets/js/timeconditions/timeconditions.js:71
 msgid "Time Group"
 msgstr "Grupa czasowa"
 
-#: views/timeconditions/advanced_form.php:210
+#: views/timeconditions/advanced_form.php:198
 msgid "Time Group Mode"
 msgstr "Tryb grupy czasowej"
 
 #: page.timegroups.php:7
-#: timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "Grupy czasowe"
 
-#: views/timeconditions/advanced_form.php:176
-#: views/timeconditions/basic_form.php:85
+#: views/timeconditions/advanced_form.php:164
+#: views/timeconditions/basic_form.php:73
 msgid "Time Zone:"
 msgstr "Strefa czasowa:"
 
-#: functions.inc.php:768
+#: functions.inc.php:733
 msgid "Time to Start"
 msgstr "Czas rozpoczęcia"
 
-#: functions.inc.php:781
+#: functions.inc.php:751
 msgid "Time to finish"
 msgstr "Czas zakończenia"
 
-#: views/timegroups/form.php:69
+#: views/timegroups/form.php:74
 msgid "Time(s)"
 msgstr "Czas(s)"
 
-#: functions.inc.php:623
+#: Timeconditions.class.php:278
+msgid "TimeGroup already exists"
+msgstr ""
+
+#: Timeconditions.class.php:254
+msgid "TimeGroup description"
+msgstr ""
+
+#: Timeconditions.class.php:245
+msgid "TimeGroups"
+msgstr ""
+
+#: Timeconditions.class.php:254
+msgid "Timegroup Description"
+msgstr ""
+
+#: functions.inc.php:607
 msgid "Tuesday"
 msgstr "Wtorek"
 
-#: views/timeconditions/advanced_form.php:148
-#: views/timeconditions/basic_form.php:257
+#: views/timeconditions/basic_form.php:245
 msgid "Unchanged"
 msgstr "Niezmienione"
 
-#: views/timeconditions/advanced_form.php:41
-#: views/timeconditions/advanced_form.php:45
-#: views/timeconditions/basic_form.php:39
-#: views/timeconditions/basic_form.php:43
+#: views/timeconditions/basic_form.php:28
+#: views/timeconditions/basic_form.php:31
 msgid "Unknown State"
 msgstr "Nieznany stan"
 
-#: views/timeconditions/advanced_form.php:181
-#: views/timeconditions/basic_form.php:90
+#: views/timeconditions/advanced_form.php:169
+#: views/timeconditions/basic_form.php:78
 msgid "Use System Timezone"
 msgstr "Użyj systemowej strefy czasowej"
 
-#: functions.inc.php:624
+#: functions.inc.php:607
 msgid "Wednesday"
 msgstr "Środa"
 
-#: functions.inc.php:794
+#: functions.inc.php:764
 msgid "Week Day Start"
 msgstr "Dzień rozpoczecia w tygodniu"
 
-#: functions.inc.php:803
+#: functions.inc.php:773
 msgid "Week Day finish"
 msgstr "Dzień zakończenia w tygodniu"
 
-#: views/timeconditions/advanced_form.php:120
-#: views/timeconditions/basic_form.php:229
+#: views/timeconditions/advanced_form.php:108
+#: views/timeconditions/basic_form.php:217
 msgid "Yes"
 msgstr "Tak"
 
-#: assets/js/timeconditions/timeconditions.js:187
+#: assets/js/timeconditions/timeconditions.js:186
 msgid "You cant set both a group and a calendar"
 msgstr "Nie można ustawić jednocześnie grupy i kalendarze"
 
-#: functions.inc.php:102
+#: functions.inc.php:98
 msgid "Your timecondition is linked to a non-existant calendar"
 msgstr "Twój warunek czasowy jest powiązany z nieistniejącym kalendarzem"
 
-#: functions.inc.php:113
+#: functions.inc.php:109
 msgid "Your timecondition is linked to a non-existant calendar group"
 msgstr "Twój warunek czasowy jest powiązany z nieistniejącą grupą kalendarzy"
 
-#: functions.inc.php:264
+#: functions.inc.php:255
 msgid "false goto"
 msgstr "fałszywe idź do (goto)"
 
-#: functions.inc.php:256
+#: Timeconditions.class.php:255
+msgid "time1"
+msgstr ""
+
+#: Timeconditions.class.php:256
+msgid "time2"
+msgstr ""
+
+#: functions.inc.php:251
 msgid "true goto"
 msgstr "prawdziwe idź do (goto)"
 
-#: Timeconditions.class.php:496
-#: Timeconditions.class.php:525
+#: Timeconditions.class.php:527 Timeconditions.class.php:543
 msgid "unnamed"
 msgstr "bez nazwy"
+
+#~ msgid "Applications"
+#~ msgstr "Aplikacje"
+
+#~ msgid ""
+#~ "Creates a condition where calls will go to one of two destinations (eg, "
+#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
+#~ "be used for example to ring a receptionist during the day, or go directly "
+#~ "to an IVR at night."
+#~ msgstr ""
+#~ "Tworzy warunek, w którym połączenia będą kierowane do jednego z dwóch "
+#~ "miejsc docelowych (np. numer wewnętrzny, IVR, grupa kontaktowa...) na "
+#~ "podstawie godziny i/lub daty. Można to wykorzystać na przykład do "
+#~ "zadzwonienia do recepcjonisty w ciągu dnia lub przejść bezpośrednio do "
+#~ "IVR w nocy."
+
+#~ msgid "Enable Maintenance Polling"
+#~ msgstr "Uruchom Maintenence Pooling"
+
+#~ msgid ""
+#~ "If set to false, this will override the execution of the Time Conditions "
+#~ "maintenance task launched by call files. If all the feature codes for "
+#~ "time conditions are disabled, the maintenance task will not be launched "
+#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
+#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
+#~ "running through the CLI that the maintenance task launches and can be "
+#~ "distracting."
+#~ msgstr ""
+#~ "Jeśli ustawiona jest wartość false, zastąpi to wykonanie zadania "
+#~ "konserwacji warunków czasowych uruchomionego przez pliki wywołań. Jeśli "
+#~ "wszystkie kody funkcji dla warunków czasowych są wyłączone, zadanie "
+#~ "konserwacji i tak nie zostanie uruchomione. Tą wartość na false ustawia "
+#~ "się bardzo rzadko. Możesz ustawić to tymczasowo podczas debugowania "
+#~ "systemu, aby uniknąć okresowego wybierania numeru uruchamianego przez "
+#~ "interfejs wiersza polecenia, który jest uruchamiany przez zadanie "
+#~ "konserwacji i może być rozpraszające."
+
+#~ msgid "Maintenance Polling Interval"
+#~ msgstr "Interwał odpytywania konserwacji"
+
+#~ msgid ""
+#~ "The polling interval in seconds used by the Time Conditions maintenance "
+#~ "task, launched by an Asterisk call file used to update Time Conditions "
+#~ "override states as well as keep custom device state hint values up-to-"
+#~ "date when being used with BLF. A shorter interval will assure that BLF "
+#~ "keys states are accurate. The interval should be less than the shortest "
+#~ "configured span between two time condition states, so that a manual "
+#~ "override during such a period is properly reset when the new period "
+#~ "starts."
+#~ msgstr ""
+#~ "Interwał odpytywania w sekundach używany przez zadanie konserwacji "
+#~ "warunków czasowych, uruchamiane przez plik wywołania Asterisk używany do "
+#~ "aktualizowania stanów zastąpienia warunków czasowych, a także "
+#~ "aktualizowania niestandardowych wartości wskazówek dotyczących stanu "
+#~ "urządzenia podczas korzystania z BLF. Krótszy interwał zapewni dokładność "
+#~ "stanów kluczy BLF. Odstęp powinien być mniejszy niż najkrótszy "
+#~ "skonfigurowany odstęp między dwoma stanami warunków czasowych, aby ręczne "
+#~ "nadpisanie w takim okresie zostało prawidłowo zresetowane po rozpoczęciu "
+#~ "nowego okresu."
+
+#~ msgid "Time Condition Module"
+#~ msgstr "Moduł warunków czasowych"

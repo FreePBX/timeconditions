@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 06:06+0000\n"
+"POT-Creation-Date: 2023-11-28 07:04+0000\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: Timeconditions.class.php:566 Timeconditions.class.php:602
+#: Timeconditions.class.php:567 Timeconditions.class.php:603
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
@@ -49,7 +49,7 @@ msgstr "Действие"
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:77 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Добавить время"
 
@@ -63,17 +63,13 @@ msgstr "Добавить временное правило"
 msgid "Add Time Group"
 msgstr "Добавить временную группу"
 
-#: views/timegroups/form.php:85
+#: views/timegroups/form.php:87
 msgid "Add a time for this time condition"
 msgstr "Добавить время для этого  условия по времени"
 
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
-
-#: timeconditions.i18n.php:6
-msgid "Applications"
-msgstr "Приложения"
 
 #: functions.inc.php:625
 msgid "April"
@@ -124,19 +120,6 @@ msgstr "Переопределить изменения"
 msgid "Could not delete time group as it is in use"
 msgstr ""
 
-#: timeconditions.i18n.php:8
-msgid ""
-"Creates a condition where calls will go to one of two destinations (eg, an "
-"extension, IVR, ring group..) based on the time and/or date. This can be "
-"used for example to ring a receptionist during the day, or go directly to an "
-"IVR at night."
-msgstr ""
-"Создаёт условия, при котором вызов будет распределяться на одно и более "
-"назначение (например внутренний номер, Интеркативное меню, ринг-группа..) "
-"основываяь на текущем времени/дате. Это можно использовать например "
-"направляя входящие вызовы секретарю в рабочее время, и на Интерактивное меню "
-"- в ночное."
-
 #: views/timeconditions/basic_form.php:253
 msgid "Current"
 msgstr "Текущее"
@@ -153,7 +136,7 @@ msgstr "Декабрь"
 msgid "Delete"
 msgstr "Удалить"
 
-#: views/timegroups/form.php:48
+#: views/timegroups/form.php:50
 msgid "Description"
 msgstr "Описание"
 
@@ -195,10 +178,6 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Редактировать временные условия :%s (%s)"
 
-#: timeconditions.i18n.php:14
-msgid "Enable Maintenance Polling"
-msgstr "Задействовать опрос по обслуживанию"
-
 #: functions.inc.php:625
 msgid "February"
 msgstr "Февраль"
@@ -233,23 +212,6 @@ msgstr ""
 "Если установлено, индикатор будет InUse если условие по времени совпадают, и "
 "NOT_INUSE, если нет"
 
-#: timeconditions.i18n.php:18
-msgid ""
-"If set to false, this will override the execution of the Time Conditions "
-"maintenance task launched by call files. If all the feature codes for time "
-"conditions are disabled, the maintenance task will not be launched anyhow. "
-"Setting this to false would be fairly un-common. You may want to set this "
-"temporarily if debugging a system to avoid the periodic dialplan running "
-"through the CLI that the maintenance task launches and can be distracting."
-msgstr ""
-"Если установлено в ложь, это переопределит выполнение задачи обслуживания "
-"правил по времени, начатой файлами звонков. Если все идентификационные коды "
-"для правил по времени будут отключены, то в этом случае задача обслуживания "
-"не будет начата. Установка этого в Ложь было бы несколько странно. Вы можете "
-"установить это в Ложь временно, отлаживая систему, чтобы избежать "
-"периодического отслеживания запуска задач обслуживания диалплана в CLI и не "
-"отвлекаться."
-
 #: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
 msgid "Invert BLF Hint"
@@ -280,10 +242,6 @@ msgstr "Список временных условий"
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr "Список временных групп"
-
-#: timeconditions.i18n.php:20
-msgid "Maintenance Polling Interval"
-msgstr "Интервал опроса по обслуживанию"
 
 #: functions.inc.php:625
 msgid "March"
@@ -490,25 +448,6 @@ msgstr "Временное совпадение"
 msgid "Temporary unmatched"
 msgstr "Временное несовпадение"
 
-#: timeconditions.i18n.php:22
-msgid ""
-"The polling interval in seconds used by the Time Conditions maintenance "
-"task, launched by an Asterisk call file used to update Time Conditions "
-"override states as well as keep custom device state hint values up-to-date "
-"when being used with BLF. A shorter interval will assure that BLF keys "
-"states are accurate. The interval should be less than the shortest "
-"configured span between two time condition states, so that a manual override "
-"during such a period is properly reset when the new period starts."
-msgstr ""
-"Интервал опроса в секундах используется задачей обслуживания правил по "
-"времени, запущенный call-файл Астериска используется для обновления правил "
-"по времени, переопределения состояния, а так же поддерживать различные "
-"состояния индикаторов устройств, использующих BLF. Короткий интервал "
-"гарантирует актуальное состояние клавиши BLF. Интервал должен быть меньше, "
-"чем самый короткий настроенный промежуток между двумя состояниями правил по "
-"времени, так чтобы переопределение во время такого периода уже закончилось, "
-"когда начинается новый период."
-
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
 #, php-format
@@ -544,7 +483,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:60
+#: views/timegroups/form.php:62
 msgid "This will display as the name of this Time Group"
 msgstr "Это будет отображаться  как имя Временной группы"
 
@@ -556,10 +495,6 @@ msgstr "Четверг"
 msgid "Time Condition"
 msgstr "Правило по времени"
 
-#: timeconditions.i18n.php:16
-msgid "Time Condition Module"
-msgstr "Модуль правил по времени"
-
 #: views/timeconditions/advanced_form.php:54
 #: views/timeconditions/basic_form.php:49
 msgid "Time Condition name"
@@ -570,8 +505,7 @@ msgstr "Имя  условия по времени"
 msgid "Time Condition: %s"
 msgstr "Правило по времени: %s"
 
-#: page.timeconditions.php:7 timeconditions.i18n.php:4
-#: timeconditions.i18n.php:10
+#: page.timeconditions.php:7
 msgid "Time Conditions"
 msgstr "Правила по времени"
 
@@ -585,7 +519,7 @@ msgstr "Временная группа"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7 timeconditions.i18n.php:12
+#: page.timegroups.php:7
 msgid "Time Groups"
 msgstr "Временная группа"
 
@@ -602,7 +536,7 @@ msgstr "Начало интервала"
 msgid "Time to finish"
 msgstr "Конец интервала"
 
-#: views/timegroups/form.php:72
+#: views/timegroups/form.php:74
 msgid "Time(s)"
 msgstr "Время"
 
@@ -685,9 +619,69 @@ msgstr ""
 msgid "true goto"
 msgstr "переход, если правда"
 
-#: Timeconditions.class.php:526 Timeconditions.class.php:542
+#: Timeconditions.class.php:527 Timeconditions.class.php:543
 msgid "unnamed"
 msgstr ""
+
+#~ msgid "Applications"
+#~ msgstr "Приложения"
+
+#~ msgid ""
+#~ "Creates a condition where calls will go to one of two destinations (eg, "
+#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
+#~ "be used for example to ring a receptionist during the day, or go directly "
+#~ "to an IVR at night."
+#~ msgstr ""
+#~ "Создаёт условия, при котором вызов будет распределяться на одно и более "
+#~ "назначение (например внутренний номер, Интеркативное меню, ринг-группа..) "
+#~ "основываяь на текущем времени/дате. Это можно использовать например "
+#~ "направляя входящие вызовы секретарю в рабочее время, и на Интерактивное "
+#~ "меню - в ночное."
+
+#~ msgid "Enable Maintenance Polling"
+#~ msgstr "Задействовать опрос по обслуживанию"
+
+#~ msgid ""
+#~ "If set to false, this will override the execution of the Time Conditions "
+#~ "maintenance task launched by call files. If all the feature codes for "
+#~ "time conditions are disabled, the maintenance task will not be launched "
+#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
+#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
+#~ "running through the CLI that the maintenance task launches and can be "
+#~ "distracting."
+#~ msgstr ""
+#~ "Если установлено в ложь, это переопределит выполнение задачи обслуживания "
+#~ "правил по времени, начатой файлами звонков. Если все идентификационные "
+#~ "коды для правил по времени будут отключены, то в этом случае задача "
+#~ "обслуживания не будет начата. Установка этого в Ложь было бы несколько "
+#~ "странно. Вы можете установить это в Ложь временно, отлаживая систему, "
+#~ "чтобы избежать периодического отслеживания запуска задач обслуживания "
+#~ "диалплана в CLI и не отвлекаться."
+
+#~ msgid "Maintenance Polling Interval"
+#~ msgstr "Интервал опроса по обслуживанию"
+
+#~ msgid ""
+#~ "The polling interval in seconds used by the Time Conditions maintenance "
+#~ "task, launched by an Asterisk call file used to update Time Conditions "
+#~ "override states as well as keep custom device state hint values up-to-"
+#~ "date when being used with BLF. A shorter interval will assure that BLF "
+#~ "keys states are accurate. The interval should be less than the shortest "
+#~ "configured span between two time condition states, so that a manual "
+#~ "override during such a period is properly reset when the new period "
+#~ "starts."
+#~ msgstr ""
+#~ "Интервал опроса в секундах используется задачей обслуживания правил по "
+#~ "времени, запущенный call-файл Астериска используется для обновления "
+#~ "правил по времени, переопределения состояния, а так же поддерживать "
+#~ "различные состояния индикаторов устройств, использующих BLF. Короткий "
+#~ "интервал гарантирует актуальное состояние клавиши BLF. Интервал должен "
+#~ "быть меньше, чем самый короткий настроенный промежуток между двумя "
+#~ "состояниями правил по времени, так чтобы переопределение во время такого "
+#~ "периода уже закончилось, когда начинается новый период."
+
+#~ msgid "Time Condition Module"
+#~ msgstr "Модуль правил по времени"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "
