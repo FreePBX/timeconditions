@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 07:04+0000\n"
+"POT-Creation-Date: 2023-11-29 11:11+0000\n"
 "PO-Revision-Date: 2023-11-19 23:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
@@ -38,7 +38,7 @@ msgstr "--Wybierz kalendarz--"
 msgid "--Select a Group--"
 msgstr "--Wybierz grupę--"
 
-#: Timeconditions.class.php:567 Timeconditions.class.php:603
+#: Timeconditions.class.php:568 Timeconditions.class.php:604
 msgid ": Time Condition Override"
 msgstr ": Nadpisanie warunku czasowego"
 
@@ -620,7 +620,7 @@ msgstr ""
 msgid "true goto"
 msgstr "prawdziwe idź do (goto)"
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:543
+#: Timeconditions.class.php:527 Timeconditions.class.php:544
 msgid "unnamed"
 msgstr "bez nazwy"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 07:04+0000\n"
+"POT-Creation-Date: 2023-11-29 11:11+0000\n"
 "PO-Revision-Date: 2008-11-06 14:55+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selezionare un Gruppo--"
 
-#: Timeconditions.class.php:567 Timeconditions.class.php:603
+#: Timeconditions.class.php:568 Timeconditions.class.php:604
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -593,7 +593,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:543
+#: Timeconditions.class.php:527 Timeconditions.class.php:544
 msgid "unnamed"
 msgstr ""
 

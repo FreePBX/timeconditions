@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 07:04+0000\n"
+"POT-Creation-Date: 2023-11-29 11:11+0000\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:567 Timeconditions.class.php:603
+#: Timeconditions.class.php:568 Timeconditions.class.php:604
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -640,7 +640,7 @@ msgstr ""
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:543
+#: Timeconditions.class.php:527 Timeconditions.class.php:544
 msgid "unnamed"
 msgstr ""
 

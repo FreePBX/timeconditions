@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-28 07:04+0000\n"
+"POT-Creation-Date: 2023-11-29 11:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,8 +35,8 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr ""
 
-#: Timeconditions.class.php:567
-#: Timeconditions.class.php:603
+#: Timeconditions.class.php:568
+#: Timeconditions.class.php:604
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -609,6 +609,6 @@ msgid "true goto"
 msgstr ""
 
 #: Timeconditions.class.php:527
-#: Timeconditions.class.php:543
+#: Timeconditions.class.php:544
 msgid "unnamed"
 msgstr ""
