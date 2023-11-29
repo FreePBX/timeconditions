@@ -249,8 +249,8 @@ $calendars = FreePBX::Calendar()->listCalendars();
 					<div class="col-md-9">
 						<select class="form-control" id="calendar-group" name="calendar-group">
 							<option value=""><?php echo _("--Select a Group--")?></option>
-							<?php foreach($groups as $id=> $group) { ?>
-								<option value="<?php echo $id?>" <?php echo ($thisItem['calendar_group_id'] == $id) ? "selected" : ""?>><?php echo $group['name'] ?? ''?></option>
+							<?php $calendar_group_id = $thisItem['calendar_group_id'] ?? ''; foreach($groups as $id=> $group) { ?>
+								<option value="<?php echo $id?>" <?php echo ($calendar_group_id == $id) ? "selected" : ""?>><?php echo $group['name'] ?? ''?></option>
 							<?php } ?>
 						</select>
 					</div>

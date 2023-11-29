@@ -526,7 +526,8 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function addTimeCondition($post){
 		$displayname = empty($post['displayname'])?_("unnamed"):$post['displayname'];
 		$invert_hint = ($post['invert_hint'] === '1') ? '1' : '0';
-		$vars = [':displayname' => $displayname ?? '', ':time' => $post['time'] ?? 0, ':timezone' => $post['timezone'] ?? '', ':falsegoto' => $post[$post['goto1'].'1'] ?? '', ':truegoto' => $post[$post['goto0'].'0'] ?? '', ':invert_hint' => $invert_hint ?? 0, ':fcc_password' => $post['fcc_password'] ?? '', ':deptname' => $post['deptname'] ?? '', ':generate_hint' => '1', ':mode' => $post['mode'] ?? '', ':calendar_id' => $post['calendar-id'] ?? '', ':calendar_group_id' => $post['calendar-group'] ?? ''];
+		$time = !empty($post['time']) ? $post['time'] : 0;
+		$vars = [':displayname' => $displayname ?? '', ':time' => $time, ':timezone' => $post['timezone'] ?? '', ':falsegoto' => $post[$post['goto1'].'1'] ?? '', ':truegoto' => $post[$post['goto0'].'0'] ?? '', ':invert_hint' => $invert_hint ?? 0, ':fcc_password' => $post['fcc_password'] ?? '', ':deptname' => $post['deptname'] ?? '', ':generate_hint' => '1', ':mode' => $post['mode'] ?? '', ':calendar_id' => $post['calendar-id'] ?? '', ':calendar_group_id' => $post['calendar-group'] ?? ''];
 		$sql = "INSERT INTO timeconditions (displayname,time,truegoto,falsegoto,deptname,generate_hint,fcc_password,invert_hint,timezone,mode,calendar_id,calendar_group_id) values (:displayname, :time, :truegoto, :falsegoto, :deptname, :generate_hint, :fcc_password, :invert_hint, :timezone, :mode, :calendar_id, :calendar_group_id)";
 		$stmt = $this->Database->prepare($sql);
 		$stmt->execute($vars);
