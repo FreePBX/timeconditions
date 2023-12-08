@@ -14,7 +14,7 @@ use DateTime;
 use DateTimeZone;
 
 class Timeconditions extends FreePBX_Helpers implements BMO {
-    public $errormsg = '';
+	public $errormsg = '';
 
 	public function install() {
 		$this->cleanuptcmaint();
@@ -25,11 +25,11 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function uninstall() {}
 
 	public function doConfigPageInit($page) {
-        $request = $_POST;
-        $action = $this->getReq('action');
+		$request = $_POST;
+		$action = $this->getReq('action');
 		switch($page) {
-            case "timeconditions":
-                $itemid = $this->getReq('itemid');
+			case "timeconditions":
+				$itemid = $this->getReq('itemid');
 				$invert_hint = $request['invert_hint'] ?? '0';
 				$fcc_password = $request['fcc_password'] ?? '';
 				//if submitting form, update database
@@ -49,15 +49,15 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 					case "duplicate":
 						$this->duplicateTimeCondition($itemid,$request);
 						needreload();
-                    break;
-                    default:
-                    break;
+					break;
+					default:
+					break;
 				}
 			break;
-            case "timegroups":
-                $timegroup = $this->getReq('extdisplay');
-                $description = $this->getReq('description');
-                $times = $this->getReq('times');
+			case "timegroups":
+				$timegroup = $this->getReq('extdisplay');
+				$description = $this->getReq('description');
+				$times = $this->getReq('times');
 				switch($action){
 					case 'duplicate':
 						$this->duplicateTimeGroup($description,$times);
@@ -76,13 +76,13 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 							return;
 						}
 						$this->delTimeGroup($timegroup);
-                    break;
-                    default:
-                    break;
-                }
-            break;
-            default:
-            break;
+					break;
+					default:
+					break;
+				}
+			break;
+			default:
+			break;
 		}
 	}
 
@@ -151,40 +151,40 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 
 	public function getActionBar($request) {
-        $buttons = [];
-        if($request['display'] === 'timeconditions' || $request['display'] === 'timegroups'){
-            $buttons = [
-                'delete' => [
-                    'name' => 'delete',
-                    'id' => 'delete',
-                    'value' => _('Delete')
-                ],
-                'reset' => [
-                    'name' => 'reset',
-                    'id' => 'reset',
-                    'value' => _('Reset')
-                ],
-                'duplicate' => [
-                    'name' => 'duplicate',
-                    'id' => 'duplicate',
-                    'value' => _('Duplicate')
-                ],
-                'submit' => [
-                    'name' => 'submit',
-                    'id' => 'submit',
-                    'value' => _('Submit')
-                ],
-            ];
-            if (empty($request['itemid']) && $request['display'] === 'timeconditions') {
-                unset($buttons['delete']);
-            }
-            if (empty($request['extdisplay']) && $request['display'] === 'timegroups') {
-                unset($buttons['delete']);
-            }
-            if ($request['view'] != 'form') {
-                unset($buttons);
-            }
-        }
+		$buttons = [];
+		if($request['display'] === 'timeconditions' || $request['display'] === 'timegroups'){
+			$buttons = [
+				'delete' => [
+					'name' => 'delete',
+					'id' => 'delete',
+					'value' => _('Delete')
+				],
+				'reset' => [
+					'name' => 'reset',
+					'id' => 'reset',
+					'value' => _('Reset')
+				],
+				'duplicate' => [
+					'name' => 'duplicate',
+					'id' => 'duplicate',
+					'value' => _('Duplicate')
+				],
+				'submit' => [
+					'name' => 'submit',
+					'id' => 'submit',
+					'value' => _('Submit')
+				],
+			];
+			if (empty($request['itemid']) && $request['display'] === 'timeconditions') {
+				unset($buttons['delete']);
+			}
+			if (empty($request['extdisplay']) && $request['display'] === 'timegroups') {
+				unset($buttons['delete']);
+			}
+			if ($request['view'] != 'form') {
+				unset($buttons);
+			}
+		}
 		return $buttons;
 	}
 	public function serverTime(){
@@ -192,8 +192,8 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	}
 	public function ajaxRequest($req, &$setting) {
 		return match ($req) {
-      'getGroups', 'getJSON' => true,
-      default => false,
+	  'getGroups', 'getJSON' => true,
+	  default => false,
   };
 	}
 	public function ajaxHandler(){
@@ -207,39 +207,40 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 				$timegroupslist = $this->listTimegroups(false, true);
 				return ["status" => true, "groups" => $timegroupslist, "last" => $row['id']];
 			case 'getJSON':
-                switch ($request['jdata']) {
-                    case 'tggrid':
-                        $timegroupslist = $this->listTimegroups(false, true);
-                        $rdata = [];
-                        foreach($timegroupslist as $tg){
-                        $rdata[] = ['text' => $tg['text'], 'value' => $tg['value'], 'link' => [$tg['text'], $tg['value']]];
-                        }
-                        return $rdata;
-                    case 'tcgrid':
-                        $timeconditions = $this->listTimeconditions();
-                        $timegroups = $this->listTimegroups();
-                        $tgs = [];
-                        foreach($timegroups as $tg){
-                            $tgs[$tg['value']] = $tg['text'];
-                        }
-                        $tcs = $this->FreePBX->astman->database_show("TC");
-                        foreach ($timeconditions as $key => $value) {
-                            $id = $value['timeconditions_id'];
-                            $state = $tcs['/TC/'.$id] ?? '';
-                            $tgstime = $tgs[$value['time']] ?? '';
-                            $timeconditions[$key]['group'] = $tgstime;
-                            $timeconditions[$key]['state'] = $state;
-                        }
-                        return array_values($timeconditions);
-                    default:
-                        return false;
-                }
+				switch ($request['jdata']) {
+					case 'tggrid':
+						$timegroupslist = $this->listTimegroups(false, true);
+						$rdata = [];
+						foreach($timegroupslist as $tg){
+						$rdata[] = ['text' => $tg['text'], 'value' => $tg['value'], 'link' => [$tg['text'], $tg['value']]];
+						}
+						return $rdata;
+					case 'tcgrid':
+						$timeconditions = $this->listTimeconditions();
+						$timegroups = $this->listTimegroups();
+						$tgs = [];
+						foreach($timegroups as $tg){
+							$tgs[$tg['value']] = $tg['text'];
+						}
+						$tcs = $this->FreePBX->astman->database_show("TC");
+						foreach ($timeconditions as $key => $value) {
+							$id = $value['timeconditions_id'];
+							$state = $tcs['/TC/'.$id] ?? '';
+							$tgstime = $tgs[$value['time']] ?? '';
+							$timeconditions[$key]['group'] = $tgstime;
+							$timeconditions[$key]['state'] = $state;
+						}
+						return array_values($timeconditions);
+					default:
+						return false;
+				}
 
 			default:
 				return false;
 		}
-    }
+	}
 
+	
 	public function bulkhandlerGetTypes() {
 		$final = [];
   $final['timegroup'] = ['name' => _('TimeGroups'), 'description' => _('TimeGroups')];
@@ -354,7 +355,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			}
 		}
 		return $tmparray;
-    }
+	}
 
 	public function listTimeconditions($getall=false) {
 		$sql = "SELECT * FROM timeconditions ORDER BY priority ASC";
@@ -367,13 +368,13 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		return [];
 	}
 	public function getRightNav($request) {
-        if($request['display'] === 'timegroups' && $request['view'] === 'form'){
-            return load_view(__DIR__."/views/timegroups/bootnav.php",['request'=>$request]);
-        }
-        if($request['display'] === 'timeconditions' && $request['view'] === 'form'){
-            return load_view(__DIR__ . "/views/timeconditions/bootnav.php", ['request' => $request]);
-        }
-        return;
+		if($request['display'] === 'timegroups' && $request['view'] === 'form'){
+			return load_view(__DIR__."/views/timegroups/bootnav.php",['request'=>$request]);
+		}
+		if($request['display'] === 'timeconditions' && $request['view'] === 'form'){
+			return load_view(__DIR__ . "/views/timeconditions/bootnav.php", ['request' => $request]);
+		}
+		return;
 	}
 
 	/**
