@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 11:11+0000\n"
+"POT-Creation-Date: 2023-12-11 22:45-0500\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:257
 msgid " Time for this time condition"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:256
 msgid " Timee for this time condition"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: Timeconditions.class.php:568 Timeconditions.class.php:604
+#: Timeconditions.class.php:569 Timeconditions.class.php:605
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -70,6 +70,10 @@ msgstr "Въведете време за това времево условие"
 #: assets/js/timeconditions/timeconditions.js:33
 msgid "Already exists Time Conditions Name:"
 msgstr ""
+
+#: timeconditions.i18n.php:6
+msgid "Applications"
+msgstr "Приложения"
 
 #: functions.inc.php:625
 msgid "April"
@@ -120,6 +124,18 @@ msgstr "Промени Отмяна"
 msgid "Could not delete time group as it is in use"
 msgstr "Не мога да изтрия времевата група тъй като се използва"
 
+#: timeconditions.i18n.php:8
+msgid ""
+"Creates a condition where calls will go to one of two destinations (eg, an "
+"extension, IVR, ring group..) based on the time and/or date. This can be "
+"used for example to ring a receptionist during the day, or go directly to an "
+"IVR at night."
+msgstr ""
+"Създава възможност обажданията да се насочват към едно от две направления "
+"(например вътрешна линия, IVR, група на звънене..) в зависимост от час и/или "
+"дата. Може да се използва например да звъни на секретар през деня, а нощно "
+"време да се насочва към IVR."
+
 #: views/timeconditions/basic_form.php:253
 msgid "Current"
 msgstr "Текущ"
@@ -140,7 +156,7 @@ msgstr "Изтрий"
 msgid "Description"
 msgstr "Описание"
 
-#: Timeconditions.class.php:267
+#: Timeconditions.class.php:268
 msgid "Description is required."
 msgstr ""
 
@@ -178,6 +194,10 @@ msgstr ""
 msgid "Edit Time Condition: %s (%s)"
 msgstr "Редактиране на Времево Условие: %s (%s)"
 
+#: timeconditions.i18n.php:14
+msgid "Enable Maintenance Polling"
+msgstr "Разреши Диагностика"
+
 #: functions.inc.php:625
 msgid "February"
 msgstr "Февруари"
@@ -211,6 +231,24 @@ msgstr ""
 "Ако установите hint ще бъде INUSE ако времевото условие съвпада и NOT_INUSE "
 "ако не съвпада"
 
+#: timeconditions.i18n.php:18
+msgid ""
+"If set to false, this will override the execution of the Time Conditions "
+"maintenance task launched by call files. If all the feature codes for time "
+"conditions are disabled, the maintenance task will not be launched anyhow. "
+"Setting this to false would be fairly un-common. You may want to set this "
+"temporarily if debugging a system to avoid the periodic dialplan running "
+"through the CLI that the maintenance task launches and can be distracting."
+msgstr ""
+"Ако е установено невярно, това ще отмени изпълнението на задачата за "
+"поддръжка на Времеви Условия, стартирано от файловете на обжданията. Ако "
+"всички специални кодове за времеви условия са забранени, задачата за "
+"поддръжка няма да бъде стартирана така или иначе. Установяването на невярно "
+"би било доста необичайно. Може да искате да зададете това временно, ако "
+"търсите грешки в системата, за да избегнете периодичното показване на плана "
+"за набиране, минаващ през CLI, който задачата за поддръжка стартира и може "
+"да действа разсейващо."
+
 #: views/timeconditions/advanced_form.php:102
 #: views/timeconditions/basic_form.php:211
 msgid "Invert BLF Hint"
@@ -241,6 +279,10 @@ msgstr "Списък с Времеви Условия"
 #: views/timegroups/bootnav.php:12
 msgid "List Time Groups"
 msgstr "Списък с Времеви Групи"
+
+#: timeconditions.i18n.php:20
+msgid "Maintenance Polling Interval"
+msgstr "Интервал за Диагностика"
 
 #: functions.inc.php:625
 msgid "March"
@@ -446,6 +488,25 @@ msgstr "Временно съвпадение"
 msgid "Temporary unmatched"
 msgstr "Временно несъвпадение"
 
+#: timeconditions.i18n.php:22
+msgid ""
+"The polling interval in seconds used by the Time Conditions maintenance "
+"task, launched by an Asterisk call file used to update Time Conditions "
+"override states as well as keep custom device state hint values up-to-date "
+"when being used with BLF. A shorter interval will assure that BLF keys "
+"states are accurate. The interval should be less than the shortest "
+"configured span between two time condition states, so that a manual override "
+"during such a period is properly reset when the new period starts."
+msgstr ""
+"Интервалът на избиране в секунди, използван от задачата за поддържане на "
+"Времеви Условия, стартиран от файла за обаждания на Asterisk, използван за "
+"актуализиране на състоянието на отмяна на Времеви Условия, както и за "
+"запазване актуални стойности на custom device state hint, когато се използва "
+"с BLF. По-кратък интервал ще гарантира, че състоянията на BLF бутоните са "
+"точни. Интервалът трябва да бъде по-малък от най-краткия конфигуриран "
+"диапазон между две времеви условия, така че при ръчна отмяна по време на "
+"такъв период, да бъде правилно нулиран когато започва новият период."
+
 #: views/timeconditions/advanced_form.php:152
 #: views/timeconditions/basic_form.php:261
 #, php-format
@@ -493,6 +554,10 @@ msgstr "Четвъртък"
 msgid "Time Condition"
 msgstr "Времево Условие"
 
+#: timeconditions.i18n.php:16
+msgid "Time Condition Module"
+msgstr "Модул Времеви Условия"
+
 #: views/timeconditions/advanced_form.php:54
 #: views/timeconditions/basic_form.php:49
 msgid "Time Condition name"
@@ -503,7 +568,8 @@ msgstr "Име на Времево Условие"
 msgid "Time Condition: %s"
 msgstr "Времево Условие: %s"
 
-#: page.timeconditions.php:7
+#: page.timeconditions.php:11 timeconditions.i18n.php:4
+#: timeconditions.i18n.php:10
 msgid "Time Conditions"
 msgstr "Времеви Условия"
 
@@ -517,7 +583,7 @@ msgstr "Времева Група"
 msgid "Time Group Mode"
 msgstr ""
 
-#: page.timegroups.php:7
+#: page.timegroups.php:8 timeconditions.i18n.php:12
 msgid "Time Groups"
 msgstr "Времеви Групи"
 
@@ -538,19 +604,19 @@ msgstr "Краен Час"
 msgid "Time(s)"
 msgstr "Време(на)"
 
-#: Timeconditions.class.php:278
+#: Timeconditions.class.php:279
 msgid "TimeGroup already exists"
 msgstr ""
 
-#: Timeconditions.class.php:254
+#: Timeconditions.class.php:255
 msgid "TimeGroup description"
 msgstr ""
 
-#: Timeconditions.class.php:245
+#: Timeconditions.class.php:246
 msgid "TimeGroups"
 msgstr ""
 
-#: Timeconditions.class.php:254
+#: Timeconditions.class.php:255
 msgid "Timegroup Description"
 msgstr ""
 
@@ -605,11 +671,11 @@ msgstr ""
 msgid "false goto"
 msgstr "невярно goto"
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:256
 msgid "time1"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:257
 msgid "time2"
 msgstr ""
 
@@ -617,70 +683,9 @@ msgstr ""
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:527 Timeconditions.class.php:544
+#: Timeconditions.class.php:528 Timeconditions.class.php:545
 msgid "unnamed"
 msgstr "без име"
-
-#~ msgid "Applications"
-#~ msgstr "Приложения"
-
-#~ msgid ""
-#~ "Creates a condition where calls will go to one of two destinations (eg, "
-#~ "an extension, IVR, ring group..) based on the time and/or date. This can "
-#~ "be used for example to ring a receptionist during the day, or go directly "
-#~ "to an IVR at night."
-#~ msgstr ""
-#~ "Създава възможност обажданията да се насочват към едно от две направления "
-#~ "(например вътрешна линия, IVR, група на звънене..) в зависимост от час и/"
-#~ "или дата. Може да се използва например да звъни на секретар през деня, а "
-#~ "нощно време да се насочва към IVR."
-
-#~ msgid "Enable Maintenance Polling"
-#~ msgstr "Разреши Диагностика"
-
-#~ msgid ""
-#~ "If set to false, this will override the execution of the Time Conditions "
-#~ "maintenance task launched by call files. If all the feature codes for "
-#~ "time conditions are disabled, the maintenance task will not be launched "
-#~ "anyhow. Setting this to false would be fairly un-common. You may want to "
-#~ "set this temporarily if debugging a system to avoid the periodic dialplan "
-#~ "running through the CLI that the maintenance task launches and can be "
-#~ "distracting."
-#~ msgstr ""
-#~ "Ако е установено невярно, това ще отмени изпълнението на задачата за "
-#~ "поддръжка на Времеви Условия, стартирано от файловете на обжданията. Ако "
-#~ "всички специални кодове за времеви условия са забранени, задачата за "
-#~ "поддръжка няма да бъде стартирана така или иначе. Установяването на "
-#~ "невярно би било доста необичайно. Може да искате да зададете това "
-#~ "временно, ако търсите грешки в системата, за да избегнете периодичното "
-#~ "показване на плана за набиране, минаващ през CLI, който задачата за "
-#~ "поддръжка стартира и може да действа разсейващо."
-
-#~ msgid "Maintenance Polling Interval"
-#~ msgstr "Интервал за Диагностика"
-
-#~ msgid ""
-#~ "The polling interval in seconds used by the Time Conditions maintenance "
-#~ "task, launched by an Asterisk call file used to update Time Conditions "
-#~ "override states as well as keep custom device state hint values up-to-"
-#~ "date when being used with BLF. A shorter interval will assure that BLF "
-#~ "keys states are accurate. The interval should be less than the shortest "
-#~ "configured span between two time condition states, so that a manual "
-#~ "override during such a period is properly reset when the new period "
-#~ "starts."
-#~ msgstr ""
-#~ "Интервалът на избиране в секунди, използван от задачата за поддържане на "
-#~ "Времеви Условия, стартиран от файла за обаждания на Asterisk, използван "
-#~ "за актуализиране на състоянието на отмяна на Времеви Условия, както и за "
-#~ "запазване актуални стойности на custom device state hint, когато се "
-#~ "използва с BLF. По-кратък интервал ще гарантира, че състоянията на BLF "
-#~ "бутоните са точни. Интервалът трябва да бъде по-малък от най-краткия "
-#~ "конфигуриран диапазон между две времеви условия, така че при ръчна отмяна "
-#~ "по време на такъв период, да бъде правилно нулиран когато започва новият "
-#~ "период."
-
-#~ msgid "Time Condition Module"
-#~ msgstr "Модул Времеви Условия"
 
 #~ msgid ""
 #~ "You have not selected a time group to associate with this timecondition. "
