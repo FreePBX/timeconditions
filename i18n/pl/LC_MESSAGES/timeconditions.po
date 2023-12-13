@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-04 06:11+0000\n"
-"PO-Revision-Date: 2023-11-19 23:00+0000\n"
+"PO-Revision-Date: 2023-12-14 21:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
 "timeconditons/pl/>\n"
@@ -453,7 +453,7 @@ msgstr ""
 
 #: Timeconditions.class.php:195
 msgid "Submit"
-msgstr "Wyślij"
+msgstr "Zatwierdź"
 
 #: functions.inc.php:621
 msgid "Sunday"
