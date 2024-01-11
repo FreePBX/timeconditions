@@ -714,15 +714,19 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	}
 	// Month could be *, month, month1-month2
 	if ( $time_month != '*' ) {
-		[$month_start, $month_finish] = explode('-', $time_month);
-		if ($month_start === '*') {
-			$month_start = $month_finish;
-		}
-		if ($month_finish === '*') {
-			$month_finish = $month_start;
-		}
-		if ( !$month_finish) {
-		 	$month_finish = $month_start;
+		if(str_contains($time_month, '-')) {
+			[$month_start, $month_finish] = explode('-', $time_month);
+			if ($month_start === '*') {
+				$month_start = $month_finish;
+			}
+			if ($month_finish === '*') {
+				$month_finish = $month_start;
+			}
+			if ( !$month_finish) {
+				 $month_finish = $month_start;
+			}
+		} else {
+			$month_start = $month_finish = $time_month;
 		}
 	} else {
 		$month_start = $month_finish = '-';
