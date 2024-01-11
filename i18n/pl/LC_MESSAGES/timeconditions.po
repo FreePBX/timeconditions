@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 22:45-0500\n"
+"POT-Creation-Date: 2024-01-11 04:14-0500\n"
 "PO-Revision-Date: 2023-11-19 23:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
@@ -299,19 +299,19 @@ msgstr "Tryb"
 msgid "Monday"
 msgstr "Poniedziałek"
 
-#: functions.inc.php:791
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr "Zakończenie dnia miesiąca"
 
-#: functions.inc.php:782
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr "Rozpoczęcie dnia miesiąca"
 
-#: functions.inc.php:809
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr "Zakończenie miesiąca"
 
-#: functions.inc.php:800
+#: functions.inc.php:804
 msgid "Month start"
 msgstr "Rozpoczęcie miesiąca"
 
@@ -594,11 +594,11 @@ msgstr "Grupy czasowe"
 msgid "Time Zone:"
 msgstr "Strefa czasowa:"
 
-#: functions.inc.php:733
+#: functions.inc.php:737
 msgid "Time to Start"
 msgstr "Czas rozpoczęcia"
 
-#: functions.inc.php:751
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr "Czas zakończenia"
 
@@ -644,11 +644,11 @@ msgstr "Użyj systemowej strefy czasowej"
 msgid "Wednesday"
 msgstr "Środa"
 
-#: functions.inc.php:764
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr "Dzień rozpoczecia w tygodniu"
 
-#: functions.inc.php:773
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr "Dzień zakończenia w tygodniu"
 

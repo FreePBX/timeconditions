@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 22:45-0500\n"
+"POT-Creation-Date: 2024-01-11 04:14-0500\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -300,19 +300,19 @@ msgstr ""
 msgid "Monday"
 msgstr "Понеделник"
 
-#: functions.inc.php:791
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr "Ден от Месец за край"
 
-#: functions.inc.php:782
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr "Ден от Месец за начало"
 
-#: functions.inc.php:809
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr "Месец за край"
 
-#: functions.inc.php:800
+#: functions.inc.php:804
 msgid "Month start"
 msgstr "Месец за начало"
 
@@ -592,11 +592,11 @@ msgstr "Времеви Групи"
 msgid "Time Zone:"
 msgstr "Времева Зона:"
 
-#: functions.inc.php:733
+#: functions.inc.php:737
 msgid "Time to Start"
 msgstr "Начален Час"
 
-#: functions.inc.php:751
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr "Краен Час"
 
@@ -642,11 +642,11 @@ msgstr "Използвай Системната Времева Зона"
 msgid "Wednesday"
 msgstr "Сряда"
 
-#: functions.inc.php:764
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr "Ден от Седмицата за начало"
 
-#: functions.inc.php:773
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr "Ден от Седмицата за край"
 

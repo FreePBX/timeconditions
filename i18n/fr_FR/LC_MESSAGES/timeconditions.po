@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 22:45-0500\n"
+"POT-Creation-Date: 2024-01-11 04:14-0500\n"
 "PO-Revision-Date: 2016-02-04 23:22+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -282,19 +282,19 @@ msgstr ""
 msgid "Monday"
 msgstr "Lundi"
 
-#: functions.inc.php:791
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:782
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:809
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:800
+#: functions.inc.php:804
 msgid "Month start"
 msgstr ""
 
@@ -547,11 +547,11 @@ msgstr ""
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:733
+#: functions.inc.php:737
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:751
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr ""
 
@@ -597,11 +597,11 @@ msgstr ""
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: functions.inc.php:764
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:773
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr ""
 

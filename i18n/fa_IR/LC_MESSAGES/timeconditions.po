@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 22:45-0500\n"
+"POT-Creation-Date: 2024-01-11 04:14-0500\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -294,19 +294,19 @@ msgstr ""
 msgid "Monday"
 msgstr "دوشنبه"
 
-#: functions.inc.php:791
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr "روز پایان در ماه"
 
-#: functions.inc.php:782
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr "روز شروع در ماه"
 
-#: functions.inc.php:809
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr "ماه اتمام"
 
-#: functions.inc.php:800
+#: functions.inc.php:804
 msgid "Month start"
 msgstr "ماه شروع"
 
@@ -575,11 +575,11 @@ msgstr "گروه‌های زمانی"
 msgid "Time Zone:"
 msgstr "منطقه زمانی ："
 
-#: functions.inc.php:733
+#: functions.inc.php:737
 msgid "Time to Start"
 msgstr "زمان شروع"
 
-#: functions.inc.php:751
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr "زمان پایان"
 
@@ -625,11 +625,11 @@ msgstr "استفاده از منطقه زمانی سیستم"
 msgid "Wednesday"
 msgstr "چهارشنبه"
 
-#: functions.inc.php:764
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr "روز هفته ی شروع"
 
-#: functions.inc.php:773
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr "روز هفته ی پایان"
 

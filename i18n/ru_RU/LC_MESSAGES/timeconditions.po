@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-11 22:45-0500\n"
+"POT-Creation-Date: 2024-01-11 04:14-0500\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -301,19 +301,19 @@ msgstr ""
 msgid "Monday"
 msgstr "Понедельник"
 
-#: functions.inc.php:791
+#: functions.inc.php:795
 msgid "Month Day finish"
 msgstr "День окончания  временного интервала"
 
-#: functions.inc.php:782
+#: functions.inc.php:786
 msgid "Month Day start"
 msgstr "День начала временного интервала"
 
-#: functions.inc.php:809
+#: functions.inc.php:813
 msgid "Month finish"
 msgstr "Месяц окончания временного интервала"
 
-#: functions.inc.php:800
+#: functions.inc.php:804
 msgid "Month start"
 msgstr "Месяца начала временного интервала"
 
@@ -594,11 +594,11 @@ msgstr "Временная группа"
 msgid "Time Zone:"
 msgstr "Часовой пояс:"
 
-#: functions.inc.php:733
+#: functions.inc.php:737
 msgid "Time to Start"
 msgstr "Начало интервала"
 
-#: functions.inc.php:751
+#: functions.inc.php:755
 msgid "Time to finish"
 msgstr "Конец интервала"
 
@@ -644,11 +644,11 @@ msgstr "Использовать системную временную груп�
 msgid "Wednesday"
 msgstr "Среда"
 
-#: functions.inc.php:764
+#: functions.inc.php:768
 msgid "Week Day Start"
 msgstr "День недели начала"
 
-#: functions.inc.php:773
+#: functions.inc.php:777
 msgid "Week Day finish"
 msgstr "День недели окончания"
 
