@@ -667,15 +667,21 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 		$hour_start = $hour_finish = '-';
 		$minute_start = $minute_finish = '-';
 	} else {
-		[$hour_start_string, $hour_finish_string] = explode('-', $time_hour);
+		$timeHour = explode('-', $time_hour);
+		$hour_start_string = (isset($timeHour[0])) ? $timeHour[0] : NULL;
+		$hour_finish_string = (isset($timeHour[1])) ? $timeHour[0] : NULL;
 		if ($hour_start_string === '*') {
 			$hour_start_string = $hour_finish_string;
 		}
 		if ($hour_finish_string === '*') {
 			$hour_finish_string = $hour_start_string;
 		}
-		[$hour_start, $minute_start] = explode( ':', $hour_start_string);
-		[$hour_finish, $minute_finish] = explode( ':', $hour_finish_string);
+		$hourStartString = !empty($hour_start_string) ? explode( ':', $hour_start_string) : [];
+		$hour_start = (isset($hourStartString[0])) ? $hourStartString[0] : NULL;
+		$minute_start = (isset($hourStartString[1])) ? $hourStartString[1] : NULL;
+		$hourFinishString = !empty($hour_finish_string) ? explode( ':', $hour_finish_string) : [];
+		$hour_finish = (isset($hourFinishString[0])) ? $hourFinishString[0] : NULL;
+		$minute_finish = (isset($hourFinishString[1])) ? $hourFinishString[1] : NULL;
 		if ( !$hour_finish) {
 			$hour_finish = $hour_start;
 		}
@@ -685,7 +691,9 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	}
 	// WDay could be *, day, day1-day2
 	if ( $time_wday != '*' ) {
-		[$wday_start, $wday_finish] = explode('-', $time_wday);
+		$timeWdays = explode('-', $time_wday);
+		$wday_start = isset($timeWdays[0]) ? $timeWdays[0] : NULL;
+		$wday_finish = isset($timeWdays[1]) ? $timeWdays[1] : NULL;
 		if ($wday_start === '*') {
 			$wday_start = $wday_finish;
 		}
@@ -699,7 +707,9 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 		$wday_start = $wday_finish = '-';
 	}
 	if ( $time_mday != '*' ) {
-		[$mday_start, $mday_finish] = explode('-', $time_mday);
+		$timeMday = explode('-', $time_mday);
+		$mday_start = isset($timeMday[0]) ? $timeMday[0] : NULL;
+		$mday_finish = isset($timeMday[1]) ? $timeMday[1] : NULL;
 		if ($mday_start === '*') {
 			$mday_start = $mday_finish;
 		}
@@ -715,7 +725,9 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	// Month could be *, month, month1-month2
 	if ( $time_month != '*' ) {
 		if(str_contains($time_month, '-')) {
-			[$month_start, $month_finish] = explode('-', $time_month);
+			$timeMonth = explode('-', $time_month);
+			$month_start = isset($timeMonth[0]) ? $timeMonth[0] : NULL;
+			$month_finish = isset($timeMonth[1]) ? $timeMonth[1] : NULL;
 			if ($month_start === '*') {
 				$month_start = $month_finish;
 			}
