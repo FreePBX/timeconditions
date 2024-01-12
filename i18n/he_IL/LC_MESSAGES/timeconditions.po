@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 04:14-0500\n"
+"POT-Creation-Date: 2024-01-12 06:00-0500\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -280,19 +280,19 @@ msgstr ""
 msgid "Monday"
 msgstr "שני"
 
-#: functions.inc.php:795
+#: functions.inc.php:807
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:786
+#: functions.inc.php:798
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:813
+#: functions.inc.php:825
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:804
+#: functions.inc.php:816
 msgid "Month start"
 msgstr ""
 
@@ -545,11 +545,11 @@ msgstr "קבוצות זמן"
 msgid "Time Zone:"
 msgstr ""
 
-#: functions.inc.php:737
+#: functions.inc.php:749
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:755
+#: functions.inc.php:767
 msgid "Time to finish"
 msgstr ""
 
@@ -595,11 +595,11 @@ msgstr ""
 msgid "Wednesday"
 msgstr "רביעי"
 
-#: functions.inc.php:768
+#: functions.inc.php:780
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:777
+#: functions.inc.php:789
 msgid "Week Day finish"
 msgstr ""
 

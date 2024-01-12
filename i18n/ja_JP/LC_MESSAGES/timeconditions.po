@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 04:14-0500\n"
+"POT-Creation-Date: 2024-01-12 06:00-0500\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -317,19 +317,19 @@ msgstr ""
 msgid "Monday"
 msgstr "月曜日"
 
-#: functions.inc.php:795
+#: functions.inc.php:807
 msgid "Month Day finish"
 msgstr "終わる日"
 
-#: functions.inc.php:786
+#: functions.inc.php:798
 msgid "Month Day start"
 msgstr "始まる日"
 
-#: functions.inc.php:813
+#: functions.inc.php:825
 msgid "Month finish"
 msgstr "終わる月"
 
-#: functions.inc.php:804
+#: functions.inc.php:816
 msgid "Month start"
 msgstr "始まる月"
 
@@ -598,11 +598,11 @@ msgstr "時間グループ"
 msgid "Time Zone:"
 msgstr "タイムゾーン:"
 
-#: functions.inc.php:737
+#: functions.inc.php:749
 msgid "Time to Start"
 msgstr "開始時刻"
 
-#: functions.inc.php:755
+#: functions.inc.php:767
 msgid "Time to finish"
 msgstr "終了時刻"
 
@@ -648,11 +648,11 @@ msgstr "システムのタイムゾーンを使用"
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: functions.inc.php:768
+#: functions.inc.php:780
 msgid "Week Day Start"
 msgstr "始まる曜日"
 
-#: functions.inc.php:777
+#: functions.inc.php:789
 msgid "Week Day finish"
 msgstr "終わる曜日"
 

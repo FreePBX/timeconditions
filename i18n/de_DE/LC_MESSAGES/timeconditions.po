@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 04:14-0500\n"
+"POT-Creation-Date: 2024-01-12 06:00-0500\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -287,19 +287,19 @@ msgstr ""
 msgid "Monday"
 msgstr "Montag"
 
-#: functions.inc.php:795
+#: functions.inc.php:807
 msgid "Month Day finish"
 msgstr ""
 
-#: functions.inc.php:786
+#: functions.inc.php:798
 msgid "Month Day start"
 msgstr ""
 
-#: functions.inc.php:813
+#: functions.inc.php:825
 msgid "Month finish"
 msgstr ""
 
-#: functions.inc.php:804
+#: functions.inc.php:816
 msgid "Month start"
 msgstr ""
 
@@ -571,11 +571,11 @@ msgstr "Zeitgruppen"
 msgid "Time Zone:"
 msgstr "Zeitzone:"
 
-#: functions.inc.php:737
+#: functions.inc.php:749
 msgid "Time to Start"
 msgstr ""
 
-#: functions.inc.php:755
+#: functions.inc.php:767
 msgid "Time to finish"
 msgstr ""
 
@@ -621,11 +621,11 @@ msgstr "System-Zeitzone verwenden"
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: functions.inc.php:768
+#: functions.inc.php:780
 msgid "Week Day Start"
 msgstr ""
 
-#: functions.inc.php:777
+#: functions.inc.php:789
 msgid "Week Day finish"
 msgstr ""
 
