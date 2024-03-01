@@ -669,7 +669,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 	} else {
 		$timeHour = explode('-', $time_hour);
 		$hour_start_string = (isset($timeHour[0])) ? $timeHour[0] : NULL;
-		$hour_finish_string = (isset($timeHour[1])) ? $timeHour[0] : NULL;
+		$hour_finish_string = (isset($timeHour[1])) ? $timeHour[1] : NULL;
 		if ($hour_start_string === '*') {
 			$hour_start_string = $hour_finish_string;
 		}
