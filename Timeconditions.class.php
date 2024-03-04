@@ -579,6 +579,7 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 		$stmt = $this->Database->prepare($sql);
 		$stmt->execute([':id' => $id]);
 		$results = $stmt->fetch();
+		if (empty($results)) $results = [];
 		$fcc = new \featurecode('timeconditions', 'toggle-mode-'.$id);
 		$c = $fcc->getCodeActive();
 		$results['tcval'] = $fcc->getCode();
