@@ -17,7 +17,7 @@ function timeconditions_getdestinfo($dest) {
 		if (empty($thisexten)) {
 			return [];
 		} else {
-			return ['description' => sprintf(_("Time Condition: %s"),$thisexten['displayname']), 'edit_url' => 'config.php?display=timeconditions&view=form&itemid='.urlencode($exten)];
+			return ['description' => sprintf(_("Time Condition: %s"),($thisexten['displayname'] ?? '')), 'edit_url' => 'config.php?display=timeconditions&view=form&itemid='.urlencode($exten)];
 		}
 	} else {
 		return false;
