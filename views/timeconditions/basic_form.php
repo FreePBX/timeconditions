@@ -4,7 +4,7 @@
 //
 extract($request,EXTR_SKIP);
 $subhead = _("Add Time Condition");
-if ($itemid){
+if (isset($itemid)) {
 	$fcc = new featurecode('timeconditions', 'toggle-mode-'.$itemid);
 	$code = $fcc->getCodeActive();
 	unset($fcc);
@@ -17,7 +17,7 @@ if ($itemid){
 	$thisItem['timezone'] ??= 'default';
 	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
 }
-if ($itemid && $thisItem['tcstate'] !== false) {
+if (isset($itemid) && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
 	$state_msg = match ($tcstate) {
      'auto' => _('No Override'),
@@ -35,8 +35,8 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 <h2><?php echo $subhead?></h2>
 <form autocomplete="off" name="edit" id="edit" action="config.php?display=timeconditions" method="post" onsubmit="return edit_onsubmit(this);" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL?>">
 <input type="hidden" name="display" value="timeconditions">
-<input type="hidden" name="action" value="<?php echo ($itemid ? 'edit' : 'add') ?>">
-<?php if($itemid) { ?>
+<input type="hidden" name="action" value="<?php echo (isset($itemid) ? 'edit' : 'add') ?>">
+<?php if(isset($itemid)) { ?>
 	<input type="hidden" name="itemid" value="<?php echo $itemid?>">
 <?php } ?>
 <!--Time Condition name-->
@@ -271,5 +271,9 @@ if ($itemid && $thisItem['tcstate'] !== false) {
 </div>
 </form>
 <script>
+<?php if(isset($itemid)) { ?>
 var TimeConditionNames = <?php print json_encode(\FreePBX::Timeconditions()->getAllTimeconditonNames($itemid), JSON_THROW_ON_ERROR); ?>;
+<?php } else { ?>
+	var TimeConditionNames = '';
+<?php } ?>
 </script>
