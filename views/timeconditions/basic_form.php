@@ -17,7 +17,7 @@ if (isset($itemid)) {
 	$thisItem['timezone'] ??= 'default';
 	$subhead = sprintf(_("Edit Time Condition: %s (%s)"),$displayname,$code);
 }
-if (isset($itemid) && $thisItem['tcstate'] !== false) {
+if (isset($thisItem['tcstate']) && $thisItem['tcstate'] !== false) {
 	$tcstate = $thisItem['tcstate'] == '' ? 'auto' : $thisItem['tcstate'];
 	$state_msg = match ($tcstate) {
      'auto' => _('No Override'),
