@@ -161,7 +161,7 @@ function timeconditions_get_config($engine) {
 				//
 				// If there are no times then this is purely manual and does not need to be updated
 				//
-				if ($amp_conf['TCMAINT'] && is_array($times) && count($times)) {
+				if ($amp_conf['TCMAINT'] && isset($times) && is_array($times) && count($times)) {
 					$need_maint = true;
 				}
 
