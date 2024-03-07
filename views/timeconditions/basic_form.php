@@ -50,7 +50,7 @@ if (isset($thisItem['tcstate']) && $thisItem['tcstate'] !== false) {
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="displayname"></i>
 					</div>
 					<div class="col-md-9">
-						<input type="text" class="form-control" id="displayname" name="displayname" value="<?php echo $displayname?>">
+						<input type="text" class="form-control" id="displayname" name="displayname" value="<?php echo $displayname ?? ''; ?>">
 					</div>
 				</div>
 			</div>
@@ -75,7 +75,7 @@ if (isset($thisItem['tcstate']) && $thisItem['tcstate'] !== false) {
 					</div>
 					<div class="col-md-9">
 						<select id="timezone" class="chosenselect form-control" name="timezone" id="timezone">
-							<option value="default" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo _("Use System Timezone")?>
+							<option value="default" <?php $tz=$tz ?? ''; echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo _("Use System Timezone")?>
 							<?php foreach(DateTimeZone::listIdentifiers(DateTimeZone::ALL) as $tz) {?>
 								<option value="<?php echo $tz?>" <?php echo (isset($thisItem['timezone']) && $thisItem['timezone'] == $tz ? 'selected' : ''); ?>><?php echo $tz?></option>
 							<?php } ?>
@@ -188,7 +188,7 @@ if (isset($thisItem['tcstate']) && $thisItem['tcstate'] !== false) {
 							<i class="fa fa-question-circle fpbx-help-icon" data-for="fcc_password"></i>
 						</div>
 						<div class="col-md-9">
-							<input type="number" min="0" class="form-control" id="fcc_password" name="fcc_password" value="<?php echo $fcc_password?>">
+							<input type="number" min="0" class="form-control" id="fcc_password" name="fcc_password" value="<?php echo $fcc_password ?? ''; ?>">
 						</div>
 					</div>
 				</div>
@@ -213,7 +213,7 @@ if (isset($thisItem['tcstate']) && $thisItem['tcstate'] !== false) {
 						</div>
 						<div class="col-md-9">
 							<span class="radioset">
-							<input type="radio" name="invert_hint" id="invert_hintyes" value="1" <?php echo ($invert_hint == "1"?"CHECKED":"") ?>>
+							<input type="radio" name="invert_hint" id="invert_hintyes" value="1" <?php $invert_hint=$invert_hint ?? ''; echo ($invert_hint == "1"?"CHECKED":"") ?>>
 							<label for="invert_hintyes"><?php echo _("Yes");?></label>
 							<input type="radio" name="invert_hint" id="invert_hintno" value="0" <?php echo ($invert_hint == "1"?"":"CHECKED") ?>>
 							<label for="invert_hintno"><?php echo _("No");?></label>
@@ -225,7 +225,7 @@ if (isset($thisItem['tcstate']) && $thisItem['tcstate'] !== false) {
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<span id="invert_hint-help" class="help-block fpbx-help-block"><?php echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
+				<span id="invert_hint-help" class="help-block fpbx-help-block"><?php $tcval=$tcval ?? ''; echo sprintf(_("If set the hint will be INUSE if the time condition is matched, and NOT_INUSE if it fails"),$tcval)?></span>
 			</div>
 		</div>
 	</div>
