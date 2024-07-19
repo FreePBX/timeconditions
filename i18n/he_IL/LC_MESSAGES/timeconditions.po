@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 05:48-0500\n"
+"POT-Creation-Date: 2024-07-19 07:46-0400\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "-- בחר קבוצת זמן ---"
 
-#: Timeconditions.class.php:569 Timeconditions.class.php:606
+#: Timeconditions.class.php:568 Timeconditions.class.php:605
 msgid ": Time Condition Override"
 msgstr "עקופת תנאי זמן"
 

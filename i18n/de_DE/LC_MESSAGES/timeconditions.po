@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 05:48-0500\n"
+"POT-Creation-Date: 2024-07-19 07:46-0400\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/timeconditons/de/>\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Wählen Sie eine Gruppe aus--"
 
-#: Timeconditions.class.php:569 Timeconditions.class.php:606
+#: Timeconditions.class.php:568 Timeconditions.class.php:605
 msgid ": Time Condition Override"
 msgstr ": Überbrückung der Zeitbedingung"
 

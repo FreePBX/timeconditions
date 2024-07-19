@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-04 05:48-0500\n"
+"POT-Creation-Date: 2024-07-19 07:46-0400\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -48,7 +48,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: Timeconditions.class.php:569 Timeconditions.class.php:606
+#: Timeconditions.class.php:568 Timeconditions.class.php:605
 msgid ": Time Condition Override"
 msgstr ": Substituição da Condição Horária"
 
