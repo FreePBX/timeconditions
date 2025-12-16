@@ -552,9 +552,10 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function addTimeCondition($post){
 		$displayname = empty($post['displayname'])?_("unnamed"):$post['displayname'];
 		$invert_hint = ($post['invert_hint'] === '1') ? '1' : '0';
+		$time = !empty($post['time']) ? $post['time'] : 0;
 		$vars = array(
 		':displayname' => $displayname,
-		':time' => $post['time'],
+		':time' => $time,
 		':timezone' => $post['timezone'],
 		':falsegoto' => $post[$post['goto1'].'1'],
 		':truegoto' => $post[$post['goto0'].'0'],
@@ -581,10 +582,11 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 	public function editTimeCondition($id,$post){
 		$displayname = empty($post['displayname'])?_("unnamed"):$post['displayname'];
 		$invert_hint = ($post['invert_hint'] === '1') ? '1' : '0';
+		$time = !empty($post['time']) ? $post['time'] : 0;
 		$vars = array(
 		':id' => $id,
 		':displayname' => $displayname,
-		':time' => $post['time'],
+		':time' => $time,
 		':timezone' => $post['timezone'],
 		':falsegoto' => $post[$post['goto1'].'1'],
 		':truegoto' => $post[$post['goto0'].'0'],
