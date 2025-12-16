@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-04 02:59+0000\n"
+"POT-Creation-Date: 2025-12-16 11:17+0000\n"
 "PO-Revision-Date: 2015-12-08 23:11+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Выбрать группу--"
 
-#: Timeconditions.class.php:620 Timeconditions.class.php:656
+#: Timeconditions.class.php:622 Timeconditions.class.php:658
 msgid ": Time Condition Override"
 msgstr "Перезаписать Правила по времени"
 
@@ -685,7 +685,7 @@ msgstr ""
 msgid "true goto"
 msgstr "переход, если правда"
 
-#: Timeconditions.class.php:553 Timeconditions.class.php:582
+#: Timeconditions.class.php:553 Timeconditions.class.php:583
 msgid "unnamed"
 msgstr ""
 

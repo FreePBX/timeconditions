@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-04 02:59+0000\n"
+"POT-Creation-Date: 2025-12-16 11:17+0000\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: Timeconditions.class.php:620 Timeconditions.class.php:656
+#: Timeconditions.class.php:622 Timeconditions.class.php:658
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -666,7 +666,7 @@ msgstr ""
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:553 Timeconditions.class.php:582
+#: Timeconditions.class.php:553 Timeconditions.class.php:583
 msgid "unnamed"
 msgstr "بدون نام"
 
