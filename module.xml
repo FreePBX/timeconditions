@@ -2,7 +2,7 @@
 	<rawname>timeconditions</rawname>
 	<repo>standard</repo>
 	<name>Time Conditions</name>
-	<version>17.0.1.18</version>
+	<version>18.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,13 +12,12 @@
 	</description>
   	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/24248517/Time+Conditions+Module</more-info>
 	<changelog>
-		*17.0.1.17*  Fix php 8 syntax errors
-		*17.0.1* 17.0.1 alpha release
+		*18.0.1* initial release
 	</changelog>
 	<depends>
-		<version>17.0.1</version>
-		<module>cel ge 17.0.1</module>
-		<module>calendar ge 17.0.1</module>
+		<version>18.0</version>
+		<module>cel ge 18.0.1</module>
+		<module>calendar ge 18.0.1</module>
 	</depends>
 	<menuitems>
 		<timeconditions needsenginedb="yes">Time Conditions</timeconditions>
@@ -73,6 +72,6 @@
 		</timeconditions>
 	</popovers>
 	<supported>
-		<version>17.0</version>
+		<version>18.0</version>
 	</supported>
 </module>
