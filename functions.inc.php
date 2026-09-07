@@ -830,7 +830,7 @@ function timeconditions_timegroups_drawtimeselects($name, $time) {
 				</div>
 			';
 	$html .= '</div>';
-	$html .= '<br/><hr/><br/>';
+	$html .= '<br/><hr class="timegroup-rule-sep"><br/>';
 	$html .= '</span>';
 	return $html;
 

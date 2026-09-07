@@ -33,8 +33,18 @@ if(isset($usage) && !empty($usage)){
 $delURL??='';
 $description??='';
 ?>
+<style>
+#timerows hr.timegroup-rule-sep {
+	height: 3px;
+	margin: 12px 0;
+	border: 1px solid rgba(94, 156, 125, 0.9);
+	border-radius: 5px;
+	background-color: #d6e4dd;
+	opacity: 1;
+}
+</style>
 
-<form autocomplete="off" name="edit" id="edit" action="?display=timegroups" method="post" onsubmit="" class="fpbx-submit" data-fpbx-delete="<?php echo $delURL ?? ''?>">
+<form autocomplete="off" name="edit" id="edit" action="?display=timegroups" method="post" onsubmit="" class="fpbx-submit popover-form" data-fpbx-delete="<?php echo $delURL ?? ''?>">
 <input type="hidden" name="display" value="timegroups">
 <input type="hidden" name="action" value="<?php echo ($extdisplay ? 'edit' : 'add') ?>">
 <?php if($extdisplay) { ?>

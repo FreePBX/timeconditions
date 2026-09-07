@@ -122,18 +122,32 @@ $("#time").on('focus', function () {
 			.html("<iframe data-popover-class=\"" + popover_box_class + "\" id=\"popover-frame\" frameBorder=\"0\" src=\"" + urlStr + "\" width=\"100%\" height=\"95%\"></iframe>")
 			.dialog({
 				title: "Add",
+				dialogClass: "fpbx-popover-dialog",
 				resizable: false,
 				modal: true,
 				width: window.innerWidth - (window.innerWidth * '.10'),
 				height: window.innerHeight - (window.innerHeight * '.10'),
 				create: function() {
-					$("body").scrollTop(0).css({ overflow: "hidden" });
+					$("body").scrollTop(0).css({ overflow: "hidden" }).addClass("fpbx-popover-open");
+					if (typeof styleFpbxDialogCloseButton === "function") {
+						styleFpbxDialogCloseButton(this);
+					} else {
+						var $wrap = $(this).closest(".ui-dialog");
+						var $btn = $wrap.find(".ui-dialog-titlebar-close");
+						$btn.attr({ title: "Close", "aria-label": "Close" });
+						if (!$btn.find("i.fa").length) {
+							$btn.find(".ui-icon, .ui-button-icon, .ui-button-icon-space").hide();
+							$btn.append('<i class="fa fa-times" aria-hidden="true"></i>');
+						}
+						$wrap.find(".ui-dialog-buttonset button").addClass("btn")
+							.first().addClass("fpbx-dialog-save");
+					}
 				},
 				close: function(e) {
 					$($this).val(previous);
 					$("#popover-frame").contents().find("body").remove();
 					$("#popover-box-id").html("");
-					$("body").css({ overflow: "inherit" });
+					$("body").css({ overflow: "inherit" }).removeClass("fpbx-popover-open");
 					updateGroups();
 					$(e.target).dialog("destroy").remove();
 				},
@@ -141,7 +155,10 @@ $("#time").on('focus', function () {
 						{
 						text: fpbx.msg.framework.save,
 						click: function() {
-							pform = $("#popover-frame").contents().find("form").first();
+							pform = $("#popover-frame").contents().find(".popover-form").first();
+							if (pform.length === 0) {
+								pform = $("#popover-frame").contents().find("form").first();
+							}
 							pform.submit();
 						}
 					}, {
@@ -157,7 +174,7 @@ $("#time").on('focus', function () {
 
 function updateGroups(selectLast) {
 	$.post( "ajax.php", { module: "timeconditions", command: "getGroups" })
-  .success(function( data ) {
+  .done(function( data ) {
 		var options = '<option value="">--'+_('Select a Group')+'--</option>';
 		$.each(data.groups, function(i,v) {
 			options = options + '<option value="'+v.value+'">'+v.text+'</option>';
