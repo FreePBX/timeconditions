@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -46,11 +46,11 @@ msgstr "：بازنویسی شرط زمانی"
 msgid "Actions"
 msgstr "عملیات"
 
-#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:182
 msgid "Add New Time Group..."
 msgstr "افزودن گروه زمانی جدید..."
 
-#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:89 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "افزودن زمان"
 
@@ -64,7 +64,7 @@ msgstr "افزودن شرط زمانی"
 msgid "Add Time Group"
 msgstr "افزودن گروه زمانی"
 
-#: views/timegroups/form.php:87
+#: views/timegroups/form.php:97
 msgid "Add a time for this time condition"
 msgstr "افزودن زمان برای این شرط زمانی"
 
@@ -150,7 +150,7 @@ msgstr "دسامبر"
 msgid "Delete"
 msgstr "حذف"
 
-#: views/timegroups/form.php:50
+#: views/timegroups/form.php:60
 msgid "Description"
 msgstr "توضیحات"
 
@@ -410,7 +410,7 @@ msgstr "بازنویسی بازنشانی"
 msgid "Saturday"
 msgstr "شنبه"
 
-#: assets/js/timeconditions/timeconditions.js:161
+#: assets/js/timeconditions/timeconditions.js:178
 msgid "Select a Group"
 msgstr "یک گروه انتخاب نمایید"
 
@@ -525,7 +525,7 @@ msgstr "این بخش از گروه زمانی و تمامی تنظیمات حذ
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "این گروه زمانی درحال استفاده است و نمی توان آن را حذف کرد"
 
-#: views/timegroups/form.php:62
+#: views/timegroups/form.php:72
 msgid "This will display as the name of this Time Group"
 msgstr "به عنوان نام گروه زمانی نمایش داده می شود"
 
@@ -583,7 +583,7 @@ msgstr "زمان شروع"
 msgid "Time to finish"
 msgstr "زمان پایان"
 
-#: views/timegroups/form.php:74
+#: views/timegroups/form.php:84
 msgid "Time(s)"
 msgstr "زمان (ها)"
 
@@ -638,7 +638,7 @@ msgstr "روز هفته ی پایان"
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/timeconditions/timeconditions.js:186
+#: assets/js/timeconditions/timeconditions.js:203
 msgid "You cant set both a group and a calendar"
 msgstr ""
 

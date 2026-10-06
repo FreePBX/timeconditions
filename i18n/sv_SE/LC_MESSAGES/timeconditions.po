@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -43,11 +43,11 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:182
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:89 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr "Lägg till tidsvillkor"
 msgid "Add Time Group"
 msgstr "Lägg till tidgrupp"
 
-#: views/timegroups/form.php:87
+#: views/timegroups/form.php:97
 msgid "Add a time for this time condition"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr "December"
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:50
+#: views/timegroups/form.php:60
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -396,7 +396,7 @@ msgstr ""
 msgid "Saturday"
 msgstr "Lördag"
 
-#: assets/js/timeconditions/timeconditions.js:161
+#: assets/js/timeconditions/timeconditions.js:178
 msgid "Select a Group"
 msgstr ""
 
@@ -498,7 +498,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:62
+#: views/timegroups/form.php:72
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
@@ -556,7 +556,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:74
+#: views/timegroups/form.php:84
 msgid "Time(s)"
 msgstr ""
 
@@ -611,7 +611,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:186
+#: assets/js/timeconditions/timeconditions.js:203
 msgid "You cant set both a group and a calendar"
 msgstr ""
 

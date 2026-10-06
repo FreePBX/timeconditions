@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2023-11-19 23:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
@@ -47,11 +47,11 @@ msgstr ": Nadpisanie warunku czasowego"
 msgid "Actions"
 msgstr "Działania"
 
-#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:182
 msgid "Add New Time Group..."
 msgstr "Dodaj nową grupę czasową..."
 
-#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:89 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Dodaj czas"
 
@@ -65,7 +65,7 @@ msgstr "Dodaj warunek czasowy"
 msgid "Add Time Group"
 msgstr "Dodawaj grupę czasową"
 
-#: views/timegroups/form.php:87
+#: views/timegroups/form.php:97
 msgid "Add a time for this time condition"
 msgstr "Dodaj czas dla tego warunku czasu"
 
@@ -152,7 +152,7 @@ msgstr "Grudzień"
 msgid "Delete"
 msgstr "Usuń"
 
-#: views/timegroups/form.php:50
+#: views/timegroups/form.php:60
 msgid "Description"
 msgstr "Opis"
 
@@ -417,7 +417,7 @@ msgstr "Zresetuj nadpisanie"
 msgid "Saturday"
 msgstr "Sobota"
 
-#: assets/js/timeconditions/timeconditions.js:161
+#: assets/js/timeconditions/timeconditions.js:178
 msgid "Select a Group"
 msgstr "Wybierz grupę"
 
@@ -544,7 +544,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "Ta grupa czasowa jest aktualnie używana i nie można jej usunąć"
 
-#: views/timegroups/form.php:62
+#: views/timegroups/form.php:72
 msgid "This will display as the name of this Time Group"
 msgstr "To bedzie wyświetlane jako nazwa tej grupy czasowej"
 
@@ -602,7 +602,7 @@ msgstr "Czas rozpoczęcia"
 msgid "Time to finish"
 msgstr "Czas zakończenia"
 
-#: views/timegroups/form.php:74
+#: views/timegroups/form.php:84
 msgid "Time(s)"
 msgstr "Czas(s)"
 
@@ -657,7 +657,7 @@ msgstr "Dzień zakończenia w tygodniu"
 msgid "Yes"
 msgstr "Tak"
 
-#: assets/js/timeconditions/timeconditions.js:186
+#: assets/js/timeconditions/timeconditions.js:203
 msgid "You cant set both a group and a calendar"
 msgstr "Nie można ustawić jednocześnie grupy i kalendarze"
 

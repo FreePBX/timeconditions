@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -74,11 +74,11 @@ msgstr "：時間分岐条件を上書き"
 msgid "Actions"
 msgstr "アクション"
 
-#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:182
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:89 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "時間を追加"
 
@@ -92,7 +92,7 @@ msgstr "時間分岐条件を追加"
 msgid "Add Time Group"
 msgstr "時間グループを追加"
 
-#: views/timegroups/form.php:87
+#: views/timegroups/form.php:97
 msgid "Add a time for this time condition"
 msgstr "この時間分岐条件の時間を追加します"
 
@@ -178,7 +178,7 @@ msgstr "12月"
 msgid "Delete"
 msgstr "削除"
 
-#: views/timegroups/form.php:50
+#: views/timegroups/form.php:60
 msgid "Description"
 msgstr "説明"
 
@@ -433,7 +433,7 @@ msgstr "上書きをリセット"
 msgid "Saturday"
 msgstr "土曜日"
 
-#: assets/js/timeconditions/timeconditions.js:161
+#: assets/js/timeconditions/timeconditions.js:178
 msgid "Select a Group"
 msgstr ""
 
@@ -548,7 +548,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:62
+#: views/timegroups/form.php:72
 msgid "This will display as the name of this Time Group"
 msgstr "時間グループの表示名を設定します。"
 
@@ -606,7 +606,7 @@ msgstr "開始時刻"
 msgid "Time to finish"
 msgstr "終了時刻"
 
-#: views/timegroups/form.php:74
+#: views/timegroups/form.php:84
 msgid "Time(s)"
 msgstr "時間設定"
 
@@ -661,7 +661,7 @@ msgstr "終わる曜日"
 msgid "Yes"
 msgstr "はい"
 
-#: assets/js/timeconditions/timeconditions.js:186
+#: assets/js/timeconditions/timeconditions.js:203
 msgid "You cant set both a group and a calendar"
 msgstr ""
 

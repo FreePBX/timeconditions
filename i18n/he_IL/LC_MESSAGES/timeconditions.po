@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2014-09-11 01:58+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Hebrew <http://git.freepbx.org/projects/freepbx/"
@@ -44,11 +44,11 @@ msgstr "עקופת תנאי זמן"
 msgid "Actions"
 msgstr ""
 
-#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:182
 msgid "Add New Time Group..."
 msgstr ""
 
-#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:89 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr "הוספת תנאי זמן"
 msgid "Add Time Group"
 msgstr "הוסף קבוצת זמנים"
 
-#: views/timegroups/form.php:87
+#: views/timegroups/form.php:97
 msgid "Add a time for this time condition"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr "דצמבר"
 msgid "Delete"
 msgstr ""
 
-#: views/timegroups/form.php:50
+#: views/timegroups/form.php:60
 msgid "Description"
 msgstr "תיאור"
 
@@ -396,7 +396,7 @@ msgstr "אתחל מעקף"
 msgid "Saturday"
 msgstr "שבת"
 
-#: assets/js/timeconditions/timeconditions.js:161
+#: assets/js/timeconditions/timeconditions.js:178
 msgid "Select a Group"
 msgstr ""
 
@@ -495,7 +495,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr ""
 
-#: views/timegroups/form.php:62
+#: views/timegroups/form.php:72
 msgid "This will display as the name of this Time Group"
 msgstr ""
 
@@ -553,7 +553,7 @@ msgstr ""
 msgid "Time to finish"
 msgstr ""
 
-#: views/timegroups/form.php:74
+#: views/timegroups/form.php:84
 msgid "Time(s)"
 msgstr ""
 
@@ -608,7 +608,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/timeconditions/timeconditions.js:186
+#: assets/js/timeconditions/timeconditions.js:203
 msgid "You cant set both a group and a calendar"
 msgstr ""
 

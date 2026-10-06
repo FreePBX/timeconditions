@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-06 07:21-0400\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -45,11 +45,11 @@ msgstr ": Отмяна на Времево Условие"
 msgid "Actions"
 msgstr "Действия"
 
-#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:165
+#: functions.inc.php:554 assets/js/timeconditions/timeconditions.js:182
 msgid "Add New Time Group..."
 msgstr "Добави Нова Времева Група..."
 
-#: views/timegroups/form.php:79 assets/js/timegroups/timegroups.js:81
+#: views/timegroups/form.php:89 assets/js/timegroups/timegroups.js:81
 msgid "Add Time"
 msgstr "Добави Час"
 
@@ -63,7 +63,7 @@ msgstr "Добави Времево Условие"
 msgid "Add Time Group"
 msgstr "Добави Времева Група"
 
-#: views/timegroups/form.php:87
+#: views/timegroups/form.php:97
 msgid "Add a time for this time condition"
 msgstr "Въведете време за това времево условие"
 
@@ -152,7 +152,7 @@ msgstr "Декември"
 msgid "Delete"
 msgstr "Изтрий"
 
-#: views/timegroups/form.php:50
+#: views/timegroups/form.php:60
 msgid "Description"
 msgstr "Описание"
 
@@ -416,7 +416,7 @@ msgstr "Ресетни Отмяна"
 msgid "Saturday"
 msgstr "Събота"
 
-#: assets/js/timeconditions/timeconditions.js:161
+#: assets/js/timeconditions/timeconditions.js:178
 msgid "Select a Group"
 msgstr "Изберете Група"
 
@@ -542,7 +542,7 @@ msgstr ""
 msgid "This time group is currently in use and cannot be deleted"
 msgstr "Времевата група в момента се използва и не може да бъде изтрита"
 
-#: views/timegroups/form.php:62
+#: views/timegroups/form.php:72
 msgid "This will display as the name of this Time Group"
 msgstr "Име на тази Времева Група"
 
@@ -600,7 +600,7 @@ msgstr "Начален Час"
 msgid "Time to finish"
 msgstr "Краен Час"
 
-#: views/timegroups/form.php:74
+#: views/timegroups/form.php:84
 msgid "Time(s)"
 msgstr "Време(на)"
 
@@ -655,7 +655,7 @@ msgstr "Ден от Седмицата за край"
 msgid "Yes"
 msgstr "Да"
 
-#: assets/js/timeconditions/timeconditions.js:186
+#: assets/js/timeconditions/timeconditions.js:203
 msgid "You cant set both a group and a calendar"
 msgstr ""
 
