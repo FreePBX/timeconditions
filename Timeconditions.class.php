@@ -146,8 +146,24 @@ class Timeconditions extends FreePBX_Helpers implements BMO {
 			}
 		}
 
+		if ($this->schedulerExecutionMode() === 'cron') {
+			$this->FreePBX->Job->remove('timeconditions', 'schedtc');
+			if ($TCMAINT) {
+				$script = dirname(__FILE__).'/bin/schedtc.php';
+				$this->FreePBX->Cron->addLine($time.' '.PHP_BINARY.' '.escapeshellarg($script).' > /dev/null 2>&1');
+			}
+			return;
+		}
+
 		$this->FreePBX->Job->addClass('timeconditions', 'schedtc', \FreePBX\modules\Timeconditions\Job::class, $time);
 		$this->FreePBX->Job->setEnabled('timeconditions', 'schedtc', $TCMAINT);
+	}
+
+	private function schedulerExecutionMode() {
+		if (!$this->FreePBX->Config->conf_setting_exists('SCHEDULED_TASK_EXECUTION')) {
+			return 'job';
+		}
+		return $this->FreePBX->Config->get('SCHEDULED_TASK_EXECUTION') === 'cron' ? 'cron' : 'job';
 	}
 
 	public function getActionBar($request) {
