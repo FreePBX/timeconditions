@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-09 05:44-0400\n"
 "PO-Revision-Date: 2015-10-27 11:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -49,11 +49,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid " Time for this time condition"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid " Timee for this time condition"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--グループ選択--"
 
-#: Timeconditions.class.php:568 Timeconditions.class.php:605
+#: Timeconditions.class.php:584 Timeconditions.class.php:621
 msgid ": Time Condition Override"
 msgstr "：時間分岐条件を上書き"
 
@@ -174,7 +174,7 @@ msgstr ""
 msgid "December"
 msgstr "12月"
 
-#: Timeconditions.class.php:160
+#: Timeconditions.class.php:176
 msgid "Delete"
 msgstr "削除"
 
@@ -182,7 +182,7 @@ msgstr "削除"
 msgid "Description"
 msgstr "説明"
 
-#: Timeconditions.class.php:268
+#: Timeconditions.class.php:284
 msgid "Description is required."
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr "時間内の宛先"
 msgid "Destination non-matches"
 msgstr "時間外の宛先"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:186
 msgid "Duplicate"
 msgstr ""
 
@@ -420,7 +420,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:165
+#: Timeconditions.class.php:181
 msgid "Reset"
 msgstr "リセット"
 
@@ -475,7 +475,7 @@ msgstr ""
 "トリに入っているものでなければなりません。正しく設定しなかった場合は動作しな"
 "い可能性がありますので、ご注意ください。"
 
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:191
 msgid "Submit"
 msgstr "送信"
 
@@ -610,19 +610,19 @@ msgstr "終了時刻"
 msgid "Time(s)"
 msgstr "時間設定"
 
-#: Timeconditions.class.php:279
+#: Timeconditions.class.php:295
 msgid "TimeGroup already exists"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "TimeGroup description"
 msgstr ""
 
-#: Timeconditions.class.php:246
+#: Timeconditions.class.php:262
 msgid "TimeGroups"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "Timegroup Description"
 msgstr ""
 
@@ -677,11 +677,11 @@ msgstr ""
 msgid "false goto"
 msgstr "一致しない goto"
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid "time1"
 msgstr ""
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid "time2"
 msgstr ""
 
@@ -689,7 +689,7 @@ msgstr ""
 msgid "true goto"
 msgstr "一致する goto"
 
-#: Timeconditions.class.php:528 Timeconditions.class.php:545
+#: Timeconditions.class.php:544 Timeconditions.class.php:561
 msgid "unnamed"
 msgstr ""
 

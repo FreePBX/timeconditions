@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-09 05:44-0400\n"
 "PO-Revision-Date: 2018-07-08 12:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/timeconditons/bg/>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid " Time for this time condition"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid " Timee for this time condition"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Изберете група--"
 
-#: Timeconditions.class.php:568 Timeconditions.class.php:605
+#: Timeconditions.class.php:584 Timeconditions.class.php:621
 msgid ": Time Condition Override"
 msgstr ": Отмяна на Времево Условие"
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "December"
 msgstr "Декември"
 
-#: Timeconditions.class.php:160
+#: Timeconditions.class.php:176
 msgid "Delete"
 msgstr "Изтрий"
 
@@ -156,7 +156,7 @@ msgstr "Изтрий"
 msgid "Description"
 msgstr "Описание"
 
-#: Timeconditions.class.php:268
+#: Timeconditions.class.php:284
 msgid "Description is required."
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr "Направленията съвпадат"
 msgid "Destination non-matches"
 msgstr "Направленията не съвпадат"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:186
 msgid "Duplicate"
 msgstr "Дублирай"
 
@@ -403,7 +403,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:165
+#: Timeconditions.class.php:181
 msgid "Reset"
 msgstr "Изчисти"
 
@@ -458,7 +458,7 @@ msgstr ""
 "<strong>ТРЯБВА</strong> да се показва в падащото меню или в директорията /"
 "usr/share/zoneinfo/ ."
 
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:191
 msgid "Submit"
 msgstr "Приеми"
 
@@ -604,19 +604,19 @@ msgstr "Краен Час"
 msgid "Time(s)"
 msgstr "Време(на)"
 
-#: Timeconditions.class.php:279
+#: Timeconditions.class.php:295
 msgid "TimeGroup already exists"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "TimeGroup description"
 msgstr ""
 
-#: Timeconditions.class.php:246
+#: Timeconditions.class.php:262
 msgid "TimeGroups"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "Timegroup Description"
 msgstr ""
 
@@ -671,11 +671,11 @@ msgstr ""
 msgid "false goto"
 msgstr "невярно goto"
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid "time1"
 msgstr ""
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid "time2"
 msgstr ""
 
@@ -683,7 +683,7 @@ msgstr ""
 msgid "true goto"
 msgstr "вярно goto"
 
-#: Timeconditions.class.php:528 Timeconditions.class.php:545
+#: Timeconditions.class.php:544 Timeconditions.class.php:561
 msgid "unnamed"
 msgstr "без име"
 

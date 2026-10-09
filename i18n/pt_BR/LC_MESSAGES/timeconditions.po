@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-09 05:44-0400\n"
 "PO-Revision-Date: 2017-03-23 19:44+0200\n"
 "Last-Translator: Luis <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -32,11 +32,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid " Time for this time condition"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid " Timee for this time condition"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Selecionar Grupo--"
 
-#: Timeconditions.class.php:568 Timeconditions.class.php:605
+#: Timeconditions.class.php:584 Timeconditions.class.php:621
 msgid ": Time Condition Override"
 msgstr ": Substituição da Condição Horária"
 
@@ -159,7 +159,7 @@ msgstr ""
 msgid "December"
 msgstr "Dezembro"
 
-#: Timeconditions.class.php:160
+#: Timeconditions.class.php:176
 msgid "Delete"
 msgstr "Apagar"
 
@@ -167,7 +167,7 @@ msgstr "Apagar"
 msgid "Description"
 msgstr "Descrição"
 
-#: Timeconditions.class.php:268
+#: Timeconditions.class.php:284
 msgid "Description is required."
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr "Destino no horário"
 msgid "Destination non-matches"
 msgstr "Destino fora do horário"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:186
 msgid "Duplicate"
 msgstr "Duplicar"
 
@@ -413,7 +413,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:165
+#: Timeconditions.class.php:181
 msgid "Reset"
 msgstr "Reiniciar"
 
@@ -467,7 +467,7 @@ msgstr ""
 "de autocompletar.<br/><strong>Importante</strong>: Sua seleção <strong>DEVE</"
 "strong>deve aparecer na lista ou no diretório /usr/share/zoneinfo/."
 
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:191
 msgid "Submit"
 msgstr "Enviar"
 
@@ -615,19 +615,19 @@ msgstr "Hora de Término"
 msgid "Time(s)"
 msgstr "Hora(s)"
 
-#: Timeconditions.class.php:279
+#: Timeconditions.class.php:295
 msgid "TimeGroup already exists"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "TimeGroup description"
 msgstr ""
 
-#: Timeconditions.class.php:246
+#: Timeconditions.class.php:262
 msgid "TimeGroups"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "Timegroup Description"
 msgstr ""
 
@@ -682,11 +682,11 @@ msgstr ""
 msgid "false goto"
 msgstr "falso vá para"
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid "time1"
 msgstr ""
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid "time2"
 msgstr ""
 
@@ -694,7 +694,7 @@ msgstr ""
 msgid "true goto"
 msgstr "verdadeiro vá para"
 
-#: Timeconditions.class.php:528 Timeconditions.class.php:545
+#: Timeconditions.class.php:544 Timeconditions.class.php:561
 msgid "unnamed"
 msgstr "sem nome"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX timeconditions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-09 05:44-0400\n"
 "PO-Revision-Date: 2009-03-11 18:03+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: Svenska\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid " Time for this time condition"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid " Timee for this time condition"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--Välj grupp-- "
 
-#: Timeconditions.class.php:568 Timeconditions.class.php:605
+#: Timeconditions.class.php:584 Timeconditions.class.php:621
 msgid ": Time Condition Override"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid "December"
 msgstr "December"
 
-#: Timeconditions.class.php:160
+#: Timeconditions.class.php:176
 msgid "Delete"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Description"
 msgstr "Beskrivning"
 
-#: Timeconditions.class.php:268
+#: Timeconditions.class.php:284
 msgid "Description is required."
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid "Destination non-matches"
 msgstr ""
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:186
 msgid "Duplicate"
 msgstr ""
 
@@ -383,7 +383,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:165
+#: Timeconditions.class.php:181
 msgid "Reset"
 msgstr ""
 
@@ -433,7 +433,7 @@ msgid ""
 "strong> appear in the pick-list or in the /usr/share/zoneinfo/ directory."
 msgstr ""
 
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:191
 msgid "Submit"
 msgstr "Spara ändringar"
 
@@ -560,19 +560,19 @@ msgstr ""
 msgid "Time(s)"
 msgstr ""
 
-#: Timeconditions.class.php:279
+#: Timeconditions.class.php:295
 msgid "TimeGroup already exists"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "TimeGroup description"
 msgstr ""
 
-#: Timeconditions.class.php:246
+#: Timeconditions.class.php:262
 msgid "TimeGroups"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "Timegroup Description"
 msgstr ""
 
@@ -627,11 +627,11 @@ msgstr ""
 msgid "false goto"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid "time1"
 msgstr ""
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid "time2"
 msgstr ""
 
@@ -639,7 +639,7 @@ msgstr ""
 msgid "true goto"
 msgstr ""
 
-#: Timeconditions.class.php:528 Timeconditions.class.php:545
+#: Timeconditions.class.php:544 Timeconditions.class.php:561
 msgid "unnamed"
 msgstr ""
 

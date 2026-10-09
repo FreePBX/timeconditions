@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 07:46-0400\n"
+"POT-Creation-Date: 2026-10-09 05:44-0400\n"
 "PO-Revision-Date: 2016-06-22 11:42+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,11 +21,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid " Time for this time condition"
 msgstr ""
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid " Timee for this time condition"
 msgstr ""
 
@@ -37,7 +37,7 @@ msgstr ""
 msgid "--Select a Group--"
 msgstr "--انتخاب یک گروه--"
 
-#: Timeconditions.class.php:568 Timeconditions.class.php:605
+#: Timeconditions.class.php:584 Timeconditions.class.php:621
 msgid ": Time Condition Override"
 msgstr "：بازنویسی شرط زمانی"
 
@@ -146,7 +146,7 @@ msgstr ""
 msgid "December"
 msgstr "دسامبر"
 
-#: Timeconditions.class.php:160
+#: Timeconditions.class.php:176
 msgid "Delete"
 msgstr "حذف"
 
@@ -154,7 +154,7 @@ msgstr "حذف"
 msgid "Description"
 msgstr "توضیحات"
 
-#: Timeconditions.class.php:268
+#: Timeconditions.class.php:284
 msgid "Description is required."
 msgstr ""
 
@@ -178,7 +178,7 @@ msgstr "مقصد تماس در صورت همخوانی"
 msgid "Destination non-matches"
 msgstr "مقصد تماس در صورت ناهمخوانی"
 
-#: Timeconditions.class.php:170
+#: Timeconditions.class.php:186
 msgid "Duplicate"
 msgstr ""
 
@@ -397,7 +397,7 @@ msgstr ""
 msgid "Please select a time group to associate with this timecondition."
 msgstr ""
 
-#: Timeconditions.class.php:165
+#: Timeconditions.class.php:181
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -451,7 +451,7 @@ msgstr ""
 "کامل شود. <br/><strong>مهم</strong>: انتخاب شما <strong>باید</strong> در "
 "لیست و یا در مسیر /usr/share/zoneinfo/ وجود داشته باشد."
 
-#: Timeconditions.class.php:175
+#: Timeconditions.class.php:191
 msgid "Submit"
 msgstr "ثبت"
 
@@ -587,19 +587,19 @@ msgstr "زمان پایان"
 msgid "Time(s)"
 msgstr "زمان (ها)"
 
-#: Timeconditions.class.php:279
+#: Timeconditions.class.php:295
 msgid "TimeGroup already exists"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "TimeGroup description"
 msgstr ""
 
-#: Timeconditions.class.php:246
+#: Timeconditions.class.php:262
 msgid "TimeGroups"
 msgstr ""
 
-#: Timeconditions.class.php:255
+#: Timeconditions.class.php:271
 msgid "Timegroup Description"
 msgstr ""
 
@@ -654,11 +654,11 @@ msgstr ""
 msgid "false goto"
 msgstr "goto نادرست"
 
-#: Timeconditions.class.php:256
+#: Timeconditions.class.php:272
 msgid "time1"
 msgstr ""
 
-#: Timeconditions.class.php:257
+#: Timeconditions.class.php:273
 msgid "time2"
 msgstr ""
 
@@ -666,7 +666,7 @@ msgstr ""
 msgid "true goto"
 msgstr "goto درست"
 
-#: Timeconditions.class.php:528 Timeconditions.class.php:545
+#: Timeconditions.class.php:544 Timeconditions.class.php:561
 msgid "unnamed"
 msgstr "بدون نام"
 
