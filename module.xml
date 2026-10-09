@@ -17,6 +17,7 @@
 	</changelog>
 	<depends>
 		<version>17.0.1</version>
+		<module>framework ge 17.0.33.2</module>
 		<module>cel ge 17.0.1</module>
 		<module>calendar ge 17.0.1</module>
 	</depends>
