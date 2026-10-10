@@ -72,7 +72,9 @@ class Job implements \FreePBX\Job\TaskInterface
 					if ($debug) $next = $calendar->getNextEvent($item['calendar_id'], null, $item['timezone']);
 				}
 				if ($debug) {
-					if ($timeMatch) {
+					if (empty($next)) {
+						$output->writeln("=>No upcoming calendar events");
+					} elseif ($timeMatch) {
 						$output->writeln("=>" . $next['startdate'] . " " . $next['starttime'] . " is now");
 					} else {
 						$output->writeln("=>" . $next['startdate'] . " " . $next['starttime'] . " is not now");

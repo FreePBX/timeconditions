@@ -71,7 +71,9 @@ foreach($conditions as $item){
 			if ($debug) $next = $calendar->getNextEvent($item['calendar_id'],null,$item['timezone']);
 		}
 		if ($debug) {
-			if($timeMatch) {
+			if(empty($next)) {
+				tcout($debug, "=>No upcoming calendar events");
+			} elseif($timeMatch) {
 				tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is now");
 			} else {
 				tcout($debug, "=>".$next['startdate']." ".$next['starttime']." is not now");
